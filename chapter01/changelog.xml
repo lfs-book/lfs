@@ -37,6 +37,45 @@
 
 -->
     <listitem>
+      <para>2010-09-18</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Release LFS-6.7.
+          </para>
+        </listitem>
+        <listitem>
+          <para>[matthew] - Add instruction to increase 
+          stack size during gcc tests.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2010-09-17</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Be consistent about 'test suites'.
+          Fixes
+          <ulink url="&lfs-ticket-root;2756">#2756</ulink>
+          </para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Remove optional symlink in psmisc
+          becasue if it is not overwritten by the sysvinit
+          intallation, it will break the init scripts.
+          </para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Touch up example grub.conf.
+          Fixes
+          <ulink url="&lfs-ticket-root;2748">#2748</ulink>
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2010-09-06</para>
       <itemizedlist>
         <listitem>
