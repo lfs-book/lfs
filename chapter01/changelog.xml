@@ -38,6 +38,67 @@
 -->
 
     <listitem>
+      <para>2012-03-02</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - LFS-7.1 released.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2012-02-24</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Minor changes to ifup boot script.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2012-02-24</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Add a patch for glibc that fixes a problem
+          (segfault) for dlopen() in some cases.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2012-02-23</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Add a note in section about partitioning using
+          advanced techniques (e.g. RAID and LVM).</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2012-02-20</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - LFS-7.1-rc1 released.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2012-02-19</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Add sed to the m4 package to fix a false test
+          error.  Fixes <ulink url="&lfs-ticket-root;3022">#3022</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update mountfs script to support LVM volumes when
+          stopping.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2012-02-15</para>
       <itemizedlist>
         <listitem>
