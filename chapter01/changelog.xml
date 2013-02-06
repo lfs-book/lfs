@@ -40,6 +40,10 @@
       <para>2013-02-06</para>
       <itemizedlist>
         <listitem>
+          <para>[matthew] - Remove Sysvinit package; Systemd will be used to
+          boot the OS now.</para>
+        </listitem>
+        <listitem>
           <para>[matthew] - Remove Sysvinit bootscripts and custom Udev rules,
           to aid with Systemd integration.</para>
         </listitem>
