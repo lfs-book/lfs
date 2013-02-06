@@ -37,6 +37,16 @@
 -->
 
     <listitem>
+      <para>2013-02-06</para>
+      <itemizedlist>
+        <listitem>
+          <para>[matthew] - Remove Sysvinit bootscripts and custom Udev rules,
+          to aid with Systemd integration.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2013-01-30</para>
       <itemizedlist>
         <listitem>

@@ -48,10 +48,6 @@
  
   <para>If using an alternative style of init scripts, skip these sections.</para>
 
-  <para>A listing of the boot scripts are found in <xref linkend="scripts"
-  role="."/>.</para>
-
-
   <itemizedlist>
      <listitem>
        <para><xref linkend="ch-scripts-bootscripts" role="."/></para>
