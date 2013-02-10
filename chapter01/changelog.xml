@@ -35,6 +35,16 @@
       </itemizedlist>
     </listitem>
 -->
+    <listitem>
+      <para>2013-02-06</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - Modified Util-Linux instructions to
+          install mesg and sulogin utilities that were part of
+          Sysvinit.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
     <listitem>
       <para>2013-02-06</para>

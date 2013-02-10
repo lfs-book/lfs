@@ -59,7 +59,10 @@ mkdir -pv /var/lib/hwclock</userinput></screen>
   <sect2 role="installation">
     <title>Installation of Util-linux</title>
 
-<screen><userinput remap="configure">./configure --disable-su --disable-sulogin --disable-login</userinput></screen>
+<screen><userinput remap="configure">./configure --disable-su    \
+            --disable-login \
+            --enable-mesg   \
+            --with-systemdsystemunitdir=/lib/systemd/system</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure option:</title>
@@ -67,13 +70,29 @@ mkdir -pv /var/lib/hwclock</userinput></screen>
       <varlistentry>
         <term><parameter>--disable-*</parameter></term>
         <listitem>
-          <para>These switches disable building su, sulogin, and login.  They
+          <para>These switches disable building su and login. They
           duplicate the same programs provided by <xref
           linkend='ch-system-shadow'/>.
           They also require
           <ulink url="&blfs-root;/view/svn/postlfs/linux-pam.html">Linux-PAM</ulink>
           which is not available in LFS.</para>
         </listitem>
+      </varlistentry>
+
+     <varlistentry>
+        <term><parameter>--enable-mesg</parameter></term>
+        <listitem>
+          <para>This switch enables building of the mesg utility which
+          was previously provided by Sysvinit package.</para>
+        </listitem>
+      </varlistentry>
+
+     <varlistentry>
+        <term><parameter>--with-systemdsystemunitdir=/lib/systemd/system</parameter></term>
+        <listitem>
+          <para>This switch sets install location for the Systemd units provided
+          with the package.</para>
+        </listitem>  
       </varlistentry>
     </variablelist>
 
@@ -103,11 +122,11 @@ mkdir -pv /var/lib/hwclock</userinput></screen>
         dmesg, eject, fallocate, fdformat, fdisk, findfs, findmnt, flock, fsck,
         fsck.cramfs, fsck.minix, fsfreeze, fstrim, getopt, hexdump, hwclock, i386,
         ionice, ipcmk, ipcrm, ipcs, isosize, ldattach, linux32, linux64,
-        logger, look, losetup, lsblk, lscpu, lslocks, mcookie, mkfs, mkfs.bfs,
+        logger, look, losetup, lsblk, lscpu, lslocks, mcookie, mesg, mkfs, mkfs.bfs,
         mkfs.cramfs, mkfs.minix, mkswap, more, mount, mountpoint, namei, partx,
         pg, pivot_root, prlimit, raw, readprofile, rename, renice, resizepart,
         rev, rtcwake, script, scriptreplay, setarch, setsid, setterm, sfdisk,
-        swaplabel, swapoff (link to swapon), swapon, switch_root, tailf,
+        sulogin, swaplabel, swapoff (link to swapon), swapon, switch_root, tailf,
         taskset, tunelp, ul, umount, unshare, utmpdump, uuidd, uuidgen, wall,
         wdctl, whereis, wipefs, and x86_64</seg>
 
@@ -620,6 +639,17 @@ mkdir -pv /var/lib/hwclock</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="mesg">
+        <term><command>mesg</command></term>
+        <listitem>
+          <para>Controls whether other users can send messages to the current
+          user's terminal</para>
+          <indexterm zone="ch-system-util-linux mesg">
+            <primary sortas="b-mesg">mesg</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="mkfs">
         <term><command>mkfs</command></term>
         <listitem>
@@ -884,6 +914,18 @@ mkdir -pv /var/lib/hwclock</userinput></screen>
           <para>A disk partition table manipulator</para>
           <indexterm zone="ch-system-util-linux sfdisk">
             <primary sortas="b-sfdisk">sfdisk</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="sulogin">
+        <term><command>sulogin</command></term>
+        <listitem>
+          <para>Allows <systemitem class="username">root</systemitem> to log in;
+          it is normally invoked by <command>init</command> when the system goes
+          into single user mode</para>
+          <indexterm zone="ch-system-util-linux sulogin">
+            <primary sortas="b-sulogin">sulogin</primary>
           </indexterm>
         </listitem>
       </varlistentry>

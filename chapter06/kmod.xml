@@ -43,16 +43,25 @@
 
     <para>Prepare Kmod for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr       \
-            --bindir=/bin       \
-            --libdir=/lib       \
-            --sysconfdir=/etc   \
-            --disable-manpages  \
-            --with-xz           \
+<screen><userinput remap="configure">./configure --prefix=/usr          \
+            --bindir=/bin          \
+            --sysconfdir=/etc      \
+            --with-rootlibdir=/lib \
+            --disable-manpages     \
+            --with-xz              \
             --with-zlib</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
+
+      <varlistentry>
+        <term><parameter>--with-rootlibdir</parameter></term>
+        <listitem>
+          <para>This switch ensures that shared library is installed in
+          <filename class="directory">/lib</filename> instead of 
+          <filename class="directory">/usr/lib</filename>.</para>
+        </listitem>  
+      </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-*</parameter></term>
@@ -84,9 +93,10 @@
     Module-Init-Tools, the package that previously handled Linux kernel modules:
     </para>
 
-<screen><userinput remap="install">make pkgconfigdir=/usr/lib/pkgconfig install
+<!-- I remember some package was looking for /sbin/lsmod - Probably proprietary one. -->
+<screen><userinput remap="install">make install
 
-for target in depmod insmod modinfo modprobe rmmod; do
+for target in depmod insmod lsmod modinfo modprobe rmmod; do
   ln -sv ../bin/kmod /sbin/$target
 done
 
@@ -105,7 +115,7 @@ ln -sv kmod /bin/lsmod</userinput></screen>
         <seg>depmod (link to kmod), insmod (link to kmod), kmod, kmod-nolib,
         lsmod (link to kmod), modinfo (link to kmod), modprobe (link to kmod),
         and rmmod (link to kmod)</seg>
-        <seg>/lib/kmod.so</seg>
+        <seg>libkmod.so</seg>
       </seglistitem>
     </segmentedlist>
 
