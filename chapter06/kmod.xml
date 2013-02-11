@@ -58,9 +58,9 @@
         <term><parameter>--with-rootlibdir</parameter></term>
         <listitem>
           <para>This switch ensures that shared library is installed in
-          <filename class="directory">/lib</filename> instead of 
+          <filename class="directory">/lib</filename> instead of
           <filename class="directory">/usr/lib</filename>.</para>
-        </listitem>  
+        </listitem>
       </varlistentry>
 
       <varlistentry>
