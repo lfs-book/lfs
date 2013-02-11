@@ -36,7 +36,22 @@
     </listitem>
 -->
     <listitem>
-      <para>2013-02-06</para>
+      <para>2013-02-11</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - Added a patch to Glibc that removes
+          references to /var/db and replaces it with FHS-compliant
+          location.</para>
+        </listitem>
+        <listitem>
+        <para>[krejzi] - Added instructions to install nscd configuration
+          file and runtime directory.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2013-02-10</para>
       <itemizedlist>
         <listitem>
           <para>[krejzi] - Modified Util-Linux instructions to

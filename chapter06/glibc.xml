@@ -61,6 +61,13 @@
     Glibc autoconf tests would give false results and defeat the goal
     of achieving a clean build.</para>
 
+    <para>Some of the Glibc programs use non-FHS compilant
+    <filename class="directory">/var/db</filename> directory
+    to store their runtime data. Apply the following patch to make such programs
+    store their runtime data in the FHS-compliant locations:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
+
     <para>The Glibc documentation recommends building Glibc outside of the source
     directory in a dedicated build directory:</para>
 
@@ -69,22 +76,26 @@ cd ../glibc-build</userinput></screen>
 
     <para>Prepare Glibc for compilation:</para>
 
-<screen><userinput remap="configure">../glibc-&glibc-version;/configure  \
-    --prefix=/usr          \
-    --disable-profile      \
-    --enable-kernel=2.6.25 \
-    --libexecdir=/usr/lib/glibc</userinput></screen>
+<!-- We would get /usr/lib/glibc/getconf instead of /usr/lib/getconf and
+     /usr/lib/getconf was used before. Other distros seem to use same
+     libexecdir -->
+<screen><userinput remap="configure">../glibc-&glibc-version;/configure   \
+    --prefix=/usr         \
+    --libexecdir=/usr/lib \
+    --disable-profile     \
+    --enable-kernel=2.6.25</userinput></screen>
 
     <variablelist>
       <title>The meaning of the new configure options:</title>
 
       <varlistentry>
-        <term><parameter>--libexecdir=/usr/lib/glibc</parameter></term>
+        <term><parameter>--libexecdir=/usr/lib</parameter></term>
         <listitem>
           <para>This changes the location of the <command>pt_chown</command>
-          program from its default of <filename
+          program and <filename class="directory">getconf</filename> directory
+          from their default install location of <filename
           class="directory">/usr/libexec</filename> to <filename
-          class="directory">/usr/lib/glibc</filename>.</para>
+          class="directory">/usr/lib</filename>.</para>
         </listitem>
       </varlistentry>
 
@@ -161,6 +172,12 @@ grep Error glibc-check-log</userinput></screen>
 <screen><userinput remap="install">cp -v ../glibc-&glibc-version;/sunrpc/rpc/*.h /usr/include/rpc
 cp -v ../glibc-&glibc-version;/sunrpc/rpcsvc/*.h /usr/include/rpcsvc
 cp -v ../glibc-&glibc-version;/nis/rpcsvc/*.h /usr/include/rpcsvc</userinput></screen>
+
+    <para>Install the configuration file and runtime directory for
+    <command>nscd</command>:</para>
+
+<screen><userinput remap="install">install -v -m644 ../glibc-&glibc-version;/nscd/nscd.conf /etc/nscd.conf &amp;&amp;
+install -v -dm755 /var/cache/nscd</userinput></screen>
 
     <para>The locales that can make the system respond in a different language
     were not installed by the above command. None of the locales are required,
@@ -425,8 +442,9 @@ mkdir /etc/ld.so.conf.d</userinput></screen>
         /usr/include/netipx, /usr/include/netiucv, /usr/include/netpacket,
         /usr/include/netrom, /usr/include/netrose, /usr/include/nfs,
         /usr/include/protocols, /usr/include/rpc, /usr/include/rpcsvc,
-        /usr/include/sys, /usr/lib/audit, /usr/lib/gconv, /usr/lib/glibc,
-        /usr/lib/locale, /usr/share/i18n, /usr/share/zoneinfo, /var/db</seg>
+        /usr/include/sys, /usr/lib/audit, /usr/lib/gconv, /usr/lib/getconf,
+        /usr/lib/locale, /usr/share/i18n, /usr/share/zoneinfo, /var/cache/nscd,
+        and /var/lib/nss_db</seg>
       </seglistitem>
     </segmentedlist>
 
