@@ -21,6 +21,14 @@
     <itemizedlist>
 
       <listitem>
+        <para>Attr</para>
+
+        <para>This package contains programs for working with extended
+        attributes on filesystem objects.  It is required by the libcap2
+        library.</para>
+      </listitem>
+
+      <listitem>
         <para>Autoconf</para>
 
         <para>This package contains programs for producing shell scripts that
@@ -100,20 +108,27 @@
       </listitem>
 
       <listitem>
+        <para>E2fsprogs</para>
+
+        <para>This package contains the utilities for handling the ext2, ext3
+        and ext4 file systems.  These are the most common and thoroughly
+        tested file systems that Linux supports.</para>
+      </listitem>
+
+      <listitem>
+        <para>Expat</para>
+
+        <para>This package contains a relatively small XML parsing library.  It
+        is required by the XML::Parser Perl module.</para>
+      </listitem>
+
+      <listitem>
         <para>Expect</para>
 
         <para>This package contains a program for carrying out scripted
         dialogues with other interactive programs.  It is commonly used
         for testing other packages.  It is only installed in the temporary
         toolchain.</para>
-      </listitem>
-
-      <listitem>
-        <para>E2fsprogs</para>
-
-        <para>This package contains the utilities for handling the ext2, ext3
-        and ext4 file systems.  These are the most common and thoroughly
-        tested file systems that Linux supports.</para>
       </listitem>
 
       <listitem>
@@ -184,6 +199,13 @@
       </listitem>
 
       <listitem>
+        <para>Gperf</para>
+
+        <para>This package generates a perfect hash from a key set; it is
+        required by Systemd.</para>
+      </listitem>
+
+      <listitem>
         <para>Grep</para>
 
         <para>This package contains programs for searching through files. These
@@ -228,6 +250,13 @@
       </listitem>
 
       <listitem>
+        <para>Intltool</para>
+
+        <para>This package contains internationalization tools; it is required
+        by Systemd.</para>
+      </listitem>
+
+      <listitem>
         <para>IProute2</para>
 
         <para>This package contains programs for basic and advanced IPv4 and
@@ -255,6 +284,22 @@
         <para>This package contains a very nice text file viewer that
         allows scrolling up or down when viewing a file. It is also used by
         Man-DB for viewing manpages.</para>
+      </listitem>
+
+      <listitem>
+        <para>Libcap2</para>
+
+        <para>This package contains functions that enable root privileges to be
+        partitioned into a set of distinct privileges.  It is required by
+        Systemd.</para>
+      </listitem>
+
+      <listitem>
+        <para>Libpipeline</para>
+
+        <para>The Libpipeline package contains a library for manipulating
+        pipelines of subprocesses in a flexible and convenient way. It is
+        required by the Man-DB package.</para>
       </listitem>
 
       <listitem>
@@ -360,14 +405,7 @@
       </listitem>
 
       <listitem>
-        <para>Popt</para>
-
-        <para>This package is a library used by some programs to parse
-        command line inputs.</para>
-      </listitem>
-
-      <listitem>
-        <para>Procps</para>
+        <para>Procps-NG</para>
 
         <para>This package contains programs for monitoring processes. These
         programs are useful for system administration, and are also used by
@@ -413,11 +451,10 @@
       </listitem>
 
       <listitem>
-        <para>Sysvinit</para>
+        <para>Systemd</para>
 
-        <para>This package provides the <application>init</application>
-        program, which is the parent of all other processes on the Linux
-        system. </para>
+        <para>This package contains programs for controlling the startup,
+        running, and shutdown of the system.</para>
       </listitem>
 
       <listitem>
@@ -444,14 +481,6 @@
       </listitem>
 
       <listitem>
-        <para>Udev</para>
-
-        <para>This package contains programs for dynamic creation of
-        device nodes.  It is an alternative to creating thousands of
-        static devices in the /dev directory.</para>
-      </listitem>
-
-      <listitem>
         <para>Util-linux</para>
 
         <para>This package contains miscellaneous utility programs.
@@ -466,6 +495,13 @@
         compatibility with the classic vi editor and its huge number of powerful
         capabilities.  An editor is a very personal choice for
         many users and any other editor could be substituted if desired.</para>
+      </listitem>
+
+      <listitem>
+        <para>XML::Parser</para>
+
+        <para>This package contains an XML Parsing library for Perl.  It is
+        required by the Intltool package.</para>
       </listitem>
 
       <listitem>
