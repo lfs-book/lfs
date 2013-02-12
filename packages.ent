@@ -115,6 +115,14 @@
 <!ENTITY e2fsprogs-ch6-du "64 MB">
 <!ENTITY e2fsprogs-ch6-sbu "1.7 SBU">
 
+<!ENTITY expat-version "2.1.0">
+<!ENTITY expat-size "552 KB">
+<!ENTITY expat-url "&sourceforge;expat/expat-&expat-version;.tar.gz">
+<!ENTITY expat-md5 "dd7dab7a5fea97d2a6a43f511449b7cd">
+<!ENTITY expat-home "http://expat.sourceforge.net/">
+<!ENTITY expat-ch6-du "7.5 MB">
+<!ENTITY expat-ch6-sbu "0.1 SBU">
+
 <!ENTITY expect-version "5.45">
 <!ENTITY expect-lib-version "5.45">
 <!ENTITY expect-size "614 KB">
