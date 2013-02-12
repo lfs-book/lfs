@@ -36,6 +36,16 @@
     </listitem>
 -->
     <listitem>
+      <para>2013-02-13</para>
+      <itemizedlist>
+        <listitem>
+          <para>[matthew] - Added full build of Systemd including its remaining
+          dependencies (attr, gperf, intltool and libcap2).</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2013-02-11</para>
       <itemizedlist>
         <listitem>

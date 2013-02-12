@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-libcap2" role="wrap">
+  <?dbhtml filename="libcap2.html"?>
+
+  <sect1info condition="script">
+    <productname>libcap2</productname>
+    <productnumber>&libcap2-version;</productnumber>
+    <address>&libcap2-url;</address>
+  </sect1info>
+
+  <title>Libcap2-&libcap2-version;</title>
+
+  <indexterm zone="ch-system-libcap2">
+    <primary sortas="a-Libcap2">Libcap2</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The Libcap2 package implements the user-space interfaces to the POSIX
+    1003.1e capabilities available in Linux kernels. These capabilities are a
+    partitioning of the all powerful root privilege into a set of distinct
+    privileges.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&libcap2-ch6-sbu;</seg>
+        <seg>&libcap2-ch6-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of Libcap2</title>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>This package does not come with a test suite.</para>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make RAISE_SETFCAP=no install</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-libcap2" role="content">
+    <title>Contents of Libcap2</title>
+
+    <segmentedlist>
+      <segtitle>Installed programs</segtitle>
+      <segtitle>Installed library</segtitle>
+
+      <seglistitem>
+        <seg>capsh, getcap, getpcaps, and setcap</seg>
+        <seg>libcap2.{so,a}</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="capsh">
+        <term><command>capsh</command></term>
+        <listitem>
+          <para>A shell wrapper to explore and constrain capability support</para>
+          <indexterm zone="ch-system-libcap2 capsh">
+            <primary sortas="b-capsh">capsh</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="getcap">
+        <term><command>getcap</command></term>
+        <listitem>
+          <para>Examines file capabilities</para>
+          <indexterm zone="ch-system-libcap2 getcap">
+            <primary sortas="b-getcap">getcap</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="getpcaps">
+        <term><command>getpcaps</command></term>
+        <listitem>
+          <para>Displays the capabilities on the queried process(es)</para>
+          <indexterm zone="ch-system-libcap2 getpcaps">
+            <primary sortas="b-getpcaps">getpcaps</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libcap2">
+        <term><filename class="libraryfile">libcap2.{so,a}</filename></term>
+        <listitem>
+          <para>Contains the libcap2 API functions</para>
+          <indexterm zone="ch-system-libcap2 libcap2">
+            <primary sortas="c-libcap2">libcap2</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

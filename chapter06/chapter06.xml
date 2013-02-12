@@ -49,6 +49,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="expat.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="inetutils.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="perl.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="attr.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="autoconf.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="automake.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="diffutils.xml"/>
@@ -56,6 +57,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="findutils.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="flex.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gettext.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gperf.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="groff.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xz.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="grub.xml"/>
@@ -64,14 +66,17 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="iproute2.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="kbd.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="kmod.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libcap2.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libpipeline.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="make.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="man-db.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="patch.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="sysklogd.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xml-parser.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="intltool.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="systemd.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="tar.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="texinfo.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="systemd.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vim.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="aboutdebug.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="strippingagain.xml"/>

@@ -229,6 +229,10 @@
     <title>Added:</title>
 
     <listitem>
+      <para>Attr-&attr-version;</para>
+    </listitem>
+
+    <listitem>
       <para>&bash-fixes-patch;</para>
     </listitem>
 
@@ -245,11 +249,35 @@
     </listitem>
 
     <listitem>
+      <para>Expat-&expat-version;</para>
+    </listitem>
+
+    <listitem>
+      <para>Gperf-&gperf-version;</para>
+    </listitem>
+
+    <listitem>
+      <para>Intltool-&intltool-version;</para>
+    </listitem>
+
+    <listitem>
       <para>&kbd-backspace-patch;</para>
     </listitem>
 
     <listitem>
+      <para>Libcap2-&libcap2-version;</para>
+    </listitem>
+
+    <listitem>
       <para>&make-fixes-patch;</para>
+    </listitem>
+
+    <listitem>
+      <para>Systemd-&systemd-version;</para>
+    </listitem>
+
+    <listitem>
+      <para>XML-Parser-&xml-parser-version;</para>
     </listitem>
 
   </itemizedlist>
@@ -311,10 +339,6 @@
 
     <listitem>
       <para>sed-4.2.1-testsuite_fixes-1.patch</para>
-    </listitem>
-
-    <listitem>
-      <para>Sysvinit-2.88dsf</para>
     </listitem>
 
   </itemizedlist>

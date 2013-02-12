@@ -15,6 +15,15 @@
   <variablelist role="materials">
 
     <varlistentry>
+      <term>Attr (&attr-version;) - <token>&attr-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&attr-home;"/></para>
+        <para>Download: <ulink url="&attr-url;"/></para>
+        <para>MD5 sum: <literal>&attr-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Autoconf (&autoconf-version;) - <token>&autoconf-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&autoconf-home;"/></para>
@@ -110,6 +119,15 @@
         <para>Home page: <ulink url="&e2fsprogs-home;"/></para>
         <para>Download: <ulink url="&e2fsprogs-url;"/></para>
         <para>MD5 sum: <literal>&e2fsprogs-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Expat (&expat-version;) - <token>&expat-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&expat-home;"/></para>
+        <para>Download: <ulink url="&expat-url;"/></para>
+        <para>MD5 sum: <literal>&expat-md5;</literal></para>
       </listitem>
     </varlistentry>
 
@@ -213,6 +231,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>Gperf (&gperf-version;) - <token>&gperf-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&gperf-home;"/></para>
+        <para>Download: <ulink url="&gperf-url;"/></para>
+        <para>MD5 sum: <literal>&gperf-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Grep (&grep-version;) - <token>&grep-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&grep-home;"/></para>
@@ -267,6 +294,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>Intltool (&intltool-version;) - <token>&intltool-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&intltool-home;"/></para>
+        <para>Download: <ulink url="&intltool-url;"/></para>
+        <para>MD5 sum: <literal>&intltool-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>IPRoute2 (&iproute2-version;) - <token>&iproute2-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&iproute2-home;"/></para>
@@ -308,6 +344,15 @@
         <para>Home page: <ulink url="&lfs-bootscripts-home;"/></para>
         <para>Download: <ulink url="&lfs-bootscripts-url;"/></para>
         <para>MD5 sum: <literal>&lfs-bootscripts-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Libcap2 (&libcap2-version;) - <token>&libcap2-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&libcap2-home;"/></para>
+        <para>Download: <ulink url="&libcap2-url;"/></para>
+        <para>MD5 sum: <literal>&libcap2-md5;</literal></para>
       </listitem>
     </varlistentry>
 
@@ -590,6 +635,15 @@
         <para>Home page: <ulink url="&vim-home;"/></para>
         <para>Download: <ulink url="&vim-url;"/></para>
         <para>MD5 sum: <literal>&vim-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>XML::Parser (&xml-parser-version;) - <token>&xml-parser-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&xml-parser-home;"/></para>
+        <para>Download: <ulink url="&xml-parser-url;"/></para>
+        <para>MD5 sum: <literal>&xml-parser-md5;</literal></para>
       </listitem>
     </varlistentry>
 

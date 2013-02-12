@@ -7,6 +7,14 @@
      Allowed deviation in disk usage : 2% -->
 
 
+<!ENTITY attr-version "2.4.46">
+<!ENTITY attr-size "330 KB">
+<!ENTITY attr-url "http://download.savannah.gnu.org/releases/attr/attr-&attr-version;.src.tar.gz">
+<!ENTITY attr-md5 "db557c17fdfa4f785333ecda08654010">
+<!ENTITY attr-home " ">
+<!ENTITY attr-ch6-du "3.5 MB">
+<!ENTITY attr-ch6-sbu "0.1 SBU">
+
 <!ENTITY autoconf-version "2.69">
 <!ENTITY autoconf-size "1,186 KB">
 <!ENTITY autoconf-url "&gnu;autoconf/autoconf-&autoconf-version;.tar.xz">
@@ -226,6 +234,14 @@
 <!ENTITY gmp-ch6-du "50 MB">
 <!ENTITY gmp-ch6-sbu "1.2 SBU">
 
+<!ENTITY gperf-version "3.0.4">
+<!ENTITY gperf-size "960 KB">
+<!ENTITY gperf-url "&gnu;gperf/gperf-&gperf-version;.tar.gz">
+<!ENTITY gperf-md5 "c1f1db32fb6598d6a93e6e88796a8632">
+<!ENTITY gperf-home "&gnu-software;gperf/">
+<!ENTITY gperf-ch6-du "6.5 MB">
+<!ENTITY gperf-ch6-sbu "0.1 SBU">
+
 <!ENTITY grep-version "2.14">
 <!ENTITY grep-size "1,172 KB">
 <!ENTITY grep-url "&gnu;grep/grep-&grep-version;.tar.xz">
@@ -278,6 +294,14 @@
 <!ENTITY inetutils-ch6-du "27 MB">
 <!ENTITY inetutils-ch6-sbu "0.4 SBU">
 
+<!ENTITY intltool-version "0.50.2">
+<!ENTITY intltool-size "185 KB">
+<!ENTITY intltool-url "http://launchpad.net/intltool/trunk/&intltool-version;/+download/&intltool-version;.tar.gz">
+<!ENTITY intltool-md5 "23fbd879118253cb99aeac067da5f591">
+<!ENTITY intltool-home "http://freedesktop.org/wiki/Software/intltool">
+<!ENTITY intltool-ch6-du "1.4 MB">
+<!ENTITY intltool-ch6-sbu "0.1 SBU">
+
 <!ENTITY iproute2-version "3.7.0">
 <!ENTITY iproute2-size "391 KB">
 <!ENTITY iproute2-url "&kernel;linux/utils/net/iproute2/iproute2-&iproute2-version;.tar.xz">
@@ -317,6 +341,14 @@
 <!ENTITY lfs-bootscripts-home " ">
 <!ENTITY lfs-bootscripts-ch7-du "BOOTSCRIPTS-INSTALL-KB KB"> <!-- Updated in Makefile -->
 <!ENTITY lfs-bootscripts-ch7-sbu "less than 0.1 SBU">
+
+<!ENTITY libcap2-version "2.22">
+<!ENTITY libcap2-size "66 KB">
+<!ENTITY libcap2-url "http://ftp.de.debian.org/debian/pool/main/libc/libcap2/libcap2_&libcap2-version;.orig.tar.gz">
+<!ENTITY libcap2-md5 "b4896816b626bea445f0b3849bdd4077">
+<!ENTITY libcap2-home " ">
+<!ENTITY libcap2-ch6-du "1.3 MB">
+<!ENTITY libcap2-ch6-sbu "0.1 SBU">
 
 <!ENTITY libpipeline-version "1.2.2">
 <!ENTITY libpipeline-size "733 KB">

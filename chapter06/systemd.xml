@@ -5,28 +5,26 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-system-udev" role="wrap">
-  <?dbhtml filename="udev.html"?>
+<sect1 id="ch-system-systemd" role="wrap">
+  <?dbhtml filename="systemd.html"?>
 
   <sect1info condition="script">
-    <productname>udev</productname>
+    <productname>systemd</productname>
     <productnumber>&systemd-version;</productnumber>
     <address>&systemd-url;</address>
   </sect1info>
 
-  <title>Udev-&systemd-version; (Extracted from systemd-&systemd-version;)</title>
+  <title>Systemd-&systemd-version;</title>
 
-  <indexterm zone="ch-system-udev">
-    <primary sortas="a-Udev">Udev</primary>
+  <indexterm zone="ch-system-systemd">
+    <primary sortas="a-Systemd">Systemd</primary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
-    <para>The Udev package contains programs for dynamic creation of device
-    nodes.  The development of udev has been merged with systemd, but
-    most of systemd is incompatible with LFS.  Here we build and install just
-    the needed udev files.</para>
+    <para>The Systemd package contains programs for controlling the startup,
+    running, and shutdown of the system.</para>
 
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
@@ -40,46 +38,35 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Udev</title>
+    <title>Installation of Systemd</title>
 
-    <note><para>This package is a little different from other packages.  The
-    initial package that is extracted is
-    <filename>systemd-&systemd-version;.tar.xz</filename> even though the
-    application we are installing is udev. After changing to the
-    systemd directory, follow the instructions below.</para></note>
+    <para>Prepare Systemd for compilation:</para>
 
-    <para>The udev-lfs tarball contains LFS-specific files used to build
-    Udev. Unpack it into the systemd source directory:</para>
-
-<screen><userinput remap="pre">tar -xvf ../&udev-lfs;.tar.bz2</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --localstatedir=/var \
+            --libexecdir=/usr/lib \
+            --with-rootprefix= \
+            --with-rootlibdir=/lib \
+            --with-kbd-loadkeys=/bin/loadkeys \
+            --with-kbd-setfont=/bin/setfont \
+            --enable-split-usr \
+            --disable-static \
+            --disable-gudev \
+            --without-python</userinput></screen>
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">make -f &udev-lfs;/Makefile.lfs</userinput></screen>
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>To test the results, issue:</para>
+
+<screen><userinput remap="test">make check</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make -f &udev-lfs;/Makefile.lfs install</userinput></screen>
+<screen><userinput remap="install">make install</userinput></screen>
 
-    <caution><para>There are several places within the
-    <application>systemd</application> source code that have explicit directory
-    paths embedded.  For instance, the binary version of the hardware
-    database's path and file name used at run time,
-    <filename>/etc/udev/hwdb.bin</filename>, cannot be changed without explict
-    changes to the source code.</para></caution>
-
-    <para>Now initialize the hardware database:</para>
-
-<screen><userinput remap="install">build/udevadm hwdb --update</userinput></screen>
-
-    <para>Finally set up the persistent network udev rules.  This task will be
-    explained in detail in <xref linkend='stable-net-names'/>.  Note that the
-    <filename class='directory'>/sys</filename> and <filename
-    class='directory'>/proc</filename> filesystems must be mounted in the
-    chroot environment as explained at the beginning of this chapter for the
-    following script to work.</para>
-
-<screen><userinput remap="install">bash &udev-lfs;/init-net-rules.sh</userinput></screen>
   </sect2>
 
   <sect2 id="contents-udev" role="content">
@@ -87,16 +74,16 @@
 
     <segmentedlist>
       <segtitle>Installed programs</segtitle>
-      <segtitle>Installed libraries</segtitle>
-      <segtitle>Installed directories</segtitle>
 
       <seglistitem>
-        <seg>accelerometer, ata_id, cdrom_id, collect, mtd_probe,
-         scsi_id, v4l_id, udevadm, and udevd</seg>
+        <seg>hostnamectl, journalctl, localectl, loginctl, systemctl,
+             systemd-analyze, systemd-ask-password, systemd-cat,
+             systemd-cgls, systemd-cgtop, systemd-coredumpctl,
+             systemctl-delta, systemd-detect-virt, systemd-inhibit,
+             systemd-machine-id-setup, systemd-notify, systemd-nspawn,
+             systemd-stdio-bridge, systemd-tmpfiles,
+             systemd-tty-ask-password-agent, timedatectl, udevadm</seg>
 
-        <seg>libudev.so</seg>
-
-        <seg>/etc/udev, /lib/udev, /lib/firmware, /usr/share/doc/udev</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -105,48 +92,212 @@
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
-      <varlistentry id="ata_id">
-        <term><command>ata_id</command></term>
+      <varlistentry id="hostnamectl">
+        <term><command>hostnamectl</command></term>
         <listitem>
-          <para>Provides Udev with a unique string and
-          additional information (uuid, label) for an ATA drive</para>
-          <indexterm zone="ch-system-udev ata_id">
-            <primary sortas="b-ata_id">ata_id</primary>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd hostnamectl">
+            <primary sortas="b-hostnamectl">hostnamectl</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="cdrom_id">
-        <term><command>cdrom_id</command></term>
+      <varlistentry id="journalctl">
+        <term><command>journalctl</command></term>
         <listitem>
-          <para>Provides Udev with the capabilities of a
-          CD-ROM or DVD-ROM drive</para>
-          <indexterm zone="ch-system-udev cdrom_id">
-            <primary sortas="b-cdrom_id">cdrom_id</primary>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd journalctl">
+            <primary sortas="b-journalctl">journalctl</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="collect">
-        <term><command>collect</command></term>
+      <varlistentry id="localectl">
+        <term><command>localectl</command></term>
         <listitem>
-          <para>Given an ID for the current uevent and a list of
-          IDs (for all target uevents), registers the current ID
-          and indicates whether all target IDs have been registered</para>
-          <indexterm zone="ch-system-udev collect">
-            <primary sortas="b-collect">collect</primary>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd localectl">
+            <primary sortas="b-localectl">localectl</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="scsi_id">
-        <term><command>scsi_id</command></term>
+      <varlistentry id="loginctl">
+        <term><command>loginctl</command></term>
         <listitem>
-          <para>Provides Udev with a unique SCSI identifier
-          based on the data returned from sending a SCSI INQUIRY command to
-          the specified device</para>
-          <indexterm zone="ch-system-udev scsi_id">
-            <primary sortas="b-scsi_id">scsi_id</primary>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd loginctl">
+            <primary sortas="b-loginctl">loginctl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemctl">
+        <term><command>systemctl</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemctl">
+            <primary sortas="b-systemctl">systemctl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-analyze">
+        <term><command>systemd-analyze</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemd-analyze">
+            <primary sortas="b-systemd-analyze">systemd-analyze</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-ask-password">
+        <term><command>systemd-ask-password</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemd-ask-password">
+            <primary sortas="b-systemd-ask-password">systemd-ask-password</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-cat">
+        <term><command>systemd-cat</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemd-cat">
+            <primary sortas="b-systemd-cat">systemd-cat</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-cgls">
+        <term><command>systemd-cgls</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemd-cgls">
+            <primary sortas="b-systemd-cgls">systemd-cgls</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-cgtop">
+        <term><command>systemd-cgtop</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemd-cgtop">
+            <primary sortas="b-systemd-cgtop">systemd-cgtop</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-coredumpctl">
+        <term><command>systemd-coredumpctl</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemd-coredumpctl">
+            <primary sortas="b-systemd-coredumpctl">systemd-coredumpctl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-delta">
+        <term><command>systemd-delta</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemd-delta">
+            <primary sortas="b-systemd-delta">systemd-delta</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-detect-virt">
+        <term><command>systemd-detect-virt</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemd-detect-virt">
+            <primary sortas="b-systemd-detect-virt">systemd-detect-virt</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-inhibit">
+        <term><command>systemd-inhibit</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemd-inhibit">
+            <primary sortas="b-systemd-inhibit">systemd-inhibit</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-machine-id-setup">
+        <term><command>systemd-machine-id-setup</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemd-machine-id-setup">
+            <primary sortas="b-systemd-machine-id-setup">systemd-machine-id-setup</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-notify">
+        <term><command>systemd-notify</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemd-notify">
+            <primary sortas="b-systemd-notify">systemd-notify</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-nspawn">
+        <term><command>systemd-nspawn</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemd-nspawn">
+            <primary sortas="b-systemd-nspawn">systemd-nspawn</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-stdio-bridge">
+        <term><command>systemd-stdio-bridge</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemd-stdio-bridge">
+            <primary sortas="b-systemd-stdio-bridge">systemd-stdio-bridge</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-tmpfiles">
+        <term><command>systemd-tmpfiles</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemd-tmpfiles">
+            <primary sortas="b-systemd-tmpfiles">systemd-tmpfiles</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-tty-ask-password-agent">
+        <term><command>systemd-tty-ask-password-agent</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd systemd-tty-ask-password-agent">
+            <primary sortas="b-systemd-tty-ask-password-agent">systemd-tty-ask-password-agent</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="timedatectl">
+        <term><command>timedatectl</command></term>
+        <listitem>
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd timedatectl">
+            <primary sortas="b-timedatectl">timedatectl</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -154,45 +305,9 @@
       <varlistentry id="udevadm">
         <term><command>udevadm</command></term>
         <listitem>
-          <para>Generic udev administration tool: controls the udevd daemon,
-          provides info from the Udev database, monitors uevents, waits for
-          uevents to finish, tests Udev configuration, and triggers uevents
-          for a given device</para>
-          <indexterm zone="ch-system-udev udevadm">
+          <para>To be completed</para>
+          <indexterm zone="ch-system-systemd udevadm">
             <primary sortas="b-udevadm">udevadm</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="udevd">
-        <term><command>udevd</command></term>
-        <listitem>
-          <para>A daemon that listens for uevents on the netlink socket,
-          creates devices and runs the configured external programs in
-          response to these uevents</para>
-          <indexterm zone="ch-system-udev udevd">
-            <primary sortas="b-udevd">udevd</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libudev">
-        <term><filename class="libraryfile">libudev</filename></term>
-        <listitem>
-          <para>A library interface to udev device information</para>
-          <indexterm zone="ch-system-udev libudev">
-            <primary sortas="c-libudev">libudev</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="etc-udev">
-        <term><filename class="directory">/etc/udev</filename></term>
-        <listitem>
-          <para>Contains Udev configuration files,
-          device permissions, and rules for device naming</para>
-          <indexterm zone="ch-system-udev etc-udev">
-            <primary sortas="e-/etc/udev">/etc/udev</primary>
           </indexterm>
         </listitem>
       </varlistentry>
