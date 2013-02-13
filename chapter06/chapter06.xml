@@ -52,6 +52,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="attr.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="autoconf.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="automake.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dbus.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="diffutils.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gawk.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="findutils.xml"/>

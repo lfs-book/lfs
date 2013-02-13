@@ -249,6 +249,10 @@
     </listitem>
 
     <listitem>
+      <para>D-Bus-&dbus-version;</para>
+    </listitem>
+
+    <listitem>
       <para>Expat-&expat-version;</para>
     </listitem>
 

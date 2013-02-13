@@ -324,6 +324,42 @@
         </seglistitem>
       </segmentedlist>
 
+<!-- Begin D-Bus dependency info -->
+  <bridgehead renderas="sect2" id="dbus-dep">D-Bus</bridgehead>
+
+      <segmentedlist>
+        <segtitle>&dependencies;</segtitle>
+
+        <seglistitem>
+         <seg>Bash, Coreutils, Diffutils, Expat, GCC, Grep, Make, and
+         Sed</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&testsuites;</segtitle>
+
+        <seglistitem>
+          <seg>D-Bus Glib Bindings, Python</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&before;</segtitle>
+
+        <seglistitem>
+          <seg>Systemd</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&external;</segtitle>
+
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
 <!-- Begin Diffutils dependency info -->
   <bridgehead renderas="sect2" id="diffutils-dep">Diffutils</bridgehead>
 

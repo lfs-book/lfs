@@ -93,6 +93,13 @@
       </listitem>
 
       <listitem>
+        <para>D-Bus</para>
+
+        <para>D-Bus is a message bus system, a simple way for applications to
+        communicate with one another; it is required by Systemd.</para>
+      </listitem>
+
+      <listitem>
         <para>DejaGNU</para>
 
         <para>This package contains a framework for testing other programs.

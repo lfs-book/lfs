@@ -40,7 +40,7 @@
       <itemizedlist>
         <listitem>
           <para>[matthew] - Added full build of Systemd including its remaining
-          dependencies (attr, gperf, intltool and libcap2).</para>
+          dependencies (attr, dbus, gperf, intltool and libcap2).</para>
         </listitem>
       </itemizedlist>
     </listitem>

@@ -96,6 +96,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>D-Bus (&dbus-version;) - <token>&dbus-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&dbus-home;"/></para>
+        <para>Download: <ulink url="&dbus-url;"/></para>
+        <para>MD5 sum: <literal>&dbus-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>DejaGNU (&dejagnu-version;) - <token>&dejagnu-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&dejagnu-home;"/></para>
