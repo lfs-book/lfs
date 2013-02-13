@@ -96,7 +96,7 @@ install -v -m644 -D doc/I18N-HOWTO \
       <varlistentry id="intltool-extract">
         <term><command>intltool-extract</command></term>
         <listitem>
-          <para>Generates header files that can be read by <command>gettext.</command></para>
+          <para>Generates header files that can be read by <command>gettext</command>.</para>
           <indexterm zone="ch-system-intltool intltool-extract">
             <primary sortas="b-intltool-extract">intltool-extract</primary>
           </indexterm>
