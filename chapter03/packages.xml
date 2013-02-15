@@ -357,11 +357,11 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Libcap2 (&libcap2-version;) - <token>&libcap2-size;</token>:</term>
+      <term>Libcap2 (&libcap-version;) - <token>&libcap-size;</token>:</term>
       <listitem>
-        <para>Home page: <ulink url="&libcap2-home;"/></para>
-        <para>Download: <ulink url="&libcap2-url;"/></para>
-        <para>MD5 sum: <literal>&libcap2-md5;</literal></para>
+        <para>Home page: <ulink url="&libcap-home;"/></para>
+        <para>Download: <ulink url="&libcap-url;"/></para>
+        <para>MD5 sum: <literal>&libcap-md5;</literal></para>
       </listitem>
     </varlistentry>
 
@@ -568,11 +568,11 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Sysklogd (&sysklogd-version;) - <token>&sysklogd-size;</token>:</term>
+      <term>Sysvinit (&sysvinit-version;) - <token>&sysvinit-size;</token>:</term>
       <listitem>
-        <para>Home page: <ulink url="&sysklogd-home;"/></para>
-        <para>Download: <ulink url="&sysklogd-url;"/></para>
-        <para>MD5 sum: <literal>&sysklogd-md5;</literal></para>
+        <para>Home page: <ulink url="&sysvinit-home;"/></para>
+        <para>Download: <ulink url="&sysvinit-url;"/></para>
+        <para>MD5 sum: <literal>&sysvinit-md5;</literal></para>
       </listitem>
     </varlistentry>
 

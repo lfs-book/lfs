@@ -350,13 +350,13 @@
 <!ENTITY lfs-bootscripts-ch7-du "BOOTSCRIPTS-INSTALL-KB KB"> <!-- Updated in Makefile -->
 <!ENTITY lfs-bootscripts-ch7-sbu "less than 0.1 SBU">
 
-<!ENTITY libcap2-version "2.22">
-<!ENTITY libcap2-size "66 KB">
-<!ENTITY libcap2-url "http://ftp.de.debian.org/debian/pool/main/libc/libcap2/libcap2_&libcap2-version;.orig.tar.gz">
-<!ENTITY libcap2-md5 "b4896816b626bea445f0b3849bdd4077">
-<!ENTITY libcap2-home " ">
-<!ENTITY libcap2-ch6-du "1.3 MB">
-<!ENTITY libcap2-ch6-sbu "0.1 SBU">
+<!ENTITY libcap-version "2.22">
+<!ENTITY libcap-size "66 KB">
+<!ENTITY libcap-url "http://ftp.de.debian.org/debian/pool/main/libc/libcap/libcap_&libcap-version;.orig.tar.gz">
+<!ENTITY libcap-md5 "b4896816b626bea445f0b3849bdd4077">
+<!ENTITY libcap-home " ">
+<!ENTITY libcap-ch6-du "1.3 MB">
+<!ENTITY libcap-ch6-sbu "0.1 SBU">
 
 <!ENTITY libpipeline-version "1.2.2">
 <!ENTITY libpipeline-size "733 KB">
@@ -527,14 +527,6 @@
 <!ENTITY shadow-ch6-du "42 MB">
 <!ENTITY shadow-ch6-sbu "0.2 SBU">
 
-<!ENTITY sysklogd-version "1.5">
-<!ENTITY sysklogd-size "85 KB">
-<!ENTITY sysklogd-url "http://www.infodrom.org/projects/sysklogd/download/sysklogd-&sysklogd-version;.tar.gz">
-<!ENTITY sysklogd-md5 "e053094e8103165f98ddafe828f6ae4b">
-<!ENTITY sysklogd-home "http://www.infodrom.org/projects/sysklogd/">
-<!ENTITY sysklogd-ch6-du "0.6 MB">
-<!ENTITY sysklogd-ch6-sbu "less than 0.1 SBU">
-
 <!ENTITY systemd-version "197">
 <!ENTITY systemd-size    "2,012 KB">
 <!ENTITY systemd-url     "http://www.freedesktop.org/software/systemd/systemd-&systemd-version;.tar.xz">
@@ -542,6 +534,14 @@
 <!ENTITY systemd-home    "http://www.freedesktop.org/wiki/Software/systemd/">
 <!ENTITY systemd-ch6-du  "23 MB">
 <!ENTITY systemd-ch6-sbu "0.1 SBU">
+
+<!ENTITY sysvinit-version "2.88dsf">
+<!ENTITY sysvinit-size "108 KB">
+<!ENTITY sysvinit-url "http://download.savannah.gnu.org/releases/sysvinit/sysvinit-&sysvinit-version;.tar.bz2">
+<!ENTITY sysvinit-md5 "6eda8a97b86e0a6f59dabbf25202aa6f">
+<!ENTITY sysvinit-home "http://savannah.nongnu.org/projects/sysvinit">
+<!ENTITY sysvinit-ch6-du "1.4 MB">
+<!ENTITY sysvinit-ch6-sbu "less than 0.1 SBU">
 
 <!ENTITY tar-version "1.26">
 <!ENTITY tar-size "2,285 KB">

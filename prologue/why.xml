@@ -24,7 +24,7 @@
         <para>Attr</para>
 
         <para>This package contains programs for working with extended
-        attributes on filesystem objects.  It is required by the libcap2
+        attributes on filesystem objects.  It is required by the libcap
         library.</para>
       </listitem>
 
@@ -450,18 +450,16 @@
       </listitem>
 
       <listitem>
-        <para>Sysklogd</para>
-
-        <para>This package contains programs for logging system messages,
-        such as those given by the kernel or daemon processes when unusual
-        events occur.</para>
-      </listitem>
-
-      <listitem>
         <para>Systemd</para>
 
         <para>This package contains programs for controlling the startup,
         running, and shutdown of the system.</para>
+      </listitem>
+
+      <listitem>
+        <para>Sysvinit</para>
+
+        <para>This package provides misc. utils needed by some packages.</para>
       </listitem>
 
       <listitem>

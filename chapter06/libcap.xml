@@ -5,25 +5,25 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-system-libcap2" role="wrap">
-  <?dbhtml filename="libcap2.html"?>
+<sect1 id="ch-system-libcap" role="wrap">
+  <?dbhtml filename="libcap.html"?>
 
   <sect1info condition="script">
-    <productname>libcap2</productname>
-    <productnumber>&libcap2-version;</productnumber>
-    <address>&libcap2-url;</address>
+    <productname>libcap</productname>
+    <productnumber>&libcap-version;</productnumber>
+    <address>&libcap-url;</address>
   </sect1info>
 
-  <title>Libcap2-&libcap2-version;</title>
+  <title>Libcap2-&libcap-version;</title>
 
-  <indexterm zone="ch-system-libcap2">
-    <primary sortas="a-Libcap2">Libcap2</primary>
+  <indexterm zone="ch-system-libcap">
+    <primary sortas="a-Libcap">Libcap</primary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
-    <para>The Libcap2 package implements the user-space interfaces to the POSIX
+    <para>The Libcap package implements the user-space interfaces to the POSIX
     1003.1e capabilities available in Linux kernels. These capabilities are a
     partitioning of the all powerful root privilege into a set of distinct
     privileges.</para>
@@ -33,15 +33,15 @@
       <segtitle>&diskspace;</segtitle>
 
       <seglistitem>
-        <seg>&libcap2-ch6-sbu;</seg>
-        <seg>&libcap2-ch6-du;</seg>
+        <seg>&libcap-ch6-sbu;</seg>
+        <seg>&libcap-ch6-du;</seg>
       </seglistitem>
     </segmentedlist>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Libcap2</title>
+    <title>Installation of Libcap</title>
 
     <para>Compile the package:</para>
 
@@ -55,8 +55,8 @@
 
   </sect2>
 
-  <sect2 id="contents-libcap2" role="content">
-    <title>Contents of Libcap2</title>
+  <sect2 id="contents-libcap" role="content">
+    <title>Contents of Libcap</title>
 
     <segmentedlist>
       <segtitle>Installed programs</segtitle>
@@ -64,7 +64,7 @@
 
       <seglistitem>
         <seg>capsh, getcap, getpcaps, and setcap</seg>
-        <seg>libcap2.{so,a}</seg>
+        <seg>libcap.{so,a}</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -77,7 +77,7 @@
         <term><command>capsh</command></term>
         <listitem>
           <para>A shell wrapper to explore and constrain capability support</para>
-          <indexterm zone="ch-system-libcap2 capsh">
+          <indexterm zone="ch-system-libcap capsh">
             <primary sortas="b-capsh">capsh</primary>
           </indexterm>
         </listitem>
@@ -87,7 +87,7 @@
         <term><command>getcap</command></term>
         <listitem>
           <para>Examines file capabilities</para>
-          <indexterm zone="ch-system-libcap2 getcap">
+          <indexterm zone="ch-system-libcap getcap">
             <primary sortas="b-getcap">getcap</primary>
           </indexterm>
         </listitem>
@@ -97,18 +97,18 @@
         <term><command>getpcaps</command></term>
         <listitem>
           <para>Displays the capabilities on the queried process(es)</para>
-          <indexterm zone="ch-system-libcap2 getpcaps">
+          <indexterm zone="ch-system-libcap getpcaps">
             <primary sortas="b-getpcaps">getpcaps</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libcap2">
-        <term><filename class="libraryfile">libcap2.{so,a}</filename></term>
+      <varlistentry id="libcap">
+        <term><filename class="libraryfile">libcap.{so,a}</filename></term>
         <listitem>
-          <para>Contains the libcap2 API functions</para>
-          <indexterm zone="ch-system-libcap2 libcap2">
-            <primary sortas="c-libcap2">libcap2</primary>
+          <para>Contains the libcap API functions</para>
+          <indexterm zone="ch-system-libcap libcap">
+            <primary sortas="c-libcap">libcap</primary>
           </indexterm>
         </listitem>
       </varlistentry>

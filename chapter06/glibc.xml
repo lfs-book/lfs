@@ -176,8 +176,8 @@ cp -v ../glibc-&glibc-version;/nis/rpcsvc/*.h /usr/include/rpcsvc</userinput></s
     <para>Install the configuration file and runtime directory for
     <command>nscd</command>:</para>
 
-<screen><userinput remap="install">install -v -m644 ../glibc-&glibc-version;/nscd/nscd.conf /etc/nscd.conf &amp;&amp;
-install -v -dm755 /var/cache/nscd</userinput></screen>
+<screen><userinput remap="install">cp -v ../glibc-&glibc-version;/nscd/nscd.conf /etc/nscd.conf &amp;&amp;
+mkdir -pv /var/cache/nscd</userinput></screen>
 
     <para>The locales that can make the system respond in a different language
     were not installed by the above command. None of the locales are required,
@@ -411,7 +411,7 @@ EOF</userinput></screen>
 include /etc/ld.so.conf.d/*.conf
 </literal>
 EOF
-mkdir /etc/ld.so.conf.d</userinput></screen>
+mkdir -pv /etc/ld.so.conf.d</userinput></screen>
 
   </sect2>
 

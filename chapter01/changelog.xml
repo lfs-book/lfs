@@ -35,6 +35,23 @@
       </itemizedlist>
     </listitem>
 -->
+
+    <listitem>
+      <para>2013-02-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>Move newly added components into place.</para>
+        </listitem>
+        <listitem>  
+          <para>Removed Sysklogd-1.5. Journald will be used for logging.</para>
+        </listitem>
+        <listitem>  
+          <para>Re-add Sysvinit package. Few programs are needed from the
+          package.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem>
       <para>2013-02-13</para>
       <itemizedlist>
