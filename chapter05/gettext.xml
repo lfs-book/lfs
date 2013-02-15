@@ -44,7 +44,7 @@
     <title>Installation of Gettext</title>
 
     <para>For our temporary set of tools, we only need to build and install
-    three binaries from Gettext.</para>
+    one binary from Gettext.</para>
 
     <para>Prepare Gettext for compilation:</para>
 
@@ -76,9 +76,7 @@ EMACS="no" ./configure --prefix=/tools --disable-shared</userinput></screen>
     <para>Compile the package:</para>
 
 <screen><userinput remap="make">make -C gnulib-lib
-make -C src msgfmt
-make -C src msgmerge
-make -C src xgettext</userinput></screen>
+make -C src msgfmt</userinput></screen>
 
     <para>As only one binary has been compiled, it is not possible to run the
     test suite without compiling additional support libraries from the Gettext
@@ -87,7 +85,7 @@ make -C src xgettext</userinput></screen>
 
     <para>Install the <command>msgfmt</command> binary:</para>
 
-<screen><userinput remap="install">cp -v src/{msgfmt,msgmerge,xgettext} /tools/bin</userinput></screen>
+<screen><userinput remap="install">cp -v src/msgfmt /tools/bin</userinput></screen>
 
   </sect2>
 
