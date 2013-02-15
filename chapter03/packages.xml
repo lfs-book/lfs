@@ -357,7 +357,7 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Libcap2 (&libcap-version;) - <token>&libcap-size;</token>:</term>
+      <term>Libcap (&libcap-version;) - <token>&libcap-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&libcap-home;"/></para>
         <para>Download: <ulink url="&libcap-url;"/></para>

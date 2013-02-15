@@ -269,7 +269,7 @@
     </listitem>
 
     <listitem>
-      <para>Libcap2-&libcap-version;</para>
+      <para>Libcap-&libcap-version;</para>
     </listitem>
 
     <listitem>

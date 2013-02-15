@@ -14,7 +14,7 @@
     <address>&libcap-url;</address>
   </sect1info>
 
-  <title>Libcap2-&libcap-version;</title>
+  <title>Libcap-&libcap-version;</title>
 
   <indexterm zone="ch-system-libcap">
     <primary sortas="a-Libcap">Libcap</primary>
@@ -51,7 +51,16 @@
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make RAISE_SETFCAP=no install</userinput></screen>
+<screen><userinput remap="install">make RAISE_SETFCAP=no prefix=/usr install &amp;&amp;
+chmod -v 0755 /usr/lib/libcap.so.2.22</userinput></screen>
+
+    <para>The shared library needs to be moved to
+    <filename class="directory">/lib</filename>, and as a result the
+    <filename class="extension">.so</filename> file in
+    <filename class="directory">/usr/lib</filename> will need to be recreated:</para>
+
+<screen><userinput remap="install">mv -v /usr/lib/libcap.so.* /lib &amp;&amp;
+ln -sfv ../../lib/libcap.so.2 /usr/lib/libcap.so</userinput></screen>
 
   </sect2>
 

@@ -294,7 +294,7 @@
       </listitem>
 
       <listitem>
-        <para>Libcap2</para>
+        <para>Libcap</para>
 
         <para>This package contains functions that enable root privileges to be
         partitioned into a set of distinct privileges.  It is required by
