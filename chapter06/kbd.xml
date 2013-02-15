@@ -56,8 +56,7 @@
 
     <para>Prepare Kbd for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr --datadir=/lib/kbd \
-  --disable-vlock</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr --datadir=/lib/kbd --disable-vlock</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -127,7 +126,7 @@ cp -R -v doc/* \
         <seg>chvt, deallocvt, dumpkeys, fgconsole, getkeycodes, kbdinfo,
         kbd_mode, kbdrate, loadkeys, loadunimap,
         mapscrn, openvt, psfaddtable (link to psfxtable), psfgettable (link to
-        psfxtable), psfstriptable (link to psfxtable), psfxtable, <!--resizecons,-->
+        psfxtable), psfstriptable (link to psfxtable), psfxtable, resizecons,
         setfont, setkeycodes, setleds, setmetamode,
         showconsolefont, showkey, unicode_start, and unicode_stop</seg>
         <seg>/lib/kbd</seg>
@@ -301,7 +300,7 @@ cp -R -v doc/* \
         </listitem>
       </varlistentry>
 
-  <!--<varlistentry id="resizecons">
+  <varlistentry id="resizecons">
         <term><command>resizecons</command></term>
         <listitem>
           <para>Changes the kernel idea of the console size</para>
@@ -309,7 +308,7 @@ cp -R -v doc/* \
             <primary sortas="b-resizecons">resizecons</primary>
           </indexterm>
         </listitem>
-      </varlistentry>-->
+      </varlistentry>
 
       <varlistentry id="setfont">
         <term><command>setfont</command></term>

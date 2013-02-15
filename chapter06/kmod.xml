@@ -157,17 +157,6 @@ ln -sv kmod /bin/lsmod</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libkmod">
-        <term><filename class="libraryfile">libkmod</filename></term>
-        <listitem>
-          <para>This library is used by other programs to load and unload kernel
-           modules</para>
-          <indexterm zone="ch-system-kmod">
-            <primary sortas="c-libkmod">libkmod</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
       <varlistentry id="lsmod">
         <term><command>lsmod</command></term>
         <listitem>
@@ -206,6 +195,17 @@ ln -sv kmod /bin/lsmod</userinput></screen>
           <para>Unloads modules from the running kernel</para>
           <indexterm zone="ch-system-kmod rmmod">
             <primary sortas="b-rmmod">rmmod</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libkmod">
+        <term><filename class="libraryfile">libkmod</filename></term>
+        <listitem>
+          <para>This library is used by other programs to load and unload kernel
+           modules</para>
+          <indexterm zone="ch-system-kmod">
+            <primary sortas="c-libkmod">libkmod</primary>
           </indexterm>
         </listitem>
       </varlistentry>

@@ -25,7 +25,7 @@
 
     <para>D-Bus is a message bus system, a simple way for applications to talk
     to one another. D-Bus supplies both a system daemon (for events such as
-    “new hardware device added” or “printer queue changed”) and a
+    "new hardware device added" or "printer queue changed") and a
     per-user-login-session daemon (for general IPC needs among user
     applications). Also, the message bus is built on top of a general one-to-one
     message passing framework, which can be used by any two applications to
@@ -46,22 +46,15 @@
   <sect2 role="installation">
     <title>Installation of D-Bus</title>
 
-    <para>The D-Bus system daemon (the message bus) needs to run as a non-priveleged user, so create a suitable group and user:</para>
-
-<screen><userinput remap="pre">groupadd -g 18 messagebus
-useradd -c "D-Bus Message Daemon User" -d /var/run/dbus \
-        -u 18 -g messagebus -s /bin/false messagebus</userinput></screen>
-
     <para>Prepare D-Bus for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr \
             --sysconfdir=/etc \
             --localstatedir=/var \
-            --docdir=/usr/share/doc/dbus-&dbus-version; \
             --libexecdir=/usr/lib/dbus-1.0 \
+            --docdir=/usr/share/doc/dbus-&dbus-version; \
             --with-console-auth-dir=/run/console/ \
-            --without-systemdsystemunitdir \
-            --disable-systemd</userinput></screen>
+            --with-systemdsystemunitdir=/lib/systemd/system</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -71,23 +64,6 @@ useradd -c "D-Bus Message Daemon User" -d /var/run/dbus \
         <listitem>
           <para>This specifies the location of the ConsoleKit auth
           directory.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--without-systemdsystemunitdir</parameter></term>
-        <listitem>
-          <para>This prevents installation of Systemd unit files as Systemd
-          has not been installed yet (due to a circular dependency; Systemd
-          requires D-Bus, but D-Bus can also use Systemd functionality).</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--disable-systemd</parameter></term>
-        <listitem>
-          <para>This disables Systemd support in D-Bus, again due to the
-          circular dependency between D-Bus and Systemd.</para>
         </listitem>
       </varlistentry>
 
@@ -102,7 +78,8 @@ useradd -c "D-Bus Message Daemon User" -d /var/run/dbus \
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make install</userinput></screen>
+<screen><userinput remap="install">make install
+dbus-uuidgen --ensure</userinput></screen>
 
   </sect2>
 
@@ -112,11 +89,15 @@ useradd -c "D-Bus Message Daemon User" -d /var/run/dbus \
     <segmentedlist>
       <segtitle>Installed programs</segtitle>
       <segtitle>Installed libraries</segtitle>
+      <segtitle>Installed directories</segtitle>
 
       <seglistitem>
-        <seg>dbus-cleanup-sockets, dbus-daemon, dbus-monitor, dbus-send,
-        dbus-uuidgen</seg>
+        <seg>dbus-cleanup-sockets, dbus-daemon, dbus-launch, dbus-monitor,
+        dbus-send and dbus-uuidgen</seg>
         <seg>libdbus-1.{so,a}</seg>
+        <seg>/etc/dbus-1, /usr/include/dbus-1.0, /usr/lib/dbus-1.0,
+        /usr/share/dbus-1, /usr/share/doc/dbus-&dbus-version; and
+        /var/lib/dbus</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -141,6 +122,17 @@ useradd -c "D-Bus Message Daemon User" -d /var/run/dbus \
           <para>The D-Bus message bus daemon.</para>
           <indexterm zone="ch-system-dbus dbus-daemon">
             <primary sortas="b-dbus-daemon">dbus-daemon</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="dbus-launch">
+        <term><command>dbus-launch</command></term>
+        <listitem>
+          <para>Starts <command>dbus-daemon</command> from a shell
+          script.</para>
+          <indexterm zone="ch-system-dbus dbus-launch">
+            <primary sortas="b-dbus-launch">dbus-launch</primary>
           </indexterm>
         </listitem>
       </varlistentry>

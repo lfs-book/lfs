@@ -41,15 +41,27 @@
   <sect2 role="installation">
     <title>Installation of Sysvinit</title>
 
-    <para>Compile the package:</para>
+    <para>Since LFS uses Systemd as init system, this package
+    is needed for few utils that are not present in other
+    packages. Compile the package:</para>
 
-<screen><userinput remap="make">make -C src</userinput></screen>
+<screen><userinput remap="make">make -C src fstab-decode
+make -C src killall5
+make -C src last</userinput></screen>
 
     <para>This package does not come with a test suite.</para>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make -C src install</userinput></screen>
+<screen><userinput remap="install">cp -v src/{fstab-decode,killall5} /sbin
+ln -sv ../sbin/killall5 /bin/pidof
+cp -v src/last /usr/bin
+ln -sv last /usr/bin/lastb</userinput></screen>
+
+    <para>Install manual pages for the installed programs:</para>
+
+<screen><userinput remap="install">cp -v man/{last,lastb}.1 /usr/share/man/man1
+cp -v man/{fstab-decode,killall5,pidof}.8 /usr/share/man/man8</userinput></screen>
 
   </sect2>
 
