@@ -121,46 +121,6 @@
       initially.</para> </sect3>
 
     <sect3>
-      <title>Udev Bootscripts</title>
-
-      <para>The first LFS bootscript,
-      <filename>/etc/init.d/mountvirtfs</filename> will copy any devices
-      located in <filename class="directory">/lib/udev/devices</filename> to
-      <filename class="directory">/dev</filename>. This is necessary because
-      some devices, directories, and symlinks are needed before the dynamic
-      device handling processes are available during the early stages of
-      booting a system, or are required by <command>udevd</command> itself.
-      Creating static device nodes in <filename
-      class="directory">/lib/udev/devices</filename> also provides an easy
-      workaround for devices that are not supported by the dynamic device
-      handling infrastructure.</para>
-
-      <para>The <filename>/etc/rc.d/init.d/udev</filename> initscript starts
-      <command>udevd</command>, triggers any "coldplug" devices that have
-      already been created by the kernel and waits for any rules to complete.
-      The script also unsets the uevent handler from the default of
-      <filename>/sbin/hotplug </filename>.  This is done because the kernel no
-      longer needs to call out to an external binary.  Instead
-      <command>udevd</command> will listen on a netlink socket for uevents that
-      the kernel raises.</para>
-
-      <para>The <command>/etc/rc.d/init.d/udev_retry</command> initscript takes
-      care of re-triggering events for subsystems whose rules may rely on
-      filesystems that are not mounted until the <command>mountfs</command>
-      script is run (in particular, <filename class="directory">/usr</filename>
-      and <filename class="directory">/var</filename> may cause this).  This
-      script runs after the <command>mountfs</command> script, so those rules
-      (if re-triggered) should succeed the second time around.  It is
-      configured from the <filename>/etc/sysconfig/udev_retry</filename> file;
-      any words in this file other than comments are considered subsystem names
-      to trigger at retry time.  To find the subsystem of a device, use
-      <command>udevadm info --attribute-walk &lt;device&gt;</command> where
-      &lt;device&gt; is a an absolure path in /dev or /sys such as /dev/sr0 or
-      /sys/class/rtc.</para>
-
-    </sect3>
-
-    <sect3>
       <title>Module Loading</title>
 
       <para>Device drivers compiled as modules may have aliases built into them.
