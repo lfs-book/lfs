@@ -62,7 +62,7 @@
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make install install-dev install-lib &amp;&amp;
+<screen><userinput remap="install">make install install-dev install-lib
 chmod -v 0755 /lib/libattr.so.1.1.0</userinput></screen>
 
     <para>Remove static library and libtool archive from
@@ -74,7 +74,7 @@ chmod -v 0755 /lib/libattr.so.1.1.0</userinput></screen>
     <para>Change default location for the libtool archive and recreate
     symlink to shared library since it points to removed file:</para>
 
-<screen><userinput remap="install">sed -i 's@/lib@/usr/lib@' /usr/lib/libattr.la &amp;&amp;
+<screen><userinput remap="install">sed -i 's@/lib@/usr/lib@' /usr/lib/libattr.la
 ln -sfv ../../lib/libattr.so.1 /usr/lib/libattr.so</userinput></screen>
 
   </sect2>

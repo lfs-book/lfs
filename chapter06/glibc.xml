@@ -176,7 +176,7 @@ cp -v ../glibc-&glibc-version;/nis/rpcsvc/*.h /usr/include/rpcsvc</userinput></s
     <para>Install the configuration file and runtime directory for
     <command>nscd</command>:</para>
 
-<screen><userinput remap="install">cp -v ../glibc-&glibc-version;/nscd/nscd.conf /etc/nscd.conf &amp;&amp;
+<screen><userinput remap="install">cp -v ../glibc-&glibc-version;/nscd/nscd.conf /etc/nscd.conf
 mkdir -pv /var/cache/nscd</userinput></screen>
 
     <para>The locales that can make the system respond in a different language

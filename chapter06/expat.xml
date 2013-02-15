@@ -59,7 +59,7 @@
 
     <para>If desired, install the documentation:</para>
 
-<screen><userinput remap="install">install -v -dm755 /usr/share/doc/expat-&expat-version; &amp;&amp;
+<screen><userinput remap="install">install -v -dm755 /usr/share/doc/expat-&expat-version;
 install -v -m644 doc/*.{html,png,css} /usr/share/doc/expat-&expat-version;</userinput></screen>
 
   </sect2>
@@ -85,7 +85,6 @@ install -v -m644 doc/*.{html,png,css} /usr/share/doc/expat-&expat-version;</user
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="xmlwf">
-         <!-- Don't remove the extra space, it prevents a FOP warning. -->
         <term><command>xmlwf </command></term>
         <listitem>
           <para>is a non-validating utility to check whether or not
