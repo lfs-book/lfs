@@ -121,6 +121,33 @@
 
   </sect2>
 
+  <sect2 role="installation">
+    <title>Installation of XML::Parser</title>
+
+    <para>Extract the XML::Parser tarball and change to the extracted
+    directory:</para>
+
+<screen><userinput remap="pre">tar xf ../XML-Parser-&xml-parser-version;.tar.gz
+cd XML-Parser-&xml-parser-version;</userinput></screen>
+
+    <para>Prepare XML::Parser for compilation:</para>
+
+<screen><userinput remap="configure">perl Makefile.PL</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>To test the results, issue:</para>
+
+<screen><userinput remap="test">make test</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+  </sect2>
+
   <sect2 id="contents-perl" role="content">
     <title>Contents of Perl</title>
 
