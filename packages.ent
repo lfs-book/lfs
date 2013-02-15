@@ -474,8 +474,8 @@
 <!ENTITY perl-home "http://www.perl.org/">
 <!ENTITY perl-ch5-du "237 MB">
 <!ENTITY perl-ch5-sbu "1.8 SBU">
-<!ENTITY perl-ch6-du "247 MB">
-<!ENTITY perl-ch6-sbu "7.5 SBU">
+<!ENTITY perl-ch6-du "250 MB">
+<!ENTITY perl-ch6-sbu "7.6 SBU">
 
 <!ENTITY pkgconfig-version "0.28">
 <!ENTITY pkgconfig-size "1,892 KB">
@@ -602,8 +602,6 @@
 <!ENTITY xml-parser-url "http://search.cpan.org/CPAN/authors/id/T/TO/TODDR/XML-Parser-&xml-parser-version;.tar.gz">
 <!ENTITY xml-parser-md5 "c320d2ffa459e6cdc6f9f59c1185855e">
 <!ENTITY xml-parser-home "https://github.com/chorny/XML-Parser">
-<!ENTITY xml-parser-ch6-du "2.5 MB">
-<!ENTITY xml-parser-ch6-sbu "0.1 SBU">
 
 <!ENTITY xz-version "5.0.4">
 <!ENTITY xz-size "894 KB">
