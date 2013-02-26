@@ -348,15 +348,6 @@
     </varlistentry>
 
     <varlistentry>
-      <term>LFS-Bootscripts (&lfs-bootscripts-version;) - <token>&lfs-bootscripts-size;</token>:</term>
-      <listitem>
-        <para>Home page: <ulink url="&lfs-bootscripts-home;"/></para>
-        <para>Download: <ulink url="&lfs-bootscripts-url;"/></para>
-        <para>MD5 sum: <literal>&lfs-bootscripts-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
       <term>Libcap (&libcap-version;) - <token>&libcap-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&libcap-home;"/></para>
