@@ -84,15 +84,15 @@
 <!ENTITY check-ch5-du "6.9 MB">
 <!ENTITY check-ch5-sbu "0.1 SBU">
 
-<!ENTITY coreutils-version "8.20">
-<!ENTITY coreutils-size "5,150 KB">
+<!ENTITY coreutils-version "8.21">
+<!ENTITY coreutils-size "5,248 KB">
 <!ENTITY coreutils-url "&gnu;coreutils/coreutils-&coreutils-version;.tar.xz">
-<!ENTITY coreutils-md5 "3d69af8f561fce512538a9fe85f147ff">
+<!ENTITY coreutils-md5 "065ba41828644eca5dd8163446de5d64">
 <!ENTITY coreutils-home "&gnu-software;coreutils/">
-<!ENTITY coreutils-ch5-du "126 MB">
-<!ENTITY coreutils-ch5-sbu "0.7 SBU">
-<!ENTITY coreutils-ch6-du "154 MB">
-<!ENTITY coreutils-ch6-sbu "4.0 SBU">
+<!ENTITY coreutils-ch5-du "133 MB">
+<!ENTITY coreutils-ch5-sbu "0.8 SBU">
+<!ENTITY coreutils-ch6-du "116 MB">
+<!ENTITY coreutils-ch6-sbu "3.4 SBU">
 
 <!ENTITY dbus-version "1.6.8">
 <!ENTITY dbus-size "1,884 KB">
@@ -148,10 +148,10 @@
 <!ENTITY expect-ch5-du "4.4 MB">
 <!ENTITY expect-ch5-sbu "0.1 SBU">
 
-<!ENTITY file-version "5.11">
-<!ENTITY file-size "596 KB">
+<!ENTITY file-version "5.13">
+<!ENTITY file-size "627 KB">
 <!ENTITY file-url "ftp://ftp.astron.com/pub/file/file-&file-version;.tar.gz">
-<!ENTITY file-md5 "16a407bd66d6c7a832f3a5c0d609c27b">
+<!ENTITY file-md5 "d60c1364ba956eff7d21f8250808fc6d">
 <!ENTITY file-home "http://www.darwinsys.com/file/">
 <!ENTITY file-ch5-du "12.4 MB">
 <!ENTITY file-ch5-sbu "0.1 SBU">
@@ -232,10 +232,10 @@
 <!ENTITY glibc-ch6-du "852 MB">
 <!ENTITY glibc-ch6-sbu "17.6 SBU">
 
-<!ENTITY gmp-version "5.1.0">
-<!ENTITY gmp-size "1,764 KB">
+<!ENTITY gmp-version "5.1.1">
+<!ENTITY gmp-size "1,771 KB">
 <!ENTITY gmp-url "ftp://ftp.gmplib.org/pub/gmp-&gmp-version;/gmp-&gmp-version;.tar.xz">
-<!ENTITY gmp-md5 "69fd511e435f81a0334f14f00c7d77b3">
+<!ENTITY gmp-md5 "485b1296e6287fa381e6015b19767989">
 <!ENTITY gmp-home "&gnu-software;gmp/">
 <!ENTITY gmp-ch5-du "39 MB">
 <!ENTITY gmp-ch5-sbu "1.5 SBU">
@@ -260,10 +260,10 @@
 <!ENTITY grep-ch6-du "30 MB">
 <!ENTITY grep-ch6-sbu "0.4 SBU">
 
-<!ENTITY groff-version "1.22.1">
-<!ENTITY groff-size "3,920 KB">
+<!ENTITY groff-version "1.22.2">
+<!ENTITY groff-size "3,926 KB">
 <!ENTITY groff-url "&gnu;groff/groff-&groff-version;.tar.gz">
-<!ENTITY groff-md5 "875c9c628b8b78a0c325000a43ebb964">
+<!ENTITY groff-md5 "9f4cd592a5efc7e36481d8d8d8af6d16">
 <!ENTITY groff-home "&gnu-software;groff/">
 <!ENTITY groff-ch6-du "83 MB">
 <!ENTITY groff-ch6-sbu "0.5 SBU">
@@ -310,10 +310,10 @@
 <!ENTITY intltool-ch6-du "1.4 MB">
 <!ENTITY intltool-ch6-sbu "0.1 SBU">
 
-<!ENTITY iproute2-version "3.7.0">
-<!ENTITY iproute2-size "391 KB">
+<!ENTITY iproute2-version "3.8.0">
+<!ENTITY iproute2-size "398 KB">
 <!ENTITY iproute2-url "&kernel;linux/utils/net/iproute2/iproute2-&iproute2-version;.tar.xz">
-<!ENTITY iproute2-md5 "b07241b267036de9a79ca5b69acf8593">
+<!ENTITY iproute2-md5 "951622fd770428116dc165acba375414">
 <!ENTITY iproute2-home "&kernel;linux/utils/net/iproute2/">
 <!ENTITY iproute2-ch6-du "7.3 MB">
 <!ENTITY iproute2-ch6-sbu "0.1 SBU">
@@ -375,13 +375,13 @@
 <!ENTITY libtool-ch6-sbu "3.0 SBU">
 
 <!ENTITY linux-major-version "3">
-<!ENTITY linux-minor-version "7">
-<!ENTITY linux-patch-version "5">
-<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!-- <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;"> -->
-<!ENTITY linux-size "68,437 KB">
+<!ENTITY linux-minor-version "8">
+<!--<!ENTITY linux-patch-version "9">-->
+<!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">-->
+<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">
+<!ENTITY linux-size "69,326 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "ae355001775bc841132fe0fea2f354d4">
+<!ENTITY linux-md5 "1c738edfc54e7c65faeb90c436104e2f">
 <!ENTITY linux-home "http://www.kernel.org/">
 <!ENTITY linux-ch8-du "540 - 800 MB">
 <!ENTITY linux-ch8-sbu "1.0 - 5.0 SBU">
@@ -419,10 +419,10 @@
 <!ENTITY man-db-ch6-du "27 MB">
 <!ENTITY man-db-ch6-sbu "0.5 SBU">
 
-<!ENTITY man-pages-version "3.46">
-<!ENTITY man-pages-size "1,092 KB">
+<!ENTITY man-pages-version "3.47">
+<!ENTITY man-pages-size "1,108 KB">
 <!ENTITY man-pages-url "http://www.kernel.org/pub/linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "eba99dc469e526c3de2e91fe0a0ddc43">
+<!ENTITY man-pages-md5 "2046259794d3003f4dc4dbe4b688ba2f">
 <!ENTITY man-pages-home "http://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-ch6-du "22 MB">
 <!ENTITY man-pages-ch6-sbu "less than 0.1 SBU">
@@ -562,15 +562,15 @@
 <!ENTITY tcl-ch5-du "33 MB">
 <!ENTITY tcl-ch5-sbu "0.4 SBU">
 
-<!ENTITY texinfo-version "4.13a">
-<!ENTITY texinfo-size "2,687 KB">
-<!ENTITY texinfo-url "&gnu;texinfo/texinfo-&texinfo-version;.tar.gz">
-<!ENTITY texinfo-md5 "71ba711519209b5fb583fed2b3d86fcb">
+<!ENTITY texinfo-version "5.0">
+<!ENTITY texinfo-size "3,000 KB">
+<!ENTITY texinfo-url "&gnu;texinfo/texinfo-&texinfo-version;.tar.xz">
+<!ENTITY texinfo-md5 "ef2fad34c71ddc95b20c7d6a08c0d7a6">
 <!ENTITY texinfo-home "&gnu-software;texinfo/">
-<!ENTITY texinfo-ch5-du "24 MB">
-<!ENTITY texinfo-ch5-sbu "0.2 SBU">
-<!ENTITY texinfo-ch6-du "24 MB">
-<!ENTITY texinfo-ch6-sbu "0.2 SBU">
+<!ENTITY texinfo-ch5-du "94 MB">
+<!ENTITY texinfo-ch5-sbu "0.3 SBU">
+<!ENTITY texinfo-ch6-du "101 MB">
+<!ENTITY texinfo-ch6-sbu "0.6 SBU">
 
 <!ENTITY tzdata-version "2012j">
 <!ENTITY tzdata-size "209 KB">
