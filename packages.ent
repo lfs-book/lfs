@@ -303,11 +303,11 @@
 <!ENTITY less-ch6-sbu "less than 0.1 SBU">
 
 <!ENTITY lfs-bootscripts-version "20130123">                 <!-- Scripts depend on this format -->
-<!ENTITY lfs-bootscripts-size "BOOTSCRIPTS-SIZE KB">         <!-- Updated in Makefile -->
+<!ENTITY lfs-bootscripts-size "33 KB">         <!-- Updated in Makefile -->
 <!ENTITY lfs-bootscripts-url "&downloads-root;lfs-bootscripts-&lfs-bootscripts-version;.tar.bz2">
-<!ENTITY lfs-bootscripts-md5 "BOOTSCRIPTS-MD5SUM">           <!-- Updated in Makefile -->
+<!ENTITY lfs-bootscripts-md5 "2a53fcba68e9f5ed6770c47f05987959"> 
 <!ENTITY lfs-bootscripts-home " ">
-<!ENTITY lfs-bootscripts-ch7-du "BOOTSCRIPTS-INSTALL-KB KB"> <!-- Updated in Makefile -->
+<!ENTITY lfs-bootscripts-ch7-du "256 KB"> 
 <!ENTITY lfs-bootscripts-ch7-sbu "less than 0.1 SBU">
 
 <!ENTITY libpipeline-version "1.2.2">
