@@ -40,6 +40,10 @@
       <para>2013-03-03</para>
       <itemizedlist>
         <listitem>
+          <para>[matthew] - Have DBus use the same
+          <filename>machine-id</filename> file as Systemd.</para>
+        </listitem>
+        <listitem>
           <para>[matthew] - Improve the tagging and placement of some post
           install instructions for DBus and Systemd. Thanks to Pierre Labastie
           for the report.</para>

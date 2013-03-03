@@ -78,8 +78,12 @@
 
     <para>Install the package:</para>
 
-<screen><userinput>make install
-dbus-uuidgen --ensure</userinput></screen>
+<screen><userinput remap="install">make install</userinput></screen>
+
+    <para>Create a symlink, so that DBus and Systemd can use the same
+    <filename>machine-id</filename> file:</para>
+
+<screen><userinput>ln -s /etc/machine-id /var/lib/dbus</userinput></screen>
 
   </sect2>
 
