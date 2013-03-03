@@ -105,11 +105,6 @@
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>Create the <filename>/etc/machine-id</filename> file needed by
-    Journald:</para>
-
-<screen><userinput remap="install">systemd-machine-id-setup</userinput></screen>
-
     <para>Create the Sysvinit compatibility symlinks, so Systemd is used
     as the default init system:</para>
 
@@ -125,9 +120,14 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
 
 <screen><userinput remap="install">mkdir -pv /var/log/journal</userinput></screen>
 
-    <para>Remove reference to a non-existent group:</para>
+    <para>Remove a reference to a non-existent group:</para>
 
 <screen><userinput remap="install">sed -i "s@0775 root lock@0755 root root@g" /usr/lib/tmpfiles.d/legacy.conf</userinput></screen>
+
+    <para>Create the <filename>/etc/machine-id</filename> file needed by
+    Journald:</para>
+
+<screen><userinput>systemd-machine-id-setup</userinput></screen>
 
   </sect2>
 

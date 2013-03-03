@@ -37,6 +37,17 @@
 -->
 
     <listitem>
+      <para>2013-03-03</para>
+      <itemizedlist>
+        <listitem>
+          <para>[matthew] - Improve the tagging and placement of some post
+          install instructions for DBus and Systemd. Thanks to Pierre Labastie
+          for the report.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2013-03-01</para>
       <itemizedlist>
         <listitem>

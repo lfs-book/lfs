@@ -78,7 +78,7 @@
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make install
+<screen><userinput>make install
 dbus-uuidgen --ensure</userinput></screen>
 
   </sect2>
