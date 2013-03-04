@@ -34,14 +34,11 @@
      </listitem>
   </itemizedlist>
 
-  <para>Third, configuring hostname, keyboard layout and system clock.</para>
+  <para>Third, configuring the hostname, and keyboard layout.</para>
 
   <itemizedlist>
      <listitem>
        <para><xref linkend="ch-scripts-hostname" role="."/></para>
-     </listitem>
-     <listitem>
-       <para><xref linkend="ch-scripts-setclock" role="."/></para>
      </listitem>
      <listitem>
        <para><xref linkend="ch-scripts-console" role="."/></para>

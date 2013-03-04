@@ -346,27 +346,10 @@ unset ZONEINFO</userinput></screen>
     <para>Then create the <filename>/etc/localtime</filename> file by
     running:</para>
 
-<screen><userinput>cp -v --remove-destination /usr/share/zoneinfo/<replaceable>&lt;xxx&gt;</replaceable> \
-    /etc/localtime</userinput></screen>
+<screen><userinput>ln -s /etc/localtime /usr/share/zoneinfo/<replaceable>&lt;xxx&gt;</replaceable></userinput></screen>
 
     <para>Replace <replaceable>&lt;xxx&gt;</replaceable> with the name of the
     time zone selected (e.g., Canada/Eastern).</para>
-
-    <variablelist>
-      <title>The meaning of the cp option:</title>
-
-      <varlistentry>
-        <term><parameter>--remove-destination</parameter></term>
-        <listitem>
-          <para>This is needed to force removal of the already existing symbolic
-          link. The reason for copying the file instead of using a symlink is to
-          cover the situation where <filename class="directory">/usr</filename>
-          is on a separate partition. This could be important when booted into
-          single user mode.</para>
-        </listitem>
-      </varlistentry>
-
-    </variablelist>
 
   </sect2>
 

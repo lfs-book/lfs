@@ -40,6 +40,11 @@
       <para>2013-03-04</para>
       <itemizedlist>
         <listitem>
+          <para>[matthew] - Make the <filename>/etc/localtime</filename> file a
+          symlink again, so that <command>timedatectl</command> displays the
+          timezone correctly.</para>
+        </listitem>
+        <listitem>
           <para>[matthew] - Document how to configure the virtual console under
           Systemd.</para>
         </listitem>
