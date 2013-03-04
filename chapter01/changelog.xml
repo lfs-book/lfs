@@ -37,6 +37,16 @@
 -->
 
     <listitem>
+      <para>2013-03-04</para>
+      <itemizedlist>
+        <listitem>
+          <para>[matthew] - Document how to configure the virtual console under
+          Systemd.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2013-03-03</para>
       <itemizedlist>
         <listitem>
