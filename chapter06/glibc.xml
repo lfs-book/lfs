@@ -346,7 +346,7 @@ unset ZONEINFO</userinput></screen>
     <para>Then create the <filename>/etc/localtime</filename> file by
     running:</para>
 
-<screen><userinput>ln -s /etc/localtime /usr/share/zoneinfo/<replaceable>&lt;xxx&gt;</replaceable></userinput></screen>
+<screen><userinput>ln -sv /usr/share/zoneinfo/<replaceable>&lt;xxx&gt;</replaceable> /etc/localtime</userinput></screen>
 
     <para>Replace <replaceable>&lt;xxx&gt;</replaceable> with the name of the
     time zone selected (e.g., Canada/Eastern).</para>
