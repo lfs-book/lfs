@@ -37,6 +37,17 @@
 -->
 
     <listitem>
+      <para>2013-03-24</para>
+      <itemizedlist>
+        <listitem>
+          <para>[matthew] - Create an empty
+          <filename>/etc/sysctl.conf</filename> file to prevent a boot error
+          being logged by Systemd.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2013-03-16</para>
       <itemizedlist>
         <listitem>

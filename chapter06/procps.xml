@@ -99,6 +99,20 @@ ln -sfv ../../lib/libprocps.so.1.1.0 /usr/lib/libprocps.so</userinput></screen>
 
   </sect2>
 
+  <sect2 id="conf-procps" role="configuration">
+    <title>Configuring Procps</title>
+
+    <indexterm zone="conf-procps">
+      <primary sortas="e-/etc/sysctl.conf">/etc/sysctl.conf</primary>
+    </indexterm>
+
+    <para>The <filename>/etc/sysctl.conf</filename> file needs to be present,
+    otherwise Systemd will output an error when booting:</para>
+
+<screen><userinput>touch /etc/sysctl.conf</userinput></screen>
+
+  </sect2>
+
   <sect2 id="contents-procps" role="content">
     <title>Contents of Procps-ng</title>
 
