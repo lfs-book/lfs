@@ -102,10 +102,10 @@
 <!ENTITY dbus-ch6-du "35 MB">
 <!ENTITY dbus-ch6-sbu "less than 0.4 SBU">
 
-<!ENTITY dejagnu-version "1.5">
-<!ENTITY dejagnu-size "563 KB">
+<!ENTITY dejagnu-version "1.5.1">
+<!ENTITY dejagnu-size "566 KB">
 <!ENTITY dejagnu-url "&gnu;dejagnu/dejagnu-&dejagnu-version;.tar.gz">
-<!ENTITY dejagnu-md5 "3df1cbca885e751e22d3ebd1ac64dc3c">
+<!ENTITY dejagnu-md5 "8386e04e362345f50ad169f052f4c4ab">
 <!ENTITY dejagnu-home "&gnu-software;dejagnu/">
 <!ENTITY dejagnu-ch5-du "4.1 MB">
 <!ENTITY dejagnu-ch5-sbu "less than 0.1 SBU">
@@ -368,12 +368,12 @@
 
 <!ENTITY linux-major-version "3">
 <!ENTITY linux-minor-version "8">
-<!ENTITY linux-patch-version "1">
+<!ENTITY linux-patch-version "3">
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
 <!-- <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;"> -->
-<!ENTITY linux-size "69,3292 KB">
+<!ENTITY linux-size "69,313 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "093b172f907d5455a6746418ad18f5bc">
+<!ENTITY linux-md5 "eb59b1fc7343db96e20c85a9cf2baa9f">
 <!ENTITY linux-home "http://www.kernel.org/">
 <!ENTITY linux-ch8-du "540 - 800 MB">
 <!ENTITY linux-ch8-sbu "1.0 - 5.0 SBU">
@@ -411,10 +411,10 @@
 <!ENTITY man-db-ch6-du "27 MB">
 <!ENTITY man-db-ch6-sbu "0.5 SBU">
 
-<!ENTITY man-pages-version "3.47">
-<!ENTITY man-pages-size "1,108 KB">
+<!ENTITY man-pages-version "3.50">
+<!ENTITY man-pages-size "1,116 KB">
 <!ENTITY man-pages-url "http://www.kernel.org/pub/linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "2046259794d3003f4dc4dbe4b688ba2f">
+<!ENTITY man-pages-md5 "41a424a405e88f2e45137485c115b8c6">
 <!ENTITY man-pages-home "http://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-ch6-du "22 MB">
 <!ENTITY man-pages-ch6-sbu "less than 0.1 SBU">
@@ -429,10 +429,10 @@
 <!ENTITY mpc-ch6-du "10.2 MB">
 <!ENTITY mpc-ch6-sbu "0.4 SBU">
 
-<!ENTITY mpfr-version "3.1.1">
-<!ENTITY mpfr-size "1,047 KB">
+<!ENTITY mpfr-version "3.1.2">
+<!ENTITY mpfr-size "1,049 KB">
 <!ENTITY mpfr-url "http://www.mpfr.org/mpfr-&mpfr-version;/mpfr-&mpfr-version;.tar.xz">
-<!ENTITY mpfr-md5 "91d51c41fcf2799e4ee7a7126fc95c17">
+<!ENTITY mpfr-md5 "e3d203d188b8fe60bb6578dd3152e05c">
 <!ENTITY mpfr-home "http://www.mpfr.org/">
 <!ENTITY mpfr-ch5-du "27 MB">
 <!ENTITY mpfr-ch5-sbu "1.0 SBU">
@@ -459,10 +459,10 @@
 <!ENTITY patch-ch6-du "3.4 MB">
 <!ENTITY patch-ch6-sbu "less than 0.1 SBU">
 
-<!ENTITY perl-version "5.16.2">
+<!ENTITY perl-version "5.16.3">
 <!ENTITY perl-size "13,403 KB">
 <!ENTITY perl-url "http://www.cpan.org/src/5.0/perl-&perl-version;.tar.bz2">
-<!ENTITY perl-md5 "2818ab01672f005a4e552a713aa27b08">
+<!ENTITY perl-md5 "025102de0e4a597cf541e57da80c6aa3">
 <!ENTITY perl-home "http://www.perl.org/">
 <!ENTITY perl-ch5-du "237 MB">
 <!ENTITY perl-ch5-sbu "1.8 SBU">
@@ -519,10 +519,10 @@
 <!ENTITY shadow-ch6-du "42 MB">
 <!ENTITY shadow-ch6-sbu "0.2 SBU">
 
-<!ENTITY systemd-version "197">
-<!ENTITY systemd-size    "2,012 KB">
+<!ENTITY systemd-version "198">
+<!ENTITY systemd-size    "2,091 KB">
 <!ENTITY systemd-url     "http://www.freedesktop.org/software/systemd/systemd-&systemd-version;.tar.xz">
-<!ENTITY systemd-md5     "56a860dceadfafe59f40141eb5223743">
+<!ENTITY systemd-md5     "26a75e2a310f8c1c1ea9ec26ddb171c5">
 <!ENTITY systemd-home    "http://www.freedesktop.org/wiki/Software/systemd/">
 <!ENTITY systemd-ch6-du  "23 MB">
 <!ENTITY systemd-ch6-sbu "0.1 SBU">
@@ -554,20 +554,20 @@
 <!ENTITY tcl-ch5-du "33 MB">
 <!ENTITY tcl-ch5-sbu "0.4 SBU">
 
-<!ENTITY texinfo-version "5.0">
-<!ENTITY texinfo-size "3,000 KB">
+<!ENTITY texinfo-version "5.1">
+<!ENTITY texinfo-size "3,665 KB">
 <!ENTITY texinfo-url "&gnu;texinfo/texinfo-&texinfo-version;.tar.xz">
-<!ENTITY texinfo-md5 "ef2fad34c71ddc95b20c7d6a08c0d7a6">
+<!ENTITY texinfo-md5 "52ee905a3b705020d2a1b6ec36d53ca6">
 <!ENTITY texinfo-home "&gnu-software;texinfo/">
 <!ENTITY texinfo-ch5-du "94 MB">
 <!ENTITY texinfo-ch5-sbu "0.3 SBU">
 <!ENTITY texinfo-ch6-du "101 MB">
 <!ENTITY texinfo-ch6-sbu "0.6 SBU">
 
-<!ENTITY tzdata-version "2012j">
-<!ENTITY tzdata-size "209 KB">
+<!ENTITY tzdata-version "2013b">
+<!ENTITY tzdata-size "213 KB">
 <!ENTITY tzdata-url "http://www.iana.org//time-zones/repository/releases/tzdata&tzdata-version;.tar.gz">
-<!ENTITY tzdata-md5 "ba2f92ae7ad099090e8f86cff2f2d799">
+<!ENTITY tzdata-md5 "489dbca77d1f2e287a3987ca047bb246">
 <!ENTITY tzdata-home "http://www.iana.org/time-zones">
 <!ENTITY tzdata-ch6-du "6.4 MB">
 <!ENTITY tzdata-ch6-sbu "less than 0.1 SBU">

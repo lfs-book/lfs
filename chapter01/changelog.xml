@@ -37,6 +37,68 @@
 -->
 
     <listitem>
+      <para>2013-03-16</para>
+      <itemizedlist>
+        <listitem>
+          <para>[matthew] - Upgrade to Man-Pages-3.50. Fixes
+          <ulink url="&lfs-ticket-root;3308">#3308</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[matthew] - Upgrade to Linux-3.8.3. Fixes
+          <ulink url="&lfs-ticket-root;3307">#3307</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[matthew] - Upgrade to MPFR-3.1.2. Fixes
+          <ulink url="&lfs-ticket-root;3306">#3306</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[matthew] - Upgrade to Dejagnu-1.5.1. Fixes
+          <ulink url="&lfs-ticket-root;3305">#3305</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[matthew] - Upgrade to Texinfo-5.1. Fixes
+          <ulink url="&lfs-ticket-root;3304">#3304</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2013-03-13</para>
+      <itemizedlist>
+        <listitem>
+          <para>[matthew] - Fix a build issue with Check-0.9.9 on some hosts by
+          adding the &quot;sysroot&quot; feature to Binutils. Thanks to Billy
+          O'Connor, Yaacov-Yoseph Weiss and Pierre Labastie for the reports, and
+          to Pierre again for the fix.</para>
+        </listitem>
+        <listitem>
+          <para>[matthew] - Upgrade to Perl-5.16.3. Fixes
+          <ulink url="&lfs-ticket-root;3303">#3303</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[matthew] - Upgrade to Bash-4.2.45. Fixes
+          <ulink url="&lfs-ticket-root;3301">#3301</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[matthew] - Upgrade to Systemd-198. Fixes
+          <ulink url="&lfs-ticket-root;3300">#3300</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[matthew] - Upgrade to Man-Pages-3.48. Fixes
+          <ulink url="&lfs-ticket-root;3299">#3299</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[matthew] - Upgrade to Linux-3.8.2. Fixes
+          <ulink url="&lfs-ticket-root;3297">#3297</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[matthew] - Upgrade to Tzdata-2013b. Fixes
+          <ulink url="&lfs-ticket-root;3296">#3296</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2013-03-04</para>
       <itemizedlist>
         <listitem>

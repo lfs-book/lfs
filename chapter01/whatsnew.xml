@@ -52,9 +52,9 @@
     <listitem>
       <para>Coreutils &coreutils-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>DejaGNU &dejagnu-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Diffutils &diffutils-version;</para>
     </listitem>-->
@@ -148,18 +148,18 @@
     <listitem>
       <para>MPC &mpc-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>MPFR &mpfr-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Ncurses &ncurses-version;</para>
     </listitem>-->
     <listitem>
       <para>Patch &patch-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Perl &perl-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Pkg-config &pkgconfig-version;</para>
     </listitem>
@@ -284,13 +284,17 @@
       <para>XML-Parser-&xml-parser-version;</para>
     </listitem>
 
+    <listitem>
+      <para>&perl-libc-patch;</para>
+    </listitem>
+
   </itemizedlist>
 
   <itemizedlist>
     <title>Removed:</title>
 
     <listitem>
-      <para>bash-4.2-fixes-8.patch</para>
+      <para>bash-4.2-fixes-11.patch</para>
     </listitem>
 
     <listitem>
@@ -351,6 +355,10 @@
 
     <listitem>
       <para>Udev-197</para>
+    </listitem>
+
+    <listitem>
+      <para>perl-5.16.2-libc-1.patch</para>
     </listitem>
 
   </itemizedlist>
