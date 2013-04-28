@@ -224,6 +224,7 @@
 
   <itemizedlist>
     <title>Added:</title>
+    <listitem><para></para></listitem>  <!-- satisfy build -->
 
     <listitem>
       <para>Attr-&attr-version;</para>
@@ -231,10 +232,6 @@
 
     <listitem>
       <para>&bash-fixes-patch;</para>
-    </listitem>
-
-    <listitem>
-      <para>&coreutils-i18n-patch;</para>
     </listitem>
 
     <listitem>
@@ -254,15 +251,7 @@
     </listitem>
 
     <listitem>
-      <para>&kbd-backspace-patch;</para>
-    </listitem>
-
-    <listitem>
       <para>Libcap-&libcap-version;</para>
-    </listitem>
-
-    <listitem>
-      <para>&make-fixes-patch;</para>
     </listitem>
 
     <listitem>
@@ -281,6 +270,7 @@
 
   <itemizedlist>
     <title>Removed:</title>
+    <listitem><para></para></listitem>  <!-- satisfy build -->
 
     <listitem>
       <para>bash-4.2-fixes-11.patch</para>

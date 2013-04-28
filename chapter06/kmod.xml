@@ -45,8 +45,8 @@
 
 <screen><userinput remap="configure">./configure --prefix=/usr          \
             --bindir=/bin          \
-            --sysconfdir=/etc      \
             --with-rootlibdir=/lib \
+            --sysconfdir=/etc      \
             --disable-manpages     \
             --with-xz              \
             --with-zlib</userinput></screen>

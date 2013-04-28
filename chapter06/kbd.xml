@@ -60,7 +60,7 @@
     manpage.</para>
 
 <screen><userinput remap="pre">sed -i 's/\(RESIZECONS_PROGS=\)yes/\1no/g' configure
-sed -i 's/resizecons.8 //' man/man8/Makefile.in &amp;&amp;</userinput></screen>
+sed -i 's/resizecons.8 //' man/man8/Makefile.in</userinput></screen>
 
     <para>Prepare Kbd for compilation:</para>
 
@@ -134,7 +134,7 @@ cp -R -v doc/* /usr/share/doc/kbd-&kbd-version;</userinput></screen>
         <seg>chvt, deallocvt, dumpkeys, fgconsole, getkeycodes, kbdinfo,
         kbd_mode, kbdrate, loadkeys, loadunimap,
         mapscrn, openvt, psfaddtable (link to psfxtable), psfgettable (link to
-        psfxtable), psfstriptable (link to psfxtable), psfxtable, resizecons,
+        psfxtable), psfstriptable (link to psfxtable), psfxtable, <!--resizecons,-->
         setfont, setkeycodes, setleds, setmetamode,
         showconsolefont, showkey, unicode_start, and unicode_stop</seg>
         <seg>/usr/share/consolefonts, /usr/share/consoletrans, /usr/share/keymaps,
@@ -309,7 +309,7 @@ cp -R -v doc/* /usr/share/doc/kbd-&kbd-version;</userinput></screen>
         </listitem>
       </varlistentry>
 
-  <varlistentry id="resizecons">
+  <!--<varlistentry id="resizecons">
         <term><command>resizecons</command></term>
         <listitem>
           <para>Changes the kernel idea of the console size</para>
@@ -317,7 +317,7 @@ cp -R -v doc/* /usr/share/doc/kbd-&kbd-version;</userinput></screen>
             <primary sortas="b-resizecons">resizecons</primary>
           </indexterm>
         </listitem>
-      </varlistentry>
+      </varlistentry>-->
 
       <varlistentry id="setfont">
         <term><command>setfont</command></term>

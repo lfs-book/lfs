@@ -83,7 +83,7 @@ cd ../glibc-build</userinput></screen>
     --prefix=/usr          \
     --disable-profile      \
     --enable-kernel=2.6.25 \
-    --libexecdir=/usr/lib/glibc</userinput></screen>
+    --libexecdir=/usr/lib</userinput></screen>
     <variablelist>
       <title>The meaning of the new configure options:</title>
 
