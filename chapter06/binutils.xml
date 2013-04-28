@@ -64,9 +64,11 @@ Ask your system administrator to create more.</computeroutput></screen>
 <screen><userinput remap="pre">rm -fv etc/standards.info
 sed -i.bak '/^INFO/s/standards.info //' etc/Makefile.in</userinput></screen>
 
-    <para>Fix some test suite scripts so all tests pass:</para>
+    <para>Fix a couple of syntax errors that prevent the documentation from
+    building with Texinfo-&texinfo-version;:</para>
 
-<screen><userinput remap="pre">patch -Np1 -i ../&binutils-testsuite-fixes-patch;</userinput></screen>
+<screen><userinput remap="pre">sed -i -e 's/@colophon/@@colophon/' \
+       -e 's/doc@cygnus.com/doc@@cygnus.com/' bfd/doc/bfd.texinfo</userinput></screen>
 
     <para>The Binutils documentation recommends building Binutils outside of the
     source directory in a dedicated build directory:</para>
@@ -77,13 +79,6 @@ cd ../binutils-build</userinput></screen>
     <para>Prepare Binutils for compilation:</para>
 
 <screen><userinput remap="configure">../binutils-&binutils-version;/configure --prefix=/usr --enable-shared</userinput></screen>
-
-    <note><para>There is an optional argument to <command>configure</command>,
-    <option>--enable-lto</option>, that can be used to allow the
-    <command>ar</command>, <command>nm</command>, and <command>ranlib</command>
-    commands to accept a <option>--plugin</option> parameter.  This is used to
-    allow <command>gcc</command> to do "link time optimization" if specified.
-    No packages in LFS or BLFS currently use this capability.</para></note>
 
     <para>Compile the package:</para>
 

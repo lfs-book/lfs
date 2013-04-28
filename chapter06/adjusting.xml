@@ -30,9 +30,9 @@ ln -sv /tools/bin/ld /tools/$(gcc -dumpmachine)/bin/ld</userinput></screen>
   so that GCC knows where to find the correct headers and Glibc start files.
   A <command>sed</command> command accomplishes this:</para>
 
-<screen><userinput>gcc -dumpspecs | sed -e 's@/tools@@g' \
+<screen><userinput>gcc -dumpspecs | sed -e 's@/tools@@g'                   \
     -e '/\*startfile_prefix_spec:/{n;s@.*@/usr/lib/ @}' \
-    -e '/\*cpp:/{n;s@$@ -isystem /usr/include@}' &gt; \
+    -e '/\*cpp:/{n;s@$@ -isystem /usr/include@}' &gt;      \
     `dirname $(gcc --print-libgcc-file-name)`/specs</userinput></screen>
 
   <para>It is a good idea to visually inspect the specs file to verify the
@@ -84,8 +84,7 @@ readelf -l a.out | grep ': /lib'</userinput></screen>
   and the output of the last command (allowing for platform-specific target triplets)
   will be:</para>
 
-<screen><computeroutput>SEARCH_DIR("/tools/i686-pc-linux-gnu/lib")
-SEARCH_DIR("/usr/lib")
+<screen><computeroutput>SEARCH_DIR("/usr/lib")
 SEARCH_DIR("/lib");</computeroutput></screen>
 
   <para os="l">Next make sure that we're using the correct libc:</para>

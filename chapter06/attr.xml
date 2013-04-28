@@ -58,7 +58,7 @@
     attributes.  To test the results, issue:</para>
 
 <!-- ext-tests fail for some reason -->
-<screen><userinput remap="test">make tests root-tests</userinput></screen>
+<screen><userinput remap="test">make -k tests root-tests</userinput></screen>
 
     <para>Install the package:</para>
 

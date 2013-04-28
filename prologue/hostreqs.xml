@@ -61,9 +61,9 @@
     </listitem>
 
     <listitem>
-      <para><emphasis role="strong">Gcc-4.1.2</emphasis> (Versions
-      greater than &gcc-version; are not recommended as they have not
-      been tested)</para>
+      <para><emphasis role="strong">GCC-4.1.2</emphasis> including the C++
+      compiler, <command>g++</command> (Versions greater than &gcc-version; are
+      not recommended as they have not been tested)</para>
     </listitem>
 
     <listitem>
@@ -170,6 +170,7 @@ if [ -e /usr/bin/awk ];
   else echo "awk not found"; fi
 
 gcc --version | head -n1
+g++ --version | head -n1
 ldd --version | head -n1 | cut -d" " -f2-  # glibc version
 grep --version | head -n1
 gzip --version | head -n1
@@ -183,10 +184,10 @@ tar --version | head -n1
 echo "Texinfo: `makeinfo --version | head -n1`"
 xz --version | head -n1
 
-echo 'main(){}' &gt; dummy.c &amp;&amp; gcc -o dummy dummy.c
+echo 'main(){}' &gt; dummy.c &amp;&amp; g++ -o dummy dummy.c
 if [ -x dummy ]
-  then echo "gcc compilation OK";
-  else echo "gcc compilation failed"; fi
+  then echo "g++ compilation OK";
+  else echo "g++ compilation failed"; fi
 rm -f dummy.c dummy</literal>
 EOF
 

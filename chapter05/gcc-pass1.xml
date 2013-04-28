@@ -105,11 +105,6 @@ done</userinput></screen>
 
 <screen><userinput remap="pre">sed -i '/k prot/agcc_cv_libc_provides_ssp=yes' gcc/configure</userinput></screen>
 
-    <para>Do not build the .info files.  They are not needed here and 
-    are broken with the current version of <command>makeinfo</command>.</para>
-
-<screen><userinput remap="pre">sed -i 's/BUILD_INFO=info/BUILD_INFO=/' gcc/configure</userinput></screen>
-
     <para>The GCC documentation recommends building GCC outside of the
     source directory in a dedicated build directory:</para>
 
@@ -118,24 +113,28 @@ cd ../gcc-build</userinput></screen>
 
     <para>Prepare GCC for compilation:</para>
 
-<screen><userinput remap="configure">../gcc-&gcc-version;/configure         \
-    --target=$LFS_TGT          \
-    --prefix=/tools            \
-    --with-sysroot=$LFS        \
-    --with-newlib              \
-    --without-headers          \
-    --with-local-prefix=/tools \
-    --with-native-system-header-dir=/tools/include \
-    --disable-nls              \
-    --disable-shared           \
-    --disable-multilib         \
-    --disable-decimal-float    \
-    --disable-threads          \
-    --disable-libmudflap       \
-    --disable-libssp           \
-    --disable-libgomp          \
-    --disable-libquadmath      \
-    --enable-languages=c       \
+<screen><userinput remap="configure">../gcc-&gcc-version;/configure                               \
+    --target=$LFS_TGT                                \
+    --prefix=/tools                                  \
+    --with-sysroot=$LFS                              \
+    --with-newlib                                    \
+    --without-headers                                \
+    --with-local-prefix=/tools                       \
+    --with-native-system-header-dir=/tools/include   \
+    --disable-nls                                    \
+    --disable-shared                                 \
+    --disable-multilib                               \
+    --disable-decimal-float                          \
+    --disable-threads                                \
+    --disable-libatomic                              \
+    --disable-libgomp                                \
+    --disable-libitm                                 \
+    --disable-libmudflap                             \
+    --disable-libquadmath                            \
+    --disable-libsanitizer                           \
+    --disable-libssp                                 \
+    --disable-libstdc++-v3                           \
+    --enable-languages=c,c++                         \
     --with-mpfr-include=$(pwd)/../gcc-&gcc-version;/mpfr/src \
     --with-mpfr-lib=$(pwd)/mpfr/src/.libs</userinput></screen>
 
@@ -193,10 +192,14 @@ cd ../gcc-build</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--disable-decimal-float, --disable-threads, --disable-libmudflap, --disable-libssp, --disable-libgomp, --disable-libquadmath</parameter></term>
+        <term><parameter>--disable-decimal-float, --disable-threads,
+        --disable-libatomic, --disable-libgomp, --disable-libitm,
+        --disable-libmudflap, --disable-libquadmath, --disable-libsanitizer,
+        --disable-libssp, --disable-libstdc++-v3</parameter></term>
         <listitem>
           <para>These switches disable support for the decimal floating point
-          extension, threading, libmudflap, libssp and libgomp and libquadmath
+          extension, threading, libatomic, libgomp, libitm, libmudflap,
+          libquadmath, libsanitizer, libssp and the C++ standard library
           respectively. These features will fail to compile when building a
           cross-compiler and are not necessary for the task of cross-compiling
           the temporary libc.</para>
@@ -212,10 +215,10 @@ cd ../gcc-build</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--enable-languages=c</parameter></term>
+        <term><parameter>--enable-languages=c,c++</parameter></term>
         <listitem>
-          <para>This option ensures that only the C compiler is built.
-          This is the only language needed now.</para>
+          <para>This option ensures that only the C and C++ compilers are built.
+          These are the only languages needed now.</para>
         </listitem>
       </varlistentry>
 

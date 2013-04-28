@@ -79,12 +79,11 @@ cd ../glibc-build</userinput></screen>
 <!-- We would get /usr/lib/glibc/getconf instead of /usr/lib/getconf and
      /usr/lib/getconf was used before. Other distros seem to use same
      libexecdir -->
-<screen><userinput remap="configure">../glibc-&glibc-version;/configure   \
-    --prefix=/usr         \
-    --libexecdir=/usr/lib \
-    --disable-profile     \
-    --enable-kernel=2.6.25</userinput></screen>
-
+<screen><userinput remap="configure">../glibc-&glibc-version;/configure    \
+    --prefix=/usr          \
+    --disable-profile      \
+    --enable-kernel=2.6.25 \
+    --libexecdir=/usr/lib/glibc</userinput></screen>
     <variablelist>
       <title>The meaning of the new configure options:</title>
 
