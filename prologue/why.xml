@@ -21,6 +21,15 @@
     <itemizedlist>
 
       <listitem>
+        <para>Acl</para>
+
+        <para>This package contains programs to administer Access Control
+        Lists, which are used to define more fine-grained discretionary access
+        rights for files and directories. It is required by Systemd
+        and can be used by Coreutils.</para>
+      </listitem>
+
+      <listitem>
         <para>Attr</para>
 
         <para>This package contains programs for working with extended

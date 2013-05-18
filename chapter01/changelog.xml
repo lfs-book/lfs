@@ -36,6 +36,20 @@
     </listitem>
 -->
     <listitem>
+      <para>2013-05-18</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - Added Acl package for Systemd (setfacl).</para>
+        </listitem>
+        <listitem>
+          <para>[krejzi] - Add temporary libdbus package to satisfy
+          circular depdendency between Systemd and D-Bus.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+
+    <listitem>
       <para>2013-05-12</para>
       <itemizedlist>
         <listitem>

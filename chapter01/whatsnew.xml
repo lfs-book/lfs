@@ -227,6 +227,10 @@
     <listitem><para></para></listitem>  <!-- satisfy build -->
 
     <listitem>
+      <para>Acl-&acl-version;</para>
+    </listitem>
+
+    <listitem>
       <para>Attr-&attr-version;</para>
     </listitem>
 

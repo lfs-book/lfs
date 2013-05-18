@@ -54,8 +54,8 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>The attr tests need to be run on a filesystem that supports extended
-    attributes.  To test the results, issue:</para>
+    <para>The Attr tests need to be run on a filesystem that supports extended
+    attributes. To test the results, issue:</para>
 
 <!-- ext-tests fail for some reason -->
 <screen><userinput remap="test">make -k tests root-tests</userinput></screen>
@@ -132,7 +132,7 @@ ln -sfv ../../lib/libattr.so.1 /usr/lib/libattr.so</userinput></screen>
       <varlistentry id="libattr">
         <term><filename class="libraryfile">libattr.{so,a}</filename></term>
         <listitem>
-          <para>Contains the <application>attr</application> API functions.</para>
+          <para>Contains the <application>Attr</application> API functions.</para>
           <indexterm zone="ch-system-attr libattr">
             <primary sortas="c-libattr">libattr.{so,a}</primary>
           </indexterm>

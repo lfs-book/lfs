@@ -15,6 +15,15 @@
   <variablelist role="materials">
 
     <varlistentry>
+      <term>Acl (&acl-version;) - <token>&acl-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&acl-home;"/></para>
+        <para>Download: <ulink url="&acl-url;"/></para>
+        <para>MD5 sum: <literal>&acl-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Attr (&attr-version;) - <token>&attr-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&attr-home;"/></para>
