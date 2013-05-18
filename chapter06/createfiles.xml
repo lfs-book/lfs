@@ -46,9 +46,12 @@ ln -sv /tools/lib/libstdc++.so{,.6} /usr/lib
 sed 's/tools/usr/' /tools/lib/libstdc++.la > /usr/lib/libstdc++.la
 ln -sv bash /bin/sh</userinput></screen>
 
-  <para>A proper Linux system maintains a list of the mounted file systems in
-  the file <filename>/etc/mtab</filename>. Systemd requires it to be a
-  symbolic link to  <filename>/proc/self/mounts</filename>:</para>
+  <para>Historically, Linux maintains a list of the mounted file systems in the
+  file <filename>/etc/mtab</filename>. Modern kernels maintain this list
+  internally and exposes it to the user via the <filename
+  class="directory">/proc</filename> filesystem. To satisfy utilities that
+  expect the presence of <filename>/etc/mtab</filename>, create the following
+  symbolic link:</para>
 
 <screen><userinput>ln -s /proc/self/mounts /etc/mtab</userinput></screen>
 
@@ -92,6 +95,7 @@ usb:x:14:
 cdrom:x:15:
 adm:x:16:
 messagebus:x:18:
+systemd-journal:x:23:
 mail:x:34:
 nogroup:x:99:</literal>
 EOF</userinput></screen>

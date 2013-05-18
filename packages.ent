@@ -45,7 +45,7 @@
 <!ENTITY bc-version "1.06.95">
 <!ENTITY bc-size "288 KB">
 <!ENTITY bc-url "&alpha-gnu;bc/bc-&bc-version;.tar.bz2">
-<!ENTITY bc-md5 "5126a721b73f97d715bb72c13c889035 ">
+<!ENTITY bc-md5 "5126a721b73f97d715bb72c13c889035">
 <!ENTITY bc-home "&gnu-software;bc/">
 <!ENTITY bc-ch6-du "3 MB">
 <!ENTITY bc-ch6-sbu "0.1 SBU">
@@ -188,10 +188,10 @@
 <!ENTITY flex-ch6-du "39 MB">
 <!ENTITY flex-ch6-sbu "0.4 SBU">
 
-<!ENTITY gawk-version "4.0.2">
-<!ENTITY gawk-size "1,589 KB">
+<!ENTITY gawk-version "4.1.0">
+<!ENTITY gawk-size "2,004 KB">
 <!ENTITY gawk-url "&gnu;gawk/gawk-&gawk-version;.tar.xz">
-<!ENTITY gawk-md5 "8a9b2f1170ac9dcd3eb13716b5ec4021">
+<!ENTITY gawk-md5 "b18992ff8faf3217dab55d2d0aa7d707">
 <!ENTITY gawk-home "&gnu-software;gawk/">
 <!ENTITY gawk-ch5-du "30 MB">
 <!ENTITY gawk-ch5-sbu "0.2 SBU">
@@ -220,15 +220,15 @@
 <!ENTITY gdbm-ch6-du "8.5 MB">
 <!ENTITY gdbm-ch6-sbu "0.1 SBU">
 
-<!ENTITY gettext-version "0.18.2">
-<!ENTITY gettext-size "15,330 KB">
+<!ENTITY gettext-version "0.18.2.1">
+<!ENTITY gettext-size "15,552 KB">
 <!ENTITY gettext-url "&gnu;gettext/gettext-&gettext-version;.tar.gz">
-<!ENTITY gettext-md5 "0c86e5af70c195ab8bd651d17d783928">
+<!ENTITY gettext-md5 "034c8103b14654ebd300fadac44d6f14">
 <!ENTITY gettext-home "&gnu-software;gettext/">
-<!ENTITY gettext-ch5-du "101 MB">
+<!ENTITY gettext-ch5-du "118 MB">
 <!ENTITY gettext-ch5-sbu "0.6 SBU">
 <!ENTITY gettext-ch6-du "180 MB">
-<!ENTITY gettext-ch6-sbu "2.3 SBU">
+<!ENTITY gettext-ch6-sbu "1.7 SBU">
 
 <!ENTITY glibc-version "2.17">
 <!ENTITY glibc-size "10,725 KB">
@@ -379,12 +379,12 @@
 
 <!ENTITY linux-major-version "3">
 <!ENTITY linux-minor-version "9">
-<!ENTITY linux-patch-version "0">
-<!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">-->
-<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">
-<!ENTITY linux-size "70,414 KB">
+<!ENTITY linux-patch-version "2">
+<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
+<!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
+<!ENTITY linux-size "70,409 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "4348c9b6b2eb3144d601e87c19d5d909">
+<!ENTITY linux-md5 "e406cc1bb5618a4ea88470f4d3d3d6e1">
 <!ENTITY linux-home "http://www.kernel.org/">
 <!-- measured for 3.9.0 / gcc-4.8.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,
@@ -392,9 +392,9 @@
 <!ENTITY linux-ch8-du "700 - 6800 MB (typically about 800-900 MB)">
 <!ENTITY linux-ch8-sbu "3.0 - 49.0 SBU (typically about 6 SBU)">
 
-<!ENTITY linux-headers-ch5-du "580 MB">
+<!ENTITY linux-headers-ch5-du "584 MB">
 <!ENTITY linux-headers-ch5-sbu "0.1 SBU">
-<!ENTITY linux-headers-ch6-du "580 MB">
+<!ENTITY linux-headers-ch6-du "588 MB">
 <!ENTITY linux-headers-ch6-sbu "0.1 SBU">
 
 <!ENTITY m4-version "1.4.16">
@@ -570,12 +570,12 @@
 <!ENTITY texinfo-ch6-du "101 MB">
 <!ENTITY texinfo-ch6-sbu "0.6 SBU">
 
-<!ENTITY systemd-version "202">
-<!ENTITY systemd-size    "2,104 KB">
+<!ENTITY systemd-version "204">
+<!ENTITY systemd-size    "2,140 KB">
 <!ENTITY systemd-url     "http://www.freedesktop.org/software/systemd/systemd-&systemd-version;.tar.xz">
-<!ENTITY systemd-md5     "3136c6912d3ee1f6d4deb16234783731">
+<!ENTITY systemd-md5     "a07619bb19f48164fbf0761d12fd39a8">
 <!ENTITY systemd-home    "http://www.freedesktop.org/wiki/Software/systemd/">
-<!ENTITY systemd-ch6-du  "35 MB">
+<!ENTITY systemd-ch6-du  "36 MB">
 <!ENTITY systemd-ch6-sbu "0.1 SBU">
 
 <!ENTITY tzdata-version "2013c">

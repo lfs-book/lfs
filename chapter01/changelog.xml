@@ -36,6 +36,40 @@
     </listitem>
 -->
     <listitem>
+      <para>2013-05-12</para>
+      <itemizedlist>
+        <listitem>
+          <para>[matthew] - Upgrade to Linux-3.9.2. Fixes
+          <ulink url="&lfs-ticket-root;3345">#3345</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2013-05-11</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Upgrade to gawk-4.1.0. Fixes
+          <ulink url="&lfs-ticket-root;3343">#3343</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2013-05-10</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Upgrade to linux-3.9.1. Fixes
+          <ulink url="&lfs-ticket-root;3342">#3342</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Upgrade to gettext-0.18.2.1. Fixes
+          <ulink url="&lfs-ticket-root;3298">#3298</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2013-05-04</para>
       <itemizedlist>
         <listitem>
