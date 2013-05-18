@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Boot scripts
-for s in systemd-units/lfs/lib/services/* \
-         systemd-units/lfs/sbin/*         \
-         systemd-units/lfs/tmpfiles/*     \
-         systemd-units/lfs/units/*
+for s in network-scripts/lfs/lib/services/* \
+         network-scripts/lfs/sbin/*         \
+         network-scripts/lfs/tmpfiles/*     \
+         network-scripts/lfs/units/*
 do
   script=$(basename $s)
 

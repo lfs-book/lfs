@@ -357,11 +357,11 @@
     </varlistentry>
 
     <varlistentry>
-      <term>LFS-Systemd-Units (&lfs-systemd-units-version;) - <token>&lfs-systemd-units-size;</token>:</term>
+      <term>LFS-Network-Scripts (&lfs-network-scripts-version;) - <token>&lfs-network-scripts-size;</token>:</term>
       <listitem>
-        <para>Home page: <ulink url="&lfs-systemd-units-home;"/></para>
-        <para>Download: <ulink url="&lfs-systemd-units-url;"/></para>
-        <para>MD5 sum: <literal>&lfs-systemd-units-md5;</literal></para>
+        <para>Home page: <ulink url="&lfs-network-scripts-home;"/></para>
+        <para>Download: <ulink url="&lfs-network-scripts-url;"/></para>
+        <para>MD5 sum: <literal>&lfs-network-scripts-md5;</literal></para>
       </listitem>
     </varlistentry>
 

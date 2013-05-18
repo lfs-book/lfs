@@ -110,7 +110,7 @@ $(BASEDIR)/md5sums: stylesheets/wget-list.xsl chapter03/chapter03.xml packages.e
 	$(Q)xsltproc --xinclude --nonet --output $(BASEDIR)/md5sums \
 	    stylesheets/md5sum.xsl chapter03/chapter03.xml
 	$(Q)sed -i -e \
-       "s/LFS-UNITS-MD5SUM/$(shell md5sum lfs-systemd-units*.tar.bz2 | cut -d' ' -f1)/" \
+       "s/LFS-NETSCRIPTS-MD5SUM/$(shell md5sum lfs-network-scripts*.tar.bz2 | cut -d' ' -f1)/" \
        $(BASEDIR)/md5sums
 
 dump-commands: validate
