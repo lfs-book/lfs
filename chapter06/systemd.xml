@@ -113,13 +113,6 @@
 done
 ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
 
-    <para>By default, Journald logs to a tmpfs which means that logs
-    are not persistent through reboots. To make it log to a disk,
-    create the <filename class="directory">
-    /var/log/journal</filename> directory:</para>
-
-<screen><userinput remap="install">mkdir -pv /var/log/journal</userinput></screen>
-
     <para>Remove a reference to a non-existent group:</para>
 
 <screen><userinput remap="install">sed -i "s@0775 root lock@0755 root root@g" /usr/lib/tmpfiles.d/legacy.conf</userinput></screen>
