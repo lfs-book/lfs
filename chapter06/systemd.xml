@@ -49,8 +49,7 @@
             --docdir=/usr/share/doc/systemd-&systemd-version; \
             --with-rootprefix= \
             --with-rootlibdir=/lib \
-            --with-kbd-loadkeys=/bin/loadkeys \
-            --with-kbd-setfont=/bin/setfont \
+            --with-firmware-path="/lib/firmware/updates:/lib/firmware" \
             --enable-split-usr \
             --disable-gudev \
             --without-python</userinput></screen>
@@ -68,10 +67,10 @@
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--with-kbd-*</parameter></term>
+        <term><parameter>--with-firmware-path=...</parameter></term>
         <listitem>
-          <para>These switches tell Systemd where to find
-          Kbd programs.</para>
+          <para>This switch enables Udev firmware loader and
+          sets the default firmware search path.</para>
         </listitem>
       </varlistentry>
 
@@ -133,22 +132,22 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <segtitle>Installed directories</segtitle>
 
       <seglistitem>
-        <seg>halt, hostnamectl, init, journalctl, localectl, loginctl,
-        poweroff, reboot, runlevel, shutdown, systemctl, systemd-analyze,
-        systemd-ask-password, systemd-cat, systemd-cgls, systemd-cgtop,
-        systemd-coredumpctl, systemd-delta, systemd-detect-virt,
+        <seg>halt, hostnamectl, init, journalctl, kernel-install, localectl,
+        loginctl, poweroff, reboot, runlevel, shutdown, systemctl,
+        systemd-analyze, systemd-ask-password, systemd-cat, systemd-cgls,
+        systemd-cgtop, systemd-coredumpctl, systemd-delta, systemd-detect-virt,
         systemd-inhibit, systemd-machine-id-setup, systemd-notify,
         systemd-nspawn, systemd-stdio-bridge, systemd-tmpfiles,
         systemd-tty-ask-password-agent, telinit, timedatectl and
         udevadm</seg>
         <seg>libnss_myhostname.so.2, libsystemd-daemon.so, libsystemd-id128.so,
         libsystemd-journal.so, libsystemd-login.so and libudev.so</seg>
-        <seg>/etc/binfmt.d, /etc/init.d, /etc/modules-load.d, /etc/rpm,
+        <seg>/etc/binfmt.d, /etc/init.d, /etc/kernel, /etc/modules-load.d, /etc/rpm,
         /etc/sysctl.d, /etc/systemd, /etc/tmpfiles.d, /etc/udev,
         /etc/xdg/systemd, /lib/systemd, /lib/udev, /usr/include/systemd,
-        /usr/lib/binfmt.d, /usr/lib/modules-load.d, /usr/lib/sysctl.d,
+        /usr/lib/binfmt.d, /usr/lib/kernel, /usr/lib/modules-load.d, /usr/lib/sysctl.d,
         /usr/lib/systemd, /usr/lib/tmpfiles.d, /usr/share/doc/systemd-&systemd-version;,
-        /usr/share/systemd, /var/lib/systemd and /var/log/journald</seg>
+        /usr/share/systemd, /var/lib/systemd and /var/log/journal</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -200,6 +199,17 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
           <para>used to query the contents of the Systemd Journal.</para>
           <indexterm zone="ch-system-systemd journalctl">
             <primary sortas="b-journalctl">journalctl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="kernel-install">
+        <term><command>kernel-install</command></term>
+        <listitem>
+          <para>used to add and remove kernel and initramfs images to and
+          from /boot.</para>
+          <indexterm zone="ch-system-systemd kernel-install">
+            <primary sortas="b-kernel-install">kernel-install</primary>
           </indexterm>
         </listitem>
       </varlistentry>

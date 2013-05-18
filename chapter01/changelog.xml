@@ -45,6 +45,9 @@
           <para>[krejzi] - Add temporary libdbus package to satisfy
           circular depdendency between Systemd and D-Bus.</para>
         </listitem>
+        <listitem>
+          <para>[krejzi] - Updated Systemd instructions for version 204.</para>
+        </listitem>
       </itemizedlist>
     </listitem>
 

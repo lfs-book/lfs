@@ -90,7 +90,7 @@
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>Create a symlink, so that DBus and Systemd can use the same
+    <para>Create a symlink, so that D-Bus and Systemd can use the same
     <filename>machine-id</filename> file:</para>
 
 <screen><userinput>ln -s /etc/machine-id /var/lib/dbus</userinput></screen>
