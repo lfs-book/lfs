@@ -357,6 +357,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>LFS-Systemd-Units (&lfs-systemd-units-version;) - <token>&lfs-systemd-units-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&lfs-systemd-units-home;"/></para>
+        <para>Download: <ulink url="&lfs-systemd-units-url;"/></para>
+        <para>MD5 sum: <literal>&lfs-systemd-units-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Libcap (&libcap-version;) - <token>&libcap-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&libcap-home;"/></para>

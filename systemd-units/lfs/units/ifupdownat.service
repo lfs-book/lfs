@@ -1,0 +1,12 @@
+[Unit]
+Description=Start ifupdown for %i
+Requires=sys-subsystem-net-devices-%i.device
+After=sys-subsystem-net-devices-%i.device
+
+[Service]
+ExecStart=/sbin/ifup %i
+ExecStop=/sbin/ifdown %i
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

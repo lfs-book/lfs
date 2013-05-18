@@ -350,6 +350,14 @@
 <!ENTITY less-ch6-du "3.6 MB">
 <!ENTITY less-ch6-sbu "less than 0.1 SBU">
 
+<!ENTITY lfs-systemd-units-version "20130518">               <!-- Scripts depend on this format -->
+<!ENTITY lfs-systemd-units-size "LFS-UNITS-SIZE KB">         <!-- Updated in Makefile -->
+<!ENTITY lfs-systemd-units-url "&downloads-root;lfs-systemd-units-&lfs-systemd-units-version;.tar.bz2">
+<!ENTITY lfs-systemd-units-md5 "LFS-UNITS-MD5SUM">           <!-- Updated in Makefile -->
+<!ENTITY lfs-systemd-units-home " ">
+<!ENTITY lfs-systemd-units-ch7-du "LFS-UNITS-INSTALL-KB KB"> <!-- Updated in Makefile -->
+<!ENTITY lfs-systemd-units-ch7-sbu "less than 0.1 SBU">
+
 <!ENTITY libcap-version "2.22">
 <!ENTITY libcap-size "66 KB">
 <!ENTITY libcap-url "http://ftp.de.debian.org/debian/pool/main/libc/libcap2/libcap2_&libcap-version;.orig.tar.gz">
