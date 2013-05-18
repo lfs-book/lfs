@@ -52,12 +52,22 @@
             --sysconfdir=/etc \
             --localstatedir=/var \
             --libexecdir=/usr/lib/dbus-1.0 \
+            --disable-static \
+            --enable-systemd \
             --docdir=/usr/share/doc/dbus-&dbus-version; \
             --with-console-auth-dir=/run/console/ \
             --with-systemdsystemunitdir=/lib/systemd/system</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
+
+      <varlistentry>
+        <term><parameter>--enable-systemd</parameter></term>
+        <listitem>
+          <para>This enables support for authentication check using
+          Systemd Logind.</para>
+        </listitem>
+      </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-console-auth-dir=/run/console</parameter></term>
@@ -98,7 +108,7 @@
       <seglistitem>
         <seg>dbus-cleanup-sockets, dbus-daemon, dbus-launch, dbus-monitor,
         dbus-send and dbus-uuidgen</seg>
-        <seg>libdbus-1.{so,a}</seg>
+        <seg>libdbus-1.so</seg>
         <seg>/etc/dbus-1, /usr/include/dbus-1.0, /usr/lib/dbus-1.0,
         /usr/share/dbus-1, /usr/share/doc/dbus-&dbus-version; and
         /var/lib/dbus</seg>
@@ -172,7 +182,7 @@
       </varlistentry>
 
       <varlistentry id="libdbus">
-        <term><filename class="libraryfile">libdbus.{so,a}</filename></term>
+        <term><filename class="libraryfile">libdbus-1.so</filename></term>
         <listitem>
           <para>Contains API functions used to communicate with the D-Bus
           message bus.</para>

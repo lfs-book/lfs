@@ -52,6 +52,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="expat.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="inetutils.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="perl.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xml-parser.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="autoconf.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="automake.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="diffutils.xml"/>
@@ -74,8 +75,9 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="man-db.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="patch.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="sysvinit.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dbus.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libdbus.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="systemd.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dbus.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="tar.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="texinfo.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vim.xml"/>
