@@ -49,7 +49,7 @@
       <para>2013-05-11</para>
       <itemizedlist>
         <listitem>
-          <para>[bdubbs] - Upgrade to gawk-4.1.0. Fixes
+          <para>[bdubbs] - Upgrade to Gawk-4.1.0. Fixes
           <ulink url="&lfs-ticket-root;3343">#3343</ulink>.</para>
         </listitem>
       </itemizedlist>
@@ -59,11 +59,15 @@
       <para>2013-05-10</para>
       <itemizedlist>
         <listitem>
-          <para>[bdubbs] - Upgrade to linux-3.9.1. Fixes
+          <para>[bdubbs] - Upgrade to Linux-3.9.1. Fixes
           <ulink url="&lfs-ticket-root;3342">#3342</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Upgrade to gettext-0.18.2.1. Fixes
+          <para>[bdubbs] - Upgrade to Systemd-204. Fixes
+          <ulink url="&lfs-ticket-root;3341">#3341</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Upgrade to Gettext-0.18.2.1. Fixes
           <ulink url="&lfs-ticket-root;3298">#3298</ulink>.</para>
         </listitem>
       </itemizedlist>
@@ -86,22 +90,21 @@
       <para>2013-05-01</para>
       <itemizedlist>
         <listitem>
-          <para>[ken] - Upgrade to linux-3.9.0. Fixes
+          <para>[ken] - Upgrade to Linux-3.9.0. Fixes
           <ulink url="&lfs-ticket-root;3336">#3336</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[ken] - Upgrade to zlib-1.2.8. Fixes
+          <para>[ken] - Upgrade to Zlib-1.2.8. Fixes
           <ulink url="&lfs-ticket-root;3337">#3337</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
 
-
     <listitem>
       <para>2013-04-29</para>
       <itemizedlist>
         <listitem>
-          <para>[bdubbs] - Add bc to Chapter 6 to support Linux-3.9. Fixes
+          <para>[bdubbs] - Add Bc to Chapter 6 to support Linux-3.9. Fixes
           <ulink url="&lfs-ticket-root;3338">#3338</ulink>.</para>
         </listitem>
       </itemizedlist>
@@ -121,11 +124,11 @@
       <para>2013-04-26</para>
       <itemizedlist>
         <listitem>
-          <para>[bdubbs] - Upgrade to less-458. Fixes
+          <para>[bdubbs] - Upgrade to Less-458. Fixes
           <ulink url="&lfs-ticket-root;3333">#3334</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Upgrade to util-linux-2.23. Fixes
+          <para>[bdubbs] - Upgrade to Util-Linux-2.23. Fixes
           <ulink url="&lfs-ticket-root;3311">#3311</ulink>.</para>
         </listitem>
       </itemizedlist>
@@ -168,7 +171,7 @@
       <para>2013-04-19</para>
       <itemizedlist>
         <listitem>
-          <para>[bdubbs] - Update to udev-202 (systemd-202). Fixes
+          <para>[bdubbs] - Update to Systemd-202. Fixes
           <ulink url="&lfs-ticket-root;3329">#3329</ulink>.</para>
         </listitem>
       </itemizedlist>
@@ -199,7 +202,7 @@
           <para>[bdubbs] - Update list of installed libraries in GMP.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to udev-201 (systemd-201).</para>
+          <para>[bdubbs] - Update to Systemd-201.</para>
         </listitem>
       </itemizedlist>
     </listitem>
