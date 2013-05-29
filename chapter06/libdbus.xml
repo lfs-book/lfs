@@ -51,8 +51,8 @@
 <screen><userinput remap="make">make -C dbus libdbus-1.la</userinput></screen>
 
     <para>This package does come with a testsuite, but it is not
-    possible to run it because only part of the package is
-    installed.</para>
+    possible to run it because only part of the package was
+    built.</para>
 
     <para>Install the package:</para>
 
