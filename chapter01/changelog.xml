@@ -36,6 +36,57 @@
     </listitem>
 -->
     <listitem>
+      <para>2013-06-10</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to Gzip-1.6. Fixes 
+          <ulink url="&lfs-ticket-root;3362">#3362</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2013-06-09</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to libpipeline-1.2.4. Fixes 
+          <ulink url="&lfs-ticket-root;3360">#3360</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to Linux-3.9.5. Fixes
+          <ulink url="&lfs-ticket-root;3361">#3361</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2013-06-05</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to Automake-1.13.3. Fixes 
+          <ulink url="&lfs-ticket-root;3358">#3358</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update file program contents.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2013-06-03</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to Util-Linux-2.23.1. Fixes 
+          <ulink url="&lfs-ticket-root;3355">#3355</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to GCC-4.8.1. Fixes 
+          <ulink url="&lfs-ticket-root;3356">#3356</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2013-05-27</para>
       <itemizedlist>
         <listitem>

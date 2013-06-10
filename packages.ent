@@ -31,11 +31,11 @@
 <!ENTITY autoconf-ch6-du "17.1 MB">
 <!ENTITY autoconf-ch6-sbu "4.5 SBU">
 
-<!ENTITY automake-version "1.13.2">
+<!ENTITY automake-version "1.13.3">
 <!ENTITY am-minor-version "1.13">
-<!ENTITY automake-size "1,408 KB">
+<!ENTITY automake-size "1,416 KB">
 <!ENTITY automake-url "&gnu;automake/automake-&automake-version;.tar.xz">
-<!ENTITY automake-md5 "497f3ea7e85504fe5b1b1b6d27cc71f1">
+<!ENTITY automake-md5 "e181a81bb57097a6c8c52cdb91c4b2b9">
 <!ENTITY automake-home "&gnu-software;automake/">
 <!ENTITY automake-ch6-du "100 MB">
 <!ENTITY automake-ch6-sbu "less than 0.1 SBU (34.1 SBU with tests)">
@@ -206,10 +206,10 @@
 <!ENTITY gawk-ch6-du "30 MB">
 <!ENTITY gawk-ch6-sbu "0.2 SBU">
 
-<!ENTITY gcc-version "4.8.0">
-<!ENTITY gcc-size "84,633 KB">
+<!ENTITY gcc-version "4.8.1">
+<!ENTITY gcc-size "84,724 KB">
 <!ENTITY gcc-url "&gnu;gcc/gcc-&gcc-version;/gcc-&gcc-version;.tar.bz2">
-<!ENTITY gcc-md5 "e6040024eb9e761c3bea348d1fa5abb0">
+<!ENTITY gcc-md5 "3b2386c114cd74185aa3754b58a79304">
 <!ENTITY gcc-home "http://gcc.gnu.org/">
 <!ENTITY gcc-ch5p1-du "1.4 GB">
 <!ENTITY gcc-ch5p1-sbu "5.5 SBU">
@@ -292,10 +292,10 @@
 <!ENTITY grub-ch6-du "112 MB">
 <!ENTITY grub-ch6-sbu "0.7 SBU">
 
-<!ENTITY gzip-version "1.5">
-<!ENTITY gzip-size "704 KB">
+<!ENTITY gzip-version "1.6">
+<!ENTITY gzip-size "712 KB">
 <!ENTITY gzip-url "&gnu;gzip/gzip-&gzip-version;.tar.xz">
-<!ENTITY gzip-md5 "2a431e169b6f62f7332ef6d47cc53bae">
+<!ENTITY gzip-md5 "da981f86677d58a106496e68de6f8995">
 <!ENTITY gzip-home "&gnu-software;gzip/">
 <!ENTITY gzip-ch5-du "10 MB">
 <!ENTITY gzip-ch5-sbu "0.2 SBU">
@@ -374,10 +374,10 @@
 <!ENTITY libcap-ch6-du "1.3 MB">
 <!ENTITY libcap-ch6-sbu "0.1 SBU">
 
-<!ENTITY libpipeline-version "1.2.3">
-<!ENTITY libpipeline-size "732 KB">
+<!ENTITY libpipeline-version "1.2.4">
+<!ENTITY libpipeline-size "748 KB">
 <!ENTITY libpipeline-url "http://download.savannah.gnu.org/releases/libpipeline/libpipeline-&libpipeline-version;.tar.gz">
-<!ENTITY libpipeline-md5 "f4866aa3a84f2852c78f87ff619dfc60">
+<!ENTITY libpipeline-md5 "a98b07f6f487fa268d1ebd99806b85ff">
 <!ENTITY libpipeline-home "http://libpipeline.nongnu.org/">
 <!ENTITY libpipeline-ch6-du "7.4 MB">
 <!ENTITY libpipeline-ch6-sbu "0.2 SBU">
@@ -395,12 +395,12 @@
 
 <!ENTITY linux-major-version "3">
 <!ENTITY linux-minor-version "9">
-<!ENTITY linux-patch-version "4">
+<!ENTITY linux-patch-version "5">
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-size "70,420 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "053095dfe88fbd52e7cc8db302631d99">
+<!ENTITY linux-md5 "d7be63a4e95ddfc80ba3f7852d87016c">
 <!ENTITY linux-home "http://www.kernel.org/">
 <!-- measured for 3.9.0 / gcc-4.8.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,
@@ -602,10 +602,10 @@
 <!ENTITY tzdata-ch6-du "6.4 MB">
 <!ENTITY tzdata-ch6-sbu "less than 0.1 SBU">
 
-<!ENTITY util-linux-version "2.23">
-<!ENTITY util-linux-size "3,248 KB">
+<!ENTITY util-linux-version "2.23.1">
+<!ENTITY util-linux-size "3,292 KB">
 <!ENTITY util-linux-url "&kernel;linux/utils/util-linux/v2.23/util-linux-&util-linux-version;.tar.xz">
-<!ENTITY util-linux-md5 "cf5e9bb402371beaaffc3a5f276d5783">
+<!ENTITY util-linux-md5 "33ba55ce82f8e3b8d7a38fac0f62779a">
 <!ENTITY util-linux-home "http://userweb.kernel.org/~kzak/util-linux/">
 <!ENTITY util-linux-ch6-du "89 MB">
 <!ENTITY util-linux-ch6-sbu "0.6 SBU">
