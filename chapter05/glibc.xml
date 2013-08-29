@@ -52,6 +52,10 @@
   su -c 'cp -v sunrpc/rpc/*.h /usr/include/rpc'
 fi</userinput></screen>
 
+    <para>An upstream change needs to be reverted:</para>
+
+<screen><userinput remap="pre">sed -i -e 's/static __m128i/inline &amp;/' sysdeps/x86_64/multiarch/strstr.c</userinput></screen>
+
     <para>The Glibc documentation recommends building Glibc outside of the source
     directory in a dedicated build directory:</para>
 
@@ -220,10 +224,10 @@ readelf -l a.out | grep ': /tools'</userinput></screen>
 
   </caution>
 
-  <note><para>Building Binutils in the next section will serve as an additional check that
-  the toolchain has been built properly. If Binutils fails to build, it is an
-  indication that something has gone wrong with the previous Binutils, GCC, or Glibc
-  installations.</para></note>
+  <note><para>Building Binutils in the section after next will serve as an
+  additional check that the toolchain has been built properly. If Binutils
+  fails to build, it is an indication that something has gone wrong with the
+  previous Binutils, GCC, or Glibc installations.</para></note>
 
   </sect2>
 
