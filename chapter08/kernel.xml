@@ -65,7 +65,12 @@
     information about configuring and building the kernel can be found at
     <ulink url="http://www.kroah.com/lkn/"/> </para>
 
-    <note><para>Due to recent changes in <application>udev</application>, be sure to
+    <note><para>A good starting place for setting up the kernel configuration
+    is to run <command>make defconfig</command>. This will set the base
+    configuration to a good state that takes your current system architecture
+    into account.</para>
+
+    <para>Due to recent changes in <application>udev</application>, be sure to
     select:</para>
 
     <screen role="nodump">Device Drivers  ---&gt;
@@ -231,7 +236,7 @@ EOF</userinput></screen>
 
       <seglistitem>
         <seg>config-&linux-version;,
-        vmlinux-&linux-version;-lfs-&version;-&linux-version;, and
+        vmlinuz-&linux-version;-lfs-&version;, and
         System.map-&linux-version;</seg>
         <seg>/lib/modules, /usr/share/doc/linux-&linux-version;</seg>
       </seglistitem>
@@ -253,7 +258,7 @@ EOF</userinput></screen>
       </varlistentry>
 
       <varlistentry id="lfskernel">
-        <term><filename>vmlinux-&linux-version;-lfs-&version;</filename></term>
+        <term><filename>vmlinuz-&linux-version;-lfs-&version;</filename></term>
         <listitem>
           <para>The engine of the Linux system. When turning on the computer,
           the kernel is the first part of the operating system that gets loaded.

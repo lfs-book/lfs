@@ -52,6 +52,14 @@
   su -c 'cp -v sunrpc/rpc/*.h /usr/include/rpc'
 fi</userinput></screen>
 
+    <para>An upstream change needs to be reverted:</para>
+
+<screen><userinput remap="pre">sed -i -e 's/static __m128i/inline &amp;/' sysdeps/x86_64/multiarch/strstr.c</userinput></screen>
+
+    <para>Allow Glibc to be built using Make-&make-version;:</para>
+
+<screen><userinput remap="pre">sed -r -i 's/(3..89..)/\1 | 4.*/' configure</userinput></screen>
+
     <para>The Glibc documentation recommends building Glibc outside of the source
     directory in a dedicated build directory:</para>
 
@@ -80,7 +88,7 @@ esac</userinput></screen>
       --host=$LFS_TGT                               \
       --build=$(../glibc-&glibc-version;/scripts/config.guess) \
       --disable-profile                             \
-      --enable-kernel=2.6.25                        \
+      --enable-kernel=&min-kernel;                        \
       --with-headers=/tools/include                 \
       libc_cv_forced_unwind=yes                     \
       libc_cv_ctors_header=yes                      \
@@ -107,10 +115,10 @@ esac</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--enable-kernel=2.6.25</parameter></term>
+        <term><parameter>--enable-kernel=&min-kernel;</parameter></term>
         <listitem>
           <para>This tells Glibc to compile the library with support
-          for 2.6.25 and later Linux kernels.  Workarounds for older
+          for &min-kernel; and later Linux kernels.  Workarounds for older
           kernels are not enabled.</para>
         </listitem>
       </varlistentry>
@@ -220,10 +228,10 @@ readelf -l a.out | grep ': /tools'</userinput></screen>
 
   </caution>
 
-  <note><para>Building Binutils in the next section will serve as an additional check that
-  the toolchain has been built properly. If Binutils fails to build, it is an
-  indication that something has gone wrong with the previous Binutils, GCC, or Glibc
-  installations.</para></note>
+  <note><para>Building Binutils in the section after next will serve as an
+  additional check that the toolchain has been built properly. If Binutils
+  fails to build, it is an indication that something has gone wrong with the
+  previous Binutils, GCC, or Glibc installations.</para></note>
 
   </sect2>
 
