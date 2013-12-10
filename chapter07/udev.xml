@@ -15,10 +15,10 @@
     <secondary>usage</secondary>
   </indexterm>
 
-  <para>In <xref linkend="chapter-building-system"/>, we installed the Udev
-  package. Before we go into the details regarding how this works,
-  a brief history of previous methods of handling devices is in
-  order.</para>
+  <para>In <xref linkend="chapter-building-system"/>, we installed Udev
+  from the Systemd source package. Before we go into the details regarding
+  how this works, a brief history of previous methods of handling devices
+  is in order.</para>
 
   <para>Linux systems in general traditionally use a static device creation
   method, whereby a great many device nodes are created under <filename
@@ -118,7 +118,9 @@
       merged together. If <command>udevd</command> can't find a rule for the
       device it is creating, it will leave the permissions and ownership at
       whatever <systemitem class="filesystem">devtmpfs</systemitem> used
-      initially.</para> </sect3>
+      initially.</para>
+
+    </sect3>
 
     <sect3>
       <title>Module Loading</title>
@@ -328,13 +330,6 @@
         <ulink url="http://www.kernel.org/pub/linux/kernel/people/mochel/doc/papers/ols-2005/mochel.pdf"/></para>
       </listitem>
 
-<!--  No longer available
-      <listitem>
-        <para>Pointers to further reading
-        <ulink url="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html"/>
-        </para>
-      </listitem>
--->
     </itemizedlist>
 
   </sect2>

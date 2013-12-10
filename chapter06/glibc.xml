@@ -84,14 +84,12 @@ cd ../glibc-build</userinput></screen>
 
     <para>Prepare Glibc for compilation:</para>
 
-<!-- We would get /usr/lib/glibc/getconf instead of /usr/lib/getconf and
-     /usr/lib/getconf was used before. Other distros seem to use same
-     libexecdir -->
 <screen><userinput remap="configure">../glibc-&glibc-version;/configure    \
     --prefix=/usr          \
     --disable-profile      \
     --enable-kernel=&min-kernel; \
     --libexecdir=/usr/lib</userinput></screen>
+
     <variablelist>
       <title>The meaning of the new configure options:</title>
 
@@ -100,7 +98,7 @@ cd ../glibc-build</userinput></screen>
         <listitem>
           <para>This changes the location of some auxillary files from the
           default of <filename class="directory">/usr/libexec</filename> to
-          <filename class="directory">/usr/lib/glibc</filename>.</para>
+          <filename class="directory">/usr/lib</filename>.</para>
         </listitem>
       </varlistentry>
 

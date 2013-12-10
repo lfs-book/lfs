@@ -432,41 +432,6 @@
         </seglistitem>
       </segmentedlist>
 
-<!-- Begin DejaGNU dependency info -->
-  <bridgehead renderas="sect2" id="dejagnu-dep">DejaGNU</bridgehead>
-
-      <segmentedlist>
-        <segtitle>&dependencies;</segtitle>
-
-        <seglistitem>
-         <seg>Bash, Coreutils, Diffutils, GCC, Grep, Make, and Sed</seg>
-        </seglistitem>
-      </segmentedlist>
-
-      <segmentedlist>
-        <segtitle>&testsuites;</segtitle>
-
-        <seglistitem>
-          <seg></seg>
-        </seglistitem>
-      </segmentedlist>
-
-      <segmentedlist>
-        <segtitle>&before;</segtitle>
-
-        <seglistitem>
-          <seg>None</seg>
-        </seglistitem>
-      </segmentedlist>
-
-      <segmentedlist>
-        <segtitle>&external;</segtitle>
-
-        <seglistitem>
-          <seg>None</seg>
-        </seglistitem>
-      </segmentedlist>
-
 <!-- Begin D-Bus dependency info -->
   <bridgehead renderas="sect2" id="dbus-dep">D-Bus</bridgehead>
 
@@ -492,6 +457,41 @@
 
         <seglistitem>
           <seg>Systemd</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&external;</segtitle>
+
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+<!-- Begin DejaGNU dependency info -->
+  <bridgehead renderas="sect2" id="dejagnu-dep">DejaGNU</bridgehead>
+
+      <segmentedlist>
+        <segtitle>&dependencies;</segtitle>
+
+        <seglistitem>
+         <seg>Bash, Coreutils, Diffutils, GCC, Grep, Make, and Sed</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&testsuites;</segtitle>
+
+        <seglistitem>
+          <seg></seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&before;</segtitle>
+
+        <seglistitem>
+          <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1061,7 +1061,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Diffutils. Less</seg>
+          <seg>Diffutils, Less</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1276,7 +1276,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Check</seg>
+          <seg>No test suite available</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1312,7 +1312,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>No test suite available</seg>
+          <seg>Check</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1635,7 +1635,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Diffutils</seg>
+          <seg>No test suite available</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1671,7 +1671,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>No test suite available</seg>
+          <seg>Diffutils</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1974,41 +1974,6 @@
 
         <seglistitem>
           <seg>Acl, Attr, Cracklib, PAM</seg>
-        </seglistitem>
-      </segmentedlist>
-
-<!-- Begin Sysvinit dependency info -->
-  <bridgehead renderas="sect2" id="sysvinit-dep">Sysvinit</bridgehead>
-
-      <segmentedlist>
-        <segtitle>&dependencies;</segtitle>
-
-        <seglistitem>
-         <seg>Binutils, Coreutils, GCC, Glibc, Make, and Sed</seg>
-        </seglistitem>
-      </segmentedlist>
-
-      <segmentedlist>
-        <segtitle>&testsuites;</segtitle>
-
-        <seglistitem>
-          <seg>No test suite available</seg>
-        </seglistitem>
-      </segmentedlist>
-
-      <segmentedlist>
-        <segtitle>&before;</segtitle>
-
-        <seglistitem>
-          <seg>None</seg>
-        </seglistitem>
-      </segmentedlist>
-
-      <segmentedlist>
-        <segtitle>&external;</segtitle>
-
-        <seglistitem>
-          <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 

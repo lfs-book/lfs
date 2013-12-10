@@ -42,9 +42,19 @@
   <sect2 role="installation">
     <title>Installation of Libdbus</title>
 
+    <note>
+      <para><application>Libdbus</application> is part of the D-Bus sources.
+      You should first unpack the D-Bus tarball and change to the
+      <filename>dbus-&dbus-version;</filename> directory.</para>
+    </note>
+
     <para>Prepare Libdbus for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr --disable-static</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --localstatedir=/var \
+            --libexecdir=/usr/lib/dbus-1.0 \
+            --disable-static</userinput></screen>
 
     <para>Compile the package:</para>
 

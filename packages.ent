@@ -7,18 +7,18 @@
      Allowed deviation in disk usage : 2% -->
 
 
-<!ENTITY attr-version "2.4.46">
-<!ENTITY attr-size "330 KB">
+<!ENTITY attr-version "2.4.47">
+<!ENTITY attr-size "336 KB">
 <!ENTITY attr-url "http://download.savannah.gnu.org/releases/attr/attr-&attr-version;.src.tar.gz">
-<!ENTITY attr-md5 "db557c17fdfa4f785333ecda08654010">
+<!ENTITY attr-md5 "84f58dec00b60f2dc8fd1c9709291cc7">
 <!ENTITY attr-home " ">
 <!ENTITY attr-ch6-du "3.5 MB">
 <!ENTITY attr-ch6-sbu "0.1 SBU">
 
-<!ENTITY acl-version "2.2.51">
+<!ENTITY acl-version "2.2.52">
 <!ENTITY acl-size "380 KB">
 <!ENTITY acl-url "http://download.savannah.gnu.org/releases/acl/acl-&acl-version;.src.tar.gz">
-<!ENTITY acl-md5 "3fc0ce99dc5253bdcce4c9cd437bc267">
+<!ENTITY acl-md5 "a61415312426e9c2212bd7dc7929abda">
 <!ENTITY acl-home " ">
 <!ENTITY acl-ch6-du "5.4 MB">
 <!ENTITY acl-ch6-sbu "0.2 SBU">
@@ -70,10 +70,10 @@
 <!ENTITY binutils-ch6-du "365 MB">
 <!ENTITY binutils-ch6-sbu "2.0 SBU">
 
-<!ENTITY bison-version "3.0">
-<!ENTITY bison-size "1,872 KB">
+<!ENTITY bison-version "3.0.1">
+<!ENTITY bison-size "1,875 KB">
 <!ENTITY bison-url "&gnu;bison/bison-&bison-version;.tar.xz">
-<!ENTITY bison-md5 "a2624994561aa69f056c904c1ccb2880">
+<!ENTITY bison-md5 "032a7b7b9f1a6e278ccde73f82cec5c2">
 <!ENTITY bison-home "&gnu-software;bison/">
 <!--
 <!ENTITY bison-ch5-du "">
@@ -92,10 +92,10 @@
 <!ENTITY bzip2-ch6-du "6.9 MB">
 <!ENTITY bzip2-ch6-sbu "less than 0.1 SBU">
 
-<!ENTITY check-version "0.9.10">
-<!ENTITY check-size "635 KB">
+<!ENTITY check-version "0.9.11">
+<!ENTITY check-size "675 KB">
 <!ENTITY check-url "http://sourceforge.net/projects/check/files/check/&check-version;/check-&check-version;.tar.gz">
-<!ENTITY check-md5 "6d10a8efb9a683467b92b3bce97aeb30">
+<!ENTITY check-md5 "fd5a03979bcab9fb80ba005b55f54178">
 <!ENTITY check-home "http://check.sourceforge.net/">
 <!ENTITY check-ch5-du "6.9 MB">
 <!ENTITY check-ch5-sbu "0.1 SBU">
@@ -110,10 +110,10 @@
 <!ENTITY coreutils-ch6-du "116 MB">
 <!ENTITY coreutils-ch6-sbu "3.4 SBU">
 
-<!ENTITY dbus-version "1.6.10">
-<!ENTITY dbus-size "1,885 KB">
+<!ENTITY dbus-version "1.6.18">
+<!ENTITY dbus-size "1,872 KB">
 <!ENTITY dbus-url "http://dbus.freedesktop.org/releases/dbus/dbus-&dbus-version;.tar.gz">
-<!ENTITY dbus-md5 "de4970c20629aeb958a12132415b3630">
+<!ENTITY dbus-md5 "b02e9c95027a416987b81f9893831061">
 <!ENTITY dbus-home "http://www.freedesktop.org/wiki/Software/dbus">
 <!ENTITY dbus-ch6-du "35 MB">
 <!ENTITY dbus-ch6-sbu "less than 0.4 SBU">
@@ -326,21 +326,18 @@
 <!ENTITY intltool-ch6-du "1.4 MB">
 <!ENTITY intltool-ch6-sbu "0.1 SBU">
 
-<!ENTITY iproute2-version "3.9.0">
-<!ENTITY iproute2-size "403 KB">
-<!ENTITY iproute2-version "3.10.0">
-<!ENTITY iproute2-version "3.11.0">
-<!ENTITY iproute2-size "412 KB">
+<!ENTITY iproute2-version "3.12.0">
+<!ENTITY iproute2-size "415 KB">
 <!ENTITY iproute2-url "&kernel;linux/utils/net/iproute2/iproute2-&iproute2-version;.tar.xz">
-<!ENTITY iproute2-md5 "d7ffb27bc9f0d80577b1f3fb9d1a7689">
+<!ENTITY iproute2-md5 "f87386aaaecafab95607fd10e8152c68">
 <!ENTITY iproute2-home "&kernel;linux/utils/net/iproute2/">
 <!ENTITY iproute2-ch6-du "7.3 MB">
 <!ENTITY iproute2-ch6-sbu "0.1 SBU">
 
-<!ENTITY kbd-version "2.0.0">
-<!ENTITY kbd-size "1,690 KB">
+<!ENTITY kbd-version "2.0.1">
+<!ENTITY kbd-size "1,962 KB">
 <!ENTITY kbd-url "http://ftp.altlinux.org/pub/people/legion/kbd/kbd-&kbd-version;.tar.gz">
-<!ENTITY kbd-md5 "5ba259a0b2464196f6488a72070a3d60">
+<!ENTITY kbd-md5 "cc0ee9f2537d8636cae85a8c6541ed2e">
 <!ENTITY kbd-home "http://ftp.altlinux.org/pub/people/legion/kbd">
 <!ENTITY kbd-ch6-du "20 MB">
 <!ENTITY kbd-ch6-sbu "0.1 SBU">
@@ -361,7 +358,7 @@
 <!ENTITY less-ch6-du "3.6 MB">
 <!ENTITY less-ch6-sbu "less than 0.1 SBU">
 
-<!ENTITY lfs-network-scripts-version "20130518">               <!-- Scripts depend on this format -->
+<!ENTITY lfs-network-scripts-version "20131210">               <!-- Scripts depend on this format -->
 <!ENTITY lfs-network-scripts-size "LFS-NETSCRIPTS-SIZE KB">         <!-- Updated in Makefile -->
 <!ENTITY lfs-network-scripts-url "&downloads-root;lfs-network-scripts-&lfs-network-scripts-version;.tar.bz2">
 <!ENTITY lfs-network-scripts-md5 "LFS-NETSCRIPTS-MD5SUM">           <!-- Updated in Makefile -->
@@ -397,13 +394,13 @@
 <!ENTITY libtool-ch6-sbu "3.0 SBU">
 
 <!ENTITY linux-major-version "3">
-<!ENTITY linux-minor-version "11">
-<!ENTITY linux-patch-version "6">
+<!ENTITY linux-minor-version "12">
+<!ENTITY linux-patch-version "1">
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
-<!ENTITY linux-size "73,335 KB">
+<!ENTITY linux-size "74,589 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "7e92ca268b71c35a00ebcca884300a83">
+<!ENTITY linux-md5 "f6f34baf553f278ff4637d8eaeff5dcd">
 <!ENTITY linux-home "http://www.kernel.org/">
 <!-- measured for 3.9.0 / gcc-4.8.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,
@@ -552,18 +549,10 @@
 <!ENTITY shadow-ch6-du "42 MB">
 <!ENTITY shadow-ch6-sbu "0.2 SBU">
 
-<!ENTITY sysvinit-version "2.88dsf">
-<!ENTITY sysvinit-size "108 KB">
-<!ENTITY sysvinit-url "http://download.savannah.gnu.org/releases/sysvinit/sysvinit-&sysvinit-version;.tar.bz2">
-<!ENTITY sysvinit-md5 "6eda8a97b86e0a6f59dabbf25202aa6f">
-<!ENTITY sysvinit-home "http://savannah.nongnu.org/projects/sysvinit">
-<!ENTITY sysvinit-ch6-du "1.4 MB">
-<!ENTITY sysvinit-ch6-sbu "less than 0.1 SBU">
-
-<!ENTITY tar-version "1.27">
-<!ENTITY tar-size "1,823 KB">
+<!ENTITY tar-version "1.27.1">
+<!ENTITY tar-size "1,835 KB">
 <!ENTITY tar-url "&gnu;tar/tar-&tar-version;.tar.xz">
-<!ENTITY tar-md5 "3484fc42b7a82b82f2305b2971aa0e56">
+<!ENTITY tar-md5 "e0382a4064e09a4943f3adeff1435978">
 <!ENTITY tar-home "&gnu-software;tar/">
 <!ENTITY tar-ch5-du "20.6 MB">
 <!ENTITY tar-ch5-sbu "0.4 SBU">
@@ -597,18 +586,18 @@
 <!ENTITY systemd-ch6-du  "29 MB">
 <!ENTITY systemd-ch6-sbu "0.1 SBU">
 
-<!ENTITY tzdata-version "2013g">
+<!ENTITY tzdata-version "2013h">
 <!ENTITY tzdata-size "222 KB">
 <!ENTITY tzdata-url "http://www.iana.org/time-zones/repository/releases/tzdata&tzdata-version;.tar.gz">
-<!ENTITY tzdata-md5 "76dbc3b5a81913fc0d824376c44a5d15">
+<!ENTITY tzdata-md5 "d310abe42cbe87e76ceb69e2c7003c92">
 <!ENTITY tzdata-home "http://www.iana.org/time-zones">
 <!ENTITY tzdata-ch6-du "6.4 MB">
 <!ENTITY tzdata-ch6-sbu "less than 0.1 SBU">
 
-<!ENTITY util-linux-version "2.23.2">
-<!ENTITY util-linux-size "3,304 KB">
-<!ENTITY util-linux-url "&kernel;linux/utils/util-linux/v2.23/util-linux-&util-linux-version;.tar.xz">
-<!ENTITY util-linux-md5 "b39fde897334a4858bb2098edcce5b3f">
+<!ENTITY util-linux-version "2.24">
+<!ENTITY util-linux-size "3,450 KB">
+<!ENTITY util-linux-url "&kernel;linux/utils/util-linux/v2.24/util-linux-&util-linux-version;.tar.xz">
+<!ENTITY util-linux-md5 "4fac6443427f575fc5f3531a4ad2ca01">
 <!ENTITY util-linux-home "http://userweb.kernel.org/~kzak/util-linux/">
 <!ENTITY util-linux-ch6-du "89 MB">
 <!ENTITY util-linux-ch6-sbu "0.6 SBU">
@@ -622,10 +611,10 @@
 <!ENTITY vim-ch6-du "121 MB">
 <!ENTITY vim-ch6-sbu "1.4 SBU">
 
-<!ENTITY xml-parser-version "2.41">
+<!ENTITY xml-parser-version "2.42_01">
 <!ENTITY xml-parser-size "236 KB">
 <!ENTITY xml-parser-url "http://search.cpan.org/CPAN/authors/id/T/TO/TODDR/XML-Parser-&xml-parser-version;.tar.gz">
-<!ENTITY xml-parser-md5 "c320d2ffa459e6cdc6f9f59c1185855e">
+<!ENTITY xml-parser-md5 "a4650aebcc464bb91113c2c356da8210">
 <!ENTITY xml-parser-home "https://github.com/chorny/XML-Parser">
 <!ENTITY xml-parser-ch6-du "2.5 MB">
 <!ENTITY xml-parser-ch6-sbu "0.1 SBU">

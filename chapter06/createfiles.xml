@@ -53,7 +53,7 @@ ln -sv bash /bin/sh</userinput></screen>
   expect the presence of <filename>/etc/mtab</filename>, create the following
   symbolic link:</para>
 
-<screen><userinput>ln -s /proc/self/mounts /etc/mtab</userinput></screen>
+<screen><userinput>ln -sv /proc/self/mounts /etc/mtab</userinput></screen>
 
   <para>In order for user <systemitem class="username">root</systemitem> to be
   able to login and for the name <quote>root</quote> to be recognized, there

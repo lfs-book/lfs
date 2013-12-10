@@ -133,7 +133,6 @@ cp    -v doc/{isa_abi_headache,configuration} doc/*.html \
           </indexterm>
         </listitem>
       </varlistentry>
-
     </variablelist>
 
   </sect2>
