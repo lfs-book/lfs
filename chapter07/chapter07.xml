@@ -9,7 +9,7 @@
   <?dbhtml dir="chapter07"?>
   <?dbhtml filename="chapter07.html"?>
 
-  <title>Setting Up System Bootscripts</title>
+  <title>Basic System Configuration</title>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="introduction.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="network-scripts.xml"/>
