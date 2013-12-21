@@ -91,7 +91,7 @@ ln -sfv ../../lib/libattr.so.1 /usr/lib/libattr.so</userinput></screen>
       <seglistitem>
         <seg>attr, getfattr, and setattr</seg>
         <seg>libattr.{so,a}</seg>
-        <seg>/usr/include/attr and /usr/share/doc/attr-&attr-version;</seg>
+        <seg>/usr/include/attr, /usr/share/doc/attr-&attr-version;</seg>
       </seglistitem>
     </segmentedlist>
 

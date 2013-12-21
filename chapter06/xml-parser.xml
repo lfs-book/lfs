@@ -63,14 +63,10 @@
     <title>Contents of XML::Parser</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
-      <segtitle>Installed libraries</segtitle>
-      <segtitle>Installed directories</segtitle>
+      <segtitle>Installed Perl module</segtitle>
 
       <seglistitem>
-        <seg>none</seg>
         <seg>Expat.so</seg>
-        <seg>none</seg>
       </seglistitem>
     </segmentedlist>
 

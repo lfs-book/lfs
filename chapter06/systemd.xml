@@ -144,14 +144,14 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         systemd-stdio-bridge, systemd-tmpfiles, systemd-tty-ask-password-agent, telinit,
         timedatectl, and udevadm</seg>
         <seg>libnss_myhostname.so.2, libsystemd-daemon.so, libsystemd-id128.so,
-        libsystemd-journal.so, libsystemd-login.so, and libudev.so</seg>
+        libsystemd-journal.so, libsystemd-login.so, libudev.so</seg>
         <seg>/etc/binfmt.d, /etc/init.d, /etc/kernel, /etc/modules-load.d,
         /etc/sysctl.d, /etc/systemd, /etc/tmpfiles.d, /etc/udev,
         /etc/xdg/systemd, /lib/systemd, /lib/udev, /usr/include/systemd,
         /usr/lib/binfmt.d, /usr/lib/kernel, /usr/lib/modules-load.d, /usr/lib/rpm,
         /usr/lib/sysctl.d, /usr/lib/systemd, /usr/lib/tmpfiles.d,
         /usr/share/doc/systemd-&systemd-version;, /usr/share/systemd,
-        /var/lib/systemd and /var/log/journal</seg>
+        /var/lib/systemd, /var/log/journal</seg>
       </seglistitem>
     </segmentedlist>
 

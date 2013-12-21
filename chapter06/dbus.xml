@@ -107,10 +107,10 @@
 
       <seglistitem>
         <seg>dbus-cleanup-sockets, dbus-daemon, dbus-launch, dbus-monitor,
-        dbus-send and dbus-uuidgen</seg>
+        dbus-send, and dbus-uuidgen</seg>
         <seg>libdbus-1.so</seg>
         <seg>/etc/dbus-1, /usr/include/dbus-1.0, /usr/lib/dbus-1.0,
-        /usr/share/dbus-1, /usr/share/doc/dbus-&dbus-version; and
+        /usr/share/dbus-1, /usr/share/doc/dbus-&dbus-version;,
         /var/lib/dbus</seg>
       </seglistitem>
     </segmentedlist>
