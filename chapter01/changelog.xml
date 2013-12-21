@@ -39,6 +39,10 @@
       <para>2013-12-21</para>
       <itemizedlist>
         <listitem>
+          <para>[krejzi] - Added LFS-Network-Script page. Fixes
+          <ulink url="&lfs-ticket-root;3350">#3350</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[krejzi] - Update Systemd instructions and contents
           for latest version of Systemd.</para>
         </listitem>
