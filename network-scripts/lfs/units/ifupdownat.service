@@ -1,11 +1,12 @@
 [Unit]
-Description=Start ifupdown for %i
-Requires=sys-subsystem-net-devices-%i.device
+Description=Start ifupdown for %I
 After=sys-subsystem-net-devices-%i.device
+BindTo=sys-subsystem-net-devices-%i.device
+ConditionPathExists=/etc/sysconfig/ifconfig.%i
 
 [Service]
-ExecStart=/sbin/ifup %i
-ExecStop=/sbin/ifdown %i
+ExecStart=/sbin/ifup %I
+ExecStop=/sbin/ifdown %I
 RemainAfterExit=true
 
 [Install]

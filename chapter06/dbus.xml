@@ -93,7 +93,7 @@
     <para>Create a symlink, so that D-Bus and Systemd can use the same
     <filename>machine-id</filename> file:</para>
 
-<screen><userinput>ln -s /etc/machine-id /var/lib/dbus</userinput></screen>
+<screen><userinput remap="install">ln -sv /etc/machine-id /var/lib/dbus</userinput></screen>
 
   </sect2>
 

@@ -57,7 +57,7 @@
       <title>The meaning of the configure options:</title>
 
       <varlistentry>
-        <term><parameter>--with-root*</parameter></term>
+        <term><parameter>--with-root-*</parameter></term>
         <listitem>
           <para>These switches ensure that core programs and
           shared libraries are installed in the subdirectories
@@ -95,11 +95,24 @@
 
 <screen><userinput remap="install">make install</userinput></screen>
 
+    <para>Install manual pages which are shipped in the tarball, but were
+    not installed by install process:</para>
+
+<screen><userinput remap="install">for cat in 1 3 5 7 8
+do
+  install -v -m644 man/*.${cat} /usr/share/man/man${cat}
+done</userinput></screen>
+
+    <para>Move NSS myhostname library to <filename
+    class="directory">/lib</filename>:</para>
+
+<screen><userinput remap="install">mv -v /usr/lib/libnss_myhostname.so.2 /lib</userinput></screen>
+
     <para>Create the Sysvinit compatibility symlinks, so Systemd is used
     as the default init system:</para>
 
 <screen><userinput remap="install">for tool in runlevel reboot shutdown poweroff halt telinit; do
-     ln -sfv ../bin/systemctl /sbin/$tool
+     ln -sfv ../bin/systemctl /sbin/${tool}
 done
 ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
 
@@ -110,7 +123,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
     <para>Create the <filename>/etc/machine-id</filename> file needed by
     Journald:</para>
 
-<screen><userinput>systemd-machine-id-setup</userinput></screen>
+<screen><userinput remap="install">systemd-machine-id-setup</userinput></screen>
 
   </sect2>
 
@@ -123,22 +136,22 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <segtitle>Installed directories</segtitle>
 
       <seglistitem>
-        <seg>halt, hostnamectl, init, journalctl, kernel-install, localectl,
-        loginctl, poweroff, reboot, runlevel, shutdown, systemctl,
-        systemd-analyze, systemd-ask-password, systemd-cat, systemd-cgls,
-        systemd-cgtop, systemd-coredumpctl, systemd-delta, systemd-detect-virt,
-        systemd-inhibit, systemd-machine-id-setup, systemd-notify,
-        systemd-nspawn, systemd-stdio-bridge, systemd-tmpfiles,
-        systemd-tty-ask-password-agent, telinit, timedatectl and
-        udevadm</seg>
+        <seg>bootctl, halt, hostnamectl, init, journalctl, kernel-install, localectl,
+        loginctl, machinectl, poweroff, reboot, runlevel, shutdown, systemctl,
+        systemd-analyze, systemd-ask-password, systemd-cat, systemd-cgls, systemd-cgtop,
+        systemd-coredumpctl, systemd-delta, systemd-detect-virt, systemd-inhibit,
+        systemd-machine-id-setup, systemd-notify, systemd-nspawn, systemd-run,
+        systemd-stdio-bridge, systemd-tmpfiles, systemd-tty-ask-password-agent, telinit,
+        timedatectl, and udevadm</seg>
         <seg>libnss_myhostname.so.2, libsystemd-daemon.so, libsystemd-id128.so,
-        libsystemd-journal.so, libsystemd-login.so and libudev.so</seg>
-        <seg>/etc/binfmt.d, /etc/init.d, /etc/kernel, /etc/modules-load.d, /etc/rpm,
+        libsystemd-journal.so, libsystemd-login.so, and libudev.so</seg>
+        <seg>/etc/binfmt.d, /etc/init.d, /etc/kernel, /etc/modules-load.d,
         /etc/sysctl.d, /etc/systemd, /etc/tmpfiles.d, /etc/udev,
         /etc/xdg/systemd, /lib/systemd, /lib/udev, /usr/include/systemd,
-        /usr/lib/binfmt.d, /usr/lib/kernel, /usr/lib/modules-load.d, /usr/lib/sysctl.d,
-        /usr/lib/systemd, /usr/lib/tmpfiles.d, /usr/share/doc/systemd-&systemd-version;,
-        /usr/share/systemd, /var/lib/systemd and /var/log/journal</seg>
+        /usr/lib/binfmt.d, /usr/lib/kernel, /usr/lib/modules-load.d, /usr/lib/rpm,
+        /usr/lib/sysctl.d, /usr/lib/systemd, /usr/lib/tmpfiles.d,
+        /usr/share/doc/systemd-&systemd-version;, /usr/share/systemd,
+        /var/lib/systemd and /var/log/journal</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -146,6 +159,16 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <bridgehead renderas="sect3">Short Descriptions</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
+
+<!--      <varlistentry id="bootctl">
+        <term><command>bootctl</command></term>
+        <listitem>
+          <para></para>
+          <indexterm zone="ch-system-systemd bootctl">
+            <primary sortas="b-bootctl">bootctl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry> -->
 
       <varlistentry id="halt">
         <term><command>halt</command></term>
@@ -223,6 +246,17 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
           Manager.</para>
           <indexterm zone="ch-system-systemd loginctl">
             <primary sortas="b-loginctl">loginctl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="machinectl">
+        <term><command>machinectl</command></term>
+        <listitem>
+          <para>used to introspect and control the state of the Systemd Virtual
+          Machine and Container Registration Manager</para>
+          <indexterm zone="ch-system-systemd machinectl">
+            <primary sortas="b-machinectl">machinectl</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -409,6 +443,17 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
           <para>used to run a command or OS in a light-weight namespace container.</para>
           <indexterm zone="ch-system-systemd systemd-nspawn">
             <primary sortas="b-systemd-nspawn">systemd-nspawn</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-run">
+        <term><command>systemd-run</command></term>
+        <listitem>
+          <para>used to create and start a transient .service or a .scope unit and
+          run the specified command in it.</para>
+          <indexterm zone="ch-system-systemd systemd-run">
+            <primary sortas="b-systemd-run">systemd-run</primary>
           </indexterm>
         </listitem>
       </varlistentry>

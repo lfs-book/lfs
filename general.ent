@@ -1,4 +1,4 @@
-<!ENTITY version         "SYTEMD-20131221">
+<!ENTITY version         "SYSTEMD-20131221">
 <!ENTITY releasedate     "December 21, 2013">
 <!ENTITY copyrightdate   "1999-2013"><!-- jhalfs needs a literal dash, not &ndash; -->
 <!ENTITY milestone       "7.5">

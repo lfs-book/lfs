@@ -39,6 +39,14 @@
       <para>2013-12-21</para>
       <itemizedlist>
         <listitem>
+          <para>[krejzi] - Update Systemd instructions and contents
+          for latest version of Systemd.</para>
+        </listitem>
+        <listitem>
+          <para>[krejzi] - Update network configuration page to
+          use LFS Systemd specific network configuration.</para>
+        </listitem>
+        <listitem>
           <para>[krejzi] - Merge LFS SVN-20131216 book.</para>
         </listitem>
       </itemizedlist>

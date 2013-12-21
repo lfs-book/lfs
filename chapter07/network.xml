@@ -22,21 +22,30 @@
 
     <para>Which interfaces are brought up and down by the network script
     depends on the files in <filename
-    class="directory">/etc/sysconfig/</filename>.  This directory should
+    class="directory">/etc/sysconfig/</filename>. This directory should
     contain a file for each interface to be configured, such as
     <filename>ifconfig.xyz</filename>, where <quote>xyz</quote> is
-    meaningful to the administrator such as the device name (e.g. eth0).
+    required to be a Network Card Interface name (e.g. eth0).
     Inside this file are attributes to this interface, such as its IP
     address(es), subnet masks, and so forth.  It is necessary that
     the stem of the filename be <emphasis>ifconfig</emphasis>.</para>
+
+    <note><para>Udev may assign random Network Card Interface names
+    for some network cards such as enp2s1. If you are not sure what
+    your Network Card Interface name is, you can always run
+    <command>ip l</command> after you have booted your system. Again,
+    it is important that <filename>ifconfig.xyz</filename> is named
+    after correct Network Card Interface name (e.g.
+    <filename>ifconfig.enp2s1</filename> or
+    <filename>ifconfig.eth0</filename>) or Systemd will fail to bring
+    up your network interface.</para></note>
 
     <para>The following command creates a sample file for the
     <emphasis>eth0</emphasis> device with a static IP address:</para>
 
 <screen><userinput>cd /etc/sysconfig/
 cat &gt; ifconfig.eth0 &lt;&lt; "EOF"
-<literal>ONBOOT=yes
-IFACE=eth0
+<literal>IFACE=eth0
 SERVICE=ipv4-static
 IP=192.168.1.1
 GATEWAY=192.168.1.2
@@ -47,20 +56,13 @@ EOF</userinput></screen>
     <para>The values of these variables must be changed in every file to match
     the proper setup.</para>
 
-    <para>If the <envar>ONBOOT</envar> variable is set to <quote>yes</quote> the
-    network script will bring up the Network Interface Card (NIC) during
-    booting of the system. If set to anything but <quote>yes</quote> the NIC
-    will be ignored by the network script and not be automatically brought up.
-    The interface can be manually started or stopped with the
-    <command>ifup</command> and <command>ifdown</command> commands.</para>
-
     <para>The <envar>IFACE</envar> variable defines the interface name,
-    for example, eth0.  It is required for all network device configuration
-    files. </para>
+    for example, eth0. It is required for all network device configuration
+    files.</para>
 
     <para>The <envar>SERVICE</envar> variable defines the method used for
-    obtaining the IP address. The LFS-Bootscripts package has a modular IP
-    assignment format, and creating additional files in the <filename
+    obtaining the IP address. The LFS-Network-Scripts package has a modular
+    IP assignment format, and creating additional files in the <filename
     class="directory">/lib/services/</filename> directory allows other IP
     assignment methods. This is commonly used for Dynamic Host Configuration
     Protocol (DHCP), which is addressed in the BLFS book.</para>
@@ -80,6 +82,30 @@ EOF</userinput></screen>
     If omitted, the PREFIX defaults to 24.</para>
 
     <para>For more information see the <command>ifup</command> man page.</para>
+
+  </sect2>
+
+  <sect2>
+    <title>Configuring the Network Interface Card at boot</title>
+
+    <para>Enabling of the Network Interface Card configuration is
+    done per interface. To enable Network Interface Card
+    configuration at boot, run:</para>
+
+<screen><userinput>systemctl enable ifupdown@eth0</userinput></screen>
+
+    <para>To disable previously enabled Network Interface
+    Card configuration at boot, run:</para>
+
+<screen><userinput>systemctl disable ifupdown@eth0</userinput></screen>
+
+    <para>To manually start the Network Interface Card configuration,
+    run:</para>
+
+<screen><userinput>systemctl start ifupdown@eth0</userinput></screen>
+
+    <para>Replace eth0 with the correct Network Interface Card
+    name as described on the beginning of this page.</para>
 
   </sect2>
 
