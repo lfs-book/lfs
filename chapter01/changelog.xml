@@ -36,6 +36,26 @@
     </listitem>
 -->
     <listitem>
+      <para>2013-12-13</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Fix kmod, procps-ng, zlib, readline, ncurses,
+          and xz methods of establishing correct symbolic links
+          for libraries.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to procps-ng-3.3.9. Fixes
+          <ulink url="&lfs-ticket-root;3439">#3439</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Install non-essential programs from
+          the xz package in /usr/bin.  Fixes
+          <ulink url="&lfs-ticket-root;3445">#3445</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2013-12-10</para>
       <itemizedlist>
         <listitem>

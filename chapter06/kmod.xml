@@ -45,26 +45,17 @@
 
 <screen><userinput remap="configure">./configure --prefix=/usr          \
             --bindir=/bin          \
-            --with-rootlibdir=/lib \
             --sysconfdir=/etc      \
             --disable-manpages     \
+            --with-rootlibdir=/lib \
             --with-xz              \
             --with-zlib</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
 
-       <varlistentry>
-        <term><parameter>--with-rootlibdir</parameter></term>
-        <listitem>
-          <para>This switch ensures that shared library is installed in
-          <filename class="directory">/lib</filename> instead of
-          <filename class="directory">/usr/lib</filename>.</para>
-        </listitem>
-      </varlistentry>
-
       <varlistentry>
-        <term><parameter>--with-*</parameter></term>
+        <term><parameter>--with-xz, --with-zlib</parameter></term>
         <listitem>
           <para>These options enable Kmod to handle compressed kernel modules.</para>
         </listitem>
@@ -76,6 +67,14 @@
           <para>This option prevents the man pages from being built, as they
           rely on libxslt, which isn't available in the chroot
           environment.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--with-rootlibdir=/lib</parameter></term>
+        <listitem>
+          <para>This option ensures different library related files are placed 
+          in the correct directories.</para>
         </listitem>
       </varlistentry>
 
@@ -96,7 +95,7 @@
 
 <screen><userinput remap="install">make install
 
-for target in depmod insmod lsmod modinfo modprobe rmmod; do
+for target in depmod insmod modinfo modprobe rmmod; do
   ln -sv ../bin/kmod /sbin/$target
 done
 
