@@ -374,10 +374,10 @@
 <!ENTITY libcap-ch6-du "1.3 MB">
 <!ENTITY libcap-ch6-sbu "0.1 SBU">
 
-<!ENTITY libpipeline-version "1.2.5">
+<!ENTITY libpipeline-version "1.2.6">
 <!ENTITY libpipeline-size "761 KB">
 <!ENTITY libpipeline-url "http://download.savannah.gnu.org/releases/libpipeline/libpipeline-&libpipeline-version;.tar.gz">
-<!ENTITY libpipeline-md5 "8d159fbd72368526559799f38dd9b4c6">
+<!ENTITY libpipeline-md5 "6d1d51a5dc102af41e0d269d2a31e6f9">
 <!ENTITY libpipeline-home "http://libpipeline.nongnu.org/">
 <!ENTITY libpipeline-ch6-du "7.4 MB">
 <!ENTITY libpipeline-ch6-sbu "0.2 SBU">
@@ -395,12 +395,12 @@
 
 <!ENTITY linux-major-version "3">
 <!ENTITY linux-minor-version "12">
-<!ENTITY linux-patch-version "5">
+<!ENTITY linux-patch-version "6">
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
-<!ENTITY linux-size "74,597 KB">
+<!ENTITY linux-size "74,606 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "5b5330f657f562f7bef6da100a7133b1">
+<!ENTITY linux-md5 "ab2fcc368e20d804e77970196154fb9e">
 <!ENTITY linux-home "http://www.kernel.org/">
 <!-- measured for 3.9.0 / gcc-4.8.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,
@@ -586,10 +586,10 @@
 <!ENTITY systemd-ch6-du  "29 MB">
 <!ENTITY systemd-ch6-sbu "0.1 SBU">
 
-<!ENTITY tzdata-version "2013h">
-<!ENTITY tzdata-size "222 KB">
+<!ENTITY tzdata-version "2013i">
+<!ENTITY tzdata-size "214 KB">
 <!ENTITY tzdata-url "http://www.iana.org/time-zones/repository/releases/tzdata&tzdata-version;.tar.gz">
-<!ENTITY tzdata-md5 "d310abe42cbe87e76ceb69e2c7003c92">
+<!ENTITY tzdata-md5 "8bc69eb75bea496ebe1d5a9ab576702d">
 <!ENTITY tzdata-home "http://www.iana.org/time-zones">
 <!ENTITY tzdata-ch6-du "6.4 MB">
 <!ENTITY tzdata-ch6-sbu "less than 0.1 SBU">
