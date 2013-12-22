@@ -1,6 +1,5 @@
 [Unit]
 Description=Start ifupdown for %I
-After=sys-subsystem-net-devices-%i.device
 BindTo=sys-subsystem-net-devices-%i.device
 ConditionPathExists=/etc/sysconfig/ifconfig.%i
 
