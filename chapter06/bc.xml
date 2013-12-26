@@ -45,6 +45,7 @@
 
 <screen><userinput remap="configure">./configure --prefix=/usr   \
             --with-readline \
+            --infodir=/usr/share/info \
             --mandir=/usr/share/man</userinput></screen>
 
     <variablelist>
