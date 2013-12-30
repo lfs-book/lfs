@@ -68,7 +68,7 @@
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make install install-dev install-lib
-chmod -v 0755 /usr/lib/libattr.so</userinput></screen>
+chmod -v 755 /usr/lib/libattr.so</userinput></screen>
 
     <para>The shared library needs to be moved to
     <filename class="directory">/lib</filename>, and as a result the

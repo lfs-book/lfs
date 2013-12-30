@@ -52,7 +52,7 @@
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make RAISE_SETFCAP=no prefix=/usr install
-chmod -v 0755 /usr/lib/libcap.so.2.22</userinput></screen>
+chmod -v 755 /usr/lib/libcap.so</userinput></screen>
 
     <para>The shared library needs to be moved to
     <filename class="directory">/lib</filename>, and as a result the
