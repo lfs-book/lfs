@@ -31,11 +31,11 @@
 <!ENTITY autoconf-ch6-du "17.1 MB">
 <!ENTITY autoconf-ch6-sbu "4.5 SBU">
 
-<!ENTITY automake-version "1.14">
+<!ENTITY automake-version "1.14.1">
 <!ENTITY am-minor-version "1.14">
-<!ENTITY automake-size "1,452 KB">
+<!ENTITY automake-size "1,456 KB">
 <!ENTITY automake-url "&gnu;automake/automake-&automake-version;.tar.xz">
-<!ENTITY automake-md5 "cb3fba6d631cddf12e230fd0cc1890df">
+<!ENTITY automake-md5 "7fc29854c520f56b07aa232a0f880292">
 <!ENTITY automake-home "&gnu-software;automake/">
 <!ENTITY automake-ch6-du "100 MB">
 <!ENTITY automake-ch6-sbu "less than 0.1 SBU (34.1 SBU with tests)">
@@ -139,10 +139,10 @@
 <!-- NOTE: When updating e2fsprogs, remember to check the list
      of acceptable features that can be shown by debugfs in
      chapter02/creatingfilesystem.xml -->
-<!ENTITY e2fsprogs-version "1.42.8">
-<!ENTITY e2fsprogs-size "5,852 KB">
+<!ENTITY e2fsprogs-version "1.42.9">
+<!ENTITY e2fsprogs-size "5,928 KB">
 <!ENTITY e2fsprogs-url "&sourceforge;e2fsprogs/e2fsprogs-&e2fsprogs-version;.tar.gz">
-<!ENTITY e2fsprogs-md5 "8ef664b6eb698aa6b733df59b17b9ed4">
+<!ENTITY e2fsprogs-md5 "3f8e41e63b432ba114b33f58674563f7">
 <!ENTITY e2fsprogs-home "http://e2fsprogs.sourceforge.net/">
 <!ENTITY e2fsprogs-ch6-du "64 MB">
 <!ENTITY e2fsprogs-ch6-sbu "1.7 SBU">
@@ -218,10 +218,10 @@
 <!ENTITY gcc-ch6-du "2.2 GB">
 <!ENTITY gcc-ch6-sbu "55.6 SBU">
 
-<!ENTITY gdbm-version "1.10">
-<!ENTITY gdbm-size "640 KB">
+<!ENTITY gdbm-version "1.11">
+<!ENTITY gdbm-size "796 KB">
 <!ENTITY gdbm-url "&gnu;gdbm/gdbm-&gdbm-version;.tar.gz">
-<!ENTITY gdbm-md5 "88770493c2559dc80b561293e39d3570">
+<!ENTITY gdbm-md5 "72c832680cf0999caedbe5b265c8c1bd">
 <!ENTITY gdbm-home "&gnu-software;gdbm/">
 <!ENTITY gdbm-ch5-du "2.7 MB">
 <!ENTITY gdbm-ch5-sbu "0.1 SBU">
@@ -266,10 +266,10 @@
 <!ENTITY gperf-ch6-du "6.5 MB">
 <!ENTITY gperf-ch6-sbu "0.1 SBU">
 
-<!ENTITY grep-version "2.14">
-<!ENTITY grep-size "1,172 KB">
+<!ENTITY grep-version "2.16">
+<!ENTITY grep-size "1,184 KB">
 <!ENTITY grep-url "&gnu;grep/grep-&grep-version;.tar.xz">
-<!ENTITY grep-md5 "d4a3f03849d1e17ce56ab76aa5a24cab">
+<!ENTITY grep-md5 "502350a6c8f7c2b12ee58829e760b44d">
 <!ENTITY grep-home "&gnu-software;grep/">
 <!ENTITY grep-ch5-du "21 MB">
 <!ENTITY grep-ch5-sbu "0.2 SBU">
@@ -342,10 +342,10 @@
 <!ENTITY kbd-ch6-du "20 MB">
 <!ENTITY kbd-ch6-sbu "0.1 SBU">
 
-<!ENTITY kmod-version "15">
-<!ENTITY kmod-size "1,420 KB">
+<!ENTITY kmod-version "16">
+<!ENTITY kmod-size "1,408 KB">
 <!ENTITY kmod-url "&kernel;linux/utils/kernel/kmod/kmod-&kmod-version;.tar.xz">
-<!ENTITY kmod-md5 "d03372179ed2cfa0c52b6672cf438901">
+<!ENTITY kmod-md5 "3006a0287211212501cdfe1211b29f09">
 <!ENTITY kmod-home " ">
 <!ENTITY kmod-ch6-du "34 MB">
 <!ENTITY kmod-ch6-sbu "0.1 SBU">
@@ -366,12 +366,12 @@
 <!ENTITY lfs-network-scripts-ch7-du "LFS-NETSCRIPTS-INSTALL-KB KB"> <!-- Updated in Makefile -->
 <!ENTITY lfs-network-scripts-ch7-sbu "less than 0.1 SBU">
 
-<!ENTITY libcap-version "2.22">
-<!ENTITY libcap-size "66 KB">
-<!ENTITY libcap-url "http://ftp.de.debian.org/debian/pool/main/libc/libcap2/libcap2_&libcap-version;.orig.tar.gz">
-<!ENTITY libcap-md5 "b4896816b626bea445f0b3849bdd4077">
-<!ENTITY libcap-home " ">
-<!ENTITY libcap-ch6-du "1.3 MB">
+<!ENTITY libcap-version "2.24">
+<!ENTITY libcap-size "64 KB">
+<!ENTITY libcap-url "&kernel;linux/libs/security/linux-privs/libcap2/libcap-&libcap-version;.tar.xz">
+<!ENTITY libcap-md5 "d43ab9f680435a7fff35b4ace8d45b80">
+<!ENTITY libcap-home "https://sites.google.com/site/fullycapable/">
+<!ENTITY libcap-ch6-du "1.7 MB">
 <!ENTITY libcap-ch6-sbu "0.1 SBU">
 
 <!ENTITY libpipeline-version "1.2.6">
@@ -542,10 +542,10 @@
 <!ENTITY sed-ch6-sbu "0.2 SBU">
 
 <!ENTITY shadow-version "4.1.5.1">
-<!ENTITY shadow-size "2,142 KB">
-<!ENTITY shadow-url "http://pkg-shadow.alioth.debian.org/releases/shadow-&shadow-version;.tar.bz2">
-<!ENTITY shadow-md5 "a00449aa439c69287b6d472191dc2247">
-<!ENTITY shadow-home "http://pkg-shadow.alioth.debian.org/">
+<!ENTITY shadow-size "3,428 KB">
+<!ENTITY shadow-url "http://cdn.debian.net/debian/pool/main/s/shadow/shadow_&shadow-version;.orig.tar.gz">
+<!ENTITY shadow-md5 "ae66de9953f840fb3a97f6148bc39a30">
+<!-- <!ENTITY shadow-home "http://pkg-shadow.alioth.debian.org/"> -->
 <!ENTITY shadow-ch6-du "42 MB">
 <!ENTITY shadow-ch6-sbu "0.2 SBU">
 

@@ -36,6 +36,72 @@
     </listitem>
 -->
     <listitem>
+      <para>2014-01-10</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - Update to libcap-2.24.</para>
+        </listitem>
+        <listitem>
+          <para>[krejzi] - Merge LFS SVN-20140102 book.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-01-02</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to grep-2.16.  Fixes
+          <ulink url="&lfs-ticket-root;3418">#3418</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2013-12-29</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to e2fsprogs-1.42.9.  Fixes
+          <ulink url="&lfs-ticket-root;3462">#3462</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gdbm-1.11.  Fixes
+          <ulink url="&lfs-ticket-root;3459">#3459</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to kmod-16.  Fixes
+          <ulink url="&lfs-ticket-root;3455">#3455</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to automake-1.14.1.  Fixes
+          <ulink url="&lfs-ticket-root;3458">#3458</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update readline patch to upstream level.  Fixes
+          <ulink url="&lfs-ticket-root;3461">#3461</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Use gcc version of libiberty.a.  Fixes
+          <ulink url="&lfs-ticket-root;3456">#3456</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Use different URL for shadow.  Fixes
+          <ulink url="&lfs-ticket-root;3453">#3453</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update coreutils i18n patch to fix problem
+          with uniq. Fixes
+          <ulink url="&lfs-ticket-root;3457">#3457</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Remove no longer needed makeinfo from Host System
+          Requirements. Fixes
+          <ulink url="&lfs-ticket-root;3460">#3460</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2013-12-22</para>
       <itemizedlist>
         <listitem>
