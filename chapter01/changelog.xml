@@ -36,10 +36,136 @@
     </listitem>
 -->
     <listitem>
+      <para>2014-02-04</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - Merge LFS SVN-20140202 book.</para>
+        </listitem>
+        <listitem>
+          <para>[krejzi] - Update to D-Bus 1.8.0.</para>
+        </listitem>
+        <listitem>
+          <para>[krejzi] - Fix Systemd to build with recent LFS changes.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-02-02</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to linux-3.13.1.  Fixes
+          <ulink url="&lfs-ticket-root;3483">#3483</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-01-27</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Add an environment variable to util-linux
+          in Chapter 5 to prevent an installation error for 
+          hosts that have unneeded capabilities availible.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-01-26</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-3.57.  Fixes
+          <ulink url="&lfs-ticket-root;3480">#3480</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-db-2.6.6.  Fixes
+          <ulink url="&lfs-ticket-root;3479">#3479</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-3.13.  Fixes
+          <ulink url="&lfs-ticket-root;3478">#3478</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-01-25</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Add a configure switch to util-linux
+          in Chapter 5 to prevent an installation error for 
+          hosts that have systemd installed.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-01-22</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to check-0.9.12.  Fixes
+          <ulink url="&lfs-ticket-root;3477">#3477</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to util-linux-2.24.1.  Fixes
+          <ulink url="&lfs-ticket-root;3476">#3476</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to mpc-1.0.2.  Fixes
+          <ulink url="&lfs-ticket-root;3474">#3474</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-3.56.  Fixes
+          <ulink url="&lfs-ticket-root;3470">#3470</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-3.12.7.  Fixes
+          <ulink url="&lfs-ticket-root;3469">#3469</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to perl-5.18.2.  Fixes
+          <ulink url="&lfs-ticket-root;3465">#3465</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gettext-0.18.3.2.  Fixes
+          <ulink url="&lfs-ticket-root;3464">#3464</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-01-21</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Moved util-linux final build to be after
+          udev.  Fixed up e2fsprogs and udev to use the Chapter 5
+          build of util-linux.  Fixes
+          <ulink url="&lfs-ticket-root;3467">#3467</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2014-01-17</para>
       <itemizedlist>
         <listitem>
           <para>[krejzi] - Merge LFS SVN-20140114 book.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-01-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Added a Chapter 5 build of util-linux in 
+          preparation for moving the Chapter 6 build to after udev.
+          This is not the complete fix as this build has not yet
+          been incorporated into Chapter 6.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Mount /run as a tmpfs for Chapter 6.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -55,7 +181,7 @@
         </listitem>
         <listitem>
           <para>[bdubbs] - Fix hardcoded reference to /tools in
-          Chapter 6 glibc.  Fixes
+          Chapter 6 gcc. Fixes
           <ulink url="&lfs-ticket-root;3466">#3466</ulink>.</para>
         </listitem>
         <listitem>

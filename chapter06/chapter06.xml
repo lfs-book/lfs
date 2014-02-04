@@ -36,7 +36,6 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="acl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libcap.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="shadow.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="util-linux.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="psmisc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="procps.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="e2fsprogs.xml"/>
@@ -78,6 +77,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libdbus.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="systemd.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dbus.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="util-linux.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="tar.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="texinfo.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vim.xml"/>

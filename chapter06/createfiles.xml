@@ -98,7 +98,8 @@ adm:x:16:
 messagebus:x:18:
 systemd-journal:x:23:
 mail:x:34:
-nogroup:x:99:</literal>
+nogroup:x:99:
+users:x:100:</literal>
 EOF</userinput></screen>
 
   <para>The created groups are not part of any standard&mdash;they are groups

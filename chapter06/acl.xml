@@ -56,10 +56,14 @@
 <screen><userinput remap="make">make</userinput></screen>
 
     <para>The Acl tests need to be run on a filesystem that supports access
-    controls. You will see lot of failures because Coreutils weren't compiled
-    with ACL support. To test the results, issue:</para>
+    controls. You will see lot of failures because Coreutils wasn't compiled
+    with ACL support. To anyways test the results, issue:</para>
 
 <screen><userinput remap="test">make -k tests root-tests</userinput></screen>
+
+    <note><para>Even if you run Acl tests after Coreutils has been built with
+    Acl support, at least 11 tests will still fail for unknown reasons.</para>
+    </note>
 
     <para>Install the package:</para>
 

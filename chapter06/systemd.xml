@@ -40,6 +40,21 @@
   <sect2 role="installation">
     <title>Installation of Systemd</title>
 
+    <para>First, create a file to allow Systemd to build when using Util-Linux
+    built in Chapter 5:</para>
+
+<screen><userinput remap="pre">cat &gt; config.cache &lt;&lt; "EOF"
+<literal>KILL=/bin/kill
+HAVE_BLKID=1
+BLKID_LIBS="-lblkid"
+BLKID_CFLAGS="-I/tools/include/blkid"</literal>
+EOF</userinput></screen>
+
+    <para>Aditionally, fix a build error when using Util-Linux built in
+    Chapter 5:</para>
+
+<screen><userinput remap="pre">sed -i "s:blkid/::" src/udev/udev-builtin-blkid.c</userinput></screen>
+
     <para>Prepare Systemd for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr \
@@ -47,6 +62,7 @@
             --localstatedir=/var \
             --libexecdir=/usr/lib \
             --docdir=/usr/share/doc/systemd-&systemd-version; \
+            --config-cache \
             --with-rootprefix= \
             --with-rootlibdir=/lib \
             --enable-split-usr \
@@ -57,7 +73,16 @@
       <title>The meaning of the configure options:</title>
 
       <varlistentry>
-        <term><parameter>--with-root-*</parameter></term>
+        <term><parameter>--config-cache</parameter></term>
+        <listitem>
+          <para>This switch tells the build system to use
+          the <filename>config.cache</filename> file which
+          was created earlier.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--with-root*</parameter></term>
         <listitem>
           <para>These switches ensure that core programs and
           shared libraries are installed in the subdirectories
@@ -86,14 +111,14 @@
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
+<screen><userinput remap="make">make LIBRARY_PATH=/tools/lib</userinput></screen>
 
     <para>The package comes with a testsuite, but it doesn't work in
     chroot. It needs to be run from a system booted using Systemd.</para>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make install</userinput></screen>
+<screen><userinput remap="install">make LD_LIBRARY_PATH=/tools/lib install</userinput></screen>
 
     <para>Install manual pages which are shipped in the tarball, but were
     not installed by install process:</para>
