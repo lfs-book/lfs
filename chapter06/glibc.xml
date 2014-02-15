@@ -54,6 +54,10 @@
       Unicode, therefore libiconv is not required on an LFS system.</para>
     </note>
 
+    <para>First fix a minor problem when installing the tzselect script:</para>
+
+<screen><userinput remap="pre">sed -i 's/\\$$(pwd)/`pwd`/' timezone/Makefile</userinput></screen>
+
     <para>The Glibc build system is self-contained and will install
     perfectly, even though the compiler specs file and linker are still
     pointing at <filename class="directory">/tools</filename>. The specs
@@ -61,17 +65,9 @@
     Glibc autoconf tests would give false results and defeat the goal
     of achieving a clean build.</para>
 
-    <para>An upstream change needs to be reverted:</para>
-
-<screen><userinput remap="pre">sed -i -e 's/static __m128i/inline &amp;/' sysdeps/x86_64/multiarch/strstr.c</userinput></screen>
-
-    <para>Allow Glibc to be built with Make-&make-version;:</para>
-
-<screen><userinput remap="pre">sed -r -i 's/(3..89..)/\1 | 4.*/' configure</userinput></screen>
-
     <para>Some of the Glibc programs use non-FHS compilant
-    <filename class="directory">/var/db</filename> directory
-    to store their runtime data. Apply the following patch to make such programs
+    <filename class="directory">/var/db</filename> directory to store
+    their runtime data. Apply the following patch to make such programs
     store their runtime data in the FHS-compliant locations:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
@@ -84,11 +80,12 @@ cd ../glibc-build</userinput></screen>
 
     <para>Prepare Glibc for compilation:</para>
 
-<screen><userinput remap="configure">../glibc-&glibc-version;/configure    \
-    --prefix=/usr          \
-    --disable-profile      \
-    --enable-kernel=&min-kernel; \
-    --libexecdir=/usr/lib</userinput></screen>
+<screen><userinput remap="configure">../glibc-&glibc-version;/configure          \
+    --prefix=/usr                \
+    --disable-profile            \
+    --enable-kernel=&min-kernel;       \
+    --libexecdir=/usr/lib        \
+    --enable-obsolete-rpc</userinput></screen>
 
     <variablelist>
       <title>The meaning of the new configure options:</title>
@@ -99,6 +96,15 @@ cd ../glibc-build</userinput></screen>
           <para>This changes the location of some auxillary files from the
           default of <filename class="directory">/usr/libexec</filename> to
           <filename class="directory">/usr/lib</filename>.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-obsolete-rpc</parameter></term>
+        <listitem>
+          <para>Installs NIS and RPC related headers that are not installed by
+          default; these are required to rebuild Glibc and by several BLFS
+          packages.</para>
         </listitem>
       </varlistentry>
 
@@ -173,19 +179,16 @@ grep Error glibc-check-log</userinput></screen>
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>Install NIS and RPC related headers that are not installed by
-    default; these are required to rebuild glibc and by several BLFS
-    packages:</para>
-
-<screen><userinput remap="install">cp -v ../glibc-&glibc-version;/sunrpc/rpc/*.h /usr/include/rpc
-cp -v ../glibc-&glibc-version;/sunrpc/rpcsvc/*.h /usr/include/rpcsvc
-cp -v ../glibc-&glibc-version;/nis/rpcsvc/*.h /usr/include/rpcsvc</userinput></screen>
-
     <para>Install the configuration file and runtime directory for
     <command>nscd</command>:</para>
 
 <screen><userinput remap="install">cp -v ../glibc-&glibc-version;/nscd/nscd.conf /etc/nscd.conf
 mkdir -pv /var/cache/nscd</userinput></screen>
+
+    <para>Install the Systemd support files for <command>nscd</command>:</para>
+
+<screen><userinput remap="install">install -v -Dm644 ../glibc-&glibc-version;/nscd/nscd.tmpfiles /etc/tmpfiles.d/nscd.conf
+install -v -Dm644 ../glibc-&glibc-version;/nscd/nscd.service /lib/systemd/system/nscd.service</userinput></screen>
 
     <para>The locales that can make the system respond in a different language
     were not installed by the above command. None of the locales are required,
@@ -419,7 +422,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
         pldd, rpcgen, sln, sotruss, sprof, tzselect, xtrace,
         zdump, and zic</seg>
         <seg>ld.so, libBrokenLocale.{a,so}, libSegFault.so, libanl.{a,so},
-        libbsd-compat.a, libc.{a,so}, libc_nonshared.a, libcidn.so,
+        libc.{a,so}, libc_nonshared.a, libcidn.so,
         libcrypt.{a,so}, libdl.{a,so}, libg.a, libieee.a, libm.{a,so},
         libmcheck.a, libmemusage.so, libnsl.{a,so}, libnss_compat.so,
         libnss_dns.so, libnss_files.so, libnss_hesiod.so, libnss_nis.so,
@@ -743,17 +746,6 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
           <para>An asynchronous name lookup library</para>
           <indexterm zone="ch-system-glibc libanl">
             <primary sortas="c-libanl">libanl</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libbsd-compat">
-        <term><filename class="libraryfile">libbsd-compat</filename></term>
-        <listitem>
-          <para>Provides the portability needed in order to run certain
-          Berkeley Software Distribution (BSD) programs under Linux</para>
-          <indexterm zone="ch-system-glibc libbsd-compat">
-            <primary sortas="c-libbsd-compat">libbsd-compat</primary>
           </indexterm>
         </listitem>
       </varlistentry>

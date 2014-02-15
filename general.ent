@@ -1,5 +1,5 @@
-<!ENTITY version         "SYSTEMD-20140204">
-<!ENTITY releasedate     "February 04, 2014">
+<!ENTITY version         "20140214-SYSTEMD">
+<!ENTITY releasedate     "February 14, 2014">
 <!ENTITY copyrightdate   "1999-2014"><!-- jhalfs needs a literal dash, not &ndash; -->
 <!ENTITY milestone       "7.5">
 <!ENTITY generic-version "systemd"> <!-- Use "development", "testing", or "x.y[-pre{x}]" -->

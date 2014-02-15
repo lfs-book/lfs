@@ -3,7 +3,6 @@
 # Boot scripts
 for s in network-scripts/lfs/lib/services/* \
          network-scripts/lfs/sbin/*         \
-         network-scripts/lfs/tmpfiles/*     \
          network-scripts/lfs/units/*
 do
   script=$(basename $s)

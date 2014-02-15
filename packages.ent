@@ -164,10 +164,10 @@
 <!ENTITY expect-ch5-du "4.4 MB">
 <!ENTITY expect-ch5-sbu "0.1 SBU">
 
-<!ENTITY file-version "5.16">
-<!ENTITY file-size "643 KB">
+<!ENTITY file-version "5.17">
+<!ENTITY file-size "694 KB">
 <!ENTITY file-url "ftp://ftp.astron.com/pub/file/file-&file-version;.tar.gz">
-<!ENTITY file-md5 "359c0cf41c3d438d17b4d293f3b950dc">
+<!ENTITY file-md5 "e19c47e069ced7b01ccb4db402cc01d3">
 <!ENTITY file-home "http://www.darwinsys.com/file/">
 <!ENTITY file-ch5-du "12.4 MB">
 <!ENTITY file-ch5-sbu "0.1 SBU">
@@ -184,10 +184,10 @@
 <!ENTITY findutils-ch6-du "29 MB">
 <!ENTITY findutils-ch6-sbu "0.4 SBU">
 
-<!ENTITY flex-version "2.5.37">
-<!ENTITY flex-size "1,280 KB">
+<!ENTITY flex-version "2.5.38">
+<!ENTITY flex-size "1,590 KB">
 <!ENTITY flex-url "&sourceforge;flex/flex-&flex-version;.tar.bz2">
-<!ENTITY flex-md5 "c75940e1fc25108f2a7b3ef42abdae06">
+<!ENTITY flex-md5 "b230c88e65996ff74994d08a2a2e0f27">
 <!ENTITY flex-home "http://flex.sourceforge.net">
 <!--
 <!ENTITY flex-ch5-du "">
@@ -238,10 +238,10 @@
 <!ENTITY gettext-ch6-du "199 MB">
 <!ENTITY gettext-ch6-sbu "2.3 SBU">
 
-<!ENTITY glibc-version "2.18">
-<!ENTITY glibc-size "10,892 KB">
+<!ENTITY glibc-version "2.19">
+<!ENTITY glibc-size "11,801 KB">
 <!ENTITY glibc-url "&gnu;glibc/glibc-&glibc-version;.tar.xz">
-<!ENTITY glibc-md5 "88fbbceafee809e82efd52efa1e3c58f">
+<!ENTITY glibc-md5 "e26b8cc666b162f999404b03970f14e4">
 <!ENTITY glibc-home "&gnu-software;libc/">
 <!ENTITY glibc-ch5-du "567 MB">
 <!ENTITY glibc-ch5-sbu "4.7 SBU">
@@ -358,7 +358,7 @@
 <!ENTITY less-ch6-du "3.6 MB">
 <!ENTITY less-ch6-sbu "less than 0.1 SBU">
 
-<!ENTITY lfs-network-scripts-version "20131222">               <!-- Scripts depend on this format -->
+<!ENTITY lfs-network-scripts-version "20140214">               <!-- Scripts depend on this format -->
 <!ENTITY lfs-network-scripts-size "LFS-NETSCRIPTS-SIZE KB">         <!-- Updated in Makefile -->
 <!ENTITY lfs-network-scripts-url "&downloads-root;lfs-network-scripts-&lfs-network-scripts-version;.tar.bz2">
 <!ENTITY lfs-network-scripts-md5 "LFS-NETSCRIPTS-MD5SUM">           <!-- Updated in Makefile -->
@@ -395,12 +395,12 @@
 
 <!ENTITY linux-major-version "3">
 <!ENTITY linux-minor-version "13">
-<!ENTITY linux-patch-version "1">
+<!ENTITY linux-patch-version "3">
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
 <!-- <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;"> -->
-<!ENTITY linux-size "75,383 KB">
+<!ENTITY linux-size "75,393 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "18f528e5632f0096e642c511722630dc">
+<!ENTITY linux-md5 "ad98a0c623a124a25dab86406ddc7119">
 <!ENTITY linux-home "http://www.kernel.org/">
 <!-- measured for 3.9.0 / gcc-4.8.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,
@@ -441,10 +441,10 @@
 <!ENTITY man-db-ch6-du "27 MB">
 <!ENTITY man-db-ch6-sbu "0.5 SBU">
 
-<!ENTITY man-pages-version "3.57">
-<!ENTITY man-pages-size "1,168 KB">
+<!ENTITY man-pages-version "3.58">
+<!ENTITY man-pages-size "1,170 KB">
 <!ENTITY man-pages-url "http://www.kernel.org/pub/linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "18bba89745fecdfddad3caaef7cde5f4">
+<!ENTITY man-pages-md5 "539698a70e0338551d22c24011c03186">
 <!ENTITY man-pages-home "http://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-ch6-du "23 MB">
 <!ENTITY man-pages-ch6-sbu "less than 0.1 SBU">

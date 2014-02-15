@@ -36,6 +36,101 @@
     </listitem>
 -->
     <listitem>
+      <para>2014-02-14</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - Merge LFS SVN-20140214 book.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Make sed for omit-frame-pointers the
+          same in Chapters 5 and 6. Fixes
+          <ulink url="&lfs-ticket-root;3497">#3497</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Simplify zimesone configuration in glibc.
+          Thanks to Chris Staub for the patch.  Fixes
+          <ulink url="&lfs-ticket-root;3496">#3496</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Let the glibc Makefile install rpc headers.
+          Thanks to Chris Staub for the patch.  Fixes
+          <ulink url="&lfs-ticket-root;3495">#3495</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-3.13.3. Fixes
+          <ulink url="&lfs-ticket-root;3493">#3493</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-02-13</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to file-5.17. Fixes
+          <ulink url="&lfs-ticket-root;3491">#3491</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to flex-2.5.38. Fixes
+          <ulink url="&lfs-ticket-root;3492">#3492</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-3.58. Fixes
+          <ulink url="&lfs-ticket-root;3490">#3490</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-02-10</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update coreutils i18n patch.
+          Thanks to Igor Izivkov for pointing it out.  Fixes
+          <ulink url="&lfs-ticket-root;3488">#3488</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-02-08</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to glibc-2.19.  Fixes
+          <ulink url="&lfs-ticket-root;3486">#3486</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-02-07</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to linux-3.13.2.  Fixes
+          <ulink url="&lfs-ticket-root;3485">#3485</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-02-05</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Change expect library type in Chapter 5.
+          Thanks to kammet for the report.  Fixes
+          <ulink url="&lfs-ticket-root;3484">#3484</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Fix e2fsprogs tests to run properly
+          in the LFS chroot environment.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Remove unnecessary mkdir in groff.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2014-02-04</para>
       <itemizedlist>
         <listitem>
