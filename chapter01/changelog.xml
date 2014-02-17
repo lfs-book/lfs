@@ -39,6 +39,9 @@
       <para>2014-02-17</para>
       <itemizedlist>
         <listitem>
+          <para>[krejzi] - LFS-7.5-systemd-rc1 released.</para>
+        </listitem>
+        <listitem>
           <para>[krejzi] - Merge LFS SVN-20140216 book.</para>
         </listitem>
       </itemizedlist>

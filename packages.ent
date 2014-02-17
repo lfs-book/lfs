@@ -359,11 +359,11 @@
 <!ENTITY less-ch6-sbu "less than 0.1 SBU">
 
 <!ENTITY lfs-network-scripts-version "20140214">               <!-- Scripts depend on this format -->
-<!ENTITY lfs-network-scripts-size "LFS-NETSCRIPTS-SIZE KB">         <!-- Updated in Makefile -->
+<!ENTITY lfs-network-scripts-size "22 KB">         <!-- Updated in Makefile -->
 <!ENTITY lfs-network-scripts-url "&downloads-root;lfs-network-scripts-&lfs-network-scripts-version;.tar.bz2">
-<!ENTITY lfs-network-scripts-md5 "LFS-NETSCRIPTS-MD5SUM">           <!-- Updated in Makefile -->
+<!ENTITY lfs-network-scripts-md5 "3c67714167e09c727e3422e20284765d">           <!-- Updated in Makefile -->
 <!ENTITY lfs-network-scripts-home " ">
-<!ENTITY lfs-network-scripts-ch7-du "LFS-NETSCRIPTS-INSTALL-KB KB"> <!-- Updated in Makefile -->
+<!ENTITY lfs-network-scripts-ch7-du "140 KB"> <!-- Updated in Makefile -->
 <!ENTITY lfs-network-scripts-ch7-sbu "less than 0.1 SBU">
 
 <!ENTITY libcap-version "2.24">
