@@ -1492,7 +1492,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>Not run. Requires Man-DB test suite package</seg>
+          <seg>Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 

@@ -38,7 +38,7 @@
 <!ENTITY automake-md5 "7fc29854c520f56b07aa232a0f880292">
 <!ENTITY automake-home "&gnu-software;automake/">
 <!ENTITY automake-ch6-du "100 MB">
-<!ENTITY automake-ch6-sbu "less than 0.1 SBU (34.1 SBU with tests)">
+<!ENTITY automake-ch6-sbu "less than 0.1 SBU (about 12 SBU with tests)">
 
 <!ENTITY bash-version "4.2">
 <!ENTITY bash-size "6,845 KB">
@@ -441,10 +441,10 @@
 <!ENTITY man-db-ch6-du "27 MB">
 <!ENTITY man-db-ch6-sbu "0.5 SBU">
 
-<!ENTITY man-pages-version "3.58">
-<!ENTITY man-pages-size "1,170 KB">
+<!ENTITY man-pages-version "3.59">
+<!ENTITY man-pages-size "1,172 KB">
 <!ENTITY man-pages-url "http://www.kernel.org/pub/linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "539698a70e0338551d22c24011c03186">
+<!ENTITY man-pages-md5 "d8e4d8287a76ee861351b905044c8e92">
 <!ENTITY man-pages-home "http://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-ch6-du "23 MB">
 <!ENTITY man-pages-ch6-sbu "less than 0.1 SBU">
