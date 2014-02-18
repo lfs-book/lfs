@@ -81,9 +81,9 @@ cd ../glibc-build</userinput></screen>
     <para>Prepare Glibc for compilation:</para>
 
 <screen><userinput remap="configure">../glibc-&glibc-version;/configure          \
-    --prefix=/usr                \
-    --disable-profile            \
-    --enable-kernel=&min-kernel;       \
+    --prefix=/usr          \
+    --disable-profile      \
+    --enable-kernel=&min-kernel; \
     --enable-obsolete-rpc</userinput></screen>
 
     <variablelist>
@@ -183,7 +183,7 @@ mkdir -pv /var/cache/nscd</userinput></screen>
 
     <para>Install the Systemd support files for <command>nscd</command>:</para>
 
-<screen><userinput remap="install">install -v -Dm644 ../glibc-&glibc-version;/nscd/nscd.tmpfiles /etc/tmpfiles.d/nscd.conf
+<screen><userinput remap="install">install -v -Dm644 ../glibc-&glibc-version;/nscd/nscd.tmpfiles /usr/lib/tmpfiles.d/nscd.conf
 install -v -Dm644 ../glibc-&glibc-version;/nscd/nscd.service /lib/systemd/system/nscd.service</userinput></screen>
 
     <para>The locales that can make the system respond in a different language

@@ -48,15 +48,11 @@
 
     <para>Prepare D-Bus for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr \
-            --sysconfdir=/etc \
-            --localstatedir=/var \
-            --libexecdir=/usr/lib/dbus-1.0 \
-            --disable-static \
-            --enable-systemd \
+<screen><userinput remap="configure">./configure --prefix=/usr                      \
+            --sysconfdir=/etc                  \
+            --localstatedir=/var               \
             --docdir=/usr/share/doc/dbus-&dbus-version; \
-            --with-console-auth-dir=/run/console/ \
-            --with-systemdsystemunitdir=/lib/systemd/system</userinput></screen>
+            --with-console-auth-dir=/run/console/</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -84,7 +80,9 @@
 <screen><userinput remap="make">make</userinput></screen>
 
     <para>This package does come with a testsuite, but it requires several
-    packages that are not included in LFS.</para>
+    packages that are not included in LFS. Instructions for running the
+    testsuite can be found in the BLFS book at
+    <ulink url="&blfs-root;/view/svn/general/dbus.html"/>.</para>
 
     <para>Install the package:</para>
 
@@ -116,7 +114,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
       <seglistitem>
         <seg>dbus-cleanup-sockets, dbus-daemon, dbus-launch, dbus-monitor,
         dbus-send, and dbus-uuidgen</seg>
-        <seg>libdbus-1.so</seg>
+        <seg>libdbus-1.{a,so}</seg>
         <seg>/etc/dbus-1, /usr/include/dbus-1.0, /usr/lib/dbus-1.0,
         /usr/share/dbus-1, /usr/share/doc/dbus-&dbus-version;,
         /var/lib/dbus</seg>
@@ -190,7 +188,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
       </varlistentry>
 
       <varlistentry id="libdbus">
-        <term><filename class="libraryfile">libdbus-1.so</filename></term>
+        <term><filename class="libraryfile">libdbus-1</filename></term>
         <listitem>
           <para>Contains API functions used to communicate with the D-Bus
           message bus.</para>

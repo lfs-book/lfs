@@ -66,7 +66,6 @@ ln -sv bash /bin/sh</userinput></screen>
 <screen><userinput>cat &gt; /etc/passwd &lt;&lt; "EOF"
 <literal>root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/dev/null:/bin/false
-daemon:x:6:6:daemon:/dev/null:/bin/false
 messagebus:x:18:18:D-Bus Message Daemon User:/var/run/dbus:/bin/false
 nobody:x:99:99:Unprivileged User:/dev/null:/bin/false</literal>
 EOF</userinput></screen>
@@ -84,7 +83,6 @@ sys:x:2:
 kmem:x:3:
 tape:x:4:
 tty:x:5:
-daemon:x:6:
 floppy:x:7:
 disk:x:8:
 lp:x:9:
@@ -98,8 +96,7 @@ adm:x:16:
 messagebus:x:18:
 systemd-journal:x:23:
 mail:x:34:
-nogroup:x:99:
-users:x:100:</literal>
+nogroup:x:99:</literal>
 EOF</userinput></screen>
 
   <para>The created groups are not part of any standard&mdash;they are groups

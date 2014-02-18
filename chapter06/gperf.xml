@@ -42,8 +42,7 @@
 
     <para>Prepare Gperf for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr \
-            --docdir=/usr/share/doc/gperf-&gperf-version;</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr --docdir=/usr/share/doc/gperf-&gperf-version;</userinput></screen>
 
     <para>Compile the package:</para>
 

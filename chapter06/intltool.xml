@@ -56,8 +56,7 @@
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make install
-install -v -Dm644 doc/I18N-HOWTO \
-        /usr/share/doc/intltool-&intltool-version;/I18N-HOWTO</userinput></screen>
+install -v -Dm644 doc/I18N-HOWTO /usr/share/doc/intltool-&intltool-version;/I18N-HOWTO</userinput></screen>
 
   </sect2>
 

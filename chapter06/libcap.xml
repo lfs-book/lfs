@@ -60,7 +60,7 @@ chmod -v 755 /usr/lib/libcap.so</userinput></screen>
     <filename class="directory">/usr/lib</filename> will need to be recreated:</para>
 
 <screen><userinput remap="install">mv -v /usr/lib/libcap.so.* /lib
-ln -sfv ../../lib/libcap.so.2 /usr/lib/libcap.so</userinput></screen>
+ln -sfv ../../lib/$(readlink /usr/lib/libcap.so) /usr/lib/libcap.so</userinput></screen>
 
   </sect2>
 
@@ -73,7 +73,7 @@ ln -sfv ../../lib/libcap.so.2 /usr/lib/libcap.so</userinput></screen>
 
       <seglistitem>
         <seg>capsh, getcap, getpcaps, and setcap</seg>
-        <seg>libcap.{so,a}</seg>
+        <seg>libcap.{a,so}</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -113,7 +113,7 @@ ln -sfv ../../lib/libcap.so.2 /usr/lib/libcap.so</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libcap">
-        <term><filename class="libraryfile">libcap.{so,a}</filename></term>
+        <term><filename class="libraryfile">libcap</filename></term>
         <listitem>
           <para>Contains the libcap API functions</para>
           <indexterm zone="ch-system-libcap libcap">

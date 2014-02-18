@@ -47,23 +47,23 @@
 
 <screen><userinput remap="pre">sed -i -e 's|/@pkg_name@|&amp;-@pkg_version@|' include/builddefs.in</userinput></screen>
 
+    <para>Fix some broken tests:</para>
+
+<screen><userinput remap="pre">sed -i "s:| sed.*::g" test/{sbits-restore,cp,misc}.test</userinput></screen>
+
     <para>Prepare Acl for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr --libexecdir=/usr/lib</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 
     <para>Compile the package:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
     <para>The Acl tests need to be run on a filesystem that supports access
-    controls. You will see lot of failures because Coreutils wasn't compiled
-    with ACL support. To anyways test the results, issue:</para>
+    controls. Coreutils needs to be compiled with ACL support in order for
+    the testsuite to complete sucessfully. To test the results, issue:</para>
 
-<screen><userinput remap="test">make -k tests root-tests</userinput></screen>
-
-    <note><para>Even if you run Acl tests after Coreutils has been built with
-    Acl support, at least 11 tests will still fail for unknown reasons.</para>
-    </note>
+<screen><userinput remap="test">make tests</userinput></screen>
 
     <para>Install the package:</para>
 
@@ -76,7 +76,7 @@ chmod -v 755 /usr/lib/libacl.so</userinput></screen>
     <filename class="directory">/usr/lib</filename> will need to be recreated:</para>
 
 <screen><userinput remap="install">mv -v /usr/lib/libacl.so.* /lib
-ln -sfv ../../lib/libacl.so.1 /usr/lib/libacl.so</userinput></screen>
+ln -sfv ../../lib/$(readlink /usr/lib/libacl.so) /usr/lib/libacl.so</userinput></screen>
 
   </sect2>
 
@@ -90,7 +90,7 @@ ln -sfv ../../lib/libacl.so.1 /usr/lib/libacl.so</userinput></screen>
 
       <seglistitem>
         <seg>chacl, getfacl, and setacl</seg>
-        <seg>libacl.{so,a}</seg>
+        <seg>libacl.{a,so}</seg>
         <seg>/usr/include/acl, /usr/share/doc/acl-&acl-version;</seg>
       </seglistitem>
     </segmentedlist>
@@ -132,11 +132,11 @@ ln -sfv ../../lib/libacl.so.1 /usr/lib/libacl.so</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libacl">
-        <term><filename class="libraryfile">libacl.{so,a}</filename></term>
+        <term><filename class="libraryfile">libacl</filename></term>
         <listitem>
           <para>Contains the <application>Acl</application> API functions.</para>
           <indexterm zone="ch-system-acl libacl">
-            <primary sortas="c-libacl">libacl.{so,a}</primary>
+            <primary sortas="c-libacl">libacl</primary>
           </indexterm>
         </listitem>
       </varlistentry>
