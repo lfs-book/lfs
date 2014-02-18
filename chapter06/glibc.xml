@@ -58,19 +58,19 @@
 
 <screen><userinput remap="pre">sed -i 's/\\$$(pwd)/`pwd`/' timezone/Makefile</userinput></screen>
 
-    <para>The Glibc build system is self-contained and will install
-    perfectly, even though the compiler specs file and linker are still
-    pointing at <filename class="directory">/tools</filename>. The specs
-    and linker cannot be adjusted before the Glibc install because the
-    Glibc autoconf tests would give false results and defeat the goal
-    of achieving a clean build.</para>
-
     <para>Some of the Glibc programs use non-FHS compilant
     <filename class="directory">/var/db</filename> directory to store
     their runtime data. Apply the following patch to make such programs
     store their runtime data in the FHS-compliant locations:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
+
+    <para>The Glibc build system is self-contained and will install
+    perfectly, even though the compiler specs file and linker are still
+    pointing at <filename class="directory">/tools</filename>. The specs
+    and linker cannot be adjusted before the Glibc install because the
+    Glibc autoconf tests would give false results and defeat the goal
+    of achieving a clean build.</para>
 
     <para>The Glibc documentation recommends building Glibc outside of the source
     directory in a dedicated build directory:</para>
@@ -80,7 +80,7 @@ cd ../glibc-build</userinput></screen>
 
     <para>Prepare Glibc for compilation:</para>
 
-<screen><userinput remap="configure">../glibc-&glibc-version;/configure          \
+<screen><userinput remap="configure">../glibc-&glibc-version;/configure    \
     --prefix=/usr          \
     --disable-profile      \
     --enable-kernel=&min-kernel; \
@@ -352,7 +352,7 @@ unset ZONEINFO</userinput></screen>
     <para>Then create the <filename>/etc/localtime</filename> file by
     running:</para>
 
-<screen><userinput>ln -sv /usr/share/zoneinfo/<replaceable>&lt;xxx&gt;</replaceable> /etc/localtime</userinput></screen>
+<screen><userinput>ln -sfv /usr/share/zoneinfo/<replaceable>&lt;xxx&gt;</replaceable> /etc/localtime</userinput></screen>
 
     <para>Replace <replaceable>&lt;xxx&gt;</replaceable> with the name of the
     time zone selected (e.g., Canada/Eastern).</para>
@@ -431,9 +431,9 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
         /usr/include/netipx, /usr/include/netiucv, /usr/include/netpacket,
         /usr/include/netrom, /usr/include/netrose, /usr/include/nfs,
         /usr/include/protocols, /usr/include/rpc, /usr/include/rpcsvc,
-        /usr/include/sys, /usr/lib/audit, /usr/lib/gconv, /usr/lib/getconf,
-        /usr/lib/locale, /usr/share/i18n, /usr/share/zoneinfo, /var/cache/nscd,
-        and /var/lib/nss_db</seg>
+        /usr/include/sys, /usr/lib/audit, /usr/lib/gconv, /usr/lib/locale,
+        /usr/libexec/getconf, /usr/share/i18n, /usr/share/zoneinfo,
+        /var/cache/nscd, and /var/lib/nss_db</seg>
       </seglistitem>
     </segmentedlist>
 
