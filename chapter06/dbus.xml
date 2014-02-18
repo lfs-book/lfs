@@ -187,17 +187,6 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libdbus">
-        <term><filename class="libraryfile">libdbus-1</filename></term>
-        <listitem>
-          <para>Contains API functions used to communicate with the D-Bus
-          message bus.</para>
-          <indexterm zone="ch-system-dbus libdbus">
-            <primary sortas="c-libdbus">libdbus</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
     </variablelist>
 
   </sect2>

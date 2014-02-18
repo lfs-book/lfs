@@ -18,12 +18,6 @@
   <command>systemd-timedated</command> system service, which configures
   system clock and timezone.</para>
 
-  <para>Systemd provides a <command>timedatectl</command> utility which is
-  used to communicate with <command>systemd-timedated</command>. It can be used
-  to set the system clock in local time or UTC time, depending on the hardware
-  clock setting. By default, <command>systemd-timedated</command> will assume
-  that clock is set to UTC time.</para>
-
   <para>If you cannot remember whether or not the hardware clock is set to UTC,
   find out by running the <userinput>hwclock --localtime --show</userinput>
   command. This will display what the current time is according to the hardware
@@ -35,8 +29,26 @@
   timezone, which is also known as GMT -0700, add seven hours to the local
   time.</para>
 
-  <para>If your clock is set to local time, tell <command>systemd-timedated</command>
-  about it by running the following command:</para>
+  <para><command>systemd-timedated</command> reads <filename>/etc/adjtime</filename>,
+  and depending on the contents of the file, it sets the clock to either UTC or
+  local time.</para>
+
+  <para>Create the <filename>/etc/adjtime</filename> file with the following contents
+  if your hardware clock is set to local time:</para>
+
+<screen role="nodump"><userinput>cat &gt; /etc/adjtime &lt;&lt; "EOF"
+<literal>0.0 0 0.0
+0
+LOCAL</literal>
+EOF</userinput></screen>
+
+  <para>If <filename>/etc/adjtime</filename> isn't present at first boot,
+  <command>systemd-timedated</command> will assume that hardware clock is
+  set to UTC and adjust the file according to that.</para>
+
+  <para>You can also use the <command>timedatectl</command> utility to tell
+  <command>systemd-timedated</command> if your hardware clock is set to
+  UTC or local time:</para>
 
 <screen role="nodump"><userinput>timedatectl set-local-rtc 1</userinput></screen>
 

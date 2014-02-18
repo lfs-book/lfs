@@ -140,6 +140,10 @@ done</userinput></screen>
 
 <screen><userinput remap="install">mv -v /usr/lib/libnss_myhostname.so.2 /lib</userinput></screen>
 
+    <para>Remove an unnecessary directory:</para>
+
+<screen><userinput remap="install">rm -rfv /usr/lib/rpm</userinput></screen>
+
     <para>Create the Sysvinit compatibility symlinks, so Systemd is used
     as the default init system:</para>
 
@@ -180,7 +184,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         <seg>/etc/binfmt.d, /etc/init.d, /etc/kernel, /etc/modules-load.d,
         /etc/sysctl.d, /etc/systemd, /etc/tmpfiles.d, /etc/udev,
         /etc/xdg/systemd, /lib/systemd, /lib/udev, /usr/include/systemd,
-        /usr/lib/binfmt.d, /usr/lib/kernel, /usr/lib/modules-load.d, /usr/lib/rpm,
+        /usr/lib/binfmt.d, /usr/lib/kernel, /usr/lib/modules-load.d,
         /usr/lib/sysctl.d, /usr/lib/systemd, /usr/lib/tmpfiles.d,
         /usr/share/doc/systemd-&systemd-version;, /usr/share/systemd,
         /var/lib/systemd, /var/log/journal</seg>

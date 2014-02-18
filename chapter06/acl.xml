@@ -53,7 +53,7 @@
 
     <para>Prepare Acl for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr --libexecdir=/usr/lib</userinput></screen>
 
     <para>Compile the package:</para>
 

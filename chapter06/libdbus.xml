@@ -50,11 +50,9 @@
 
     <para>Prepare Libdbus for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr \
+<screen><userinput remap="configure">./configure --prefix=/usr     \
             --sysconfdir=/etc \
-            --localstatedir=/var \
-            --libexecdir=/usr/lib/dbus-1.0 \
-            --disable-static</userinput></screen>
+            --localstatedir=/var</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -93,7 +91,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
 
       <seglistitem>
         <seg>none</seg>
-        <seg>libdbus-1.so</seg>
+        <seg>libdbus-1.{a,so}</seg>
         <seg>/usr/include/dbus-1.0, /usr/lib/dbus-1.0</seg>
       </seglistitem>
     </segmentedlist>
@@ -103,12 +101,12 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
-      <varlistentry id="libdbus-lib">
-        <term><filename class="libraryfile">libdbus-1.so</filename></term>
+      <varlistentry id="libdbus-1">
+        <term><filename class="libraryfile">libdbus-1</filename></term>
         <listitem>
           <para>Contains API functions used to communicate with the D-Bus
           message bus.</para>
-          <indexterm zone="ch-system-libdbus libdbus-lib">
+          <indexterm zone="ch-system-libdbus libdbus-1">
             <primary sortas="c-libdbus">libdbus</primary>
           </indexterm>
         </listitem>
