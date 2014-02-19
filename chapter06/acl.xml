@@ -61,7 +61,7 @@
 
     <para>The Acl tests need to be run on a filesystem that supports access
     controls. Coreutils needs to be compiled with ACL support in order for
-    the testsuite to complete sucessfully. To test the results, issue:</para>
+    the testsuite to complete successfully. To test the results, issue:</para>
 
 <screen><userinput remap="test">make tests</userinput></screen>
 

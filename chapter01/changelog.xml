@@ -90,7 +90,7 @@
           </para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update automake tests to accomodate util-linux
+          <para>[bdubbs] - Update automake tests to accommodate util-linux
           in /tools and to speed the test up.
           </para>
         </listitem>
@@ -227,7 +227,7 @@
         <listitem>
           <para>[bdubbs] - Add an environment variable to util-linux
           in Chapter 5 to prevent an installation error for 
-          hosts that have unneeded capabilities availible.</para>
+          hosts that have unneeded capabilities available.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -336,7 +336,7 @@
       <itemizedlist>
         <listitem>
           <para>[bdubbs] - Update to inetutils-1.9.2 and remove
-          referece to old BLFS page. Fixes
+          reference to old BLFS page. Fixes
           <ulink url="&lfs-ticket-root;3471">#3471</ulink> and
           <ulink url="&lfs-ticket-root;3473">#3473</ulink>.</para>
         </listitem>
