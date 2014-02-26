@@ -58,14 +58,6 @@
       <title>The meaning of the configure options:</title>
 
       <varlistentry>
-        <term><parameter>--enable-systemd</parameter></term>
-        <listitem>
-          <para>This enables support for authentication check using
-          Systemd Logind.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
         <term><parameter>--with-console-auth-dir=/run/console</parameter></term>
         <listitem>
           <para>This specifies the location of the ConsoleKit auth
