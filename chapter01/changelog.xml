@@ -36,6 +36,19 @@
     </listitem>
 -->
     <listitem>
+      <para>2014-03-02</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - Merge LFS SVN-20140302 book.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update host system requirements to address
+          possible host installation of inconsistent libraries.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2014-02-18</para>
       <itemizedlist>
         <listitem>
