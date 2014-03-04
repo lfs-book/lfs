@@ -241,71 +241,11 @@
     <title>Added:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
 
-    <listitem>
-      <para>Acl-&acl-version;</para>
-    </listitem>
-
-    <listitem>
-      <para>Attr-&attr-version;</para>
-    </listitem>
-
-    <listitem>
-      <para>D-Bus-&dbus-version;</para>
-    </listitem>
-
-    <listitem>
-      <para>Expat-&expat-version;</para>
-    </listitem>
-
-    <listitem>
-      <para>glibc-&glibc-version;-fhs-1.patch</para>
-    </listitem>
-
-    <listitem>
-      <para>Gperf-&gperf-version;</para>
-    </listitem>
-
-    <listitem>
-      <para>Intltool-&intltool-version;</para>
-    </listitem>
-
-    <listitem>
-      <para>LFS-Network-Scripts &lfs-network-scripts-version;</para>
-    </listitem>
-
-    <listitem>
-      <para>Libcap-&libcap-version;</para>
-    </listitem>
-
-    <listitem>
-      <para>Systemd-&systemd-version;</para>
-    </listitem>
-
-    <listitem>
-      <para>XML-Parser-&xml-parser-version;</para>
-    </listitem>
-
   </itemizedlist>
 
   <itemizedlist>
     <title>Removed:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
-
-    <listitem>
-      <para>LFS-Bootscripts-20130821</para>
-    </listitem>
-
-    <listitem>
-      <para>Sysklogd-1.5</para>
-    </listitem>
-
-    <listitem>
-      <para>Sysvinit-2.88dsf</para>
-    </listitem>
-
-    <listitem>
-      <para>Udev-208</para>
-    </listitem>
 
   </itemizedlist>
 
