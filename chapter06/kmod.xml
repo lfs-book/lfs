@@ -90,8 +90,7 @@
 
     <para>Install the package, man pages, and create symlinks for
     compatibility with Module-Init-Tools (the package that previously handled
-    Linux kernel modules).  Also make sure that all libraries are in the
-    correct directory: </para>
+    Linux kernel modules):</para>
 
 <screen><userinput remap="install">make install
 make -C man install
