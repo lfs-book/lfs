@@ -53,20 +53,29 @@ EOF</userinput></screen>
     <para>Aditionally, fix a build error when using Util-Linux built in
     Chapter 5:</para>
 
-<screen><userinput remap="pre">sed -i "s:blkid/::" src/udev/udev-builtin-blkid.c</userinput></screen>
+<screen><userinput remap="pre">sed -i "s:blkid/::" $(grep -rl "blkid/blkid.h")</userinput></screen>
+
+    <para>Apply a patch so that compat <command>pkg-config</command> files get
+    installed without installing compat libs which are useless on LFS:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../&systemd-compat-patch;</userinput></screen>
 
     <para>Prepare Systemd for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr                       \
-            --sysconfdir=/etc                   \
-            --localstatedir=/var                \
-            --docdir=/usr/share/doc/systemd-&systemd-version; \
-            --config-cache                      \
-            --with-rootprefix=                  \
-            --with-rootlibdir=/lib              \
-            --enable-split-usr                  \
-            --disable-gudev                     \
-            --without-python</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr                                           \
+            --sysconfdir=/etc                                       \
+            --localstatedir=/var                                    \
+            --config-cache                                          \
+            --with-rootprefix=                                      \
+            --with-rootlibdir=/lib                                  \
+            --enable-split-usr                                      \
+            --disable-gudev                                         \
+            --without-python                                        \
+            --docdir=/usr/share/doc/systemd-&systemd-version;                     \
+            --with-dbuspolicydir=/etc/dbus-1/system.d               \
+            --with-dbusinterfacedir=/usr/share/dbus-1/interfaces    \
+            --with-dbussessionservicedir=/usr/share/dbus-1/services \
+            --with-dbussystemservicedir=/usr/share/dbus-1/system-services</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -106,34 +115,38 @@ EOF</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry>
+        <term><parameter>--with-dbus*</parameter></term>
+        <listitem>
+          <para>These switches ensure that D-Bus configuratil files
+          get installed in the correct locations.</para>
+        </listitem>
+      </varlistentry>
+
     </variablelist>
 
     <para>Compile the package:</para>
 
 <screen><userinput remap="make">make LIBRARY_PATH=/tools/lib</userinput></screen>
 
-    <para>The package comes with a testsuite, but it doesn't work in
-    chroot. It needs to be run from a system booted using Systemd.</para>
+    <para>First prevent few broken test cases from running:</para>
 
-    <para>First prevent a broken test case from running:</para>
-
-<screen><userinput remap="test">sed -i s:test/udev-test.pl::g Makefile</userinput></screen>
+<screen><userinput remap="test">sed -e "s:test/udev-test.pl::g"            \
+    -e "s:test-bus-cleanup\$(EXEEXT) ::g"  \
+    -e "s:test-bus-gvariant\$(EXEEXT) ::g" \
+    -i Makefile</userinput></screen>
 
     <para>To test the results, issue:</para>
 
-<screen><userinput remap="test">make check</userinput></screen>
+<screen><userinput remap="test">make -k check</userinput></screen>
+
+    <para>Note that some tests might fail because the test are being run in a
+    chroot environment. For full test coverage, the test suite should be ran
+    from a system booted using Systemd.</para>
 
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make LD_LIBRARY_PATH=/tools/lib install</userinput></screen>
-
-    <para>Install manual pages which are shipped in the tarball, but were
-    not installed by install process:</para>
-
-<screen><userinput remap="install">for cat in 1 3 5 7 8
-do
-  install -v -m644 man/*.${cat} /usr/share/man/man${cat}
-done</userinput></screen>
 
     <para>Move NSS myhostname library to <filename
     class="directory">/lib</filename>:</para>
@@ -154,7 +167,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
 
     <para>Remove a reference to a non-existent group:</para>
 
-<screen><userinput remap="install">sed -i "s@0775 root lock@0755 root root@g" /usr/lib/tmpfiles.d/legacy.conf</userinput></screen>
+<screen><userinput remap="install">sed -i "s:0775 root lock:0755 root root:g" /usr/lib/tmpfiles.d/legacy.conf</userinput></screen>
 
     <para>Create the <filename>/etc/machine-id</filename> file needed by
     Journald:</para>
@@ -172,15 +185,15 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <segtitle>Installed directories</segtitle>
 
       <seglistitem>
-        <seg>bootctl, halt, hostnamectl, init, journalctl, kernel-install, localectl,
-        loginctl, machinectl, poweroff, reboot, runlevel, shutdown, systemctl,
-        systemd-analyze, systemd-ask-password, systemd-cat, systemd-cgls, systemd-cgtop,
-        systemd-coredumpctl, systemd-delta, systemd-detect-virt, systemd-inhibit,
-        systemd-machine-id-setup, systemd-notify, systemd-nspawn, systemd-run,
-        systemd-stdio-bridge, systemd-tmpfiles, systemd-tty-ask-password-agent, telinit,
-        timedatectl, and udevadm</seg>
-        <seg>libnss_myhostname.so.2, libsystemd-daemon.so, libsystemd-id128.so,
-        libsystemd-journal.so, libsystemd-login.so, libudev.so</seg>
+        <seg>bootctl, busctl, halt, hostnamectl, init, journalctl, kernel-install,
+        localectl, loginctl, machinectl, poweroff, reboot, runlevel, shutdown,
+        systemctl, systemd-analyze, systemd-ask-password, systemd-cat, systemd-cgls,
+        systemd-cgtop, systemd-coredumpctl, systemd-delta, systemd-detect-virt,
+        systemd-inhibit, systemd-machine-id-setup, systemd-notify, systemd-nspawn,
+        systemd-run, systemd-stdio-bridge, systemd-tmpfiles, systemd-tty-ask-password-agent,
+        telinit, timedatectl, and udevadm</seg>
+
+        <seg>libnss_myhostname.so.2, libsystemd.so, libudev.so</seg>
         <seg>/etc/binfmt.d, /etc/init.d, /etc/kernel, /etc/modules-load.d,
         /etc/sysctl.d, /etc/systemd, /etc/tmpfiles.d, /etc/udev,
         /etc/xdg/systemd, /lib/systemd, /lib/udev, /usr/include/systemd,
@@ -196,15 +209,25 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
-<!--      <varlistentry id="bootctl">
+      <varlistentry id="bootctl">
         <term><command>bootctl</command></term>
         <listitem>
-          <para></para>
+          <para>used to query the firmware and boot manager settings.</para>
           <indexterm zone="ch-system-systemd bootctl">
             <primary sortas="b-bootctl">bootctl</primary>
           </indexterm>
         </listitem>
-      </varlistentry> -->
+      </varlistentry>
+
+      <varlistentry id="busctl">
+        <term><command>busctl</command></term>
+        <listitem>
+          <para>used to introspect and monitor the D-Bus bus.</para>
+          <indexterm zone="ch-system-systemd busctl">
+            <primary sortas="b-busctl">busctl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
 
       <varlistentry id="halt">
         <term><command>halt</command></term>
@@ -560,42 +583,12 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libsystemd-daemon">
-        <term><filename class="libraryfile">libsystemd-daemon</filename></term>
+      <varlistentry id="libsystemd">
+        <term><filename class="libraryfile">libsystemd</filename></term>
         <listitem>
-          <para>Systemd Daemon utility library.</para>
-          <indexterm zone="ch-system-systemd libsystemd-daemon">
-            <primary sortas="c-libsystemd-daemon">libsystemd-daemon</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libsystemd-id128">
-        <term><filename class="libraryfile">libsystemd-id128</filename></term>
-        <listitem>
-          <para>Systemd 128 Bit ID utility library.</para>
-          <indexterm zone="ch-system-systemd libsystemd-id128">
-            <primary sortas="c-libsystemd-id128">libsystemd-id128</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libsystemd-journal">
-        <term><filename class="libraryfile">libsystemd-journal</filename></term>
-        <listitem>
-          <para>Systemd Journal utility library.</para>
-          <indexterm zone="ch-system-systemd libsystemd-journal">
-            <primary sortas="c-libsystemd-journal">libsystemd-journal</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libsystemd-login">
-        <term><filename class="libraryfile">libsystemd-login</filename></term>
-        <listitem>
-          <para>Systemd Login utility library.</para>
-          <indexterm zone="ch-system-systemd libsystemd-login">
-            <primary sortas="c-libsystemd-login">libsystemd-login</primary>
+          <para>Systemd utility library.</para>
+          <indexterm zone="ch-system-systemd libsystemd">
+            <primary sortas="c-libsystemd">libsystemd</primary>
           </indexterm>
         </listitem>
       </varlistentry>

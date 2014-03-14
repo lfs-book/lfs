@@ -41,6 +41,12 @@
         <listitem>
           <para>[krejzi] - Merge LFS SVN-20140312 book.</para>
         </listitem>
+        <listitem>
+          <para>[krejzi] - Update to Systemd-211.</para>
+        </listitem>
+        <listitem>
+          <para>[krejzi] - Remove Libdbus page.</para>
+        </listitem>
       </itemizedlist>
     </listitem>
 

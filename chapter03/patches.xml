@@ -75,6 +75,14 @@
     </varlistentry>
 -->
     <varlistentry>
+      <term>Systemd Compat Patch - <token>&systemd-compat-patch-size;</token>:</term>
+      <listitem>
+        <para>Download: <ulink url="&patches-root;&systemd-compat-patch;"/></para>
+        <para>MD5 sum: <literal>&systemd-compat-patch-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Tar Manpage Patch - <token>&tar-manpage-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="&patches-root;&tar-manpage-patch;"/></para>

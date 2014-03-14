@@ -73,7 +73,6 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libpipeline.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="make.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="patch.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libdbus.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="systemd.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dbus.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="util-linux.xml"/>
