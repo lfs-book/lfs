@@ -1,5 +1,5 @@
-<!ENTITY version         "20140314-systemd">
-<!ENTITY releasedate     "March 14, 2014">
+<!ENTITY version         "20140412-systemd">
+<!ENTITY releasedate     "April 12, 2014">
 <!ENTITY copyrightdate   "1999-2014"><!-- jhalfs needs a literal dash, not &ndash; -->
 <!ENTITY milestone       "7.6">
 <!ENTITY generic-version "systemd"> <!-- Use "development", "testing", or "x.y[-pre{x}]" -->
@@ -34,6 +34,7 @@
 <!ENTITY alpha-gnu       "http://alpha.gnu.org/gnu/">
 <!ENTITY kernel          "https://www.kernel.org/pub/">
 <!ENTITY sourceforge     "http://prdownloads.sourceforge.net/">
+<!ENTITY savannah        "http://download.savannah.gnu.org">
 
 <!ENTITY % packages-entities SYSTEM "packages.ent">
 %packages-entities;

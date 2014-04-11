@@ -141,7 +141,7 @@ EOF</userinput></screen>
 <screen><userinput remap="test">make -k check</userinput></screen>
 
     <para>Note that some tests might fail because the test are being run in a
-    chroot environment. For full test coverage, the test suite should be ran
+    chroot environment. For full test coverage, the test suite should be run
     from a system booted using Systemd.</para>
 
     <para>Install the package:</para>

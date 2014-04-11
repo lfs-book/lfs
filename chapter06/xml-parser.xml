@@ -63,7 +63,7 @@
     <title>Contents of XML::Parser</title>
 
     <segmentedlist>
-      <segtitle>Installed Perl module</segtitle>
+      <segtitle>Installed module</segtitle>
 
       <seglistitem>
         <seg>Expat.so</seg>

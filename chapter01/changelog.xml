@@ -36,6 +36,89 @@
     </listitem>
 -->
     <listitem>
+      <para>2014-04-12</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - Merge LFS SVN-20140408 book.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-04-08</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Change lex rwapper script to a symbolic 
+          link. Completes 
+          <ulink url="&lfs-ticket-root;3523">#3523</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-3.14. Fixes 
+          <ulink url="&lfs-ticket-root;3523">#3523</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to file-5.18. Fixes 
+          <ulink url="&lfs-ticket-root;3526">#3526</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to flex-2.5.39. Addresses 
+          <ulink url="&lfs-ticket-root;3527">#3527</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gmp-6.0.0a. Fixes 
+          <ulink url="&lfs-ticket-root;3528">#3528</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-3.64. Fixes 
+          <ulink url="&lfs-ticket-root;3539">#3539</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to systemd-212. Fixes 
+          <ulink url="&lfs-ticket-root;3540">#3540</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-04-07</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update the example SEARCH_DIR output for i686
+          in the GCC text. Fixes 
+          <ulink url="&lfs-ticket-root;3524">#3524</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to tzdata2014b. Fixes 
+          <ulink url="&lfs-ticket-root;3525">#3525</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to kmod-17. Fixes 
+          <ulink url="&lfs-ticket-root;3538">#3538</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-03-31</para>
+      <itemizedlist>
+        <listitem>
+          <para>[ken] - Remove remaining references to headers-check when
+          installing the linux API headers.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-03-23</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-3.63. Fixes 
+          <ulink url="&lfs-ticket-root;3522">#3522</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2014-03-14</para>
       <itemizedlist>
         <listitem>

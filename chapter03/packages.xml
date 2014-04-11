@@ -487,6 +487,22 @@
       </listitem>
     </varlistentry>
 
+    <!-- FIXME:
+    <varlistentry>
+      <term>Ncurses Rollup Patch (&ncurses-date;) - 328 KB:</term>
+      <listitem>
+        <para><ulink url="ftp://invisible-island.net/ncurses/&ncurses-version;/"/></para>
+
+        <note>
+          <para>Ncurses Rollup Patch (&ncurses-date;) may no longer be available
+          at the listed location. The site administrators of the master download
+          location occasionally remove older versions when new ones are released.
+          There is no alternative download location yet.</para>
+        </note>
+      </listitem>
+    </varlistentry>
+    -->
+
     <varlistentry>
       <term>Patch (&patch-version;) - <token>&patch-size;</token>:</term>
       <listitem>

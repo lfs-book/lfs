@@ -439,8 +439,8 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Coreutils, Diffutils, Expat, GCC, Grep, Make, and
-         Sed</seg>
+         <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep,
+         Make, Sed, and Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -448,7 +448,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>D-Bus Glib Bindings, Python</seg>
+          <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -456,7 +456,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Systemd</seg>
+          <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -464,7 +464,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Xorg Libs</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -483,7 +483,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg></seg>
+          <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -528,6 +528,42 @@
 
         <seglistitem>
           <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&external;</segtitle>
+
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+<!-- Begin Expat dependency info -->
+  <bridgehead renderas="sect2" id="expat-dep">Expat</bridgehead>
+
+      <segmentedlist>
+        <segtitle>&dependencies;</segtitle>
+
+        <seglistitem>
+         <seg>Bash, Binutils, Coreutils, Gawk, GCC, Glibc, Grep,
+         Make, and Sed</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&testsuites;</segtitle>
+
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&before;</segtitle>
+
+        <seglistitem>
+          <seg>XML::Parser</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -937,6 +973,41 @@
         </seglistitem>
       </segmentedlist>
 
+<!-- Begin Gperf dependency info -->
+  <bridgehead renderas="sect2" id="gperf-dep">Gperf</bridgehead>
+
+      <segmentedlist>
+        <segtitle>&dependencies;</segtitle>
+
+        <seglistitem>
+         <seg>Bash, Binutils, Coreutils, GCC, Glibc, Make</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&testsuites;</segtitle>
+
+        <seglistitem>
+          <seg>Diffutils, Expect</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&before;</segtitle>
+
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&external;</segtitle>
+
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
 <!-- Begin Grep dependency info -->
   <bridgehead renderas="sect2" id="grep-dep">Grep</bridgehead>
 
@@ -1152,6 +1223,41 @@
         </seglistitem>
       </segmentedlist>
 
+<!-- Begin Intltool dependency info -->
+  <bridgehead renderas="sect2" id="intltool-dep">Intltool</bridgehead>
+
+      <segmentedlist>
+        <segtitle>&dependencies;</segtitle>
+
+        <seglistitem>
+         <seg>Bash, Gawk, Glibc, Make, Perl, Sed, and XML::Parser</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&testsuites;</segtitle>
+
+        <seglistitem>
+          <seg>Perl</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&before;</segtitle>
+
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&external;</segtitle>
+
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
 <!-- Begin IProute2 dependency info -->
   <bridgehead renderas="sect2" id="iproute2-dep">IProute2</bridgehead>
 
@@ -1293,6 +1399,41 @@
 
         <seglistitem>
           <seg>Pcre</seg>
+        </seglistitem>
+      </segmentedlist>
+
+<!-- Begin Libcap dependency info -->
+  <bridgehead renderas="sect2" id="libcap-dep">Libcap</bridgehead>
+
+      <segmentedlist>
+        <segtitle>&dependencies;</segtitle>
+
+        <seglistitem>
+         <seg>Attr, Bash, Binutils, Coreutils, GCC, Glibc, Perl, Make, and Sed</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&testsuites;</segtitle>
+
+        <seglistitem>
+          <seg>No test suite available</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&before;</segtitle>
+
+        <seglistitem>
+          <seg>Systemd</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&external;</segtitle>
+
+        <seglistitem>
+          <seg>Linux-PAM</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1977,6 +2118,42 @@
         </seglistitem>
       </segmentedlist>
 
+<!-- Begin Systemd dependency info -->
+  <bridgehead renderas="sect2" id="systemd-dep">Systemd</bridgehead>
+
+      <segmentedlist>
+        <segtitle>&dependencies;</segtitle>
+
+        <seglistitem>
+         <seg>Acl, Attr, Bash, Binutils, Coreutils, Diffutils, Expat, Gawk, GCC,
+         Glibc, Gperf, Grep, Intltool, Libcap, Make, Sed, and Util-linux</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&testsuites;</segtitle>
+
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&before;</segtitle>
+
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist>
+        <segtitle>&external;</segtitle>
+
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
 <!-- Begin Tar dependency info -->
   <bridgehead renderas="sect2" id="tar-dep">Tar</bridgehead>
 
@@ -2157,14 +2334,14 @@
         </seglistitem>
       </segmentedlist>
 
-<!-- Begin Xml-Parser dependency info -->
-  <bridgehead renderas="sect2" id="xml-parser-dep">Xml::Parser</bridgehead>
+<!-- Begin XML::Parser dependency info -->
+  <bridgehead renderas="sect2" id="xml-parser-dep">XML::Parser</bridgehead>
 
       <segmentedlist>
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Expat, Make, and Perl.</seg>
+         <seg>Bash, Binutils, Coreutils, Expat, GCC, Glibc, Make, and Perl</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2172,7 +2349,7 @@
         <segtitle>&testsuites;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Perl</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2180,7 +2357,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Intltool</seg>
+          <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2188,7 +2365,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>libwww-perl</seg>
+          <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 
