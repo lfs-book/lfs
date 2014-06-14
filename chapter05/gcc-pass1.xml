@@ -129,15 +129,13 @@ cd ../gcc-build</userinput></screen>
     --disable-libatomic                              \
     --disable-libgomp                                \
     --disable-libitm                                 \
-    --disable-libmudflap                             \
     --disable-libquadmath                            \
     --disable-libsanitizer                           \
     --disable-libssp                                 \
+    --disable-libvtv                                 \
+    --disable-libcilkrts                             \
     --disable-libstdc++-v3                           \
-    --enable-languages=c,c++                         \
-    --with-mpfr-include=$(pwd)/../gcc-&gcc-version;/mpfr/src \
-    --with-mpfr-lib=$(pwd)/mpfr/src/.libs</userinput></screen>
-
+    --enable-languages=c,c++</userinput></screen>
     <variablelist>
       <title>The meaning of the configure options:</title>
 
@@ -222,14 +220,6 @@ cd ../gcc-build</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry>
-        <term><parameter>--with-mpfr-*</parameter></term>
-        <listitem>
-          <para>These options enable the build system to correctly use the
-          in-tree copy of the MPFR sources.</para>
-        </listitem>
-      </varlistentry>
-
     </variablelist>
 
     <para>Compile GCC by running:</para>
@@ -245,8 +235,8 @@ cd ../gcc-build</userinput></screen>
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
-
-    <para>Using <parameter>--disable-shared</parameter> means that the
+<!--
+    <para>Using <parameter>- -disable-shared</parameter> means that the
     <filename>libgcc_eh.a</filename> file isn't created and installed. The
     Glibc package depends on this library as it uses
     <parameter>-lgcc_eh</parameter> within its build system. This dependency
@@ -255,7 +245,7 @@ cd ../gcc-build</userinput></screen>
     <filename>libgcc_eh.a</filename>:</para>
 
 <screen><userinput remap="install">ln -sv libgcc.a `$LFS_TGT-gcc -print-libgcc-file-name | sed 's/libgcc/&amp;_eh/'`</userinput></screen>
-
+-->
   </sect2>
 
   <sect2 role="content">

@@ -41,6 +41,11 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
+    <para>First fix a problem identified upstream that causes some 
+    programs to fail:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../&gcc-upstream-patch;</userinput></screen>
+<!--
     <para>As in <xref linkend="ch-tools-gcc-pass2"/>, apply the following
     <command>sed</command> to force the build to use the
     <option>-fomit-frame-pointer</option> compiler flag in order to ensure
@@ -49,19 +54,7 @@
 <screen><userinput remap="pre">case `uname -m` in
   i?86) sed -i 's/^T_CFLAGS =$/&amp; -fomit-frame-pointer/' gcc/Makefile.in ;;
 esac</userinput></screen>
-<!--
-    <para>Workaround a bug so that GCC doesn't install
-    <filename class="libraryfile">libiberty.a</filename>, which is already
-    provided by Binutils:</para>
-
-<screen><userinput remap="pre">sed -i 's/install_to_$(INSTALL_DEST) //' libiberty/Makefile.in</userinput></screen>
 -->
-    <para>Also fix an error in one of the check Makefiles and disable one test in
-    the g++ libmudflap test suite:</para>
-
-<screen><userinput remap="pre">sed -i -e /autogen/d -e /check.sh/d fixincludes/Makefile.in 
-mv -v libmudflap/testsuite/libmudflap.c++/pass41-frag.cxx{,.disable}</userinput></screen>
-
     <para>The GCC documentation recommends building GCC outside of the source
     directory in a dedicated build directory:</para>
 
@@ -156,6 +149,20 @@ cd ../gcc-build</userinput></screen>
     compiler. To satisfy those packages, create a symlink:</para>
 
 <screen><userinput remap="install">ln -sv gcc /usr/bin/cc</userinput></screen>
+
+    <para>Add a compatibility symlink to enable building programs with
+    Link Time Optimization (LTO):</para> 
+
+<screen><userinput remap="install">install -dm755 /usr/lib/bfd-plugins
+pushd /usr/lib/bfd-plugins
+
+if [ $(uname -m) == "i686" ]; then 
+   ln -sfv ../../libexec/gcc/i686-pc-linux-gnu/&gcc-version;/liblto_plugin.so 
+else
+   ln -sfv ../../libexec/gcc/x86_64-unknown-linux-gnu/&gcc-version;/liblto_plugin.so 
+fi
+
+popd</userinput></screen>
 
     <para>Now that our final toolchain is in place, it is important to again ensure
     that compiling and linking will work as expected. We do this by performing

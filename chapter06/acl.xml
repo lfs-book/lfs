@@ -51,6 +51,12 @@
 
 <screen><userinput remap="pre">sed -i "s:| sed.*::g" test/{sbits-restore,cp,misc}.test</userinput></screen>
 
+    <para>Additionally, fix a bug that causes <command>getfacl -e</command>
+    to segfault on overly long group name:</para>
+
+<screen><userinput remap="pre">sed -i -e "/TABS-1;/a if (x > (TABS-1)) x = (TABS-1);" \
+    libacl/__acl_to_any_text.c</userinput></screen>
+
     <para>Prepare Acl for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --libexecdir=/usr/lib</userinput></screen>

@@ -62,7 +62,7 @@
 <!ENTITY binutils-size "22,184 KB">
 <!ENTITY binutils-url "&gnu;binutils/binutils-&binutils-version;.tar.bz2">
 <!ENTITY binutils-md5 "e0f71a7b2ddab0f8612336ac81d9636b">
-<!ENTITY binutils-home "http://www.gnu.org/software/binutils/">
+<!ENTITY binutils-home "$gnu-software;binutils/">
 <!ENTITY binutils-ch5p1-du "404 MB">
 <!ENTITY binutils-ch5p1-sbu "1 SBU">
 <!ENTITY binutils-ch5p2-du "417 MB">
@@ -92,10 +92,10 @@
 <!ENTITY bzip2-ch6-du "6.9 MB">
 <!ENTITY bzip2-ch6-sbu "less than 0.1 SBU">
 
-<!ENTITY check-version "0.9.12">
-<!ENTITY check-size "714 KB">
+<!ENTITY check-version "0.9.13">
+<!ENTITY check-size "736 KB">
 <!ENTITY check-url "http://sourceforge.net/projects/check/files/check/&check-version;/check-&check-version;.tar.gz">
-<!ENTITY check-md5 "46fe540d1a03714c7a1967dbc6d484e7">
+<!ENTITY check-md5 "95530868f81a9496b2518fd2b713008a">
 <!ENTITY check-home "http://check.sourceforge.net/">
 <!ENTITY check-ch5-du "6.9 MB">
 <!ENTITY check-ch5-sbu "0.1 SBU">
@@ -139,10 +139,10 @@
 <!-- NOTE: When updating e2fsprogs, remember to check the list
      of acceptable features that can be shown by debugfs in
      chapter02/creatingfilesystem.xml -->
-<!ENTITY e2fsprogs-version "1.42.9">
-<!ENTITY e2fsprogs-size "5,928 KB">
-<!ENTITY e2fsprogs-url "&sourceforge;e2fsprogs/e2fsprogs-&e2fsprogs-version;.tar.gz">
-<!ENTITY e2fsprogs-md5 "3f8e41e63b432ba114b33f58674563f7">
+<!ENTITY e2fsprogs-version "1.42.10">
+<!ENTITY e2fsprogs-size "5,983 KB">
+<!ENTITY e2fsprogs-url "http://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v&e2fsprogs-version;/e2fsprogs-&e2fsprogs-version;.tar.gz">
+<!ENTITY e2fsprogs-md5 "62bfe2fe0a194c5c37165789ac2825a8">
 <!ENTITY e2fsprogs-home "http://e2fsprogs.sourceforge.net/">
 <!ENTITY e2fsprogs-ch6-du "64 MB">
 <!ENTITY e2fsprogs-ch6-sbu "1.7 SBU">
@@ -196,20 +196,20 @@
 <!ENTITY flex-ch6-du "39 MB">
 <!ENTITY flex-ch6-sbu "0.4 SBU">
 
-<!ENTITY gawk-version "4.1.0">
-<!ENTITY gawk-size "2,004 KB">
+<!ENTITY gawk-version "4.1.1">
+<!ENTITY gawk-size "2,146 KB">
 <!ENTITY gawk-url "&gnu;gawk/gawk-&gawk-version;.tar.xz">
-<!ENTITY gawk-md5 "b18992ff8faf3217dab55d2d0aa7d707">
+<!ENTITY gawk-md5 "a2a26543ce410eb74bc4a508349ed09a">
 <!ENTITY gawk-home "&gnu-software;gawk/">
 <!ENTITY gawk-ch5-du "30 MB">
 <!ENTITY gawk-ch5-sbu "0.2 SBU">
 <!ENTITY gawk-ch6-du "30 MB">
 <!ENTITY gawk-ch6-sbu "0.2 SBU">
 
-<!ENTITY gcc-version "4.8.2">
-<!ENTITY gcc-size "83,984 KB">
+<!ENTITY gcc-version "4.9.0">
+<!ENTITY gcc-size "87,576 KB">
 <!ENTITY gcc-url "&gnu;gcc/gcc-&gcc-version;/gcc-&gcc-version;.tar.bz2">
-<!ENTITY gcc-md5 "a3d7d63b9cb6b6ea049469a0c4a43c9d">
+<!ENTITY gcc-md5 "9709b49ae0e904cbb0a6a1b62853b556">
 <!ENTITY gcc-home "http://gcc.gnu.org/">
 <!ENTITY gcc-ch5p1-du "1.4 GB">
 <!ENTITY gcc-ch5p1-sbu "5.5 SBU">
@@ -228,10 +228,10 @@
 <!ENTITY gdbm-ch6-du "8.5 MB">
 <!ENTITY gdbm-ch6-sbu "0.1 SBU">
 
-<!ENTITY gettext-version "0.18.3.2">
-<!ENTITY gettext-size "15,810 KB">
-<!ENTITY gettext-url "&gnu;gettext/gettext-&gettext-version;.tar.gz">
-<!ENTITY gettext-md5 "241aba309d07aa428252c74b40a818ef">
+<!ENTITY gettext-version "0.19.1">
+<!ENTITY gettext-size "6,456 KB">
+<!ENTITY gettext-url "&gnu;gettext/gettext-&gettext-version;.tar.xz">
+<!ENTITY gettext-md5 "b52987f49bc99fa8b410270d47a9d52b">
 <!ENTITY gettext-home "&gnu-software;gettext/">
 <!ENTITY gettext-ch5-du "119 MB">
 <!ENTITY gettext-ch5-sbu "0.6 SBU">
@@ -267,10 +267,10 @@
 <!ENTITY gperf-ch6-du "6.5 MB">
 <!ENTITY gperf-ch6-sbu "0.1 SBU">
 
-<!ENTITY grep-version "2.18">
-<!ENTITY grep-size "1,185 KB">
+<!ENTITY grep-version "2.20">
+<!ENTITY grep-size "1,209 KB">
 <!ENTITY grep-url "&gnu;grep/grep-&grep-version;.tar.xz">
-<!ENTITY grep-md5 "7439f8266f50844b56cc3e2721606541">
+<!ENTITY grep-md5 "2cbea44a4f1548aee20b9ff2d3076908">
 <!ENTITY grep-home "&gnu-software;grep/">
 <!ENTITY grep-ch5-du "21 MB">
 <!ENTITY grep-ch5-sbu "0.2 SBU">
@@ -305,9 +305,9 @@
 
 <!ENTITY iana-etc-version "2.30">
 <!ENTITY iana-etc-size "201 KB">
-<!ENTITY iana-etc-url "&anduin-sources;/iana-etc/iana-etc-&iana-etc-version;.tar.bz2">
+<!ENTITY iana-etc-url "&anduin-sources;iana-etc/iana-etc-&iana-etc-version;.tar.bz2">
 <!ENTITY iana-etc-md5 "3ba3afb1d1b261383d247f46cb135ee8">
-<!ENTITY iana-etc-home "http://freshmeat.net/projects/iana-etc/">
+<!ENTITY iana-etc-home "http://freecode.com/projects/iana-etc">
 <!ENTITY iana-etc-ch6-du "2.2 MB">
 <!ENTITY iana-etc-ch6-sbu "less than 0.1 SBU">
 
@@ -327,10 +327,10 @@
 <!ENTITY intltool-ch6-du "1.4 MB">
 <!ENTITY intltool-ch6-sbu "0.1 SBU">
 
-<!ENTITY iproute2-version "3.12.0">
-<!ENTITY iproute2-size "415 KB">
+<!ENTITY iproute2-version "3.15.0">
+<!ENTITY iproute2-size "428 KB">
 <!ENTITY iproute2-url "&kernel;linux/utils/net/iproute2/iproute2-&iproute2-version;.tar.xz">
-<!ENTITY iproute2-md5 "f87386aaaecafab95607fd10e8152c68">
+<!ENTITY iproute2-md5 "5b1711c9d16071959052e369a2682d77">
 <!ENTITY iproute2-home "&kernel;linux/utils/net/iproute2/">
 <!ENTITY iproute2-ch6-du "7.3 MB">
 <!ENTITY iproute2-ch6-sbu "0.1 SBU">
@@ -338,7 +338,7 @@
 <!ENTITY kbd-version "2.0.1">
 <!ENTITY kbd-size "1,962 KB">
 <!ENTITY kbd-url "http://ftp.altlinux.org/pub/people/legion/kbd/kbd-&kbd-version;.tar.gz">
-<!ENTITY kbd-md5 "cc0ee9f2537d8636cae85a8c6541ed2e">
+<!ENTITY kbd-md5 "e9f2b7046312c11cec9e52e22f307b6a">
 <!ENTITY kbd-home "http://ftp.altlinux.org/pub/people/legion/kbd">
 <!ENTITY kbd-ch6-du "20 MB">
 <!ENTITY kbd-ch6-sbu "0.1 SBU">
@@ -395,13 +395,13 @@
 <!ENTITY libtool-ch6-sbu "3.0 SBU">
 
 <!ENTITY linux-major-version "3">
-<!ENTITY linux-minor-version "14">
+<!ENTITY linux-minor-version "15">
 <!ENTITY linux-patch-version "0">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">-->
-<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;"> 
-<!ENTITY linux-size "76,562 KB">
+<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">
+<!ENTITY linux-size "77,810 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "b621207b3f6ecbb67db18b13258f8ea8">
+<!ENTITY linux-md5 "97ca1625bb40368dc41b9a7971549071">
 <!ENTITY linux-home "http://www.kernel.org/">
 <!-- measured for 3.9.0 / gcc-4.8.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,
@@ -434,18 +434,18 @@
 <!ENTITY make-ch6-du "11.3 MB">
 <!ENTITY make-ch6-sbu "0.4 SBU">
 
-<!ENTITY man-db-version "2.6.6">
-<!ENTITY man-db-size "1,415 KB">
+<!ENTITY man-db-version "2.6.7.1">
+<!ENTITY man-db-size "1,419 KB">
 <!ENTITY man-db-url "&savannah;/releases/man-db/man-db-&man-db-version;.tar.xz">
-<!ENTITY man-db-md5 "5d65d66191080c144437a6c854e17868">
+<!ENTITY man-db-md5 "ce7b697f8e8016a085d9f5975ae6c4fb">
 <!ENTITY man-db-home "http://www.nongnu.org/man-db/">
 <!ENTITY man-db-ch6-du "27 MB">
 <!ENTITY man-db-ch6-sbu "0.5 SBU">
 
-<!ENTITY man-pages-version "3.64">
-<!ENTITY man-pages-size "1,194 KB">
-<!ENTITY man-pages-url "http://www.kernel.org/pub/linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "e39da1ac5a5effd4514809301bad47a8">
+<!ENTITY man-pages-version "3.68">
+<!ENTITY man-pages-size "1,225 KB">
+<!ENTITY man-pages-url "&kernel;linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
+<!ENTITY man-pages-md5 "43965ed65b34aeff75767b162f97eb01">
 <!ENTITY man-pages-home "http://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-ch6-du "23 MB">
 <!ENTITY man-pages-ch6-sbu "less than 0.1 SBU">
@@ -474,7 +474,7 @@
 <!ENTITY ncurses-size "2,760 KB">
 <!ENTITY ncurses-url "http://ftp.gnu.org/gnu/ncurses/ncurses-&ncurses-version;.tar.gz">
 <!ENTITY ncurses-md5 "8cb9c412e5f2d96bc6f459aa8c6282a1">
-<!ENTITY ncurses-home "http://www.gnu.org/software/ncurses/">
+<!ENTITY ncurses-home "&gnu-software;ncurses/">
 <!ENTITY ncurses-ch5-du "35 MB">
 <!ENTITY ncurses-ch5-sbu "0.5 SBU">
 <!ENTITY ncurses-ch6-du "40 MB">
@@ -490,10 +490,10 @@
 <!ENTITY patch-ch6-du "3.4 MB">
 <!ENTITY patch-ch6-sbu "less than 0.1 SBU">
 
-<!ENTITY perl-version "5.18.2">
-<!ENTITY perl-size "13,730 KB">
+<!ENTITY perl-version "5.20.0">
+<!ENTITY perl-size "13,448 KB">
 <!ENTITY perl-url "http://www.cpan.org/src/5.0/perl-&perl-version;.tar.bz2">
-<!ENTITY perl-md5 "d549b16ee4e9210988da39193a9389c1">
+<!ENTITY perl-md5 "20cbecd4e9e880ee7a50a136c8b1484e">
 <!ENTITY perl-home "http://www.perl.org/">
 <!ENTITY perl-ch5-du "235 MB">
 <!ENTITY perl-ch5-sbu "1.6 SBU">
@@ -518,7 +518,7 @@
 
 <!ENTITY psmisc-version "22.21">
 <!ENTITY psmisc-size "447 KB">
-<!ENTITY psmisc-url "&sourceforge;psmisc/psmisc-&psmisc-version;.tar.gz">
+<!ENTITY psmisc-url "http://downloads.sourceforge.net/project/psmisc/psmisc/psmisc-&psmisc-version;.tar.gz">
 <!ENTITY psmisc-md5 "935c0fd6eb208288262b385fa656f1bf">
 <!ENTITY psmisc-home "http://psmisc.sourceforge.net/">
 <!ENTITY psmisc-ch6-du "4.0 MB">
@@ -563,7 +563,7 @@
 <!ENTITY tcl-version "8.6.1">
 <!ENTITY tcl-major-version "8.6">
 <!ENTITY tcl-size "8,551 KB">
-<!ENTITY tcl-url "&sourceforge;tcl/tcl&tcl-version;-src.tar.gz">
+<!ENTITY tcl-url "http://downloads.sourceforge.net/project/tcl/Tcl/&tcl-version;/tcl&tcl-version;-src.tar.gz">
 <!ENTITY tcl-md5 "aae4b701ee527c6e4e1a6f9c7399882e">
 <!ENTITY tcl-home "http://tcl.sourceforge.net/">
 <!ENTITY tcl-ch5-du "55 MB">
@@ -579,27 +579,27 @@
 <!ENTITY texinfo-ch6-du "101 MB">
 <!ENTITY texinfo-ch6-sbu "0.6 SBU">
 
-<!ENTITY systemd-version "212">
-<!ENTITY systemd-size    "2,659 KB">
+<!ENTITY systemd-version "214">
+<!ENTITY systemd-size    "2,278 KB">
 <!ENTITY systemd-url     "http://www.freedesktop.org/software/systemd/systemd-&systemd-version;.tar.xz">
-<!ENTITY systemd-md5     "257a75fff826ff91cb1ce567091cf270">
+<!ENTITY systemd-md5     "eac4f9fc5bd18a0efc3fc20858baacf3">
 <!ENTITY systemd-home    "http://www.freedesktop.org/wiki/Software/systemd/">
 <!ENTITY systemd-ch6-du  "410 MB">
 <!ENTITY systemd-ch6-sbu "4.5 SBU">
 
-<!ENTITY tzdata-version "2014b">
-<!ENTITY tzdata-size "216 KB">
+<!ENTITY tzdata-version "2014d">
+<!ENTITY tzdata-size "217 KB">
 <!ENTITY tzdata-url "http://www.iana.org/time-zones/repository/releases/tzdata&tzdata-version;.tar.gz">
-<!ENTITY tzdata-md5 "c58d556612396d4ca5a17807a79924e5">
+<!ENTITY tzdata-md5 "299b86c0368ecfb321f15d5c408a1d9b">
 <!ENTITY tzdata-home "http://www.iana.org/time-zones">
 <!ENTITY tzdata-ch6-du "6.4 MB">
 <!ENTITY tzdata-ch6-sbu "less than 0.1 SBU">
 
-<!ENTITY util-linux-version "2.24.1">
-<!ENTITY util-linux-size "3,461 KB">
+<!ENTITY util-linux-version "2.24.2">
+<!ENTITY util-linux-size "3,503 KB">
 <!ENTITY util-linux-url "&kernel;linux/utils/util-linux/v2.24/util-linux-&util-linux-version;.tar.xz">
-<!ENTITY util-linux-md5 "88d46ae23ca599ac5af9cf96b531590f">
-<!ENTITY util-linux-home "http://userweb.kernel.org/~kzak/util-linux/">
+<!ENTITY util-linux-md5 "3f191727a0d28f7204b755cf1b6ea0aa">
+<!ENTITY util-linux-home "http://freecode.com/projects/util-linux">
 <!ENTITY util-linux-ch5-du "89 MB">
 <!ENTITY util-linux-ch5-sbu "0.6 SBU">
 <!ENTITY util-linux-ch6-du "89 MB">
