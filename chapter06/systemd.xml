@@ -47,8 +47,7 @@
 <literal>KILL=/bin/kill
 HAVE_BLKID=1
 BLKID_LIBS="-lblkid"
-BLKID_CFLAGS="-I/tools/include/blkid"
-cc_cv_CFLAGS__flto=no</literal>
+BLKID_CFLAGS="-I/tools/include/blkid"</literal>
 EOF</userinput></screen>
 
     <para>Additionally, fix a build error when using Util-Linux built in
@@ -63,7 +62,7 @@ EOF</userinput></screen>
 
     <para>Prepare Systemd for compilation:</para>
 
-<screen><userinput remap="configure">CFLAGS="-fno-lto" ./configure --prefix=/usr                         \
+<screen><userinput remap="configure">./configure --prefix=/usr                         \
             --sysconfdir=/etc                                       \
             --localstatedir=/var                                    \
             --config-cache                                          \
