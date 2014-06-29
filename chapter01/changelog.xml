@@ -88,7 +88,7 @@
            <ulink url="&lfs-ticket-root;3612">#3612</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to tzdata-2014e. Fixes
+           <para>[bdubbs] - Update to tzdata-2014e. Fixes
            <ulink url="&lfs-ticket-root;3611">#3611</ulink>.</para>
         </listitem>
         <listitem>
@@ -517,7 +517,7 @@
           <para>[krejzi] - Merge LFS SVN-20140312 book.</para>
         </listitem>
         <listitem>
-          <para>[krejzi] - Update to Systemd-211.</para>
+          <para>[krejzi] - Update to systemd-211.</para>
         </listitem>
         <listitem>
           <para>[krejzi] - Remove Libdbus page.</para>
