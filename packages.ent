@@ -110,10 +110,10 @@
 <!ENTITY coreutils-ch6-du "116 MB">
 <!ENTITY coreutils-ch6-sbu "3.4 SBU">
 
-<!ENTITY dbus-version "1.8.0">
+<!ENTITY dbus-version "1.8.4">
 <!ENTITY dbus-size "1,820 KB">
 <!ENTITY dbus-url "http://dbus.freedesktop.org/releases/dbus/dbus-&dbus-version;.tar.gz">
-<!ENTITY dbus-md5 "059fbe84e39fc99c67a14f15b1f39dff">
+<!ENTITY dbus-md5 "4717cb8ab5b80978fcadf2b4f2f72e1b">
 <!ENTITY dbus-home "http://www.freedesktop.org/wiki/Software/dbus">
 <!ENTITY dbus-ch6-du "35 MB">
 <!ENTITY dbus-ch6-sbu "less than 0.4 SBU">
