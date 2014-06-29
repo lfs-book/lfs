@@ -17,13 +17,13 @@
   <title>Systemd-&systemd-version;</title>
 
   <indexterm zone="ch-system-systemd">
-    <primary sortas="a-Systemd">Systemd</primary>
+    <primary sortas="a-systemd">systemd</primary>
   </indexterm>
 
   <sect2 role="package">
     <title/>
 
-    <para>The Systemd package contains programs for controlling the startup,
+    <para>The systemd package contains programs for controlling the startup,
     running, and shutdown of the system.</para>
 
     <segmentedlist>
@@ -38,9 +38,9 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Systemd</title>
+    <title>Installation of systemd</title>
 
-    <para>First, create a file to allow Systemd to build when using Util-Linux
+    <para>First, create a file to allow systemd to build when using Util-Linux
     built in Chapter 5:</para>
 
 <screen><userinput remap="pre">cat &gt; config.cache &lt;&lt; "EOF"
@@ -60,7 +60,7 @@ EOF</userinput></screen>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&systemd-compat-patch;</userinput></screen>
 
-    <para>Prepare Systemd for compilation:</para>
+    <para>Prepare systemd for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr                         \
             --sysconfdir=/etc                                       \
@@ -101,7 +101,7 @@ EOF</userinput></screen>
       <varlistentry>
         <term><parameter>--enable-split-usr</parameter></term>
         <listitem>
-          <para>This switch ensures that Systemd will work on
+          <para>This switch ensures that systemd will work on
           systems where /bin, /lib and /sbin directories are not
           symlinks to their /usr counterparts.</para>
         </listitem>
@@ -118,7 +118,7 @@ EOF</userinput></screen>
       <varlistentry>
         <term><parameter>--with-dbus*</parameter></term>
         <listitem>
-          <para>These switches ensure that D-Bus configuratil files
+          <para>These switches ensure that D-Bus configuration files
           get installed in the correct locations.</para>
         </listitem>
       </varlistentry>
@@ -142,7 +142,7 @@ EOF</userinput></screen>
 
     <para>Note that some tests might fail because the test are being run in a
     chroot environment. For full test coverage, the test suite should be run
-    from a system booted using Systemd.</para>
+    from a system booted using systemd.</para>
 
     <para>Install the package:</para>
 
@@ -157,7 +157,7 @@ EOF</userinput></screen>
 
 <screen><userinput remap="install">rm -rfv /usr/lib/rpm</userinput></screen>
 
-    <para>Create the Sysvinit compatibility symlinks, so Systemd is used
+    <para>Create the Sysvinit compatibility symlinks, so systemd is used
     as the default init system:</para>
 
 <screen><userinput remap="install">for tool in runlevel reboot shutdown poweroff halt telinit; do
@@ -177,7 +177,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
   </sect2>
 
   <sect2 id="contents-systemd" role="content">
-    <title>Contents of Systemd</title>
+    <title>Contents of systemd</title>
 
     <segmentedlist>
       <segtitle>Installed programs</segtitle>
@@ -222,7 +222,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="busctl">
         <term><command>busctl</command></term>
         <listitem>
-          <para>used to introspect and monitor the D-Bus bus.</para>
+          <para>Used to introspect and monitor the D-Bus bus.</para>
           <indexterm zone="ch-system-systemd busctl">
             <primary sortas="b-busctl">busctl</primary>
           </indexterm>
@@ -246,7 +246,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="hostnamectl">
         <term><command>hostnamectl</command></term>
         <listitem>
-          <para>used to query and change the system hostname and related
+          <para>Used to query and change the system hostname and related
           settings.</para>
           <indexterm zone="ch-system-systemd hostnamectl">
             <primary sortas="b-hostnamectl">hostnamectl</primary>
@@ -269,7 +269,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="journalctl">
         <term><command>journalctl</command></term>
         <listitem>
-          <para>used to query the contents of the Systemd Journal.</para>
+          <para>Used to query the contents of the systemd Journal.</para>
           <indexterm zone="ch-system-systemd journalctl">
             <primary sortas="b-journalctl">journalctl</primary>
           </indexterm>
@@ -279,7 +279,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="kernel-install">
         <term><command>kernel-install</command></term>
         <listitem>
-          <para>used to add and remove kernel and initramfs images to and
+          <para>Used to add and remove kernel and initramfs images to and
           from /boot.</para>
           <indexterm zone="ch-system-systemd kernel-install">
             <primary sortas="b-kernel-install">kernel-install</primary>
@@ -290,7 +290,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="localectl">
         <term><command>localectl</command></term>
         <listitem>
-          <para>used to query and change the system locale and keyboard layout
+          <para>Used to query and change the system locale and keyboard layout
           settings.</para>
           <indexterm zone="ch-system-systemd localectl">
             <primary sortas="b-localectl">localectl</primary>
@@ -301,7 +301,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="loginctl">
         <term><command>loginctl</command></term>
         <listitem>
-          <para>used to introspect and control the state of the Systemd Login
+          <para>Used to introspect and control the state of the systemd Login
           Manager.</para>
           <indexterm zone="ch-system-systemd loginctl">
             <primary sortas="b-loginctl">loginctl</primary>
@@ -312,7 +312,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="machinectl">
         <term><command>machinectl</command></term>
         <listitem>
-          <para>used to introspect and control the state of the Systemd Virtual
+          <para>Used to introspect and control the state of the systemd Virtual
           Machine and Container Registration Manager</para>
           <indexterm zone="ch-system-systemd machinectl">
             <primary sortas="b-machinectl">machinectl</primary>
@@ -367,7 +367,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemctl">
         <term><command>systemctl</command></term>
         <listitem>
-          <para>used to introspect and control the state of the Systemd system and
+          <para>Used to introspect and control the state of the systemd system and
           service manager.</para>
           <indexterm zone="ch-system-systemd systemctl">
             <primary sortas="b-systemctl">systemctl</primary>
@@ -378,7 +378,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemd-analyze">
         <term><command>systemd-analyze</command></term>
         <listitem>
-          <para>used to determine system boot-up performance of the current boot.
+          <para>Used to determine system boot-up performance of the current boot.
           </para>
           <indexterm zone="ch-system-systemd systemd-analyze">
             <primary sortas="b-systemd-analyze">systemd-analyze</primary>
@@ -389,7 +389,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemd-ask-password">
         <term><command>systemd-ask-password</command></term>
         <listitem>
-          <para>used to query a system password or passphrase from the user, using a
+          <para>Used to query a system password or passphrase from the user, using a
           question message specified on the command line.</para>
           <indexterm zone="ch-system-systemd systemd-ask-password">
             <primary sortas="b-systemd-ask-password">systemd-ask-password</primary>
@@ -400,7 +400,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemd-cat">
         <term><command>systemd-cat</command></term>
         <listitem>
-          <para>used to connect STDOUT and STDERR of a process with the Journal.
+          <para>Used to connect STDOUT and STDERR of a process with the Journal.
           </para>
           <indexterm zone="ch-system-systemd systemd-cat">
             <primary sortas="b-systemd-cat">systemd-cat</primary>
@@ -411,7 +411,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemd-cgls">
         <term><command>systemd-cgls</command></term>
         <listitem>
-          <para>recursively shows the contents of the selected Linux control group
+          <para>Recursively shows the contents of the selected Linux control group
           hierarchy in a tree.</para>
           <indexterm zone="ch-system-systemd systemd-cgls">
             <primary sortas="b-systemd-cgls">systemd-cgls</primary>
@@ -422,7 +422,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemd-cgtop">
         <term><command>systemd-cgtop</command></term>
         <listitem>
-          <para>shows the top control groups of the local Linux control group hierarchy,
+          <para>Shows the top control groups of the local Linux control group hierarchy,
           ordered by their CPU, memory and disk I/O load.</para>
           <indexterm zone="ch-system-systemd systemd-cgtop">
             <primary sortas="b-systemd-cgtop">systemd-cgtop</primary>
@@ -433,7 +433,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemd-coredumpctl">
         <term><command>systemd-coredumpctl</command></term>
         <listitem>
-          <para>used to retrieve coredumps from the Systemd Journal</para>
+          <para>Used to retrieve coredumps from the systemd Journal</para>
           <indexterm zone="ch-system-systemd systemd-coredumpctl">
             <primary sortas="b-systemd-coredumpctl">systemd-coredumpctl</primary>
           </indexterm>
@@ -443,7 +443,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemd-delta">
         <term><command>systemd-delta</command></term>
         <listitem>
-          <para>used to identify and compare configuration files in
+          <para>Used to identify and compare configuration files in
           <filename class="directory">/etc</filename> that override default
           counterparts in <filename class="directory">/usr</filename>.</para>
           <indexterm zone="ch-system-systemd systemd-delta">
@@ -455,7 +455,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemd-detect-virt">
         <term><command>systemd-detect-virt</command></term>
         <listitem>
-          <para>detects execution in a virtualized environment.</para>
+          <para>Detects execution in a virtualized environment.</para>
           <indexterm zone="ch-system-systemd systemd-detect-virt">
             <primary sortas="b-systemd-detect-virt">systemd-detect-virt</primary>
           </indexterm>
@@ -465,7 +465,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemd-inhibit">
         <term><command>systemd-inhibit</command></term>
         <listitem>
-          <para>used to execute a program with a shutdown, sleep or idle inhibitor lock
+          <para>Used to execute a program with a shutdown, sleep or idle inhibitor lock
           taken.</para>
           <indexterm zone="ch-system-systemd systemd-inhibit">
             <primary sortas="b-systemd-inhibit">systemd-inhibit</primary>
@@ -476,7 +476,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemd-machine-id-setup">
         <term><command>systemd-machine-id-setup</command></term>
         <listitem>
-          <para>used by system installer tools to initialize the machine ID stored in
+          <para>Used by system installer tools to initialize the machine ID stored in
           <filename>/etc/machine-id</filename> at install time with a randomly
           generated ID.</para>
           <indexterm zone="ch-system-systemd systemd-machine-id-setup">
@@ -488,7 +488,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemd-notify">
         <term><command>systemd-notify</command></term>
         <listitem>
-          <para>used by daemon scripts to notify the init system about status changes.
+          <para>Used by daemon scripts to notify the init system about status changes.
           </para>
           <indexterm zone="ch-system-systemd systemd-notify">
             <primary sortas="b-systemd-notify">systemd-notify</primary>
@@ -499,7 +499,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemd-nspawn">
         <term><command>systemd-nspawn</command></term>
         <listitem>
-          <para>used to run a command or OS in a light-weight namespace container.</para>
+          <para>Used to run a command or OS in a light-weight namespace container.</para>
           <indexterm zone="ch-system-systemd systemd-nspawn">
             <primary sortas="b-systemd-nspawn">systemd-nspawn</primary>
           </indexterm>
@@ -509,7 +509,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemd-run">
         <term><command>systemd-run</command></term>
         <listitem>
-          <para>used to create and start a transient .service or a .scope unit and
+          <para>Used to create and start a transient .service or a .scope unit and
           run the specified command in it.</para>
           <indexterm zone="ch-system-systemd systemd-run">
             <primary sortas="b-systemd-run">systemd-run</primary>
@@ -530,7 +530,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemd-tmpfiles">
         <term><command>systemd-tmpfiles</command></term>
         <listitem>
-          <para>creates, deletes and cleans up volatile and temporary files and directories,
+          <para>Creates, deletes and cleans up volatile and temporary files and directories,
           based on the configuration file format and location specified in
           <filename class="directory">tmpfiles.d</filename> directories.</para>
           <indexterm zone="ch-system-systemd systemd-tmpfiles">
@@ -542,7 +542,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="systemd-tty-ask-password-agent">
         <term><command>systemd-tty-ask-password-agent</command></term>
         <listitem>
-          <para>used to list or process pending Systemd password requests</para>
+          <para>Used to list or process pending systemd password requests</para>
           <indexterm zone="ch-system-systemd systemd-tty-ask-password-agent">
             <primary sortas="b-systemd-tty-ask-password-agent">systemd-tty-ask-password-agent</primary>
           </indexterm>
@@ -562,7 +562,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="timedatectl">
         <term><command>timedatectl</command></term>
         <listitem>
-          <para>used to query and change the system clock and its settings.
+          <para>Used to query and change the system clock and its settings.
           </para>
           <indexterm zone="ch-system-systemd timedatectl">
             <primary sortas="b-timedatectl">timedatectl</primary>
@@ -586,7 +586,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <varlistentry id="libsystemd">
         <term><filename class="libraryfile">libsystemd</filename></term>
         <listitem>
-          <para>Systemd utility library.</para>
+          <para>systemd utility library.</para>
           <indexterm zone="ch-system-systemd libsystemd">
             <primary sortas="c-libsystemd">libsystemd</primary>
           </indexterm>

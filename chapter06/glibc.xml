@@ -181,7 +181,7 @@ grep Error glibc-check-log</userinput></screen>
 <screen><userinput remap="install">cp -v ../glibc-&glibc-version;/nscd/nscd.conf /etc/nscd.conf
 mkdir -pv /var/cache/nscd</userinput></screen>
 
-    <para>Install the Systemd support files for <command>nscd</command>:</para>
+    <para>Install the systemd support files for <command>nscd</command>:</para>
 
 <screen><userinput remap="install">install -v -Dm644 ../glibc-&glibc-version;/nscd/nscd.tmpfiles /usr/lib/tmpfiles.d/nscd.conf
 install -v -Dm644 ../glibc-&glibc-version;/nscd/nscd.service /lib/systemd/system/nscd.service</userinput></screen>

@@ -88,7 +88,7 @@
 <screen><userinput remap="install">mv -v /usr/lib/libdbus-1.so.* /lib
 ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</userinput></screen>
 
-    <para>Create a symlink, so that D-Bus and Systemd can use the same
+    <para>Create a symlink, so that D-Bus and systemd can use the same
     <filename>machine-id</filename> file:</para>
 
 <screen><userinput remap="install">ln -sv /etc/machine-id /var/lib/dbus</userinput></screen>
