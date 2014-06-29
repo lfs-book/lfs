@@ -209,6 +209,7 @@ EOF</userinput></screen>
 <literal># Begin /etc/hosts (network card version)
 
 127.0.0.1 localhost
+::1       localhost
 <replaceable>&lt;192.168.0.2&gt;</replaceable> <replaceable>&lt;HOSTNAME.example.org&gt;</replaceable> <replaceable>[alias1] [alias2] ...</replaceable>
 
 # End /etc/hosts (network card version)</literal>
@@ -227,9 +228,12 @@ EOF</userinput></screen>
 <literal># Begin /etc/hosts (no network card version)
 
 127.0.0.1 <replaceable>&lt;HOSTNAME.example.org&gt;</replaceable> <replaceable>&lt;HOSTNAME&gt;</replaceable> localhost
+::1       localhost
 
 # End /etc/hosts (no network card version)</literal>
 EOF</userinput></screen>
+
+     <para>The ::1 entry is the IPv6 counterpart of 127.0.0.1 and represents the IPv6 loopback interface.</para>
 
    </sect2>
 
