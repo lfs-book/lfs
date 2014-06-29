@@ -21,6 +21,7 @@
 
   <itemizedlist>
     <title>Upgraded to:</title>
+    <listitem><para></para></listitem>  <!-- satisfy build -->
     <!--<listitem>
     <para>None</para>
     </listitem>-->
@@ -235,6 +236,7 @@
 
   <itemizedlist>
     <title>Added:</title>
+    <listitem><para></para></listitem>  <!-- satisfy build -->
     <listitem>
       <para>&bash-fixes-patch;</para>
     </listitem>
@@ -257,6 +259,7 @@
 
   <itemizedlist>
     <title>Removed:</title>
+    <listitem><para></para></listitem>  <!-- satisfy build -->
     <listitem>
       <para>bash-4.2-fixes-12.patch</para>
     </listitem>

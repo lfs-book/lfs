@@ -195,7 +195,7 @@
            <ulink url="&lfs-ticket-root;3590">#3590</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Added a note about adding the 
+          <para>[bdubbs] - Added a note about adding the
           parent directory to the es and pt keymaps for proper
           keymap loading.  Fixes
            <ulink url="&lfs-ticket-root;3591">#3591</ulink>.</para>
@@ -240,6 +240,55 @@
         <listitem>
           <para>[bdubbs] - Update to linux-3.14.4. Fixes
            <ulink url="&lfs-ticket-root;3577">#3577</ulink></para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-05-11</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Add a patch to binutils to enable LTO
+          with gcc-4.9.0. Fixes
+          <ulink url="&lfs-ticket-root;3569">#3569</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Add gcc patch for upstream changes.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Remove omit-frame-pointer in gcc-pass2
+          and Chapter 6 gcc. Fixes
+          <ulink url="&lfs-ticket-root;3562">#3562</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-05-10</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-3.66. Fixes
+          <ulink url="&lfs-ticket-root;3576">#3576</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-3.14.3. Fixes
+          <ulink url="&lfs-ticket-root;3573">#3573</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update gnu urls to use an entity. Fixes
+          <ulink url="&lfs-ticket-root;3571">#3571</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update kbd URL. Fixes
+          <ulink url="&lfs-ticket-root;3574">#3574</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update procps-ng URL.  Fixes
+          <ulink url="&lfs-ticket-root;3572">#3572</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to shadow-4.2.1.  Fixes
+          <ulink url="&lfs-ticket-root;3553">#3553</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -303,6 +352,16 @@
         <listitem>
           <para>[bdubbs] - Update to gcc-4.9. Fixes
           <ulink url="&lfs-ticket-root;3553">#3553</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-04-23</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-3.65. Fixes
+          <ulink url="&lfs-ticket-root;3547">#3547</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -381,32 +440,32 @@
       <para>2014-04-08</para>
       <itemizedlist>
         <listitem>
-          <para>[bdubbs] - Change lex wrapper script to a symbolic 
-          link. Completes 
+          <para>[bdubbs] - Change lex wrapper script to a symbolic
+          link. Completes
           <ulink url="&lfs-ticket-root;3523">#3523</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to linux-3.14. Fixes 
+          <para>[bdubbs] - Update to linux-3.14. Fixes
           <ulink url="&lfs-ticket-root;3523">#3523</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to file-5.18. Fixes 
+          <para>[bdubbs] - Update to file-5.18. Fixes
           <ulink url="&lfs-ticket-root;3526">#3526</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to flex-2.5.39. Addresses 
+          <para>[bdubbs] - Update to flex-2.5.39. Addresses
           <ulink url="&lfs-ticket-root;3527">#3527</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to gmp-6.0.0a. Fixes 
+          <para>[bdubbs] - Update to gmp-6.0.0a. Fixes
           <ulink url="&lfs-ticket-root;3528">#3528</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to man-pages-3.64. Fixes 
+          <para>[bdubbs] - Update to man-pages-3.64. Fixes
           <ulink url="&lfs-ticket-root;3539">#3539</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to systemd-212. Fixes 
+          <para>[bdubbs] - Update to systemd-212. Fixes
           <ulink url="&lfs-ticket-root;3540">#3540</ulink>.</para>
         </listitem>
       </itemizedlist>
@@ -417,15 +476,15 @@
       <itemizedlist>
         <listitem>
           <para>[bdubbs] - Update the example SEARCH_DIR output for i686
-          in the GCC text. Fixes 
+          in the GCC text. Fixes
           <ulink url="&lfs-ticket-root;3524">#3524</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to tzdata2014b. Fixes 
+          <para>[bdubbs] - Update to tzdata2014b. Fixes
           <ulink url="&lfs-ticket-root;3525">#3525</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to kmod-17. Fixes 
+          <para>[bdubbs] - Update to kmod-17. Fixes
           <ulink url="&lfs-ticket-root;3538">#3538</ulink>.</para>
         </listitem>
       </itemizedlist>
