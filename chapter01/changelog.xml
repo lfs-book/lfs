@@ -36,6 +36,34 @@
     </listitem>
 -->
     <listitem>
+      <para>2014-06-29</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - Merged LFS SVN-20140628.</para>
+        </listitem>
+        <listitem>
+          <para>[krejzi] - Removed LTO hacks from systemd
+          page since they are not necessary anymore.</para>
+        </listitem>
+        <listitem>
+          <para>[krejzi] - Updated to D-Bus 1.8.4.</para>
+        </listitem>  
+        <listitem>
+          <para>[krejzi] - Rewrote Network Configuration to
+          use systemd-networkd.</para>
+        </listitem>  
+        <listitem>
+          <para>[krejzi] - Removed lfs-network-scripts.</para>
+        </listitem>  
+        <listitem>
+          <para>[krejzi] - Added "Systemd Usage and Configuration" page
+          to chapter 7. Thanks to Bruce Dubbs for writing the original
+          version.</para>
+        </listitem>  
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2014-06-28</para>
       <itemizedlist>
         <listitem>
@@ -431,7 +459,7 @@
       <para>2014-04-12</para>
       <itemizedlist>
         <listitem>
-          <para>[krejzi] - Merge LFS SVN-20140408 book.</para>
+          <para>[krejzi] - Merged LFS SVN-20140408.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -514,7 +542,7 @@
       <para>2014-03-14</para>
       <itemizedlist>
         <listitem>
-          <para>[krejzi] - Merge LFS SVN-20140312 book.</para>
+          <para>[krejzi] - Merged LFS SVN-20140312.</para>
         </listitem>
         <listitem>
           <para>[krejzi] - Update to systemd-211.</para>
