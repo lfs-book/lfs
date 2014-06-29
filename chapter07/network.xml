@@ -18,94 +18,72 @@
   configured.</para>
 
   <sect2>
-    <title>Creating Network Interface Configuration Files</title>
+    <title>Network Interface Configuration Files</title>
 
-    <para>Which interfaces are brought up and down by the network script
-    depends on the files in <filename
-    class="directory">/etc/sysconfig/</filename>. This directory should
-    contain a file for each interface to be configured, such as
-    <filename>ifconfig.xyz</filename>, where <quote>xyz</quote> is
-    required to be a Network Card Interface name (e.g. eth0).
-    Inside this file are attributes to this interface, such as its IP
-    address(es), subnet masks, and so forth.  It is necessary that
-    the stem of the filename be <emphasis>ifconfig</emphasis>.</para>
+    <para>Starting with version 209, systemd ships a network configuration
+    daemon called <command>systemd-networkd</command> which can be used for
+    basic network configuration.</para>
 
-    <note><para>Udev may assign random Network Card Interface names
-    for some network cards such as enp2s1. If you are not sure what
-    your Network Card Interface name is, you can always run
-    <command>ip l</command> after you have booted your system. Again,
-    it is important that <filename>ifconfig.xyz</filename> is named
-    after correct Network Card Interface name (e.g.
-    <filename>ifconfig.enp2s1</filename> or
-    <filename>ifconfig.eth0</filename>) or Systemd will fail to bring
-    up your network interface.</para></note>
+    <para>Configuration files for <command>systemd-networkd</command> can be
+    placed in <filename class="directory">/usr/lib/systemd/network</filename>
+    or <filename class="directory">/etc/systemd/network</filename>. Note that
+    files in <filename class="directory">/etc/systemd/network</filename> have
+    higher priority than the ones in
+    <filename class="directory">/usr/lib/systemd/network</filename>.</para>
 
-    <para>The following command creates a sample file for the
-    <emphasis>eth0</emphasis> device with a static IP address:</para>
+    <para>There are three types of configuration files:
+    <filename class="extension">.link</filename>,
+    <filename class="extension">.netdev</filename> and
+    <filename class="extension">.network</filename> files. For detailed
+    explanation about contents of the mentioned
+    configuration files, consult <command>systemd-link(5)</command>,
+    <command>systemd-netdev(5)</command> and
+    <command>systemd-network(5)</command> manual pages.</para>
 
-<screen><userinput>cd /etc/sysconfig/
-cat &gt; ifconfig.eth0 &lt;&lt; "EOF"
-<literal>IFACE=eth0
-SERVICE=ipv4-static
-IP=192.168.1.1
-GATEWAY=192.168.1.2
-PREFIX=24
-BROADCAST=192.168.1.255</literal>
+    <note><para>Udev may assign network card interface names based
+    on system physical characteristics such as enp2s1. If you are
+    not sure what your interface name is, you can always run
+    <command>ip link</command> after you have booted your system.
+    </para></note>
+
+    <sect3 id="systemd-networkd-static">
+      <title>Static IP Configuration</title>
+
+      <para>The command below creates a basic configuration file for
+      Static IP setup:</para>
+
+<screen role="nodump"><userinput>cat &gt; /etc/systemd/network/10-static-eth0.network &lt;&lt; "EOF"
+<literal>[Match]
+Name=eth0
+
+[Network]
+Address=192.168.0.2/24
+Gateway=192.168.0.1
+DNS=192.168.0.1</literal>
 EOF</userinput></screen>
 
-    <para>The values of these variables must be changed in every file to match
-    the proper setup.</para>
+      <para>More than one DNS entry can be specified in the configuration file.</para>
 
-    <para>The <envar>IFACE</envar> variable defines the interface name,
-    for example, eth0. It is required for all network device configuration
-    files.</para>
+    </sect3>
 
-    <para>The <envar>SERVICE</envar> variable defines the method used for
-    obtaining the IP address. The LFS-Network-Scripts package has a modular
-    IP assignment format, and creating additional files in the <filename
-    class="directory">/lib/services/</filename> directory allows other IP
-    assignment methods. This is commonly used for Dynamic Host Configuration
-    Protocol (DHCP), which is addressed in the BLFS book.</para>
+    <sect3 id="systemd-networkd-dhcp">
+      <title>DHCP Configuration</title>
 
-    <para>The <envar>GATEWAY</envar> variable should contain the default
-    gateway IP address, if one is present. If not, then comment out the
-    variable entirely.</para>
+      <para>The command below creates a basic configuration file for
+      DHCP setup:</para>
 
-    <para>The <envar>PREFIX</envar> variable contains the number of
-    bits used in the subnet. Each octet in an IP address is 8 bits. If the
-    subnet's netmask is 255.255.255.0, then it is using the first three octets
-    (24 bits) to specify the network number. If the netmask is 255.255.255.240,
-    it would be using the first 28 bits.  Prefixes longer than 24 bits are
-    commonly used by DSL and cable-based Internet Service Providers (ISPs).
-    In this example (PREFIX=24), the netmask is 255.255.255.0. Adjust the
-    <envar>PREFIX</envar> variable according to your specific subnet.
-    If omitted, the PREFIX defaults to 24.</para>
+<screen role="nodump"><userinput>cat &gt; /etc/systemd/network/10-dhcp-eth0.network &lt;&lt; "EOF"
+<literal>[Match]
+Name=eth0
 
-    <para>For more information see the <command>ifup</command> man page.</para>
+[Network]
+DHCP=yes</literal>
+EOF</userinput></screen>
 
-  </sect2>
+      <para>Note that <command>systemd-networkd</command> can only handle
+      DHCPv4. DHCPv6 support is a work in progress.</para>
 
-  <sect2>
-    <title>Configuring the Network Interface Card at boot</title>
-
-    <para>Enabling of the Network Interface Card configuration is
-    done per interface. To enable Network Interface Card
-    configuration at boot, run:</para>
-
-<screen><userinput>systemctl enable ifupdown@eth0</userinput></screen>
-
-    <para>To disable previously enabled Network Interface
-    Card configuration at boot, run:</para>
-
-<screen><userinput>systemctl disable ifupdown@eth0</userinput></screen>
-
-    <para>To manually start the Network Interface Card configuration,
-    run:</para>
-
-<screen><userinput>systemctl start ifupdown@eth0</userinput></screen>
-
-    <para>Replace eth0 with the correct Network Interface Card
-    name as described on the beginning of this page.</para>
+    </sect3>
 
   </sect2>
 
@@ -121,8 +99,19 @@ EOF</userinput></screen>
     resolve Internet domain names to IP addresses, and vice versa. This is
     best achieved by placing the IP address of the DNS server, available
     from the ISP or network administrator, into
-    <filename>/etc/resolv.conf</filename>. Create the file by running the
-    following:</para>
+    <filename>/etc/resolv.conf</filename>.</para>
+
+    <para>When using <command>systemd-networkd</command> for network
+    configuration, another daemon, <command>systemd-resolved</command>,
+    is responsible for creating the <filename>/etc/resolv.conf</filename>
+    file. It is, however, placed in a non-standard location which is
+    writable since early boot, so it is necessary to create a symlink
+    to it by running the following command:</para>
+
+<screen><userinput>ln -sfv /run/systemd/resolve/resolv.conf /etc/resolv.conf</userinput></screen>
+
+    <para>If static <filename>/etc/resolv.conf</filename> is desired, create
+    it by running the following command:</para>
 
 <screen><userinput>cat &gt; /etc/resolv.conf &lt;&lt; "EOF"
 <literal># Begin /etc/resolv.conf
@@ -148,5 +137,100 @@ EOF</userinput></screen>
     <note><para>The Google Public IPv4 DNS addresses are 8.8.8.8 and 8.8.4.4.</para></note>
 
   </sect2>
+
+  <sect2 id="ch-scripts-hostname">
+    <title>Configuring the system hostname</title>
+
+    <indexterm zone="ch-scripts-hostname">
+      <primary sortas="d-hostname">hostname</primary>
+      <secondary>configuring</secondary>
+    </indexterm>
+
+     <para>During the boot process, the file <filename>/etc/hostname</filename>
+     is used for establishing the system's hostname.</para>
+
+     <para>Create the <filename>/etc/hostname</filename> file and enter a
+     hostname by running:</para>
+
+<screen><userinput>echo "<replaceable>&lt;lfs&gt;</replaceable>" &gt; /etc/hostname</userinput></screen>
+
+     <para><replaceable>&lt;lfs&gt;</replaceable> needs to be replaced with the
+     name given to the computer. Do not enter the Fully Qualified Domain Name
+     (FQDN) here. That information is put in the
+     <filename>/etc/hosts</filename> file.</para>
+
+  </sect2>
+
+  <sect2 id="ch-scripts-hosts">
+     <title>Customizing the /etc/hosts File</title>
+
+     <indexterm zone="ch-scripts-hosts">
+       <primary sortas="e-/etc/hosts">/etc/hosts</primary>
+     </indexterm>
+   
+     <indexterm zone="ch-scripts-hosts">
+       <primary sortas="d-localnet">localnet</primary>
+       <secondary>/etc/hosts</secondary>
+     </indexterm>
+   
+     <indexterm zone="ch-scripts-hosts">
+       <primary sortas="d-network">network</primary>
+       <secondary>/etc/hosts</secondary>
+     </indexterm>
+   
+     <para>Decide on the IP address, fully-qualified domain name (FQDN), and
+     possible aliases for use in the <filename>/etc/hosts</filename> file. The
+     syntax is:</para>
+   
+<screen><literal>IP_address myhost.example.org aliases</literal></screen>
+
+     <para>Unless the computer is to be visible to the Internet (i.e., there is
+     a registered domain and a valid block of assigned IP addresses&mdash;most
+     users do not have this), make sure that the IP address is in the private
+     network IP address range. Valid ranges are:</para>
+
+<screen><literal>Private Network Address Range      Normal Prefix
+10.0.0.1 - 10.255.255.254           8
+172.x.0.1 - 172.x.255.254           16
+192.168.y.1 - 192.168.y.254         24</literal></screen>
+
+     <para>x can be any number in the range 16-31. y can be any number in the
+     range 0-255.</para>
+   
+     <para>A valid private IP address could be 192.168.1.1. A valid FQDN for
+     this IP could be lfs.example.org.</para>
+   
+     <para>Even if not using a network card, a valid FQDN is still required.
+     This is necessary for certain programs to operate correctly.</para>
+   
+     <para>Create the  <filename>/etc/hosts</filename> file by running:</para>
+
+<screen><userinput>cat &gt; /etc/hosts &lt;&lt; "EOF"
+<literal># Begin /etc/hosts (network card version)
+
+127.0.0.1 localhost
+<replaceable>&lt;192.168.0.2&gt;</replaceable> <replaceable>&lt;HOSTNAME.example.org&gt;</replaceable> <replaceable>[alias1] [alias2] ...</replaceable>
+
+# End /etc/hosts (network card version)</literal>
+EOF</userinput></screen>
+
+     <para>The <replaceable>&lt;192.168.0.2&gt;</replaceable> and
+     <replaceable>&lt;HOSTNAME.example.org&gt;</replaceable> values need to be
+     changed for specific uses or requirements (if assigned an IP address by a
+     network/system administrator and the machine will be connected to an
+     existing network). The optional alias name(s) can be omitted.</para>
+   
+     <para>If a network card is not going to be configured, create the
+     <filename>/etc/hosts</filename> file by running:</para>
+
+<screen role="nodump"><userinput>cat &gt; /etc/hosts &lt;&lt; "EOF"
+<literal># Begin /etc/hosts (no network card version)
+
+127.0.0.1 <replaceable>&lt;HOSTNAME.example.org&gt;</replaceable> <replaceable>&lt;HOSTNAME&gt;</replaceable> localhost
+
+# End /etc/hosts (no network card version)</literal>
+EOF</userinput></screen>
+
+   </sect2>
 
 </sect1>

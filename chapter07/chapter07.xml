@@ -14,10 +14,8 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="introduction.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="network-scripts.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="network.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="hosts.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="udev.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="symlinks.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="hostname.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="clock.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="console.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="locale.xml"/>
