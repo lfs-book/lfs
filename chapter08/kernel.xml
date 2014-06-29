@@ -139,7 +139,7 @@ File systems  ---&gt;
     located in <xref linkend="ch-scripts-udev"/> and in the kernel
     documentation in the <filename
     class="directory">linux-&linux-version;/Documentation</filename> directory.
-    Also, <filename>modprobe.conf(5)</filename> may be of interest.</para>
+    Also, <filename>modprobe.d(5)</filename> may be of interest.</para>
 
     <para>Install the modules, if the kernel configuration uses them:</para>
 

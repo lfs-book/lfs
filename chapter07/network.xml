@@ -36,9 +36,9 @@
     <filename class="extension">.netdev</filename> and
     <filename class="extension">.network</filename> files. For detailed
     explanation about contents of the mentioned
-    configuration files, consult <command>systemd-link(5)</command>,
-    <command>systemd-netdev(5)</command> and
-    <command>systemd-network(5)</command> manual pages.</para>
+    configuration files, consult <filename>systemd-link(5)</filename>,
+    <filename>systemd-netdev(5)</filename> and
+    <filename>systemd-network(5)</filename> manual pages.</para>
 
     <note><para>Udev may assign network card interface names based
     on system physical characteristics such as enp2s1. If you are
