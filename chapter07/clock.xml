@@ -70,6 +70,6 @@ EOF</userinput></screen>
 <screen role="nodump"><userinput>timedatectl list-timezones</userinput></screen>
 
   <note><para>Please note that <command>timedatectl</command> command can
-  be used only on a system booted with Systemd.</para></note>
+  be used only on a system booted with systemd.</para></note>
 
 </sect1>

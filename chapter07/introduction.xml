@@ -10,13 +10,16 @@
 
   <title>Introduction</title>
 
-  <para>This chapter discusses configuration files and boot scripts.
+  <para>This chapter discusses configuration files and systemd services.
   First, the general configuration files needed to set up networking are
   presented.</para>
 
   <itemizedlist>
      <listitem>
        <para><xref linkend="ch-scripts-network" role="."/></para>
+     </listitem>
+     <listitem>
+       <para><xref linkend="ch-scripts-hostname" role="."/></para>
      </listitem>
      <listitem>
        <para><xref linkend="ch-scripts-hosts" role="."/></para>
@@ -35,12 +38,9 @@
      </listitem>
   </itemizedlist>
 
-  <para>Third, configuring the hostname, system clock, and keyboard layout.</para>
+  <para>Third, configuring the system clock and keyboard layout.</para>
 
   <itemizedlist>
-     <listitem>
-       <para><xref linkend="ch-scripts-hostname" role="."/></para>
-     </listitem>
      <listitem>
        <para><xref linkend="ch-scripts-clock" role="."/></para>
      </listitem>

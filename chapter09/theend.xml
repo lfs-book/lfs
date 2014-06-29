@@ -18,7 +18,7 @@
   success with your shiny new custom-built Linux system.</para>
 
   <para>Create an <filename>/etc/os-release</filename> file required by
-  Systemd:</para>
+  systemd:</para>
 
 <screen><userinput>cat &gt; /etc/os-release &lt;&lt; "EOF"
 NAME="Linux From Scratch"
@@ -28,7 +28,7 @@ PRETTY_NAME="Linux From Scratch &version;"
 EOF</userinput></screen>
 
   <para>It is recommended to create <filename>/etc/lfs-release</filename>
-  for compatibility with non Systemd branch. By having this file, it is very
+  for compatibility with non systemd branch. By having this file, it is very
   easy for you (and for us if you need to ask for help at some point) to find
   out which LFS version is installed on the system. Create this file by
   running:</para>

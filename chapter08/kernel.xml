@@ -94,7 +94,7 @@ File systems  ---&gt;
     [*] Tmpfs extended attributes</screen></note>
 
     <note><para>While "The IPv6 Protocol" is not strictly required, it is
-    highly recommended by the Systemd developers.</para></note>
+    highly recommended by the systemd developers.</para></note>
 
 <screen role="nodump"><userinput>make LANG=<replaceable>&lt;host_LANG_value&gt;</replaceable> LC_ALL= menuconfig</userinput></screen>
 

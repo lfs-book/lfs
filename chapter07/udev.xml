@@ -16,7 +16,7 @@
   </indexterm>
 
   <para>In <xref linkend="chapter-building-system"/>, we installed Udev
-  from the Systemd source package. Before we go into the details regarding
+  from the systemd source package. Before we go into the details regarding
   how this works, a brief history of previous methods of handling devices
   is in order.</para>
 
