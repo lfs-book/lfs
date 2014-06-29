@@ -84,13 +84,9 @@ tmpdir:
 	$(Q)rm -f $(RENDERTMP)/lfs-pdf.fo
 
 validate: tmpdir
-	@echo "Processing bootscripts..."
-	$(Q)bash process-scripts.sh
 	@echo "Validating the book..."
 	$(Q)xmllint --nonet --noent --xinclude --postvalid \
 	  -o $(RENDERTMP)/lfs-full.xml index.xml
-	$(Q)rm -f appendices/*.script
-	$(Q)./aux-file-data.sh $(RENDERTMP)/lfs-full.xml
 	@echo "Validation complete."
 
 profile-html: validate
@@ -112,9 +108,6 @@ $(BASEDIR)/md5sums: stylesheets/wget-list.xsl chapter03/chapter03.xml packages.e
 	$(Q)mkdir -p $(BASEDIR)
 	$(Q)xsltproc --xinclude --nonet --output $(BASEDIR)/md5sums \
 	    stylesheets/md5sum.xsl chapter03/chapter03.xml
-	$(Q)sed -i -e \
-       "s/LFS-NETSCRIPTS-MD5SUM/$(shell md5sum lfs-network-scripts*.tar.bz2 | cut -d' ' -f1)/" \
-       $(BASEDIR)/md5sums
 
 dump-commands: validate
 	@echo "Dumping book commands..."

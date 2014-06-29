@@ -12,7 +12,6 @@
   <title>Basic System Configuration</title>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="introduction.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="network-scripts.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="network.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="udev.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="symlinks.xml"/>
