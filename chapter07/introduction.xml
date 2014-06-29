@@ -50,7 +50,7 @@
   </itemizedlist>
 
 
-  <para>Finally, there is a brief introduction to the scripts and configuration
+  <para>Fourth, a brief introduction to the scripts and configuration
   files used when the user logs into the system.</para>
 
   <itemizedlist>
@@ -62,5 +62,12 @@
      </listitem>
   </itemizedlist>
 
+  <para>And finally, configuring the systemd behavior.</para>
+
+  <itemizedlist>
+     <listitem>
+       <para><xref linkend="ch-scripts-systemd-custom" role="."/></para>
+     </listitem>
+  </itemizedlist>
 
 </sect1>
