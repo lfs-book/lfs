@@ -2118,7 +2118,7 @@
         </seglistitem>
       </segmentedlist>
 
-<!-- Begin Systemd dependency info -->
+<!-- Begin systemd dependency info -->
   <bridgehead renderas="sect2" id="systemd-dep">Systemd</bridgehead>
 
       <segmentedlist>

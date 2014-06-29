@@ -74,27 +74,53 @@
     work correctly or boot at all:</para>
 
     <screen role="nodump">General setup  ---&gt;
-  [*] open by fhandle syscalls
-  [*] Control Group support
+  [*] open by fhandle syscalls [CONFIG_FHANDLE]
+  [ ] Auditing support [CONFIG_AUDIT]
+  [*] Control Group support [CONFIG_CGROUPS]
 Processor type and features  ---&gt;
-  [*] Enable seccomp to safely compute untrusted bytecode
+  [*] Enable seccomp to safely compute untrusted bytecode [CONFIG_SECCOMP]
 Networking support  ---&gt;
   Networking options  ---&gt;
-    &lt;*&gt; The IPv6 protocol
+    &lt;*&gt; The IPv6 protocol [CONFIG_IPV6]
 Device Drivers  ---&gt;
   Generic Driver Options  ---&gt;
-    ()  path to uevent helper
-    [*] Maintain a devtmpfs filesystem to mount at /dev
-    [ ] Fallback user-helper invocation for firmware loading
+    ()  path to uevent helper [CONFIG_UEVENT_HELPER_PATH]
+    [*] Maintain a devtmpfs filesystem to mount at /dev [CONFIG_DEVTMPFS]
+    [ ] Fallback user-helper invocation for firmware loading [CONFIG_FW_LOADER_USER_HELPER]
+Firmware Drivers  ---&gt;
+    [*] Export DMI identification via sysfs to userspace [CONFIG_DMIID]
 File systems  ---&gt;
-  [*] Inotify support for userspace
-  &lt;*&gt; Kernel automounter version 4 support (also supports v3)
+  [*] Inotify support for userspace [CONFIG_INOTIFY_USER]
+  &lt;*&gt; Kernel automounter version 4 support (also supports v3) [CONFIG_AUTOFS4_FS]
   Pseudo filesystems  ---&gt;
-    [*] Tmpfs POSIX Access Control Lists
-    [*] Tmpfs extended attributes</screen></note>
+    [*] Tmpfs POSIX Access Control Lists [CONFIG_TMPFS_POSIX_ACL]
+    [*] Tmpfs extended attributes [CONFIG_TMPFS_XATTR]</screen></note>
 
     <note><para>While "The IPv6 Protocol" is not strictly required, it is
     highly recommended by the systemd developers.</para></note>
+
+    <variablelist>
+      <title>The rationale for the above configuration items:</title>
+
+      <varlistentry>
+        <term><parameter>path to uevent helper</parameter></term>
+        <listitem>
+          <para>Having an entry in this space will interfere with device
+          management when using udev/eudev. </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>Maintain a devtmpfs</parameter></term>
+        <listitem>
+          <para>This will create automated device nodes which are populated by the
+          kernel, even without udev running.  Udev then runs on top of this,
+          managing permissions and adding symlinks.  This configuration
+          item is required for all users of Udev/Eudev.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
 
 <screen role="nodump"><userinput>make LANG=<replaceable>&lt;host_LANG_value&gt;</replaceable> LC_ALL= menuconfig</userinput></screen>
 
