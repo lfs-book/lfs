@@ -151,8 +151,8 @@ ln -sv bash /bin/sh</userinput></screen>
 bin:x:1:1:bin:/dev/null:/bin/false
 daemon:x:6:6:Daemon User:/dev/null:/bin/false
 messagebus:x:18:18:D-Bus Message Daemon User:/var/run/dbus:/bin/false
-systemd-bus-proxy:64:64:systemd Bus Proxy Daemon:/:/bin/false
-systemd-journal-gateway:65:65:systemd Journal Gateway Daemon:/:/bin/false
+systemd-bus-proxy:x:64:64:systemd Bus Proxy Daemon:/:/bin/false
+systemd-journal-gateway:x:65:65:systemd Journal Gateway Daemon:/:/bin/false
 systemd-network:x:66:66:systemd Network Daemon:/:/bin/false
 systemd-resolve:x:67:67:systemd Resolve Daemon:/:/bin/false
 systemd-timesync:x:68:68:systemd Time Sync Daemon:/:/bin/false
