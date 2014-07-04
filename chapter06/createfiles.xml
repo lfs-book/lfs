@@ -185,6 +185,7 @@ cdrom:x:15:
 adm:x:16:
 messagebus:x:18:
 systemd-journal:x:23:
+input:x:24:
 mail:x:34:
 systemd-bus-proxy:x:64:
 systemd-journal-gateway:x:65:
