@@ -19,9 +19,9 @@
 <!ENTITY attr-size "336 KB">
 <!ENTITY attr-url "&savannah;/releases/attr/attr-&attr-version;.src.tar.gz">
 <!ENTITY attr-md5 "84f58dec00b60f2dc8fd1c9709291cc7">
-<!ENTITY attr-home " ">
-<!ENTITY attr-ch6-du "3.5 MB">
-<!ENTITY attr-ch6-sbu "0.1 SBU">
+<!ENTITY attr-home "&gnu-software;attr/">
+<!ENTITY attr-ch6-du "17.1 MB">
+<!ENTITY attr-ch6-sbu "4.5 SBU">
 
 <!ENTITY autoconf-version "2.69">
 <!ENTITY autoconf-size "1,186 KB">
@@ -110,10 +110,10 @@
 <!ENTITY coreutils-ch6-du "116 MB">
 <!ENTITY coreutils-ch6-sbu "3.4 SBU">
 
-<!ENTITY dbus-version "1.8.4">
+<!ENTITY dbus-version "1.8.6">
 <!ENTITY dbus-size "1,820 KB">
 <!ENTITY dbus-url "http://dbus.freedesktop.org/releases/dbus/dbus-&dbus-version;.tar.gz">
-<!ENTITY dbus-md5 "4717cb8ab5b80978fcadf2b4f2f72e1b">
+<!ENTITY dbus-md5 "6a08ba555d340e9dfe2d623b83c0eea8">
 <!ENTITY dbus-home "http://www.freedesktop.org/wiki/Software/dbus">
 <!ENTITY dbus-ch6-du "35 MB">
 <!ENTITY dbus-ch6-sbu "less than 0.4 SBU">
@@ -251,7 +251,7 @@
 <!ENTITY gmp-version "6.0.0a">
 <!ENTITY gmp-extracted-version "6.0.0">
 <!ENTITY gmp-size "1,860 KB">
-<!ENTITY gmp-url "http://ftp.gnu.org/gnu/gmp/gmp-&gmp-version;.tar.xz">
+<!ENTITY gmp-url "&gnu;/gmp/gmp-&gmp-version;.tar.xz">
 <!ENTITY gmp-md5 "1e6da4e434553d2811437aa42c7f7c76">
 <!ENTITY gmp-home "&gnu-software;gmp/">
 <!ENTITY gmp-ch5-du "39 MB">
@@ -337,7 +337,7 @@
 
 <!ENTITY kbd-version "2.0.1">
 <!ENTITY kbd-size "1,962 KB">
-<!ENTITY kbd-url "http://ftp.altlinux.org/pub/people/legion/kbd/kbd-&kbd-version;.tar.gz">
+<!ENTITY kbd-url "https://www.kernel.org/pub/linux/utils/kbd/kbd-&kbd-version;.tar.gz">
 <!ENTITY kbd-md5 "e9f2b7046312c11cec9e52e22f307b6a">
 <!ENTITY kbd-home "http://ftp.altlinux.org/pub/people/legion/kbd">
 <!ENTITY kbd-ch6-du "20 MB">
@@ -464,7 +464,7 @@
 
 <!ENTITY ncurses-version "5.9">
 <!ENTITY ncurses-size "2,760 KB">
-<!ENTITY ncurses-url "http://ftp.gnu.org/gnu/ncurses/ncurses-&ncurses-version;.tar.gz">
+<!ENTITY ncurses-url "&gnu;/ncurses/ncurses-&ncurses-version;.tar.gz">
 <!ENTITY ncurses-md5 "8cb9c412e5f2d96bc6f459aa8c6282a1">
 <!ENTITY ncurses-home "&gnu-software;ncurses/">
 <!ENTITY ncurses-ch5-du "35 MB">
@@ -534,13 +534,21 @@
 <!ENTITY sed-ch6-du "6.7 MB">
 <!ENTITY sed-ch6-sbu "0.2 SBU">
 
-<!ENTITY shadow-version "4.1.5.1">
-<!ENTITY shadow-size "3,428 KB">
-<!ENTITY shadow-url "http://cdn.debian.net/debian/pool/main/s/shadow/shadow_&shadow-version;.orig.tar.gz">
-<!ENTITY shadow-md5 "ae66de9953f840fb3a97f6148bc39a30">
-<!-- <!ENTITY shadow-home "http://pkg-shadow.alioth.debian.org/"> -->
+<!ENTITY shadow-version "4.2.1">
+<!ENTITY shadow-size "1,558 KB">
+<!ENTITY shadow-url "http://pkg-shadow.alioth.debian.org/releases/shadow-&shadow-version;.tar.xz">
+<!ENTITY shadow-md5 "2bfafe7d4962682d31b5eba65dba4fc8">
+<!ENTITY shadow-home "http://pkg-shadow.alioth.debian.org/"> 
 <!ENTITY shadow-ch6-du "42 MB">
 <!ENTITY shadow-ch6-sbu "0.2 SBU">
+
+<!ENTITY systemd-version "214">
+<!ENTITY systemd-size    "2,278 KB">
+<!ENTITY systemd-url     "http://www.freedesktop.org/software/systemd/systemd-&systemd-version;.tar.xz">
+<!ENTITY systemd-md5     "eac4f9fc5bd18a0efc3fc20858baacf3">
+<!ENTITY systemd-home    "http://www.freedesktop.org/wiki/Software/systemd/">
+<!ENTITY systemd-ch6-du  "410 MB">
+<!ENTITY systemd-ch6-sbu "4.5 SBU">
 
 <!ENTITY tar-version "1.27.1">
 <!ENTITY tar-size "1,835 KB">
@@ -570,14 +578,6 @@
 <!ENTITY texinfo-ch5-sbu "0.3 SBU">
 <!ENTITY texinfo-ch6-du "101 MB">
 <!ENTITY texinfo-ch6-sbu "0.6 SBU">
-
-<!ENTITY systemd-version "214">
-<!ENTITY systemd-size    "2,278 KB">
-<!ENTITY systemd-url     "http://www.freedesktop.org/software/systemd/systemd-&systemd-version;.tar.xz">
-<!ENTITY systemd-md5     "eac4f9fc5bd18a0efc3fc20858baacf3">
-<!ENTITY systemd-home    "http://www.freedesktop.org/wiki/Software/systemd/">
-<!ENTITY systemd-ch6-du  "410 MB">
-<!ENTITY systemd-ch6-sbu "4.5 SBU">
 
 <!ENTITY tzdata-version "2014e">
 <!ENTITY tzdata-size "217 KB">
