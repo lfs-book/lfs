@@ -129,20 +129,22 @@ EOF</userinput></screen>
 
 <screen><userinput remap="make">make LIBRARY_PATH=/tools/lib</userinput></screen>
 
-    <para>First prevent few broken test cases from running:</para>
+    <para>First, prevent a few test cases from runnin because they fail in
+    a chroot environment:</para>
 
-<screen><userinput remap="test">sed -e "s:test/udev-test.pl::g"            \
-    -e "s:test-bus-cleanup\$(EXEEXT) ::g"  \
-    -e "s:test-bus-gvariant\$(EXEEXT) ::g" \
+<screen><userinput remap="test">sed -e "s:test/udev-test.pl::g"             \
+    -e "s:test-bus-cleanup\$(EXEEXT) ::g"   \
+    -e "s:test-bus-gvariant\$(EXEEXT) ::g"  \
+    -e "s:test-dhcp6-client\$(EXEEXT) ::g"  \
+    -e "s:test-journal-flush\$(EXEEXT) ::g" \
+    -e "s:test-path-util\$(EXEEXT) ::g"     \
+    -e "s:test-sched-prio\$(EXEEXT) ::g"    \
+    -e "s:test-strv\$(EXEEXT) ::g"          \
     -i Makefile</userinput></screen>
 
     <para>To test the results, issue:</para>
 
-<screen><userinput remap="test">make -k check</userinput></screen>
-
-    <para>Note that some tests might fail because the test are being run in a
-    chroot environment. For full test coverage, the test suite should be run
-    from a system booted using systemd.</para>
+<screen><userinput remap="test">make check</userinput></screen>
 
     <para>Install the package:</para>
 
@@ -184,15 +186,18 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <segtitle>Installed libraries</segtitle>
       <segtitle>Installed directories</segtitle>
 
-      <seglistitem>
-        <seg>bootctl, busctl, halt, hostnamectl, init, journalctl, kernel-install,
-        localectl, loginctl, machinectl, poweroff, reboot, runlevel, shutdown,
-        systemctl, systemd-analyze, systemd-ask-password, systemd-cat, systemd-cgls,
-        systemd-cgtop, systemd-coredumpctl, systemd-delta, systemd-detect-virt,
-        systemd-inhibit, systemd-machine-id-setup, systemd-notify, systemd-nspawn,
-        systemd-run, systemd-stdio-bridge, systemd-tmpfiles, systemd-tty-ask-password-agent,
-        telinit, timedatectl, and udevadm</seg>
+coredumpctl systemd-path systemd-sysusers
 
+      <seglistitem>
+
+        <seg>bootctl, busctl, coredumpctl, halt, hostnamectl, init, journalctl,
+        kernel-install, localectl, loginctl, machinectl, poweroff, reboot,
+        runlevel, shutdown, systemctl, systemd-analyze, systemd-ask-password,
+        systemd-cat, systemd-cgls, systemd-cgtop, systemd-coredumpctl,
+        systemd-delta, systemd-detect-virt, systemd-inhibit,
+        systemd-machine-id-setup, systemd-notify, systemd-nspawn, systemd-path,
+        systemd-run, systemd-stdio-bridge, systemd-sysusers, systemd-tmpfiles,
+        systemd-tty-ask-password-agent, telinit, timedatectl, and udevadm</seg>
         <seg>libnss_myhostname.so.2, libsystemd.so, libudev.so</seg>
         <seg>/etc/binfmt.d, /etc/init.d, /etc/kernel, /etc/modules-load.d,
         /etc/sysctl.d, /etc/systemd, /etc/tmpfiles.d, /etc/udev,
@@ -225,6 +230,16 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
           <para>Used to introspect and monitor the D-Bus bus.</para>
           <indexterm zone="ch-system-systemd busctl">
             <primary sortas="b-busctl">busctl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="coredumpctl">
+        <term><command>coredumpctl</command></term>
+        <listitem>
+          <para>Used to retrieve coredumps from the systemd Journal</para>
+          <indexterm zone="ch-system-systemd coredumpctl">
+            <primary sortas="b-coredumpctl">coredumpctl</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -430,16 +445,6 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="systemd-coredumpctl">
-        <term><command>systemd-coredumpctl</command></term>
-        <listitem>
-          <para>Used to retrieve coredumps from the systemd Journal</para>
-          <indexterm zone="ch-system-systemd systemd-coredumpctl">
-            <primary sortas="b-systemd-coredumpctl">systemd-coredumpctl</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
       <varlistentry id="systemd-delta">
         <term><command>systemd-delta</command></term>
         <listitem>
@@ -506,6 +511,16 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="systemd-path">
+        <term><command>systemd-path</command></term>
+        <listitem>
+          <para>Used to query system and user paths.</para>
+          <indexterm zone="ch-system-systemd systemd-path">
+            <primary sortas="b-systemd-path">systemd-path</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="systemd-run">
         <term><command>systemd-run</command></term>
         <listitem>
@@ -526,6 +541,17 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
           </indexterm>
         </listitem>
       </varlistentry> -->
+
+      <varlistentry id="systemd-sysusers">
+        <term><command>systemd-sysusers</command></term>
+        <listitem>
+          <para>Creates system users and groups, based on the file format and location
+          specified in <filename class="directory">sysusers.d</filename>.</para>
+          <indexterm zone="ch-system-systemd systemd-sysusers">
+            <primary sortas="b-systemd-sysusers">systemd-sysusers</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
 
       <varlistentry id="systemd-tmpfiles">
         <term><command>systemd-tmpfiles</command></term>

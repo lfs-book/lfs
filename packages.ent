@@ -115,8 +115,8 @@
 <!ENTITY dbus-url "http://dbus.freedesktop.org/releases/dbus/dbus-&dbus-version;.tar.gz">
 <!ENTITY dbus-md5 "6a08ba555d340e9dfe2d623b83c0eea8">
 <!ENTITY dbus-home "http://www.freedesktop.org/wiki/Software/dbus">
-<!ENTITY dbus-ch6-du "35 MB">
-<!ENTITY dbus-ch6-sbu "less than 0.4 SBU">
+<!ENTITY dbus-ch6-du "42 MB">
+<!ENTITY dbus-ch6-sbu "0.5 SBU">
 
 <!ENTITY dejagnu-version "1.5.1">
 <!ENTITY dejagnu-size "566 KB">
@@ -542,13 +542,13 @@
 <!ENTITY shadow-ch6-du "42 MB">
 <!ENTITY shadow-ch6-sbu "0.2 SBU">
 
-<!ENTITY systemd-version "214">
-<!ENTITY systemd-size    "2,278 KB">
+<!ENTITY systemd-version "215">
+<!ENTITY systemd-size    "2,824 KB">
 <!ENTITY systemd-url     "http://www.freedesktop.org/software/systemd/systemd-&systemd-version;.tar.xz">
-<!ENTITY systemd-md5     "eac4f9fc5bd18a0efc3fc20858baacf3">
+<!ENTITY systemd-md5     "d2603e9fffd8b18d242543e36f2e7d31">
 <!ENTITY systemd-home    "http://www.freedesktop.org/wiki/Software/systemd/">
-<!ENTITY systemd-ch6-du  "410 MB">
-<!ENTITY systemd-ch6-sbu "4.5 SBU">
+<!ENTITY systemd-ch6-du  "518 MB">
+<!ENTITY systemd-ch6-sbu "5.8 SBU">
 
 <!ENTITY tar-version "1.27.1">
 <!ENTITY tar-size "1,835 KB">

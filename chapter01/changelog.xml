@@ -41,6 +41,9 @@
         <listitem>
           <para>[krejzi] - Merged LFS SVN-20140723.</para>
         </listitem>
+        <listitem>
+          <para>[krejzi] - Updated to systemd-215.</para>
+        </listitem>
       </itemizedlist>
     </listitem>
 
