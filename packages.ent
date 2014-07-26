@@ -100,10 +100,10 @@
 <!ENTITY check-ch5-du "6.9 MB">
 <!ENTITY check-ch5-sbu "0.1 SBU">
 
-<!ENTITY coreutils-version "8.22">
-<!ENTITY coreutils-size "5,210 KB">
+<!ENTITY coreutils-version "8.23">
+<!ENTITY coreutils-size "5,250 KB">
 <!ENTITY coreutils-url "&gnu;coreutils/coreutils-&coreutils-version;.tar.xz">
-<!ENTITY coreutils-md5 "8fb0ae2267aa6e728958adc38f8163a2">
+<!ENTITY coreutils-md5 "abed135279f87ad6762ce57ff6d89c41">
 <!ENTITY coreutils-home "&gnu-software;coreutils/">
 <!ENTITY coreutils-ch5-du "133 MB">
 <!ENTITY coreutils-ch5-sbu "0.8 SBU">
@@ -139,10 +139,10 @@
 <!-- NOTE: When updating e2fsprogs, remember to check the list
      of acceptable features that can be shown by debugfs in
      chapter02/creatingfilesystem.xml -->
-<!ENTITY e2fsprogs-version "1.42.10">
-<!ENTITY e2fsprogs-size "5,983 KB">
+<!ENTITY e2fsprogs-version "1.42.11">
+<!ENTITY e2fsprogs-size "6,205 KB">
 <!ENTITY e2fsprogs-url "http://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v&e2fsprogs-version;/e2fsprogs-&e2fsprogs-version;.tar.gz">
-<!ENTITY e2fsprogs-md5 "62bfe2fe0a194c5c37165789ac2825a8">
+<!ENTITY e2fsprogs-md5 "412acbbd64a866c2ed1c729deaf4ae7c">
 <!ENTITY e2fsprogs-home "http://e2fsprogs.sourceforge.net/">
 <!ENTITY e2fsprogs-ch6-du "64 MB">
 <!ENTITY e2fsprogs-ch6-sbu "1.7 SBU">
@@ -206,17 +206,17 @@
 <!ENTITY gawk-ch6-du "30 MB">
 <!ENTITY gawk-ch6-sbu "0.2 SBU">
 
-<!ENTITY gcc-version "4.9.0">
-<!ENTITY gcc-size "87,576 KB">
+<!ENTITY gcc-version "4.9.1">
+<!ENTITY gcc-size "87,749 KB">
 <!ENTITY gcc-url "&gnu;gcc/gcc-&gcc-version;/gcc-&gcc-version;.tar.bz2">
-<!ENTITY gcc-md5 "9709b49ae0e904cbb0a6a1b62853b556">
+<!ENTITY gcc-md5 "fddf71348546af523353bd43d34919c1">
 <!ENTITY gcc-home "http://gcc.gnu.org/">
-<!ENTITY gcc-ch5p1-du "1.4 GB">
-<!ENTITY gcc-ch5p1-sbu "5.5 SBU">
-<!ENTITY gcc-ch5p2-du "1.8 GB">
-<!ENTITY gcc-ch5p2-sbu "7.1 SBU">
-<!ENTITY gcc-ch6-du "2.2 GB">
-<!ENTITY gcc-ch6-sbu "55.6 SBU">
+<!ENTITY gcc-ch5p1-du "2.0 GB">
+<!ENTITY gcc-ch5p1-sbu "7.3 SBU">
+<!ENTITY gcc-ch5p2-du "2.2 GB">
+<!ENTITY gcc-ch5p2-sbu "9.6 SBU">
+<!ENTITY gcc-ch6-du "2.5 GB">
+<!ENTITY gcc-ch6-sbu "83 SBU">
 
 <!ENTITY gdbm-version "1.11">
 <!ENTITY gdbm-size "796 KB">
@@ -228,10 +228,10 @@
 <!ENTITY gdbm-ch6-du "8.5 MB">
 <!ENTITY gdbm-ch6-sbu "0.1 SBU">
 
-<!ENTITY gettext-version "0.19.1">
-<!ENTITY gettext-size "6,456 KB">
+<!ENTITY gettext-version "0.19.2">
+<!ENTITY gettext-size "6,467 KB">
 <!ENTITY gettext-url "&gnu;gettext/gettext-&gettext-version;.tar.xz">
-<!ENTITY gettext-md5 "b52987f49bc99fa8b410270d47a9d52b">
+<!ENTITY gettext-md5 "1e6a827f5fbd98b3d40bd16b803acc44">
 <!ENTITY gettext-home "&gnu-software;gettext/">
 <!ENTITY gettext-ch5-du "119 MB">
 <!ENTITY gettext-ch5-sbu "0.6 SBU">
@@ -335,10 +335,10 @@
 <!ENTITY iproute2-ch6-du "7.3 MB">
 <!ENTITY iproute2-ch6-sbu "0.1 SBU">
 
-<!ENTITY kbd-version "2.0.1">
-<!ENTITY kbd-size "1,962 KB">
+<!ENTITY kbd-version "2.0.2">
+<!ENTITY kbd-size "2,105 KB">
 <!ENTITY kbd-url "https://www.kernel.org/pub/linux/utils/kbd/kbd-&kbd-version;.tar.gz">
-<!ENTITY kbd-md5 "e9f2b7046312c11cec9e52e22f307b6a">
+<!ENTITY kbd-md5 "ba56fb5bfd44acea83fc5dac4a9b7f15">
 <!ENTITY kbd-home "http://ftp.altlinux.org/pub/people/legion/kbd">
 <!ENTITY kbd-ch6-du "20 MB">
 <!ENTITY kbd-ch6-sbu "0.1 SBU">
@@ -388,12 +388,12 @@
 
 <!ENTITY linux-major-version "3">
 <!ENTITY linux-minor-version "15">
-<!ENTITY linux-patch-version "1">
+<!ENTITY linux-patch-version "6">
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
-<!ENTITY linux-size "77,813 KB">
+<!ENTITY linux-size "77,822 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "72bd0bf0e773963217c89cddbf3e0048">
+<!ENTITY linux-md5 "739272475e2e3981974e1f083d0eba47">
 <!ENTITY linux-home "http://www.kernel.org/">
 <!-- measured for 3.9.0 / gcc-4.8.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,
@@ -434,10 +434,10 @@
 <!ENTITY man-db-ch6-du "27 MB">
 <!ENTITY man-db-ch6-sbu "0.5 SBU">
 
-<!ENTITY man-pages-version "3.69">
-<!ENTITY man-pages-size "1,232 KB">
+<!ENTITY man-pages-version "3.70">
+<!ENTITY man-pages-size "1,237 KB">
 <!ENTITY man-pages-url "&kernel;linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "0b1feceef945e5d53c3ea63307163e8c">
+<!ENTITY man-pages-md5 "e5a3fc1d7ae4f03a27676d7bad725416">
 <!ENTITY man-pages-home "http://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-ch6-du "23 MB">
 <!ENTITY man-pages-ch6-sbu "less than 0.1 SBU">
@@ -587,10 +587,10 @@
 <!ENTITY tzdata-ch6-du "6.4 MB">
 <!ENTITY tzdata-ch6-sbu "less than 0.1 SBU">
 
-<!ENTITY util-linux-version "2.24.2">
-<!ENTITY util-linux-size "3,503 KB">
-<!ENTITY util-linux-url "&kernel;linux/utils/util-linux/v2.24/util-linux-&util-linux-version;.tar.xz">
-<!ENTITY util-linux-md5 "3f191727a0d28f7204b755cf1b6ea0aa">
+<!ENTITY util-linux-version "2.25">
+<!ENTITY util-linux-size "3,596 KB">
+<!ENTITY util-linux-url "&kernel;linux/utils/util-linux/v2.25/util-linux-&util-linux-version;.tar.xz">
+<!ENTITY util-linux-md5 "4c78fdef4cb882caafad61e33cafbc14">
 <!ENTITY util-linux-home "http://freecode.com/projects/util-linux">
 <!ENTITY util-linux-ch5-du "89 MB">
 <!ENTITY util-linux-ch5-sbu "0.6 SBU">
@@ -608,7 +608,7 @@
 
 <!ENTITY xml-parser-version "2.42_01">
 <!ENTITY xml-parser-size "236 KB">
-<!ENTITY xml-parser-url "http://search.cpan.org/CPAN/authors/id/T/TO/TODDR/XML-Parser-&xml-parser-version;.tar.gz">
+<!ENTITY xml-parser-url "http://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-&xml-parser-version;.tar.gz">
 <!ENTITY xml-parser-md5 "a4650aebcc464bb91113c2c356da8210">
 <!ENTITY xml-parser-home "https://github.com/chorny/XML-Parser">
 <!ENTITY xml-parser-ch6-du "2.5 MB">

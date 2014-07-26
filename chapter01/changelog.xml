@@ -36,6 +36,129 @@
     </listitem>
 -->
     <listitem>
+      <para>2014-07-26</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - Merged LFS SVN-20140723.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-07-23</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Chris] - Removed --disable-syslogd from Inetutils
+          instructions - it's redundant as it's covered by --disable-servers.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-07-22</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to util-linux-2.25. Fixes
+          <ulink url="&lfs-ticket-root;3627">#3627</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-07-21</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Chris] - Text fixes - removed mention of
+          /usr/{doc,info,man} symlinks that are no longer created, and made
+          minor updates to several packages' installed file lists.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-07-19</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to coreutils-8.23. Fixes
+          <ulink url="&lfs-ticket-root;3639">#3639</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Add binutils patch to fix lto test suite.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-07-18</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to linux-3.15.6. Fixes
+          <ulink url="&lfs-ticket-root;3638">#3638</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gcc-4.9.1. Fixes
+          <ulink url="&lfs-ticket-root;3637">#3637</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gettext-0.19.2. Fixes
+          <ulink url="&lfs-ticket-root;3636">#3636</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-07-13</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to linux-3.15.5. Fixes
+          <ulink url="&lfs-ticket-root;3634">#3634</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-3.70. Fixes
+          <ulink url="&lfs-ticket-root;3633">#3633</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to e2fsprogs-1.42.11. Fixes
+          <ulink url="&lfs-ticket-root;3635">#3635</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-07-08</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Removed references to /lib/udev/devices. Fixes
+          <ulink url="&lfs-ticket-root;3620">#3620</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-3.15.4. Fixes
+          <ulink url="&lfs-ticket-root;3623">#3623</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Removed systemd references in bootscripts. Fixes
+          <ulink url="&lfs-ticket-root;3624">#3624</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Simlify lto instructions in chapter 6 gcc. Fixes
+          <ulink url="&lfs-ticket-root;3626">#3626</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update XML-Parser source location. Fixes
+          <ulink url="&lfs-ticket-root;3628">#3628</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to eudev-1.9. Fixes
+          <ulink url="&lfs-ticket-root;3630">#3630</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to kbd-2.0.2. Fixes
+          <ulink url="&lfs-ticket-root;3631">#3631</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2014-07-06</para>
       <itemizedlist>
         <listitem>

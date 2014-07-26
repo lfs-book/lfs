@@ -93,11 +93,6 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
 
 <screen><userinput remap="install">ln -sv /etc/machine-id /var/lib/dbus</userinput></screen>
 
-    <para>Finally, generate a D-Bus UUID to avoid possible warnings 
-    when building some packages in BLFS:</para>
-
-<screen><userinput remap="install">dbus-uuidgen --ensure</userinput></screen>
-
   </sect2>
 
   <sect2 id="contents-dbus" role="content">

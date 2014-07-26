@@ -119,7 +119,7 @@ done</userinput></screen>
     additional libraries to be installed. For more information on this
     process, refer to the Vim documentation and the Vim installation page
     in the BLFS book at <ulink
-    url="&blfs-root;view/svn/postlfs/editors.html#postlfs-editors-vim"/>.</para>
+    url="&blfs-root;view/svn/postlfs/vim.html"/>.</para>
 
   </sect2>
 
@@ -195,13 +195,13 @@ set spell</literal></screen>
 
     <segmentedlist>
       <segtitle>Installed programs</segtitle>
-      <segtitle>Installed directory</segtitle>
+      <segtitle>Installed directories</segtitle>
 
       <seglistitem>
        <seg> ex (link to vim), rview (link to vim), rvim (link to vim), vi
        (link to vim), view (link to vim), vim, vimdiff (link to vim), vimtutor,
        and xxd</seg>
-        <seg>/usr/share/vim</seg>
+        <seg>/usr/share/doc/vim-&vim-version;, /usr/share/vim</seg>
       </seglistitem>
     </segmentedlist>
 

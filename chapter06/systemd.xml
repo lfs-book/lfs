@@ -62,7 +62,7 @@ EOF</userinput></screen>
 
     <para>Prepare systemd for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr                         \
+<screen><userinput remap="configure">./configure --prefix=/usr                                           \
             --sysconfdir=/etc                                       \
             --localstatedir=/var                                    \
             --config-cache                                          \

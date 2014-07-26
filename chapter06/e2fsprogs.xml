@@ -44,11 +44,10 @@
   <sect2 role="installation">
     <title>Installation of E2fsprogs</title>
 
-    <para>First fix some problems with running regression tests in the LFS chroot
+    <para>First fix a problem with running regression tests in the LFS chroot
     environment:</para>
 
-<screen><userinput remap="pre">patch -Np1 -i ../&e2fsprogs-fix-test-patch;
-sed -i -e 's|^LD_LIBRARY_PATH.*|&amp;:/tools/lib|' tests/test_config</userinput></screen>
+<screen><userinput remap="pre">sed -i -e 's|^LD_LIBRARY_PATH.*|&amp;:/tools/lib|' tests/test_config</userinput></screen>
 
     <para>The E2fsprogs documentation recommends that the package be built in
     a subdirectory of the source tree: </para>
@@ -172,7 +171,7 @@ install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info</userin
     <segmentedlist>
       <segtitle>Installed programs</segtitle>
       <segtitle>Installed libraries</segtitle>
-      <segtitle>Installed directory</segtitle>
+      <segtitle>Installed directories</segtitle>
 
       <seglistitem>
         <seg>badblocks, chattr, compile_et, debugfs, dumpe2fs,e2freefrag,

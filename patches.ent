@@ -10,6 +10,10 @@
 <!ENTITY binutils-lto-patch-md5 "48e4e96a60bfed41804aaecf4944f5d9">
 <!ENTITY binutils-lto-patch-size "2.0 KB">
 
+<!ENTITY binutils-lto-testsuite-patch "binutils-&binutils-version;-lto_testsuite-1.patch">
+<!ENTITY binutils-lto-testsuite-patch-md5 "a6647fdb3cca512962bb1433bb6b4f9f">
+<!ENTITY binutils-lto-testsuite-patch-size "3.0 KB">
+
 <!ENTITY bc-memory-leak-patch "bc-&bc-version;-memory_leak-1.patch">
 <!ENTITY bc-memory-leak-patch-md5 "877e81fba316fe487ec23501059d54b8">
 <!ENTITY bc-memory-leak-patch-size "1.4 KB">
@@ -18,21 +22,26 @@
 <!ENTITY bzip2-docs-patch-md5 "6a5ac7e89b791aae556de0f745916f7f">
 <!ENTITY bzip2-docs-patch-size "1.6 KB">
 
-<!ENTITY coreutils-i18n-patch "coreutils-&coreutils-version;-i18n-4.patch">
-<!ENTITY coreutils-i18n-patch-md5 "54c99871cd0ca20f29bdc9462e27f0df">
-<!ENTITY coreutils-i18n-patch-size "140 KB">
+<!ENTITY coreutils-i18n-patch "coreutils-&coreutils-version;-i18n-1.patch">
+<!ENTITY coreutils-i18n-patch-md5 "587051bc411e0da9b3bf8984b49b364e">
+<!ENTITY coreutils-i18n-patch-size "138 KB">
 
+<!--
 <!ENTITY coreutils-shuf-segfault-patch "coreutils-&coreutils-version;-shuf_segfault-1.patch">
 <!ENTITY coreutils-shuf-segfault-patch-md5 "f1b5b35392914e327b1b6bbbb454d256">
 <!ENTITY coreutils-shuf-segfault-patch-size "4 KB">
-
+-->
+<!--
 <!ENTITY e2fsprogs-fix-test-patch "e2fsprogs-&e2fsprogs-version;-fix_test-1.patch">
 <!ENTITY e2fsprogs-fix-test-patch-md5 "7c20605628536db298bb3bb4666047bf">
 <!ENTITY e2fsprogs-fix-test-patch-size "0.7 KB">
+-->
 
+<!--
 <!ENTITY gcc-upstream-patch "gcc-&gcc-version;-upstream_fixes-1.patch">
 <!ENTITY gcc-upstream-patch-md5 "f070aae5f5f92259ed167539725e6241">
 <!ENTITY gcc-upstream-patch-size "4.0 KB">
+-->
 
 <!ENTITY glibc-fhs-patch "glibc-&glibc-version;-fhs-1.patch">
 <!ENTITY glibc-fhs-patch-md5 "9a5997c3452909b1769918c759eff8a2">
@@ -45,12 +54,6 @@
 <!ENTITY mpfr-fixes-patch "mpfr-&mpfr-version;-upstream_fixes-1.patch">
 <!ENTITY mpfr-fixes-patch-md5 "aaf52416b309dd0b8c5eb92ae9c210c1">
 <!ENTITY mpfr-fixes-patch-size "43 KB">
-
-<!--
-<!ENTITY perl-libc-patch "perl-&perl-version;-libc-1.patch">
-<!ENTITY perl-libc-patch-md5 "daf5c64fd7311e924966842680535f8f">
-<!ENTITY perl-libc-patch-size "1.6 KB">
--->
 
 <!ENTITY readline-fixes-patch "readline-6.3-upstream_fixes-1.patch">
 <!ENTITY readline-fixes-patch-md5 "bbee7fad08474328b807e6828c26a961">

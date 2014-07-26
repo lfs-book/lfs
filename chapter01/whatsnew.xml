@@ -52,9 +52,9 @@
     <listitem>
       <para>Check &check-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Coreutils &coreutils-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>D-Bus-&dbus-version;</para>
     </listitem>
@@ -127,9 +127,9 @@
     <listitem>
       <para>IPRoute2 &iproute2-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Kbd &kbd-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Kmod &kmod-version;</para>
     </listitem>
@@ -247,8 +247,13 @@
       <para>&binutils-lto-patch;</para>
     </listitem>
     <listitem>
+      <para>&binutils-lto-testsuite-patch;</para>
+    </listitem>
+<!--
+    <listitem>
       <para>&coreutils-shuf-segfault-patch;</para>
     </listitem>
+ -->
     <listitem>
       <para>&mpfr-fixes-patch;</para>
     </listitem>
@@ -260,15 +265,19 @@
   <itemizedlist>
     <title>Removed:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
+
     <listitem>
       <para>bash-4.2-fixes-12.patch</para>
     </listitem>
+
     <listitem>
       <para>perl-5.18.2-libc-1.patch</para>
     </listitem>
+
     <listitem>
       <para>readline-6.2-fixes-2.patch</para>
     </listitem>
+
   </itemizedlist>
 
 </sect1>
