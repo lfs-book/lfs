@@ -186,10 +186,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
       <segtitle>Installed libraries</segtitle>
       <segtitle>Installed directories</segtitle>
 
-coredumpctl systemd-path systemd-sysusers
-
       <seglistitem>
-
         <seg>bootctl, busctl, coredumpctl, halt, hostnamectl, init, journalctl,
         kernel-install, localectl, loginctl, machinectl, poweroff, reboot,
         runlevel, shutdown, systemctl, systemd-analyze, systemd-ask-password,
