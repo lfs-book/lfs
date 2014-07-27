@@ -92,10 +92,10 @@
 <!ENTITY bzip2-ch6-du "6.9 MB">
 <!ENTITY bzip2-ch6-sbu "less than 0.1 SBU">
 
-<!ENTITY check-version "0.9.13">
-<!ENTITY check-size "736 KB">
+<!ENTITY check-version "0.9.14">
+<!ENTITY check-size "741 KB">
 <!ENTITY check-url "http://sourceforge.net/projects/check/files/check/&check-version;/check-&check-version;.tar.gz">
-<!ENTITY check-md5 "95530868f81a9496b2518fd2b713008a">
+<!ENTITY check-md5 "38263d115d784c17aa3b959ce94be8b8">
 <!ENTITY check-home "http://check.sourceforge.net/">
 <!ENTITY check-ch5-du "6.9 MB">
 <!ENTITY check-ch5-sbu "0.1 SBU">
@@ -550,10 +550,10 @@
 <!ENTITY systemd-ch6-du  "518 MB">
 <!ENTITY systemd-ch6-sbu "5.8 SBU">
 
-<!ENTITY tar-version "1.27.1">
-<!ENTITY tar-size "1,835 KB">
+<!ENTITY tar-version "1.28">
+<!ENTITY tar-size "1,921 KB">
 <!ENTITY tar-url "&gnu;tar/tar-&tar-version;.tar.xz">
-<!ENTITY tar-md5 "e0382a4064e09a4943f3adeff1435978">
+<!ENTITY tar-md5 "49b6306167724fe48f419a33a5beb857">
 <!ENTITY tar-home "&gnu-software;tar/">
 <!ENTITY tar-ch5-du "20.6 MB">
 <!ENTITY tar-ch5-sbu "0.4 SBU">
