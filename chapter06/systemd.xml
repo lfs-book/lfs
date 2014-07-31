@@ -55,6 +55,12 @@ EOF</userinput></screen>
 
 <screen><userinput remap="pre">sed -i "s:blkid/::" $(grep -rl "blkid/blkid.h")</userinput></screen>
 
+    <para>The <filename>timesyncd.conf</filename> file contains a
+    reference to a non-existent <filename>timesyncd.conf(5)</filename> man
+    page. Remove that reference to avoid possible confusion:</para>
+
+<screen><userinput>sed -i '/timesyncd.conf/d' src/timesync/timesyncd.conf.in</userinput></screen>
+
     <para>Apply a patch so that compat <command>pkg-config</command> files get
     installed without installing compat libs which are useless on LFS:</para>
 

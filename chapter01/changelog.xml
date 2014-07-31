@@ -36,6 +36,16 @@
     </listitem>
 -->
     <listitem>
+      <para>2014-07-31</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Chris] - Removed reference to a non-existent man page mentioned
+          in timesyncd.conf.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2014-07-28</para>
       <itemizedlist>
         <listitem>
