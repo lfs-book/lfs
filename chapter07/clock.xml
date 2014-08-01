@@ -75,7 +75,7 @@ EOF</userinput></screen>
   <sect2>
     <title>Network Time Synchronization</title>
 
-    <para>Starting with version 214, systemd ships a daemon called
+    <para>Starting with version 213, systemd ships a daemon called
     <command>systemd-timesyncd</command> which can be used to
     synchronize the system time with remote NTP servers.</para>
 
