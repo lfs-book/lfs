@@ -106,7 +106,7 @@ File systems  ---&gt;
         <term><parameter>path to uevent helper</parameter></term>
         <listitem>
           <para>Having an entry in this space will interfere with device
-          management when using udev/eudev. </para>
+          management when using Udev/Eudev. </para>
         </listitem>
       </varlistentry>
 
@@ -114,7 +114,7 @@ File systems  ---&gt;
         <term><parameter>Maintain a devtmpfs</parameter></term>
         <listitem>
           <para>This will create automated device nodes which are populated by the
-          kernel, even without udev running.  Udev then runs on top of this,
+          kernel, even without Udev running.  Udev then runs on top of this,
           managing permissions and adding symlinks.  This configuration
           item is required for all users of Udev/Eudev.</para>
         </listitem>
