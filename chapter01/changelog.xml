@@ -36,10 +36,42 @@
     </listitem>
 -->
     <listitem>
+      <para>2014-08-07</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - Merged LFS SVN-20140805.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-08-05</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Chris] - Reversed change to Vim's docs location, so that
+          Vim can find its help files.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2014-08-03</para>
       <itemizedlist>
         <listitem>
           <para>[krejzi] - Merged LFS SVN-20140803.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-08-03</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update text about upgrades. Fixes
+          <ulink url="&lfs-ticket-root;3645">#3645</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Add a fix to gcc identified upstream.</para>
         </listitem>
       </itemizedlist>
     </listitem>

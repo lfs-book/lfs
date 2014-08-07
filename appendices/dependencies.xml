@@ -169,7 +169,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Tar, Vim</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2161,7 +2161,7 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Bison, Coreutils, GCC, Gettext, Glibc,
+         <seg>Acl, Attr, Bash, Binutils, Bison, Coreutils, GCC, Gettext, Glibc,
          Grep, Inetutils, Make, Sed, and Texinfo</seg>
         </seglistitem>
       </segmentedlist>
@@ -2305,8 +2305,8 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Glibc, Grep, Make,
-         Ncurses, and Sed</seg>
+         <seg>Acl, Attr, Bash, Binutils, Coreutils, Diffutils, GCC, Glibc,
+         Grep, Make, Ncurses, and Sed</seg>
         </seglistitem>
       </segmentedlist>
 
