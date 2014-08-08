@@ -570,6 +570,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>Systemd (&systemd-version;) - <token>&systemd-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&systemd-home;"/></para>
+        <para>Download: <ulink url="&systemd-url;"/></para>
+        <para>MD5 sum: <literal>&systemd-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Tar (&tar-version;) - <token>&tar-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&tar-home;"/></para>
@@ -602,15 +611,6 @@
         <para>Home page: <ulink url="&texinfo-home;"/></para>
         <para>Download: <ulink url="&texinfo-url;"/></para>
         <para>MD5 sum: <literal>&texinfo-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term>Systemd (&systemd-version;) - <token>&systemd-size;</token>:</term>
-      <listitem>
-        <para>Home page: <ulink url="&systemd-home;"/></para>
-        <para>Download: <ulink url="&systemd-url;"/></para>
-        <para>MD5 sum: <literal>&systemd-md5;</literal></para>
       </listitem>
     </varlistentry>
 
