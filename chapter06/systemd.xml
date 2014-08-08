@@ -135,8 +135,8 @@ EOF</userinput></screen>
 
 <screen><userinput remap="make">make LIBRARY_PATH=/tools/lib</userinput></screen>
 
-    <para>First, prevent a few test cases from runnin because they fail in
-    a chroot environment:</para>
+    <para>If you are going to run the test suite, first prevent a few test
+    cases from running because they fail in a chroot environment:</para>
 
 <screen><userinput remap="test">sed -e "s:test/udev-test.pl::g"             \
     -e "s:test-bus-cleanup\$(EXEEXT) ::g"   \
