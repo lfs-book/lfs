@@ -36,6 +36,74 @@
     </listitem>
 -->
     <listitem>
+      <para>2014-08-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - Merged LFS SVN-20140814.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-08-14</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to tzdata2014f.  Fixes 
+          <ulink url="&lfs-ticket-root;3653">#3653</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-3.16.1.  Fixes 
+          <ulink url="&lfs-ticket-root;3643">#3643</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iproute2-3.16.0.  Fixes 
+          <ulink url="&lfs-ticket-root;3651">#3651</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update bison dependencies.  Fixes 
+          <ulink url="&lfs-ticket-root;3652">#3652</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-08-12</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update patches for bash, readline, and mpfr.  Fixes 
+          <ulink url="&lfs-ticket-root;3648">#3648</ulink>, 
+          <ulink url="&lfs-ticket-root;3649">#3649</ulink>, and
+          <ulink url="&lfs-ticket-root;3650">#3650</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-08-10</para>
+      <itemizedlist>
+        <listitem>
+          <para>[ken] - Remove --enable-multibyte from vim, it is the
+          default. Addresses part of
+          <ulink url="&lfs-ticket-root;3647">#3647</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[ken] - Util-Linux-2.25 needs a filename in ADJTIME_PATH,
+          fixes <ulink url="&lfs-ticket-root;3656">#3656</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-08-08</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Chris] - Install Util-linux documentation in a versioned
+          directory.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2014-08-07</para>
       <itemizedlist>
         <listitem>
