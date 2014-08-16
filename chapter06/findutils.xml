@@ -73,6 +73,14 @@
 
 <screen><userinput remap="install">make install</userinput></screen>
 
+    <para>Some packages in BLFS and beyond expect the
+    <command>find</command> program in <filename
+    class="directory">/bin</filename>, so make sure
+    it's placed there:</para>
+
+<screen><userinput remap="install">mv -v /usr/bin/find /bin
+sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb</userinput></screen>
+
   </sect2>
 
   <sect2 id="contents-findutils" role="content">
