@@ -36,10 +36,21 @@
     </listitem>
 -->
     <listitem>
+      <para>2014-08-16</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - Merged LFS SVN-20140815.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2014-08-15</para>
       <itemizedlist>
         <listitem>
-          <para>[krejzi] - Merged LFS SVN-20140814.</para>
+          <para>[bdubbs] - Remove redundant wording in checking 
+          toolchain values.  Fixes 
+          <ulink url="&lfs-ticket-root;3654">#3654</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
