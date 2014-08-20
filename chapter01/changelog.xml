@@ -36,10 +36,25 @@
     </listitem>
 -->
     <listitem>
-      <para>2014-08-16</para>
+      <para>2014-08-20</para>
       <itemizedlist>
         <listitem>
-          <para>[krejzi] - Merged LFS SVN-20140815.</para>
+          <para>[krejzi] - Merged LFS SVN-20140819.</para>
+        </listitem>
+        <listitem>
+          <para>[krejzi] - Added new users and groups needed for
+          systemd-216. Note that existing users and groups for
+          systemd got their UIDs/GIDs changed.</para>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-08-19</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Remove redundant options in gcc instructions.
+          Fixes 
+          <ulink url="&lfs-ticket-root;3655">#3655</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
