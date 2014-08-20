@@ -76,7 +76,9 @@ EOF</userinput></screen>
             --with-rootlibdir=/lib                                  \
             --enable-split-usr                                      \
             --disable-gudev                                         \
+            --disable-firstboot                                     \
             --disable-ldconfig                                      \
+            --disable-sysusers                                      \
             --without-python                                        \
             --docdir=/usr/share/doc/systemd-&systemd-version;                     \
             --with-dbuspolicydir=/etc/dbus-1/system.d               \
@@ -123,6 +125,16 @@ EOF</userinput></screen>
       </varlistentry>
 
       <varlistentry>
+        <term><parameter>--disable-firstboot</parameter></term>
+        <listitem>
+          <para>This switch prevents installation of systemd
+          services responsible for setting up the system for
+          the first time. They are not useful for LFS because
+          everything is done manually.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
         <term><parameter>--disable-ldconfig</parameter></term>
         <listitem>
           <para>This switch prevents installation of a systemd
@@ -130,6 +142,17 @@ EOF</userinput></screen>
           boot, making the boot time longer. Remove it if the
           described feature is desired, even though it's not
           useful for source distributions such as LFS.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-sysusers</parameter></term>
+        <listitem>
+          <para>This switch prevents installation of systemd
+          services responsible for setting up the
+          <filename>/etc/group</filename> and
+          <filename>/etc/passwd</filename> files. Both files
+          were created early in this chapter.</para>
         </listitem>
       </varlistentry>
 
@@ -167,10 +190,6 @@ EOF</userinput></screen>
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make LD_LIBRARY_PATH=/tools/lib install</userinput></screen>
-
-    <para>Prevent systemd units that are not needed on a LFS system from running:</para>
-
-<screen><userinput remap="install">rm -fv /lib/systemd/system/sysinit.target.wants/systemd-{firstboot,sysusers,update-done}.service</userinput></screen>
 
     <para>Move NSS libraries to <filename class="directory">/lib</filename>:</para>
 
@@ -212,7 +231,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         kernel-install, localectl, loginctl, machinectl, networkctl, poweroff,
         reboot, runlevel, shutdown, systemctl, systemd-analyze,
         systemd-ask-password, systemd-cat, systemd-cgls, systemd-cgtop,
-        systemd-delta, systemd-detect-virt, systemd-escape, systemd-firstboot,
+        systemd-delta, systemd-detect-virt, systemd-escape,<!-- systemd-firstboot, -->
         systemd-inhibit, systemd-machine-id-setup, systemd-notify, systemd-nspawn,
         systemd-path, systemd-run, systemd-stdio-bridge, systemd-sysusers,
         systemd-tmpfiles, systemd-tty-ask-password-agent, telinit, timedatectl,
@@ -498,7 +517,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="systemd-firstboot">
+      <!-- <varlistentry id="systemd-firstboot">
         <term><command>systemd-firstboot</command></term>
         <listitem>
           <para>Initializes the most basic system settings interactively on the
@@ -507,7 +526,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
             <primary sortas="b-systemd-firstboot">systemd-firstboot</primary>
           </indexterm>
         </listitem>
-      </varlistentry>
+      </varlistentry> -->
 
       <varlistentry id="systemd-inhibit">
         <term><command>systemd-inhibit</command></term>
