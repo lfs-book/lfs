@@ -233,7 +233,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         systemd-ask-password, systemd-cat, systemd-cgls, systemd-cgtop,
         systemd-delta, systemd-detect-virt, systemd-escape,<!-- systemd-firstboot, -->
         systemd-inhibit, systemd-machine-id-setup, systemd-notify, systemd-nspawn,
-        systemd-path, systemd-run, systemd-stdio-bridge, systemd-sysusers,
+        systemd-path, systemd-run, systemd-stdio-bridge,<!-- systemd-sysusers, -->
         systemd-tmpfiles, systemd-tty-ask-password-agent, telinit, timedatectl,
         and udevadm</seg>
         <seg>libnss_myhostname.so.2, libnss_mymachines.so.2, libnss_resolve.so.2,
@@ -242,7 +242,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         /etc/sysctl.d, /etc/systemd, /etc/tmpfiles.d, /etc/udev,
         /etc/xdg/systemd, /lib/systemd, /lib/udev, /usr/include/systemd,
         /usr/lib/binfmt.d, /usr/lib/kernel, /usr/lib/modules-load.d,
-        /usr/lib/sysctl.d, /usr/lib/systemd, /usr/lib/sysusers.d,
+        /usr/lib/sysctl.d, /usr/lib/systemd,<!-- /usr/lib/sysusers.d, -->
         /usr/lib/tmpfiles.d, /usr/share/doc/systemd-&systemd-version;,
         /usr/share/factory, /usr/share/systemd, /var/lib/systemd,
         /var/log/journal</seg>
@@ -593,7 +593,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         </listitem>
       </varlistentry>
 
-<!--      <varlistentry id="systemd-stdio-bridge">
+      <!-- <varlistentry id="systemd-stdio-bridge">
         <term><command>systemd-stdio-bridge</command></term>
         <listitem>
           <para>To be completed</para>
@@ -603,7 +603,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         </listitem>
       </varlistentry> -->
 
-      <varlistentry id="systemd-sysusers">
+      <!-- <varlistentry id="systemd-sysusers">
         <term><command>systemd-sysusers</command></term>
         <listitem>
           <para>Creates system users and groups, based on the file format and location
@@ -612,7 +612,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
             <primary sortas="b-systemd-sysusers">systemd-sysusers</primary>
           </indexterm>
         </listitem>
-      </varlistentry>
+      </varlistentry> -->
 
       <varlistentry id="systemd-tmpfiles">
         <term><command>systemd-tmpfiles</command></term>
