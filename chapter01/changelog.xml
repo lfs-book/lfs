@@ -45,6 +45,7 @@
           <para>[krejzi] - Added new users and groups needed for
           systemd-216. Note that existing users and groups for
           systemd got their UIDs/GIDs changed.</para>
+        </listitem>
       </itemizedlist>
     </listitem>
 
