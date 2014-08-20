@@ -19,10 +19,6 @@
   </indexterm>
 
   <indexterm zone="ch-system-createfiles">
-    <primary sortas="e-/var/run/utmp">/var/run/utmp</primary>
-  </indexterm>
-
-  <indexterm zone="ch-system-createfiles">
     <primary sortas="e-/var/log/btmp">/var/log/btmp</primary>
   </indexterm>
 
@@ -151,11 +147,13 @@ ln -sv bash /bin/sh</userinput></screen>
 bin:x:1:1:bin:/dev/null:/bin/false
 daemon:x:6:6:Daemon User:/dev/null:/bin/false
 messagebus:x:18:18:D-Bus Message Daemon User:/var/run/dbus:/bin/false
-systemd-bus-proxy:x:64:64:systemd Bus Proxy Daemon:/:/bin/false
-systemd-journal-gateway:x:65:65:systemd Journal Gateway Daemon:/:/bin/false
-systemd-network:x:66:66:systemd Network Daemon:/:/bin/false
-systemd-resolve:x:67:67:systemd Resolve Daemon:/:/bin/false
-systemd-timesync:x:68:68:systemd Time Sync Daemon:/:/bin/false
+systemd-bus-proxy:x:72:72:systemd Bus Proxy:/:/bin/false
+systemd-journal-gateway:x:73:73:systemd Journal Gateway:/:/bin/false
+systemd-journal-remote:x:74:74:systemd Journal Remote:/:/bin/false
+systemd-journal-upload:x:75:75:systemd Journal Upload:/:/bin/false
+systemd-network:x:76:76:systemd Network Management:/:/bin/false
+systemd-resolve:x:77:77:systemd Resolver:/:/bin/false
+systemd-timesync:x:78:78:systemd Time Synchronization:/:/bin/false
 nobody:x:99:99:Unprivileged User:/dev/null:/bin/false</literal>
 EOF</userinput></screen>
 
@@ -187,11 +185,13 @@ messagebus:x:18:
 systemd-journal:x:23:
 input:x:24:
 mail:x:34:
-systemd-bus-proxy:x:64:
-systemd-journal-gateway:x:65:
-systemd-network:x:66:
-systemd-resolve:x:67:
-systemd-timesync:x:68:
+systemd-bus-proxy:x:72:
+systemd-journal-gateway:x:73:
+systemd-journal-remote:x:74:
+systemd-journal-upload:x:75:
+systemd-network:x:76:
+systemd-resolve:x:77:
+systemd-timesync:x:78:
 nogroup:x:99:
 users:x:999:</literal>
 EOF</userinput></screen>
