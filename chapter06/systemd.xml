@@ -41,25 +41,25 @@
     <title>Installation of systemd</title>
 
     <para>First, create a file to allow systemd to build when using Util-Linux
-    built in Chapter 5:</para>
+    built in Chapter 5 and disable LTO by default:</para>
 
 <screen><userinput remap="pre">cat &gt; config.cache &lt;&lt; "EOF"
 <literal>KILL=/bin/kill
 HAVE_BLKID=1
 BLKID_LIBS="-lblkid"
-BLKID_CFLAGS="-I/tools/include/blkid"</literal>
+BLKID_CFLAGS="-I/tools/include/blkid"
+cc_cv_CFLAGS__flto=no</literal>
 EOF</userinput></screen>
+
+    <para>LTO is disabled by default because it causes <command>systemd</command>
+    and other auxiliary programs to link to <filename
+    class="library">libgcc_s.so</filename>, slows the build down and makes the
+    compiled code larger.</para>
 
     <para>Additionally, fix a build error when using Util-Linux built in
     Chapter 5:</para>
 
 <screen><userinput remap="pre">sed -i "s:blkid/::" $(grep -rl "blkid/blkid.h")</userinput></screen>
-
-    <para>The <filename>timesyncd.conf</filename> file contains a
-    reference to a non-existent <filename>timesyncd.conf(5)</filename> man
-    page. Remove that reference to avoid possible confusion:</para>
-
-<screen><userinput>sed -i '/timesyncd.conf/d' src/timesync/timesyncd.conf.in</userinput></screen>
 
     <para>Apply a patch so that compat <command>pkg-config</command> files get
     installed without installing compat libs which are useless on LFS:</para>
@@ -76,6 +76,9 @@ EOF</userinput></screen>
             --with-rootlibdir=/lib                                  \
             --enable-split-usr                                      \
             --disable-gudev                                         \
+            --disable-firstboot                                     \
+            --disable-ldconfig                                      \
+            --disable-sysusers                                      \
             --without-python                                        \
             --docdir=/usr/share/doc/systemd-&systemd-version;                     \
             --with-dbuspolicydir=/etc/dbus-1/system.d               \
@@ -122,6 +125,38 @@ EOF</userinput></screen>
       </varlistentry>
 
       <varlistentry>
+        <term><parameter>--disable-firstboot</parameter></term>
+        <listitem>
+          <para>This switch prevents installation of systemd
+          services responsible for setting up the system for
+          the first time. They are not useful for LFS because
+          everything is done manually.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-ldconfig</parameter></term>
+        <listitem>
+          <para>This switch prevents installation of a systemd
+          unit that runs <command>ldconfig</command> at
+          boot, making the boot time longer. Remove it if the
+          described feature is desired, even though it's not
+          useful for source distributions such as LFS.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-sysusers</parameter></term>
+        <listitem>
+          <para>This switch prevents installation of systemd
+          services responsible for setting up the
+          <filename>/etc/group</filename> and
+          <filename>/etc/passwd</filename> files. Both files
+          were created early in this chapter.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
         <term><parameter>--with-dbus*</parameter></term>
         <listitem>
           <para>These switches ensure that D-Bus configuration files
@@ -156,10 +191,9 @@ EOF</userinput></screen>
 
 <screen><userinput remap="install">make LD_LIBRARY_PATH=/tools/lib install</userinput></screen>
 
-    <para>Move NSS myhostname library to <filename
-    class="directory">/lib</filename>:</para>
+    <para>Move NSS libraries to <filename class="directory">/lib</filename>:</para>
 
-<screen><userinput remap="install">mv -v /usr/lib/libnss_myhostname.so.2 /lib</userinput></screen>
+<screen><userinput remap="install">mv -v /usr/lib/libnss_{myhostname,mymachines,resolve}.so.2 /lib</userinput></screen>
 
     <para>Remove an unnecessary directory:</para>
 
@@ -194,21 +228,24 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
 
       <seglistitem>
         <seg>bootctl, busctl, coredumpctl, halt, hostnamectl, init, journalctl,
-        kernel-install, localectl, loginctl, machinectl, poweroff, reboot,
-        runlevel, shutdown, systemctl, systemd-analyze, systemd-ask-password,
-        systemd-cat, systemd-cgls, systemd-cgtop, systemd-coredumpctl,
-        systemd-delta, systemd-detect-virt, systemd-inhibit,
-        systemd-machine-id-setup, systemd-notify, systemd-nspawn, systemd-path,
-        systemd-run, systemd-stdio-bridge, systemd-sysusers, systemd-tmpfiles,
-        systemd-tty-ask-password-agent, telinit, timedatectl, and udevadm</seg>
-        <seg>libnss_myhostname.so.2, libsystemd.so, libudev.so</seg>
+        kernel-install, localectl, loginctl, machinectl, networkctl, poweroff,
+        reboot, runlevel, shutdown, systemctl, systemd-analyze,
+        systemd-ask-password, systemd-cat, systemd-cgls, systemd-cgtop,
+        systemd-delta, systemd-detect-virt, systemd-escape,<!-- systemd-firstboot, -->
+        systemd-inhibit, systemd-machine-id-setup, systemd-notify, systemd-nspawn,
+        systemd-path, systemd-run, systemd-stdio-bridge,<!-- systemd-sysusers, -->
+        systemd-tmpfiles, systemd-tty-ask-password-agent, telinit, timedatectl,
+        and udevadm</seg>
+        <seg>libnss_myhostname.so.2, libnss_mymachines.so.2, libnss_resolve.so.2,
+        libsystemd.so, libudev.so</seg>
         <seg>/etc/binfmt.d, /etc/init.d, /etc/kernel, /etc/modules-load.d,
         /etc/sysctl.d, /etc/systemd, /etc/tmpfiles.d, /etc/udev,
         /etc/xdg/systemd, /lib/systemd, /lib/udev, /usr/include/systemd,
         /usr/lib/binfmt.d, /usr/lib/kernel, /usr/lib/modules-load.d,
-        /usr/lib/sysctl.d, /usr/lib/systemd, /usr/lib/tmpfiles.d,
-        /usr/share/doc/systemd-&systemd-version;, /usr/share/systemd,
-        /var/lib/systemd, /var/log/journal</seg>
+        /usr/lib/sysctl.d, /usr/lib/systemd,<!-- /usr/lib/sysusers.d, -->
+        /usr/lib/tmpfiles.d, /usr/share/doc/systemd-&systemd-version;,
+        /usr/share/factory, /usr/share/systemd, /var/lib/systemd,
+        /var/log/journal</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -470,6 +507,27 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="systemd-escape">
+        <term><command>systemd-escape</command></term>
+        <listitem>
+          <para>Used to escape strings for inclusion in systemd unit names.</para>
+          <indexterm zone="ch-system-systemd systemd-escape">
+            <primary sortas="b-systemd-escape">systemd-escape</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <!-- <varlistentry id="systemd-firstboot">
+        <term><command>systemd-firstboot</command></term>
+        <listitem>
+          <para>Initializes the most basic system settings interactively on the
+          first boot.</para>
+          <indexterm zone="ch-system-systemd systemd-firstboot">
+            <primary sortas="b-systemd-firstboot">systemd-firstboot</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry> -->
+
       <varlistentry id="systemd-inhibit">
         <term><command>systemd-inhibit</command></term>
         <listitem>
@@ -535,7 +593,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         </listitem>
       </varlistentry>
 
-<!--      <varlistentry id="systemd-stdio-bridge">
+      <!-- <varlistentry id="systemd-stdio-bridge">
         <term><command>systemd-stdio-bridge</command></term>
         <listitem>
           <para>To be completed</para>
@@ -545,7 +603,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         </listitem>
       </varlistentry> -->
 
-      <varlistentry id="systemd-sysusers">
+      <!-- <varlistentry id="systemd-sysusers">
         <term><command>systemd-sysusers</command></term>
         <listitem>
           <para>Creates system users and groups, based on the file format and location
@@ -554,7 +612,7 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
             <primary sortas="b-systemd-sysusers">systemd-sysusers</primary>
           </indexterm>
         </listitem>
-      </varlistentry>
+      </varlistentry> -->
 
       <varlistentry id="systemd-tmpfiles">
         <term><command>systemd-tmpfiles</command></term>

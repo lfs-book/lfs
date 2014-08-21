@@ -60,8 +60,8 @@
 <!ENTITY readline-fixes-patch-size "4 KB">
 
 <!ENTITY systemd-compat-patch "systemd-&systemd-version;-compat-1.patch">
-<!ENTITY systemd-compat-patch-md5 "657a996c67d4a9fbad394ee5aa1b1f34">
-<!ENTITY systemd-compat-patch-size "12 KB">
+<!ENTITY systemd-compat-patch-md5 "f26da3adcdc621ea0d715d60baa91962">
+<!ENTITY systemd-compat-patch-size "8 KB">
 
 <!--
 <!ENTITY tar-manpage-patch "tar-&tar-version;-manpage-1.patch">

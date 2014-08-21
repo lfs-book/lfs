@@ -39,6 +39,9 @@
       <para>2014-08-21</para>
       <itemizedlist>
         <listitem>
+          <para>[krejzi] - Updated to systemd-216.</para>
+        </listitem>
+        <listitem>
           <para>[krejzi] - Updated to glibc-2.20 (snapshot).</para>
         </listitem>
         <listitem>

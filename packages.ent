@@ -543,10 +543,10 @@
 <!ENTITY shadow-ch6-du "42 MB">
 <!ENTITY shadow-ch6-sbu "0.2 SBU">
 
-<!ENTITY systemd-version "215">
-<!ENTITY systemd-size    "2,824 KB">
+<!ENTITY systemd-version "216">
+<!ENTITY systemd-size    "3,532 KB">
 <!ENTITY systemd-url     "http://www.freedesktop.org/software/systemd/systemd-&systemd-version;.tar.xz">
-<!ENTITY systemd-md5     "d2603e9fffd8b18d242543e36f2e7d31">
+<!ENTITY systemd-md5     "04fda588a04f549da0f397dce3ae6a39">
 <!ENTITY systemd-home    "http://www.freedesktop.org/wiki/Software/systemd/">
 <!ENTITY systemd-ch6-du  "518 MB">
 <!ENTITY systemd-ch6-sbu "5.8 SBU">
