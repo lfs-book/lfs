@@ -53,7 +53,7 @@ EOF</userinput></screen>
 
     <para>LTO is disabled by default because it causes <command>systemd</command>
     and other auxiliary programs to link to <filename
-    class="library">libgcc_s.so</filename>, slows the build down and makes the
+    class="libraryfile">libgcc_s.so</filename>, slows the build down and makes the
     compiled code larger.</para>
 
     <para>Additionally, fix a build error when using Util-Linux built in
