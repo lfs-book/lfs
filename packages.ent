@@ -244,7 +244,7 @@
 <!ENTITY glibc-url "http://www.linuxfromscratch.org/~krejzi/glibc-&glibc-version;.tar.xz">
 <!ENTITY glibc-md5 "5e19fbca6d3441f78ce5665a01e81420">
 <!ENTITY glibc-home "&gnu-software;libc/">
-<!ENTITY glibc-ch5-du "567 MB">
+<!ENTITY glibc-ch5-du "594 MB">
 <!ENTITY glibc-ch5-sbu "4.7 SBU">
 <!ENTITY glibc-ch6-du "922 MB">
 <!ENTITY glibc-ch6-sbu "17.1 SBU">
@@ -435,7 +435,7 @@
 <!ENTITY man-db-ch6-du "27 MB">
 <!ENTITY man-db-ch6-sbu "0.5 SBU">
 
-<!ENTITY man-pages-version "3.70">
+<!ENTITY man-pages-version "3.71">
 <!ENTITY man-pages-size "1,244 KB">
 <!ENTITY man-pages-url "&kernel;linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
 <!ENTITY man-pages-md5 "9a2a288f1e481045c991e0cb476127d8">
