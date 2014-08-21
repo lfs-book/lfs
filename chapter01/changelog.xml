@@ -39,6 +39,9 @@
       <para>2014-08-21</para>
       <itemizedlist>
         <listitem>
+          <para>[krejzi] - Updated patch for bash.</para>
+        </listitem>
+        <listitem>
           <para>[krejzi] - Updated to man-pages-3.71. Fixes
           <ulink url="&lfs-ticket-root;3660">#3660</ulink>.</para>
         </listitem>
