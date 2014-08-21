@@ -245,6 +245,16 @@
         <para>Home page: <ulink url="&glibc-home;"/></para>
         <para>Download: <ulink url="&glibc-url;"/></para>
         <para>MD5 sum: <literal>&glibc-md5;</literal></para>
+
+        <note>
+          <para>The source tarball above represents a git
+          snapshot of what is expected to become Glibc 2.20.
+          It was created and signed by Armin K. because official
+          Glibc 2.20 tarball wasn't released in time for LFS
+          systemd release candidate. We will switch to the
+          official tarball as soon as it is available and
+          make sure we ship it for the final 7.6 release.</para>
+        </note>
       </listitem>
     </varlistentry>
 
