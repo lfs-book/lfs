@@ -246,7 +246,7 @@
 <!ENTITY glibc-home "&gnu-software;libc/">
 <!ENTITY glibc-ch5-du "594 MB">
 <!ENTITY glibc-ch5-sbu "4.7 SBU">
-<!ENTITY glibc-ch6-du "922 MB">
+<!ENTITY glibc-ch6-du "979 MB">
 <!ENTITY glibc-ch6-sbu "17.1 SBU">
 
 <!ENTITY gmp-version "6.0.0a">
