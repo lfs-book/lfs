@@ -548,8 +548,8 @@
 <!ENTITY systemd-url     "http://www.freedesktop.org/software/systemd/systemd-&systemd-version;.tar.xz">
 <!ENTITY systemd-md5     "04fda588a04f549da0f397dce3ae6a39">
 <!ENTITY systemd-home    "http://www.freedesktop.org/wiki/Software/systemd/">
-<!ENTITY systemd-ch6-du  "518 MB">
-<!ENTITY systemd-ch6-sbu "5.8 SBU">
+<!ENTITY systemd-ch6-du  "678 MB">
+<!ENTITY systemd-ch6-sbu "2.1 SBU">
 
 <!ENTITY tar-version "1.28">
 <!ENTITY tar-size "1,921 KB">

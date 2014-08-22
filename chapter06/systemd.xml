@@ -173,14 +173,15 @@ EOF</userinput></screen>
     <para>If you are going to run the test suite, first prevent a few test
     cases from running because they fail in a chroot environment:</para>
 
-<screen><userinput remap="test">sed -e "s:test/udev-test.pl::g"             \
-    -e "s:test-bus-cleanup\$(EXEEXT) ::g"   \
-    -e "s:test-bus-gvariant\$(EXEEXT) ::g"  \
-    -e "s:test-dhcp6-client\$(EXEEXT) ::g"  \
-    -e "s:test-journal-flush\$(EXEEXT) ::g" \
-    -e "s:test-path-util\$(EXEEXT) ::g"     \
-    -e "s:test-sched-prio\$(EXEEXT) ::g"    \
-    -e "s:test-strv\$(EXEEXT) ::g"          \
+<screen><userinput remap="test">sed -e "s:test/udev-test.pl::g"              \
+    -e "s:test-bus-cleanup\$(EXEEXT) ::g"    \
+    -e "s:test-condition-util\$(EXEEXT) ::g" \
+    -e "s:test-dhcp6-client\$(EXEEXT) ::g"   \
+    -e "s:test-engine\$(EXEEXT) ::g"         \
+    -e "s:test-journal-flush\$(EXEEXT) ::g"  \
+    -e "s:test-path-util\$(EXEEXT) ::g"      \
+    -e "s:test-sched-prio\$(EXEEXT) ::g"     \
+    -e "s:test-strv\$(EXEEXT) ::g"           \
     -i Makefile</userinput></screen>
 
     <para>To test the results, issue:</para>
@@ -231,21 +232,19 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         kernel-install, localectl, loginctl, machinectl, networkctl, poweroff,
         reboot, runlevel, shutdown, systemctl, systemd-analyze,
         systemd-ask-password, systemd-cat, systemd-cgls, systemd-cgtop,
-        systemd-delta, systemd-detect-virt, systemd-escape,<!-- systemd-firstboot, -->
-        systemd-inhibit, systemd-machine-id-setup, systemd-notify, systemd-nspawn,
-        systemd-path, systemd-run, systemd-stdio-bridge,<!-- systemd-sysusers, -->
-        systemd-tmpfiles, systemd-tty-ask-password-agent, telinit, timedatectl,
-        and udevadm</seg>
+        systemd-delta, systemd-detect-virt, systemd-escape, systemd-inhibit,
+        systemd-machine-id-setup, systemd-notify, systemd-nspawn, systemd-path,
+        systemd-run, systemd-stdio-bridge, systemd-tmpfiles,
+        systemd-tty-ask-password-agent, telinit, timedatectl, and udevadm</seg>
         <seg>libnss_myhostname.so.2, libnss_mymachines.so.2, libnss_resolve.so.2,
         libsystemd.so, libudev.so</seg>
         <seg>/etc/binfmt.d, /etc/init.d, /etc/kernel, /etc/modules-load.d,
         /etc/sysctl.d, /etc/systemd, /etc/tmpfiles.d, /etc/udev,
         /etc/xdg/systemd, /lib/systemd, /lib/udev, /usr/include/systemd,
         /usr/lib/binfmt.d, /usr/lib/kernel, /usr/lib/modules-load.d,
-        /usr/lib/sysctl.d, /usr/lib/systemd,<!-- /usr/lib/sysusers.d, -->
-        /usr/lib/tmpfiles.d, /usr/share/doc/systemd-&systemd-version;,
-        /usr/share/factory, /usr/share/systemd, /var/lib/systemd,
-        /var/log/journal</seg>
+        /usr/lib/sysctl.d, /usr/lib/systemd, /usr/lib/tmpfiles.d,
+        /usr/share/doc/systemd-&systemd-version;, /usr/share/factory,
+        /usr/share/systemd, /var/lib/systemd, /var/log/journal</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -517,17 +516,6 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <!-- <varlistentry id="systemd-firstboot">
-        <term><command>systemd-firstboot</command></term>
-        <listitem>
-          <para>Initializes the most basic system settings interactively on the
-          first boot.</para>
-          <indexterm zone="ch-system-systemd systemd-firstboot">
-            <primary sortas="b-systemd-firstboot">systemd-firstboot</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry> -->
-
       <varlistentry id="systemd-inhibit">
         <term><command>systemd-inhibit</command></term>
         <listitem>
@@ -599,17 +587,6 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
           <para>To be completed</para>
           <indexterm zone="ch-system-systemd systemd-stdio-bridge">
             <primary sortas="b-systemd-stdio-bridge">systemd-stdio-bridge</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry> -->
-
-      <!-- <varlistentry id="systemd-sysusers">
-        <term><command>systemd-sysusers</command></term>
-        <listitem>
-          <para>Creates system users and groups, based on the file format and location
-          specified in <filename class="directory">sysusers.d</filename>.</para>
-          <indexterm zone="ch-system-systemd systemd-sysusers">
-            <primary sortas="b-systemd-sysusers">systemd-sysusers</primary>
           </indexterm>
         </listitem>
       </varlistentry> -->
