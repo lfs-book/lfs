@@ -84,7 +84,7 @@ Networking support  ---&gt;
     &lt;*&gt; The IPv6 protocol [CONFIG_IPV6]
 Device Drivers  ---&gt;
   Generic Driver Options  ---&gt;
-    ()  path to uevent helper [CONFIG_UEVENT_HELPER_PATH]
+    [ ] Support for uevent helper [CONFIG_UEVENT_HELPER]
     [*] Maintain a devtmpfs filesystem to mount at /dev [CONFIG_DEVTMPFS]
     [ ] Fallback user-helper invocation for firmware loading [CONFIG_FW_LOADER_USER_HELPER]
 Firmware Drivers  ---&gt;
@@ -103,9 +103,9 @@ File systems  ---&gt;
       <title>The rationale for the above configuration items:</title>
 
       <varlistentry>
-        <term><parameter>path to uevent helper</parameter></term>
+        <term><parameter>Support for uevent helper</parameter></term>
         <listitem>
-          <para>Having an entry in this space will interfere with device
+          <para>Having this option set, it may interfere with device
           management when using Udev/Eudev. </para>
         </listitem>
       </varlistentry>
