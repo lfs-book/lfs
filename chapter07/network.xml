@@ -101,19 +101,10 @@ EOF</userinput></screen>
     from the ISP or network administrator, into
     <filename>/etc/resolv.conf</filename>.</para>
 
-    <para>When using <command>systemd-networkd</command> for network
-    configuration, another daemon, <command>systemd-resolved</command>,
-    is responsible for creating the <filename>/etc/resolv.conf</filename>
-    file. It is, however, placed in a non-standard location which is
-    writable since early boot, so it is necessary to create a symlink
-    to it by running the following command:</para>
-
-<screen><userinput>ln -sfv /run/systemd/resolve/resolv.conf /etc/resolv.conf</userinput></screen>
-
     <para>If static <filename>/etc/resolv.conf</filename> is desired, create
     it by running the following command:</para>
 
-<screen><userinput>cat &gt; /etc/resolv.conf &lt;&lt; "EOF"
+<screen role="nodump"><userinput>cat &gt; /etc/resolv.conf &lt;&lt; "EOF"
 <literal># Begin /etc/resolv.conf
 
 domain <replaceable>&lt;Your Domain Name&gt;</replaceable>
@@ -135,6 +126,19 @@ EOF</userinput></screen>
     may also be a router on the local network.</para>
 
     <note><para>The Google Public IPv4 DNS addresses are 8.8.8.8 and 8.8.4.4.</para></note>
+
+    <para>When using <command>systemd-networkd</command> for network
+    configuration, another daemon, <command>systemd-resolved</command>,
+    is responsible for creating the <filename>/etc/resolv.conf</filename>
+    file. It is, however, placed in a non-standard location which is
+    writable since early boot, so it is necessary to create a symlink
+    to it by running the following command:</para>
+
+<screen><userinput>ln -sfv /run/systemd/resolve/resolv.conf /etc/resolv.conf</userinput></screen>
+
+    <para>This is required if you are specifying DNS entries in <filename
+    class="extension">.network</filename> files or using the built in
+    DHCP client to obtain DNS addresses.</para>
 
   </sect2>
 

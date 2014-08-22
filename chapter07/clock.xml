@@ -82,12 +82,14 @@ EOF</userinput></screen>
     <para>The daemon is not intended as a replacement for the well
     established NTP daemon, but as a client only implementation
     of the SNTP protocol which can be used for less advanced
-    tasks and on a resource limited systems.</para>
+    tasks and on resource limited systems.</para>
 
-    <para>To enable the <command>systemd-timesyncd</command> daemon,
-    issue the following command:</para>
+    <para>Starting with systemd version 216, the
+    <command>systemd-timesyncd</command> daemon is enabled by
+    default. If you want to disable it, issue the following
+    command:</para>
 
-<screen role="nodump"><userinput>systemctl enable systemd-timesyncd</userinput></screen>
+<screen role="nodump"><userinput>systemctl disable systemd-timesyncd</userinput></screen>
 
     <para>The <filename>/etc/systemd/timesyncd.conf</filename> file
     can be used to change the NTP servers that
