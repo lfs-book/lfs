@@ -95,6 +95,10 @@ EOF</userinput></screen>
     can be used to change the NTP servers that
     <command>systemd-timesyncd</command> synchronizes with.</para>
 
+    <para>Please note that when system clock is set to Local Time,
+    <command>systemd-timesyncd</command> won't update hardware
+    clock.</para>
+
   </sect2>
 
 </sect1>
