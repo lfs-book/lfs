@@ -19,6 +19,10 @@
   </indexterm>
 
   <indexterm zone="ch-system-createfiles">
+    <primary sortas="e-/var/run/utmp">/var/run/utmp</primary>
+  </indexterm>
+
+  <indexterm zone="ch-system-createfiles">
     <primary sortas="e-/var/log/btmp">/var/log/btmp</primary>
   </indexterm>
 
