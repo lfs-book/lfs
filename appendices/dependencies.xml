@@ -61,7 +61,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Systemd</seg>
+          <seg>Coreutils, Sed, Systemd, Tar, Vim</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -97,7 +97,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Systemd</seg>
+          <seg>Acl, Libcap, Systemd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -169,7 +169,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Tar, Vim</seg>
+          <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2125,8 +2125,9 @@
         <segtitle>&dependencies;</segtitle>
 
         <seglistitem>
-         <seg>Acl, Attr, Bash, Binutils, Coreutils, Diffutils, Expat, Gawk, GCC,
-         Glibc, Gperf, Grep, Intltool, Libcap, Make, Sed, and Util-linux</seg>
+         <seg>Acl, Attr, Bash, Binutils, Coreutils, Diffutils, Expat, Gawk,
+         GCC, Glibc, Gperf, Grep, Intltool, Libcap,
+         Make, Sed, and Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2357,7 +2358,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>Intltool</seg>
         </seglistitem>
       </segmentedlist>
 

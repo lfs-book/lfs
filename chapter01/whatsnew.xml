@@ -24,7 +24,7 @@
     <listitem><para></para></listitem>  <!-- satisfy build -->
     <!--<listitem>
     <para>None</para>
-    </listitem>-->
+    </listitem> -->
     <!--<listitem>
       <para>Acl-&acl-version;</para>
     </listitem>-->
@@ -94,9 +94,9 @@
     <listitem>
       <para>Gettext &gettext-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Glibc &glibc-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>GMP &gmp-version;</para>
     </listitem>
@@ -199,9 +199,9 @@
     <listitem>
       <para>Tar &tar-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>TCL &tcl-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Texinfo &texinfo-version;</para>
     </listitem>-->
@@ -249,11 +249,12 @@
     <listitem>
       <para>&binutils-lto-testsuite-patch;</para>
     </listitem>
-<!--
     <listitem>
-      <para>&coreutils-shuf-segfault-patch;</para>
+      <para>&gcc-upstream-patch;</para>
     </listitem>
- -->
+    <listitem>
+      <para>&glibc-fhs-patch;</para>
+    </listitem>
     <listitem>
       <para>&mpfr-fixes-patch;</para>
     </listitem>
@@ -268,6 +269,10 @@
 
     <listitem>
       <para>bash-4.2-fixes-12.patch</para>
+    </listitem>
+
+    <listitem>
+      <para>glibc-2.19-fhs-1.patch</para>
     </listitem>
 
     <listitem>

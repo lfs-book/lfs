@@ -11,6 +11,14 @@
   <title>The End</title>
 
   <indexterm zone="ch-finish-theend">
+    <primary sortas="e-/etc/lfs-release">/etc/lfs-release</primary>
+  </indexterm>
+
+  <indexterm zone="ch-finish-theend">
+    <primary sortas="e-/etc/lsb-release">/etc/lsb-release</primary>
+  </indexterm>
+
+  <indexterm zone="ch-finish-theend">
     <primary sortas="e-/etc/os-release">/etc/os-release</primary>
   </indexterm>
 

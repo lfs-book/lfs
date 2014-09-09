@@ -23,23 +23,6 @@
       <listitem>
         <para>Acl</para>
 
-        <para>This package contains programs to administer Access Control
-        Lists, which are used to define more fine-grained discretionary access
-        rights for files and directories. It is required by Systemd
-        and can be used by Coreutils.</para>
-      </listitem>
-
-      <listitem>
-        <para>Attr</para>
-
-        <para>This package contains programs for working with extended
-        attributes on filesystem objects.  It is required by the libcap
-        library.</para>
-      </listitem>
-
-      <listitem>
-        <para>Acl</para>
-
         <para>This package contains utilities to administer Access 
         Control Lists, which are used to define more fine-grained 
         discretionary access rights for files and directories. 
@@ -171,14 +154,6 @@
       </listitem>
 
       <listitem>
-        <para>Expat</para>
-
-        <para>This package contains programs for parsing XML.  It is
-        required for XML-Parser.
-        </para>
-      </listitem>
-
-      <listitem>
         <para>Expect</para>
 
         <para>This package contains a program for carrying out scripted
@@ -257,16 +232,8 @@
       <listitem>
         <para>Gperf</para>
 
-        <para>This package generates a perfect hash from a key set; it is
-        required by Systemd.</para>
-      </listitem>
-
-      <listitem>
-        <para>Gperf</para>
-
-        <para>This package a program that generates a perfect hash function 
-        from a key set.  It is required for systemd.
-        </para>
+        <para>This package contains a program that generates a perfect hash
+        function from a key set. It is required for systemd.</para>
       </listitem>
 
       <listitem>
@@ -316,13 +283,6 @@
       <listitem>
         <para>Intltool</para>
 
-        <para>This package contains internationalization tools; it is required
-        by Systemd.</para>
-      </listitem>
-
-      <listitem>
-        <para>Intltool</para>
-
         <para>This package contains tools for extracting translatable 
         strings from source files.</para>
       </listitem>
@@ -355,14 +315,6 @@
         <para>This package contains a very nice text file viewer that
         allows scrolling up or down when viewing a file. It is also used by
         Man-DB for viewing manpages.</para>
-      </listitem>
-
-      <listitem>
-        <para>Libcap</para>
-
-        <para>This package contains functions that enable root privileges to be
-        partitioned into a set of distinct privileges.  It is required by
-        Systemd.</para>
       </listitem>
 
       <listitem>
@@ -515,24 +467,11 @@
       <listitem>
         <para>Systemd</para>
 
-        <para>This package contains programs for controlling the startup,
-        running, and shutdown of the system.</para>
-      </listitem>
-
-      <listitem>
-        <para>Systemd</para>
-
         <para>This package provides and <application>init</application> program
         and several additional boot and system control capabilites as an
         alternative to Sysvinit.  It is used by many commercial distributions.
         In LFS it is installed side-by-side with Sysvinit to provide the user with
         alternative boot systems for comparison.</para>
-      </listitem>
-
-      <listitem>
-        <para>Sysvinit</para>
-
-        <para>This package provides misc. utils needed by some packages.</para>
       </listitem>
 
       <listitem>
@@ -573,13 +512,6 @@
         compatibility with the classic vi editor and its huge number of powerful
         capabilities.  An editor is a very personal choice for
         many users and any other editor could be substituted if desired.</para>
-      </listitem>
-
-      <listitem>
-        <para>XML::Parser</para>
-
-        <para>This package contains an XML Parsing library for Perl.  It is
-        required by the Intltool package.</para>
       </listitem>
 
       <listitem>
