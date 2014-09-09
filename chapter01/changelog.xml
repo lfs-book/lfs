@@ -39,6 +39,9 @@
       <para>2014-09-09</para>
       <itemizedlist>
         <listitem>
+          <para>[krejzi] - LFS-7.6-systemd-rc2 released.</para>
+        </listitem>
+        <listitem>
           <para>[krejzi] - Merged LFS SVN-20140909.</para>
         </listitem>
         <listitem>
@@ -82,6 +85,15 @@
         </listitem>
         <listitem>
           <para>[bdubbs] - Update to tzdata2014g. </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-08-22</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - LFS-7.6-systemd-rc1 released.</para>
         </listitem>
       </itemizedlist>
     </listitem>
