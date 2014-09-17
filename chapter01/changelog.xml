@@ -36,6 +36,15 @@
     </listitem>
 -->
     <listitem>
+      <para>2014-09-17</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - Updated to dbus-1.8.8.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2014-09-09</para>
       <itemizedlist>
         <listitem>
