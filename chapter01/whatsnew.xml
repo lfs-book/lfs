@@ -109,9 +109,9 @@
     <!--<listitem>
       <para>Groff &groff-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>GRUB &grub-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Gzip &gzip-version;</para>
     </listitem>-->
@@ -205,9 +205,9 @@
     <!--<listitem>
       <para>Texinfo &texinfo-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Tzdata &tzdata-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Util-Linux &util-linux-version;</para>
     </listitem>-->
@@ -237,11 +237,24 @@
   <itemizedlist>
     <title>Added:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
+
+    <listitem>
+      <para>&bash-fixes-patch;</para>
+    </listitem>
+
+    <listitem>
+      <para>&perl-fix-patch;</para>
+    </listitem>
   </itemizedlist>
 
   <itemizedlist>
     <title>Removed:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
+
+    <listitem>
+      <para>bash-4.3-upstream_fixes-3.patch</para>
+    </listitem>
+
   </itemizedlist>
 
 </sect1>

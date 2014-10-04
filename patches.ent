@@ -2,9 +2,9 @@
 
 <!-- Start of Common Patches -->
 
-<!ENTITY bash-fixes-patch "bash-&bash-version;-upstream_fixes-4.patch">
-<!ENTITY bash-fixes-patch-md5 "9233ba62610d4eb3f45ed57073d4273b">
-<!ENTITY bash-fixes-patch-size "40 KB">
+<!ENTITY bash-fixes-patch "bash-&bash-version;-upstream_fixes-5.patch">
+<!ENTITY bash-fixes-patch-md5 "65f72a5b5fc7c36970347a26ec0f0e99">
+<!ENTITY bash-fixes-patch-size "37 KB">
 
 <!ENTITY binutils-lto-patch "binutils-&binutils-version;-load_gcc_lto_plugin_by_default-1.patch">
 <!ENTITY binutils-lto-patch-md5 "48e4e96a60bfed41804aaecf4944f5d9">
@@ -52,6 +52,10 @@
 <!ENTITY mpfr-fixes-patch "mpfr-&mpfr-version;-upstream_fixes-2.patch">
 <!ENTITY mpfr-fixes-patch-md5 "2b2aa4371a4e848411639356fd82becf">
 <!ENTITY mpfr-fixes-patch-size "40 KB">
+
+<!ENTITY perl-fix-patch "perl-&perl-version;-infinite_recurse_fix-1.patch">
+<!ENTITY perl-fix-patch-md5 "579dfed34e97e0a2fe21b74aa53946ac">
+<!ENTITY perl-fix-patch-size "11 KB">
 
 <!ENTITY readline-fixes-patch "readline-6.3-upstream_fixes-2.patch">
 <!ENTITY readline-fixes-patch-md5 "97f74f1c3c83008f268b32d36e9fd376">
