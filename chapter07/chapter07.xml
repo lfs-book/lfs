@@ -19,6 +19,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="console.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="locale.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="inputrc.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="etcshells.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="systemd-custom.xml"/>
 
 </chapter>

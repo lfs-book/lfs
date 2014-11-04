@@ -36,6 +36,98 @@
     </listitem>
 -->
     <listitem>
+      <para>2014-11-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Move the page concerning /etc/shells
+          from BLFS to LFS Chapter 7. Fixes 
+          <ulink url="&lfs-ticket-root;3705">#3705</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-11-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to linux-3.17.2. Fixes 
+          <ulink url="&lfs-ticket-root;3704">#3704</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iproute2-3.17.0. Fixes 
+          <ulink url="&lfs-ticket-root;3703">#3703</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-10-31</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to gcc-4.9.2. Fixes 
+          <ulink url="&lfs-ticket-root;3702">#3702</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-10-30</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to libtool-2.4.3. Fixes 
+          <ulink url="&lfs-ticket-root;3699">#3699</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-10-26</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to libpipeline-1.4.0. Fixes 
+          <ulink url="&lfs-ticket-root;3698">#3698</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-10-25</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to tzdata-2014i. Fixes 
+          <ulink url="&lfs-ticket-root;3696">#3696</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to util-linux-2.25.2. Fixes 
+          <ulink url="&lfs-ticket-root;3697">#3697</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-10-19</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Remove reference to GMT in Chapter 5
+          tcl page. Fixes 
+          <ulink url="&lfs-ticket-root;3692">#3692</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-3.17.1. Fixes 
+          <ulink url="&lfs-ticket-root;3693">#3693</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gettext-0.19.3. Fixes 
+          <ulink url="&lfs-ticket-root;3694">#3694</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-3.75. Fixes 
+          <ulink url="&lfs-ticket-root;3695">#3695</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2014-10-11</para>
       <itemizedlist>
         <listitem>

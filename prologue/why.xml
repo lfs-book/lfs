@@ -111,15 +111,9 @@
       <listitem>
         <para>D-Bus</para>
 
-        <para>D-Bus is a message bus system, a simple way for applications to
-        communicate with one another; it is required by Systemd.</para>
-      </listitem>
-
-      <listitem>
-        <para>D-Bus</para>
-
         <para>This package contains programs to implement a message bus system, 
-        which a simple way for applications to talk to one another.
+        which a simple way for applications to talk to one another. It is
+        required by systemd.
         </para>
       </listitem>
 
