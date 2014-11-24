@@ -39,10 +39,10 @@
 <!ENTITY automake-ch6-du "107 MB">
 <!ENTITY automake-ch6-sbu "less than 0.1 SBU (about 12 SBU with tests)">
 
-<!ENTITY bash-version "4.3">
-<!ENTITY bash-size "7,770 KB">
+<!ENTITY bash-version "4.3.30">
+<!ENTITY bash-size "7,7791 KB">
 <!ENTITY bash-url "&gnu;bash/bash-&bash-version;.tar.gz">
-<!ENTITY bash-md5 "81348932d5da294953e15d4814c74dd1">
+<!ENTITY bash-md5 "a27b3ee9be83bd3ba448c0ff52b28447">
 <!ENTITY bash-home "&gnu-software;bash/">
 <!ENTITY bash-ch5-du "53 MB">
 <!ENTITY bash-ch5-sbu "0.4 SBU">
@@ -257,20 +257,20 @@
 <!ENTITY gperf-ch6-du "5.5 MB">
 <!ENTITY gperf-ch6-sbu "less than 0.1 SBU">
 
-<!ENTITY grep-version "2.20">
-<!ENTITY grep-size "1,209 KB">
+<!ENTITY grep-version "2.21">
+<!ENTITY grep-size "1,232 KB">
 <!ENTITY grep-url "&gnu;grep/grep-&grep-version;.tar.xz">
-<!ENTITY grep-md5 "2cbea44a4f1548aee20b9ff2d3076908">
+<!ENTITY grep-md5 "43c48064d6409862b8a850db83c8038a">
 <!ENTITY grep-home "&gnu-software;grep/">
 <!ENTITY grep-ch5-du "18 MB">
 <!ENTITY grep-ch5-sbu "0.2 SBU">
 <!ENTITY grep-ch6-du "30 MB">
 <!ENTITY grep-ch6-sbu "0.5 SBU">
 
-<!ENTITY groff-version "1.22.2">
-<!ENTITY groff-size "3,926 KB">
+<!ENTITY groff-version "1.22.3">
+<!ENTITY groff-size "4,091 KB">
 <!ENTITY groff-url "&gnu;groff/groff-&groff-version;.tar.gz">
-<!ENTITY groff-md5 "9f4cd592a5efc7e36481d8d8d8af6d16">
+<!ENTITY groff-md5 "cc825fa64bc7306a885f2fb2268d3ec5">
 <!ENTITY groff-home "&gnu-software;groff/">
 <!ENTITY groff-ch6-du "83 MB">
 <!ENTITY groff-ch6-sbu "0.6 SBU">
@@ -333,10 +333,10 @@
 <!ENTITY kbd-ch6-du "28 MB">
 <!ENTITY kbd-ch6-sbu "0.1 SBU">
 
-<!ENTITY kmod-version "18">
+<!ENTITY kmod-version "19">
 <!ENTITY kmod-size "1,440 KB">
 <!ENTITY kmod-url "&kernel;linux/utils/kernel/kmod/kmod-&kmod-version;.tar.xz">
-<!ENTITY kmod-md5 "82835c7f01983634e06ca72b4ee30cc6">
+<!ENTITY kmod-md5 "a08643f814aa4efc12211c6e5909f4d9">
 <!ENTITY kmod-home " ">
 <!ENTITY kmod-ch6-du "36 MB">
 <!ENTITY kmod-ch6-sbu "0.1 SBU">
@@ -375,12 +375,12 @@
 
 <!ENTITY linux-major-version "3">
 <!ENTITY linux-minor-version "17">
-<!ENTITY linux-patch-version "2">
+<!ENTITY linux-patch-version "4">
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
-<!ENTITY linux-size "78,449 KB">
+<!ENTITY linux-size "78,455 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "87444e6f0906e2ec783cf0ed6aab1a56">
+<!ENTITY linux-md5 "ce49828adecf8908eb3a9ffc5b860d44">
 <!ENTITY linux-home "http://www.kernel.org/">
 <!-- measured for 3.9.0 / gcc-4.8.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,
@@ -413,10 +413,10 @@
 <!ENTITY make-ch6-du "11.8 MB">
 <!ENTITY make-ch6-sbu "0.5 SBU">
 
-<!ENTITY man-db-version "2.7.0.2">
-<!ENTITY man-db-size "1,457 KB">
+<!ENTITY man-db-version "2.7.1">
+<!ENTITY man-db-size "1,464 KB">
 <!ENTITY man-db-url "&savannah;/releases/man-db/man-db-&man-db-version;.tar.xz">
-<!ENTITY man-db-md5 "8ea7be9daf7af7da0fcd619e3da3991c">
+<!ENTITY man-db-md5 "88d32360e2ed18e05de9b528ad336fd8">
 <!ENTITY man-db-home "http://www.nongnu.org/man-db/">
 <!ENTITY man-db-ch6-du "28 MB">
 <!ENTITY man-db-ch6-sbu "0.5 SBU">
@@ -543,11 +543,11 @@
 <!ENTITY tar-ch6-du "39 MB">
 <!ENTITY tar-ch6-sbu "2.4 SBU">
 
-<!ENTITY tcl-version "8.6.2">
+<!ENTITY tcl-version "8.6.3">
 <!ENTITY tcl-major-version "8.6">
-<!ENTITY tcl-size "8,650 KB">
+<!ENTITY tcl-size "8,693 KB">
 <!ENTITY tcl-url "http://downloads.sourceforge.net/project/tcl/Tcl/&tcl-version;/tcl&tcl-version;-src.tar.gz">
-<!ENTITY tcl-md5 "8103eaf6d71acb716a64224492f09d5f">
+<!ENTITY tcl-md5 "db382feca91754b7f93da16dc4cdad1f">
 <!ENTITY tcl-home "http://tcl.sourceforge.net/">
 <!ENTITY tcl-ch5-du "61 MB">
 <!ENTITY tcl-ch5-sbu "0.9 SBU">
@@ -562,10 +562,10 @@
 <!ENTITY texinfo-ch6-du "99 MB">
 <!ENTITY texinfo-ch6-sbu "0.6 SBU">
 
-<!ENTITY tzdata-version "2014i">
-<!ENTITY tzdata-size "283 KB">
+<!ENTITY tzdata-version "2014j">
+<!ENTITY tzdata-size "284 KB">
 <!ENTITY tzdata-url "http://www.iana.org/time-zones/repository/releases/tzdata&tzdata-version;.tar.gz">
-<!ENTITY tzdata-md5 "00adeb62a0897aac5ba67da838351adb">
+<!ENTITY tzdata-md5 "2d7ea9c309f0d4e162e426e568290ca3">
 <!ENTITY tzdata-home "http://www.iana.org/time-zones">
 
 <!ENTITY util-linux-version "2.25.2">

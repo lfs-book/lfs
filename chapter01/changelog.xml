@@ -36,7 +36,68 @@
     </listitem>
 -->
     <listitem>
-      <para>2014-11-01</para>
+      <para>2014-11-24</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to linux-3.17.4. Fixes 
+          <ulink url="&lfs-ticket-root;3712">#3712</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to kmod-19. Fixes 
+          <ulink url="&lfs-ticket-root;3713">#3713</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to grep-2.21. Fixes 
+          <ulink url="&lfs-ticket-root;3714">#3714</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-11-13</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to tzdata-2014j. Fixes 
+          <ulink url="&lfs-ticket-root;3710">#3710</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to tcl-8.6.3. Fixes 
+          <ulink url="&lfs-ticket-root;3711">#3711</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-11-11</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to bash-4.3.30. Fixes
+          <ulink url="&lfs-ticket-root;3708">#3708</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-db-2.7.1. Fixes
+          <ulink url="&lfs-ticket-root;3709">#3709</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Add binutils-2.24-multiple_plugins-1.patch.
+          Thanks to Miklos Karacsony fro the patch.  Fixes
+          <ulink url="&lfs-ticket-root;3707">#3707</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-11-05</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to groff-1.22.3. Fixes 
+          <ulink url="&lfs-ticket-root;3706">#3706</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2014-11-03</para>
       <itemizedlist>
         <listitem>
           <para>[bdubbs] - Move the page concerning /etc/shells
