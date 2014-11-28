@@ -39,6 +39,9 @@
       <para>2014-11-28</para>
       <itemizedlist>
         <listitem>
+          <para>[krejzi] - Updated to systemd-217.</para>
+        </listitem>
+        <listitem>
           <para>[krejzi] - Updated to dbus-1.8.12.</para>
         </listitem>
       </itemizedlist>

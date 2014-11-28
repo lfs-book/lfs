@@ -73,6 +73,10 @@
 <!ENTITY systemd-compat-patch-md5 "f26da3adcdc621ea0d715d60baa91962">
 <!ENTITY systemd-compat-patch-size "8 KB">
 
+<!ENTITY systemd-fixes-patch "systemd-&systemd-version;-upstream_fixes-1.patch">
+<!ENTITY systemd-fixes-patch-md5 "9b06388a5b812ba89e11167a10595570">
+<!ENTITY systemd-fixes-patch-size "32 KB">
+
 <!--
 <!ENTITY tar-manpage-patch "tar-&tar-version;-manpage-1.patch">
 <!ENTITY tar-manpage-patch-md5 "321f85ec32733b1a9399e788714a5156">

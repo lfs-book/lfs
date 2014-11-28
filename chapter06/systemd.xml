@@ -61,10 +61,15 @@ EOF</userinput></screen>
 
 <screen><userinput remap="pre">sed -i "s:blkid/::" $(grep -rl "blkid/blkid.h")</userinput></screen>
 
-    <para>Apply a patch so that compat <command>pkg-config</command> files get
-    installed without installing compat libs which are useless on LFS:</para>
+    <para>Apply the following patch so that compat <command>pkg-config</command> files
+    get installed without installing compat libs which are useless on LFS:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&systemd-compat-patch;</userinput></screen>
+
+    <para>Also, apply the following patch to fix various bugs that have been
+    addressed upstream:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../&systemd-fixes-patch;</userinput></screen>
 
     <para>Prepare systemd for compilation:</para>
 
@@ -175,6 +180,7 @@ EOF</userinput></screen>
 
 <screen><userinput remap="test">sed -e "s:test/udev-test.pl::g"              \
     -e "s:test-bus-cleanup\$(EXEEXT) ::g"    \
+    -e "s:test-cgroup-mask\$(EXEEXT) ::g"    \
     -e "s:test-condition-util\$(EXEEXT) ::g" \
     -e "s:test-dhcp6-client\$(EXEEXT) ::g"   \
     -e "s:test-engine\$(EXEEXT) ::g"         \
