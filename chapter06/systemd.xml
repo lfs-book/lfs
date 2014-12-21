@@ -66,11 +66,6 @@ EOF</userinput></screen>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&systemd-compat-patch;</userinput></screen>
 
-    <para>Also, apply the following patch to fix various bugs that have been
-    addressed upstream:</para>
-
-<screen><userinput remap="pre">patch -Np1 -i ../&systemd-fixes-patch;</userinput></screen>
-
     <para>Prepare systemd for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr                                           \
@@ -190,9 +185,12 @@ EOF</userinput></screen>
     -e "s:test-strv\$(EXEEXT) ::g"           \
     -i Makefile</userinput></screen>
 
-    <para>To test the results, issue:</para>
+    <para>Since the testsuite largely depends on the
+    host system kernel configuration, other tests
+    besides the ones that were previously disabled
+    may also fail. To test the results, issue:</para>
 
-<screen><userinput remap="test">make check</userinput></screen>
+<screen><userinput remap="test">make -k check</userinput></screen>
 
     <para>Install the package:</para>
 

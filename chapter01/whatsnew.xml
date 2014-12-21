@@ -215,9 +215,9 @@
     <!--<listitem>
       <para>Vim &vim-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>XML-Parser-&xml-parser-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>XZ-Utils &xz-version;</para>
     </listitem>
@@ -257,10 +257,6 @@
       <para>&systemd-compat-patch;</para>
     </listitem>
 
-    <listitem>
-      <para>&systemd-fixes-patch;</para>
-    </listitem>
-
   </itemizedlist>
 
   <itemizedlist>
@@ -280,7 +276,7 @@
     </listitem>
 
     <listitem>
-      <para>readline-216-compat-1.patch</para>
+      <para>systemd-216-compat-1.patch</para>
     </listitem>
 
   </itemizedlist>

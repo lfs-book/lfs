@@ -70,12 +70,8 @@
 <!ENTITY readline-fixes-patch-size "8 KB">
 
 <!ENTITY systemd-compat-patch "systemd-&systemd-version;-compat-1.patch">
-<!ENTITY systemd-compat-patch-md5 "2331a8bda7c37d6c3439d5ca7a86a75b">
-<!ENTITY systemd-compat-patch-size "8 KB">
-
-<!ENTITY systemd-fixes-patch "systemd-&systemd-version;-upstream_fixes-1.patch">
-<!ENTITY systemd-fixes-patch-md5 "9b06388a5b812ba89e11167a10595570">
-<!ENTITY systemd-fixes-patch-size "32 KB">
+<!ENTITY systemd-compat-patch-md5 "eb9f302cb72595c9011300a1b28f1d1a">
+<!ENTITY systemd-compat-patch-size "12 KB">
 
 <!--
 <!ENTITY tar-manpage-patch "tar-&tar-version;-manpage-1.patch">
