@@ -48,6 +48,9 @@
 HAVE_BLKID=1
 BLKID_LIBS="-lblkid"
 BLKID_CFLAGS="-I/tools/include/blkid"
+HAVE_LIBMOUNT=1
+MOUNT_LIBS="-lmount"
+MOUNT_CFLAGS="-I/tools/include/libmount"
 cc_cv_CFLAGS__flto=no</literal>
 EOF</userinput></screen>
 
