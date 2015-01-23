@@ -6,8 +6,12 @@
 <!ENTITY generic-version "systemd"> <!-- Use "development", "testing", or "x.y[-pre{x}]" -->
 
 <!ENTITY lfs-root        "http://www.linuxfromscratch.org/">
+<!--
 <!ENTITY blfs-root       "&lfs-root;blfs/">
 <!ENTITY blfs-book       "&blfs-root;view/&short-version;/">
+-->
+<!ENTITY blfs-root       "&lfs-root;~krejzi/kblfs/">
+<!ENTITY blfs-book       "&blfs-root;">
 <!ENTITY faq-root        "&lfs-root;faq/">
 <!ENTITY hints-root      "&lfs-root;hints/downloads/files/">
 <!ENTITY hints-index     "&lfs-root;hints/list.html">
