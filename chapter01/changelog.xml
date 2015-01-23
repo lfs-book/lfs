@@ -36,6 +36,58 @@
     </listitem>
 -->
     <listitem>
+      <para>2015-01-12</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to XML-Parser-2.44. Fixes 
+          <ulink url="&lfs-ticket-root;3733">#3733</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-3.77. Fixes 
+          <ulink url="&lfs-ticket-root;3732">#3732</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-3.18.2. Fixes 
+          <ulink url="&lfs-ticket-root;3731">#3731</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2015-01-06</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to file-5.22. Fixes 
+          <ulink url="&lfs-ticket-root;3729">#3729</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to automake-1.15. Fixes 
+          <ulink url="&lfs-ticket-root;3727">#3727</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2015-01-02</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-3.76. Fixes 
+          <ulink url="&lfs-ticket-root;3728">#3728</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Fix URL for CLFS. Fixes 
+          <ulink url="&lfs-ticket-root;3727">#3727</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update copyright year.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Make version-check script more robust.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2014-12-25</para>
       <itemizedlist>
         <listitem>
