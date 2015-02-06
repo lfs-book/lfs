@@ -69,10 +69,10 @@
 <!ENTITY binutils-ch6-du "397 MB">
 <!ENTITY binutils-ch6-sbu "2.4 SBU">
 
-<!ENTITY bison-version "3.0.2">
-<!ENTITY bison-size "1,882 KB">
+<!ENTITY bison-version "3.0.4">
+<!ENTITY bison-size "1,928 KB">
 <!ENTITY bison-url "&gnu;bison/bison-&bison-version;.tar.xz">
-<!ENTITY bison-md5 "146be9ff9fbd27497f0bf2286a5a2082">
+<!ENTITY bison-md5 "c342201de104cc9ce0a21e0ad10d4021">
 <!ENTITY bison-home "&gnu-software;bison/">
 <!ENTITY bison-ch6-du "35 MB">
 <!ENTITY bison-ch6-sbu "2.6 SBU">
@@ -105,18 +105,18 @@
 <!ENTITY coreutils-ch6-du "161 MB">
 <!ENTITY coreutils-ch6-sbu "2.4 SBU">
 
-<!ENTITY dbus-version "1.8.12">
+<!ENTITY dbus-version "1.8.14">
 <!ENTITY dbus-size "1,824 KB">
 <!ENTITY dbus-url "http://dbus.freedesktop.org/releases/dbus/dbus-&dbus-version;.tar.gz">
-<!ENTITY dbus-md5 "0ca23fc84c09cb3d29b9c27811ff4475">
+<!ENTITY dbus-md5 "dfb810eda8780cf9debf7169b3ca5fe1">
 <!ENTITY dbus-home "http://www.freedesktop.org/wiki/Software/dbus">
 <!ENTITY dbus-ch6-du "52 MB">
 <!ENTITY dbus-ch6-sbu "0.5 SBU">
 
-<!ENTITY dejagnu-version "1.5.1">
-<!ENTITY dejagnu-size "566 KB">
+<!ENTITY dejagnu-version "1.5.2">
+<!ENTITY dejagnu-size "583 KB">
 <!ENTITY dejagnu-url "&gnu;dejagnu/dejagnu-&dejagnu-version;.tar.gz">
-<!ENTITY dejagnu-md5 "8386e04e362345f50ad169f052f4c4ab">
+<!ENTITY dejagnu-md5 "97a86a21c92ac456641a97f712ea40ac">
 <!ENTITY dejagnu-home "&gnu-software;dejagnu/">
 <!ENTITY dejagnu-ch5-du "4.1 MB">
 <!ENTITY dejagnu-ch5-sbu "less than 0.1 SBU">
@@ -230,10 +230,10 @@
 <!ENTITY gettext-ch6-du "200 MB">
 <!ENTITY gettext-ch6-sbu "2.8 SBU">
 
-<!ENTITY glibc-version "2.20">
-<!ENTITY glibc-size "11,997 KB">
+<!ENTITY glibc-version "2.21">
+<!ENTITY glibc-size "12,034 KB">
 <!ENTITY glibc-url "&gnu;glibc/glibc-&glibc-version;.tar.xz">
-<!ENTITY glibc-md5 "948a6e06419a01bd51e97206861595b0">
+<!ENTITY glibc-md5 "9cb398828e8f84f57d1f7d5588cf40cd">
 <!ENTITY glibc-home "&gnu-software;libc/">
 <!ENTITY glibc-ch5-du "592 MB">
 <!ENTITY glibc-ch5-sbu "5.0 SBU">
@@ -365,22 +365,22 @@
 <!ENTITY libpipeline-ch6-du "7.7 MB">
 <!ENTITY libpipeline-ch6-sbu "0.2 SBU">
 
-<!ENTITY libtool-version "2.4.4">
-<!ENTITY libtool-size "936 KB">
+<!ENTITY libtool-version "2.4.5">
+<!ENTITY libtool-size "949 KB">
 <!ENTITY libtool-url "&gnu;libtool/libtool-&libtool-version;.tar.xz">
-<!ENTITY libtool-md5 "51bf400de3354687d68dfa2392506b7e">
+<!ENTITY libtool-md5 "ee9c087775aeb98ce53a9c69da865a55">
 <!ENTITY libtool-home "&gnu-software;libtool/">
 <!ENTITY libtool-ch6-du "37 MB">
 <!ENTITY libtool-ch6-sbu "11.2 SBU">
 
 <!ENTITY linux-major-version "3">
 <!ENTITY linux-minor-version "18">
-<!ENTITY linux-patch-version "2">
+<!ENTITY linux-patch-version "5">
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
-<!ENTITY linux-size "79,045 KB">
+<!ENTITY linux-size "79,054 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "7b28d5543cf3647d2483830af19f3770">
+<!ENTITY linux-md5 "b655fcbc4597aa4b0cbabcfc72983259">
 <!ENTITY linux-home "http://www.kernel.org/">
 <!-- measured for 3.9.0 / gcc-4.8.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,
@@ -421,10 +421,10 @@
 <!ENTITY man-db-ch6-du "28 MB">
 <!ENTITY man-db-ch6-sbu "0.5 SBU">
 
-<!ENTITY man-pages-version "3.77">
-<!ENTITY man-pages-size "1,278 KB">
+<!ENTITY man-pages-version "3.79">
+<!ENTITY man-pages-size "1,290 KB">
 <!ENTITY man-pages-url "&kernel;linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "758625f4a4813b438337d3837a9d2c87">
+<!ENTITY man-pages-md5 "938950106f4483383dd367fe9e8aab9f">
 <!ENTITY man-pages-home "http://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-ch6-du "24 MB">
 <!ENTITY man-pages-ch6-sbu "less than 0.1 SBU">
@@ -455,10 +455,10 @@
 <!ENTITY ncurses-ch6-du "40 MB">
 <!ENTITY ncurses-ch6-sbu "0.6 SBU">
 
-<!ENTITY patch-version "2.7.1">
-<!ENTITY patch-size "660 KB">
+<!ENTITY patch-version "2.7.4">
+<!ENTITY patch-size "698 KB">
 <!ENTITY patch-url "&gnu;patch/patch-&patch-version;.tar.xz">
-<!ENTITY patch-md5 "e9ae5393426d3ad783a300a338c09b72">
+<!ENTITY patch-md5 "abc59498fcdddd44e0d07764aa105fd2">
 <!ENTITY patch-home "http://savannah.gnu.org/projects/patch/">
 <!ENTITY patch-ch5-du "9.5 MB">
 <!ENTITY patch-ch5-sbu "0.2 SBU">
@@ -562,16 +562,16 @@
 <!ENTITY texinfo-ch6-du "99 MB">
 <!ENTITY texinfo-ch6-sbu "0.6 SBU">
 
-<!ENTITY tzdata-version "2014j">
-<!ENTITY tzdata-size "284 KB">
+<!ENTITY tzdata-version "2015a">
+<!ENTITY tzdata-size "286 KB">
 <!ENTITY tzdata-url "http://www.iana.org/time-zones/repository/releases/tzdata&tzdata-version;.tar.gz">
-<!ENTITY tzdata-md5 "2d7ea9c309f0d4e162e426e568290ca3">
+<!ENTITY tzdata-md5 "4ed11c894a74a5ea64201b1c6dbb8831">
 <!ENTITY tzdata-home "http://www.iana.org/time-zones">
 
-<!ENTITY util-linux-version "2.25.2">
-<!ENTITY util-linux-size "3,617 KB">
+<!ENTITY util-linux-version "2.26-rc2">
+<!ENTITY util-linux-size "3,748 KB">
 <!ENTITY util-linux-url "&kernel;linux/utils/util-linux/v2.25/util-linux-&util-linux-version;.tar.xz">
-<!ENTITY util-linux-md5 "cab3d7be354000f629bc601238b629b3">
+<!ENTITY util-linux-md5 "cd12e74826ec1efa750a59ce1fd72057">
 <!ENTITY util-linux-home "http://freecode.com/projects/util-linux">
 <!ENTITY util-linux-ch5-du "104 MB">
 <!ENTITY util-linux-ch5-sbu "0.7 SBU">
