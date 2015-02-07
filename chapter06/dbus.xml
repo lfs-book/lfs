@@ -121,7 +121,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
       <varlistentry id="dbus-cleanup-sockets">
         <term><command>dbus-cleanup-sockets</command></term>
         <listitem>
-          <para>Used to clean up leftover sockets in a directory.</para>
+          <para>Used to clean up leftover sockets in a directory</para>
           <indexterm zone="ch-system-dbus dbus-cleanup-sockets">
             <primary sortas="b-dbus-cleanup-sockets">dbus-cleanup-sockets</primary>
           </indexterm>
@@ -131,7 +131,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
       <varlistentry id="dbus-daemon">
         <term><command>dbus-daemon</command></term>
         <listitem>
-          <para>The D-Bus message bus daemon.</para>
+          <para>The D-Bus message bus daemon</para>
           <indexterm zone="ch-system-dbus dbus-daemon">
             <primary sortas="b-dbus-daemon">dbus-daemon</primary>
           </indexterm>
@@ -142,7 +142,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
         <term><command>dbus-launch</command></term>
         <listitem>
           <para>Starts <command>dbus-daemon</command> from a shell
-          script.</para>
+          script</para>
           <indexterm zone="ch-system-dbus dbus-launch">
             <primary sortas="b-dbus-launch">dbus-launch</primary>
           </indexterm>
@@ -152,7 +152,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
       <varlistentry id="dbus-monitor">
         <term><command>dbus-monitor</command></term>
         <listitem>
-          <para>Monitors messages passing through a D-Bus message bus.</para>
+          <para>Monitors messages passing through a D-Bus message bus</para>
           <indexterm zone="ch-system-dbus dbus-monitor">
             <primary sortas="b-dbus-monitor">dbus-monitor</primary>
           </indexterm>
@@ -164,7 +164,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
         <listitem>
           <para>Starts a session bus instance of <command>dbus-daemon</command>
           from a shell script and starts a specified program in that
-          session.</para>
+          session</para>
           <indexterm zone="ch-system-dbus dbus-run-session">
             <primary sortas="b-dbus-run-session">dbus-run-session</primary>
           </indexterm>
@@ -174,7 +174,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
       <varlistentry id="dbus-send">
         <term><command>dbus-send</command></term>
         <listitem>
-          <para>Sends a message to a D-Bus message bus.</para>
+          <para>Sends a message to a D-Bus message bus</para>
           <indexterm zone="ch-system-dbus dbus-send">
             <primary sortas="b-dbus-send">dbus-send</primary>
           </indexterm>
@@ -184,7 +184,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
       <varlistentry id="dbus-uuidgen">
         <term><command>dbus-uuidgen</command></term>
         <listitem>
-          <para>Generates a universally unique ID.</para>
+          <para>Generates a universally unique ID</para>
           <indexterm zone="ch-system-dbus dbus-uuidgen">
             <primary sortas="b-dbus-uuidgen">dbus-uuidgen</primary>
           </indexterm>
@@ -195,9 +195,9 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</useri
         <term><filename class="libraryfile">libdbus-1</filename></term>
         <listitem>
           <para>Contains API functions used to communicate with the D-Bus
-          message bus.</para>
+          message bus</para>
           <indexterm zone="ch-system-dbus libdbus-1">
-            <primary sortas="c-libdbus">libdbus</primary>
+            <primary sortas="c-libdbus-1">libdbus-1</primary>
           </indexterm>
         </listitem>
       </varlistentry>
