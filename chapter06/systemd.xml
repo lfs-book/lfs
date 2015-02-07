@@ -69,6 +69,10 @@ EOF</userinput></screen>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&systemd-compat-patch;</userinput></screen>
 
+    <para>Disable a test case that always fails:</para>
+
+<screen><userinput remap="pre">sed -i "s:test/udev-test.pl ::g" Makefile.in</userinput></screen>
+
     <para>Prepare systemd for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr                                           \
@@ -173,27 +177,8 @@ EOF</userinput></screen>
 
 <screen><userinput remap="make">make LIBRARY_PATH=/tools/lib</userinput></screen>
 
-    <para>If you are going to run the test suite, first prevent a few test
-    cases from running because they fail in a chroot environment:</para>
-
-<screen><userinput remap="test">sed -e "s:test/udev-test.pl::g"              \
-    -e "s:test-bus-cleanup\$(EXEEXT) ::g"    \
-    -e "s:test-cgroup-mask\$(EXEEXT) ::g"    \
-    -e "s:test-condition-util\$(EXEEXT) ::g" \
-    -e "s:test-dhcp6-client\$(EXEEXT) ::g"   \
-    -e "s:test-engine\$(EXEEXT) ::g"         \
-    -e "s:test-journal-flush\$(EXEEXT) ::g"  \
-    -e "s:test-path-util\$(EXEEXT) ::g"      \
-    -e "s:test-sched-prio\$(EXEEXT) ::g"     \
-    -e "s:test-strv\$(EXEEXT) ::g"           \
-    -i Makefile</userinput></screen>
-
-    <para>Since the testsuite largely depends on the
-    host system kernel configuration, other tests
-    besides the ones that were previously disabled
-    may also fail. To test the results, issue:</para>
-
-<screen><userinput remap="test">make -k check</userinput></screen>
+    <para>This package has a test suite, but it can only be run after the
+    package has been installed.</para>
 
     <para>Install the package:</para>
 
@@ -220,9 +205,17 @@ ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
 <screen><userinput remap="install">sed -i "s:0775 root lock:0755 root root:g" /usr/lib/tmpfiles.d/legacy.conf</userinput></screen>
 
     <para>Create the <filename>/etc/machine-id</filename> file needed by
-    Journald:</para>
+    <command>systemd-journald</command>:</para>
 
 <screen><userinput remap="install">systemd-machine-id-setup</userinput></screen>
+
+    <para>Since the testsuite largely depends on the host system kernel
+    configuration, some tests may fail. It also needs a modification in
+    order not to look for a program that will be installed by Util-Linux
+    package later in this chapter. To test the results, issue:</para>
+
+<screen><userinput remap="test">sed -i "s:minix:ext4:g" src/test/test-path-util.c
+make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
 
   </sect2>
 

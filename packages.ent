@@ -110,8 +110,8 @@
 <!ENTITY dbus-url "http://dbus.freedesktop.org/releases/dbus/dbus-&dbus-version;.tar.gz">
 <!ENTITY dbus-md5 "dfb810eda8780cf9debf7169b3ca5fe1">
 <!ENTITY dbus-home "http://www.freedesktop.org/wiki/Software/dbus">
-<!ENTITY dbus-ch6-du "52 MB">
-<!ENTITY dbus-ch6-sbu "0.5 SBU">
+<!ENTITY dbus-ch6-du "42 MB">
+<!ENTITY dbus-ch6-sbu "0.4 SBU">
 
 <!ENTITY dejagnu-version "1.5.2">
 <!ENTITY dejagnu-size "583 KB">
@@ -530,7 +530,7 @@
 <!ENTITY systemd-url     "http://www.freedesktop.org/software/systemd/systemd-&systemd-version;.tar.xz">
 <!ENTITY systemd-md5     "4e2c511b0a7932d7fc9d79822273aac6">
 <!ENTITY systemd-home    "http://www.freedesktop.org/wiki/Software/systemd/">
-<!ENTITY systemd-ch6-du  "725 MB">
+<!ENTITY systemd-ch6-du  "753 MB">
 <!ENTITY systemd-ch6-sbu "1.8 SBU">
 
 <!ENTITY tar-version "1.28">
