@@ -244,7 +244,7 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
         /usr/lib/binfmt.d, /usr/lib/kernel, /usr/lib/modules-load.d,
         /usr/lib/sysctl.d, /usr/lib/systemd, /usr/lib/tmpfiles.d,
         /usr/share/doc/systemd-&systemd-version;, /usr/share/factory,
-        /usr/share/systemd, /var/lib/systemd, /var/log/journal</seg>
+        /usr/share/systemd, /var/lib/systemd, and /var/log/journal</seg>
       </seglistitem>
     </segmentedlist>
 
