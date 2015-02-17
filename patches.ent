@@ -30,14 +30,16 @@
 <!ENTITY mpfr-fixes-patch-md5 "5ba8bafe42920d6e570567529629bc59">
 <!ENTITY mpfr-fixes-patch-size "38 KB">
 
+<!--
 <!ENTITY perl-fix-patch "perl-&perl-version;-infinite_recurse_fix-1.patch">
 <!ENTITY perl-fix-patch-md5 "579dfed34e97e0a2fe21b74aa53946ac">
 <!ENTITY perl-fix-patch-size "11 KB">
+-->
 
 <!ENTITY readline-fixes-patch "readline-&readline-version;-upstream_fixes-3.patch">
 <!ENTITY readline-fixes-patch-md5 "6b0d9f4e79319d56a7fee9b35e5cfd1b">
 <!ENTITY readline-fixes-patch-size "8 KB">
 
 <!ENTITY systemd-compat-patch "systemd-&systemd-version;-compat-1.patch">
-<!ENTITY systemd-compat-patch-md5 "eb9f302cb72595c9011300a1b28f1d1a">
+<!ENTITY systemd-compat-patch-md5 "5b629e00a1a501a103b5561df3ccf148">
 <!ENTITY systemd-compat-patch-size "12 KB">

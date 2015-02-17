@@ -89,7 +89,6 @@ EOF</userinput></screen>
             --without-python                                        \
             --docdir=/usr/share/doc/systemd-&systemd-version;                     \
             --with-dbuspolicydir=/etc/dbus-1/system.d               \
-            --with-dbusinterfacedir=/usr/share/dbus-1/interfaces    \
             --with-dbussessionservicedir=/usr/share/dbus-1/services \
             --with-dbussystemservicedir=/usr/share/dbus-1/system-services</userinput></screen>
 
@@ -232,9 +231,9 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
         kernel-install, localectl, loginctl, machinectl, networkctl, poweroff,
         reboot, runlevel, shutdown, systemctl, systemd-analyze,
         systemd-ask-password, systemd-cat, systemd-cgls, systemd-cgtop,
-        systemd-delta, systemd-detect-virt, systemd-escape, systemd-inhibit,
-        systemd-machine-id-setup, systemd-notify, systemd-nspawn, systemd-path,
-        systemd-run, systemd-stdio-bridge, systemd-tmpfiles,
+        systemd-delta, systemd-detect-virt, systemd-escape, systemd-hwdb,
+        systemd-inhibit, systemd-machine-id-setup, systemd-notify, systemd-nspawn,
+        systemd-path, systemd-run, systemd-stdio-bridge, systemd-tmpfiles,
         systemd-tty-ask-password-agent, telinit, timedatectl, and udevadm</seg>
         <seg>libnss_myhostname.so.2, libnss_mymachines.so.2, libnss_resolve.so.2,
         libsystemd.so, and libudev.so</seg>
@@ -370,6 +369,17 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
           Machine and Container Registration Manager</para>
           <indexterm zone="ch-system-systemd machinectl">
             <primary sortas="b-machinectl">machinectl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="networkctl">
+        <term><command>networkctl</command></term>
+        <listitem>
+          <para>Used to introspect the state of the network links as seen by
+          systemd-networkd</para>
+          <indexterm zone="ch-system-systemd networkctl">
+            <primary sortas="b-networkctl">networkctl</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -512,6 +522,16 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
           <para>Used to escape strings for inclusion in systemd unit names</para>
           <indexterm zone="ch-system-systemd systemd-escape">
             <primary sortas="b-systemd-escape">systemd-escape</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="systemd-hwdb">
+        <term><command>systemd-hwdb</command></term>
+        <listitem>
+          <para>Used to manage hardware database (hwdb)</para>
+          <indexterm zone="ch-system-systemd systemd-hwdb">
+            <primary sortas="b-systemd-hwdb">systemd-hwdb</primary>
           </indexterm>
         </listitem>
       </varlistentry>
