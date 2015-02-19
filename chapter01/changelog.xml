@@ -39,6 +39,9 @@
       <para>2015-02-19</para>
       <itemizedlist>
         <listitem>
+          <para>[bdubbs] - LFS-7.7-rc1 released.</para>
+        </listitem>
+        <listitem>
           <para>[bdubbs] - Update to util-linux-2.26. Fixes 
           <ulink url="&lfs-ticket-root;3734">#3734</ulink>.</para>
         </listitem>
