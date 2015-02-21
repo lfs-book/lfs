@@ -199,9 +199,12 @@ EOF</userinput></screen>
 done
 ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
 
-    <para>Remove a reference to a non-existent group:</para>
+    <para>Remove a reference to a non-existent group and fix
+    a configuration file so it doesn't cause
+    <command>systemd-tmpfiles</command> to fail at boot:</para>
 
-<screen><userinput remap="install">sed -i "s:0775 root lock:0755 root root:g" /usr/lib/tmpfiles.d/legacy.conf</userinput></screen>
+<screen><userinput remap="install">sed -i "s:0775 root lock:0755 root root:g" /usr/lib/tmpfiles.d/legacy.conf
+sed -i "/pam.d/d" /usr/lib/tmpfiles.d/etc.conf</userinput></screen>
 
     <para>Create the <filename>/etc/machine-id</filename> file needed by
     <command>systemd-journald</command>:</para>
