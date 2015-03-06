@@ -68,6 +68,12 @@
     Glibc autoconf tests would give false results and defeat the goal
     of achieving a clean build.</para>
 
+    <para>Fix a regression in the package that affects 32-bit architectures:</para>
+
+<screen><userinput remap="pre">sed -e '/ia32/s/^/1:/' \
+    -e '/SSE2/s/^1://' \
+    -i  sysdeps/i386/i686/multiarch/mempcpy_chk.S</userinput></screen>
+
     <para>The Glibc documentation recommends building Glibc outside of the source
     directory in a dedicated build directory:</para>
 
@@ -149,7 +155,7 @@ cd ../glibc-build</userinput></screen>
 -->
       <listitem>
         <para>Other tests known to fail on some architectures are
-        malloc/tst-malloc-usable and  nptl/tst-cleanupx4. </para>
+        malloc/tst-malloc-usable and nptl/tst-cleanupx4. </para>
       </listitem>
 
     </itemizedlist>
