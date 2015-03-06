@@ -463,9 +463,7 @@
 
         <para>This package provides and <application>init</application> program
         and several additional boot and system control capabilites as an
-        alternative to Sysvinit.  It is used by many commercial distributions.
-        In LFS it is installed side-by-side with Sysvinit to provide the user with
-        alternative boot systems for comparison.</para>
+        alternative to Sysvinit. It is used by many Linux distributions.</para>
       </listitem>
 
       <listitem>
