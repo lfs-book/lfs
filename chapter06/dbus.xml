@@ -52,6 +52,7 @@
             --sysconfdir=/etc                   \
             --localstatedir=/var                \
             --docdir=/usr/share/doc/dbus-&dbus-version; \
+            --disable-static                    \
             --with-console-auth-dir=/run/console</userinput></screen>
 
     <variablelist>

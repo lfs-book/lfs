@@ -77,7 +77,7 @@
     </listitem>
 
     <listitem>
-      <para><emphasis role="strong">Glibc-2.5.1</emphasis> (Versions
+      <para><emphasis role="strong">Glibc-2.11</emphasis> (Versions
       greater than &glibc-version; are not recommended as they have
       not been tested)</para>
     </listitem>
@@ -161,7 +161,6 @@
 <screen role="nodump"><userinput>cat &gt; version-check.sh &lt;&lt; "EOF"
 <literal>#!/bin/bash
 # Simple script to list version numbers of critical development tools
-
 export LC_ALL=C
 bash --version | head -n1 | cut -d" " -f2-4
 echo "/bin/sh -&gt; `readlink -f /bin/sh`"
