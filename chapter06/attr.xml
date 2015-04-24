@@ -47,7 +47,7 @@
 <screen><userinput remap="pre">sed -i -e 's|/@pkg_name@|&amp;-@pkg_version@|' include/builddefs.in</userinput></screen>
 
     <para>Prevent installation of manual pages that were already installed by
-    Man-Pages package:</para>
+    the <xref linkend="man-pages"/> package:</para>
 
 <screen><userinput remap="pre">sed -i -e "/SUBDIRS/s|man2||" man/Makefile</userinput></screen>
 

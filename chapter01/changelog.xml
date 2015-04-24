@@ -42,8 +42,7 @@
         <listitem>
           <para>[krejzi] - Added a fix for security issue
           in Glibc (CVE-2015-1781). Thanks to Ken Moffat
-          for bringing it up and Bruce Dubbs for providing
-          the fix in form of a sed.</para>
+          for identifying the problem and the fix.</para>
         </listitem>
         <listitem>
           <para>[krejzi] - Fixed Ncurses and Perl build
@@ -56,7 +55,6 @@
         </listitem>
       </itemizedlist>
     </listitem>
-
 
     <listitem>
       <para>2015-04-21</para>
