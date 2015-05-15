@@ -1,6 +1,6 @@
-<!ENTITY version         "20150509-systemd">
+<!ENTITY version         "20150514-systemd">
 <!ENTITY short-version   "systemd">  <!-- Used in dbus chapter, change to x.y for release -->
-<!ENTITY releasedate     "May 9, 2015">
+<!ENTITY releasedate     "May 14, 2015">
 <!ENTITY copyrightdate   "1999-2015"><!-- jhalfs needs a literal dash, not &ndash; -->
 <!ENTITY milestone       "7.8">
 <!ENTITY generic-version "systemd"> <!-- Use "development", "testing", or "x.y[-pre{x}]" -->
