@@ -91,15 +91,14 @@
       </listitem>
     </varlistentry>
 -->
-<!--
     <varlistentry>
-      <term>Gcc Upstream Patch - <token>&gcc-upstream-patch-size;</token>:</term>
+      <term>Gcc Upstream Libgomp Patch - <token>&gcc-upstream-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="&patches-root;&gcc-upstream-patch;"/></para>
         <para>MD5 sum: <literal>&gcc-upstream-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
--->
+
     <varlistentry>
       <term>Glibc FHS Patch - <token>&glibc-fhs-patch-size;</token>:</term>
       <listitem>
@@ -115,7 +114,7 @@
         <para>MD5 sum: <literal>&kbd-backspace-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+<!--
     <varlistentry>
       <term>Mpfr Upstream Fixes Patch - <token>&mpfr-fixes-patch-size;</token>:</term>
       <listitem>
@@ -123,7 +122,7 @@
         <para>MD5 sum: <literal>&mpfr-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+-->
     <varlistentry>
       <term>Ncurses GCC 5 Fixes Patch - <token>&ncurses-gcc5-buildfixes-patch-size;</token>:</term>
       <listitem>
@@ -131,7 +130,7 @@
         <para>MD5 sum: <literal>&ncurses-gcc5-buildfixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+<!--
     <varlistentry>
       <term>Perl GCC 5 Fixes Patch - <token>&perl-gcc5-fixes-patch-size;</token>:</term>
       <listitem>
@@ -139,7 +138,7 @@
         <para>MD5 sum: <literal>&perl-gcc5-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+-->
     <varlistentry>
       <term>Readline Upstream Fixes Patch - <token>&readline-fixes-patch-size;</token>:</term>
       <listitem>
