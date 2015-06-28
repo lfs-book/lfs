@@ -37,6 +37,15 @@
 -->
 
     <listitem>
+      <para>2015-06-28</para>
+      <itemizedlist>
+        <listitem>
+          <para>[krejzi] - Updated to systemd-221.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2015-06-23</para>
       <itemizedlist>
         <listitem>
