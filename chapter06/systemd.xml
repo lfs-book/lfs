@@ -129,8 +129,8 @@ EOF</userinput></screen>
         <term><parameter>--without-python</parameter></term>
         <listitem>
           <para>This switch prevents <command>configure</command>
-          from trying to use Python since it's not part
-          of LFS.</para>
+          from trying to use Python which isn't built
+          in LFS.</para>
         </listitem>
       </varlistentry>
 
