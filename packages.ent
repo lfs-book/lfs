@@ -525,13 +525,13 @@
 <!ENTITY shadow-ch6-du "52 MB">
 <!ENTITY shadow-ch6-sbu "0.2 SBU">
 
-<!ENTITY systemd-version "222">
+<!ENTITY systemd-version "224">
 <!ENTITY systemd-size    "3,516 KB">
 <!ENTITY systemd-url     "http://anduin.linuxfromscratch.org/sources/other/systemd/systemd-&systemd-version;.tar.xz">
-<!ENTITY systemd-md5     "8f69ebc4f93a1deddaacc06fefc37d62">
+<!ENTITY systemd-md5     "814d12807f2449fb12dbb6d33a51cce8">
 <!ENTITY systemd-home    "http://www.freedesktop.org/wiki/Software/systemd/">
-<!ENTITY systemd-ch6-du  "920 MB">
-<!ENTITY systemd-ch6-sbu "2.2 SBU">
+<!ENTITY systemd-ch6-du  "593 MB">
+<!ENTITY systemd-ch6-sbu "4.7 SBU">
 
 <!ENTITY tar-version "1.28">
 <!ENTITY tar-size "1,921 KB">
