@@ -52,6 +52,6 @@
 <!ENTITY readline-fixes-patch-md5 "6b0d9f4e79319d56a7fee9b35e5cfd1b">
 <!ENTITY readline-fixes-patch-size "8 KB">
 
-<!ENTITY systemd-compat-patch "systemd-&systemd-version;-compat-2.patch">
-<!ENTITY systemd-compat-patch-md5 "9a0ac1bbf2ecadc632c807b7022e661f">
+<!ENTITY systemd-compat-patch "systemd-&systemd-version;-compat-3.patch">
+<!ENTITY systemd-compat-patch-md5 "5ef7a63335bd572dac54ac460caaebeb">
 <!ENTITY systemd-compat-patch-size "12 KB">
