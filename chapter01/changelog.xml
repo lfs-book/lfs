@@ -37,6 +37,37 @@
 -->
 
     <listitem>
+      <para>2015-08-19</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Add a workaround to ncurses in
+          Chapter 5 for hosts that have mawk installed.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to binutils-2.25.1.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to check-0.10.0.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to procps-ng-3.3.11.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to man-pages-4.02.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to glibc-2.22.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to linux-4.1.5.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to tzdata2015f.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+     
+    <listitem>
       <para>2015-07-23</para>
       <itemizedlist>
         <listitem>

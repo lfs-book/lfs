@@ -53,36 +53,18 @@
       an <function>iconv()</function> implementation and can convert from/to
       Unicode, therefore libiconv is not required on an LFS system.</para>
     </note>
-
     <para>Some of the Glibc programs use non-FHS compilant
     <filename class="directory">/var/db</filename> directory to store
     their runtime data. Apply the following patch to make such programs
     store their runtime data in the FHS-compliant locations:</para>
-
-<screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
-
+ 
+<screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen> 
     <para>The Glibc build system is self-contained and will install
     perfectly, even though the compiler specs file and linker are still
     pointing at <filename class="directory">/tools</filename>. The specs
     and linker cannot be adjusted before the Glibc install because the
     Glibc autoconf tests would give false results and defeat the goal
     of achieving a clean build.</para>
-
-    <para>Fix a regression in the package that affects 32-bit architectures:</para>
-
-<screen><userinput remap="pre">sed -e '/ia32/s/^/1:/' \
-    -e '/SSE2/s/^1://' \
-    -i  sysdeps/i386/i686/multiarch/mempcpy_chk.S</userinput></screen>
-
-    <para>Fix a potential security issue identified upstream:</para>
-
-<screen><userinput remap="pre">sed -i '/glibc.*pad/{i\  buflen = buflen > pad ? buflen - pad : 0;
-                     s/ + pad//}' resolv/nss_dns/dns-host.c</userinput></screen>
-
-    <para>Fix a test case that fails when built using GCC 5:</para>
-
-<screen><userinput remap="pre">sed -e '/tst-audit2-ENV/i CFLAGS-tst-audit2.c += -fno-builtin' \
-    -i elf/Makefile</userinput></screen>
 
     <para>The Glibc documentation recommends building Glibc outside of the source
     directory in a dedicated build directory:</para>
@@ -119,8 +101,9 @@ cd ../glibc-build</userinput></screen>
     <itemizedlist>
 
       <listitem>
-        <para>posix/tst-getaddrinfo4 will always fail 
-        due to not having a network connection when the tests are run.</para>
+        <para><emphasis>posix/tst-getaddrinfo4</emphasis> will always fail 
+        due to not having the necessary network applications when the tests are
+        run.</para>
       </listitem>
 
       <listitem>
@@ -150,6 +133,12 @@ cd ../glibc-build</userinput></screen>
         that has not yet been generated.</para>
       </listitem>
 -->
+      <listitem>
+        <para>The <emphasis>elf/tst-protected1a</emphasis> and
+        <emphasis>elf/tst-protected1a</emphasis> tests are known to
+        fail with the current stable version of binutils.</para>
+      </listitem>
+
       <listitem>
         <para>Other tests known to fail on some architectures are
         malloc/tst-malloc-usable and nptl/tst-cleanupx4. </para>
