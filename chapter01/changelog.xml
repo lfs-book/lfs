@@ -37,6 +37,30 @@
 -->
 
     <listitem>
+      <para>2015-08-25</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Add an upstream patch for MPFR.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to libpipeline-1.4.1.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to linux-4.1.6.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to man-db-2.7.2.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Add a patch to allow glibc to build properly on i386 systems.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Remove obsolete r* programs from inetutils.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2015-08-19</para>
       <itemizedlist>
         <listitem>
