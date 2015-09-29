@@ -37,6 +37,38 @@
 -->
 
     <listitem>
+      <para>2015-09-28</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Fix a warning when doing the GCC compile tests.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Add additional discussion about copying LFS systems
+          from one machine to another machine.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Provide ncurses non-wide-character libraries that
+          are compliant with version 5 of ncurses.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Remove unnecessary sed in e2fsprogs.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to util-linux-2.27.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to linux-4.2.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to iproute2-4.2.0.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Refresh build sizes and SBU values.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2015-08-25</para>
       <itemizedlist>
         <listitem>

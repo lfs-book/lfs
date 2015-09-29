@@ -184,7 +184,7 @@ gawk --version | head -n1
 if [ -h /usr/bin/awk ]; then
   echo "/usr/bin/awk -&gt; `readlink -f /usr/bin/awk`";
 elif [ -x /usr/bin/awk ]; then
-  echo yacc is `/usr/bin/awk --version | head -n1`
+  echo awk is `/usr/bin/awk --version | head -n1`
 else 
   echo "awk not found" 
 fi
@@ -204,7 +204,7 @@ tar --version | head -n1
 makeinfo --version | head -n1
 xz --version | head -n1
 
-echo 'main(){}' &gt; dummy.c &amp;&amp; g++ -o dummy dummy.c
+echo 'int main(){}' &gt; dummy.c &amp;&amp; g++ -o dummy dummy.c
 if [ -x dummy ]
   then echo "g++ compilation OK";
   else echo "g++ compilation failed"; fi
