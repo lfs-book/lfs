@@ -58,19 +58,28 @@
     </varlistentry>
 
     <varlistentry>
+      <term>Glibc i386 Patch - <token>&glibc-upstream-patch-size;</token>:</term>
+      <listitem>
+        <para>Download: <ulink url="&patches-root;&glibc-upstream-patch;"/></para>
+        <para>MD5 sum: <literal>&glibc-upstream-patch-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Kbd Backspace/Delete Fix Patch - <token>&kbd-backspace-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="&patches-root;&kbd-backspace-patch;"/></para>
         <para>MD5 sum: <literal>&kbd-backspace-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-<!--    <varlistentry> -->
-<!--      <term>Ncurses GCC 5 Fixes Patch - <token>&ncurses-gcc5-buildfixes-patch-size;</token>:</term>
+
+    <varlistentry>
+      <term>MPFR Upstream Fixes Patch - <token>&mpfr-upstream-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&ncurses-gcc5-buildfixes-patch;"/></para>
-        <para>MD5 sum: <literal>&ncurses-gcc5-buildfixes-patch-md5;</literal></para>
+        <para>Download: <ulink url="&patches-root;&mpfr-upstream-patch;"/></para>
+        <para>MD5 sum: <literal>&mpfr-upstream-patch-md5;</literal></para>
       </listitem>
-    </varlistentry> -->
+    </varlistentry>
 
     <varlistentry>
       <term>Readline Upstream Fixes Patch - <token>&readline-fixes-patch-size;</token>:</term>

@@ -139,9 +139,9 @@
     <!--<listitem>
       <para>Libcap-&libcap-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Libpipeline &libpipeline-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Libtool &libtool-version;</para>
     </listitem>-->
@@ -154,9 +154,9 @@
     <!--<listitem>
       <para>Make &make-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Man-DB &man-db-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Man-pages &man-pages-version;</para>
     </listitem>
@@ -246,6 +246,13 @@
       <para>&gcc-upstream-patch;</para>
     </listitem>
 -->
+    <listitem>
+      <para>&glibc-upstream-patch;</para>
+    </listitem>
+
+    <listitem>
+      <para>&mpfr-upstream-patch;</para>
+    </listitem>
 
     <listitem>
       <para>&systemd-compat-patch;</para>
