@@ -47,7 +47,8 @@
             --libdir=/usr/lib                        \
             --docdir=/usr/share/doc/procps-ng-&procps-ng-version; \
             --disable-static                         \
-            --disable-kill</userinput></screen>
+            --disable-kill                           \
+            --with-systemd</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>

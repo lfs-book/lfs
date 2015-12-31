@@ -37,6 +37,143 @@
 -->
 
     <listitem>
+      <para>2015-12-31</para>
+      <itemizedlist>
+        <listitem>
+          <para>[dj] - Use 'ipv4" instead of "yes" for DCHP configuration in
+          systemd-networkd configuration.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Modify text in network configuration page to more
+          accurately reflect current version of systemd.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Change build order for gperf before expat.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Change build order for systemd before procps-ng.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Add --with-systemd to procps-ng configuration.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to systemd-228.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to DBus-1.10.6.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Sync to LFS r10981.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Add OpenSSL as optional kernel dependency - Merged
+          from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to findutils-4.6.0 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to gettext-0.19.7 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to linux-4.3.3 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Reword FHS Compliance Note - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to perl-5.22.1 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to perl-5.22.1 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to man-pages-4.03 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Fix xz problem identified upstream - Merged from
+          trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to gcc-5.3.0 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to gmp-6.1.0 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update host requirements to require GCC-4.7 or
+          later - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Clarify that setting and using the LFS variable
+          assumes the bash shell - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to flex-2.6.0 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to man-db-2.7.5 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to kmod-22 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Add glibc-2.22-largefile-1.patch.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to linux-4.3 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to iproute2-4.3.0 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to grep-2.22 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to util-linux-2.27.1 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Revise version-check.sh to flag bad /bin/sh
+          symlinks - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to less-481 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to man-db-2.7.4 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to tzdata2015g - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Many updates to installed files and directories.  Huge
+          thanks to Fernando - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Reset location of anduin hosted files - Merged from
+          trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Change references to ncursesw5 to
+          ncursesw6.  Thanks to Pierre Labastie for the patch - Merged from
+          trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to gettext-0.19.6 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to file-5.25 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to pkg-config-0.29 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to xz-5.2.2 - Merged from trunk.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2015-09-28</para>
       <itemizedlist>
         <listitem>

@@ -41,7 +41,8 @@
     <title>Installation of systemd</title>
 
     <para>First, create a file to allow systemd to build when using Util-Linux
-    built in Chapter 5 and disable LTO by default:</para>
+    built in Chapter 5, to disable LTO by default, and to build without
+    xlstproc:</para>
 
 <screen><userinput remap="pre">cat &gt; config.cache &lt;&lt; "EOF"
 <literal>KILL=/bin/kill
@@ -53,7 +54,8 @@ BLKID_CFLAGS="-I/tools/include/blkid"
 HAVE_LIBMOUNT=1
 MOUNT_LIBS="-lmount"
 MOUNT_CFLAGS="-I/tools/include/libmount"
-cc_cv_CFLAGS__flto=no</literal>
+cc_cv_CFLAGS__flto=no
+XSLTPROC="/usr/bin/xsltproc"</literal>
 EOF</userinput></screen>
 
     <para>LTO is disabled by default because it causes <command>systemd</command>

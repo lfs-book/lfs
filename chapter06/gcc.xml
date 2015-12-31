@@ -116,7 +116,8 @@ cd ../gcc-build</userinput></screen>
 
     <para>A few unexpected failures cannot always be avoided. The GCC developers
     are usually aware of these issues, but have not resolved them yet.
-    In particular, one test in the libgomp test suite is known to fail.
+    In particular, two tests in the libstdc++ test suite are known to fail
+    when running as the root user as we do here.
     Unless the test results are vastly different from those at the above URL,
     it is safe to continue.</para>
 
@@ -139,7 +140,8 @@ cd ../gcc-build</userinput></screen>
     Link Time Optimization (LTO):</para> 
 
 <screen><userinput remap="install">install -v -dm755 /usr/lib/bfd-plugins
-ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so /usr/lib/bfd-plugins/</userinput></screen>
+ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so \
+        /usr/lib/bfd-plugins/</userinput></screen>
 
     <para>Now that our final toolchain is in place, it is important to again ensure
     that compiling and linking will work as expected. We do this by performing
@@ -374,7 +376,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         <listitem>
           <para>A wrapper around <command>ar</command> that adds a
           plugin to the command line. This program is only used
-          to add "link time optization" and is not useful with the
+          to add "link time optimization" and is not useful with the
           default build options</para>
           <indexterm zone="ch-system-gcc gcc-ar">
             <primary sortas="b-gcc-ar">gc-ar</primary>
@@ -387,7 +389,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         <listitem>
           <para>A wrapper around <command>nm</command> that adds a
           plugin to the command line. This program is only used
-          to add "link time optization" and is not useful with the
+          to add "link time optimization" and is not useful with the
           default build options</para>
           <indexterm zone="ch-system-gcc gcc-nm">
             <primary sortas="b-gcc-nm">gc-nm</primary>
@@ -400,7 +402,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         <listitem>
           <para>A wrapper around <command>ranlib</command> that adds a
           plugin to the command line. This program is only used
-          to add "link time optization" and is not useful with the
+          to add "link time optimization" and is not useful with the
           default build options</para>
           <indexterm zone="ch-system-gcc gcc-ranlib">
             <primary sortas="b-gcc-ranlib">gc-ranlib</primary>

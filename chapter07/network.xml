@@ -22,21 +22,24 @@
 
     <para>Starting with version 209, systemd ships a network configuration
     daemon called <command>systemd-networkd</command> which can be used for
-    basic network configuration.</para>
+    basic network configuration. Additionally, since version 213, DNS name
+    resolution can be handled by <command>systemd-resolved</command> in place
+    of a static <filename>/etc/resolv.conf</filename> file. Both services are
+    enabled by defualt, and absolutely should not be disabled.</para>
 
-    <para>Configuration files for <command>systemd-networkd</command> can be
-    placed in <filename class="directory">/usr/lib/systemd/network</filename>
-    or <filename class="directory">/etc/systemd/network</filename>. Note that
-    files in <filename class="directory">/etc/systemd/network</filename> have
+    <para>Configuration files for <command>systemd-networkd</command> (and
+    <command>systemd-resolved</command>) can be placed in
+    <filename class="directory">/usr/lib/systemd/network</filename>
+    or <filename class="directory">/etc/systemd/network</filename>. Files in
+    <filename class="directory">/etc/systemd/network</filename> have a
     higher priority than the ones in
-    <filename class="directory">/usr/lib/systemd/network</filename>.</para>
-
-    <para>There are three types of configuration files:
+    <filename class="directory">/usr/lib/systemd/network</filename>.
+    There are three types of configuration files:
     <filename class="extension">.link</filename>,
     <filename class="extension">.netdev</filename> and
     <filename class="extension">.network</filename> files. For detailed
-    explanation about contents of the mentioned
-    configuration files, consult <filename>systemd-link(5)</filename>,
+    descriptions and example contents of these configuration files, consult 
+    the <filename>systemd-link(5)</filename>,
     <filename>systemd-netdev(5)</filename> and
     <filename>systemd-network(5)</filename> manual pages.</para>
 
@@ -49,10 +52,11 @@
     <sect3 id="systemd-networkd-static">
       <title>Static IP Configuration</title>
 
-      <para>The command below creates a basic configuration file for
-      Static IP setup:</para>
+      <para>The command below creates a basic configuration file for a
+      Static IP setup (using both systemd-networkd and
+      systemd-resolved):</para>
 
-<screen role="nodump"><userinput>cat &gt; /etc/systemd/network/10-static-eth0.network &lt;&lt; "EOF"
+<screen role="nodump"><userinput>cat &gt; /etc/systemd/network/10-eth0-static.network &lt;&lt; "EOF"
 <literal>[Match]
 Name=eth0
 
@@ -62,26 +66,24 @@ Gateway=192.168.0.1
 DNS=192.168.0.1</literal>
 EOF</userinput></screen>
 
-      <para>More than one DNS entry can be specified in the configuration file.</para>
+      <para>Multiple DNS entries can be added if you have more than one DNS
+      server.</para>
 
     </sect3>
 
     <sect3 id="systemd-networkd-dhcp">
       <title>DHCP Configuration</title>
 
-      <para>The command below creates a basic configuration file for
+      <para>The command below creates a basic configuration file for an IPv4
       DHCP setup:</para>
 
-<screen role="nodump"><userinput>cat &gt; /etc/systemd/network/10-dhcp-eth0.network &lt;&lt; "EOF"
+<screen role="nodump"><userinput>cat &gt; /etc/systemd/network/10-eth0-dhcp.network &lt;&lt; "EOF"
 <literal>[Match]
 Name=eth0
 
 [Network]
-DHCP=yes</literal>
+DHCP=ipv4</literal>
 EOF</userinput></screen>
-
-      <para>Note that <command>systemd-networkd</command> can only handle
-      DHCPv4. DHCPv6 support is a work in progress.</para>
 
     </sect3>
 
@@ -101,8 +103,36 @@ EOF</userinput></screen>
     from the ISP or network administrator, into
     <filename>/etc/resolv.conf</filename>.</para>
 
-    <para>If static <filename>/etc/resolv.conf</filename> is desired, create
-    it by running the following command:</para>
+    <sect3 id="resolv-conf-systemd-resoloved">
+      <title>systemd-resolved Configuration</title>
+
+      <note><para>If using another means to configure your network
+      interfaces (ex: ppp, network-manager, etc.), or if using any type of
+      local resolver (ex: bind, dnsmasq, etc.), or any other software that
+      generates an <filename>/etc/resolv.conf</filename> (ex: resolvconf), the
+      <command>systemd-resolved</command> service should not be
+      used.</para></note>
+
+      <para>When using <command>systemd-resolved</command> for DNS
+      configuration, it is responsible for creating the
+      <filename>/etc/resolv.conf</filename> file, which is placed in a
+      non-standard location that is writable during early boot. In order to be
+      used by other components of the system, it is necessary to create a
+      symlink with the following command:</para>
+
+<screen><userinput>ln -sfv /run/systemd/resolve/resolv.conf /etc/resolv.conf</userinput></screen>
+
+      <para>This is required if you are specifying DNS entries in <filename
+      class="extension">.network</filename> files or using the built in
+      DHCP client to obtain DNS addresses.</para>
+
+    </sect3>
+
+    <sect3 id="resolv-conf-static">
+      <title>Static resolv.conf Configuration</title>
+
+      <para>If a static <filename>/etc/resolv.conf</filename> is desired,
+      create it by running the following command:</para>
 
 <screen role="nodump"><userinput>cat &gt; /etc/resolv.conf &lt;&lt; "EOF"
 <literal># Begin /etc/resolv.conf
@@ -114,31 +144,24 @@ nameserver <replaceable>&lt;IP address of your secondary nameserver&gt;</replace
 # End /etc/resolv.conf</literal>
 EOF</userinput></screen>
 
-    <para>The <varname>domain</varname> statement can be omitted
-    or replaced with a <varname>search</varname> statement.  See the man page for
-    resolv.conf for more details.</para>
+      <para>The <varname>domain</varname> statement can be omitted
+      or replaced with a <varname>search</varname> statement.  See the man page
+      for resolv.conf for more details.</para>
 
-    <para>Replace <replaceable>&lt;IP address of the nameserver&gt;</replaceable>
-    with the IP address of the DNS most appropriate for the setup. There will
-    often be more than one entry (requirements demand secondary servers for
-    fallback capability). If you only need or want one DNS server, remove the
-    second <emphasis>nameserver</emphasis> line from the file. The IP address
-    may also be a router on the local network.</para>
+      <para>Replace
+      <replaceable>&lt;IP address of the nameserver&gt;</replaceable>
+      with the IP address of the DNS most appropriate for the setup. There will
+      often be more than one entry (requirements demand secondary servers for
+      fallback capability). If you only need or want one DNS server, remove the
+      second <emphasis>nameserver</emphasis> line from the file. The IP address
+      may also be a router on the local network.</para>
 
-    <note><para>The Google Public IPv4 DNS addresses are 8.8.8.8 and 8.8.4.4.</para></note>
+      <note><para>The Google Public IPv4 DNS addresses are
+      <parameter>8.8.8.8</parameter> and <parameter>8.8.4.4</parameter>
+      for IPv4, and <parameter>2001:4860:4860::8888</parameter> and
+      <parameter>2001:4860:4860::8844</parameter> for IPv6.</para></note>
 
-    <para>When using <command>systemd-networkd</command> for network
-    configuration, another daemon, <command>systemd-resolved</command>,
-    is responsible for creating the <filename>/etc/resolv.conf</filename>
-    file. It is, however, placed in a non-standard location which is
-    writable since early boot, so it is necessary to create a symlink
-    to it by running the following command:</para>
-
-<screen><userinput>ln -sfv /run/systemd/resolve/resolv.conf /etc/resolv.conf</userinput></screen>
-
-    <para>This is required if you are specifying DNS entries in <filename
-    class="extension">.network</filename> files or using the built in
-    DHCP client to obtain DNS addresses.</para>
+    </sect3>
 
   </sect2>
 

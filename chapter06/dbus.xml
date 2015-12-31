@@ -48,12 +48,14 @@
 
     <para>Prepare D-Bus for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr                       \
-            --sysconfdir=/etc                   \
-            --localstatedir=/var                \
-            --docdir=/usr/share/doc/dbus-&dbus-version; \
-            --disable-static                    \
-            --with-console-auth-dir=/run/console</userinput></screen>
+<screen><userinput remap="configure">  ./configure --prefix=/usr                       \
+              --sysconfdir=/etc                   \
+              --localstatedir=/var                \
+              --disable-static                    \
+              --disable-doxygen-docs              \
+              --disable-xml-docs                  \
+              --docdir=/usr/share/doc/dbus-&dbus-version; \
+              --with-console-auth-dir=/run/console</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -72,9 +74,9 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>This package does come with a testsuite, but it requires several
+    <para>This package does come with a test suite, but it requires several
     packages that are not included in LFS. Instructions for running the
-    testsuite can be found in the BLFS book at
+    test suite can be found in the BLFS book at
     <ulink url="&blfs-book;general/dbus.html"/>.</para>
 
     <para>Install the package:</para>
