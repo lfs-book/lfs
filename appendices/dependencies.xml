@@ -1354,7 +1354,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Udev</seg>
+          <seg>Systemd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2126,7 +2126,7 @@
 
         <seglistitem>
          <seg>Acl, Attr, Bash, Binutils, Coreutils, Diffutils, Expat, Gawk,
-         GCC, Glibc, Gperf, Grep, Intltool, Libcap,
+         GCC, Gettext, Glibc, Gperf, Grep, Intltool, Kmod, Libcap,
          Make, Sed, and Util-linux</seg>
         </seglistitem>
       </segmentedlist>

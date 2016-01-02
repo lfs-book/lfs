@@ -37,6 +37,19 @@
 -->
 
     <listitem>
+      <para>2016-01-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[dj] - Fix broken build order - move xz, kmod, gettext, and
+          util-linux before systemd.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to man-pages-4.04 - Merged from trunk.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2015-12-31</para>
       <itemizedlist>
         <listitem>
