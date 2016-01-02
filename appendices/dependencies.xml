@@ -420,7 +420,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>Bash, Diffutils, Findutils, Man-DB, and Udev</seg>
+          <seg>Bash, Diffutils, Findutils, Man-DB, and Systemd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2271,7 +2271,7 @@
 
         <seglistitem>
          <seg>Bash, Binutils, Coreutils, Diffutils, Findutils, Gawk, GCC,
-         Gettext, Glibc, Grep, Make, Ncurses, Sed, Udev, and Zlib</seg>
+         Gettext, Glibc, Grep, Make, Ncurses, Sed, Systemd, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2393,7 +2393,7 @@
         <segtitle>&before;</segtitle>
 
         <seglistitem>
-          <seg>GRUB, Kmod, Man-DB, Udev</seg>
+          <seg>GRUB, Kmod, Man-DB, Systemd</seg>
         </seglistitem>
       </segmentedlist>
 

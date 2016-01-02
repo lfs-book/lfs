@@ -40,7 +40,29 @@
   <sect2 role="installation">
     <title>Installation of systemd</title>
 
-    <para>First, create a file to allow systemd to build when using Util-Linux
+    <para>First, fix a build error when using Util-Linux built in
+    Chapter 5:</para>
+
+<screen><userinput remap="pre">sed -i "s:blkid/::" $(grep -rl "blkid/blkid.h")</userinput></screen>
+
+    <para>Apply the following patch so that compat
+    <command>pkg-config</command> files get installed without installing compat
+    libs which are useless on LFS:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../&systemd-compat-patch;</userinput></screen>
+
+    <para>Disable two tests that always fail:</para>
+
+<screen><userinput remap="pre">sed -e 's:test/udev-test.pl ::g'  \
+    -e 's:test-copy$(EXEEXT) ::g' \
+    -i Makefile.in</userinput></screen>
+
+    <para>Rebuild generated files after modifying Makefile.am and 
+    Makefile.in:</para>
+
+<screen><userinput remap="pre">autoreconf -fi</userinput></screen>
+
+    <para>Create a file to allow systemd to build when using Util-Linux
     built in Chapter 5, to disable LTO by default, and to build without
     xlstproc:</para>
 
@@ -58,26 +80,10 @@ cc_cv_CFLAGS__flto=no
 XSLTPROC="/usr/bin/xsltproc"</literal>
 EOF</userinput></screen>
 
-    <para>LTO is disabled by default because it causes <command>systemd</command>
-    and other auxiliary programs to link to <filename
-    class="libraryfile">libgcc_s.so</filename>, slows the build down and makes the
-    compiled code larger.</para>
-
-    <para>Additionally, fix a build error when using Util-Linux built in
-    Chapter 5:</para>
-
-<screen><userinput remap="pre">sed -i "s:blkid/::" $(grep -rl "blkid/blkid.h")</userinput></screen>
-
-    <para>Apply the following patch so that compat <command>pkg-config</command> files
-    get installed without installing compat libs which are useless on LFS:</para>
-
-<screen><userinput remap="pre">patch -Np1 -i ../&systemd-compat-patch;</userinput></screen>
-
-    <para>Disable two tests that always fail:</para>
-
-<screen><userinput remap="pre">sed -e 's:test/udev-test.pl ::g'  \
-    -e 's:test-copy$(EXEEXT) ::g' \
-    -i Makefile.in</userinput></screen>
+    <para>LTO is disabled by default because it causes
+    <command>systemd</command> and other auxiliary programs to link to
+    <filename class="libraryfile">libgcc_s.so</filename>, slows the build down
+    and makes the compiled code larger.</para>
 
     <para>Prepare systemd for compilation:</para>
 

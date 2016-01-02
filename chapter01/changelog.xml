@@ -37,6 +37,21 @@
 -->
 
     <listitem>
+      <para>2016-01-02</para>
+      <itemizedlist>
+        <listitem>
+          <para>[dj] - Fix build of systemd with libblkid and libmount in
+          /tools/lib and move util-linux to its previous build order to
+          solve reciprocal dependency.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Removed /etc/resolv.conf symlink in network
+          configuration as it is created automatically if needed.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2016-01-01</para>
       <itemizedlist>
         <listitem>
