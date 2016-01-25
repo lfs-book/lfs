@@ -37,6 +37,19 @@
 -->
 
     <listitem>
+      <para>2016-01-24</para>
+      <itemizedlist>
+        <listitem>
+          <para>[dj] - Update to coreutils-8.25 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Simplify bash installation procedures - Merged from
+          trunk.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2016-01-17</para>
       <itemizedlist>
         <listitem>
@@ -67,7 +80,7 @@
     </listitem>
 
     <listitem>
-      <para>2016-01-01</para>
+      <para>2016-01-17</para>
       <itemizedlist>
         <listitem>
           <para>[dj] - Fix broken build order - move xz, kmod, gettext, and
