@@ -37,6 +37,17 @@
 -->
 
     <listitem>
+      <para>2016-01-28</para>
+      <itemizedlist>
+        <listitem>
+          <para>[dj] - Move external build directories into 
+          dedicated build directories inside the source tree for 
+          binutils, gcc, and glibc - Merged from trunk.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2016-01-24</para>
       <itemizedlist>
         <listitem>
