@@ -37,6 +37,16 @@
 -->
 
     <listitem>
+      <para>2016-01-29</para>
+      <itemizedlist>
+        <listitem>
+          <para>[dj] - Corrected installation of nscd configuration after move
+          to in-tree build directory for glibc.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2016-01-28</para>
       <itemizedlist>
         <listitem>
