@@ -55,23 +55,23 @@ cd       build</userinput></screen>
 
     <para>Next, prepare Glibc for compilation:</para>
 
-<screen><userinput remap="configure">../configure                                        \
-      --prefix=/tools                               \
-      --host=$LFS_TGT                               \
-      --build=$(../glibc-&glibc-version;/scripts/config.guess) \
-      --disable-profile                             \
-      --enable-kernel=&min-kernel;                        \
-      --enable-obsolete-rpc                         \
-      --with-headers=/tools/include                 \
-      libc_cv_forced_unwind=yes                     \
-      libc_cv_ctors_header=yes                      \
+<screen><userinput remap="configure">../configure                             \
+      --prefix=/tools                    \
+      --host=$LFS_TGT                    \
+      --build=$(../scripts/config.guess) \
+      --disable-profile                  \
+      --enable-kernel=&min-kernel;             \
+      --enable-obsolete-rpc              \
+      --with-headers=/tools/include      \
+      libc_cv_forced_unwind=yes          \
+      libc_cv_ctors_header=yes           \
       libc_cv_c_cleanup=yes</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
 
       <varlistentry>
-        <term><parameter>--host=$LFS_TGT, --build=$(../glibc-&glibc-version;/scripts/config.guess)</parameter></term>
+        <term><parameter>--host=$LFS_TGT, --build=$(../scripts/config.guess)</parameter></term>
         <listitem>
           <para>The combined effect of these switches is that Glibc's build system
           configures itself to cross-compile, using the cross-linker and
