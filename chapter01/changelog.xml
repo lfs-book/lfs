@@ -37,6 +37,15 @@
 -->
 
     <listitem>
+      <para>2016-02-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[dj] - Updated to libcap-2.25.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2016-01-29</para>
       <itemizedlist>
         <listitem>
