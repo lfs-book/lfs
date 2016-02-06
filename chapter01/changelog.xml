@@ -37,6 +37,24 @@
 -->
 
     <listitem>
+      <para>2016-02-06</para>
+      <itemizedlist>
+        <listitem>
+          <para>[dj] - Updated to grep-2.23 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Updated to linux-4.1.1 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Updated to binutils-2.26 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Updated to tzdata-2016a - Merged from trunk.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2016-02-01</para>
       <itemizedlist>
         <listitem>
