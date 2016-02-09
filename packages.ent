@@ -552,15 +552,15 @@
 <!ENTITY tcl-ch5-du "41 MB">
 <!ENTITY tcl-ch5-sbu "0.5 SBU">
 
-<!ENTITY texinfo-version "6.0">
-<!ENTITY texinfo-size "3,991 KB">
+<!ENTITY texinfo-version "6.1">
+<!ENTITY texinfo-size "4,416 KB">
 <!ENTITY texinfo-url "&gnu;texinfo/texinfo-&texinfo-version;.tar.xz">
-<!ENTITY texinfo-md5 "02818e62a5b8ae0213a7ff572991bb50">
+<!ENTITY texinfo-md5 "1d7ec1888fae00730693597852b00cde">
 <!ENTITY texinfo-home "&gnu-software;texinfo/">
-<!ENTITY texinfo-ch5-du "98 MB">
-<!ENTITY texinfo-ch5-sbu "0.3 SBU">
-<!ENTITY texinfo-ch6-du "106 MB">
-<!ENTITY texinfo-ch6-sbu "0.7 SBU">
+<!ENTITY texinfo-ch5-du "99 MB">
+<!ENTITY texinfo-ch5-sbu "0.2 SBU">
+<!ENTITY texinfo-ch6-du "104 MB">
+<!ENTITY texinfo-ch6-sbu "0.4 SBU">
 
 <!ENTITY tzdata-version "2016a">
 <!ENTITY tzdata-size "296 KB">
