@@ -53,8 +53,8 @@
 
     <para>Disable two tests that always fail:</para>
 
-<screen><userinput remap="pre">sed -e 's:test/udev-test.pl ::g'  \
-    -e 's:test-copy$(EXEEXT) ::g' \
+<screen><userinput remap="pre">sed -e 's@test/udev-test.pl @@'  \
+    -e 's@test-copy$(EXEEXT) @@' \
     -i Makefile.in</userinput></screen>
 
     <para>Rebuild generated files after modifying Makefile.am and 
@@ -211,9 +211,11 @@ EOF</userinput></screen>
 done
 ln -sfv ../lib/systemd/systemd /sbin/init</userinput></screen>
 
+<!--
     <para>Remove a reference to a non-existent group:</para>
 
 <screen><userinput remap="install">sed -i "s:0775 root lock:0755 root root:g" /usr/lib/tmpfiles.d/legacy.conf</userinput></screen>
+-->
 
     <para>Create the <filename>/etc/machine-id</filename> file needed by
     <command>systemd-journald</command>:</para>
@@ -244,11 +246,12 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
         reboot, runlevel, shutdown, systemctl, systemd-analyze,
         systemd-ask-password, systemd-cat, systemd-cgls, systemd-cgtop,
         systemd-delta, systemd-detect-virt, systemd-escape, systemd-hwdb,
-        systemd-inhibit, systemd-machine-id-setup, systemd-notify, systemd-nspawn,
-        systemd-path, systemd-run, systemd-stdio-bridge, systemd-tmpfiles,
-        systemd-tty-ask-password-agent, telinit, timedatectl, and udevadm</seg>
-        <seg>libnss_myhostname.so.2, libnss_mymachines.so.2, libnss_resolve.so.2,
-        libsystemd.so, and libudev.so</seg>
+        systemd-inhibit, systemd-machine-id-setup, systemd-notify,
+        systemd-nspawn, systemd-path, systemd-resolve, systemd-run,
+        systemd-stdio-bridge, systemd-tmpfiles, systemd-tty-ask-password-agent,
+        telinit, timedatectl, and udevadm</seg>
+        <seg>libnss_myhostname.so.2, libnss_mymachines.so.2,
+        libnss_resolve.so.2, libsystemd.so, and libudev.so</seg>
         <seg>/etc/binfmt.d, /etc/init.d, /etc/kernel, /etc/modules-load.d,
         /etc/sysctl.d, /etc/systemd, /etc/tmpfiles.d, /etc/udev,
         /etc/xdg/systemd, /lib/systemd, /lib/udev, /usr/include/systemd,
@@ -443,8 +446,8 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
       <varlistentry id="systemctl">
         <term><command>systemctl</command></term>
         <listitem>
-          <para>Used to introspect and control the state of the systemd system and
-          service manager</para>
+          <para>Used to introspect and control the state of the systemd system
+          and service manager</para>
           <indexterm zone="ch-system-systemd systemctl">
             <primary sortas="b-systemctl">systemctl</primary>
           </indexterm>
@@ -454,8 +457,8 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
       <varlistentry id="systemd-analyze">
         <term><command>systemd-analyze</command></term>
         <listitem>
-          <para>Used to determine system boot-up performance of the current boot
-          </para>
+          <para>Used to determine system boot-up performance of the current
+          boot</para>
           <indexterm zone="ch-system-systemd systemd-analyze">
             <primary sortas="b-systemd-analyze">systemd-analyze</primary>
           </indexterm>
@@ -465,8 +468,8 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
       <varlistentry id="systemd-ask-password">
         <term><command>systemd-ask-password</command></term>
         <listitem>
-          <para>Used to query a system password or passphrase from the user, using a
-          question message specified on the command line</para>
+          <para>Used to query a system password or passphrase from the user,
+          using a question message specified on the command line</para>
           <indexterm zone="ch-system-systemd systemd-ask-password">
             <primary sortas="b-systemd-ask-password">systemd-ask-password</primary>
           </indexterm>
@@ -487,8 +490,8 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
       <varlistentry id="systemd-cgls">
         <term><command>systemd-cgls</command></term>
         <listitem>
-          <para>Recursively shows the contents of the selected Linux control group
-          hierarchy in a tree</para>
+          <para>Recursively shows the contents of the selected Linux control
+          group hierarchy in a tree</para>
           <indexterm zone="ch-system-systemd systemd-cgls">
             <primary sortas="b-systemd-cgls">systemd-cgls</primary>
           </indexterm>
@@ -498,8 +501,8 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
       <varlistentry id="systemd-cgtop">
         <term><command>systemd-cgtop</command></term>
         <listitem>
-          <para>Shows the top control groups of the local Linux control group hierarchy,
-          ordered by their CPU, memory and disk I/O load</para>
+          <para>Shows the top control groups of the local Linux control group
+          hierarchy, ordered by their CPU, memory and disk I/O load</para>
           <indexterm zone="ch-system-systemd systemd-cgtop">
             <primary sortas="b-systemd-cgtop">systemd-cgtop</primary>
           </indexterm>
@@ -531,7 +534,8 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
       <varlistentry id="systemd-escape">
         <term><command>systemd-escape</command></term>
         <listitem>
-          <para>Used to escape strings for inclusion in systemd unit names</para>
+          <para>Used to escape strings for inclusion in systemd unit
+          names</para>
           <indexterm zone="ch-system-systemd systemd-escape">
             <primary sortas="b-systemd-escape">systemd-escape</primary>
           </indexterm>
@@ -551,8 +555,8 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
       <varlistentry id="systemd-inhibit">
         <term><command>systemd-inhibit</command></term>
         <listitem>
-          <para>Used to execute a program with a shutdown, sleep or idle inhibitor lock
-          taken</para>
+          <para>Used to execute a program with a shutdown, sleep or idle
+          inhibitor lock taken</para>
           <indexterm zone="ch-system-systemd systemd-inhibit">
             <primary sortas="b-systemd-inhibit">systemd-inhibit</primary>
           </indexterm>
@@ -562,9 +566,9 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
       <varlistentry id="systemd-machine-id-setup">
         <term><command>systemd-machine-id-setup</command></term>
         <listitem>
-          <para>Used by system installer tools to initialize the machine ID stored in
-          <filename>/etc/machine-id</filename> at install time with a randomly
-          generated ID</para>
+          <para>Used by system installer tools to initialize the machine ID
+          stored in <filename>/etc/machine-id</filename> at install time with a
+          randomly generated ID</para>
           <indexterm zone="ch-system-systemd systemd-machine-id-setup">
             <primary sortas="b-systemd-machine-id-setup">systemd-machine-id-setup</primary>
           </indexterm>
@@ -574,8 +578,8 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
       <varlistentry id="systemd-notify">
         <term><command>systemd-notify</command></term>
         <listitem>
-          <para>Used by daemon scripts to notify the init system about status changes
-          </para>
+          <para>Used by daemon scripts to notify the init system about status
+          changes</para>
           <indexterm zone="ch-system-systemd systemd-notify">
             <primary sortas="b-systemd-notify">systemd-notify</primary>
           </indexterm>
@@ -585,7 +589,8 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
       <varlistentry id="systemd-nspawn">
         <term><command>systemd-nspawn</command></term>
         <listitem>
-          <para>Used to run a command or OS in a light-weight namespace container</para>
+          <para>Used to run a command or OS in a light-weight namespace
+          container</para>
           <indexterm zone="ch-system-systemd systemd-nspawn">
             <primary sortas="b-systemd-nspawn">systemd-nspawn</primary>
           </indexterm>
@@ -602,11 +607,22 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="systemd-resolve">
+        <term><command>systemd-resolve</command></term>
+        <listitem>
+          <para>Used to resolve domain names, IPV4 and IPv6 addresses, DNS
+          resource records, and services</para>
+          <indexterm zone="ch-system-systemd systemd-resolve">
+            <primary sortas="b-systemd-resolve">systemd-resolve</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="systemd-run">
         <term><command>systemd-run</command></term>
         <listitem>
-          <para>Used to create and start a transient .service or a .scope unit and
-          run the specified command in it</para>
+          <para>Used to create and start a transient .service or a .scope unit
+          and run the specified command in it</para>
           <indexterm zone="ch-system-systemd systemd-run">
             <primary sortas="b-systemd-run">systemd-run</primary>
           </indexterm>
@@ -626,8 +642,9 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
       <varlistentry id="systemd-tmpfiles">
         <term><command>systemd-tmpfiles</command></term>
         <listitem>
-          <para>Creates, deletes and cleans up volatile and temporary files and directories,
-          based on the configuration file format and location specified in
+          <para>Creates, deletes and cleans up volatile and temporary files and
+          directories, based on the configuration file format and location
+          specified in
           <filename class="directory">tmpfiles.d</filename> directories</para>
           <indexterm zone="ch-system-systemd systemd-tmpfiles">
             <primary sortas="b-systemd-tmpfiles">systemd-tmpfiles</primary>
@@ -648,7 +665,8 @@ make LD_LIBRARY_PATH=/tools/lib -k check</userinput></screen>
       <varlistentry id="telinit">
         <term><command>telinit</command></term>
         <listitem>
-          <para>Tells <command>init</command> which run-level to change to</para>
+          <para>Tells <command>init</command> which run-level to change
+          to</para>
           <indexterm zone="ch-system-systemd telinit">
             <primary sortas="b-telinit">telinit</primary>
           </indexterm>
