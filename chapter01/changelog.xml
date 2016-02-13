@@ -40,6 +40,9 @@
       <para>2016-02-13</para>
       <itemizedlist>
         <listitem>
+          <para>[dj] - Add description for base32 in coreutils.</para>
+        </listitem>
+        <listitem>
           <para>[dj] - Updated to systemd-229.</para>
         </listitem>
       </itemizedlist>
