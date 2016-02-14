@@ -87,21 +87,18 @@ EOF</userinput></screen>
 
     <para>Prepare systemd for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr                                           \
-            --sysconfdir=/etc                                       \
-            --localstatedir=/var                                    \
-            --config-cache                                          \
-            --with-rootprefix=                                      \
-            --with-rootlibdir=/lib                                  \
-            --enable-split-usr                                      \
-            --disable-firstboot                                     \
-            --disable-ldconfig                                      \
-            --disable-sysusers                                      \
-            --without-python                                        \
-            --docdir=/usr/share/doc/systemd-&systemd-version;                     \
-            --with-dbuspolicydir=/etc/dbus-1/system.d               \
-            --with-dbussessionservicedir=/usr/share/dbus-1/services \
-            --with-dbussystemservicedir=/usr/share/dbus-1/system-services</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr          \
+            --sysconfdir=/etc      \
+            --localstatedir=/var   \
+            --config-cache         \
+            --with-rootprefix=     \
+            --with-rootlibdir=/lib \
+            --enable-split-usr     \
+            --disable-firstboot    \
+            --disable-ldconfig     \
+            --disable-sysusers     \
+            --without-python       \
+            --docdir=/usr/share/doc/systemd-&systemd-version;</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -171,14 +168,6 @@ EOF</userinput></screen>
           <filename>/etc/group</filename> and
           <filename>/etc/passwd</filename> files. Both files
           were created early in this chapter.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--with-dbus*</parameter></term>
-        <listitem>
-          <para>These switches ensure that D-Bus configuration files
-          get installed in the correct locations.</para>
         </listitem>
       </varlistentry>
 

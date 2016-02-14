@@ -45,6 +45,11 @@
         <listitem>
           <para>[dj] - Updated to systemd-229.</para>
         </listitem>
+        <listitem>
+          <para>[Chris] - Removed obsolete --dbus* switches from systemd
+          installation - current systemd sets reasonable defaults for D-Bus
+          files.</para>
+        </listitem>
       </itemizedlist>
     </listitem>
 
