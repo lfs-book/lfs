@@ -35,6 +35,17 @@
       </itemizedlist>
     </listitem>
 -->
+    <listitem>
+      <para>2016-02-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Document test suite failures.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update package timings and statistics.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
     <listitem>
       <para>2016-02-13</para>
