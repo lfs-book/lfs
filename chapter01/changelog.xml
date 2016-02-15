@@ -36,8 +36,11 @@
     </listitem>
 -->
     <listitem>
-      <para>2016-02-15</para>
+      <para>2016-02-14</para>
       <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - LFS-7.9-systemd-rc1 released.</para>
+        </listitem>
         <listitem>
           <para>[renodr] - Document test suite failures.</para>
         </listitem>
