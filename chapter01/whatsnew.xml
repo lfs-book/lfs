@@ -238,9 +238,9 @@
     <title>Added:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
 
-    <listitem>
+    <!--<listitem>
       <para>&glibc-largefile-patch;</para>
-    </listitem>
+    </listitem>-->
 
     <!--<listitem>
       <para>&glibc-upstream-patch;</para>
