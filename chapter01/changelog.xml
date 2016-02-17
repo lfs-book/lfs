@@ -36,6 +36,15 @@
     </listitem>
 -->
     <listitem>
+      <para>2016-02-16</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Add patches for mpfr, binutils, gcc, glibc, and bash</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2016-02-15</para>
       <itemizedlist>
         <listitem>

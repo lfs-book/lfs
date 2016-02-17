@@ -238,6 +238,30 @@
     <title>Added:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
 
+    <listitem>
+      <para>&bash-fixes-patch;</para>
+    </listitem>
+
+    <listitem>
+      <para>&binutils-upstream-patch;</para>
+    </listitem>
+
+<!--    <listitem>
+      <para>&gcc-upstream-patch;</para>
+    </listitem> -->
+
+    <listitem>
+      <para>&glibc-largefile-patch;</para>
+    </listitem>
+
+    <listitem>
+      <para>&glibc-upstream-patch2;</para>
+    </listitem>
+
+    <listitem>
+      <para>&mpfr-upstream-patch;</para>
+    </listitem>
+
     <!--<listitem>
       <para>&glibc-largefile-patch;</para>
     </listitem>-->
