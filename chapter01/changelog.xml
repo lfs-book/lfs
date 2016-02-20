@@ -36,10 +36,23 @@
     </listitem>
 -->
     <listitem>
+      <para>2016-02-19</para>
+      <itemizedlist>
+        <listitem>
+          <para>[dj] - Update to glibc-2.23 - Merged from trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Update to linux-4.4.2 - Merged from trunk.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2016-02-16</para>
       <itemizedlist>
         <listitem>
-          <para>[renodr] - Add patches for mpfr, binutils, gcc, glibc, and bash</para>
+          <para>[renodr] - Add patches for mpfr, binutils, gcc, glibc, and
+          bash</para>
         </listitem>
       </itemizedlist>
     </listitem>
