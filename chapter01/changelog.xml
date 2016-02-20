@@ -39,6 +39,9 @@
       <para>2016-02-19</para>
       <itemizedlist>
         <listitem>
+          <para>[bdubbs] - LFS-7.9-systemd-rc2 released.</para>
+        </listitem>
+        <listitem>
           <para>[dj] - Update to glibc-2.23 - Merged from trunk.</para>
         </listitem>
         <listitem>
