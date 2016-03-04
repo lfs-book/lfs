@@ -36,6 +36,22 @@
     </listitem>
 -->
     <listitem>
+      <para>2016-03-04</para>
+      <itemizedlist>
+        <listitem>
+          <para>[dj] - Prevent attr and shadow from overwriting
+          man pages installed by the man-pages package - Merged from
+          trunk.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Retain flex static library for automake
+          regression tests.  Remove at the end of Chapter 6 - Merged from
+          trunk.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2016-02-19</para>
       <itemizedlist>
         <listitem>
