@@ -1,10 +1,10 @@
-<!ENTITY version         "SVN-20160307">
-<!ENTITY short-version   "svn">  <!-- Used below in &blfs-book;. Change to x.y for release 
+<!ENTITY version         "7.9">
+<!ENTITY short-version   "7.9">  <!-- Used below in &blfs-book;. Change to x.y for release 
                                       but not -rc releases -->
-<!ENTITY releasedate     "March 07, 2016">
+<!ENTITY releasedate     "March 8, 2016">
 <!ENTITY copyrightdate   "1999-2016"><!-- jhalfs needs a literal dash, not &ndash; -->
 <!ENTITY milestone       "7.9">
-<!ENTITY generic-version "development"> <!-- Use "development", "testing", or "x.y[-pre{x}]" -->
+<!ENTITY generic-version "7.9"> <!-- Use "development", "testing", or "x.y[-pre{x}]" -->
 
 <!ENTITY lfs-root        "http://www.linuxfromscratch.org/">
 <!ENTITY blfs-root       "&lfs-root;blfs/">
