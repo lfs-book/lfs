@@ -36,6 +36,18 @@
     </listitem>
 -->
     <listitem>
+      <para>2016-03-29</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - LFS 7.9-systemd released.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Updated build times and sizes.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2016-03-04</para>
       <itemizedlist>
         <listitem>
@@ -54,6 +66,9 @@
     <listitem>
       <para>2016-02-19</para>
       <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - LFS-7.9-systemd-rc2 released.</para>
+        </listitem>
         <listitem>
           <para>[dj] - Update to glibc-2.23 - Merged from trunk.</para>
         </listitem>
