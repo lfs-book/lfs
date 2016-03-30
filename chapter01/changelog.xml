@@ -35,6 +35,73 @@
       </itemizedlist>
     </listitem>
 -->
+
+    <listitem>
+      <para>2016-03-30</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Added DJ Lucas to the list of authors.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Updated dependencies for Gawk. Merged from trunk r11036.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Updated to linux-4.4.4. Merged from trunk r11034.</para>
+        </listitem>
+        <listitem> 
+          <para>[renodr] - Updated to mpfr-3.1.4. Merged from trunk r11034.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Updated to pkg-config-0.29.1. Merged from trunk r11034.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Updated to tcl-core-8.6.5. Merged from trunk r11034.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Removed pcprofiledump and libpcprofile.so from the
+          installed files list on the Glibc page. Merged from trunk r11034.
+          </para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Added the creation of /var/log/faillog. Merged from
+          trunk r11034.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Removed the --disable-profile and
+          --enable-obsolete-rpc options from Glibc. Merged from trunk r11034
+          </para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Cleaned up patches file.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Cleaned up whatsnew file.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Cleaned up changelog of former changes.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Merged various spelling changes from r11030,
+          r11031, </para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Disable static libraries in texinfo and
+          document installation of XSParagraph.so. Merged from trunk r11032.
+          </para>
+        </listitem>
+      </itemizedlist>
+   </listitem>
+
+    <listitem>
+      <para>2016-03-29</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - LFS 7.9-systemd released.</para>
+        </listitem>
+      </itemizedlist>
+   </listitem>
+
+<!-- LFS-7.9-systemd>
     <listitem>
       <para>2016-03-04</para>
       <itemizedlist>
@@ -54,6 +121,9 @@
     <listitem>
       <para>2016-02-19</para>
       <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - LFS-7.9-systemd-rc2 released.</para>
+        </listitem>
         <listitem>
           <para>[dj] - Update to glibc-2.23 - Merged from trunk.</para>
         </listitem>
@@ -95,7 +165,7 @@
           <para>[dj] - Updated to systemd-229.</para>
         </listitem>
         <listitem>
-          <para>[Chris] - Removed obsolete --dbus* switches from systemd
+          <para>[Chris] - Removed obsolete - -dbus* switches from systemd
           installation - current systemd sets reasonable defaults for D-Bus
           files.</para>
         </listitem>
@@ -236,7 +306,7 @@
           <para>[dj] - Change build order for systemd before procps-ng.</para>
         </listitem>
         <listitem>
-          <para>[dj] - Add --with-systemd to procps-ng configuration.</para>
+          <para>[dj] - Add - -with-systemd to procps-ng configuration.</para>
         </listitem>
         <listitem>
           <para>[dj] - Update to systemd-228.</para>
@@ -746,7 +816,7 @@
           before first use.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Use --with-glibc-version=2.11 in gcc-pass1.</para>
+          <para>[bdubbs] - Use - -with-glibc-version=2.11 in gcc-pass1.</para>
         </listitem>
         <listitem>
           <para>[bdubbs] - Update to dejagnu-1.5.3. Fixes
@@ -859,6 +929,7 @@
         </listitem>
       </itemizedlist>
     </listitem>
+-->
 
   </itemizedlist>
 </sect1>
