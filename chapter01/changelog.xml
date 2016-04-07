@@ -35,6 +35,51 @@
       </itemizedlist>
     </listitem>
 -->
+    <listitem>
+      <para>2016-04-07</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Add a caution in the gmp section about possible
+          "Illegal Instruction" errors if the host is misidentified or the
+          libraries are copied to different systems.
+          Merged from trunk r11044.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Remove obsolete note about iconv() in Chapter 6
+          Glibc. Minor adjustments to the text in the same section as well.
+          Merged from trunk r11043.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Add a note about UEFI and Secure Boot to Chapter 8
+          "Using GRUB to Set Up the Boot Process". Merged from trunk r11043.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Add notes about paths for 64-bit systems in Chapter
+          6 "Adjusting the Toolchain". Merged from trunk r11043.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to linux-4.5. Merged from trunk r11042.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to grep-2.24. Merged from trunk r11042.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to expat-2.1.1. Merged from trunk r11042.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to tzdata-2016c. Merged from trunk r11042.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to iproute2-4.5.0. Merged from trunk r11042.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to man-pages-4.05. Merged from trunk r11042.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to gzip-1.7. Merged from trunk r11042.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
     <listitem>
       <para>2016-03-30</para>

@@ -42,7 +42,7 @@
 
   <sect2 role="installation">
     <title>Installation of Glibc</title>
-
+<!--
     <note>
       <para>Some packages outside of LFS suggest installing GNU libiconv in
       order to translate data from one encoding to another. The project's
@@ -53,6 +53,15 @@
       an <function>iconv()</function> implementation and can convert from/to
       Unicode, therefore libiconv is not required on an LFS system.</para>
     </note>
+-->
+
+    <note><para>The Glibc build system is self-contained and will install
+    perfectly, even though the compiler specs file and linker are still
+    pointing to <filename class="directory">/tools</filename>. The specs
+    and linker cannot be adjusted before the Glibc install because the
+    Glibc autoconf tests would give false results and defeat the goal
+    of achieving a clean build.</para></note>
+
     <para>Some of the Glibc programs use non-FHS compilant
     <filename class="directory">/var/db</filename> directory to store
     their runtime data. Apply the following patch to make such programs
@@ -65,20 +74,7 @@
     and linker cannot be adjusted before the Glibc install because the
     Glibc autoconf tests would give false results and defeat the goal
     of achieving a clean build.</para>
-<!--
-    <para>Now fix a build problem that affects i386 systems:</para>
 
-<screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-patch;</userinput></screen>
-
-    <para>The most recent stable version of Glibc does not handle large files
-    correctly.  Fix the problem with this patch:</para>
-
-<screen><userinput remap="pre">patch -Np1 -i ../&glibc-largefile-patch;</userinput></screen>
-
-    <para>Finally, update some recent changes from the upstream repository:</para>
-
-<screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-patch2;</userinput></screen>
--->
     <para>The Glibc documentation recommends building Glibc 
     in a dedicated build directory:</para>
 
@@ -130,13 +126,13 @@ cd       build</userinput></screen>
         systems where the CPU is not a relatively new Intel or
         AMD processor.</para>
       </listitem>
-<!--
+      
       <listitem>
-        <para>The <emphasis>elf/tst-protected1b</emphasis> and
-        <emphasis>elf/tst-protected1b</emphasis> tests are known to
-        fail with the current stable version of binutils.</para>
+        <para>The
+        <emphasis>nptl/tst-thread-affinity-{pthread,pthread2,sched}</emphasis>
+        tests may fail for reasons that have not been determined. </para>
       </listitem>
--->
+
       <listitem>
         <para>Other tests known to fail on some architectures are
         malloc/tst-malloc-usable and nptl/tst-cleanupx4. </para>
@@ -165,8 +161,8 @@ mkdir -pv /var/cache/nscd</userinput></screen>
 <screen><userinput remap="install">install -v -Dm644 ../nscd/nscd.tmpfiles /usr/lib/tmpfiles.d/nscd.conf
 install -v -Dm644 ../nscd/nscd.service /lib/systemd/system/nscd.service</userinput></screen>
 
-    <para>The locales that can make the system respond in a different language
-    were not installed by the above command. None of the locales are required,
+    <para>Next, install the locales that can make the system respond in a 
+    different language. None of the locales are required,
     but if some of them are missing, test suites of the future packages would
     skip important testcases.</para>
 
