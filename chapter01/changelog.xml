@@ -36,6 +36,65 @@
     </listitem>
 -->
     <listitem>
+      <para>2016-05-06</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Updated to util-linux-2.28. Merged from trunk
+          r11046.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Simplified gzip instructions. Merged from trunk
+          r11046.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to dejagnu-1.6. Merged from trunk r11048.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Wording change in Chapter 6 GCC. 
+          Merged from trunk r11048.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to file-5.26.
+          Merged from trunk r11049.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to gcc-6.1.0.
+          Merged from trunk r11049.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to grep-2.25.
+          Merged from trunk r11049.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to gzip-1.8.
+          Merged from trunk r11049.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to linux-4.5.2.
+          Merged from trunk r11049.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to tzdata-2016d.
+          Merged from trunk r11049.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Updated the binutils upstream fixes patch.
+          Merged from trunk r11049.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Added a patch for glibc which addresses a
+          security issue and build failure with GCC-6.x. Merged from trunk
+          r11049.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Note that configure in texinfo-6.1 incorrectly
+          complains about the --disable-static switch. Merged from trunk
+          r11051.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2016-04-07</para>
       <itemizedlist>
         <listitem>
