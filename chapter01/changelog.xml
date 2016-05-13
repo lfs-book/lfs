@@ -36,6 +36,15 @@
     </listitem>
 -->
     <listitem>
+      <para>2016-05-13</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Fixed gzip instructions.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2016-05-06</para>
       <itemizedlist>
         <listitem>
