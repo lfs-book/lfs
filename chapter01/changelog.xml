@@ -36,6 +36,28 @@
     </listitem>
 -->
     <listitem>
+      <para>2016-05-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Updated to file-5.27. Merged from trunk
+          r11056.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Updated to man-pages-4.06. Merged from trunk
+          r11056.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Updated to perl-5.22.2. Merged from trunk
+          r11056.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Updated size requirements. Merged from trunk
+          r11056.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2016-05-14</para>
       <itemizedlist>
         <listitem>
