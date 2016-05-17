@@ -196,9 +196,9 @@
     <!--<listitem>
       <para>Systemd &systemd-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Tar &tar-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Tcl-core-&tcl-version;</para>
     </listitem>-->
