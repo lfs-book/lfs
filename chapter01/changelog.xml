@@ -61,14 +61,14 @@
       <para>2016-05-18</para>
       <itemizedlist>
         <listitem>
-          <para>[rendor] - Updated to tar-1.29. Merged from trunk r11060.</para>
+          <para>[renodr] - Updated to tar-1.29. Merged from trunk r11060.</para>
         </listitem>
         <listitem>
-          <para>[rendor] - Updated to linux-4.6. Merged from trunk
+          <para>[renodr] - Updated to linux-4.6. Merged from trunk
           r11060.</para>
         </listitem>
         <listitem>
-          <para>[rendor] - Updated to perl-5.24.0. Merged from trunk
+          <para>[renodr] - Updated to perl-5.24.0. Merged from trunk
           r11060.</para>
         </listitem>
       </itemizedlist>
