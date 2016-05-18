@@ -36,16 +36,40 @@
     </listitem>
 -->
     <listitem>
-      <para>2016-05-17</para>
+      <para>2016-05-18</para>
       <itemizedlist>
         <listitem>
-          <para>[renodr] - Updated to linux-4.6. Merged from trunk r11060.</para>
+          <para>[dj] - Enhance the stripping commands at the end
+          of Chapter 6. Merged from trunk r11064.</para>
         </listitem>
         <listitem>
-          <para>[renodr] - Update to perl-5.24.0. Merged from trunk r11060.</para>
+          <para>[dj] - Added stages page to Chapter 2. Merged from trunk
+          r11063.</para>
         </listitem>
         <listitem>
-          <para>[renodr] - Updated to tar-1.29. Merged from trunk r11060.</para>
+          <para>[dj] - Made editorial changes to the kernel section. Merged
+          from trunk r11062.</para>
+        </listitem>
+        <listitem>
+          <para>[dj] - Moved Host System Requirements to Chapter 2
+          and made minor editorial changes. Merged from trunk r11061.</para>
+        </listitem>
+     </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2016-05-18</para>
+      <itemizedlist>
+        <listitem>
+          <para>[rendor] - Updated to tar-1.29. Merged from trunk r11060.</para>
+        </listitem>
+        <listitem>
+          <para>[rendor] - Updated to linux-4.6. Merged from trunk
+          r11060.</para>
+        </listitem>
+        <listitem>
+          <para>[rendor] - Updated to perl-5.24.0. Merged from trunk
+          r11060.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -55,19 +79,19 @@
       <itemizedlist>
         <listitem>
           <para>[renodr] - Updated to file-5.27. Merged from trunk
-          r11056.</para>
+          r11057.</para>
         </listitem>
         <listitem>
           <para>[renodr] - Updated to man-pages-4.06. Merged from trunk
-          r11056.</para>
+          r11057.</para>
         </listitem>
         <listitem>
           <para>[renodr] - Updated to perl-5.22.2. Merged from trunk
-          r11056.</para>
+          r11057.</para>
         </listitem>
         <listitem>
           <para>[renodr] - Updated size requirements. Merged from trunk
-          r11056.</para>
+          r11057.</para>
         </listitem>
       </itemizedlist>
     </listitem>
