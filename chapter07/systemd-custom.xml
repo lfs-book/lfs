@@ -120,4 +120,20 @@ EOF</userinput></screen>
 
   </sect2>
 
+<!--TBA
+  <sect2>
+    <title>Working with journalctl</title>
+
+    <para>Logging on a system booted with systemd is handled by the systemd
+    journal.</para>
+
+    <itemizedlist>
+       <listitem><para>journalctl -r </para></listitem>
+       <listitem><para>journalctl -u <replaceable>UNIT</replaceable></para></listitem>
+       <listitem><para>journalctl -b[=ID] -r</para></listitem>
+       <listitem><para>journalctl -f</para></listitem>
+    </itemizedlist>
+
+  </sect2>
+-->
 </sect1>

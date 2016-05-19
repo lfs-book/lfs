@@ -36,6 +36,17 @@
     </listitem>
 -->
     <listitem>
+      <para>2016-05-19</para>
+      <itemizedlist>
+        <listitem>
+          <para>[dj] - Adjust hosts file instructions to account for hosts
+          using automatic configuration. Ajusted eplanatory text to account for 
+          additional configurations.</para>
+        </listitem>
+     </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2016-05-18</para>
       <itemizedlist>
         <listitem>
