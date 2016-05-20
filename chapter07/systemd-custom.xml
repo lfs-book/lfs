@@ -108,32 +108,68 @@ EOF</userinput></screen>
   <sect2>
     <title>Debugging the Boot Sequence</title>
 
-    <para>There are several commands that can be used to help debug the systemd 
-    boot process. Here are some examples:</para>
+    <para>Rather than plain shell scripts used in SysVinit or BSD style init
+    systems, systemd uses a unified format for different type of startup
+    files (or units). The command <command>systemctl</command> is used to
+    enable, disable, controll state, and obtain status of unit files. Here 
+    are some examples of frequently used commands:</para>
 
     <itemizedlist>
-       <listitem><para>systemctl list-units -t service [--all]</para></listitem>
-       <listitem><para>systemctl list-units -t target  [--all]</para></listitem>
-       <listitem><para>systemctl show -p Wants multi-user.target</para></listitem>
-       <listitem><para>systemctl status sshd.service</para></listitem>
+       <listitem>
+         <para><command>systemctl list-units -t <replaceable>&lt;service&gt;</replaceable> [--all]</command>:
+         lists loaded unit files of type service.</para>
+       </listitem>
+       <listitem>
+         <para><command>systemctl list-units -t <replaceable>&lt;target&gt;</replaceable> [--all]</command>:
+         lists loaded unit files of type target.</para>
+       </listitem>
+       <listitem>
+         <para><command>systemctl show -p Wants <replaceable>&lt;multi-user.target&gt;</replaceable></command>:
+         shows all units that depend on the multi-user target. Targets are
+         special unit files that are anogalous to runlevels under
+         SysVinit.</para>
+       </listitem>
+       <listitem>
+         <para><command>systemctl status <replaceable>&lt;servicename.service&gt;</replaceable></command>:
+         shows the status of the servicename service. The .service extension
+         can be omitted if there are no other unit files with the same name,
+         such as .socket files (which create a listening socket that provides
+         similar functionality to inetd/xinetd).</para>
+       </listitem>
     </itemizedlist>
 
   </sect2>
 
-<!--TBA
   <sect2>
-    <title>Working with journalctl</title>
+    <title>Working with the Systemd Journal</title>
 
-    <para>Logging on a system booted with systemd is handled by the systemd
-    journal.</para>
+    <para>Logging on a system booted with systemd is handled by
+    systemd-journald (default), rather than a typical unix syslog daemon. 
+    systemd-journald write log entries to a binary file format, rather than
+    a plain text log file. To assist with parsing the file, the command
+    <command>journalctl</command> is provided. Here are some examples of
+    frequently used commands:</para>
 
     <itemizedlist>
-       <listitem><para>journalctl -r </para></listitem>
-       <listitem><para>journalctl -u <replaceable>UNIT</replaceable></para></listitem>
-       <listitem><para>journalctl -b[=ID] -r</para></listitem>
-       <listitem><para>journalctl -f</para></listitem>
+       <listitem>
+         <para><command>journalctl -r</command>: shows all contents of the
+         journal in reverse chronological order.</para>
+       </listitem>
+       <listitem>
+         <para><command>journalctl -u <replaceable>UNIT</replaceable></command>:
+         shows the journal entries associated with the specified UNIT
+         file.</para>
+       </listitem>
+       <listitem>
+         <para><command>journalctl -b[=ID] -r</command>: shows the journal
+         entries since last successfull boot (or for boot ID) in reverse
+         chronological order.</para>
+       </listitem>
+       <listitem>
+         <para><command>journalctl -f</command>: povides functionality similar
+         to tail -f (follow).</para>
+       </listitem>
     </itemizedlist>
 
   </sect2>
--->
 </sect1>

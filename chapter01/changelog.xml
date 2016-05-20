@@ -36,6 +36,16 @@
     </listitem>
 -->
     <listitem>
+      <para>2016-05-20</para>
+      <itemizedlist>
+        <listitem>
+          <para>[dj] - Add additional explanatory text for sytemctl and
+          journalctl commands.</para>
+        </listitem>
+     </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2016-05-19</para>
       <itemizedlist>
         <listitem>

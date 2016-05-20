@@ -63,11 +63,13 @@ Name=eth0
 [Network]
 Address=192.168.0.2/24
 Gateway=192.168.0.1
-DNS=192.168.0.1</literal>
+DNS=192.168.0.1
+Domains=<replaceable>&lt;Your Domain Name&gt;</replaceable></literal>
 EOF</userinput></screen>
 
       <para>Multiple DNS entries can be added if you have more than one DNS
-      server.</para>
+      server. Do not include DNS or Domains entries if you intend to use a
+      static <filename>/etc/reslov.conf</filename> file.</para>
 
     </sect3>
 
@@ -82,7 +84,10 @@ EOF</userinput></screen>
 Name=eth0
 
 [Network]
-DHCP=ipv4</literal>
+DHCP=ipv4
+
+[DHCP]
+UseDomains=true</literal>
 EOF</userinput></screen>
 
     </sect3>
