@@ -1,13 +1,13 @@
-<!ENTITY version         "SVN-20160824">
-<!ENTITY short-version   "svn">  <!-- Used below in &blfs-book; 
+<!ENTITY version         "7.10">
+<!ENTITY short-version   "7.10">  <!-- Used below in &blfs-book; 
                                       Change to x.y for release but not -rc releases -->
-<!ENTITY generic-version "development"> <!-- Use "development"  or "x.y[-pre{x}]" -->
+<!ENTITY generic-version "7.10"> <!-- Use "development"  or "x.y[-pre{x}]" -->
 
-<!ENTITY versiond        "20160824-systemd">
-<!ENTITY short-versiond  "systemd">
-<!ENTITY generic-versiond "systemd"> 
+<!ENTITY versiond        "7.10-systemd">
+<!ENTITY short-versiond  "7.10">
+<!ENTITY generic-versiond "7.10"> 
 
-<!ENTITY releasedate     "August 24, 2016">
+<!ENTITY releasedate     "September 7, 2016">
 <!ENTITY copyrightdate   "1999-2016"><!-- jhalfs needs a literal dash, not &ndash; -->
 <!ENTITY milestone       "7.10">
 

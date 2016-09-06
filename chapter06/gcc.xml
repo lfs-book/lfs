@@ -119,6 +119,14 @@ cd       build</userinput></screen>
     Unless the test results are vastly different from those at the above URL,
     it is safe to continue.</para>
 
+    <note><para>On some systems, numerous test failures (over 1100 unexpected
+    failures out of over 200,000 tests) have been reported.  These failures in
+    <filename class='directory'>gcc.target/i386/mpx/</filename> are related to
+    the Intel MPX (Memory Protection Extensions) tests and failures are due to
+    the kernel configuration or the specific CPU architecture.
+    <emphasis>These</emphasis> test failures are harmless and can be
+    ignored.</para></note>
+
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
