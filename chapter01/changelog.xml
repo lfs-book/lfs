@@ -165,7 +165,7 @@
         </listitem>
         <listitem>
           <para>[bdubbs] - Update to tcl-core8.6.6. Fixes
-          <ulink url="&lfs-ticket-root;3969">#3960</ulink>.</para>
+          <ulink url="&lfs-ticket-root;3960">#3960</ulink>.</para>
         </listitem>
       </itemizedlist>
    </listitem>
@@ -300,19 +300,19 @@
           <ulink url="&lfs-ticket-root;3938">#3938</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[dj] - Update to e2fsprogs-1.43. Fixes
+          <para>[bdubbs] - Update to e2fsprogs-1.43. Fixes
           <ulink url="&lfs-ticket-root;3935">#3935</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[dj] - Update to gdbm-1.12. Fixes
+          <para>[bdubbs] - Update to gdbm-1.12. Fixes
           <ulink url="&lfs-ticket-root;3933">#3933</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[dj] - Update to iproute2-4.6.0. Fixes
+          <para>[bdubbs] - Update to iproute2-4.6.0. Fixes
           <ulink url="&lfs-ticket-root;3934">#3934</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[dj] - Update to make-4.2. Fixes
+          <para>[bdubbs] - Update to make-4.2. Fixes
           <ulink url="&lfs-ticket-root;3936">#3936</ulink>.</para>
         </listitem>
         <listitem revision="systemd">
@@ -326,7 +326,7 @@
       <para>2016-05-20</para>
       <itemizedlist>
         <listitem>
-          <para>[dj] - Add additional explanatory text for sytemctl and
+          <para>[dj] - Add additional explanatory text for systemctl and
           journalctl commands.</para>
         </listitem>
      </itemizedlist>
