@@ -1,0 +1,176 @@
+Index: chapter05/gcc-pass1.xml
+===================================================================
+--- chapter05/gcc-pass1.xml	(revision 11147)
++++ chapter05/gcc-pass1.xml	(working copy)
+@@ -68,8 +68,7 @@
+     class="directory">/usr/include</filename> from GCC's include search path.
+     Issue:</para>
+ 
+-<screen><userinput remap="pre">for file in \
+- $(find gcc/config -name linux64.h -o -name linux.h -o -name sysv4.h)
++<screen><userinput remap="pre">for file in gcc/config/{linux,i386/linux{,64}}.h
+ do
+   cp -uv $file{,.orig}
+   sed -e 's@/lib\(64\)\?\(32\)\?/ld@/tools&amp;@g' \
+@@ -97,7 +96,18 @@
+     Finally, we use <command>touch</command> to update the timestamp on the
+     copied files.  When used in conjunction with <command>cp -u</command>, this
+     prevents unexpected changes to the original files in case the commands are
+-    inadvertently run twice.  </para>
++    inadvertently run twice.</para>
++
++    <para>Finally, on x86_64 hosts, set the default directory name for
++    64-bit libraries to <quote>lib</quote>:</para>
++
++<screen><userinput remap="pre">case $(uname -m) in
++  x86_64)
++    sed -e '/m64=/s/lib64/lib/' \
++        -i.orig gcc/config/i386/t-linux64
++ ;;
++esac</userinput></screen>
++
+ <!--
+     <para>GCC doesn't detect stack protection correctly, which causes problems
+     for the build of Glibc-&glibc-version;, so fix that by issuing the following
+@@ -123,6 +133,7 @@
+     --target=$LFS_TGT                              \
+     --prefix=/tools                                \
+     --with-glibc-version=2.11                      \
++    --with-slibdir=/tools/lib                      \
+     --with-sysroot=$LFS                            \
+     --with-newlib                                  \
+     --without-headers                              \
+Index: chapter05/gcc-pass2.xml
+===================================================================
+--- chapter05/gcc-pass2.xml	(revision 11147)
++++ chapter05/gcc-pass2.xml	(working copy)
+@@ -70,8 +70,7 @@
+     use the one installed in <filename
+     class="directory">/tools</filename>.</para>
+ 
+-<screen><userinput remap="pre">for file in \
+- $(find gcc/config -name linux64.h -o -name linux.h -o -name sysv4.h)
++<screen><userinput remap="pre">for file in gcc/config/{linux,i386/linux{,64}}.h
+ do
+   cp -uv $file{,.orig}
+   sed -e 's@/lib\(64\)\?\(32\)\?/ld@/tools&amp;@g' \
+@@ -84,6 +83,16 @@
+   touch $file.orig
+ done</userinput></screen>
+ 
++    <para>If building on x86_64, change the default directory name for 64-bit
++    libraries to <quote>lib</quote>:</para>
++
++<screen><userinput remap="pre">case $(uname -m) in
++  x86_64)
++    sed -e '/m64=/s/lib64/lib/' \
++        -i.orig gcc/config/i386/t-linux64
++  ;;
++esac</userinput></screen>
++
+     <para>As in the first build of GCC it requires the GMP, MPFR and MPC
+     packages. Unpack the tarballs and move them into the required directory
+     names:</para>
+@@ -117,6 +126,7 @@
+     --prefix=/tools                                \
+     --with-local-prefix=/tools                     \
+     --with-native-system-header-dir=/tools/include \
++    --with-slibdir=/tools/lib                      \
+     --enable-languages=c,c++                       \
+     --disable-libstdcxx-pch                        \
+     --disable-multilib                             \
+Index: chapter06/creatingdirs.xml
+===================================================================
+--- chapter06/creatingdirs.xml	(revision 11147)
++++ chapter06/creatingdirs.xml	(working copy)
+@@ -24,9 +24,7 @@
+ mkdir -pv /usr/{,local/}share/man/man{1..8}
+ 
+ case $(uname -m) in
+- x86_64) ln -sv lib /lib64
+-         ln -sv lib /usr/lib64
+-         ln -sv lib /usr/local/lib64 ;;
++ x86_64) mkdir -v /lib64 ;;
+ esac
+ 
+ mkdir -v /var/{log,mail,spool}
+Index: chapter06/gcc.xml
+===================================================================
+--- chapter06/gcc.xml	(revision 11147)
++++ chapter06/gcc.xml	(working copy)
+@@ -45,6 +45,16 @@
+ 
+ <screen><userinput remap="pre">patch -Np1 -i ../gcc-6.1.0-asan-1.patch</userinput></screen>
+ -->
++    <para>If building on x86_64, change the default direcotory name for 64-bit
++    libraries to <quote>lib</quote>:</para>
++
++<screen><userinput remap="pre">case $(uname -m) in
++  x86_64)
++    sed -e '/m64=/s/lib64/lib/' \
++        -i.orig gcc/config/i386/t-linux64
++  ;;
++esac</userinput></screen>
++
+     <para>The GCC documentation recommends building GCC in a dedicated build directory:</para>
+ 
+ <screen><userinput remap="pre">mkdir -v build
+@@ -175,10 +185,8 @@
+ 
+   <para>Depending on your machine architecture, the above may differ slightly,
+   the difference usually being the name of the directory
+-  after <filename class="directory">/usr/lib/gcc</filename>. If your machine is
+-  a 64-bit system, you may also see a directory named <filename class="directory">lib64</filename>
+-  towards the end of the string. The important thing to
+-  look for here is that <command>gcc</command> has found all three
++  after <filename class="directory">/usr/lib/gcc</filename>. The important
++  thing to look for here is that <command>gcc</command> has found all three
+   <filename>crt*.o</filename> files under the
+   <filename class="directory">/usr/lib</filename> directory.</para>
+ 
+Index: chapter06/glibc.xml
+===================================================================
+--- chapter06/glibc.xml	(revision 11147)
++++ chapter06/glibc.xml	(working copy)
+@@ -57,6 +57,18 @@
+ 
+ <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
+ 
++    <para>Create a symlink for LSB compliance and, for x86_64, a
++    compatibility symlink required for the dynamic loader to function
++    correctly:</para>
++
++<screen><userinput remap="pre">case $(uname -m) in
++    x86) ln -s ld-linux.so.2 /lib/ld-lsb.so.3
++    ;;
++    x86_64) ln -s ../lib/ld-linux-x86-64.so.2 /lib64
++            ln -s ../lib/ld-linux-x86-64.so.2 /lib64/ld-lsb-x86-64.so.3
++    ;;
++esac</userinput></screen>
++
+     <para>The Glibc documentation recommends building Glibc 
+     in a dedicated build directory:</para>
+ 
+@@ -67,7 +79,8 @@
+ 
+ <screen><userinput remap="configure">../configure --prefix=/usr          \
+              --enable-kernel=&min-kernel; \
+-             --enable-obsolete-rpc</userinput></screen>
++             --enable-obsolete-rpc        \
++             libc_cv_slibdir=/lib</userinput></screen>
+ 
+     <para>Compile the package:</para>
+ 
+Index: chapter06/libcap.xml
+===================================================================
+--- chapter06/libcap.xml	(revision 11147)
++++ chapter06/libcap.xml	(working copy)
+@@ -55,7 +55,7 @@
+ 
+     <para>Install the package:</para>
+ 
+-<screen><userinput remap="install">make RAISE_SETFCAP=no prefix=/usr install
++<screen><userinput remap="install">make RAISE_SETFCAP=no lib=lib prefix=/usr install
+ chmod -v 755 /usr/lib/libcap.so</userinput></screen>
+ 
+     <variablelist>

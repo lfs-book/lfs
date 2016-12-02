@@ -55,7 +55,7 @@
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make RAISE_SETFCAP=no prefix=/usr install
+<screen><userinput remap="install">make RAISE_SETFCAP=no lib=lib prefix=/usr install
 chmod -v 755 /usr/lib/libcap.so</userinput></screen>
 
     <variablelist>
