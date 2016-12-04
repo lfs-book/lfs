@@ -133,7 +133,6 @@ cd       build</userinput></screen>
     --target=$LFS_TGT                              \
     --prefix=/tools                                \
     --with-glibc-version=2.11                      \
-    --with-slibdir=/tools/lib                      \
     --with-sysroot=$LFS                            \
     --with-newlib                                  \
     --without-headers                              \

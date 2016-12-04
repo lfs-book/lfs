@@ -126,7 +126,6 @@ RANLIB=$LFS_TGT-ranlib                             \
     --prefix=/tools                                \
     --with-local-prefix=/tools                     \
     --with-native-system-header-dir=/tools/include \
-    --with-slibdir=/tools/lib                      \
     --enable-languages=c,c++                       \
     --disable-libstdcxx-pch                        \
     --disable-multilib                             \
