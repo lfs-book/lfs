@@ -1,7 +1,7 @@
 <!ENTITY version         "8.1">
 <!ENTITY short-version   "8.1">  <!-- Used below in &blfs-book; 
                                       Change to x.y for release but not -rc releases -->
-<!ENTITY generic-version "8,1"> <!-- Use "development"  or "x.y[-pre{x}]" -->
+<!ENTITY generic-version "8.1"> <!-- Use "development"  or "x.y[-pre{x}]" -->
 
 <!ENTITY versiond        "8.1-systemd">
 <!ENTITY short-versiond  "systemd">
