@@ -43,6 +43,19 @@
     appropriate for the entry or if needed the entire day's listitem.
 -->
     <listitem>
+      <para>2018-09-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - LFS-8.3 released.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-4.18.5. Fixes
+          <ulink url="&lfs-ticket-root;4337">#4337</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2018-08-25</para>
       <itemizedlist>
         <listitem>

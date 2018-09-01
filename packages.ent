@@ -375,11 +375,11 @@
 <!ENTITY less-ch6-sbu "less than 0.1 SBU">
 
 <!ENTITY lfs-bootscripts-version "20180820">      <!-- Scripts depend on this format -->
-<!ENTITY lfs-bootscripts-size "BOOTSCRIPTS-SIZE KB">        
+<!ENTITY lfs-bootscripts-size "32 KB">        
 <!ENTITY lfs-bootscripts-url "&downloads-root;lfs-bootscripts-&lfs-bootscripts-version;.tar.bz2">
-<!ENTITY lfs-bootscripts-md5 "BOOTSCRIPTS-MD5SUM">  
+<!ENTITY lfs-bootscripts-md5 "57c9501afe65b95bc4428f344ab2c85e">  
 <!ENTITY lfs-bootscripts-home " ">
-<!ENTITY lfs-bootscripts-ch7-du "BOOTSCRIPTS-INSTALL-KB KB"> 
+<!ENTITY lfs-bootscripts-ch7-du "244 KB"> 
 <!ENTITY lfs-bootscripts-ch7-sbu "less than 0.1 SBU">
 
 <!ENTITY libcap-version "2.25">
@@ -416,12 +416,12 @@
 
 <!ENTITY linux-major-version "4">
 <!ENTITY linux-minor-version "18">
-<!ENTITY linux-patch-version "1">
+<!ENTITY linux-patch-version "5">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;"> -->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "99,409 KB">
+<!ENTITY linux-size "99,411 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "70b08b4bb5bfe1783d79cd41e2303970">
+<!ENTITY linux-md5 "22851fe6c82db6673a844bbb7c62df67">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 4.8.3 / gcc-6.2.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,
