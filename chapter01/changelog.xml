@@ -46,6 +46,9 @@
       <para>2019-02-011</para>
       <itemizedlist>
         <listitem>
+          <para>[bdubbs] - LFS-8.4-rc1 released.</para>
+        </listitem>
+        <listitem>
           <para>[bdubbs] - Fix a problem when building Python in
           Chapter 5 where some hosts may use host dependent 
           headers.</para>
