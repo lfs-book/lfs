@@ -73,7 +73,7 @@ esac</userinput></screen>
 <screen><userinput remap="pre">for file in gcc/config/{linux,i386/linux{,64}}.h
 do
   cp -uv $file{,.orig}
-  sed -e 's@/lib\(64\)\?\(32\)\?/ld@/tools&amp;@g' \
+  sed -e 's@/lib\(64\)\?\(32\)\?\(x32\)\?/ld@/tools&amp;@g' \
       -e 's@/usr@/tools@g' $file.orig &gt; $file
   echo '
 #undef STANDARD_STARTFILE_PREFIX_1
@@ -83,31 +83,59 @@ do
   touch $file.orig
 done</userinput></screen>
 
-    <para>If building on x86_64, change the default directory name for 64-bit
-    libraries to <quote>lib</quote>:</para>
+    <para arch="default">If building on x86_64, change the default directory
+    name for 64-bit libraries to <quote>lib</quote>:</para>
 
-<screen><userinput remap="pre">case $(uname -m) in
+<screen arch="default"><userinput remap="pre">case $(uname -m) in
   x86_64)
     sed -e '/m64=/s/lib64/lib/' \
         -i.orig gcc/config/i386/t-linux64
   ;;
 esac</userinput></screen>
 
-    <para>As in the first build of GCC it requires the GMP, MPFR and MPC
-    packages. Unpack the tarballs and move them into the required directory
-    names:</para>
+    <para arch="multilib">Change the default directory name for 64-bit
+    libraries to <quote>lib</quote>:</para>
 
-<screen><userinput remap="pre">tar -xf ../mpfr-&mpfr-version;.tar.xz
+<screen arch="multilib"><userinput remap="pre">sed -e '/m64=/s/lib64/lib/' \
+    -i.orig gcc/config/i386/t-linux64
+cat > gcc/config/i386/t-linux64 &lt;&lt;"EOF"
+comma=,
+MULTILIB_OPTIONS    = $(subst $(comma),/,$(TM_MULTILIB_CONFIG))
+MULTILIB_DIRNAMES   = $(patsubst m%, %, $(subst /, ,$(MULTILIB_OPTIONS)))
+MULTILIB_OSDIRNAMES = m64=../lib$(call if_multiarch,:x86_64-linux-gnu)
+MULTILIB_OSDIRNAMES+= m32=../lib32$(call if_multiarch,:i386-linux-gnu)
+MULTILIB_OSDIRNAMES+= mx32=../libx32$(call if_multiarch,:x86_64-linux-gnux32)
+EOF</userinput></screen>
+
+    <para arch="default">As in the first build of GCC it requires the GMP,
+    MPFR, and MPC packages. Unpack the tarballs and move them into the
+    required directory names:</para>
+
+    <para arch="multilib">As in the first build of GCC it requires the GMP,
+    ISL, MPFR, and MPC packages. Unpack the tarballs and move them into the
+    required directory names:</para>
+
+<screen arch="default"><userinput remap="pre">tar -xf ../mpfr-&mpfr-version;.tar.xz
 mv -v mpfr-&mpfr-version; mpfr
 tar -xf ../gmp-&gmp-version;.tar.xz
 mv -v gmp-&gmp-version; gmp
 tar -xf ../mpc-&mpc-version;.tar.gz
 mv -v mpc-&mpc-version; mpc</userinput></screen>
-<!--
-    <para>As in the first build of GCC, fix a problem identified upstream:</para>
+<screen arch="multilib"><userinput remap="pre">tar -xf ../mpfr-&mpfr-version;.tar.xz
+mv -v mpfr-&mpfr-version; mpfr
+tar -xf ../gmp-&gmp-version;.tar.xz
+mv -v gmp-&gmp-version; gmp
+tar -xf ../mpc-&mpc-version;.tar.gz
+mv -v mpc-&mpc-version; mpc
+tar -xf ../isl-&isl-version;.tar.xz
+mv -v isl-&isl-version; isl</userinput></screen>
 
-<screen><userinput remap="pre">sed -i 's/if \((code.*))\)/if (\1 \&amp;\&amp; \!DEBUG_INSN_P (insn))/' gcc/sched-deps.c</userinput></screen>
--->
+    <!-- Following patch might be obsolete with gcc >= 8.2.1 --> 
+    <para arch="multilib">Fix an issue with isl-&isl-version;:</para>
+
+<screen arch="multilib"><userinput remap="pre">sed -e "/#include &lt;isl\/schedule_node.h&gt;/ a#include &lt;isl/id.h&gt;\n#include &lt;isl/space.h&gt;" \
+    -i gcc/graphite.h</userinput></screen>
+
     <para>Create a separate build directory again:</para>
 
 <screen><userinput remap="pre">mkdir -v build
@@ -118,7 +146,7 @@ cd       build</userinput></screen>
 
     <para>Now prepare GCC for compilation:</para>
 
-<screen><userinput remap="configure">CC=$LFS_TGT-gcc                                    \
+<screen arch="default"><userinput remap="configure">CC=$LFS_TGT-gcc                                    \
 CXX=$LFS_TGT-g++                                   \
 AR=$LFS_TGT-ar                                     \
 RANLIB=$LFS_TGT-ranlib                             \
@@ -129,6 +157,22 @@ RANLIB=$LFS_TGT-ranlib                             \
     --enable-languages=c,c++                       \
     --disable-libstdcxx-pch                        \
     --disable-multilib                             \
+    --disable-bootstrap                            \
+    --disable-libgomp</userinput></screen>
+
+<screen arch="multilib"><userinput remap="configure">CC=$LFS_TGT-gcc                                    \
+CXX=$LFS_TGT-g++                                   \
+AR=$LFS_TGT-ar                                     \
+RANLIB=$LFS_TGT-ranlib                             \
+../configure                                       \
+    --prefix=/tools                                \
+    --with-local-prefix=/tools                     \
+    --with-native-system-header-dir=/tools/include \
+    --enable-languages=c,c++                       \
+    --disable-libstdcxx-pch                        \
+    --enable-multilib                              \
+    --with-multilib-list=m32,m64,mx32              \
+    --with-system-zlib                             \
     --disable-bootstrap                            \
     --disable-libgomp</userinput></screen>
 
@@ -199,8 +243,27 @@ readelf -l a.out | grep ': /tools'</userinput></screen>
 
 <screen><computeroutput>[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]</computeroutput></screen>
 
-    <para>Note that the dynamic linker will be /tools/lib/ld-linux.so.2 
-    for 32-bit machines.</para>
+
+    <para arch="multilib">Repeat the test for 32-bit:</para>
+
+<screen arch="multilib"><userinput>cc -m32 dummy.c
+readelf -l a.out | grep ': /tools'</userinput></screen>
+
+    <para arch="multilib">In this case, the output shoud be:</para>
+
+<screen arch="multilib"><computeroutput>[Requesting program interpreter: /tools/lib/ld-linux.so.2]</computeroutput></screen>
+
+    <para arch="multilib">Repeat the test for x32-bit:</para>
+
+<screen arch="multilib"><userinput>cc -mx32 dummy.c
+readelf -l a.out | grep ': /tools'</userinput></screen>
+
+    <para arch="multilib">In this case, the output shoud be:</para>
+
+<screen arch="multilib"><computeroutput>[Requesting program interpreter: /tools/lib/ld-linux-x32.so.2]</computeroutput></screen>
+
+    <para arch="default">Note that the dynamic linker will be
+    /tools/lib/ld-linux.so.2 for 32-bit machines.</para>
 
     <para>If the output is not shown as above or there was no output at all,
     then something is wrong. Investigate and retrace the steps to find out

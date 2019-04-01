@@ -104,6 +104,79 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
 
   </sect2>
 
+  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI 32 ~~~~~~~~~~~~~~~~~~~~ -->
+  
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Eudev - 32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+    <para>Prepare Eudev for compilation:</para>
+
+<screen><userinput remap="configure">CC="gcc -m32" \
+./configure --host=i686-pc-linux-gnu     \
+            --prefix=/usr                \
+            --bindir=/sbin               \
+            --sbindir=/sbin              \
+            --libdir=/usr/lib32          \
+            --sysconfdir=/etc            \
+            --libexecdir=/lib32          \
+            --with-rootprefix=           \
+            --with-rootlibdir=/usr/lib32 \
+            --disable-manpages           \
+            --disable-static             \
+            --config-cache</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2>
+  
+  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI x32 ~~~~~~~~~~~~~~~~~~~~ -->
+  
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Eudev - x32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+    <para>Prepare Eudev for compilation:</para>
+
+<screen><userinput remap="configure">CC="gcc -mx32" \
+./configure --prefix=/usr                 \
+            --bindir=/sbin                \
+            --sbindir=/sbin               \
+            --libdir=/usr/libx32          \
+            --sysconfdir=/etc             \
+            --libexecdir=/libx32          \
+            --with-rootprefix=            \
+            --with-rootlibdir=/usr/libx32 \
+            --disable-manpages            \
+            --disable-static              \
+            --config-cache</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2>
+  
   <sect2 id="conf-eudev" role="configuration">
     <title>Configuring Eudev</title>
 

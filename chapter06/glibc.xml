@@ -96,6 +96,7 @@ cd       build</userinput></screen>
              --disable-werror                       \
              --enable-kernel=&min-kernel;                    \
              --enable-stack-protector=strong        \
+             --with-headers=/usr/include            \
              libc_cv_slibdir=/lib</userinput></screen>
 
    <variablelist>

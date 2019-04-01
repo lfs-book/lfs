@@ -37,7 +37,7 @@ EOF</userinput></screen>
   <filename>.bashrc</filename> file instead. Create the
   <filename>.bashrc</filename> file now:</para>
 
-<screen><userinput>cat &gt; ~/.bashrc &lt;&lt; "EOF"
+<screen arch="default"><userinput>cat &gt; ~/.bashrc &lt;&lt; "EOF"
 <literal>set +h
 umask 022
 LFS=/mnt/lfs
@@ -45,6 +45,18 @@ LC_ALL=POSIX
 LFS_TGT=$(uname -m)-lfs-linux-gnu
 PATH=/tools/bin:/bin:/usr/bin
 export LFS LC_ALL LFS_TGT PATH</literal>
+EOF</userinput></screen>
+
+<screen arch="multilib"><userinput>cat &gt; ~/.bashrc &lt;&lt; "EOF"
+<literal>set +h
+umask 022
+LFS=/mnt/lfs
+LC_ALL=POSIX
+LFS_TGT=x86_64-lfs-linux-gnu
+LFS_TGT32=i686-lfs-linux-gnu
+LFS_TGTX32=x86_64-lfs-linux-gnux32
+PATH=/tools/bin:/bin:/usr/bin
+export LFS LC_ALL LFS_TGT LFS_TGT32 LFS_TGTX32 PATH</literal>
 EOF</userinput></screen>
 
   <para>The <command>set +h</command> command turns off

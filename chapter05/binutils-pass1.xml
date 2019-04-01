@@ -72,12 +72,21 @@ cd       build</userinput></screen>
 
     <para>Now prepare Binutils for compilation:</para>
 
-<screen><userinput remap="configure">../configure --prefix=/tools            \
+<screen arch="default"><userinput remap="configure">../configure --prefix=/tools            \
              --with-sysroot=$LFS        \
              --with-lib-path=/tools/lib \
              --target=$LFS_TGT          \
              --disable-nls              \
              --disable-werror</userinput></screen>
+
+    <screen arch="multilib"><userinput remap="configure">../configure --prefix=/tools \
+             --with-sysroot=$LFS                     \
+             --with-lib-path=/tools/lib:/tools/lib32:/tools/libx32 \
+             --target=$LFS_TGT                       \
+             --disable-nls                           \
+             --disable-werror                        \
+             --enable-64-bit-bfd                     \
+             --enable-multilib</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -146,12 +155,18 @@ cd       build</userinput></screen>
     tests at this point are minimal since the programs from this
     first pass will soon be replaced by those from the second.</para>
 
-    <para>If building on x86_64, create a symlink to ensure the sanity of
+    <para arch="default">If building on x86_64, create a symlink to ensure the
+    sanity of the toolchain:</para>
+
+    <para arch="multilib">Create a symlink to ensure the sanity of
     the toolchain:</para>
 
-<screen><userinput remap="install">case $(uname -m) in
+<screen arch="default"><userinput remap="install">case $(uname -m) in
   x86_64) mkdir -v /tools/lib &amp;&amp; ln -sv lib /tools/lib64 ;;
 esac</userinput></screen>
+
+<screen arch="multilib"><userinput remap="install">mkdir -v /tools/lib &amp;&amp;
+ln -sv lib /tools/lib64</userinput></screen>
 
     <para>Install the package:</para>
 

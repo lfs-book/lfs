@@ -92,6 +92,44 @@ ln -sfv ../../lib/$(readlink /usr/lib/libcap.so) /usr/lib/libcap.so</userinput><
 
   </sect2>
 
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Libcap - 32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make CC="gcc -m32 -march=i686"</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make lib=lib32 prefix=$PWD/DESTDIR/usr -C libcap install
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2>
+
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Libcap - x32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make CC="gcc -mx32"</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make lib=libx32 prefix=$PWD/DESTDIR/usr -C libcap install
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2>
+
   <sect2 id="contents-libcap" role="content">
     <title>Contents of Libcap</title>
 

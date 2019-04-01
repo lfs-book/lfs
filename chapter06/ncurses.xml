@@ -47,13 +47,21 @@
 
     <para>Prepare Ncurses for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr           \
+<screen arch="default"><userinput remap="configure">./configure --prefix=/usr           \
             --mandir=/usr/share/man \
             --with-shared           \
             --without-debug         \
             --without-normal        \
             --enable-pc-files       \
             --enable-widec</userinput></screen>
+<screen arch="multilib"><userinput remap="configure">./configure --prefix=/usr           \
+            --mandir=/usr/share/man \
+            --with-shared           \
+            --without-debug         \
+            --without-normal        \
+            --enable-pc-files       \
+            --enable-widec          \
+            --with-pkg-config-libdir=/usr/lib/pkgconfig</userinput></screen>
 
     <variablelist>
       <title>The meaning of the new configure options:</title>
@@ -84,6 +92,15 @@
         <term><parameter>--without-normal</parameter></term>
         <listitem>
           <para>This switch disables building and installing most static libraries.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry arch="multilib">
+        <term><parameter>--with-pkg-config-libdir=/usr/lib/pkgconfig</parameter></term>
+        <listitem>
+          <para>This switch forces .pc to be installed in /usr/lib/pkgconfig. If
+           not set, .pc files gets installed in /usr/lib32 even for 64bit binaries.
           </para>
         </listitem>
       </varlistentry>
@@ -139,7 +156,6 @@ ln -sfv libncurses.so      /usr/lib/libcurses.so</userinput></screen>
 cp -v -R doc/* /usr/share/doc/ncurses-&ncurses-version;</userinput></screen>
 
     <note>
-
       <para>The instructions above don't create non-wide-character Ncurses
       libraries since no package installed by compiling from sources would link
       against them at runtime. However, the only known binary-only
@@ -148,7 +164,7 @@ cp -v -R doc/* /usr/share/doc/ncurses-&ncurses-version;</userinput></screen>
       application or to be compliant with LSB, build the package again with the
       following commands:</para>
 
-<screen role="nodump"><userinput>make distclean
+<screen><userinput remap="install">make distclean
 ./configure --prefix=/usr    \
             --with-shared    \
             --without-normal \
@@ -157,8 +173,121 @@ cp -v -R doc/* /usr/share/doc/ncurses-&ncurses-version;</userinput></screen>
             --with-abi-version=5 
 make sources libs
 cp -av lib/lib*.so.5* /usr/lib</userinput></screen>
+
     </note>
 
+  </sect2>
+
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Ncurses - 32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+        <para>Prepare Ncurses for compilation:</para>
+
+<screen><userinput remap="configure">CC="gcc -m32" CXX="g++ -m32"  \
+    ./configure --prefix=/usr \
+    --libdir=/usr/lib32       \
+    --mandir=/usr/share/man   \
+    --with-shared             \
+    --without-debug           \
+    --without-normal          \
+    --enable-pc-files         \
+    --enable-widec            \
+    --host=i686-pc-linux-gnu  \
+    --with-pkg-config-libdir=/usr/lib32/pkgconfig</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make -j1</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+for lib in ncurses form panel menu ; do
+    rm -vf                    DESTDIR/usr/lib32/lib${lib}.so
+    echo "INPUT(-l${lib}w)" > DESTDIR/usr/lib32/lib${lib}.so
+    ln -svf ${lib}w.pc        DESTDIR/usr/lib32/pkgconfig/$lib.pc
+done
+rm -vf                     DESTDIR/usr/lib32/libcursesw.so
+echo "INPUT(-lncursesw)" > DESTDIR/usr/lib32/libcursesw.so
+ln -sfv libncurses.so      DESTDIR/usr/lib32/libcurses.so
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
+rm -rf DESTDIR</userinput></screen>
+
+    <para>If desired, make the version 5 libraries in 32bit as well:</para>
+
+<screen><userinput remap="install">make distclean
+CC="gcc -m32" CXX="g++ -m32"  \
+    ./configure --prefix=/usr \
+    --with-shared             \
+    --without-normal          \
+    --without-debug           \
+    --without-cxx-binding     \
+    --with-abi-version=5      \
+    --host=i686-pc-linux-gnu
+make -j1 sources libs
+cp -av lib/lib*.so.5* /usr/lib32</userinput></screen>
+
+  </sect2>
+
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Ncurses - x32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+        <para>Prepare Ncurses for compilation:</para>
+
+<screen><userinput remap="configure">CC="gcc -mx32" CXX="g++ -mx32"    \
+    ./configure --prefix=/usr     \
+    --libdir=/usr/libx32          \
+    --mandir=/usr/share/man       \
+    --with-shared                 \
+    --without-debug               \
+    --without-normal              \
+    --enable-pc-files             \
+    --enable-widec                \
+    --host=x86_64-pc-linux-gnux32 \
+    --with-pkg-config-libdir=/usr/libx32/pkgconfig</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make -j1</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+for lib in ncurses form panel menu ; do
+    rm -vf                    DESTDIR/usr/libx32/lib${lib}.so
+    echo "INPUT(-l${lib}w)" > DESTDIR/usr/libx32/lib${lib}.so
+    ln -svf ${lib}w.pc        DESTDIR/usr/libx32/pkgconfig/$lib.pc
+done
+rm -vf                     DESTDIR/usr/libx32/libcursesw.so
+echo "INPUT(-lncursesw)" > DESTDIR/usr/libx32/libcursesw.so
+ln -sfv libncurses.so      DESTDIR/usr/libx32/libcurses.so
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
+rm -rf DESTDIR</userinput></screen>
+
+<!-- Any package out there which still needs version 5?
+     Leave it out for x32bit for now.
+
+    <para>If desired, make the version 5 libraries in x32bit as well:</para>
+
+<screen><userinput remap="install">make distclean
+CC="gcc -mx32" CXX="g++ -mx32"  \
+    ./configure - -prefix=/usr \
+    - -with-shared             \
+    - -without-normal          \
+    - -without-debug           \
+    - -without-cxx-binding     \
+    - -with-abi-version=5
+make -j1 sources libs
+cp -av lib/lib*.so.5* /usr/libx32</userinput></screen>
+-->
   </sect2>
 
   <sect2 id="contents-ncurses" role="content">

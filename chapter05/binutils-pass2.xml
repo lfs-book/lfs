@@ -50,7 +50,7 @@ cd       build</userinput></screen>
 
     <para>Prepare Binutils for compilation:</para>
 
-<screen><userinput remap="configure">CC=$LFS_TGT-gcc                \
+<screen arch="default"><userinput remap="configure">CC=$LFS_TGT-gcc                \
 AR=$LFS_TGT-ar                 \
 RANLIB=$LFS_TGT-ranlib         \
 ../configure                   \
@@ -59,6 +59,18 @@ RANLIB=$LFS_TGT-ranlib         \
     --disable-werror           \
     --with-lib-path=/tools/lib \
     --with-sysroot</userinput></screen>
+
+<screen arch="multilib"><userinput remap="configure">CC=$LFS_TGT-gcc                \
+AR=$LFS_TGT-ar                 \
+RANLIB=$LFS_TGT-ranlib         \
+../configure                   \
+    --prefix=/tools            \
+    --disable-nls              \
+    --disable-werror           \
+    --with-lib-path=/tools/lib:/tools/lib32:/tools/libx32 \
+    --with-sysroot             \
+    --enable-64-bit-bfd        \
+    --enable-multilib</userinput></screen>
 
     <variablelist>
       <title>The meaning of the new configure options:</title>
@@ -72,12 +84,25 @@ RANLIB=$LFS_TGT-ranlib         \
         </listitem>
       </varlistentry>
 
-      <varlistentry>
+      <varlistentry arch="default">
         <term><parameter>--with-lib-path=/tools/lib</parameter></term>
         <listitem>
           <para>This tells the configure script to specify the library
           search path during the compilation of Binutils, resulting in
           <filename class="directory">/tools/lib</filename> being passed
+          to the linker. This prevents the linker from searching through
+          library directories on the host.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry arch="multilib">
+        <term><parameter>--with-lib-path=/tools/lib:...</parameter></term>
+        <listitem>
+          <para>This tells the configure script to specify the library
+          search path during the compilation of Binutils, resulting in
+          <filename class="directory">/tools/lib</filename>,
+          <filename class="directory">/tools/lib32</filename> and
+          <filename class="directory">/tools/libx32</filename> being passed
           to the linker. This prevents the linker from searching through
           library directories on the host.</para>
         </listitem>
@@ -93,6 +118,20 @@ RANLIB=$LFS_TGT-ranlib         \
         </listitem>
       </varlistentry>
 
+      <varlistentry arch="multilib">
+        <term><parameter>--enable-64-bit-bfd</parameter></term>
+        <listitem>
+          <para>TODO</para>
+        </listitem>
+      </varlistentry>
+      
+      <varlistentry arch="multilib">
+        <term><parameter>--enable-multilib</parameter></term>
+        <listitem>
+          <para>TODO</para>
+        </listitem>
+      </varlistentry>
+      
     </variablelist>
 
     <para>Compile the package:</para>
@@ -106,8 +145,12 @@ RANLIB=$LFS_TGT-ranlib         \
     <para>Now prepare the linker for the <quote>Re-adjusting</quote> phase in
     the next chapter:</para>
 
-<screen><userinput remap="adjust">make -C ld clean
+<screen arch="default"><userinput remap="adjust">make -C ld clean
 make -C ld LIB_PATH=/usr/lib:/lib
+cp -v ld/ld-new /tools/bin</userinput></screen>
+
+<screen arch="multilib"><userinput remap="adjust">make -C ld clean
+make -C ld LIB_PATH=/usr/lib:/lib:/usr/lib32:/lib32:/usr/libx32:/libx32
 cp -v ld/ld-new /tools/bin</userinput></screen>
 
     <variablelist>

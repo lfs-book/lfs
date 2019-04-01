@@ -43,11 +43,17 @@
   <sect2 role="installation">
     <title>Installation of Cross GCC</title>
 
-    <para>GCC now requires the GMP, MPFR and MPC packages. As these packages may
-    not be included in your host distribution, they will be built with
-    GCC.  Unpack each package into the GCC source directory and rename the
-    resulting directories so the GCC build procedures will automatically
-    use them:</para>
+    <para arch="default">GCC now requires the GMP, MPFR, and MPC packages. As
+    these packages may not be included in your host distribution, they will be
+    built with GCC.  Unpack each package into the GCC source directory and
+    rename the resulting directories so the GCC build procedures will
+    automatically use them:</para>
+
+    <para arch="multilib">GCC now requires the GMP, ISL, MPFR, and MPC packages.
+    As these packages may not be included in your host distribution, they will
+    be built with GCC.  Unpack each package into the GCC source directory and 
+    rename the resulting directories so the GCC build procedures will 
+    automatically use them:</para>
 
     <note><para>There are frequent misunderstandings about this chapter.  The
     procedures are the same as every other chapter as explained earlier (<xref
@@ -55,12 +61,20 @@
     directory and then change to the directory created.  Only then should you
     proceed with the instructions below.</para></note>
 
-<screen><userinput remap="pre">tar -xf ../mpfr-&mpfr-version;.tar.xz
+<screen arch="default"><userinput remap="pre">tar -xf ../mpfr-&mpfr-version;.tar.xz
 mv -v mpfr-&mpfr-version; mpfr
 tar -xf ../gmp-&gmp-version;.tar.xz
 mv -v gmp-&gmp-version; gmp
 tar -xf ../mpc-&mpc-version;.tar.gz
 mv -v mpc-&mpc-version; mpc</userinput></screen>
+<screen arch="multilib"><userinput remap="pre">tar -xf ../mpfr-&mpfr-version;.tar.xz
+mv -v mpfr-&mpfr-version; mpfr
+tar -xf ../gmp-&gmp-version;.tar.xz
+mv -v gmp-&gmp-version; gmp
+tar -xf ../mpc-&mpc-version;.tar.gz
+mv -v mpc-&mpc-version; mpc
+tar -xf ../isl-&isl-version;.tar.xz
+mv -v isl-&isl-version; isl</userinput></screen>
 
     <para>The following command will change the location of GCC's default
     dynamic linker to use the one installed in <filename
@@ -71,7 +85,7 @@ mv -v mpc-&mpc-version; mpc</userinput></screen>
 <screen><userinput remap="pre">for file in gcc/config/{linux,i386/linux{,64}}.h
 do
   cp -uv $file{,.orig}
-  sed -e 's@/lib\(64\)\?\(32\)\?/ld@/tools&amp;@g' \
+  sed -e 's@/lib\(64\)\?\(32\)\?\(x32\)\?/ld@/tools&amp;@g' \
       -e 's@/usr@/tools@g' $file.orig &gt; $file
   echo '
 #undef STANDARD_STARTFILE_PREFIX_1
@@ -97,15 +111,26 @@ done</userinput></screen>
     prevents unexpected changes to the original files in case the commands are
     inadvertently run twice.</para>
 
-    <para>Finally, on x86_64 hosts, set the default directory name for
-    64-bit libraries to <quote>lib</quote>:</para>
+    <para arch="default">Finally, on x86_64 hosts, set the default directory
+    name for 64-bit libraries to <quote>lib</quote>:</para>
 
-<screen><userinput remap="pre">case $(uname -m) in
+<screen arch="default"><userinput remap="pre">case $(uname -m) in
   x86_64)
     sed -e '/m64=/s/lib64/lib/' \
         -i.orig gcc/config/i386/t-linux64
  ;;
 esac</userinput></screen>
+
+<screen arch="multilib"><userinput remap="pre">sed -e '/m64=/s/lib64/lib/' \
+    -i.orig gcc/config/i386/t-linux64
+cat > gcc/config/i386/t-linux64 &lt;&lt;"EOF"
+comma=,
+MULTILIB_OPTIONS    = $(subst $(comma),/,$(TM_MULTILIB_CONFIG))
+MULTILIB_DIRNAMES   = $(patsubst m%, %, $(subst /, ,$(MULTILIB_OPTIONS)))
+MULTILIB_OSDIRNAMES = m64=../lib$(call if_multiarch,:x86_64-linux-gnu)
+MULTILIB_OSDIRNAMES+= m32=../lib32$(call if_multiarch,:i386-linux-gnu)
+MULTILIB_OSDIRNAMES+= mx32=../libx32$(call if_multiarch,:x86_64-linux-gnux32)
+EOF</userinput></screen>
 
 <!--
     <para>GCC doesn't detect stack protection correctly, which causes problems
@@ -120,6 +145,15 @@ esac</userinput></screen>
 
 <screen><userinput remap="pre">sed -i 's/if \((code.*))\)/if (\1 \&amp;\&amp; \!DEBUG_INSN_P (insn))/' gcc/sched-deps.c</userinput></screen>
 -->
+
+    <!-- Following patch might be obsolete with gcc >= 8.2.1 -->
+    <!-- see: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=86724 -->
+    <!-- Fix applied in ch5-gcc-pass{1,2}, ch6-gcc -->
+    <para arch="multilib">Fix an issue with isl-&isl-version;:</para>
+
+<screen arch="multilib"><userinput remap="pre">sed -e "/#include &lt;isl\/schedule_node.h&gt;/ a#include &lt;isl/id.h&gt;\n#include &lt;isl/space.h&gt;" \
+    -i gcc/graphite.h</userinput></screen>
+
     <para>The GCC documentation recommends building GCC 
     in a dedicated build directory:</para>
 
@@ -128,7 +162,7 @@ cd       build</userinput></screen>
 
     <para>Prepare GCC for compilation:</para>
 
-<screen><userinput remap="configure">../configure                                       \
+<screen arch="default"><userinput remap="configure">../configure                                       \
     --target=$LFS_TGT                              \
     --prefix=/tools                                \
     --with-glibc-version=2.11                      \
@@ -150,6 +184,31 @@ cd       build</userinput></screen>
     --disable-libvtv                               \
     --disable-libstdcxx                            \
     --enable-languages=c,c++</userinput></screen>
+
+<screen arch="multilib"><userinput remap="configure">../configure                                       \
+    --target=$LFS_TGT                              \
+    --prefix=/tools                                \
+    --with-glibc-version=2.11                      \
+    --with-sysroot=$LFS                            \
+    --with-newlib                                  \
+    --without-headers                              \
+    --with-local-prefix=/tools                     \
+    --with-native-system-header-dir=/tools/include \
+    --disable-nls                                  \
+    --disable-shared                               \
+    --enable-multilib                              \
+    --with-multilib-list=m32,m64,mx32              \
+    --disable-decimal-float                        \
+    --disable-threads                              \
+    --disable-libatomic                            \
+    --disable-libgomp                              \
+    --disable-libmpx                               \
+    --disable-libquadmath                          \
+    --disable-libssp                               \
+    --disable-libvtv                               \
+    --disable-libstdcxx                            \
+    --enable-languages=c,c++</userinput></screen>
+
     <variablelist>
       <title>The meaning of the configure options:</title>
 
@@ -219,11 +278,20 @@ cd       build</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry>
+      <varlistentry arch="default">
         <term><parameter>--disable-multilib</parameter></term>
         <listitem>
           <para>On x86_64, LFS does not yet support a multilib configuration.
           This switch is harmless for x86.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry arch="multilib">
+        <term><parameter>--enable-multilib,
+                         --with-multilib-list=m32,m64,mx32</parameter></term>
+        <listitem>
+          <para>LFS now supports a multilib configuration. Enable it for the
+          32bit, the 64-bit, and the mixed mode.</para>
         </listitem>
       </varlistentry>
 

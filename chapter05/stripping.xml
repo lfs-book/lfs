@@ -15,7 +15,10 @@
   The executables and libraries built so far contain about 70 MB of unneeded
   debugging symbols. Remove those symbols with:</para>
 
-<screen><userinput>strip --strip-debug /tools/lib/*
+<screen arch="default"><userinput>strip --strip-debug /tools/lib/*
+/usr/bin/strip --strip-unneeded /tools/{,s}bin/*</userinput></screen>
+
+<screen arch="multilib"><userinput>strip --strip-debug /tools/lib{,{,x}32}/*
 /usr/bin/strip --strip-unneeded /tools/{,s}bin/*</userinput></screen>
 
   <para>These commands will skip a number of files, reporting that it does not
@@ -33,7 +36,9 @@
 
   <para>Remove unneeded files:</para>
 
-<screen><userinput>find /tools/{lib,libexec} -name \*.la -delete</userinput></screen>
+<screen arch="default"><userinput>find /tools/{lib,libexec} -name \*.la -delete</userinput></screen>
+
+<screen arch="multilib"><userinput>find /tools/{lib{,{,x}32},libexec} -name \*.la -delete</userinput></screen>
 
   <para>At this point, you should have at least 3 GB of free space in
   <envar>$LFS</envar> that can be used to build and install Glibc and Gcc in

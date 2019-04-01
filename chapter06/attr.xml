@@ -78,6 +78,61 @@ ln -sfv ../../lib/$(readlink /usr/lib/libattr.so) /usr/lib/libattr.so</userinput
 
   </sect2>
 
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Attr - 32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+    <para>Prepare Attr for compilation:</para>
+
+<screen><userinput remap="configure">CC="gcc -m32" ./configure \
+    --prefix=/usr         \
+    --disable-static      \
+    --libdir=/usr/lib32   \
+    --host=i686-pc-linux-gnu</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$(pwd)/DESTDIR install
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2>
+
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Attr - x32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+    <para>Prepare Attr for compilation:</para>
+
+<screen><userinput remap="configure">
+CC="gcc -mx32" ./configure \
+    --prefix=/usr          \
+    --disable-static       \
+    --libdir=/usr/libx32   \
+    --host=x86_64-pc-linux-gnux32</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$(pwd)/DESTDIR install
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2>
+
   <sect2 id="contents-attr" role="content">
     <title>Contents of Attr</title>
 

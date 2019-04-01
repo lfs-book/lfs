@@ -161,6 +161,9 @@
     <listitem>
       <para>Linux-&linux-version;</para>
     </listitem>
+    <listitem>
+      <para>Linux-Firmware-&linux-firmware-version;</para>
+    </listitem>
     <!--<listitem>
       <para>M4-&m4-version;</para>
     </listitem>-->

@@ -39,12 +39,23 @@
   will be replaced by real files throughout the course of this chapter after the
   software has been installed:</para>
 
-<screen><userinput>ln -sv /tools/bin/{bash,cat,chmod,dd,echo,ln,mkdir,pwd,rm,stty,touch} /bin
+<screen arch="default"><userinput>ln -sv /tools/bin/{bash,cat,chmod,dd,echo,ln,mkdir,pwd,rm,stty,touch} /bin
 ln -sv /tools/bin/{env,install,perl,printf}         /usr/bin
 ln -sv /tools/lib/libgcc_s.so{,.1}                  /usr/lib
 ln -sv /tools/lib/libstdc++.{a,so{,.6}}             /usr/lib
 
 install -vdm755 /usr/lib/pkgconfig
+
+ln -sv bash /bin/sh</userinput></screen>
+<screen arch="multilib"><userinput>ln -sv /tools/bin/{bash,cat,chmod,dd,echo,ln,mkdir,pwd,rm,stty,touch} /bin
+ln -sv /tools/bin/{env,install,perl,printf}         /usr/bin
+for lib in lib{,32,x32}; do
+  ln -sv /tools/$lib/libgcc_s.so{,.1}               /usr/$lib
+  ln -sv /tools/$lib/libstdc++.{a,so{,.6}}          /usr/$lib
+done
+ln -sv /usr/libx32 /
+
+install -vdm755 /usr/lib{,32,x32}/pkgconfig
 
 ln -sv bash /bin/sh</userinput></screen>
 
