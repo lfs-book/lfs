@@ -112,6 +112,60 @@ ln -s libncursesw.so /tools/lib/libncurses.so</userinput></screen>
 
   </sect2>
 
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Ncurses - 32 bit</title>
+
+    <para>Prepare Ncurses for compilation:</para>
+
+<screen><userinput remap="configure">make distclean &amp;&amp;
+CC="${LFS_TGT}-gcc -m32"          \
+./configure --prefix=/tools       \
+            --libdir=/tools/lib32 \
+            --with-shared         \
+            --without-debug       \
+            --without-ada         \
+            --enable-widec        \
+            --enable-overwrite    \
+            --host="${LFS_TGT32}"</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>To test the results, issue:</para>
+
+<screen><userinput remap="test">make check</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR_32 install &amp;&amp;
+cp -Rv DESTDIR_32/tools/lib32/* /tools/lib32</userinput></screen>
+
+  </sect2>
+
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Ncurses - x32 bit</title>
+
+    <para>Repeat for the x32-ABI:</para>
+
+<screen><userinput remap="configure">make distclean &amp;&amp;
+CC="${LFS_TGT}-gcc -mx32"          \
+./configure --prefix=/tools        \
+            --libdir=/tools/libx32 \
+            --with-shared          \
+            --without-debug        \
+            --without-ada          \
+            --enable-widec         \
+            --enable-overwrite     \
+            --host="${LFS_TGTX32}"</userinput></screen>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR_x32 install &amp;&amp;
+cp -Rv DESTDIR_x32/tools/libx32/* /tools/libx32</userinput></screen>
+
+  </sect2>
+
   <sect2 role="content">
     <title/>
 

@@ -74,6 +74,70 @@ cp -vfr doc/* /usr/share/doc/openssl-&openssl-version;</userinput></screen>
 
   </sect2>
 
+  <!-- ~~~~~ 32-bit ~~~~~ -->
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of OpenSSL - 32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+    <para>Prepare OpenSSL for compilation:</para>
+
+<screen><userinput remap="configure">MACHINE="i686"             \
+CC="gcc -m32 -march=i686"  \
+CXX="g++ -m32 -march=i686" \
+    ./config               \
+    --prefix=/usr          \
+    --libdir=/usr/lib32    \
+         --openssldir=/etc/ssl \
+         --libdir=lib32        \
+         shared                \
+         zlib-dynamic</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2>
+
+  <!-- ~~~~~ x32-bit ~~~~~ -->
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of OpenSSL - x32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+    <para>Prepare OpenSSL for compilation:</para>
+
+<screen><userinput remap="configure">MACHINE="x86_64"          \
+CC="gcc -mx32"            \
+CXX="g++ -mx32"           \
+    ./config              \
+    --prefix=/usr         \
+    --libdir=/usr/libx32  \
+         --openssldir=/etc/ssl \
+         --libdir=libx32       \
+         shared                \
+         zlib-dynamic</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2>
+
   <sect2 id="contents-openssl" role="content">
     <title>Contents of OpenSSL</title>
 

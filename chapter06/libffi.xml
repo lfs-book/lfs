@@ -98,6 +98,74 @@ sed -e '/^includedir/ s/=.*$/=@includedir@/' \
 
   </sect2>
 
+  <!-- ~~~~~ m32 ~~~~~ -->
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Libffi - 32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+    <para>Prepare Libffi for compilation:</para>
+
+<screen><userinput remap="configure">CC="gcc -m32" CXX="g++ -m32" \
+./configure                  \
+    --prefix=/usr            \
+    --disable-static         \
+    --libdir=/usr/lib32      \
+    --with-gcc-arch=i686     \
+    --host=i686-pc-linux-gnu</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>To test the results, issue:</para>
+
+<screen><userinput remap="test">make check</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2>
+
+  <!-- ~~~~~ mx32 ~~~~~ -->
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Libffi - x32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+    <para>Prepare Libffi for compilation:</para>
+
+<screen><userinput remap="configure">CC="gcc -mx32" CXX="g++ -mx32" \
+./configure                    \
+    --prefix=/usr              \
+    --disable-static           \
+    --with-gcc-arch=x86_64     \
+    --libdir=/usr/libx32       \
+    --host=x86_64-unknown-linux-gnux32</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>To test the results, issue:</para>
+
+<screen><userinput remap="test">make check</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2>
+
   <sect2 id="contents-libffi" role="content">
     <title>Contents of Libffi</title>
 

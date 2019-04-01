@@ -121,4 +121,60 @@
 
   </sect2>
 
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Util-Linux - 32 bit</title>
+
+    <para>Prepare Util-Linux for compilation:</para>
+
+<screen><userinput remap="configure">make distclean &amp;&amp;
+CC="${LFS_TGT}-gcc -m32"           \
+./configure                        \
+    --prefix=/tools                \
+    --libdir=/tools/lib32          \
+    --without-python               \
+    --disable-makeinstall-chown    \
+    --without-systemdsystemunitdir \
+    --without-ncurses              \
+    --host="${LFS_TGT32}"          \
+    PKG_CONFIG=""</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>To test the results, issue:</para>
+
+<screen><userinput remap="test">make check</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR_32 install &amp;&amp;
+cp -Rv DESTDIR_32/tools/lib32/* /tools/lib32</userinput></screen>
+
+  </sect2>
+
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Util-Linux - x32 bit</title>
+
+    <para>Repeat for the x32-ABI:</para>
+
+<screen><userinput remap="configure">make distclean &amp;&amp;
+CC="${LFS_TGT}-gcc -mx32"          \
+./configure                        \
+    --prefix=/tools                \
+    --libdir=/tools/libx32         \
+    --without-python               \
+    --disable-makeinstall-chown    \
+    --without-systemdsystemunitdir \
+    --without-ncurses              \
+    --host="${LFS_TGTX32}"         \
+    PKG_CONFIG=""</userinput></screen>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR_x32 install &amp;&amp;
+cp -Rv DESTDIR_x32/tools/libx32/* /tools/libx32</userinput></screen>
+
+  </sect2>
+
 </sect1>

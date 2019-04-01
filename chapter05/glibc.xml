@@ -82,6 +82,13 @@ cd       build</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry arch="multilib">
+        <term><parameter>--enable-multi-arch</parameter></term>
+        <listitem>
+          <para>Enables glibc for multiarch environments.</para>
+        </listitem>
+      </varlistentry>
+
       <varlistentry>
         <term><parameter>--with-headers=/tools/include</parameter></term>
         <listitem>
@@ -184,6 +191,124 @@ readelf -l a.out | grep ': /tools'</userinput></screen>
 
   </sect2>
 
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Glibc 32-bit</title>
+
+    <para>Clean the build directory for redoing glibc for 32-bit:</para>
+<screen><userinput remap="pre">mkdir ../build32
+cd ../build32</userinput></screen>
+
+    <para>Rebuild glibc for 32-bit:</para>
+<screen><userinput remap="configure">echo slibdir=/tools/lib32 &gt; configparms
+BUILD_CC="gcc -m32"               \
+CC="${LFS_TGT}-gcc -m32"          \
+CXX="${LFS_TGT}-g++ -m32"         \
+AR="${LFS_TGT}-ar"                \
+RANLIB="${LFS_TGT}-ranlib"        \
+../configure --prefix=/tools                    \
+             --build=$(../scripts/config.guess) \
+             --host=${LFS_TGT32}                \
+             --enable-kernel=&min-kernel;             \
+             --enable-multi-arch                \
+             --libdir=/tools/lib32              \
+             --libexecdir=/tools/lib32          \
+             --with-headers=/tools/include      \
+             --with-binutils=/tools/bin         \
+             libc_cv_forced_unwind=yes          \
+             libc_cv_c_cleanup=yes</userinput></screen>
+
+    <para>Now compile the 32-bit version of glibc:</para>
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install 32-bit version of glibc:</para>
+<screen><userinput remap="install">make install_root="${PWD}/DESTDIR" install
+install -vdm755 /tools/lib32
+cp -Rv DESTDIR/tools/lib32/* /tools/lib32
+install -vm644 DESTDIR/tools/include/gnu/{lib-names,stubs}-32.h \
+               /tools/include/gnu/
+ln -svf /tools/lib32/ld-linux.so.2 /tools/lib/
+cd ..</userinput></screen>
+
+  </sect2>
+
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Glibc x32-bit</title>
+
+    <para>Create a build directory for redoing glibc for x32-bit:</para>
+<screen><userinput remap="pre">mkdir build32x
+cd build32x</userinput></screen>
+
+    <para>Rebuild glibc for x32-bit:</para>
+<screen><userinput remap="configure">echo slibdir=/tools/libx32 &gt; configparms
+BUILD_CC="gcc -mx32"              \
+CC="${LFS_TGT}-gcc -mx32"         \
+CXX="${LFS_TGT}-g++ -mx32"        \
+AR="${LFS_TGT}-ar"                \
+RANLIB="${LFS_TGT}-ranlib"        \
+../configure --prefix=/tools                    \
+             --build=$(../scripts/config.guess) \
+             --host=${LFS_TGTX32}               \
+             --enable-kernel=&min-kernel;             \
+             --enable-multi-arch                \
+             --libdir=/tools/libx32             \
+             --libexecdir=/tools/libx32         \
+             --with-headers=/tools/include      \
+             --with-binutils=/tools/bin         \
+             libc_cv_forced_unwind=yes          \
+             libc_cv_c_cleanup=yes</userinput></screen>
+
+    <para>Now compile the x32-bit version of glibc:</para>
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install x32-bit version of glibc:</para>
+<screen><userinput remap="install">make install_root="${PWD}/DESTDIR" install
+install -vdm755 /tools/libx32
+cp -Rv DESTDIR/tools/libx32/* /tools/libx32
+install -vm644 DESTDIR/tools/include/gnu/lib-names-x32.h \
+               /tools/include/gnu/
+[ -e DESTDIR/tools/include/gnu/stubs-x32.h ] \
+  &amp;&amp; install -vm644 DESTDIR/tools/include/gnu/stubs-x32.h /tools/include/gnu/ \
+  || ln -v /tools/include/gnu/stubs-64.h /tools/include/gnu/stubs-x32.h
+ln -svf /tools/libx32/ld-linux-x32.so.2 /tools/lib/</userinput></screen>
+<!-- For whatever reason the stubs-x32.h doesn't get created. The 'ln' above is
+just a "brute force" workaraound - by copying the stubs-64.h file. -->
+
+  <caution>
+    <para>At this point, it is imperative to stop and ensure that the basic
+    functions (compiling and linking) of the new toolchain are working as
+    expected. To perform a sanity check, run the following commands:</para>
+
+<screen><userinput>echo 'int main(){}' &gt; dummy.c
+$LFS_TGT-gcc -m32 dummy.c
+readelf -l a.out | grep ': /tools'</userinput></screen>
+
+    <para>If everything is working correctly, there should be no errors,
+    and the output of the last command will be of the form:</para>
+
+<screen><computeroutput>[Requesting program interpreter: /tools/lib/ld-linux.so.2]</computeroutput></screen>
+
+    <para>Redo test for x32-ABI:</para>
+
+<screen><userinput>echo 'int main(){}' &gt; dummy.c
+$LFS_TGT-gcc -mx32 dummy.c
+readelf -l a.out | grep ': /tools'</userinput></screen>
+
+    <para>Output should be like:</para>
+
+<screen><computeroutput>[Requesting program interpreter: /tools/lib/ld-linux-x32.so.2]</computeroutput></screen>
+
+    <para>If the output is not shown as above or there was no output at all,
+    then something is wrong. Investigate and retrace the steps to find out
+    where the problem is and correct it. This issue must be resolved before
+    continuing on.</para>
+
+    <para>Once all is well, clean up the test files:</para>
+
+<screen><userinput>rm -v dummy.c a.out</userinput></screen>
+
+  </caution>
+  </sect2>
+  
   <sect2 role="content">
     <title/>
 

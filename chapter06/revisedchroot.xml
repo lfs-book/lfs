@@ -62,7 +62,9 @@ rm -f /usr/lib/libz.a</userinput></screen>
   files and generally unneeded on a linux system. None of these are necessary
   at this point. To remove them, run:</para>
 
-<screen><userinput>find /usr/lib /usr/libexec -name \*.la -delete</userinput></screen>
+<screen arch="default"><userinput>find /usr/lib /usr/libexec -name \*.la -delete</userinput></screen>
+
+<screen arch="multilib"><userinput>find /usr/lib{,{,x}32} /usr/libexec -name \*.la -delete</userinput></screen>
 
    <para>For more information about libtool archive files, see the <ulink
    url="&blfs-book;/introduction/la-files.html">BLFS section "About Libtool

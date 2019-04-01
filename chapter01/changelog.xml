@@ -11,8 +11,10 @@
   <title>Changelog</title>
 
   <para>This is version 
-        <phrase revision="sysv">&version;</phrase>
-        <phrase revision="systemd">&versiond;</phrase>
+        <phrase arch="default" revision="sysv">&version;</phrase>
+        <phrase arch="multilib" revision="sysv">&version;-multilib</phrase>
+        <phrase arch="default" revision="systemd">&versiond;</phrase>
+        <phrase arch="multilib" revision="systemd">&versiond;-multilib</phrase> 
   of the Linux From Scratch book, dated
   &releasedate;. If this book is more than six months old, a newer and better
   version is probably already available. To find out, please check one of the

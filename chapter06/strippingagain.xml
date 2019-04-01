@@ -33,7 +33,7 @@
 <!-- also of interest are libgfortan, libgo, libgomp, and libobjc from gcc -->
 
 <!--<screen><userinput>save_lib="ld-2.25.so libc-2.25.so libpthread-2.25.so libthread_db-1.0.so"-->
-<screen><userinput>save_lib="ld-&glibc-version;.so libc-&glibc-version;.so libpthread-&glibc-version;.so libthread_db-&libthread_db-version;.so"
+<screen arch="default"><userinput>save_lib="ld-&glibc-version;.so libc-&glibc-version;.so libpthread-&glibc-version;.so libthread_db-&libthread_db-version;.so"
 
 cd /lib
 
@@ -52,6 +52,30 @@ for LIB in $save_usrlib; do
     objcopy --only-keep-debug $LIB $LIB.dbg
     strip --strip-unneeded $LIB
     objcopy --add-gnu-debuglink=$LIB.dbg $LIB
+done
+
+unset LIB save_lib save_usrlib</userinput></screen>
+
+<screen arch="multilib"><userinput>save_lib="ld-&glibc-version;.so libc-&glibc-version;.so libpthread-&glibc-version;.so libthread_db-&libthread_db-version;.so"
+
+cd /lib
+
+for LIB in $save_lib; do
+    objcopy --only-keep-debug $LIB $LIB.dbg 
+    strip --strip-unneeded $LIB
+    objcopy --add-gnu-debuglink=$LIB.dbg $LIB 
+done    
+
+save_usrlib="libquadmath.so.&libquadmath-version; libstdc++.so.&libstdcpp-version;
+             libitm.so.&libitm-version; libatomic.so.&libatomic-version;" <!-- libcilkrts.so.&libcilkrts-version;-->
+
+for libdir in /usr/lib{,{,x}32}; do
+    cd $libdir
+    for LIB in $save_usrlib; do
+        objcopy --only-keep-debug $LIB $LIB.dbg
+        strip --strip-unneeded $LIB
+        objcopy --add-gnu-debuglink=$LIB.dbg $LIB
+    done
 done
 
 unset LIB save_lib save_usrlib</userinput></screen>
@@ -80,10 +104,19 @@ unset LIB save_lib save_usrlib</userinput></screen>
 
   <para>Now the binaries and libraries can be safely stripped:</para>
 
-<screen><userinput>/tools/bin/find /usr/lib -type f -name \*.a \
+<screen arch="default"><userinput>/tools/bin/find /usr/lib -type f -name \*.a \
    -exec /tools/bin/strip --strip-debug {} ';'
 
 /tools/bin/find /lib /usr/lib -type f \( -name \*.so* -a ! -name \*dbg \) \
+   -exec /tools/bin/strip --strip-unneeded {} ';'
+
+/tools/bin/find /{bin,sbin} /usr/{bin,sbin,libexec} -type f \
+    -exec /tools/bin/strip --strip-all {} ';'</userinput></screen>
+
+<screen arch="multilib"><userinput>/tools/bin/find /usr/lib{,{,x}32} -type f -name \*.a \
+   -exec /tools/bin/strip --strip-debug {} ';'
+
+/tools/bin/find /lib /usr/lib{,{,x}32} -type f \( -name \*.so* -a ! -name \*dbg \) \
    -exec /tools/bin/strip --strip-unneeded {} ';'
 
 /tools/bin/find /{bin,sbin} /usr/{bin,sbin,libexec} -type f \

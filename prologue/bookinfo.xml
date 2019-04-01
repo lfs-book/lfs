@@ -7,8 +7,10 @@
 
 <bookinfo>
   <title>Linux From Scratch</title>
-  <subtitle revision='sysv'   >Version &version; </subtitle>
-  <subtitle revision='systemd'>Version &versiond;</subtitle>
+  <subtitle arch="default" revision='sysv'>Version &version;</subtitle>
+  <subtitle arch="default" revision='systemd'>Version &versiond;</subtitle>
+  <subtitle arch="multilib" revision='sysv'>Version &version;-multilib</subtitle>
+  <subtitle arch="multilib" revision='systemd'>Version &versiond;-multilib</subtitle>
 
   <authorgroup>
     <author>
@@ -28,6 +30,11 @@
     <author revision="systemd">
       <firstname>Editor: DJ</firstname>
       <surname>Lucas</surname>
+    </author>
+
+    <author arch="multilib">
+      <firstname>Editor: Thomas</firstname>
+      <surname>Trepl</surname>
     </author>
   </authorgroup>
 

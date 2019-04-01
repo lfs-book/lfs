@@ -356,6 +356,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>ISL (&isl-version;) - <token>&isl-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&isl-home;"/></para>
+        <para>Download: <ulink url="&isl-url;"/></para>
+        <para>MD5 sum: <literal>&isl-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Kbd (&kbd-version;) - <token>&kbd-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&kbd-home;"/></para>
@@ -447,6 +456,15 @@
           </para>
 
         </note>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Linux Firmware (&linux-firmware-version;) - <token>&linux-firmware-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&linux-firmware-home;"/></para>
+        <para>Download: <ulink url="&linux-firmware-url;"/></para>
+        <para>MD5 sum: <literal>&linux-firmware-md5;</literal></para>
       </listitem>
     </varlistentry>
 

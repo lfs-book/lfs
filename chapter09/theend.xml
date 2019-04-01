@@ -28,11 +28,19 @@
   <para revision="systemd">Create an <filename>/etc/os-release</filename> 
         file required by systemd:</para>
 
-<screen revision="systemd"><userinput>cat &gt; /etc/os-release &lt;&lt; "EOF"
+<screen arch="default" revision="systemd"><userinput>cat &gt; /etc/os-release &lt;&lt; "EOF"
 NAME="Linux From Scratch"
 VERSION="&versiond;"
 ID=lfs
 PRETTY_NAME="Linux From Scratch &versiond;"
+VERSION_CODENAME="&lt;your name here&gt;"
+EOF</userinput></screen>
+
+<screen arch="multilib" revision="systemd"><userinput>cat &gt; /etc/os-release &lt;&lt; "EOF"
+NAME="Linux From Scratch"
+VERSION="&versiond;"
+ID=lfs
+PRETTY_NAME="Linux From Scratch &versiond; Multlib"
 VERSION_CODENAME="&lt;your name here&gt;"
 EOF</userinput></screen>
 
@@ -42,7 +50,8 @@ EOF</userinput></screen>
   out which LFS version is installed on the system. Create this file by
   running:</para>
 
-<screen revision="sysv"><userinput>echo &version; &gt; /etc/lfs-release</userinput></screen>
+<screen arch="default" revision="sysv"><userinput>echo &version; &gt; /etc/lfs-release</userinput></screen>
+<screen arch="multilib" revision="sysv"><userinput>echo &version;-multilib &gt; /etc/lfs-release</userinput></screen>
 
   <para revision="systemd">Creating the file
   <filename>/etc/lfs-release</filename> is recommended for compatibility with
@@ -56,16 +65,30 @@ EOF</userinput></screen>
   new system with respect to the Linux Standards Base (LSB).  To create
   this file, run:</para>
 
-<screen revision="sysv"><userinput>cat &gt; /etc/lsb-release &lt;&lt; "EOF"
+<screen arch="default" revision="sysv"><userinput>cat &gt; /etc/lsb-release &lt;&lt; "EOF"
 DISTRIB_ID="Linux From Scratch"
 DISTRIB_RELEASE="&version;"
 DISTRIB_CODENAME="&lt;your name here&gt;"
 DISTRIB_DESCRIPTION="Linux From Scratch"
 EOF</userinput></screen>
 
-<screen revision="systemd"><userinput>cat &gt; /etc/lsb-release &lt;&lt; "EOF"
+<screen arch="default" revision="systemd"><userinput>cat &gt; /etc/lsb-release &lt;&lt; "EOF"
 DISTRIB_ID="Linux From Scratch"
 DISTRIB_RELEASE="&versiond;"
+DISTRIB_CODENAME="&lt;your name here&gt;"
+DISTRIB_DESCRIPTION="Linux From Scratch"
+EOF</userinput></screen>
+
+<screen arch="multilib" revision="sysv"><userinput>cat &gt; /etc/lsb-release &lt;&lt; "EOF"
+DISTRIB_ID="Linux From Scratch"
+DISTRIB_RELEASE="&version;-multilib"
+DISTRIB_CODENAME="&lt;your name here&gt;"
+DISTRIB_DESCRIPTION="Linux From Scratch"
+EOF</userinput></screen>
+
+<screen arch="multilib" revision="systemd"><userinput>cat &gt; /etc/lsb-release &lt;&lt; "EOF"
+DISTRIB_ID="Linux From Scratch"
+DISTRIB_RELEASE="&versiond;-multilib"
 DISTRIB_CODENAME="&lt;your name here&gt;"
 DISTRIB_DESCRIPTION="Linux From Scratch"
 EOF</userinput></screen>

@@ -120,6 +120,110 @@ make install-html</userinput></screen>
 
   </sect2>
 
+  <!-- ~~~~~ m32 ~~~~~ -->
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of GMP - 32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+    <para>Generic libraries can be created by running
+    the following:</para>
+
+<screen><userinput>cp -v configfsf.guess config.guess
+cp -v configfsf.sub   config.sub</userinput></screen>
+
+    <para>Prepare GMP for compilation:</para>
+
+<screen><userinput remap="configure">ABI="32" \
+CC="gcc -m32"  \
+CXX="g++ -m32" \
+./configure             \
+    --prefix=/usr       \
+    --disable-static    \
+    --enable-cxx        \
+    --libdir=/usr/lib32 \
+    --host=i686-pc-linux-gnu</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <important>
+      <para>The test suite for GMP in this section is considered critical.
+      Do not skip it under any circumstances.</para>
+    </important>
+
+    <para>Test the results:</para>
+
+<screen><userinput remap="test">make check 2>&amp;1 | tee gmp-check-log</userinput></screen>
+ 
+    <para>Ensure that all 190 tests in the test suite passed.
+    Check the results by issuing the following command:</para>
+
+<screen><userinput remap="test">awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2>
+  
+  <!-- ~~~~~ m32 ~~~~~ -->
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of GMP - x32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+    <para>Generic libraries can be created by running
+    the following:</para>
+
+<screen><userinput>cp -v configfsf.guess config.guess
+cp -v configfsf.sub   config.sub</userinput></screen>
+
+    <para>Prepare GMP for compilation:</para>
+
+<screen><userinput remap="configure">ABI="x32" \
+CC="gcc -mx32"  \
+CXX="g++ -mx32" \
+./configure              \
+    --prefix=/usr        \
+    --disable-static     \
+    --enable-cxx         \
+    --libdir=/usr/libx32 \
+    --host=x86_64-pc-linux-gnux32</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <important>
+      <para>The test suite for GMP in this section is considered critical.
+      Do not skip it under any circumstances.</para>
+    </important>
+
+    <para>Test the results:</para>
+
+<screen><userinput remap="test">make check 2>&amp;1 | tee gmp-check-log</userinput></screen>
+ 
+    <para>Ensure that all 190 tests in the test suite passed.
+    Check the results by issuing the following command:</para>
+
+<screen><userinput remap="test">awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2>
+  
   <sect2 id="contents-gmp" role="content">
     <title>Contents of GMP</title>
 

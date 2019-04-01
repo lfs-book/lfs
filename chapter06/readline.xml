@@ -92,6 +92,60 @@ ln -sfv ../../lib/$(readlink /usr/lib/libhistory.so ) /usr/lib/libhistory.so</us
 
   </sect2>
 
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Readline - 32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+    <para>Prepare Readline for compilation:</para>
+
+<screen><userinput remap="configure">CC="gcc -m32 -march=i686" ./configure \
+    --prefix=/usr                     \
+    --libdir=/usr/lib32               \
+    --disable-static                  \
+    --host=i686-pc-linux-gnu</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2>
+
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of Readline - x32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">make distclean</userinput></screen>
+
+    <para>Prepare Readline for compilation:</para>
+
+<screen><userinput remap="configure">CC="gcc -mx32" ./configure \
+    --prefix=/usr          \
+    --libdir=/usr/libx32   \
+    --disable-static       \
+    --host=x86_64-pc-linux-gnux32</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2>
+
   <sect2 id="contents-readline" role="content">
     <title>Contents of Readline</title>
 

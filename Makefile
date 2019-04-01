@@ -34,6 +34,15 @@ else
   DUMPDIR         ?= ~/lfs-sysd-commands
 endif
 
+ifndef ARCH
+  ARCH = default
+endif
+ifneq ($(ARCH), default)
+  ifneq ($(ARCH), multilib)
+    $(error ARCH must be either 'default' (default if unset) or 'multilib'.)
+  endif
+endif
+
 book: validate profile-html
 	@echo "Generating chunked XHTML files at $(BASEDIR)/ ..."
 	$(Q)xsltproc --nonet                          \
@@ -130,6 +139,7 @@ validate: tmpdir
                 --xinclude                            \
                 --output $(RENDERTMP)/lfs-html2.xml   \
                 --stringparam profile.revision $(REV) \
+                --stringparam profile.arch $(ARCH)    \
                 stylesheets/lfs-xsl/profile.xsl       \
                 index.xml
 
@@ -160,6 +170,7 @@ $(BASEDIR)/wget-list: stylesheets/wget-list.xsl chapter03/chapter03.xml \
 
 #	$(Q)xsltproc --nonet --xinclude                    \
 #                --stringparam profile.revision $(REV) \
+#                --stringparam profile.arch $(ARCH)    \
 #                --output $(RENDERTMP)/sysd-wget.xml   \
 #                stylesheets/lfs-xsl/profile.xsl       \
 #                chapter03/chapter03.xml
@@ -177,6 +188,7 @@ $(BASEDIR)/md5sums: stylesheets/wget-list.xsl chapter03/chapter03.xml \
 
 	$(Q)xsltproc --nonet --xinclude                    \
                 --stringparam profile.revision $(REV) \
+                --stringparam profile.arch $(ARCH) \
                 --output $(RENDERTMP)/sysv-md5sum.xml \
                 stylesheets/lfs-xsl/profile.xsl       \
                 chapter03/chapter03.xml
@@ -194,6 +206,7 @@ $(BASEDIR)/md5sums: stylesheets/wget-list.xsl chapter03/chapter03.xml \
 #	$(Q)xsltproc --nonet                     \
 #      --output $(RENDERTMP)/lfs-html.xml    \
 #      --stringparam profile.revision $(REV) \
+#      --stringparam profile.arch $(ARCH)    \
 #      stylesheets/lfs-xsl/profile.xsl       \
 #      $(RENDERTMP)/lfs-full.xml
 

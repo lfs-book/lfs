@@ -21,6 +21,10 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="man-pages.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="glibc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="adjusting.xml"/>
+
+  <!-- arch="multilib" only -->
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="glibc-32.xml"/>
+
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="zlib.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="file.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="readline.xml"/>
@@ -30,6 +34,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gmp.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mpfr.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mpc.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="isl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="shadow.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gcc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="bzip2.xml"/>
@@ -82,12 +87,11 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="tar.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="texinfo.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vim.xml"/>
-
   <!-- systemd only -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="systemd.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dbus.xml"/>
 
-  <!-- these packages libsystemd on systemd builds -->
+  <!-- these programs will use libsystemd if available -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="procps.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="util-linux.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="e2fsprogs.xml"/>
@@ -97,6 +101,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="sysvinit.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="eudev.xml"/>
 
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="linux-firmware.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="aboutdebug.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="strippingagain.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="revisedchroot.xml"/>

@@ -210,6 +210,149 @@ chmod 755 /lib/systemd/systemd-user-sessions</userinput></screen>
 
   </sect2>
 
+<!-- ====== 32-bit ===== -->
+
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of systemd - 32-bit</title>
+
+    <para>If still in the build directory, step out:</para>
+<screen><userinput remap="pre">cd ..</userinput></screen>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">rm -rf build</userinput></screen>
+
+    <para>Create a symlink to work around missing xsltproc:</para>
+
+<screen><userinput remap="pre">ln -sf /tools/bin/true /usr/bin/xsltproc</userinput></screen>
+
+    <para>Because we have not yet installed the final version of Util-Linux,
+    create links to the libraries in the approprite location:</para>
+
+<screen><userinput remap="pre">for file in /tools/lib32/lib{blkid,mount,uuid}*; do
+    ln -sf $file /usr/lib32/
+done</userinput></screen>
+
+    <para>Set up the man pages:</para>
+
+<screen><userinput remap="pre">tar -xf ../systemd-man-pages-&systemd-version;.tar.xz</userinput></screen>
+
+    <para>Prepare systemd for compilation:</para>
+
+    <screen><userinput remap="configure">cd build
+PKG_CONFIG_PATH="/usr/lib32/pkgconfig:/tools/lib32/pkgconfig" \
+CC="gcc -m32 -march=i686"              \
+CXX="g++ -m32 -march=i686"             \
+LANG=en_US.UTF-8                       \
+meson --prefix=/usr                    \
+      --sysconfdir=/etc                \
+      --localstatedir=/var             \
+      -Dblkid=true                     \
+      -Dbuildtype=release              \
+      -Ddefault-dnssec=no              \
+      -Dfirstboot=false                \
+      -Dinstall-tests=false            \
+      -Dkill-path=/bin/kill            \
+      -Dkmod-path=/bin/kmod            \
+      -Dldconfig=false                 \
+      -Dmount-path=/bin/mount          \
+      -Drootprefix=                    \
+      -Drootlibdir=/usr/lib32          \
+      -Dsplit-usr=true                 \
+      -Dsulogin-path=/sbin/sulogin     \
+      -Dsysusers=false                 \
+      -Dumount-path=/bin/umount        \
+      -Db_lto=false                    \
+      ..</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">LANG=en_US.UTF-8 ninja</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">LANG=en_US.UTF-8 DESTDIR=$PWD/DESTDIR ninja install
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
+rm -rf DESTDIR
+rm -f /usr/bin/xsltproc</userinput></screen>
+
+  </sect2>
+
+<!-- ====== x32-bit ===== -->
+
+  <sect2 arch="multilib" role="installation">
+    <title>Installation of systemd - x32-bit</title>
+
+    <para>If still in the build directory, step out:</para>
+<screen><userinput remap="pre">cd ..</userinput></screen>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">rm -rf build</userinput></screen>
+
+    <para>Create a symlink to work around missing xsltproc:</para>
+
+<screen><userinput remap="pre">ln -sf /tools/bin/true /usr/bin/xsltproc</userinput></screen>
+
+    <para>Because we have not yet installed the final version of Util-Linux,
+    create links to the libraries in the approprite location:</para>
+
+<screen><userinput remap="pre">for file in /tools/libx32/lib{blkid,mount,uuid}*; do
+    ln -sf $file /usr/libx32/
+done</userinput></screen>
+
+    <para>Set up the man pages:</para>
+
+<screen><userinput remap="pre">tar -xf ../systemd-man-pages-&systemd-version;.tar.xz</userinput></screen>
+
+    <para>Fix an issue on x32:</para>
+
+<screen><userinput remap="pre">sed '/log_debug/s@PRI_TIMEX@PRIi64@' -i src/timesync/timesyncd-manager.c
+sed '/long drift_freq;/s@long @int64_t @' -i src/timesync/timesyncd-manager.h</userinput></screen>
+
+    <para>Prepare systemd for compilation:</para>
+
+<screen><userinput remap="configure">cd build
+PKG_CONFIG_PATH="/tools/libx32/pkgconfig:/usr/libx32/pkgconfig" \
+CC="gcc -mx32"                          \
+CXX="g++ -mx32"                         \
+CFLAGS+="-Wno-error=shift-overflow"     \
+CXXFLAGS+="-Wno-error=shift-overflow"   \
+LANG=en_US.UTF-8                        \
+meson --prefix=/usr                     \
+      --sysconfdir=/etc                 \
+      --localstatedir=/var              \
+      -Dblkid=true                      \
+      -Dbuildtype=release               \
+      -Ddefault-dnssec=no               \
+      -Dfirstboot=false                 \
+      -Dinstall-tests=false             \
+      -Dkill-path=/bin/kill             \
+      -Dkmod-path=/bin/kmod             \
+      -Dldconfig=false                  \
+      -Dmount-path=/bin/mount           \
+      -Drootprefix=                     \
+      -Drootlibdir=/usr/libx32          \
+      -Dsplit-usr=true                  \
+      -Dsulogin-path=/sbin/sulogin      \
+      -Dsysusers=false                  \
+      -Dumount-path=/bin/umount         \
+      -Db_lto=false                     \
+      ..</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">LANG=en_US.UTF-8 ninja</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">LANG=en_US.UTF-8 DESTDIR=$PWD/DESTDIR ninja install
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
+rm -rf DESTDIR
+rm -f /usr/bin/xsltproc</userinput></screen>
+
+  </sect2>
+
   <sect2 id="contents-systemd" role="content">
     <title>Contents of systemd</title>
 
