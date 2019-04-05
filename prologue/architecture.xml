@@ -61,24 +61,5 @@ problems can be worked around, but may require some specialized procedures or
 patches.</para>
 -->
 
-<para arch="multilib">You are reading the
-<emphasis>LFS-&version;-multilib</emphasis> book. Building a multilib system
-requires compiling many applications three times: once for the primary
-64-bit architecture; once for the minor 32-bit architecture; and once again for
-the 32-bit architecture with 64-bit memory extensions.</para>
-
-<para arch="multilib">Multilib goes a bit beyond the basic educational approach
-of LFS which is to teach you how to build a Linux system. If you haven't
-previously built by the standard LFS book, you are encouraged to do so before
-attempting this edition.</para>
-
-<para arch="multilib">Continue only if you meet the following requirements:
-<itemizedlist>
-  <listitem><para>you have a x86_64 compatible machine</para></listitem>
-  <listitem><para>you already have experience with LFS</para></listitem>
-  <listitem><para>you have a need for 32-bit support</para></listitem>
-</itemizedlist>
-</para>
-
 </sect1>
 
