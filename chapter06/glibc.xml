@@ -129,6 +129,15 @@ cd       build</userinput></screen>
       </varlistentry>
 
       <varlistentry>
+        <term><parameter>--with-headers=/usr/include</parameter></term>
+        <listitem>
+          <para>This option tells the build system where to find the
+          kernel API headers. By default, those headers are sought in
+          <filename class="directory">/tools/include</filename>.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
         <term><parameter>libc_cv_slibdir=/lib</parameter></term>
         <listitem>
           <para>This variable sets the correct library for all
