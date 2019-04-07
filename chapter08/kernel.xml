@@ -111,6 +111,7 @@ File systems  ---&gt;
    [*] Tmpfs extended attributes [CONFIG_TMPFS_XATTR]
 Kernel hacking  ---&gt;
        Choose kernel unwinder (Frame pointer unwinder)  ---&gt; [CONFIG_UNWINDER_FRAME_POINTER]</screen>
+
     </note>
 
     <note revision="systemd">
@@ -140,6 +141,27 @@ Kernel hacking  ---&gt;
       is covered by the lfs-uefi.txt hint at
       <ulink 
         url="http://www.linuxfromscratch.org/hints/downloads/files/lfs-uefi.txt"/>.
+      </para>
+    </note>
+
+    <note arch="ml_32,ml_x32,ml_all">
+      <para>
+        Running a multilib system means also that the kernel has to be 
+        configured proper. It is required that the kernel is able to 
+        identify and start binaries compiled for different architectures
+        than the default. Setup the required parameter in the kernel
+        config:
+      </para>
+<screen>Binary Emulations  ---&gt;
+    [*] IA32 Emulation
+    &lt;M&gt;   IA32 a.out support
+    [*] x32 ABI for 64-bit mode
+</screen>
+      <para>Make sure that the option 
+        'IA32 Emulation' is set if you built support for the 32bit ABI. 
+        If you selected the x32 ABI or built support for both, also select 
+        'x32 ABI for 64-bit mode'. The option 'IA32 a.out support' is
+        optional.
       </para>
     </note>
 
