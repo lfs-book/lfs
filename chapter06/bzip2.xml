@@ -97,7 +97,9 @@ ln -sv bzip2 /bin/bzcat</userinput></screen>
 
   </sect2>
 
-  <sect2 arch="multilib" role="installation">
+  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI 32 ~~~~~~~~~~~~~~~~~~~~ -->
+  
+  <sect2 arch="ml_32,ml_all" role="installation">
     <title>Installation of Bzip2 - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -121,7 +123,9 @@ install -Dm644 libbz2.a /usr/lib32/libbz2.a</userinput></screen>
 
   </sect2>
 
-  <sect2 arch="multilib" role="installation">
+  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI x32 ~~~~~~~~~~~~~~~~~~~~ -->
+  
+  <sect2 arch="ml_x32,ml_all" role="installation">
     <title>Installation of Bzip2 - x32-bit</title>
 
     <para>Clean previous build:</para>

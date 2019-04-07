@@ -5,12 +5,12 @@
   %general-entities;
 ]>
 
-<sect1 arch="multilib" id="pre-multilib">
+<sect1 arch="ml_32,ml_x32,ml_all" id="pre-multilib">
   <?dbhtml filename="multilib.html"?>
 
   <title>About the Multilib Edition</title>
 
-  <sect2><title>What is 'multilib'</title>
+  <sect2><title>What is Multilib</title>
 
     <para>Today, most systems in the x86 world have a word size of 64 
       bit. The word size is a number of bits which can be used at once
@@ -28,7 +28,7 @@
 
   </sect2>
 
-  <sect2><title>Why doing multilib?</title>
+  <sect2><title>Why doing Multilib?</title>
 
     <para>From a educational point of view, LFS in its 'native' form is
       probably the best way to see how a Linux system is built from source.
@@ -54,7 +54,7 @@
       
     </para>
 
-    <para>This multilib edition of LFS goes a small step beyond and a 
+    <para>The multilib edition of LFS goes a small step beyond and a 
       small step back to what has been said in the previous section 
       when talking about target architectures. On one hand, the multilib 
       edition is focused and <emphasis>limited</emphasis> to x86_64 
@@ -71,16 +71,16 @@
 
   </sect2>
 
-  <sect2><title>Building a multilib system</title>
+  <sect2><title>Building a Multilib System</title>
 
     <para>Building a multilib system is not that much different from 
       building a system by using the 'native' LFS book. Beside some 
       tweaks here and there the most prominent difference is that 
-      multilib requires compiling many applications three times:
+      multilib requires compiling some applications up to three times:
       one for the primary 64-bit architecture,
-      one for the minor 32-bit architecture (m32),
-      and once again for the 32-bit architecture with 64-bit memory 
-      extensions (mx32).</para>
+      one for the 32-bit architecture (m32),
+      and once again for the 32-bit architecture with is 32-bit memory 
+      access and 64 bit instruction set (mx32).</para>
 
     <para>Continue only if you and your system meets the following 
       requirements:

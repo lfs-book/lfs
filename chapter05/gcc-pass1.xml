@@ -49,7 +49,7 @@
     rename the resulting directories so the GCC build procedures will
     automatically use them:</para>
 
-    <para arch="multilib">GCC now requires the GMP, ISL, MPFR, and MPC packages.
+    <para arch="ml_32,ml_x32,ml_all">GCC now requires the GMP, ISL, MPFR, and MPC packages.
     As these packages may not be included in your host distribution, they will
     be built with GCC.  Unpack each package into the GCC source directory and 
     rename the resulting directories so the GCC build procedures will 
@@ -67,7 +67,7 @@ tar -xf ../gmp-&gmp-version;.tar.xz
 mv -v gmp-&gmp-version; gmp
 tar -xf ../mpc-&mpc-version;.tar.gz
 mv -v mpc-&mpc-version; mpc</userinput></screen>
-<screen arch="multilib"><userinput remap="pre">tar -xf ../mpfr-&mpfr-version;.tar.xz
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">tar -xf ../mpfr-&mpfr-version;.tar.xz
 mv -v mpfr-&mpfr-version; mpfr
 tar -xf ../gmp-&gmp-version;.tar.xz
 mv -v gmp-&gmp-version; gmp
@@ -121,7 +121,7 @@ done</userinput></screen>
  ;;
 esac</userinput></screen>
 
-<screen arch="multilib"><userinput remap="pre">sed -e '/m64=/s/lib64/lib/' \
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e '/m64=/s/lib64/lib/' \
     -i.orig gcc/config/i386/t-linux64
 cat > gcc/config/i386/t-linux64 &lt;&lt;"EOF"
 comma=,
@@ -149,9 +149,9 @@ EOF</userinput></screen>
     <!-- Following patch might be obsolete with gcc >= 8.2.1 -->
     <!-- see: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=86724 -->
     <!-- Fix applied in ch5-gcc-pass{1,2}, ch6-gcc -->
-    <para arch="multilib">Fix an issue with isl-&isl-version;:</para>
+    <para arch="ml_32,ml_x32,ml_all">Fix an issue with isl-&isl-version;:</para>
 
-<screen arch="multilib"><userinput remap="pre">sed -e "/#include &lt;isl\/schedule_node.h&gt;/ a#include &lt;isl/id.h&gt;\n#include &lt;isl/space.h&gt;" \
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e "/#include &lt;isl\/schedule_node.h&gt;/ a#include &lt;isl/id.h&gt;\n#include &lt;isl/space.h&gt;" \
     -i gcc/graphite.h</userinput></screen>
 
     <para>The GCC documentation recommends building GCC 
@@ -185,7 +185,10 @@ cd       build</userinput></screen>
     --disable-libstdcxx                            \
     --enable-languages=c,c++</userinput></screen>
 
-<screen arch="multilib"><userinput remap="configure">../configure                                       \
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">mlist="m64"</userinput>
+<userinput arch="ml_32,ml_all" remap="configure">mlist="$mlist,m32"</userinput>
+<userinput arch="ml_x32,ml_all" remap="configure">mlist="$mlist,mx32"</userinput>
+<userinput remap="configure">../configure                                       \
     --target=$LFS_TGT                              \
     --prefix=/tools                                \
     --with-glibc-version=2.11                      \
@@ -197,7 +200,7 @@ cd       build</userinput></screen>
     --disable-nls                                  \
     --disable-shared                               \
     --enable-multilib                              \
-    --with-multilib-list=m32,m64,mx32              \
+    --with-multilib-list=$mlist                    \
     --disable-decimal-float                        \
     --disable-threads                              \
     --disable-libatomic                            \
@@ -286,7 +289,7 @@ cd       build</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry arch="multilib">
+      <varlistentry arch="ml_32,ml_x32,ml_all">
         <term><parameter>--enable-multilib,
                          --with-multilib-list=m32,m64,mx32</parameter></term>
         <listitem>

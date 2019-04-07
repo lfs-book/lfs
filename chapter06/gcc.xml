@@ -51,10 +51,10 @@
   ;;
 esac</userinput></screen>
 
-    <para arch="multilib">Change the default directory name for 64-bit
+    <para arch="ml_32,ml_x32,ml_all">Change the default directory name for 64-bit
     libraries to <quote>lib</quote>:</para>
 
-<screen arch="multilib"><userinput remap="pre">sed -e '/m64=/s/lib64/lib/' \
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e '/m64=/s/lib64/lib/' \
     -i.orig gcc/config/i386/t-linux64
 cat &gt; gcc/config/i386/t-linux64 &lt;&lt;"EOF"
 comma=,
@@ -90,13 +90,29 @@ cd       build</userinput></screen>
              --disable-bootstrap      \
              --disable-libmpx         \
              --with-system-zlib</userinput></screen>
-
-<screen arch="multilib"><userinput remap="configure">SED=sed                               \
+<screen arch="ml_32"><userinput remap="configure">SED=sed                               \
 ../configure --prefix=/usr                     \
              --enable-languages=c,c++          \
              --enable-multilib                 \
-             --with-multilib-list=m32,m64,mx32 \
+             --with-multilib-list=m32,m64      \
              --disable-bootstrap               \
+             --disable-libmpx                  \
+             --with-system-zlib</userinput></screen>
+<screen arch="ml_x32"><userinput remap="configure">SED=sed                               \
+../configure --prefix=/usr                     \
+             --enable-languages=c,c++          \
+             --enable-multilib                 \
+             --with-multilib-list=mx32,m64     \
+             --disable-bootstrap               \
+             --disable-libmpx                  \
+             --with-system-zlib</userinput></screen>
+<screen arch="ml_all"><userinput remap="configure">SED=sed                               \
+../configure --prefix=/usr                     \
+             --enable-languages=c,c++          \
+             --enable-multilib                 \
+             --with-multilib-list=m32,mx32,m64 \
+             --disable-bootstrap               \
+             --disable-libmpx                  \
              --with-system-zlib</userinput></screen>
 
     <para>Note that for other languages, there are some prerequisites that

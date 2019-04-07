@@ -39,10 +39,10 @@
     <itemizedlist>
       <listitem>
         <para>The version of the book being used (in this case 
-              <phrase arch="default" revision="sysv">&version;</phrase>
-              <phrase arch="multilib" revision="sysv">&version;-multilib</phrase>
+          <phrase arch="default" revision="sysv">&version;</phrase>
+          <phrase arch="ml_32,ml_x32,ml_all" revision="sysv">&version;-multilib</phrase>
           <phrase arch="default" revision="systemd">&versiond;</phrase>
-          <phrase arch="multilib" revision="systemd">&versiond;-multilib</phrase>)</para>
+          <phrase arch="ml_32,ml_x32,ml_all" revision="systemd">&versiond;-multilib</phrase>)</para>
 
       </listitem>
       <listitem>

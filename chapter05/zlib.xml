@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 arch="multilib" id="ch-tools-zlib" role="wrap">
+<sect1 arch="ml_32,ml_x32,ml_all" id="ch-tools-zlib" role="wrap">
   <?dbhtml filename="zlib.html"?>
 
   <sect1info condition="script">
@@ -59,7 +59,7 @@
 
   </sect2>
 
-  <sect2 arch="multilib" role="installation">
+  <sect2 arch="ml_32,ml_all" role="installation">
     <title>Installation of Zlib - 32 bit</title>
 
     <para>Prepare Zlib for compilation:</para>
@@ -82,7 +82,7 @@ cp -Rv DESTDIR_32/tools/lib32/* /tools/lib32</userinput></screen>
 
   </sect2>
 
-  <sect2 arch="multilib" role="installation">
+  <sect2 arch="ml_x32,ml_all" role="installation">
     <title>Installation of Zlib - x32 bit</title>
 
     <para>Repeat for the x32-ABI:</para>

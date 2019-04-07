@@ -106,7 +106,7 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
 
   <!-- ~~~~~~~~~~~~~~~~~~~~ ABI 32 ~~~~~~~~~~~~~~~~~~~~ -->
   
-  <sect2 arch="multilib" role="installation">
+  <sect2 arch="ml_32,ml_all" role="installation">
     <title>Installation of Eudev - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -143,7 +143,7 @@ rm -rf DESTDIR</userinput></screen>
   
   <!-- ~~~~~~~~~~~~~~~~~~~~ ABI x32 ~~~~~~~~~~~~~~~~~~~~ -->
   
-  <sect2 arch="multilib" role="installation">
+  <sect2 arch="ml_x32,ml_all" role="installation">
     <title>Installation of Eudev - x32-bit</title>
 
     <para>Clean previous build:</para>

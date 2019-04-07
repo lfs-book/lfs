@@ -56,7 +56,7 @@ done
 
 unset LIB save_lib save_usrlib</userinput></screen>
 
-<screen arch="multilib"><userinput>save_lib="ld-&glibc-version;.so libc-&glibc-version;.so libpthread-&glibc-version;.so libthread_db-&libthread_db-version;.so"
+<screen arch="ml_32,ml_x32,ml_all"><userinput>save_lib="ld-&glibc-version;.so libc-&glibc-version;.so libpthread-&glibc-version;.so libthread_db-&libthread_db-version;.so"
 
 cd /lib
 
@@ -113,7 +113,7 @@ unset LIB save_lib save_usrlib</userinput></screen>
 /tools/bin/find /{bin,sbin} /usr/{bin,sbin,libexec} -type f \
     -exec /tools/bin/strip --strip-all {} ';'</userinput></screen>
 
-<screen arch="multilib"><userinput>/tools/bin/find /usr/lib{,{,x}32} -type f -name \*.a \
+<screen arch="ml_32,ml_x32,ml_all"><userinput>/tools/bin/find /usr/lib{,{,x}32} -type f -name \*.a \
    -exec /tools/bin/strip --strip-debug {} ';'
 
 /tools/bin/find /lib /usr/lib{,{,x}32} -type f \( -name \*.so* -a ! -name \*dbg \) \

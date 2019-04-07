@@ -237,11 +237,11 @@ Kernel hacking  ---&gt;
 
 <screen arch="default" revision="sysv"><userinput remap="install">cp -iv arch/x86/boot/bzImage /boot/vmlinuz-&linux-version;-lfs-&version;</userinput></screen>
 
-<screen arch="multilib" revision="sysv"><userinput remap="install">cp -iv arch/x86/boot/bzImage /boot/vmlinuz-&linux-version;-lfs-&version;-multilib</userinput></screen>
+<screen arch="ml_32,ml_x32,ml_all" revision="sysv"><userinput remap="install">cp -iv arch/x86/boot/bzImage /boot/vmlinuz-&linux-version;-lfs-&version;-multilib</userinput></screen>
 
 <screen arch="default" revision="systemd"><userinput remap="install">cp -iv arch/x86/boot/bzImage /boot/vmlinuz-&linux-version;-lfs-&versiond;</userinput></screen>
 
-<screen arch="multilib" revision="systemd"><userinput remap="install">cp -iv arch/x86/boot/bzImage /boot/vmlinuz-&linux-version;-lfs-&versiond;-multilib</userinput></screen>
+<screen arch="ml_32,ml_x32,ml_all" revision="systemd"><userinput remap="install">cp -iv arch/x86/boot/bzImage /boot/vmlinuz-&linux-version;-lfs-&versiond;-multilib</userinput></screen>
 
 
     <para><filename>System.map</filename> is a symbol file for the kernel.
@@ -353,8 +353,8 @@ EOF</userinput></screen>
         <seg>config-&linux-version;,
         <phrase arch="default" revision="sysv">vmlinuz-&linux-version;-lfs-&version;,</phrase>
         <phrase arch="default" revision="systemd">vmlinuz-&linux-version;-lfs-&versiond;,</phrase>
-        <phrase arch="multilib" revision="sysv">vmlinuz-&linux-version;-lfs-&version;-multilib,</phrase>
-        <phrase arch="multilib" revision="systemd">vmlinuz-&linux-version;-lfs-&versiond;-multilib,</phrase>
+        <phrase arch="ml_32,ml_x32,ml_all" revision="sysv">vmlinuz-&linux-version;-lfs-&version;-multilib,</phrase>
+        <phrase arch="ml_32,ml_x32,ml_all" revision="systemd">vmlinuz-&linux-version;-lfs-&versiond;-multilib,</phrase>
         and System.map-&linux-version;</seg>
         <seg>/lib/modules, /usr/share/doc/linux-&linux-version;</seg>
       </seglistitem>

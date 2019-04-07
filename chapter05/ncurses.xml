@@ -112,7 +112,7 @@ ln -s libncursesw.so /tools/lib/libncurses.so</userinput></screen>
 
   </sect2>
 
-  <sect2 arch="multilib" role="installation">
+  <sect2 arch="ml_32,ml_all" role="installation">
     <title>Installation of Ncurses - 32 bit</title>
 
     <para>Prepare Ncurses for compilation:</para>
@@ -143,7 +143,7 @@ cp -Rv DESTDIR_32/tools/lib32/* /tools/lib32</userinput></screen>
 
   </sect2>
 
-  <sect2 arch="multilib" role="installation">
+  <sect2 arch="ml_x32,ml_all" role="installation">
     <title>Installation of Ncurses - x32 bit</title>
 
     <para>Repeat for the x32-ABI:</para>

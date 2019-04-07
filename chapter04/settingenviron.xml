@@ -47,7 +47,7 @@ PATH=/tools/bin:/bin:/usr/bin
 export LFS LC_ALL LFS_TGT PATH</literal>
 EOF</userinput></screen>
 
-<screen arch="multilib"><userinput>cat &gt; ~/.bashrc &lt;&lt; "EOF"
+<screen arch="ml_32,ml_x32,ml_all"><userinput>cat &gt; ~/.bashrc &lt;&lt; "EOF"
 <literal>set +h
 umask 022
 LFS=/mnt/lfs
