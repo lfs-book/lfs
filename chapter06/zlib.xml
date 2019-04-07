@@ -67,7 +67,9 @@ ln -sfv ../../lib/$(readlink /usr/lib/libz.so) /usr/lib/libz.so</userinput></scr
 
   </sect2>
 
-  <sect2 arch="multilib" role="installation">
+  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI 32 ~~~~~~~~~~~~~~~~~~~~ -->
+  
+  <sect2 arch="ml_32,ml_all" role="installation">
     <title>Installation of Zlib - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -93,7 +95,9 @@ rm -rf DESTDIR</userinput></screen>
 
   </sect2>
 
-  <sect2 arch="multilib" role="installation">
+  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI x32 ~~~~~~~~~~~~~~~~~~~~ -->
+  
+  <sect2 arch="ml_x32,ml_all" role="installation">
     <title>Installation of Zlib - x32-bit</title>
 
 <screen><userinput remap="pre">make distclean</userinput></screen>

@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 arch="multilib" id="ch-system-glibc-32" role="wrap">
+<sect1 arch="ml_32,ml_x32,ml_all" id="ch-system-glibc-32" role="wrap">
   <?dbhtml filename="glibc-32.html"?>
 
   <sect1info condition="script">
@@ -40,7 +40,10 @@
 
   </sect2>
 -->
-  <sect2 role="installation">
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI 32 ~~~~~~~~~~~~~~~~~~~~ -->
+  
+  <sect2 arch="ml_32,ml_all" role="installation">
     <title>Installation of Glibc - 32-bit</title>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
@@ -97,7 +100,9 @@ rm -rf build</userinput></screen>
 
   </sect2>
 
-  <sect2>
+  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI x32 ~~~~~~~~~~~~~~~~~~~~ -->
+  
+  <sect2 arch="ml_x32,ml_all" role="installation">
     <title>Glibc - x32-bit</title>
 
     <para>The Glibc documentation recommends building Glibc 

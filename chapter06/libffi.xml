@@ -98,8 +98,9 @@ sed -e '/^includedir/ s/=.*$/=@includedir@/' \
 
   </sect2>
 
-  <!-- ~~~~~ m32 ~~~~~ -->
-  <sect2 arch="multilib" role="installation">
+  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI 32 ~~~~~~~~~~~~~~~~~~~~ -->
+  
+  <sect2 arch="ml_32,ml_all" role="installation">
     <title>Installation of Libffi - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -132,8 +133,9 @@ rm -rf DESTDIR</userinput></screen>
 
   </sect2>
 
-  <!-- ~~~~~ mx32 ~~~~~ -->
-  <sect2 arch="multilib" role="installation">
+  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI x32 ~~~~~~~~~~~~~~~~~~~~ -->
+  
+  <sect2 arch="ml_x32,ml_all" role="installation">
     <title>Installation of Libffi - x32-bit</title>
 
     <para>Clean previous build:</para>

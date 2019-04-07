@@ -82,7 +82,7 @@ cd       build</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry arch="multilib">
+      <varlistentry arch="ml_32,ml_x32,ml_all">
         <term><parameter>--enable-multi-arch</parameter></term>
         <listitem>
           <para>Enables glibc for multiarch environments.</para>
@@ -191,7 +191,7 @@ readelf -l a.out | grep ': /tools'</userinput></screen>
 
   </sect2>
 
-  <sect2 arch="multilib" role="installation">
+  <sect2 arch="ml_32,ml_all" role="installation">
     <title>Installation of Glibc 32-bit</title>
 
     <para>Clean the build directory for redoing glibc for 32-bit:</para>
@@ -213,9 +213,10 @@ RANLIB="${LFS_TGT}-ranlib"        \
              --libdir=/tools/lib32              \
              --libexecdir=/tools/lib32          \
              --with-headers=/tools/include      \
-             --with-binutils=/tools/bin         \
+             --with-binutils=/tools/bin</userinput></screen>
+<!--                      \
              libc_cv_forced_unwind=yes          \
-             libc_cv_c_cleanup=yes</userinput></screen>
+             libc_cv_c_cleanup=yes</userinput></screen> -->
 
     <para>Now compile the 32-bit version of glibc:</para>
 <screen><userinput remap="make">make</userinput></screen>
@@ -231,7 +232,7 @@ cd ..</userinput></screen>
 
   </sect2>
 
-  <sect2 arch="multilib" role="installation">
+  <sect2 arch="ml_x32,ml_all" role="installation">
     <title>Installation of Glibc x32-bit</title>
 
     <para>Create a build directory for redoing glibc for x32-bit:</para>
@@ -253,9 +254,10 @@ RANLIB="${LFS_TGT}-ranlib"        \
              --libdir=/tools/libx32             \
              --libexecdir=/tools/libx32         \
              --with-headers=/tools/include      \
-             --with-binutils=/tools/bin         \
+             --with-binutils=/tools/bin</userinput></screen>
+<!--                      \
              libc_cv_forced_unwind=yes          \
-             libc_cv_c_cleanup=yes</userinput></screen>
+             libc_cv_c_cleanup=yes</userinput></screen> -->
 
     <para>Now compile the x32-bit version of glibc:</para>
 <screen><userinput remap="make">make</userinput></screen>

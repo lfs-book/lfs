@@ -31,7 +31,7 @@ mkdir -v /var/{log,mail,spool}
 ln -sv /run /var/run
 ln -sv /run/lock /var/lock
 mkdir -pv /var/{opt,cache,lib/{color,misc,locate},local}</userinput></screen>
-<screen arch="multilib"><userinput>mkdir -pv /{bin,boot,etc/{opt,sysconfig,ld.so.conf.d},home,lib/firmware,mnt,opt}
+<screen arch="ml_32,ml_x32,ml_all"><userinput>mkdir -pv /{bin,boot,etc/{opt,sysconfig,ld.so.conf.d},home,lib/firmware,mnt,opt}
 mkdir -pv /{media/{floppy,cdrom},sbin,srv,var}
 install -dv -m 0750 /root
 install -dv -m 1777 /tmp /var/tmp
@@ -44,8 +44,9 @@ mkdir -v /lib64
 mkdir -v /var/{log,mail,spool}
 ln -sv /run /var/run
 ln -sv /run/lock /var/lock
-mkdir -pv /var/{opt,cache,lib/{color,misc,locate},local}
-mkdir -pv /usr/lib{,x}32</userinput></screen>
+mkdir -pv /var/{opt,cache,lib/{color,misc,locate},local}</userinput>
+<userinput arch="ml_32,ml_all">mkdir -pv /usr/lib32</userinput>
+<userinput arch="ml_x32,ml_all">mkdir -pv /usr/libx32</userinput></screen>
 
   <para>Directories are, by default, created with permission mode 755, but
   this is not desirable for all directories. In the commands above, two

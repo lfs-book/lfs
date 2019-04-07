@@ -70,8 +70,9 @@
 
   </sect2>
 
-
-  <sect2 arch="multilib" role="installation">
+  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI 32 ~~~~~~~~~~~~~~~~~~~~ -->
+  
+  <sect2 arch="ml_32,ml_all" role="installation">
     <title>Installation of Libtool - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -97,7 +98,9 @@ rm -rf DESTDIR</userinput></screen>
 
   </sect2>
 
-  <sect2 arch="multilib" role="installation">
+  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI x32 ~~~~~~~~~~~~~~~~~~~~ -->
+  
+  <sect2 arch="ml_x32,ml_all" role="installation">
     <title>Installation of Libtool - x32-bit</title>
 
     <para>Clean previous build:</para>

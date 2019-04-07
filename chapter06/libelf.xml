@@ -63,7 +63,7 @@ install -vm644 config/libelf.pc /usr/lib/pkgconfig</userinput></screen>
 
   </sect2>
 
-  <sect2 arch="multilib" role="installation">
+  <sect2 arch="ml_32,ml_all" role="installation">
     <title>Installation of Libelf - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -90,7 +90,7 @@ rm -rf DESTDIR</userinput></screen>
 
   </sect2>
 
-  <sect2 arch="multilib" role="installation">
+  <sect2 arch="ml_x32,ml_all" role="installation">
     <title>Installation of Libelf - x32-bit</title>
 
     <para>Clean previous build:</para>

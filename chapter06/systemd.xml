@@ -212,7 +212,7 @@ chmod 755 /lib/systemd/systemd-user-sessions</userinput></screen>
 
 <!-- ====== 32-bit ===== -->
 
-  <sect2 arch="multilib" role="installation">
+  <sect2 arch="ml_32,ml_all" role="installation">
     <title>Installation of systemd - 32-bit</title>
 
     <para>If still in the build directory, step out:</para>
@@ -280,7 +280,7 @@ rm -f /usr/bin/xsltproc</userinput></screen>
 
 <!-- ====== x32-bit ===== -->
 
-  <sect2 arch="multilib" role="installation">
+  <sect2 arch="ml_x32,ml_all" role="installation">
     <title>Installation of systemd - x32-bit</title>
 
     <para>If still in the build directory, step out:</para>

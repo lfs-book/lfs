@@ -54,7 +54,7 @@
             --without-normal        \
             --enable-pc-files       \
             --enable-widec</userinput></screen>
-<screen arch="multilib"><userinput remap="configure">./configure --prefix=/usr           \
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">./configure --prefix=/usr           \
             --mandir=/usr/share/man \
             --with-shared           \
             --without-debug         \
@@ -96,7 +96,7 @@
         </listitem>
       </varlistentry>
 
-      <varlistentry arch="multilib">
+      <varlistentry arch="ml_32,ml_x32,ml_all">
         <term><parameter>--with-pkg-config-libdir=/usr/lib/pkgconfig</parameter></term>
         <listitem>
           <para>This switch forces .pc to be installed in /usr/lib/pkgconfig. If
@@ -178,7 +178,9 @@ cp -av lib/lib*.so.5* /usr/lib</userinput></screen>
 
   </sect2>
 
-  <sect2 arch="multilib" role="installation">
+  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI 32 ~~~~~~~~~~~~~~~~~~~~ -->
+  
+  <sect2 arch="ml_32,ml_all" role="installation">
     <title>Installation of Ncurses - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -233,7 +235,9 @@ cp -av lib/lib*.so.5* /usr/lib32</userinput></screen>
 
   </sect2>
 
-  <sect2 arch="multilib" role="installation">
+  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI x32 ~~~~~~~~~~~~~~~~~~~~ -->
+  
+  <sect2 arch="ml_x32,ml_all" role="installation">
     <title>Installation of Ncurses - x32-bit</title>
 
     <para>Clean previous build:</para>

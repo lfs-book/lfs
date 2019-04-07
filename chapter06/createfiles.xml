@@ -47,15 +47,14 @@ ln -sv /tools/lib/libstdc++.{a,so{,.6}}             /usr/lib
 install -vdm755 /usr/lib/pkgconfig
 
 ln -sv bash /bin/sh</userinput></screen>
-<screen arch="multilib"><userinput>ln -sv /tools/bin/{bash,cat,chmod,dd,echo,ln,mkdir,pwd,rm,stty,touch} /bin
+<screen arch="ml_32,ml_x32,ml_all"><userinput>ln -sv /tools/bin/{bash,cat,chmod,dd,echo,ln,mkdir,pwd,rm,stty,touch} /bin
 ln -sv /tools/bin/{env,install,perl,printf}         /usr/bin
-for lib in lib{,32,x32}; do
+for lib in lib{</userinput><userinput arch="ml_32,ml_all">,32</userinput><userinput arch="ml_x32,ml_all">,x32</userinput><userinput>}; do
   ln -sv /tools/$lib/libgcc_s.so{,.1}               /usr/$lib
   ln -sv /tools/$lib/libstdc++.{a,so{,.6}}          /usr/$lib
 done
-ln -sv /usr/libx32 /
-
-install -vdm755 /usr/lib{,32,x32}/pkgconfig
+</userinput><userinput arch="ml_x32,ml_all">ln -sv /usr/libx32 /</userinput><userinput>
+install -vdm755 /usr/lib{</userinput><userinput arch="ml_32,ml_all">,32</userinput><userinput arch="ml_x32,ml_all">,x32</userinput><userinput>}/pkgconfig
 
 ln -sv bash /bin/sh</userinput></screen>
 

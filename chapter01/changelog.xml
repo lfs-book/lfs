@@ -12,9 +12,9 @@
 
   <para>This is version 
         <phrase arch="default" revision="sysv">&version;</phrase>
-        <phrase arch="multilib" revision="sysv">&version;-multilib</phrase>
+        <phrase arch="ml_32,ml_x32,ml_all" revision="sysv">&version;-multilib</phrase>
         <phrase arch="default" revision="systemd">&versiond;</phrase>
-        <phrase arch="multilib" revision="systemd">&versiond;-multilib</phrase> 
+        <phrase arch="ml_32,ml_x32,ml_all" revision="systemd">&versiond;-multilib</phrase> 
   of the Linux From Scratch book, dated
   &releasedate;. If this book is more than six months old, a newer and better
   version is probably already available. To find out, please check one of the

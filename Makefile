@@ -38,8 +38,12 @@ ifndef ARCH
   ARCH = default
 endif
 ifneq ($(ARCH), default)
-  ifneq ($(ARCH), multilib)
-    $(error ARCH must be either 'default' (default if unset) or 'multilib'.)
+  ifneq ($(ARCH), ml_32)
+    ifneq ($(ARCH), ml_x32)
+      ifneq ($(ARCH), ml_all)
+        $(error ARCH must be either 'default' (default if unset), 'ml_32', 'ml_x32' or 'ml_all'.)
+      endif
+    endif
   endif
 endif
 

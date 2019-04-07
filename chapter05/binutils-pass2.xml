@@ -60,14 +60,17 @@ RANLIB=$LFS_TGT-ranlib         \
     --with-lib-path=/tools/lib \
     --with-sysroot</userinput></screen>
 
-<screen arch="multilib"><userinput remap="configure">CC=$LFS_TGT-gcc                \
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">lpath=/tools/lib</userinput>
+<userinput remap="configure" arch="ml_32,ml_all">lpath="$lpath:/tools/lib32"</userinput>
+<userinput remap="configure" arch="ml_x32,ml_all">lpath="$lpath:/tools/libx32"</userinput>
+<userinput remap="configure">CC=$LFS_TGT-gcc                \
 AR=$LFS_TGT-ar                 \
 RANLIB=$LFS_TGT-ranlib         \
 ../configure                   \
     --prefix=/tools            \
     --disable-nls              \
     --disable-werror           \
-    --with-lib-path=/tools/lib:/tools/lib32:/tools/libx32 \
+    --with-lib-path=$lpath     \
     --with-sysroot             \
     --enable-64-bit-bfd        \
     --enable-multilib</userinput></screen>
@@ -95,7 +98,7 @@ RANLIB=$LFS_TGT-ranlib         \
         </listitem>
       </varlistentry>
 
-      <varlistentry arch="multilib">
+      <varlistentry arch="ml_32,ml_x32,ml_all">
         <term><parameter>--with-lib-path=/tools/lib:...</parameter></term>
         <listitem>
           <para>This tells the configure script to specify the library
@@ -118,14 +121,14 @@ RANLIB=$LFS_TGT-ranlib         \
         </listitem>
       </varlistentry>
 
-      <varlistentry arch="multilib">
+      <varlistentry arch="ml_32,ml_x32,ml_all">
         <term><parameter>--enable-64-bit-bfd</parameter></term>
         <listitem>
           <para>TODO</para>
         </listitem>
       </varlistentry>
       
-      <varlistentry arch="multilib">
+      <varlistentry arch="ml_32,ml_x32,ml_all">
         <term><parameter>--enable-multilib</parameter></term>
         <listitem>
           <para>TODO</para>
@@ -149,8 +152,14 @@ RANLIB=$LFS_TGT-ranlib         \
 make -C ld LIB_PATH=/usr/lib:/lib
 cp -v ld/ld-new /tools/bin</userinput></screen>
 
-<screen arch="multilib"><userinput remap="adjust">make -C ld clean
+<screen arch="ml_all"><userinput remap="adjust">make -C ld clean
 make -C ld LIB_PATH=/usr/lib:/lib:/usr/lib32:/lib32:/usr/libx32:/libx32
+cp -v ld/ld-new /tools/bin</userinput></screen>
+<screen arch="ml_32"><userinput remap="adjust">make -C ld clean
+make -C ld LIB_PATH=/usr/lib:/lib:/usr/lib32:/lib32
+cp -v ld/ld-new /tools/bin</userinput></screen>
+<screen arch="ml_x32"><userinput remap="adjust">make -C ld clean
+make -C ld LIB_PATH=/usr/lib:/lib:/usr/libx32:/libx32
 cp -v ld/ld-new /tools/bin</userinput></screen>
 
     <variablelist>

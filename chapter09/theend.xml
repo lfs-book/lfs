@@ -36,7 +36,7 @@ PRETTY_NAME="Linux From Scratch &versiond;"
 VERSION_CODENAME="&lt;your name here&gt;"
 EOF</userinput></screen>
 
-<screen arch="multilib" revision="systemd"><userinput>cat &gt; /etc/os-release &lt;&lt; "EOF"
+<screen arch="ml_32,ml_x32,ml_all" revision="systemd"><userinput>cat &gt; /etc/os-release &lt;&lt; "EOF"
 NAME="Linux From Scratch"
 VERSION="&versiond;"
 ID=lfs
@@ -51,7 +51,7 @@ EOF</userinput></screen>
   running:</para>
 
 <screen arch="default" revision="sysv"><userinput>echo &version; &gt; /etc/lfs-release</userinput></screen>
-<screen arch="multilib" revision="sysv"><userinput>echo &version;-multilib &gt; /etc/lfs-release</userinput></screen>
+<screen arch="ml_32,ml_x32,ml_all" revision="sysv"><userinput>echo &version;-multilib &gt; /etc/lfs-release</userinput></screen>
 
   <para revision="systemd">Creating the file
   <filename>/etc/lfs-release</filename> is recommended for compatibility with
@@ -79,14 +79,14 @@ DISTRIB_CODENAME="&lt;your name here&gt;"
 DISTRIB_DESCRIPTION="Linux From Scratch"
 EOF</userinput></screen>
 
-<screen arch="multilib" revision="sysv"><userinput>cat &gt; /etc/lsb-release &lt;&lt; "EOF"
+<screen arch="ml_32,ml_x32,ml_all" revision="sysv"><userinput>cat &gt; /etc/lsb-release &lt;&lt; "EOF"
 DISTRIB_ID="Linux From Scratch"
 DISTRIB_RELEASE="&version;-multilib"
 DISTRIB_CODENAME="&lt;your name here&gt;"
 DISTRIB_DESCRIPTION="Linux From Scratch"
 EOF</userinput></screen>
 
-<screen arch="multilib" revision="systemd"><userinput>cat &gt; /etc/lsb-release &lt;&lt; "EOF"
+<screen arch="ml_32,ml_x32,ml_all" revision="systemd"><userinput>cat &gt; /etc/lsb-release &lt;&lt; "EOF"
 DISTRIB_ID="Linux From Scratch"
 DISTRIB_RELEASE="&versiond;-multilib"
 DISTRIB_CODENAME="&lt;your name here&gt;"

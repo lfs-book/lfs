@@ -22,7 +22,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="glibc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="adjusting.xml"/>
 
-  <!-- arch="multilib" only -->
+  <!-- arch="ml_32,ml_x32,ml_all" only -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="glibc-32.xml"/>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="zlib.xml"/>

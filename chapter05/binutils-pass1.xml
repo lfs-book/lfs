@@ -79,9 +79,12 @@ cd       build</userinput></screen>
              --disable-nls              \
              --disable-werror</userinput></screen>
 
-    <screen arch="multilib"><userinput remap="configure">../configure --prefix=/tools \
+    <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">lpath=/tools/lib</userinput>
+<userinput remap="configure" arch="ml_32,ml_all">lpath="$lpath:/tools/lib32"</userinput>
+<userinput remap="configure" arch="ml_x32,ml_all">lpath="$lpath:/tools/libx32"</userinput>
+<userinput remap="configure">../configure --prefix=/tools \
              --with-sysroot=$LFS                     \
-             --with-lib-path=/tools/lib:/tools/lib32:/tools/libx32 \
+             --with-lib-path=$lpath                  \
              --target=$LFS_TGT                       \
              --disable-nls                           \
              --disable-werror                        \
@@ -158,14 +161,14 @@ cd       build</userinput></screen>
     <para arch="default">If building on x86_64, create a symlink to ensure the
     sanity of the toolchain:</para>
 
-    <para arch="multilib">Create a symlink to ensure the sanity of
+    <para arch="ml_32,ml_x32,ml_all">Create a symlink to ensure the sanity of
     the toolchain:</para>
 
 <screen arch="default"><userinput remap="install">case $(uname -m) in
   x86_64) mkdir -v /tools/lib &amp;&amp; ln -sv lib /tools/lib64 ;;
 esac</userinput></screen>
 
-<screen arch="multilib"><userinput remap="install">mkdir -v /tools/lib &amp;&amp;
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="install">mkdir -v /tools/lib &amp;&amp;
 ln -sv lib /tools/lib64</userinput></screen>
 
     <para>Install the package:</para>
