@@ -96,16 +96,9 @@ esac</userinput></screen>
     <para arch="ml_32,ml_x32,ml_all">Change the default directory name for 64-bit
     libraries to <quote>lib</quote>:</para>
 
-<screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e '/m64=/s/lib64/lib/' \
-    -i.orig gcc/config/i386/t-linux64
-cat > gcc/config/i386/t-linux64 &lt;&lt;"EOF"
-comma=,
-MULTILIB_OPTIONS    = $(subst $(comma),/,$(TM_MULTILIB_CONFIG))
-MULTILIB_DIRNAMES   = $(patsubst m%, %, $(subst /, ,$(MULTILIB_OPTIONS)))
-MULTILIB_OSDIRNAMES = m64=../lib$(call if_multiarch,:x86_64-linux-gnu)
-MULTILIB_OSDIRNAMES+= m32=../lib32$(call if_multiarch,:i386-linux-gnu)
-MULTILIB_OSDIRNAMES+= mx32=../libx32$(call if_multiarch,:x86_64-linux-gnux32)
-EOF</userinput></screen>
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e '/m64=/s/lib64/lib/'  \
+    -e '/m32=/s/m32=.*/m32=..\/lib32$(call if_multiarch,:i386-linux-gnu)/' \
+    -i.orig gcc/config/i386/t-linux64</userinput></screen>
 
     <para arch="default">As in the first build of GCC it requires the GMP,
     MPFR, and MPC packages. Unpack the tarballs and move them into the
