@@ -44,20 +44,16 @@ ln -sv /tools/bin/{env,install,perl,printf}         /usr/bin
 ln -sv /tools/lib/libgcc_s.so{,.1}                  /usr/lib
 ln -sv /tools/lib/libstdc++.{a,so{,.6}}             /usr/lib
 
-install -vdm755 /usr/lib/pkgconfig
-
 ln -sv bash /bin/sh</userinput></screen>
 
 <screen arch="ml_32,ml_x32,ml_all"><userinput arch="ml_32,ml_all">
 ln -sv /tools/lib32/libgcc_s.so{,.1}               /usr/lib32
 ln -sv /tools/lib32/libstdc++.{a,so{,.6}}          /usr/lib32
-install -vdm755 /usr/lib32/pkgconfig
 </userinput>
 <userinput arch="ml_x32,ml_all">
 ln -sv /tools/libx32/libgcc_s.so{,.1}              /usr/libx32
 ln -sv /tools/libx32/libstdc++.{a,so{,.6}}         /usr/libx32
 ln -sv /usr/libx32 /
-install -vdm755 /usr/libx32/pkgconfig
 </userinput></screen>
 
 <!--for lib in blkid lzma mount uuid
