@@ -256,7 +256,7 @@ readelf -l a.out | grep ': /tools'</userinput></screen>
 
     <para arch="ml_x32,ml_all">In this case, the output shoud be:</para>
 
-<screen arch="ml_x32,ml_all"><computeroutput>[Requesting program interpreter: /tools/lib/ld-linux-x32.so.2]</computeroutput></screen>
+<screen arch="ml_x32,ml_all"><computeroutput>[Requesting program interpreter: /tools/libx32/ld-linux-x32.so.2]</computeroutput></screen>
 
     <para arch="default">Note that the dynamic linker will be
     /tools/lib/ld-linux.so.2 for 32-bit machines.</para>
