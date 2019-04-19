@@ -297,7 +297,7 @@ readelf -l a.out | grep ': /tools'</userinput></screen>
 
     <para>Output should be like:</para>
 
-<screen><computeroutput>[Requesting program interpreter: /tools/lib/ld-linux-x32.so.2]</computeroutput></screen>
+<screen><computeroutput>[Requesting program interpreter: /tools/libx32/ld-linux-x32.so.2]</computeroutput></screen>
 
     <para>If the output is not shown as above or there was no output at all,
     then something is wrong. Investigate and retrace the steps to find out
