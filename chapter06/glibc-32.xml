@@ -19,38 +19,22 @@
   <indexterm zone="ch-system-glibc-32">
     <primary sortas="a-Glibc-32">Glibc-32</primary>
   </indexterm>
-<!--
-  <sect2 role="package">
-    <title/>
 
-    <para>The Glibc package contains the main C library. This library provides
-    the basic routines for allocating memory, searching directories, opening and
-    closing files, reading and writing files, string handling, pattern matching,
-    arithmetic, and so on.</para>
-
-    <segmentedlist>
-      <segtitle>&buildtime;</segtitle>
-      <segtitle>&diskspace;</segtitle>
-
-      <seglistitem>
-        <seg>&glibc-ch6-sbu;</seg>
-        <seg>&glibc-ch6-du;</seg>
-      </seglistitem>
-    </segmentedlist>
-
-  </sect2>
--->
-
-  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI 32 ~~~~~~~~~~~~~~~~~~~~ -->
-  
-  <sect2 arch="ml_32,ml_all" role="installation">
-    <title>Installation of Glibc - 32-bit</title>
+  <sect2 role="installation">
+    <title>Preparation to install of ML-Glibc</title>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
 
     <para>Remove a file that may be left over from a previous build attempt:</para>
 
 <screen><userinput remap="pre">mv /usr/include/limits.h{,.backup} </userinput></screen>
+
+  </sect2>
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~ ABI 32 ~~~~~~~~~~~~~~~~~~~~ -->
+  
+  <sect2 arch="ml_32,ml_all" role="installation">
+    <title>Installation of Glibc - 32-bit</title>
 
     <para>The Glibc documentation recommends building Glibc 
     in a dedicated build directory:</para>
@@ -60,8 +44,8 @@ cd       build</userinput></screen>
 
     <para>Prepare Glibc for compilation:</para>
 
-<screen><userinput remap="configure">CC="gcc -m32 -ffile-prefix-map=/tools=/usr -isystem /usr/include" \
-CXX="g++ -m32 -ffile-prefix-map=/tools=/usr -isystem /usr/include" \
+<screen><userinput remap="configure">CC="gcc -m32 -ffile-prefix-map=/tools=/usr" \
+CXX="g++ -m32 -ffile-prefix-map=/tools=/usr" \
 ../configure --prefix=/usr                          \
              --disable-werror                       \
              --enable-kernel=&min-kernel;                    \
@@ -101,6 +85,30 @@ rm -rf build</userinput></screen>
   </sect2>
 
   <!-- ~~~~~~~~~~~~~~~~~~~~ ABI x32 ~~~~~~~~~~~~~~~~~~~~ -->
+
+<!--
+In case the compilation ends with
+
+...
+if test -r /autolfs/sources/glibc-2.29/build/DESTDIR/usr/include/gnu/stubs-x32.h && cmp -s /autolfs/sources/glibc-2.29/build/stubs.h /autolfs/sources/glibc-2.29/build/DESTDIR/usr/include/gnu/stubs-x32.h; \
+then echo 'stubs.h unchanged'; \
+else /usr/bin/install -c -m 644 /autolfs/sources/glibc-2.29/build/stubs.h /autolfs/sources/glibc-2.29/build/DESTDIR/usr/include/gnu/stubs-x32.h; fi
+rm -f /autolfs/sources/glibc-2.29/build/stubs.h
+/autolfs/sources/glibc-2.29/build/elf/sln /autolfs/sources/glibc-2.29/build/elf/symlink.list
+/autolfs/sources/glibc-2.29/build/elf/sln: /autolfs/sources/glibc-2.29/build/elf/sln: cannot execute binary file
+make[1]: *** [Makefile:106: install-symbolic-link] Error 126
+make[1]: Leaving directory '/autolfs/sources/glibc-2.29'
+make: *** [Makefile:12: install] Error 2
+
+it is a good sign that the actually running kernel isn't ML-enabled.
+ArchLinux's kernels are configured like
+
+CONFIG_IA32_EMULATION=y
+# CONFIG_IA32_AOUT is not set
+# CONFIG_X86_X32 is not set
+
+It isn't x32-enabled ==> Error when building x32 stuff
+-->
   
   <sect2 arch="ml_x32,ml_all" role="installation">
     <title>Glibc - x32-bit</title>
@@ -113,8 +121,8 @@ cd       build</userinput></screen>
 
       <para>Prepare Glibc for compilation:</para>
 
-<screen><userinput remap="configure">CC="gcc -mx32 -ffile-prefix-map=/tools=/usr -isystem /usr/include" \
-CXX="g++ -mx32 -ffile-prefix-map=/tools=/usr -isystem /usr/include" \
+<screen><userinput remap="configure">CC="gcc -mx32 -ffile-prefix-map=/tools=/usr" \
+CXX="g++ -mx32 -ffile-prefix-map=/tools=/usr" \
 ../configure --prefix=/usr                          \
              --disable-werror                       \
              --enable-kernel=&min-kernel;                    \
@@ -153,11 +161,17 @@ ldconfig</userinput></screen>
 <screen><userinput>cd ..
 rm -rf build</userinput></screen>
 
+  </sect2>
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~ Cleanup ~~~~~~~~~~~~~~~~~~~~ -->
+
+  <sect2 role="installation">
+    <title>Cleanup</title>
+
     <para>Restore the file we moved temporarily away:</para>
 
 <screen><userinput remap="pre">mv /usr/include/limits.h{.backup,} </userinput></screen>
 
   </sect2>
-
+  
 </sect1>
-
