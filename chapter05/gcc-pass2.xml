@@ -139,23 +139,10 @@ cd       build</userinput></screen>
 
     <para>Now prepare GCC for compilation:</para>
 
-<screen arch="default"><userinput remap="configure">CC=$LFS_TGT-gcc                                    \
-CXX=$LFS_TGT-g++                                   \
-AR=$LFS_TGT-ar                                     \
-RANLIB=$LFS_TGT-ranlib                             \
-../configure                                       \
-    --prefix=/tools                                \
-    --with-local-prefix=/tools                     \
-    --with-native-system-header-dir=/tools/include \
-    --enable-languages=c,c++                       \
-    --disable-libstdcxx-pch                        \
-    --disable-multilib                             \
-    --disable-bootstrap                            \
-    --disable-libgomp</userinput></screen>
-
-<screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">mlist="m64"</userinput>
-<userinput arch="ml_32,ml_all" remap="configure">mlist="$mlist,m32"</userinput>
-<userinput arch="ml_x32,ml_all" remap="configure">mlist="$mlist,mx32"</userinput>
+<screen><userinput arch="default" remap="configure">mloptions="--disable-multilib"</userinput>
+<userinput arch="ml_32,ml_x32,ml_all" remap="configure">mloptions="--with-system-zlib --enable-multilib --with-multilib-list=m64"</userinput>
+<userinput arch="ml_32,ml_all" remap="configure">mloptions="$mloptions,m32"</userinput>
+<userinput arch="ml_x32,ml_all" remap="configure">mloptions="$mloptions,mx32"</userinput>
 <userinput remap="configure">CC=$LFS_TGT-gcc                                    \
 CXX=$LFS_TGT-g++                                   \
 AR=$LFS_TGT-ar                                     \
@@ -166,11 +153,9 @@ RANLIB=$LFS_TGT-ranlib                             \
     --with-native-system-header-dir=/tools/include \
     --enable-languages=c,c++                       \
     --disable-libstdcxx-pch                        \
-    --enable-multilib                              \
-    --with-multilib-list=$mlist                    \
-    --with-system-zlib                             \
     --disable-bootstrap                            \
-    --disable-libgomp</userinput></screen>
+    --disable-libgomp                              \
+    $mloptions</userinput></screen>
 
     <variablelist>
       <title>The meaning of the new configure options:</title>
