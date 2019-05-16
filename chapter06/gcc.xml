@@ -76,33 +76,16 @@ cd       build</userinput></screen>
 
     <para>Prepare GCC for compilation:</para>
 
-<screen arch="default"><userinput remap="configure">SED=sed                               \
+<screen><userinput arch="default" remap="configure">mloptions="--disable-multilib"</userinput>
+<userinput arch="ml_32,ml_x32,ml_all" remap="configure">mloptions="--enable-multilib --with-multilib-list=m64"</userinput>
+<userinput arch="ml_32,ml_all" remap="configure">mloptions="$mloptions,m32"</userinput>
+<userinput arch="ml_x32,ml_all" remap="configure">mloptions="$mloptions,mx32"</userinput>
+<userinput remap="configure">SED=sed                               \
 ../configure --prefix=/usr            \
              --enable-languages=c,c++ \
-             --disable-multilib       \
              --disable-bootstrap      \
-             --with-system-zlib</userinput></screen>
-<screen arch="ml_32"><userinput remap="configure">SED=sed                               \
-../configure --prefix=/usr                     \
-             --enable-languages=c,c++          \
-             --enable-multilib                 \
-             --with-multilib-list=m32,m64      \
-             --disable-bootstrap               \
-             --with-system-zlib</userinput></screen>
-<screen arch="ml_x32"><userinput remap="configure">SED=sed                               \
-../configure --prefix=/usr                     \
-             --enable-languages=c,c++          \
-             --enable-multilib                 \
-             --with-multilib-list=mx32,m64     \
-             --disable-bootstrap               \
-             --with-system-zlib</userinput></screen>
-<screen arch="ml_all"><userinput remap="configure">SED=sed                               \
-../configure --prefix=/usr                     \
-             --enable-languages=c,c++          \
-             --enable-multilib                 \
-             --with-multilib-list=m32,mx32,m64 \
-             --disable-bootstrap               \
-             --with-system-zlib</userinput></screen>
+             --with-system-zlib       \
+             $mloptions</userinput></screen>
 
     <para>Note that for other languages, there are some prerequisites that
     are not yet available. See the

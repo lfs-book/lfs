@@ -155,31 +155,10 @@ cd       build</userinput></screen>
 
     <para>Prepare GCC for compilation:</para>
 
-<screen arch="default"><userinput remap="configure">../configure                                       \
-    --target=$LFS_TGT                              \
-    --prefix=/tools                                \
-    --with-glibc-version=2.11                      \
-    --with-sysroot=$LFS                            \
-    --with-newlib                                  \
-    --without-headers                              \
-    --with-local-prefix=/tools                     \
-    --with-native-system-header-dir=/tools/include \
-    --disable-nls                                  \
-    --disable-shared                               \
-    --disable-multilib                             \
-    --disable-decimal-float                        \
-    --disable-threads                              \
-    --disable-libatomic                            \
-    --disable-libgomp                              \
-    --disable-libquadmath                          \
-    --disable-libssp                               \
-    --disable-libvtv                               \
-    --disable-libstdcxx                            \
-    --enable-languages=c,c++</userinput></screen>
-
-<screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">mlist="m64"</userinput>
-<userinput arch="ml_32,ml_all" remap="configure">mlist="$mlist,m32"</userinput>
-<userinput arch="ml_x32,ml_all" remap="configure">mlist="$mlist,mx32"</userinput>
+<screen><userinput arch="default" remap="configure">mloptions="--disable-multilib"</userinput>
+<userinput arch="ml_32,ml_x32,ml_all" remap="configure">mloptions="--enable-multilib --with-multilib-list=m64"</userinput>
+<userinput arch="ml_32,ml_all" remap="configure">mloptions="$mloptions,m32"</userinput>
+<userinput arch="ml_x32,ml_all" remap="configure">mloptions="$mloptions,mx32"</userinput>
 <userinput remap="configure">../configure                                       \
     --target=$LFS_TGT                              \
     --prefix=/tools                                \
@@ -191,8 +170,6 @@ cd       build</userinput></screen>
     --with-native-system-header-dir=/tools/include \
     --disable-nls                                  \
     --disable-shared                               \
-    --enable-multilib                              \
-    --with-multilib-list=$mlist                    \
     --disable-decimal-float                        \
     --disable-threads                              \
     --disable-libatomic                            \
@@ -201,7 +178,8 @@ cd       build</userinput></screen>
     --disable-libssp                               \
     --disable-libvtv                               \
     --disable-libstdcxx                            \
-    --enable-languages=c,c++</userinput></screen>
+    --enable-languages=c,c++                       \
+    $mloptions</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
