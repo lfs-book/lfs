@@ -102,7 +102,7 @@ rm -rf DESTDIR</userinput></screen>
   <!-- ~~~~~~~~~~~~~~~~~~~~ ABI x32 ~~~~~~~~~~~~~~~~~~~~ -->
   
   <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Zlib - x32-bit</title>
+    <title>Installation of Expat - x32-bit</title>
 
     <para>Clean previous build:</para>
 
@@ -111,8 +111,7 @@ make clean</userinput></screen>
 
     <para>Prepare Expat for compilation:</para>
 
-<screen><userinput remap="configure">
-CC="gcc -mx32" ./configure \
+<screen><userinput remap="configure">CC="gcc -mx32" ./configure \
     --prefix=/usr          \
     --libdir=/usr/libx32   \
     --host=x86_64-pc-linux-gnux32</userinput></screen>
