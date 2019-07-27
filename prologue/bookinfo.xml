@@ -11,6 +11,7 @@
   <subtitle arch="default" revision='systemd'>Version &versiond;</subtitle>
   <subtitle arch="ml_32,ml_x32,ml_all" revision='sysv'>Version &version;-multilib</subtitle>
   <subtitle arch="ml_32,ml_x32,ml_all" revision='systemd'>Version &versiond;-multilib</subtitle>
+  <subtitle>Published &releasedate;</subtitle>
 
   <authorgroup>
     <author>
