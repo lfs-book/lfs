@@ -115,10 +115,10 @@ make libbz2.a</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">install -Dm755 libbz2.so.1.0.6 /usr/lib32/libbz2.so.1.0.6
-ln -sf libbz2.so.1.0.6 /usr/lib32/libbz2.so
-ln -sf libbz2.so.1.0.6 /usr/lib32/libbz2.so.1
-ln -sf libbz2.so.1.0.6 /usr/lib32/libbz2.so.1.0
+<screen><userinput remap="install">install -Dm755 libbz2.so.1.0.8 /usr/lib32/libbz2.so.1.0.8
+ln -sf libbz2.so.1.0.8 /usr/lib32/libbz2.so
+ln -sf libbz2.so.1.0.8 /usr/lib32/libbz2.so.1
+ln -sf libbz2.so.1.0.8 /usr/lib32/libbz2.so.1.0
 install -Dm644 libbz2.a /usr/lib32/libbz2.a</userinput></screen>
 
   </sect2>
@@ -141,10 +141,10 @@ make libbz2.a</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">install -Dm755 libbz2.so.1.0.6 /usr/libx32/libbz2.so.1.0.6
-ln -sf libbz2.so.1.0.6 /usr/libx32/libbz2.so
-ln -sf libbz2.so.1.0.6 /usr/libx32/libbz2.so.1
-ln -sf libbz2.so.1.0.6 /usr/libx32/libbz2.so.1.0
+<screen><userinput remap="install">install -Dm755 libbz2.so.1.0.8 /usr/libx32/libbz2.so.1.0.8
+ln -sf libbz2.so.1.0.8 /usr/libx32/libbz2.so
+ln -sf libbz2.so.1.0.8 /usr/libx32/libbz2.so.1
+ln -sf libbz2.so.1.0.8 /usr/libx32/libbz2.so.1.0
 install -Dm644 libbz2.a /usr/libx32/libbz2.a</userinput></screen>
 
   </sect2>
