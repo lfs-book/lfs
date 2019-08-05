@@ -46,6 +46,49 @@
        -->
 
     <listitem>
+      <para>2019-08-04</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Fix a problem introduced by linux-5.2 by
+          adding an include file to a glibc header.</para>
+        </listitem>
+        <listitem arch="ml_32,ml_x32,ml_all">
+          <para>[thomas] - Upgrade to isl-0.21</para>
+        </listitem>
+        <listitem arch="ml_32,ml_x32,ml_all">
+          <para>[thomas] - Upgrade to linux-firmware-20190519</para>
+        </listitem>	
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2019-08-03</para>
+      <itemizedlist>
+        <listitem revision="systemd">
+          <para>[renodr] - Add a patch to systemd to fix issues with
+          networkd on kernel versions 5.2+, and to fix issues with AMD Ryzen
+          CPUs. Fixes <ulink url="&lfs-ticket-root;4506">#4506</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.2.5. Fixes
+          <ulink url="&lfs-ticket-root;4505">#4505</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to kbd-2.2.0. Fixes
+          <ulink url="&lfs-ticket-root;4507">#4507</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to glibc-2.30. Fixes
+          <ulink url="&lfs-ticket-root;4508">#4508</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-5.02. Fixes
+          <ulink url="&lfs-ticket-root;4509">#4509</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2019-07-21</para>
       <itemizedlist>
         <listitem>
