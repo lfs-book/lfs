@@ -47,6 +47,15 @@
       <para>2019-08-14</para>
       <itemizedlist>
         <listitem>
+          <para>[bdubbs] - LFS-9.0-rc1 released.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2019-08-14</para>
+      <itemizedlist>
+        <listitem>
           <para>[bdubbs] - Update to vim-8.1.1846. Fixes
           <ulink url="&lfs-ticket-root;4500">#4500</ulink>.</para>
         </listitem>
