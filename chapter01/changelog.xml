@@ -44,6 +44,65 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
        -->
+    <listitem revision="systemd">
+      <para>2019-10-03</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Add a consolidated patch to fix several
+          problems with the new version of systemd, including bugs
+          in udev, filesystem mounting (with Samba-4.11), hardware
+          database updates, timesync fixes with adjtime as is set
+          in LFS, and bugs with network management and domain
+          resolution.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2019-09-29</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to texinfo-6.7. Fixes
+          <ulink url="&lfs-ticket-root;4529">#4529</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to e2fsprogs-1.45.4. Fixes
+          <ulink url="&lfs-ticket-root;4530">#4530</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to XML-Parser-2.46. Fixes
+          <ulink url="&lfs-ticket-root;4531">#4531</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to expat-2.2.9. Fixes
+          <ulink url="&lfs-ticket-root;4532">#4532</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iproute2-5.3.0. Fixes
+          <ulink url="&lfs-ticket-root;4533">#4533</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="systemd">
+      <para>2019-09-27</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Update to systemd-243. Fixes
+          <ulink url="&lfs-ticket-root;4456">#4456</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2019-09-24</para>
+      <itemizedlist>
+        <listitem>
+          <para>[pierre] - Update to linux-5.3.1. Fixes
+          <ulink url="&lfs-ticket-root;4528">#4528</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
     <listitem>
       <para>2019-09-14</para>
