@@ -118,8 +118,7 @@ rm -rf DESTDIR</userinput></screen>
 
     <para>Prepare Attr for compilation:</para>
 
-<screen><userinput remap="configure">
-CC="gcc -mx32" ./configure \
+<screen><userinput remap="configure">CC="gcc -mx32" ./configure \
     --prefix=/usr          \
     --disable-static       \
     --libdir=/usr/libx32   \

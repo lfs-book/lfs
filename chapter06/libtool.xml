@@ -109,8 +109,7 @@ rm -rf DESTDIR</userinput></screen>
 
     <para>Prepare Libtool for compilation:</para>
 
-<screen><userinput remap="configure">
-CC="gcc -mx32" ./configure \
+<screen><userinput remap="configure">CC="gcc -mx32" ./configure \
     --prefix=/usr          \
     --libdir=/usr/libx32   \
     --host=x86_64-pc-linux-gnux32</userinput></screen>
