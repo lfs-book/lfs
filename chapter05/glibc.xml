@@ -51,11 +51,18 @@ cd       build</userinput></screen>
 
     <para>Next, prepare Glibc for compilation:</para>
 
-<screen><userinput remap="configure">../configure                             \
+<screen arch="default"><userinput remap="configure">../configure                             \
       --prefix=/tools                    \
       --host=$LFS_TGT                    \
       --build=$(../scripts/config.guess) \
       --enable-kernel=&min-kernel;                \
+      --with-headers=/tools/include</userinput></screen>
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">../configure                             \
+      --prefix=/tools                    \
+      --host=$LFS_TGT                    \
+      --build=$(../scripts/config.guess) \
+      --enable-kernel=&min-kernel;                \
+      --enable-multi-arch                \
       --with-headers=/tools/include</userinput></screen>
 <!--
       libc_cv_forced_unwind=yes          \
