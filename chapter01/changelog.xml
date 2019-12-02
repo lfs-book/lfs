@@ -45,11 +45,14 @@
     appropriate for the entry or if needed the entire day's listitem.
        -->
     <listitem revision="sysv">
-      <para>2019-10-31</para>
+      <para>2019-12-02</para>
       <itemizedlist>
-        <listitem>
-          <para>[dj] - Update to lfs-bootscripts-20191031.</para>
+        <listitem arch="ml_32,ml_x32,ml_all">
+          <para>[thomas] - Update to isl-0.22.</para>
         </listitem>
+       <listitem arch="ml_32,ml_x32,ml_all">
+          <para>[thomas] - Upgrade to linux-firmware-20191026</para>
+       </listitem>
       </itemizedlist>
     </listitem>
 
