@@ -5,6 +5,20 @@
   %general-entities;
 ]>
 
+<!--
+  Linux Firmware
+  ~~~~~~~~~~~~~~
+
+  Checkout the tree at
+  https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/
+
+  $ PKGNAME=linux-firmware-$(date +%Y%m%d)
+  $ mkdir -pv $PKGNAME 
+  $ cd $PKGNAME
+  $ <<checkout git tree here>>
+  $ cd ..
+  $ tar -cJf ${PKGNAME}.tar.xz $PKGNAME
+-->
 <sect1 id="ch-system-linux-firmware" role="wrap">
   <?dbhtml filename="linux-firmware.html"?>
 
