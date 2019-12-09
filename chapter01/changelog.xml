@@ -45,6 +45,28 @@
     appropriate for the entry or if needed the entire day's listitem.
        -->
     <listitem revision="sysv">
+      <para>2019-12-05</para>
+      <itemizedlist>
+        <listitem revision="systemd">
+          <para>[renodr] - Update to systemd-244. Fixes
+          <ulink url="&lfs-ticket-root;4554">#4554</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to bc-2.4.0. Fixes
+          <ulink url="&lfs-ticket-root;4556">#4556</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to shadow-4.8. Fixes
+          <ulink url="&lfs-ticket-root;4557">#4557</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to linux-5.4.2. Fixes
+          <ulink url="&lfs-ticket-root;4558">#4558</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="sysv">
       <para>2019-12-02</para>
       <itemizedlist>
         <listitem arch="ml_32,ml_x32,ml_all">
@@ -56,7 +78,7 @@
       </itemizedlist>
     </listitem>
 
-    <listitem revision="sysv">
+    <listitem>
       <para>2019-12-01</para>
       <itemizedlist>
         <listitem>
