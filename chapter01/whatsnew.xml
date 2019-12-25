@@ -80,9 +80,9 @@
    <!-- <listitem>
       <para>Expect-&expect-version;</para>
    </listitem>-->
-   <!--<listitem>
+   <listitem>
       <para>File-&file-version;</para>
-   </listitem>-->
+   </listitem>
     <listitem>
       <para>Findutils-&findutils-version;</para>
     </listitem>
@@ -146,9 +146,9 @@
     <!--<listitem>
       <para>LFS-Bootscripts-&lfs-bootscripts-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Libcap-&libcap-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Libelf-&elfutils-version; (from elfutils)</para>
    </listitem>
