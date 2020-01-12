@@ -45,50 +45,34 @@
 
     <para>Prevent a static library from being installed:</para>
 
-<screen><userinput remap="pre">sed -i '/install.*STALIBNAME/d' libcap/Makefile</userinput></screen>
+<screen><userinput remap="pre">sed -i '/install.*STACAPLIBNAME/d' libcap/Makefile</userinput></screen>
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
-
-    <para>This package does not come with a test suite.</para>
-
-    <para>Install the package:</para>
-
-<screen><userinput remap="install">make RAISE_SETFCAP=no lib=lib prefix=/usr install
-chmod -v 755 /usr/lib/libcap.so.&libcap-version;</userinput></screen>
+<screen><userinput remap="make">make lib=lib</userinput></screen>
 
     <variablelist>
       <title>The meaning of the make option:</title>
 
       <varlistentry>
-        <term><parameter>RAISE_SETFCAP=no</parameter></term>
-        <listitem>
-          <para>This parameter skips trying to use <command>setcap</command>
-          on itself. This avoids an installation error if the kernel or file
-          system does not support extended capabilities.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
         <term><parameter>lib=lib</parameter></term>
         <listitem>
-          <para>This parameter installs the library in
-          <filename>$prefix/lib</filename> rather than
-          <filename>$prefix/lib64</filename> on x86_64. It has no effect on
+          <para>This parameter sets the library directory to
+          <filename>/lib</filename> rather than
+          <filename>/lib64</filename> on x86_64. It has no effect on
           x86.</para>
         </listitem>
       </varlistentry>
- 
     </variablelist>
 
-    <para>The shared library needs to be moved to
-    <filename class="directory">/lib</filename>, and as a result the
-    <filename class="extension">.so</filename> file in
-    <filename class="directory">/usr/lib</filename> will need to be recreated:</para>
+    <para>To test the results, issue:</para>
 
-<screen><userinput remap="install">mv -v /usr/lib/libcap.so.* /lib
-ln -sfv ../../lib/$(readlink /usr/lib/libcap.so) /usr/lib/libcap.so</userinput></screen>
+<screen><userinput remap="test">make test</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make lib=lib install
+chmod -v 755 /lib/libcap.so.&libcap-version;</userinput></screen>
 
   </sect2>
 
@@ -139,7 +123,7 @@ rm -rf DESTDIR</userinput></screen>
 
       <seglistitem>
         <seg>capsh, getcap, getpcaps, and setcap</seg>
-        <seg>libcap.so</seg>
+        <seg>libcap.so and libpsx.a</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -195,6 +179,17 @@ rm -rf DESTDIR</userinput></screen>
           capabilities</para>
           <indexterm zone="ch-system-libcap libcap">
             <primary sortas="c-libcap">libcap</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libpsx">
+        <term><filename class="libraryfile">libpsx</filename></term>
+        <listitem>
+          <para>Contains functions to support POSIX semantics for syscalls
+          associated with the pthread library</para>
+          <indexterm zone="ch-system-libcap libpsx">
+            <primary sortas="c-libpsx">libpsx</primary>
           </indexterm>
         </listitem>
       </varlistentry>
