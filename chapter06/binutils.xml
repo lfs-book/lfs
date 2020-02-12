@@ -92,7 +92,7 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>--enable-ld=default</parameter></term>
         <listitem>
-          <para>Build the original bdf linker and install it as both ld (the
+          <para>Build the original bfd linker and install it as both ld (the
           default linker) and ld.bfd.</para>
         </listitem>
       </varlistentry>
@@ -390,6 +390,26 @@ cd       build</userinput></screen>
           <para>The Binary File Descriptor library</para>
           <indexterm zone="ch-system-binutils libbfd">
             <primary sortas="c-libbfd">libbfd</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libctf">
+        <term><filename class="libraryfile">libctf</filename></term>
+        <listitem>
+          <para>The Compat ANSI-C Type Format debugging support library</para>
+          <indexterm zone="ch-system-binutils libctf">
+            <primary sortas="c-libctf">libctf</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libctf-nobfd">
+        <term><filename class="libraryfile">libctf-nobfd</filename></term>
+        <listitem>
+          <para>A libctf variant which does not use libbfd functionality</para>
+          <indexterm zone="ch-system-binutils libctf-nobfd">
+            <primary sortas="c-libctf-nobfd">libctf-nobfd</primary>
           </indexterm>
         </listitem>
       </varlistentry>

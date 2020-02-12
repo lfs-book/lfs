@@ -50,18 +50,18 @@
 <!ENTITY bash-ch6-du "62 MB">
 <!ENTITY bash-ch6-sbu "2.1 SBU">
 
-<!ENTITY bc-version "2.4.0">
-<!ENTITY bc-size "244 KB">
+<!ENTITY bc-version "2.5.3">
+<!ENTITY bc-size "247 KB">
 <!ENTITY bc-url "https://github.com/gavinhoward/bc/archive/&bc-version;/bc-&bc-version;.tar.gz">
-<!ENTITY bc-md5 "7cd18d7658216df1340beecbb5bfa610">
+<!ENTITY bc-md5 "6582c6fbbae943fbfb8fe14a34feab57">
 <!ENTITY bc-home "https://github.com/gavinhoward/bc">
 <!ENTITY bc-ch6-du "2.9 MB">
 <!ENTITY bc-ch6-sbu "0.1 SBU">
 
-<!ENTITY binutils-version "2.33.1">
-<!ENTITY binutils-size "20,988 KB">
+<!ENTITY binutils-version "2.34">
+<!ENTITY binutils-size "21,131 KB">
 <!ENTITY binutils-url "&gnu;binutils/binutils-&binutils-version;.tar.xz">
-<!ENTITY binutils-md5 "9406231b7d9dd93731c2d06cefe8aaf1">
+<!ENTITY binutils-md5 "664ec3a2df7805ed3464639aaae332d6">
 <!ENTITY binutils-home "&gnu-software;binutils/">
 <!ENTITY binutils-ch5p1-du "659 MB">
 <!ENTITY binutils-ch5p1-sbu "1 SBU">
@@ -70,10 +70,10 @@
 <!ENTITY binutils-ch6-du "5.1 GB">
 <!ENTITY binutils-ch6-sbu "7.2 SBU">
 
-<!ENTITY bison-version "3.5">
-<!ENTITY bison-size "2,287 KB">
+<!ENTITY bison-version "3.5.1">
+<!ENTITY bison-size "2,300 KB">
 <!ENTITY bison-url "&gnu;bison/bison-&bison-version;.tar.xz">
-<!ENTITY bison-md5 "c0230be066069f33c8445766833f3205">
+<!ENTITY bison-md5 "6fc5fa4488832a65db934b9e93bd5d4c">
 <!ENTITY bison-home "&gnu-software;bison/">
 <!ENTITY bison-ch5-du "42 MB">
 <!ENTITY bison-ch5-sbu "0.3 SBU">
@@ -100,10 +100,10 @@
 <!ENTITY ref6-url "&anduin-sources;/reference-files/chapter6-files-&version;.ref">
 <!ENTITY ref6-md5 "REF6-MD5SUM">
 
-<!ENTITY check-version "0.13.0">
+<!ENTITY check-version "0.14.0">
 <!ENTITY check-size "753 KB">
 <!ENTITY check-url "&github;/libcheck/check/releases/download/&check-version;/check-&check-version;.tar.gz">
-<!ENTITY check-md5 "2c730c40b08482eaeb10132517970593">
+<!ENTITY check-md5 "270e82a445be6026040267a5e11cc94b">
 <!ENTITY check-home "https://libcheck.github.io/check">
 <!ENTITY check-ch5-du "12 MB">
 <!ENTITY check-ch5-sbu "0.1 SBU (about 3.7 SBU with tests)">
@@ -262,10 +262,10 @@
 <!ENTITY gettext-ch6-du "249 MB">
 <!ENTITY gettext-ch6-sbu "2.9 SBU">
 
-<!ENTITY glibc-version "2.30">
-<!ENTITY glibc-size "16,189 KB">
+<!ENTITY glibc-version "2.31">
+<!ENTITY glibc-size "16,286 KB">
 <!ENTITY glibc-url "&gnu;glibc/glibc-&glibc-version;.tar.xz">
-<!ENTITY glibc-md5 "2b1dbdf27b28620752956c061d62f60c">
+<!ENTITY glibc-md5 "78a720f17412f3c3282be5a6f3363ec6">
 <!ENTITY glibc-home "&gnu-software;libc/">
 <!ENTITY glibc-ch5-du "896 MB">
 <!ENTITY glibc-ch5-sbu "4.6 SBU">
@@ -273,10 +273,10 @@
 <!ENTITY glibc-ch6-sbu "20 SBU">
 <!ENTITY libthread_db-version "1.0">
 
-<!ENTITY gmp-version "6.1.2">
-<!ENTITY gmp-size "1,901 KB">
+<!ENTITY gmp-version "6.2.0">
+<!ENTITY gmp-size "1,966 KB">
 <!ENTITY gmp-url "&gnu;gmp/gmp-&gmp-version;.tar.xz">
-<!ENTITY gmp-md5 "f58fa8001d60c4c77595fbbb62b63c1d">
+<!ENTITY gmp-md5 "a325e3f09e6d91e62101e59f9bda3ec1">
 <!ENTITY gmp-home "&gnu-software;gmp/">
 <!ENTITY gmp-ch6-du "61 MB">
 <!ENTITY gmp-ch6-sbu "1.2 SBU">
@@ -349,10 +349,10 @@
 <!ENTITY intltool-ch6-du "1.5 MB">
 <!ENTITY intltool-ch6-sbu "less than 0.1 SBU">
 
-<!ENTITY iproute2-version "5.4.0">
-<!ENTITY iproute2-size "724 KB">
+<!ENTITY iproute2-version "5.5.0">
+<!ENTITY iproute2-size "731 KB">
 <!ENTITY iproute2-url "&kernel;linux/utils/net/iproute2/iproute2-&iproute2-version;.tar.xz">
-<!ENTITY iproute2-md5 "54d86cadb4cd1d19fd7114b4e53adf51">
+<!ENTITY iproute2-md5 "ee8e2cdb416d4a8ef39525d39ab7c2d0">
 <!ENTITY iproute2-home "&kernel;linux/utils/net/iproute2/">
 <!ENTITY iproute2-ch6-du "13 MB">
 <!ENTITY iproute2-ch6-sbu "0.2 SBU">
@@ -397,10 +397,10 @@
 <!ENTITY lfs-bootscripts-ch7-du "BOOTSCRIPTS-INSTALL-KB KB"> 
 <!ENTITY lfs-bootscripts-ch7-sbu "less than 0.1 SBU">
 
-<!ENTITY libcap-version "2.30">
-<!ENTITY libcap-size "96 KB">
+<!ENTITY libcap-version "2.31">
+<!ENTITY libcap-size "97 KB">
 <!ENTITY libcap-url "&kernel;linux/libs/security/linux-privs/libcap2/libcap-&libcap-version;.tar.xz">
-<!ENTITY libcap-md5 "ea531f37a30a61dce8bf8544537a46e3">
+<!ENTITY libcap-md5 "52120c05dc797b01f5a7ae70f4335e96">
 <!ENTITY libcap-home "https://sites.google.com/site/fullycapable/">
 <!ENTITY libcap-ch6-du "8.5 MB">
 <!ENTITY libcap-ch6-sbu "less than 0.1 SBU">
@@ -430,13 +430,13 @@
 <!ENTITY libtool-ch6-sbu "1.9 SBU">
 
 <!ENTITY linux-major-version "5">
-<!ENTITY linux-minor-version "4">
-<!ENTITY linux-patch-version "8">
+<!ENTITY linux-minor-version "5">
+<!ENTITY linux-patch-version "1">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "106,892 KB">
+<!ENTITY linux-size "108,113 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "2f44c832e1d59ebe766731f9c215aca6">
+<!ENTITY linux-md5 "32736a152de38bc160fb08efc5863997">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 4.8.3 / gcc-6.2.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,
@@ -467,10 +467,10 @@
 <!ENTITY m4-ch6-du "20 MB">
 <!ENTITY m4-ch6-sbu "0.2 SBU">
 
-<!ENTITY make-version "4.2.1">
-<!ENTITY make-size "1,932 KB">
+<!ENTITY make-version "4.3">
+<!ENTITY make-size "2,263 KB">
 <!ENTITY make-url "&gnu;make/make-&make-version;.tar.gz">
-<!ENTITY make-md5 "7d0dcb6c474b258aab4d54098f2cf5a7">
+<!ENTITY make-md5 "fc7a67ea86ace13195b0bce683fd4469">
 <!ENTITY make-home "&gnu-software;make/">
 <!ENTITY make-ch5-du "13 MB">
 <!ENTITY make-ch5-sbu "0.1 SBU">
@@ -493,10 +493,10 @@
 <!ENTITY man-pages-ch6-du "31 MB">
 <!ENTITY man-pages-ch6-sbu "less than 0.1 SBU">
 
-<!ENTITY meson-version "0.53.0">
-<!ENTITY meson-size "1,512 KB">
+<!ENTITY meson-version "0.53.1">
+<!ENTITY meson-size "1,516 KB">
 <!ENTITY meson-url "&github;/mesonbuild/meson/releases/download/&meson-version;/meson-&meson-version;.tar.gz">
-<!ENTITY meson-md5 "3a0313d040ded973d84cbec368c2e1d3">
+<!ENTITY meson-md5 "9bf73f7b5a2426a7c8674a809bb8cae2">
 <!ENTITY meson-home "https://mesonbuild.com">
 <!ENTITY meson-ch6-du "28 MB">
 <!ENTITY meson-ch6-sbu "less than 0.1 SBU">
@@ -527,10 +527,10 @@
 <!ENTITY ncurses-ch6-du "42 MB">
 <!ENTITY ncurses-ch6-sbu "0.4 SBU">
 
-<!ENTITY ninja-version "1.9.0">
-<!ENTITY ninja-size "187 KB">
+<!ENTITY ninja-version "1.10.0">
+<!ENTITY ninja-size "206 KB">
 <!ENTITY ninja-url "&github;/ninja-build/ninja/archive/v&ninja-version;/ninja-&ninja-version;.tar.gz">
-<!ENTITY ninja-md5 "f340be768a76724b83e6daab69009902">
+<!ENTITY ninja-md5 "cf1d964113a171da42a8940e7607e71a">
 <!ENTITY ninja-home "https://ninja-build.org/">
 <!ENTITY ninja-ch6-du "69 MB">
 <!ENTITY ninja-ch6-sbu "0.2 SBU">
@@ -612,20 +612,20 @@
 <!ENTITY readline-ch6-du "15 MB">
 <!ENTITY readline-ch6-sbu "0.1 SBU">
 
-<!ENTITY sed-version "4.7">
-<!ENTITY sed-size "1,268 KB">
+<!ENTITY sed-version "4.8">
+<!ENTITY sed-size "1,317 KB">
 <!ENTITY sed-url "&gnu;sed/sed-&sed-version;.tar.xz">
-<!ENTITY sed-md5 "777ddfd9d71dd06711fe91f0925e1573">
+<!ENTITY sed-md5 "6d906edfdb3202304059233f51f9a71d">
 <!ENTITY sed-home "&gnu-software;sed/">
 <!ENTITY sed-ch5-du "20 MB">
 <!ENTITY sed-ch5-sbu "0.2 SBU">
 <!ENTITY sed-ch6-du "32 MB">
 <!ENTITY sed-ch6-sbu "0.4 SBU">
 
-<!ENTITY shadow-version "4.8">
-<!ENTITY shadow-size "1,572 KB">
+<!ENTITY shadow-version "4.8.1">
+<!ENTITY shadow-size "1,574 KB">
 <!ENTITY shadow-url "&github;/shadow-maint/shadow/releases/download/&shadow-version;/shadow-&shadow-version;.tar.xz">
-<!ENTITY shadow-md5 "723ebb19b06e2f52d9ed7f0653483851">
+<!ENTITY shadow-md5 "4b05eff8a427cf50e615bda324b5bc45">
 <!ENTITY shadow-home "https://pkg-shadow.alioth.debian.org/"> 
 <!ENTITY shadow-ch6-du "46 MB">
 <!ENTITY shadow-ch6-sbu "0.2 SBU">
@@ -703,23 +703,23 @@
 <!ENTITY udev-lfs-md5     "27cd82f9a61422e186b9d6759ddf1634">
 <!ENTITY udev-lfs-home    " ">
 
-<!ENTITY util-linux-minor "2.34">
-<!ENTITY util-linux-version "2.34"> <!-- 2.33.x -->
-<!ENTITY util-linux-size "4,859 KB">
+<!ENTITY util-linux-minor "2.35">
+<!ENTITY util-linux-version "2.35.1"> <!-- 2.33.x -->
+<!ENTITY util-linux-size "5,018 KB">
 <!ENTITY util-linux-url "&kernel;linux/utils/util-linux/v&util-linux-minor;/util-linux-&util-linux-version;.tar.xz">
-<!ENTITY util-linux-md5 "a78cbeaed9c39094b96a48ba8f891d50">
+<!ENTITY util-linux-md5 "7f64882f631225f0295ca05080cee1bf">
 <!ENTITY util-linux-home "http://freecode.com/projects/util-linux">
 <!ENTITY util-linux-ch5-du "147 MB">
 <!ENTITY util-linux-ch5-sbu "1 SBU">
 <!ENTITY util-linux-ch6-du "283 MB">
 <!ENTITY util-linux-ch6-sbu "1.2 SBU">
 
-<!ENTITY vim-version "8.2.0024">
+<!ENTITY vim-version "8.2.0190">
 <!ENTITY vim-majmin "82">
 <!ENTITY vim-docdir "vim/vim82">
-<!ENTITY vim-size "14,307 KB">
+<!ENTITY vim-size "14,406 KB">
 <!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">
-<!ENTITY vim-md5 "a1b5e7ae3ce2847dbd8672e6dd882750">
+<!ENTITY vim-md5 "f5337b1170df90e644a636539a0313a3">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-ch6-du "190 MB">
 <!ENTITY vim-ch6-sbu "2.2 SBU">
@@ -749,4 +749,12 @@
 <!ENTITY zlib-home "https://www.zlib.net/">
 <!ENTITY zlib-ch6-du "5.1 MB">
 <!ENTITY zlib-ch6-sbu "less than 0.1 SBU">
+
+<!ENTITY zstd-version "1.4.4">
+<!ENTITY zstd-size "1,903 KB">
+<!ENTITY zstd-url "https://github.com/facebook/zstd/releases/download/v&zstd-version;/zstd-&zstd-version;.tar.gz">
+<!ENTITY zstd-md5 "487f7ee1562dee7c1c8adf85e2a63df9">
+<!ENTITY zstd-home "https://facebook.github.io/zstd/">
+<!ENTITY zstd-ch6-du "17 MB">
+<!ENTITY zstd-ch6-sbu "0.5 SBU">
 

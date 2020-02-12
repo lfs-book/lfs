@@ -127,6 +127,13 @@ mv -v isl-&isl-version; isl</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e "/#include &lt;isl\/schedule_node.h&gt;/ a#include &lt;isl/id.h&gt;\n#include &lt;isl/space.h&gt;" \
     -i gcc/graphite.h</userinput></screen>
 
+    <para>
+      Now fix a problem introduced by Glibc-2.31:
+    </para>
+
+<screen><userinput remap="pre">sed -e '1161 s|^|//|' \
+    -i libsanitizer/sanitizer_common/sanitizer_platform_limits_posix.cc</userinput></screen>
+
     <para>Create a separate build directory again:</para>
 
 <screen><userinput remap="pre">mkdir -v build
@@ -256,7 +263,7 @@ readelf -l a.out | grep ': /tools'</userinput></screen>
     <filename class="directory">/tools/bin</filename> is at the head of the
     list. If the <envar>PATH</envar> is wrong it could mean that you are not
     logged in as user <systemitem class="username">lfs</systemitem> or that
-    something went wrong back in <xref linkend="ch-tools-settingenviron"
+    something went wrong back in <xref linkend="ch-preps-settingenviron"
     role="."/></para>
 
     <para>Once all is well, clean up the test files:</para>
