@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 id="materials-packages">
+<sect1 id="ch-materials-packages">
   <?dbhtml filename="packages.html"?>
 
   <title>All Packages</title>
@@ -779,6 +779,15 @@
         <para>Home page: <ulink url="&zlib-home;"/></para>
         <para>Download: <ulink url="&zlib-url;"/></para>
         <para>MD5 sum: <literal>&zlib-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Zstd (&zstd-version;) - <token>&zstd-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&zstd-home;"/></para>
+        <para>Download: <ulink url="&zstd-url;"/></para>
+        <para>MD5 sum: <literal>&zstd-md5;</literal></para>
       </listitem>
     </varlistentry>
 
