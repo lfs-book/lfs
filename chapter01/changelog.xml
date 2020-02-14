@@ -47,6 +47,9 @@
       <para>2020-02-14</para>
       <itemizedlist>
         <listitem>
+          <para>[bdubbs] - LFS-9.1-rc1 released.</para>
+        </listitem>
+        <listitem>
           <para>[bdubbs] - Update to bison-3.5.2. Fixes
           <ulink url="&lfs-ticket-root;4597">#4597</ulink>.</para>
         </listitem>
