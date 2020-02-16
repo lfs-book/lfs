@@ -44,7 +44,44 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
        -->
+    <listitem revision="systemd">
+      <para>2020-02-16</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Adjust the kernel configuration for systemd to adapt
+          to reorganization changes in Linux 5.5.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
+    <listitem>
+      <para>2020-02-14</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to bison-3.5.2. Fixes
+          <ulink url="&lfs-ticket-root;4597">#4597</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    
+    <listitem>
+      <para>2020-02-13</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to ncurses-6.2. Fixes
+          <ulink url="&lfs-ticket-root;4596">#4596</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-5.05. Fixes
+          <ulink url="&lfs-ticket-root;4595">#4595</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.5.3.tar.xz. Fixes
+          <ulink url="&lfs-ticket-root;4592">#4592</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    
     <listitem>
       <para>2020-01-27</para>
       <itemizedlist>
