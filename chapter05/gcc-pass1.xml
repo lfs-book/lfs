@@ -140,10 +140,12 @@ esac</userinput></screen>
     <!-- Following patch might be obsolete with gcc >= 8.2.1 -->
     <!-- see: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=86724 -->
     <!-- Fix applied in ch5-gcc-pass{1,2}, ch6-gcc -->
+<!--
     <para arch="ml_32,ml_x32,ml_all">Fix an issue with isl-&isl-version;:</para>
 
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e "/#include &lt;isl\/schedule_node.h&gt;/ a#include &lt;isl/id.h&gt;\n#include &lt;isl/space.h&gt;" \
     -i gcc/graphite.h</userinput></screen>
+-->
 
     <para>The GCC documentation recommends building GCC 
     in a dedicated build directory:</para>

@@ -122,10 +122,12 @@ tar -xf ../isl-&isl-version;.tar.xz
 mv -v isl-&isl-version; isl</userinput></screen>
 
     <!-- Following patch might be obsolete with gcc >= 8.2.1 --> 
+<!--
     <para arch="ml_32,ml_x32,ml_all">Fix an issue with isl-&isl-version;:</para>
 
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e "/#include &lt;isl\/schedule_node.h&gt;/ a#include &lt;isl/id.h&gt;\n#include &lt;isl/space.h&gt;" \
     -i gcc/graphite.h</userinput></screen>
+-->
 
     <para>
       Now fix a problem introduced by Glibc-2.31:

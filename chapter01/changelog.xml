@@ -44,6 +44,28 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
        -->
+    <listitem arch="ml_32,ml_x32,ml_all">
+      <para>2020-02-24</para>
+      <itemizedlist>
+        <listitem arch="ml_32,ml_x32,ml_all">
+          <para>[thomas] - Add description to glibc configuration in Chapter 5.
+            Thanks to Kevin Buckley.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem arch="ml_32,ml_x32,ml_all">
+      <para>2020-02-21</para>
+      <itemizedlist>
+        <listitem arch="ml_32,ml_x32,ml_all">
+          <para>[thomas] - Update to isl-0.22.1.</para>
+        </listitem>
+        <listitem arch="ml_32,ml_x32,ml_all">
+          <para>[thomas] - Upgrade to linux-firmware-20200219</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem revision="systemd">
       <para>2020-02-16</para>
       <itemizedlist>
@@ -344,7 +366,7 @@
       </itemizedlist>
     </listitem>
 
-    <listitem revision="sysv">
+    <listitem arch="ml_32,ml_x32,ml_all">
       <para>2019-12-02</para>
       <itemizedlist>
         <listitem arch="ml_32,ml_x32,ml_all">

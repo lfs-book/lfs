@@ -216,14 +216,41 @@ RANLIB="${LFS_TGT}-ranlib"        \
              --build=$(../scripts/config.guess) \
              --host=${LFS_TGT32}                \
              --enable-kernel=&min-kernel;             \
+             --with-headers=/tools/include      \
+             --with-binutils=/tools/bin         \
              --enable-multi-arch                \
              --libdir=/tools/lib32              \
-             --libexecdir=/tools/lib32          \
-             --with-headers=/tools/include      \
-             --with-binutils=/tools/bin</userinput></screen>
+             --libexecdir=/tools/lib32</userinput></screen>
 <!--                      \
              libc_cv_forced_unwind=yes          \
              libc_cv_c_cleanup=yes</userinput></screen> -->
+
+    <variablelist>
+      <title>The meaning of the extra configure options:</title>
+
+      <varlistentry>
+        <term><parameter>--enable-multi-arch</parameter></term>
+        <listitem>
+          <para>Enables glibc for multiarch environments.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--libdir=/tools/lib32, --libexecdir=/tools/lib32</parameter></term>
+        <listitem>
+          <para>Overrides location for installing 32-bit files.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--with-binutils=/tools/bin</parameter></term>
+        <listitem>
+          <para>This tells Glibc to compile itself against the utilities
+          found within our "tools" heirachy, because otherwise...</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
 
     <para>Now compile the 32-bit version of glibc:</para>
 <screen><userinput remap="make">make</userinput></screen>
@@ -234,8 +261,7 @@ install -vdm755 /tools/lib32
 cp -Rv DESTDIR/tools/lib32/* /tools/lib32
 install -vm644 DESTDIR/tools/include/gnu/{lib-names,stubs}-32.h \
                /tools/include/gnu/
-ln -svf /tools/lib32/ld-linux.so.2 /tools/lib/
-cd ..</userinput></screen>
+ln -svf /tools/lib32/ld-linux.so.2 /tools/lib/</userinput></screen>
 
   </sect2>
 
@@ -243,8 +269,8 @@ cd ..</userinput></screen>
     <title>Installation of Glibc x32-bit</title>
 
     <para>Create a build directory for redoing glibc for x32-bit:</para>
-<screen><userinput remap="pre">mkdir build32x
-cd build32x</userinput></screen>
+<screen><userinput remap="pre">mkdir ../build32x
+cd ../build32x</userinput></screen>
 
     <para>Rebuild glibc for x32-bit:</para>
 <screen><userinput remap="configure">echo slibdir=/tools/libx32 &gt; configparms
@@ -257,14 +283,41 @@ RANLIB="${LFS_TGT}-ranlib"        \
              --build=$(../scripts/config.guess) \
              --host=${LFS_TGTX32}               \
              --enable-kernel=&min-kernel;             \
+             --with-headers=/tools/include      \
+             --with-binutils=/tools/bin         \
              --enable-multi-arch                \
              --libdir=/tools/libx32             \
-             --libexecdir=/tools/libx32         \
-             --with-headers=/tools/include      \
-             --with-binutils=/tools/bin</userinput></screen>
+             --libexecdir=/tools/libx32</userinput></screen>
 <!--                      \
              libc_cv_forced_unwind=yes          \
              libc_cv_c_cleanup=yes</userinput></screen> -->
+
+    <variablelist>
+      <title>The meaning of the extra configure options:</title>
+
+      <varlistentry>
+        <term><parameter>--enable-multi-arch</parameter></term>
+        <listitem>
+          <para>Enables glibc for multiarch environments.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--libdir=/tools/libx32, --libexecdir=/tools/libx32</parameter></term>
+        <listitem>
+          <para>Overrides location for installing x32-bit files.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--with-binutils=/tools/bin</parameter></term>
+        <listitem>
+          <para>This tells Glibc to compile itself against the utilities
+          found within our "tools" heirachy, because otherwise...</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
 
     <para>Now compile the x32-bit version of glibc:</para>
 <screen><userinput remap="make">make</userinput></screen>

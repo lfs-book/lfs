@@ -46,9 +46,9 @@ ln -sv /tools/lib/libstdc++.{a,so{,.6}}             /usr/lib
 
 ln -sv bash /bin/sh</userinput></screen>
 
-  <para arch="ml_32,ml_x32,ml_all">32-bit builds also require these links:</para>
+  <para arch="ml_32,ml_all">32-bit builds also require these links:</para>
 
-<screen arch="ml_32,ml_x32,ml_all"><userinput arch="ml_32,ml_all">ln -sv /tools/lib32/libgcc_s.so{,.1}               /usr/lib32
+<screen arch="ml_32,ml_all"><userinput arch="ml_32,ml_all">ln -sv /tools/lib32/libgcc_s.so{,.1}               /usr/lib32
 ln -sv /tools/lib32/libstdc++.{a,so{,.6}}          /usr/lib32</userinput></screen>
 
   <para arch="ml_x32,ml_all">x32-bit builds also require these links:</para>
