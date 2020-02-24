@@ -357,10 +357,10 @@
 <!ENTITY iproute2-ch6-du "14 MB">
 <!ENTITY iproute2-ch6-sbu "0.2 SBU">
 
-<!ENTITY isl-version "0.22">
+<!ENTITY isl-version "0.22.1">
 <!ENTITY isl-size "1.6 MB">
 <!ENTITY isl-url "http://isl.gforge.inria.fr/isl-&isl-version;.tar.xz">
-<!ENTITY isl-md5 "ce103a7924ef31f1ff47b7ac868f434b">
+<!ENTITY isl-md5 "6e124849a9b62e3e2d5d51e955323f6e">
 <!ENTITY isl-home "http://isl.gforge.inria.fr/">
 <!ENTITY isl-ch6-du "20 MB">
 <!ENTITY isl-ch6-sbu "0.1 SBU">
@@ -449,13 +449,15 @@
 <!ENTITY linux-headers-ch6-du "1 GB">
 <!ENTITY linux-headers-ch6-sbu "0.1 SBU">
 
-<!ENTITY linux-firmware-version "20191026">
-<!ENTITY linux-firmware-size "91,572 KB">
+<!ENTITY linux-firmware-version "20200219">
+<!ENTITY linux-firmware-size "107 MB">
 <!ENTITY linux-firmware-url "http://www.linuxfromscratch.org/~dj/linux-firmware-&linux-firmware-version;.tar.xz">
-<!ENTITY linux-firmware-md5 "079dcff9c13cccddb40cbfc392f7a790">
+<!ENTITY linux-firmware-md5 "6f0bc3f1daa494c4c4c7c7578da92030">
 <!ENTITY linux-firmware-home "http://www.kernel.org/">
-<!ENTITY linux-firmware-ch6-du "582 MB">
-<!ENTITY linux-firmware-ch6-sbu "0.1 SBU">
+<!ENTITY linux-firmware-ch5-du "520 MB">
+<!ENTITY linux-firmware-ch5-sbu "0.1 SBU">
+<!ENTITY linux-firmware-ch6-du "&linux-firmware-ch5-du;">
+<!ENTITY linux-firmware-ch6-sbu "&linux-firmware-ch5-sbu;">
 
 <!ENTITY m4-version "1.4.18">
 <!ENTITY m4-size "1,180 KB">
