@@ -60,7 +60,7 @@ book: validate profile-html
 	$(Q)mkdir -p $(BASEDIR)/stylesheets
 	$(Q)cp stylesheets/lfs-xsl/*.css $(BASEDIR)/stylesheets
 	$(Q)pushd $(BASEDIR)/ > /dev/null;                     \
-       sed -i -e "s@../stylesheets@stylesheets@g" *.html; \
+#       sed -i -e "s@../stylesheets@stylesheets@g" *.html; \
        popd > /dev/null
 
 	$(Q)mkdir -p $(BASEDIR)/images
@@ -112,7 +112,8 @@ nochunks: validate profile-html
                 --stringparam rootid "$(ROOT_ID)"      \
                 --output $(BASEDIR)/$(NOCHUNKS_OUTPUT) \
                 stylesheets/lfs-nochunks.xsl           \
-                $(RENDERTMP)/lfs-html2.xml
+                $(RENDERTMP)/lfs-html.xml
+#                $(RENDERTMP)/lfs-html2.xml
 
 	@echo "Running Tidy..."
 	$(Q)tidy -config tidy.conf $(BASEDIR)/$(NOCHUNKS_OUTPUT) || true
