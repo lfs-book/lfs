@@ -476,12 +476,23 @@ unset ZONEINFO</userinput></screen>
 </literal>
 EOF</userinput></screen>
 
-  <para>If desired, the dynamic loader can also search a directory and
+  <para arch="default">If desired, the dynamic loader can also search a directory and
   include the contents of files found there.  Generally the files in
   this include directory are one line specifying the desired library path.
   To add this capability run the following commands:</para>
 
-<screen role="nodump"><userinput>cat &gt;&gt; /etc/ld.so.conf &lt;&lt; "EOF"
+<screen role="nodump" arch="default"><userinput>cat &gt;&gt; /etc/ld.so.conf &lt;&lt; "EOF"
+<literal># Add an include directory
+include /etc/ld.so.conf.d/*.conf
+</literal>
+EOF
+mkdir -pv /etc/ld.so.conf.d</userinput></screen>
+
+  <para arch="ml_32,ml_x32,ml_all">The dynamic loader can also search a directory and
+  include the contents of files found there.  Generally the files in
+  this include directory are one line specifying the desired library path.
+  To add this capability run the following commands:</para>
+<screen arch="ml_32,ml_x32,ml_all"><userinput>cat &gt;&gt; /etc/ld.so.conf &lt;&lt; "EOF"
 <literal># Add an include directory
 include /etc/ld.so.conf.d/*.conf
 </literal>
