@@ -89,6 +89,9 @@ sed -e "/^#define[[:blank:]]*STANDARD_STARTFILE_PREFIX_1/ s;\".*\";\"/tools/lib/
         -i.orig gcc/config/i386/t-linux64
   ;;
 esac</userinput></screen>
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e '/m64=/s/lib64/lib/'  \
+    -e '/m32=/s/m32=.*/m32=..\/lib32$(call if_multiarch,:i386-linux-gnu)/' \
+    -i.orig gcc/config/i386/t-linux64</userinput></screen>
 
     <para>Our first build of GCC has installed a couple of internal system
     headers.  Normally one of them, <filename>limits.h</filename>, will in turn
