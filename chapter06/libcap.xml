@@ -94,6 +94,7 @@ ln -sfv ../../lib/libcap.so.2 /usr/lib/libcap.so</userinput></screen>
 
 <screen><userinput remap="install">make lib=lib32 prefix=$PWD/DESTDIR/usr -C libcap install
 cp -Rv DESTDIR/usr/lib32/* /usr/lib32
+chmod -v 755 /usr/lib32/libcap.so.&libcap-version;
 rm -rf DESTDIR</userinput></screen>
 
   </sect2>
@@ -113,6 +114,7 @@ rm -rf DESTDIR</userinput></screen>
 
 <screen><userinput remap="install">make lib=libx32 prefix=$PWD/DESTDIR/usr -C libcap install
 cp -Rv DESTDIR/usr/libx32/* /usr/libx32
+chmod -v 755 /usr/libx32/libcap.so.&libcap-version;
 rm -rf DESTDIR</userinput></screen>
 
   </sect2>
