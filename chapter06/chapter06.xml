@@ -88,19 +88,24 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="tar.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="texinfo.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vim.xml"/>
+
   <!-- systemd only -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="systemd.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dbus.xml"/>
 
-  <!-- these programs will use libsystemd if available -->
+  <!-- Both sysv on systemd builds -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="procps.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="util-linux.xml"/>
+
+  <!-- sysv only -->
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="eudev.xml"/>
+
+  <!-- Both sysv and systemd builds -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="e2fsprogs.xml"/>
 
   <!-- sysv only -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="sysklogd.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="sysvinit.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="eudev.xml"/>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="linux-firmware.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="aboutdebug.xml"/>
