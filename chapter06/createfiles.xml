@@ -60,13 +60,25 @@ done</userinput></screen>
   <para arch="ml_32,ml_all">32-bit builds also require these links:</para>
 
 <screen arch="ml_32,ml_all"><userinput>ln -sv /tools/lib32/libgcc_s.so{,.1}               /usr/lib32
-ln -sv /tools/lib32/libstdc++.{a,so{,.6}}          /usr/lib32</userinput></screen>
+ln -sv /tools/lib32/libstdc++.{a,so{,.6}}          /usr/lib32
+for lib in blkid mount uuid fdisk
+do
+    ln -sv /tools/lib32/lib$lib.so* /usr/lib32/
+    sed 's|/tools|/usr|' /tools/lib32/pkgconfig/${lib}.pc \
+        &gt; /usr/lib32/pkgconfig/${lib}.pc
+done</userinput></screen>
 
   <para arch="ml_x32,ml_all">x32-bit builds also require these links:</para>
 
 <screen arch="ml_x32,ml_all"><userinput>ln -sv /tools/libx32/libgcc_s.so{,.1}              /usr/libx32
 ln -sv /tools/libx32/libstdc++.{a,so{,.6}}         /usr/libx32
-ln -sv /usr/libx32 /</userinput></screen>
+ln -sv /usr/libx32 /
+for lib in blkid mount uuid fdisk
+do
+    ln -sv /tools/libx32/lib$lib.so* /usr/libx32/
+    sed 's|/tools|/usr|' /tools/libx32/pkgconfig/${lib}.pc \
+        &gt; /usr/libx32/pkgconfig/${lib}.pc
+done</userinput></screen>
 
   <variablelist>
     <title>The purpose of each link:</title>
