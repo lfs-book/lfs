@@ -39,11 +39,10 @@
   will be replaced by real files throughout the course of this chapter after the
   software has been installed:</para>
 
-<screen><userinput>ln -sv /tools/bin/{bash,cat,chmod,dd,echo,ln,mkdir,pwd,rm,stty,touch} /bin
+<screen><userinput>ln -sv /tools/bin/{bash,cat,chmod,dd,echo,false,ln,ls,mkdir,pwd,rm,stty,touch} /bin
 ln -sv /tools/bin/{env,install,perl,printf}         /usr/bin
 ln -sv /tools/lib/libgcc_s.so{,.1}                  /usr/lib
 ln -sv /tools/lib/libstdc++.{a,so{,.6}}             /usr/lib
-ln -sv /tools/lib/libfl.so*                         /usr/lib
 
 ln -sv bash /bin/sh
 for lib in blkid mount uuid fdisk
@@ -194,16 +193,6 @@ done</userinput></screen>
       <term><parameter><filename>/bin/sh</filename></parameter></term>
       <listitem>
         <para>Many shell scripts hard-code <filename>/bin/sh</filename>.</para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term>
-        <parameter><filename>/usr/lib/libfl.so*</filename></parameter>
-      </term>
-      <listitem>
-        <para>This link allows binutils to find the flex library, and to
-	build enhanced versions of ar and ranlib.</para>
       </listitem>
     </varlistentry>
 
@@ -367,7 +356,7 @@ EOF</userinput></screen>
   <para>Some tests later in the chapter need a regular user. We add this
   user here and delete this account at the end of the chapter.</para>
 
-<screen><userinput>echo "tester:x:101:101::/home/tester:/bin/bash" &gt;&gt; /etc/passwd
+<screen><userinput>echo "tester:x:$(ls -n $(tty) | cut -d" " -f3):101::/home/tester:/bin/bash" &gt;&gt; /etc/passwd
 echo "tester:x:101:" &gt;&gt; /etc/group
 install -o tester -d /home/tester</userinput></screen>
 
