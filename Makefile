@@ -26,7 +26,7 @@ ifeq ($(REV), sysv)
   BASEDIR         ?= ~/lfs-book
   PDF_OUTPUT      ?= LFS-BOOK.pdf
   NOCHUNKS_OUTPUT ?= LFS-BOOK.html
-  DUMPDIR         ?= ~/lfs-commands
+  DUMPDIR         ?= ~/cross-lfs-commands
 else
   BASEDIR         ?= ~/lfs-systemd
   PDF_OUTPUT      ?= LFS-SYSD-BOOK.pdf
@@ -59,9 +59,6 @@ book: validate profile-html
 	@echo "Copying CSS code and images..."
 	$(Q)mkdir -p $(BASEDIR)/stylesheets
 	$(Q)cp stylesheets/lfs-xsl/*.css $(BASEDIR)/stylesheets
-	$(Q)pushd $(BASEDIR)/ > /dev/null;                     \
-#       sed -i -e "s@../stylesheets@stylesheets@g" *.html; \
-       popd > /dev/null
 
 	$(Q)mkdir -p $(BASEDIR)/images
 	$(Q)cp images/*.png $(BASEDIR)/images
@@ -175,7 +172,6 @@ $(BASEDIR)/wget-list: stylesheets/wget-list.xsl chapter03/chapter03.xml \
 
 #	$(Q)xsltproc --nonet --xinclude                    \
 #                --stringparam profile.revision $(REV) \
-#                --stringparam profile.arch $(ARCH)    \
 #                --output $(RENDERTMP)/sysd-wget.xml   \
 #                stylesheets/lfs-xsl/profile.xsl       \
 #                chapter03/chapter03.xml
@@ -193,7 +189,7 @@ $(BASEDIR)/md5sums: stylesheets/wget-list.xsl chapter03/chapter03.xml \
 
 	$(Q)xsltproc --nonet --xinclude                    \
                 --stringparam profile.revision $(REV) \
-                --stringparam profile.arch $(ARCH) \
+                --stringparam profile.arch $(ARCH)    \
                 --output $(RENDERTMP)/sysv-md5sum.xml \
                 stylesheets/lfs-xsl/profile.xsl       \
                 chapter03/chapter03.xml
@@ -211,7 +207,6 @@ $(BASEDIR)/md5sums: stylesheets/wget-list.xsl chapter03/chapter03.xml \
 #	$(Q)xsltproc --nonet                     \
 #      --output $(RENDERTMP)/lfs-html.xml    \
 #      --stringparam profile.revision $(REV) \
-#      --stringparam profile.arch $(ARCH)    \
 #      stylesheets/lfs-xsl/profile.xsl       \
 #      $(RENDERTMP)/lfs-full.xml
 

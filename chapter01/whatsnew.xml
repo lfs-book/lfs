@@ -11,6 +11,10 @@
 
   <title>What's new since the last release</title>
 
+  <para>In this version of LFS, there has been a major reorganization
+  of the book using techniques that avoid changing the host system
+  and provides a more straight forward build process.</para>
+
   <para>Below is a list of package updates made since the previous
   release of the book.</para>
 
@@ -80,9 +84,9 @@
     <!-- <listitem>
        <para>Expect-&expect-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
        <para>File-&file-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Findutils-&findutils-version;</para>
     </listitem>-->
@@ -163,9 +167,6 @@
     </listitem>-->
     <listitem>
       <para>Linux-&linux-version;</para>
-    </listitem>
-    <listitem>
-      <para>Linux-Firmware-&linux-firmware-version;</para>
     </listitem>
     <!--<listitem>
       <para>M4-&m4-version;</para>

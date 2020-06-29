@@ -244,6 +244,7 @@ or all absent, but not only one or two present.</para>
     &lt;M&gt;   IA32 a.out support
     [*] x32 ABI for 64-bit mode
 </screen>
+
     <para arch="ml_32,ml_x32,ml_all">The option 'IA32 a.out support' is
       optional. In case your kernel does not have 'x32 ABI for 64-bit mode'
       enabled but only 'IA32 Emulation', you can continue to build your
@@ -251,7 +252,7 @@ or all absent, but not only one or two present.</para>
       for building x32 objects. If neither 'IA32 Emulation' nor 
       'x32 ABI for 64-bit mode' is enabled, you will run in errors 
       latest when building <application>glibc</application> in Chapter 6,
-      so an upgrade of your host system is required.
+      so an upgrade of your host system kernel is required.
     </para>
     
 </sect1>

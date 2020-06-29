@@ -43,7 +43,9 @@ umask 022
 LFS=/mnt/lfs
 LC_ALL=POSIX
 LFS_TGT=$(uname -m)-lfs-linux-gnu
-PATH=/tools/bin:/bin:/usr/bin
+PATH=/usr/bin
+if [ ! -L /bin ]; then PATH=/bin:$PATH; fi
+PATH=$LFS/tools/bin:$PATH
 export LFS LC_ALL LFS_TGT PATH</literal>
 EOF</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput>cat &gt; ~/.bashrc &lt;&lt; "EOF"
@@ -54,12 +56,14 @@ LC_ALL=POSIX
 LFS_TGT=x86_64-lfs-linux-gnu
 LFS_TGT32=i686-lfs-linux-gnu
 LFS_TGTX32=x86_64-lfs-linux-gnux32
-PATH=/tools/bin:/bin:/usr/bin
+PATH=/usr/bin
+if [ ! -L /bin ]; then PATH=/bin:$PATH; fi
+PATH=$LFS/tools/bin:$PATH
 export LFS LC_ALL LFS_TGT LFS_TGT32 LFS_TGTX32 PATH</literal>
 EOF</userinput></screen>
 
   <variablelist>
-    <title>The meaning of the command line options in <filename>.bashrc</filename></title>
+    <title>The meaning of the settings in <filename>.bashrc</filename></title>
 
     <varlistentry>
       <term><parameter>set +h</parameter></term>
@@ -119,14 +123,36 @@ EOF</userinput></screen>
     </varlistentry>
 
     <varlistentry>
-      <term><parameter>PATH=/tools/bin:/bin:/usr/bin</parameter></term>
+      <term><parameter>PATH=/usr/bin</parameter></term>
       <listitem>
-  <para>By putting <filename class="directory">/tools/bin</filename> ahead of the
-  standard <envar>PATH</envar>, all the programs installed in <xref
-  linkend="chapter-temporary-tools"/> are picked up by the shell immediately after
-  their installation. This, combined with turning off hashing, limits the risk
-  that old programs are used from the host when the same programs are available in
-  the Chapter 5 environment.</para>
+  <para>Many modern linux distributions have merged <filename
+  class="directory">/bin</filename> and <filename
+  class="directory">/usr/bin</filename>. When this is the case, the standard
+  <envar>PATH</envar> variable needs just to be set to <filename
+  class="directory">/usr/bin/</filename> for the <xref
+  linkend="chapter-temporary-tools"/> environment. When this is not the
+  case, the following line adds <filename class="directory">/bin</filename>
+  to the path.</para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term><parameter>if [ ! -L /bin ]; then PATH=/bin:$PATH; fi</parameter></term>
+      <listitem>
+  <para>If <filename class="directory">/bin</filename> is not a symbolic
+  link, then it has to be added to the <envar>PATH</envar> variable.</para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term><parameter>PATH=$LFS/tools/bin:$PATH</parameter></term>
+      <listitem>
+  <para>By putting <filename class="directory">$LFS/tools/bin</filename> ahead of the
+  standard <envar>PATH</envar>, the cross-compiler installed at the beginning
+  of <xref linkend="chapter-cross-tools"/> is picked up by the shell
+  immediately after its installation. This, combined with turning off hashing,
+  limits the risk that the compiler from the host be used instead of the
+  cross-compiler.</para>
       </listitem>
     </varlistentry>
 
@@ -134,11 +160,37 @@ EOF</userinput></screen>
       <term><parameter>export LFS LC_ALL LFS_TGT PATH</parameter></term>
       <listitem>
         <para>While the above commands have set some variables, in order
-        to make them visible within any sub-shells, we export them</para>
+        to make them visible within any sub-shells, we export them.</para>
       </listitem>
     </varlistentry>
 
   </variablelist>
+
+  <important>
+
+     <para>Several commercial distributions add a non-documented instantiation
+     of <filename>/etc/bash.bashrc</filename> to the initialization of
+     <command>bash</command>. This file has the potential to modify the
+     <systemitem class="username">lfs</systemitem>
+     user's environment in ways that can affect the building of critical LFS
+     packages. To make sure the <systemitem class="username">lfs</systemitem>
+     user's envronment is clean, check for the
+     presence of <filename>/etc/bash.bashrc</filename> and, if present, move it
+     out of the way.  As the <systemitem class="username">root</systemitem>
+     user, run:</para>
+
+     <screen role="nodump"><userinput>[ ! -e /etc/bash.bashrc ] || mv -v /etc/bash.bashrc /etc/bash.bashrc.NOUSE</userinput></screen> 
+
+     <para>After use of the <systemitem class="username">lfs</systemitem>
+     user is finished at the beginning of <xref
+     linkend="chapter-chroot-temporary-tools"/>, you can restore
+	 <filename>/etc/bash.bashrc</filename> (if desired).</para>
+
+     <para>Note that the LFS Bash package we will build in
+     <xref linkend="ch-system-bash"/> is not configured to load or execute
+     <filename>/etc/bash.bashrc</filename>, so this file is useless on a
+     completed LFS system.</para>
+  </important>
 
   <para>Finally, to have the environment fully prepared for building the
   temporary tools, source the just-created user profile:</para>

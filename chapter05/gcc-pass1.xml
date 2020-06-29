@@ -25,7 +25,7 @@
     <title/>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-    href="../chapter06/gcc.xml"
+    href="../chapter08/gcc.xml"
     xpointer="xpointer(/sect1/sect2[1]/para[1])"/>
 
     <segmentedlist>
@@ -33,8 +33,8 @@
       <segtitle>&diskspace;</segtitle>
 
       <seglistitem>
-        <seg>&gcc-ch5p1-sbu;</seg>
-        <seg>&gcc-ch5p1-du;</seg>
+        <seg>&gcc-tmpp1-sbu;</seg>
+        <seg>&gcc-tmpp1-du;</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -43,17 +43,11 @@
   <sect2 role="installation">
     <title>Installation of Cross GCC</title>
 
-    <para arch="default">GCC now requires the GMP, MPFR, and MPC packages. As
-    these packages may not be included in your host distribution, they will be
-    built with GCC.  Unpack each package into the GCC source directory and
-    rename the resulting directories so the GCC build procedures will
-    automatically use them:</para>
-
-    <para arch="ml_32,ml_x32,ml_all">GCC now requires the GMP, ISL, MPFR, and MPC packages.
-    As these packages may not be included in your host distribution, they will
-    be built with GCC.  Unpack each package into the GCC source directory and 
-    rename the resulting directories so the GCC build procedures will 
-    automatically use them:</para>
+    <para>GCC requires the GMP, MPFR and MPC packages. As these packages may
+    not be included in your host distribution, they will be built with
+    GCC.  Unpack each package into the GCC source directory and rename the
+    resulting directories so the GCC build procedures will automatically
+    use them:</para>
 
     <note><para>There are frequent misunderstandings about this chapter.  The
     procedures are the same as every other chapter as explained earlier (<xref
@@ -61,56 +55,17 @@
     directory and then change to the directory created.  Only then should you
     proceed with the instructions below.</para></note>
 
-<screen arch="default"><userinput remap="pre">tar -xf ../mpfr-&mpfr-version;.tar.xz
+<screen><userinput remap="pre">tar -xf ../mpfr-&mpfr-version;.tar.xz
 mv -v mpfr-&mpfr-version; mpfr
 tar -xf ../gmp-&gmp-version;.tar.xz
 mv -v gmp-&gmp-version; gmp
 tar -xf ../mpc-&mpc-version;.tar.gz
-mv -v mpc-&mpc-version; mpc</userinput></screen>
-<screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">tar -xf ../mpfr-&mpfr-version;.tar.xz
-mv -v mpfr-&mpfr-version; mpfr
-tar -xf ../gmp-&gmp-version;.tar.xz
-mv -v gmp-&gmp-version; gmp
-tar -xf ../mpc-&mpc-version;.tar.gz
-mv -v mpc-&mpc-version; mpc
-tar -xf ../isl-&isl-version;.tar.xz
+mv -v mpc-&mpc-version; mpc</userinput>
+<userinput remap="pre" arch="ml_32,ml_x32,ml_all">tar -xf ../isl-&isl-version;.tar.xz
 mv -v isl-&isl-version; isl</userinput></screen>
 
-    <para>The following command will change the location of GCC's default
-    dynamic linker to use the one installed in <filename
-    class="directory">/tools</filename>. It also removes <filename
-    class="directory">/usr/include</filename> from GCC's include search path.
-    Issue:</para>
-
-<screen><userinput remap="pre">for file in gcc/config/{linux,i386/linux{,64}}.h
-do
-  cp -uv $file{,.orig}
-  sed -e 's@/lib\(64\)\?\(32\)\?\(x32\)\?/ld@/tools&amp;@g' \
-      -e 's@/usr@/tools@g' $file.orig &gt; $file
-  touch $file.orig
-done
-sed -e "/^#define[[:blank:]]*STANDARD_STARTFILE_PREFIX_1/ s;\".*\";\"/tools/lib/\";" \
-    -e "/^#define[[:blank:]]*STANDARD_STARTFILE_PREFIX_2/ s;\".*\";\"\";" \
-    -i gcc/gcc.c</userinput></screen>
-
-    <para>In case the above seems hard to follow, let's break it down a bit.
-    First we copy the files <filename>gcc/config/linux.h</filename>,
-    <filename>gcc/config/i386/linux.h</filename>, and
-    <filename>gcc/config/i386/linux64.h</filename> to a file of
-    the same name but with an added suffix of <quote>.orig</quote>. Then the
-    first sed expression prepends <quote>/tools</quote> to every instance of
-    <quote>/lib/ld</quote>, <quote>/lib64/ld</quote> or
-    <quote>/lib32/ld</quote>, while the second one replaces hard-coded
-    instances of <quote>/usr</quote>. Next, we add our define statements which
-    alter the default startfile prefix to the end of the file. Note that the
-    trailing <quote>/</quote> in <quote>/tools/lib/</quote> is required.
-    Finally, we use <command>touch</command> to update the timestamp on the
-    copied files.  When used in conjunction with <command>cp -u</command>, this
-    prevents unexpected changes to the original files in case the commands are
-    inadvertently run twice.</para>
-
-    <para arch="default">Finally, on x86_64 hosts, set the default directory
-    name for 64-bit libraries to <quote>lib</quote>:</para>
+    <para arch="default">On x86_64 hosts, set the default directory name for
+    64-bit libraries to <quote>lib</quote>:</para>
 
 <screen arch="default"><userinput remap="pre">case $(uname -m) in
   x86_64)
@@ -119,33 +74,13 @@ sed -e "/^#define[[:blank:]]*STANDARD_STARTFILE_PREFIX_1/ s;\".*\";\"/tools/lib/
  ;;
 esac</userinput></screen>
 
-<screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e '/m64=/s/lib64/lib/'  \
-    -e '/m32=/s/m32=.*/m32=..\/lib32$(call if_multiarch,:i386-linux-gnu)/' \
-    -i.orig gcc/config/i386/t-linux64</userinput></screen>
+    <para arch="ml_32,ml_x32,ml_all">Change the default directory name for
+    libraries:</para>
 
-<!--
-    <para>GCC doesn't detect stack protection correctly, which causes problems
-    for the build of Glibc-&glibc-version;, so fix that by issuing the following
-    command:</para>
-
-<screen><userinput remap="pre">sed -i '/k prot/agcc_cv_libc_provides_ssp=yes' gcc/configure</userinput></screen>
--->
-
-<!--
-    <para>Also fix a problem identified upstream:</para>
-
-<screen><userinput remap="pre">sed -i 's/if \((code.*))\)/if (\1 \&amp;\&amp; \!DEBUG_INSN_P (insn))/' gcc/sched-deps.c</userinput></screen>
--->
-
-    <!-- Following patch might be obsolete with gcc >= 8.2.1 -->
-    <!-- see: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=86724 -->
-    <!-- Fix applied in ch5-gcc-pass{1,2}, ch6-gcc -->
-<!--
-    <para arch="ml_32,ml_x32,ml_all">Fix an issue with isl-&isl-version;:</para>
-
-<screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e "/#include &lt;isl\/schedule_node.h&gt;/ a#include &lt;isl/id.h&gt;\n#include &lt;isl/space.h&gt;" \
-    -i gcc/graphite.h</userinput></screen>
--->
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e '/m64=/s/lib64/lib/' \
+    -e '/m32=/s/m32=.*/m32=..\&lib-m32;$(call if_multiarch,:i386-linux-gnu)/' \
+    -i.orig gcc/config/i386/t-linux64
+</userinput></screen>
 
     <para>The GCC documentation recommends building GCC 
     in a dedicated build directory:</para>
@@ -155,21 +90,17 @@ cd       build</userinput></screen>
 
     <para>Prepare GCC for compilation:</para>
 
-<screen><userinput arch="default" remap="configure">mloptions="--disable-multilib"</userinput>
-<userinput arch="ml_32,ml_x32,ml_all" remap="configure">mloptions="--enable-multilib --with-multilib-list=m64"</userinput>
-<userinput arch="ml_32,ml_all" remap="configure">mloptions="$mloptions,m32"</userinput>
-<userinput arch="ml_x32,ml_all" remap="configure">mloptions="$mloptions,mx32"</userinput>
-<userinput remap="configure">../configure                                       \
+<screen arch="default"><userinput remap="configure">../configure                                       \
     --target=$LFS_TGT                              \
-    --prefix=/tools                                \
+    --prefix=$LFS/tools                            \
     --with-glibc-version=2.11                      \
     --with-sysroot=$LFS                            \
     --with-newlib                                  \
     --without-headers                              \
-    --with-local-prefix=/tools                     \
-    --with-native-system-header-dir=/tools/include \
+    --enable-initfini-array                        \
     --disable-nls                                  \
     --disable-shared                               \
+    --disable-multilib                             \
     --disable-decimal-float                        \
     --disable-threads                              \
     --disable-libatomic                            \
@@ -178,8 +109,31 @@ cd       build</userinput></screen>
     --disable-libssp                               \
     --disable-libvtv                               \
     --disable-libstdcxx                            \
-    --enable-languages=c,c++                       \
-    $mloptions</userinput></screen>
+    --enable-languages=c,c++</userinput></screen>
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure" 
+    arch="ml_32">mlist=m64,m32</userinput><userinput remap="configure"
+    arch="ml_x32">mlist=m64,mx32</userinput><userinput remap="configure"
+    arch="ml_all">mlist=m64,m32,mx32</userinput>
+<userinput remap="configure">../configure                                       \
+    --target=$LFS_TGT                              \
+    --prefix=$LFS/tools                            \
+    --with-glibc-version=2.11                      \
+    --with-sysroot=$LFS                            \
+    --with-newlib                                  \
+    --without-headers                              \
+    --enable-initfini-array                        \
+    --disable-nls                                  \
+    --disable-shared                               \
+    --enable-multilib --with-multilib-list=$mlist  \
+    --disable-decimal-float                        \
+    --disable-threads                              \
+    --disable-libatomic                            \
+    --disable-libgomp                              \
+    --disable-libquadmath                          \
+    --disable-libssp                               \
+    --disable-libvtv                               \
+    --disable-libstdcxx                            \
+    --enable-languages=c,c++</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -213,26 +167,11 @@ cd       build</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--with-local-prefix=/tools</parameter></term>
+        <term><parameter>--enable-initfini-array</parameter></term>
         <listitem>
-          <para>The local prefix is the location in the system that GCC will search
-          for locally installed include files. The default is <filename>/usr/local</filename>.
-          Setting this to <filename>/tools</filename> helps keep the host location of
-          <filename>/usr/local</filename> out of this GCC's search path.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--with-native-system-header-dir=/tools/include</parameter></term>
-        <listitem>
-          <para>By default, GCC searches <filename>/usr/include</filename> for
-          system headers. In conjunction with the sysroot switch, this would
-          normally translate to <filename>$LFS/usr/include</filename>. However
-          the headers that will be installed in the next two sections will go
-          to <filename>$LFS/tools/include</filename>. This switch ensures that
-          gcc will find them correctly. In the second pass of GCC, this same
-          switch will ensure that no headers from the host system are
-          found.</para>
+          <para>This switch forces the use of some internal data structures
+          that are needed but cannot be detected when building a cross
+          compiler.</para>
         </listitem>
       </varlistentry>
 
@@ -240,39 +179,37 @@ cd       build</userinput></screen>
         <term><parameter>--disable-shared</parameter></term>
         <listitem>
           <para>This switch forces GCC to link its internal libraries
-          statically. We do this to avoid possible issues with the host
-          system.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--disable-decimal-float, --disable-threads,
-              --disable-libatomic, --disable-libgomp, <!--- -disable-libmpx,-->
-        --disable-libquadmath, --disable-libssp, --disable-libvtv,
-        --disable-libstdcxx</parameter></term>
-        <listitem>
-          <para>These switches disable support for the decimal floating point
-          extension, threading, libatomic, libgomp, <!--libmpx, --> libquadmath, libssp,
-          libvtv, and the C++ standard library respectively. These features
-          will fail to compile when building a cross-compiler and are not
-          necessary for the task of cross-compiling the temporary libc.</para>
+          statically. We need this because the shared libraries require glibc,
+          which is not yet installed on the target system.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry arch="default">
         <term><parameter>--disable-multilib</parameter></term>
         <listitem>
-          <para>On x86_64, LFS does not yet support a multilib configuration.
+          <para>On x86_64, LFS does not support a multilib configuration.
           This switch is harmless for x86.</para>
         </listitem>
       </varlistentry>
-
       <varlistentry arch="ml_32,ml_x32,ml_all">
-        <term><parameter>--enable-multilib,
-                         --with-multilib-list=m32,m64,mx32</parameter></term>
+        <term><parameter>--enable-multilib --with-multilib-list=...</parameter></term>
         <listitem>
-          <para>LFS now supports a multilib configuration. Enable it for the
-          32bit, the 64-bit, and the mixed mode.</para>
+          <para>LFS canbe used to support multilib. Which they are is
+          specified in the multilib list.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-decimal-float, --disable-threads,
+              --disable-libatomic, --disable-libgomp, 
+        --disable-libquadmath, --disable-libssp, --disable-libvtv,
+        --disable-libstdcxx</parameter></term>
+        <listitem>
+          <para>These switches disable support for the decimal floating point
+          extension, threading, libatomic, libgomp, libquadmath, libssp,
+          libvtv, and the C++ standard library respectively. These features
+          will fail to compile when building a cross-compiler and are not
+          necessary for the task of cross-compiling the temporary libc.</para>
         </listitem>
       </varlistentry>
 
@@ -290,26 +227,25 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Compilation is now complete. At this point, the test suite would
-    normally be run, but, as mentioned before, the test suite framework is
-    not in place yet. The benefits of running the tests at this point
-    are minimal since the programs from this first pass will soon be
-    replaced.</para>
-
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make install</userinput></screen>
-<!--
-    <para>Using <parameter>- -disable-shared</parameter> means that the
-    <filename>libgcc_eh.a</filename> file isn't created and installed. The
-    Glibc package depends on this library as it uses
-    <parameter>-lgcc_eh</parameter> within its build system. This dependency
-    can be satisfied by creating a symlink to <filename>libgcc.a</filename>,
-    since that file will end up containing the objects normally contained in
-    <filename>libgcc_eh.a</filename>:</para>
+    <screen><userinput remap="install">make install</userinput></screen>
 
-<screen><userinput remap="install">ln -sv libgcc.a `$LFS_TGT-gcc -print-libgcc-file-name | sed 's/libgcc/&amp;_eh/'`</userinput></screen>
--->
+    <para>This build of GCC has installed a couple of internal system
+    headers.  Normally one of them, <filename>limits.h</filename>, would in turn
+    include the corresponding system <filename>limits.h</filename> header, in
+    this case, <filename>$LFS/usr/include/limits.h</filename>. However, at the
+    time of this build of GCC <filename>$LFS/usr/include/limits.h</filename>
+    does not exist, so the internal header that has just been installed is a
+    partial, self-contained file and does not include the extended features of
+    the system header. This is adequate for building glibc, but the full
+    internal header will be needed later.  Create a full version of the internal
+    header using a command that is identical to what the GCC build system does
+    in normal circumstances:</para>
+
+<screen><userinput remap="install">cd ..
+cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
+  `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/install-tools/include/limits.h</userinput></screen>
   </sect2>
 
   <sect2 role="content">
