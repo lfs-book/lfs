@@ -108,9 +108,10 @@ cd       build</userinput></screen>
       <varlistentry arch="ml_32,ml_x32,ml_all">
         <term><parameter>--host=x86_64-pc-linux-gnu</parameter></term>
         <listitem>
-          <para>Since up to now, the cross-compile tools are used. This
-          switch is set to place headers used for multilib to locations
-          where the final system can pick them up correctly.</para>
+          <para>Since up to now the cross-compile tools are used. This
+          switch is set to ensure that the headers used for multilib are
+          placed in correct locations where the final system can pick
+          them up.</para>
         </listitem>
       </varlistentry>
 
