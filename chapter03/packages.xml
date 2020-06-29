@@ -355,7 +355,7 @@
       </listitem>
     </varlistentry>
 
-    <varlistentry>
+    <varlistentry arch="ml_32,ml_x32,ml_all">
       <term>ISL (&isl-version;) - <token>&isl-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&isl-home;"/></para>
@@ -460,15 +460,6 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Linux Firmware (&linux-firmware-version;) - <token>&linux-firmware-size;</token>:</term>
-      <listitem>
-        <para>Home page: <ulink url="&linux-firmware-home;"/></para>
-        <para>Download: <ulink url="&linux-firmware-url;"/></para>
-        <para>MD5 sum: <literal>&linux-firmware-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
       <term>M4 (&m4-version;) - <token>&m4-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&m4-home;"/></para>
@@ -532,20 +523,20 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Ninja (&ninja-version;) - <token>&ninja-size;</token>:</term>
-      <listitem>
-        <para>Home page: <ulink url="&ninja-home;"/></para>
-        <para>Download: <ulink url="&ninja-url;"/></para>
-        <para>MD5 sum: <literal>&ninja-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
       <term>Ncurses (&ncurses-version;) - <token>&ncurses-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&ncurses-home;"/></para>
         <para>Download: <ulink url="&ncurses-url;"/></para>
         <para>MD5 sum: <literal>&ncurses-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Ninja (&ninja-version;) - <token>&ninja-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&ninja-home;"/></para>
+        <para>Download: <ulink url="&ninja-url;"/></para>
+        <para>MD5 sum: <literal>&ninja-md5;</literal></para>
       </listitem>
     </varlistentry>
 
@@ -708,6 +699,14 @@
         <para>Home page: <ulink url="&tcl-home;"/></para>
         <para>Download: <ulink url="&tcl-url;"/></para>
         <para>MD5 sum: <literal>&tcl-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Tcl Documentation (&tcl-version;) - <token>&tcl-docs-size;</token>:</term>
+      <listitem>
+        <para>Download: <ulink url="&tcl-docs-url;"/></para>
+        <para>MD5 sum: <literal>&tcl-docs-md5;</literal></para>
       </listitem>
     </varlistentry>
 

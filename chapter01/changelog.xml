@@ -11,10 +11,10 @@
   <title>Changelog</title>
 
   <para>This is version 
-        <phrase arch="default" revision="sysv">&version;</phrase>
-        <phrase arch="ml_32,ml_x32,ml_all" revision="sysv">&version;-multilib</phrase>
-        <phrase arch="default" revision="systemd">&versiond;</phrase>
-        <phrase arch="ml_32,ml_x32,ml_all" revision="systemd">&versiond;-multilib</phrase> 
+    <phrase arch="default" revision="sysv">&version;</phrase>
+    <phrase arch="ml_32,ml_x32,ml_all" revision="sysv">&version;-multilib</phrase>
+    <phrase arch="default" revision="systemd">&versiond;</phrase>
+    <phrase arch="ml_32,ml_x32,ml_all" revision="systemd">&versiond;-multilib</phrase>
   of the Linux From Scratch book, dated
   &releasedate;. If this book is more than six months old, a newer and better
   version is probably already available. To find out, please check one of the
@@ -44,6 +44,92 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
     -->
+    <listitem revision="systemd">
+      <itemizedlist>
+      <para>2020-06-22</para>
+        <listitem>
+          <para>[renodr] - Fix a segfault in systemd-udevd.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <itemizedlist>
+      <para>2020-06-17</para>
+        <listitem>
+          <para>[bdubbs] - Update to meson-0.54.3. Fixes
+          <ulink url="&lfs-ticket-root;4673">#4673</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-5.07. Fixes
+          <ulink url="&lfs-ticket-root;4669">#4669</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.7.2. Fixes
+          <ulink url="&lfs-ticket-root;4662">#4662</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iproute2-5.7.0. Fixes
+          <ulink url="&lfs-ticket-root;4668">#4668</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to file-5.39. Fixes
+          <ulink url="&lfs-ticket-root;4671">#4671</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to elfutils-0.180. Fixes
+          <ulink url="&lfs-ticket-root;4670">#4670</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bison-3.6.4. Fixes
+          <ulink url="&lfs-ticket-root;4672">#4672</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-06-16</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Split Chapter 5 into three separate chapters.
+          Implement a new method of cross-building the LFS tool chain
+          and other tools to simplify the method of isolating the 
+          new system from the original host.  This will be the start of
+          LFS-10.0.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-06-03</para>
+      <itemizedlist>
+        <listitem revision="systemd">
+          <para>[renodr] - Fix systemd's build with GCC-10 with a patch instead
+          of CFLAGS.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to perl-5.30.3 (security update). Fixes
+          <ulink url="&lfs-ticket-root;4664">#4664</ulink>.</para>
+        </listitem>
+        <listitem revision="systemd">
+          <para>[renodr] - Update to dbus-1.12.18 (security update). Fixes
+          <ulink url="&lfs-ticket-root;4665">#4665</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to man-db-2.9.2. Fixes
+          <ulink url="&lfs-ticket-root;4663">#4663</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to libcap-2.36. Fixes
+          <ulink url="&lfs-ticket-root;4666">#4666</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to bison-3.6.3. Fixes
+          <ulink url="&lfs-ticket-root;4667">#4667</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem>
       <para>2020-05-31</para>
       <itemizedlist>
@@ -59,6 +145,17 @@
     <listitem>
       <para>2020-05-29</para>
       <itemizedlist>
+        <listitem>
+          <para>[xry111] - Move flex earlier in chapter 6, so that binutils
+          can use it.</para>
+        </listitem>
+        <listitem>
+          <para>[xry111] - Remove bzip2 and flex from chapter 5.</para>
+        </listitem>
+        <listitem>
+          <para>[xry111] - Move zstd earlier in chapter 6, so that file and
+          GCC can use it.</para>
+        </listitem>
         <listitem>
           <para>[bdubbs] - Run sed and findutils tests as an
           unprivileged user. Fixes
@@ -172,6 +269,16 @@
         <listitem>
           <para>[pierre] - Pass -Wno-format-overflow to systemd to
           prevent an error with GCC 10.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-05-09</para>
+      <itemizedlist>
+        <listitem>
+          <para>[pierre] - Patch GCC pass 2 to allow cross-compile
+          (specific to new cross method).</para>
         </listitem>
       </itemizedlist>
     </listitem>

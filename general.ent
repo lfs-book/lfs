@@ -1,13 +1,13 @@
-<!ENTITY version         "SVN-20200531">
+<!ENTITY version         "SVN-20200622">
 <!ENTITY short-version   "svn">  <!-- Used below in &blfs-book; 
                                       Change to x.y for release but not -rc releases -->
 <!ENTITY generic-version "development"> <!-- Use "development"  or "x.y[-pre{x}]" -->
 
-<!ENTITY versiond        "20200531-systemd">
+<!ENTITY versiond        "20200622-systemd">
 <!ENTITY short-versiond  "systemd">
 <!ENTITY generic-versiond "systemd"> 
 
-<!ENTITY releasedate     "May 31st, 2020">
+<!ENTITY releasedate     "June 22nd, 2020">
 
 <!ENTITY copyrightdate   "1999-2020"><!-- jhalfs needs a literal dash, not &ndash; -->
 
@@ -54,3 +54,11 @@
 
 <!ENTITY % patches-entities SYSTEM "patches.ent">
 %patches-entities;
+
+<!-- multilib definitions -->
+<!ENTITY lib-m32          "/lib32">
+<!ENTITY lib-mx32         "/libx32">
+<!ENTITY usr-lib-m32      "/usr/lib32">
+<!ENTITY usr-lib-mx32     "/usr/libx32">
+<!ENTITY usr-inc-m32      "/usr/include/m32">
+<!ENTITY usr-inc-mx32     "/usr/include/mx32">

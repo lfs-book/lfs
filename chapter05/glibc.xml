@@ -25,7 +25,7 @@
     <title/>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-    href="../chapter06/glibc.xml"
+    href="../chapter08/glibc.xml"
     xpointer="xpointer(/sect1/sect2[1]/para[1])"/>
 
     <segmentedlist>
@@ -33,8 +33,8 @@
       <segtitle>&diskspace;</segtitle>
 
       <seglistitem>
-        <seg>&glibc-ch5-sbu;</seg>
-        <seg>&glibc-ch5-du;</seg>
+        <seg>&glibc-tmp-sbu;</seg>
+        <seg>&glibc-tmp-du;</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -42,6 +42,33 @@
 
   <sect2 role="installation">
     <title>Installation of Glibc</title>
+
+    <para arch="default">First, create a symbolic link for LSB compliance. Additionally,
+    for x86_64, create a compatibility symbolic link required for proper
+    operation of the dynamic library loader:</para>
+
+<screen arch="default"><userinput remap="pre">case $(uname -m) in
+    i?86)   ln -sfv ld-linux.so.2 $LFS/lib/ld-lsb.so.3
+    ;;
+    x86_64) ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64
+            ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64/ld-lsb-x86-64.so.3
+    ;;
+esac</userinput></screen>
+
+    <para arch="ml_32,ml_x32,ml_all">First, create symbolic links for LSB compliance
+    and compatibility symbolic links required for proper
+    operation of the dynamic library loader:</para>
+
+<!-- no ld-linux.so.2 here as multilib is based on x86_64, not on i686 -->
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64
+ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64/ld-lsb-x86-64.so.3</userinput></screen>
+
+    <para>Some of the Glibc programs use the non-FHS compliant
+    <filename class="directory">/var/db</filename> directory to store their
+    runtime data. Apply the following patch to make such programs store their
+    runtime data in the FHS-compliant locations:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../glibc-&glibc-version;-fhs-1.patch</userinput></screen>
 
     <para>The Glibc documentation recommends building Glibc 
     in a dedicated build directory:</para>
@@ -52,18 +79,22 @@ cd       build</userinput></screen>
     <para>Next, prepare Glibc for compilation:</para>
 
 <screen arch="default"><userinput remap="configure">../configure                             \
-      --prefix=/tools                    \
+      --prefix=/usr                      \
       --host=$LFS_TGT                    \
       --build=$(../scripts/config.guess) \
       --enable-kernel=&min-kernel;                \
-      --with-headers=/tools/include</userinput></screen>
+      --with-headers=$LFS/usr/include    \
+      libc_cv_slibdir=/lib</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">../configure                             \
-      --prefix=/tools                    \
+      --prefix=/usr                      \
       --host=$LFS_TGT                    \
       --build=$(../scripts/config.guess) \
       --enable-kernel=&min-kernel;                \
+      --with-headers=$LFS/usr/include    \
       --enable-multi-arch                \
-      --with-headers=/tools/include</userinput></screen>
+      --libdir=/usr/lib                  \
+      --libexecdir=/usr/lib              \
+      libc_cv_slibdir=/lib</userinput></screen>
 <!--
       libc_cv_forced_unwind=yes          \
       libc_cv_c_cleanup=yes</userinput></screen> -->
@@ -75,8 +106,8 @@ cd       build</userinput></screen>
         <term><parameter>--host=$LFS_TGT, --build=$(../scripts/config.guess)</parameter></term>
         <listitem>
           <para>The combined effect of these switches is that Glibc's build system
-          configures itself to cross-compile, using the cross-linker and
-          cross-compiler in <filename class="directory">/tools</filename>.</para>
+          configures itself to be cross-compiled, using the cross-linker and
+          cross-compiler in <filename class="directory">$LFS/tools</filename>.</para>
         </listitem>
       </varlistentry>
 
@@ -89,51 +120,23 @@ cd       build</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry arch="ml_32,ml_x32,ml_all">
-        <term><parameter>--enable-multi-arch</parameter></term>
+      <varlistentry>
+        <term><parameter>--with-headers=$LFS/usr/include</parameter></term>
         <listitem>
-          <para>Enables glibc for multiarch environments.</para>
+          <para>This tells Glibc to compile itself against the headers
+          recently installed to the $LFS/usr/include directory, so that
+          it knows exactly what features the kernel has and can optimize
+          itself accordingly.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--with-headers=/tools/include</parameter></term>
+        <term><parameter>libc_cv_slibdir=/lib</parameter></term>
         <listitem>
-          <para>This tells Glibc to compile itself against the headers recently
-          installed to the tools directory, so that it knows exactly what
-          features the kernel has and can optimize itself accordingly.</para>
+          <para>This ensures that the library is installed in /lib instead
+          of the default /lib64 on 64 bit machines.</para>
         </listitem>
       </varlistentry>
-<!--
-      <varlistentry>
-        <term><parameter>libc_cv_forced_unwind=yes</parameter></term>
-        <listitem>
-          <para>The linker installed during
-          <xref linkend="ch-tools-binutils-pass1"/> was cross-compiled and as
-          such cannot be used until Glibc has been installed.  This means that
-          the configure test for force-unwind support will fail, as it relies on
-          a working linker.  The libc_cv_forced_unwind=yes variable is passed in
-          order to inform <command>configure</command> that force-unwind
-          support is available without it having to run the test.</para>
-        </listitem>
-      </varlistentry>
-      <varlistentry>
-        <term><parameter>libc_cv_c_cleanup=yes</parameter></term>
-        <listitem>
-          <para>Similarly, we pass libc_cv_c_cleanup=yes through to the
-          <command>configure</command> script so that the test is skipped and C
-          cleanup handling support is configured.</para>
-        </listitem>
-      </varlistentry>
--->
-<!--  <varlistentry>
-        <term><parameter>libc_cv_ctors_header=yes</parameter></term>
-        <listitem>
-          <para>Similarly, we pass libc_cv_ctors_header=yes through to the
-          <command>configure</command> script so that the test is skipped and
-          gcc constructor support is configured.</para>
-        </listitem>
-      </varlistentry>-->
 
     </variablelist>
 
@@ -161,216 +164,217 @@ cd       build</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make install</userinput></screen>
+    <warning><para>If <envar>LFS</envar> is not properly set, and despite the
+    recommendations, you are building as root, the next command will install
+    the newly built glibc to your host system, which most likely will render it
+    unusable. So double check that the environment is correctly set for user
+    <systemitem class="username">lfs</systemitem>.</para></warning>
 
-  <caution>
-    <para>At this point, it is imperative to stop and ensure that the basic
-    functions (compiling and linking) of the new toolchain are working as
-    expected. To perform a sanity check, run the following commands:</para>
+<screen><userinput remap="install">make DESTDIR=$LFS install</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the <command>make install</command> option:</title>
+
+      <varlistentry>
+        <term><parameter>DESTDIR=$LFS</parameter></term>
+        <listitem>
+          <para>The <envar>DESTDIR</envar> make variable is used by almost all
+          packages to define the location where the package should be
+          installed. If it is not set, it defaults to the root (<filename
+          class="directory">/</filename>) directory. Here we specify that
+          the package be installed in <filename class="directory">$LFS
+          </filename>, which will become the root after <xref linkend=
+          "ch-tools-chroot"/>.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <caution>
+      <para>At this point, it is imperative to stop and ensure that the basic
+      functions (compiling and linking) of the new toolchain are working as
+      expected. To perform a sanity check, run the following commands:</para>
 
 <screen><userinput>echo 'int main(){}' &gt; dummy.c
 $LFS_TGT-gcc dummy.c
-readelf -l a.out | grep ': /tools'</userinput></screen>
+readelf -l a.out | grep '/ld-linux'</userinput></screen>
 
-    <para>If everything is working correctly, there should be no errors,
-    and the output of the last command will be of the form:</para>
+      <para>If everything is working correctly, there should be no errors,
+      and the output of the last command will be of the form:</para>
 
-<screen><computeroutput>[Requesting program interpreter: /tools/lib64/ld-linux-x86-64.so.2]</computeroutput></screen>
+<screen><computeroutput>[Requesting program interpreter: /lib64/ld-linux-x86-64.so.2]</computeroutput></screen>
 
-    <para>Note that for 32-bit machines, the interpreter name will be
-    <filename>/tools/lib/ld-linux.so.2</filename>.</para>
+      <para arch="default">Note that for 32-bit machines, the interpreter name will be
+      <filename>/lib/ld-linux.so.2</filename>.</para>
 
-    <para>If the output is not shown as above or there was no output at all,
-    then something is wrong. Investigate and retrace the steps to find out
-    where the problem is and correct it. This issue must be resolved before
-    continuing on.</para>
+      <para>If the output is not shown as above or there was no output at all,
+      then something is wrong. Investigate and retrace the steps to find out
+      where the problem is and correct it. This issue must be resolved before
+      continuing on.</para>
 
-    <para>Once all is well, clean up the test files:</para>
+      <para>Once all is well, clean up the test files:</para>
 
 <screen><userinput>rm -v dummy.c a.out</userinput></screen>
 
-  </caution>
+    </caution>
 
-  <note><para>Building Binutils in the section after next will serve as an
-  additional check that the toolchain has been built properly. If Binutils
-  fails to build, it is an indication that something has gone wrong with the
-  previous Binutils, GCC, or Glibc installations.</para></note>
+    <note><para>Building packages in the next chapter will serve as an
+    additional check that the toolchain has been built properly. If some
+    package, especially binutils-pass2 or gcc-pass2, fails to build, it is
+    an indication that something has gone wrong with the
+    previous Binutils, GCC, or Glibc installations.</para></note>
 
-  </sect2>
+    <para>Now that our cross-toolchain is complete, finalize the installation
+    of the limits.h header. For doing so, run a utility provided by the GCC
+    developers:</para>
 
-  <sect2 arch="ml_32,ml_all" role="installation">
-    <title>Installation of Glibc 32-bit</title>
-
-    <para>Clean the build directory for redoing glibc for 32-bit:</para>
-<screen><userinput remap="pre">mkdir ../build32
-cd ../build32</userinput></screen>
-
-    <para>Rebuild glibc for 32-bit:</para>
-<screen><userinput remap="configure">echo slibdir=/tools/lib32 &gt; configparms
-BUILD_CC="gcc -m32"               \
-CC="${LFS_TGT}-gcc -m32"          \
-CXX="${LFS_TGT}-g++ -m32"         \
-AR="${LFS_TGT}-ar"                \
-RANLIB="${LFS_TGT}-ranlib"        \
-../configure --prefix=/tools                    \
-             --build=$(../scripts/config.guess) \
-             --host=${LFS_TGT32}                \
-             --enable-kernel=&min-kernel;             \
-             --with-headers=/tools/include      \
-             --with-binutils=/tools/bin         \
-             --enable-multi-arch                \
-             --libdir=/tools/lib32              \
-             --libexecdir=/tools/lib32</userinput></screen>
-<!--                      \
-             libc_cv_forced_unwind=yes          \
-             libc_cv_c_cleanup=yes</userinput></screen> -->
-
-    <variablelist>
-      <title>The meaning of the extra configure options:</title>
-
-      <varlistentry>
-        <term><parameter>--enable-multi-arch</parameter></term>
-        <listitem>
-          <para>Enables glibc for multiarch environments.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--libdir=/tools/lib32, --libexecdir=/tools/lib32</parameter></term>
-        <listitem>
-          <para>Overrides location for installing 32-bit files.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--with-binutils=/tools/bin</parameter></term>
-        <listitem>
-          <para>This tells Glibc to compile itself against the utilities
-          found within our "tools" heirachy, because otherwise...</para>
-        </listitem>
-      </varlistentry>
-
-    </variablelist>
-
-    <para>Now compile the 32-bit version of glibc:</para>
-<screen><userinput remap="make">make</userinput></screen>
-
-    <para>Install 32-bit version of glibc:</para>
-<screen><userinput remap="install">make install_root="${PWD}/DESTDIR" install
-install -vdm755 /tools/lib32
-cp -Rv DESTDIR/tools/lib32/* /tools/lib32
-install -vm644 DESTDIR/tools/include/gnu/{lib-names,stubs}-32.h \
-               /tools/include/gnu/
-ln -svf /tools/lib32/ld-linux.so.2 /tools/lib/</userinput></screen>
+<screen><userinput>$LFS/tools/libexec/gcc/$LFS_TGT/&gcc-version;/install-tools/mkheaders</userinput></screen>
 
   </sect2>
 
-  <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Glibc x32-bit</title>
+  <!-- - - - - - - - - - -->
+  <!-- Multilib - 32bit  -->
+  <!-- - - - - - - - - - -->
+  <sect2 arch="ml_32,ml_all">
+    <title>Building Glibc - 32bit</title>
 
-    <para>Create a build directory for redoing glibc for x32-bit:</para>
-<screen><userinput remap="pre">mkdir ../build32x
-cd ../build32x</userinput></screen>
+    <para>Now recompile for m32. The extracted source can be
+    reused but needs to cleaned before installing the m32
+    version of Glibc.</para>
 
-    <para>Rebuild glibc for x32-bit:</para>
-<screen><userinput remap="configure">echo slibdir=/tools/libx32 &gt; configparms
-BUILD_CC="gcc -mx32"              \
-CC="${LFS_TGT}-gcc -mx32"         \
-CXX="${LFS_TGT}-g++ -mx32"        \
-AR="${LFS_TGT}-ar"                \
-RANLIB="${LFS_TGT}-ranlib"        \
-../configure --prefix=/tools                    \
-             --build=$(../scripts/config.guess) \
-             --host=${LFS_TGTX32}               \
-             --enable-kernel=&min-kernel;             \
-             --with-headers=/tools/include      \
-             --with-binutils=/tools/bin         \
-             --enable-multi-arch                \
-             --libdir=/tools/libx32             \
-             --libexecdir=/tools/libx32</userinput></screen>
-<!--                      \
-             libc_cv_forced_unwind=yes          \
-             libc_cv_c_cleanup=yes</userinput></screen> -->
+    <para>Clear the build directory and remove artefacts from
+    previous build:</para>
+      
+<screen><userinput remap="pre">make clean
+find .. -name "*.a" -delete</userinput></screen>
 
-    <variablelist>
-      <title>The meaning of the extra configure options:</title>
+    <para>Configure Glibc for m32 with the following commands:</para>
 
-      <varlistentry>
-        <term><parameter>--enable-multi-arch</parameter></term>
-        <listitem>
-          <para>Enables glibc for multiarch environments.</para>
-        </listitem>
-      </varlistentry>
+<screen><userinput remap="configure">CC="$LFS_TGT-gcc -m32" \
+CXX="$LFS_TGT-g++ -m32" \
+../configure                             \
+      --prefix=/usr                      \
+      --host=$LFS_TGT32                  \
+      --build=$(../scripts/config.guess) \
+      --enable-kernel=&min-kernel;                \
+      --with-headers=$LFS/usr/include    \
+      --enable-multi-arch                \
+      --libdir=&usr-lib-m32;                \
+      --libexecdir=&usr-lib-m32;            \
+      libc_cv_slibdir=&lib-m32;</userinput></screen>
 
-      <varlistentry>
-        <term><parameter>--libdir=/tools/libx32, --libexecdir=/tools/libx32</parameter></term>
-        <listitem>
-          <para>Overrides location for installing x32-bit files.</para>
-        </listitem>
-      </varlistentry>
+    <para>Compile the package:</para>
 
-      <varlistentry>
-        <term><parameter>--with-binutils=/tools/bin</parameter></term>
-        <listitem>
-          <para>This tells Glibc to compile itself against the utilities
-          found within our "tools" heirachy, because otherwise...</para>
-        </listitem>
-      </varlistentry>
-
-    </variablelist>
-
-    <para>Now compile the x32-bit version of glibc:</para>
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Install x32-bit version of glibc:</para>
-<screen><userinput remap="install">make install_root="${PWD}/DESTDIR" install
-install -vdm755 /tools/libx32
-cp -Rv DESTDIR/tools/libx32/* /tools/libx32
-install -vm644 DESTDIR/tools/include/gnu/lib-names-x32.h \
-               /tools/include/gnu/
-[ -e DESTDIR/tools/include/gnu/stubs-x32.h ] \
-  &amp;&amp; install -vm644 DESTDIR/tools/include/gnu/stubs-x32.h /tools/include/gnu/ \
-  || ln -v /tools/include/gnu/stubs-64.h /tools/include/gnu/stubs-x32.h
-ln -svf /tools/libx32/ld-linux-x32.so.2 /tools/lib/</userinput></screen>
-<!-- For whatever reason the stubs-x32.h doesn't get created. The 'ln' above is
-just a "brute force" workaraound - by copying the stubs-64.h file. -->
+    <para>Install the package:</para>
 
-  <caution>
-    <para>At this point, it is imperative to stop and ensure that the basic
-    functions (compiling and linking) of the new toolchain are working as
-    expected. To perform a sanity check, run the following commands:</para>
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+cp -a DESTDIR&lib-m32;/*     $LFS&lib-m32;/
+cp -a DESTDIR&usr-lib-m32; $LFS/usr/
+install -vm644 DESTDIR/usr/include/gnu/{lib-names,stubs}-32.h \
+               $LFS/usr/include/gnu/
+ln -svf ..&lib-m32;/ld-linux.so.2 $LFS/lib/ld-linux.so.2</userinput></screen>
+
+    <caution>
+      <para>At this point, it is imperative to stop and ensure that the basic
+      functions (compiling and linking) of the new toolchain are working as
+      expected. To perform a sanity check, run the following commands:</para>
 
 <screen><userinput>echo 'int main(){}' &gt; dummy.c
 $LFS_TGT-gcc -m32 dummy.c
-readelf -l a.out | grep ': /tools'</userinput></screen>
+readelf -l a.out | grep '/ld-linux'</userinput></screen>
 
-    <para>If everything is working correctly, there should be no errors,
-    and the output of the last command will be of the form:</para>
+      <para>If everything is working correctly, there should be no errors,
+      and the output of the last command will be of the form:</para>
 
-<screen><computeroutput>[Requesting program interpreter: /tools/lib/ld-linux.so.2]</computeroutput></screen>
+<screen><computeroutput>[Requesting program interpreter: /lib/ld-linux.so.2]</computeroutput></screen>
 
-    <para>Redo test for x32-ABI:</para>
+      <para>If the output is not shown as above or there was no output at all,
+      then something is wrong. Investigate and retrace the steps to find out
+      where the problem is and correct it. This issue must be resolved before
+      continuing on.</para>
 
-<screen><userinput>echo 'int main(){}' &gt; dummy.c
-$LFS_TGT-gcc -mx32 dummy.c
-readelf -l a.out | grep ': /tools'</userinput></screen>
-
-    <para>Output should be like:</para>
-
-<screen><computeroutput>[Requesting program interpreter: /tools/libx32/ld-linux-x32.so.2]</computeroutput></screen>
-
-    <para>If the output is not shown as above or there was no output at all,
-    then something is wrong. Investigate and retrace the steps to find out
-    where the problem is and correct it. This issue must be resolved before
-    continuing on.</para>
-
-    <para>Once all is well, clean up the test files:</para>
+      <para>Once all is well, clean up the test files:</para>
 
 <screen><userinput>rm -v dummy.c a.out</userinput></screen>
 
-  </caution>
-  </sect2>
+    </caution>
+
+  </sect2><!-- m32 -->
+
+  <!-- - - - - - - - - - -->
+  <!-- Multilib - x32bit -->
+  <!-- - - - - - - - - - -->
   
+  <sect2 arch="ml_x32,ml_all">
+    <title>Building Glibc - x32bit</title>
+
+    <para>Now recompile for mx32. The extracted source can be
+    reused but needs to cleaned before installing the mx32
+    version of Glibc.</para>
+
+    <para>Clear the build directory and remove artefacts from
+    previous build:</para>
+      
+<screen><userinput remap="pre">make clean
+find .. -name "*.a" -delete</userinput></screen>
+
+    <para>Configure Glibc for mx32 with the following commands:</para>
+
+<screen><userinput remap="configure">CC="$LFS_TGT-gcc -mx32" \
+CXX="$LFS_TGT-g++ -mx32" \
+../configure                             \
+      --prefix=/usr                      \
+      --host=$LFS_TGTX32                 \
+      --build=$(../scripts/config.guess) \
+      --enable-kernel=&min-kernel;                \
+      --with-headers=$LFS/usr/include    \
+      --enable-multi-arch                \
+      --libdir=&usr-lib-mx32;               \
+      --libexecdir=&usr-lib-mx32;           \
+      libc_cv_slibdir=&lib-mx32;</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+cp -a DESTDIR&lib-mx32;/*     $LFS&lib-mx32;/
+cp -a DESTDIR&usr-lib-mx32; $LFS/usr/
+install -vm644 DESTDIR/usr/include/gnu/{lib-names,stubs}-x32.h \
+               $LFS/usr/include/gnu/
+ln -svf ..&lib-mx32;/ld-linux-x32.so.2 $LFS/lib/ld-linux-x32.so.2</userinput></screen>
+
+    <caution>
+      <para>At this point, it is imperative to stop and ensure that the basic
+      functions (compiling and linking) of the new toolchain are working as
+      expected. To perform a sanity check, run the following commands:</para>
+
+<screen><userinput>echo 'int main(){}' &gt; dummy.c
+$LFS_TGT-gcc -mx32 dummy.c
+readelf -l a.out | grep '/ld-linux-x32'</userinput></screen>
+
+      <para>If everything is working correctly, there should be no errors,
+      and the output of the last command will be of the form:</para>
+
+<screen><computeroutput>[Requesting program interpreter: /lib/ld-linux-x32.so.2]</computeroutput></screen>
+
+      <para>If the output is not shown as above or there was no output at all,
+      then something is wrong. Investigate and retrace the steps to find out
+      where the problem is and correct it. This issue must be resolved before
+      continuing on.</para>
+
+      <para>Once all is well, clean up the test files:</para>
+
+<screen><userinput>rm -v dummy.c a.out</userinput></screen>
+
+    </caution>
+
+  </sect2><!-- mx32 -->
+
   <sect2 role="content">
     <title/>
 

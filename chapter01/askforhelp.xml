@@ -38,12 +38,13 @@
 
     <itemizedlist>
       <listitem>
-        <para>The version of the book being used (in this case 
+        <para>
+          The version of the book being used (in this case 
           <phrase arch="default" revision="sysv">&version;</phrase>
           <phrase arch="ml_32,ml_x32,ml_all" revision="sysv">&version;-multilib</phrase>
           <phrase arch="default" revision="systemd">&versiond;</phrase>
-          <phrase arch="ml_32,ml_x32,ml_all" revision="systemd">&versiond;-multilib</phrase>)</para>
-
+          <phrase arch="ml_32,ml_x32,ml_all" revision="systemd">&versiond;-multilib</phrase>)
+        </para>
       </listitem>
       <listitem>
         <para>The host distribution and version being used to create LFS</para>
@@ -58,7 +59,7 @@
         <para>The exact error message or symptom being received</para>
       </listitem>
       <listitem>
-        <para>Note whether you have deviated from the book at all </para>
+        <para>Note whether you have deviated from the book at all</para>
       </listitem>
     </itemizedlist>
 
