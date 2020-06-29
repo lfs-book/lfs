@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-isl" role="wrap" arch="ml_32,ml_x32,ml_all">
+  <?dbhtml filename="isl.html"?>
+
+  <sect1info condition="script">
+    <productname>isl</productname>
+    <productnumber>&isl-version;</productnumber>
+    <address>&isl-url;</address>
+  </sect1info>
+
+  <title>ISL-&isl-version;</title>
+
+  <indexterm zone="ch-system-isl">
+    <primary sortas="a-ISL">ISL</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>ISL is a thread-safe C library for manipulating sets and relations
+    of integer points bounded by affine constraints.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&isl-fin-sbu;</seg>
+        <seg>&isl-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of ISL</title>
+
+    <para>Prepare ISL for compilation:</para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr    \
+            --disable-static \
+            --docdir=/usr/share/doc/isl-&isl-version;</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the new configure options:</title>
+
+      <varlistentry>
+        <term><parameter>--docdir=/usr/share/doc/isl-&isl-version;</parameter></term>
+        <listitem>
+          <para>This variable specifies the correct place for the
+          documentation.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package and its documentation:</para>
+
+<screen><userinput remap="install">make install
+install -vd /usr/share/doc/isl-&isl-version;
+install -m644 doc/{CodingStyle,manual.pdf,SubmittingPatches,user.pod} \
+        /usr/share/doc/isl-&isl-version;</userinput></screen>
+
+    <para>Finally, move a misplaced file:</para>
+
+<screen><userinput remap="install">mkdir -pv /usr/share/gdb/auto-load/usr/lib
+mv -v /usr/lib/libisl*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-isl" role="content">
+    <title>Contents of ISL</title>
+
+    <segmentedlist>
+      <segtitle>Installed Libraries</segtitle>
+      <segtitle>Installed directory</segtitle>
+
+      <seglistitem>
+        <seg>libisl.so</seg>
+        <seg>/usr/share/doc/isl-&isl-version;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="libisl">
+        <term><filename class="libraryfile">libisl</filename></term>
+        <listitem>
+          <para>Contains integer set manipulation functions</para>
+          <indexterm zone="ch-system-isl libisl">
+            <primary sortas="c-libisl">libisl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+  </sect2>
+
+</sect1>
+
