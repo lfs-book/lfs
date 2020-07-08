@@ -45,6 +45,58 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
     <listitem>
+      <para>2020-07-07</para>
+      <itemizedlist>
+        <listitem>
+          <para>[pierre] - Make libelf install in /lib, since it may be
+          needed by iproute2 before /usr is mounted (report by
+          <ulink url="http://lists.linuxfromscratch.org/pipermail/lfs-dev/2020-July/073903.html">
+          Roger</ulink>).</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-07-06</para>
+      <itemizedlist>
+        <listitem>
+          <para>[pierre] - Change chapter 6 ncurses so that it matches
+          what is done in chapter 8, and add explanations.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to libcap-2.38. Fixes
+          <ulink url="&lfs-ticket-root;4683">#4683</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to linux-5.7.7. Fixes
+          <ulink url="&lfs-ticket-root;4681">#4681</ulink>.</para>
+        </listitem>
+        <listitem revision="systemd">
+          <para>[renodr] - Update to dbus-1.12.20 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;4682">#4682</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-07-04</para>
+      <itemizedlist>
+        <listitem>
+          <para>[pierre] - Remove /tools and files containing
+          {i686,x86_64}-lfs in their name at the end of chapter 8.</para>
+        </listitem>
+        <listitem>
+          <para>[pierre] - Add --host= to libstdc++-pass2, so that host
+          specific headers are installed in a host specific directory.</para>
+        </listitem>
+        <listitem>
+          <para>[pierre] - Fix temporary Python so that static libraries
+          are not installed.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <itemizedlist>
       <para>2020-07-01</para>
         <listitem>
