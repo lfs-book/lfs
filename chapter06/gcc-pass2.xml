@@ -65,7 +65,7 @@ mv -v isl-&isl-version; isl</userinput></screen>
     sed -e '/m64=/s/lib64/lib/' -i.orig gcc/config/i386/t-linux64
   ;;
 esac</userinput></screen>
-
+<!--
     <para arch="ml_32,ml_x32,ml_all">Change the default directory name for
     libraries:</para>
 
@@ -74,7 +74,7 @@ esac</userinput></screen>
     -i.orig gcc/config/i386/t-linux64</userinput></screen>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&gcc-cross-patch;</userinput></screen>
-
+-->
     <para>Create a separate build directory again:</para>
 
 <screen><userinput remap="pre">mkdir -v build
