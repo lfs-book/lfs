@@ -65,14 +65,14 @@ mv -v isl-&isl-version; isl</userinput></screen>
     sed -e '/m64=/s/lib64/lib/' -i.orig gcc/config/i386/t-linux64
   ;;
 esac</userinput></screen>
-<!--
+
     <para arch="ml_32,ml_x32,ml_all">Change the default directory name for
     libraries:</para>
 
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e '/m64=/s/lib64/lib/' \
     -e '/m32=/s/m32=.*/m32=..\&lib-m32;$(call if_multiarch,:i386-linux-gnu)/' \
     -i.orig gcc/config/i386/t-linux64</userinput></screen>
-
+<!--
 <screen><userinput remap="pre">patch -Np1 -i ../&gcc-cross-patch;</userinput></screen>
 -->
     <para>Create a separate build directory again:</para>
@@ -152,7 +152,7 @@ ln -s ../../../libgcc/gthr-posix.h $LFS_TGT/libgcc/gthr-default.h</userinput></s
         <listitem>
           <para>This option is automatically enabled when building a native
           compiler with a native compiler on x86. But here, we build with
-          a cross compiler, so we need to explicitely set this option.</para>
+          a cross compiler, so we need to explicitly set this option.</para>
         </listitem>
       </varlistentry>
 

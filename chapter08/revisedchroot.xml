@@ -56,7 +56,7 @@ rm -f &usr-lib-mx32;/libltdl.a
 rm -f &usr-lib-mx32;/libz.a</userinput></screen>
 
   <para>There are also several files installed in the /usr/lib and /usr/libexec
-  directories with a file name extention of .la. These are "libtool archive"
+  directories with a file name extension of .la. These are "libtool archive"
   files. As already said, they are only useful when linking with static
   libraries. They are unneeded, and potentially harmful, when using dynamic
   shared libraries, specially when using also non-autotools build systems.
@@ -72,7 +72,7 @@ find &usr-lib-mx32; -name \*.la -delete</userinput></screen>
 
    <para>The compiler built in <xref linkend="chapter-temporary-tools"/> and
    <xref linkend="chapter-chroot-temporary-tools"/> is still partially
-   installed, and not needed anymore. Remove it with:</para>
+   installed and not needed anymore. Remove it with:</para>
 
 <screen><userinput>find /usr -depth -name $(uname -m)-lfs-linux-gnu\* | xargs rm -rf</userinput></screen>
 
