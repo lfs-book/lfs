@@ -139,25 +139,37 @@ File systems  ---&gt;
 
     <note arch="ml_32,ml_x32,ml_all">
       <para>
-        Running a multilib system means also that the kernel has to be 
-        configured proper. It is required that the kernel is able to 
+        The kernel on a multilib system needs to be able to
         identify and start binaries compiled for different architectures
-        than the default. Setup the required parameter in the kernel
-        config:
+        than the default.
       </para>
-<screen>Binary Emulations  ---&gt;
+
+      <para arch="ml_32,ml_all">
+        If support for any 32bit ABI was built, make sure that the option
+        "IA32 Emulation" is selected. The option 'IA32 a.out support' is
+        optional.
+      </para>
+
+      <para arch="ml_x32,ml_all">
+        If support for the x32bit ABI was built, make sure that the option
+        "x32 ABI for 64-bit mode" is selected.
+      </para>
+
+<screen arch="ml_32">Binary Emulations  ---&gt;
+    [*] IA32 Emulation
+    &lt;M&gt;   IA32 a.out support
+</screen>
+<screen arch="ml_x32">Binary Emulations  ---&gt;
+    [*] x32 ABI for 64-bit mode
+</screen>
+<screen arch="ml_all">Binary Emulations  ---&gt;
     [*] IA32 Emulation
     &lt;M&gt;   IA32 a.out support
     [*] x32 ABI for 64-bit mode
 </screen>
-      <para>Make sure that the option 
-        'IA32 Emulation' is set if you built support for the 32bit ABI. 
-        If you selected the x32 ABI or built support for both, also select 
-        'x32 ABI for 64-bit mode'. The option 'IA32 a.out support' is
-        optional.
-      </para>
-    </note>
 
+    </note>
+    
     <variablelist>
       <title>The rationale for the above configuration items:</title>
 

@@ -62,8 +62,7 @@ cd       build</userinput></screen>
 
     <para>Prepare libstdc++ for compilation:</para>
 
-<screen arch="default"><userinput remap="configure">
-../libstdc++-v3/configure            \
+<screen arch="default"><userinput remap="configure">../libstdc++-v3/configure            \
     CXXFLAGS="-g -O2 -D_GNU_SOURCE"  \
     --prefix=/usr                    \
     --disable-multilib               \

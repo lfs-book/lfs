@@ -360,7 +360,7 @@ readelf -l a.out | grep '/ld-linux-x32'</userinput></screen>
       <para>If everything is working correctly, there should be no errors,
       and the output of the last command will be of the form:</para>
 
-<screen><computeroutput>[Requesting program interpreter: /lib/ld-linux-x32.so.2]</computeroutput></screen>
+<screen><computeroutput>[Requesting program interpreter: /libx32/ld-linux-x32.so.2]</computeroutput></screen>
 
       <para>If the output is not shown as above or there was no output at all,
       then something is wrong. Investigate and retrace the steps to find out

@@ -44,6 +44,47 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
     -->
+    <listitem arch="ml_32,ml_x32,ml_all">
+      <itemizedlist>
+      <para>2020-08-20</para>
+        <listitem>
+          <para>[thomas] - Add cleanup for multilib directories in
+          chapter 7</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="sysv">
+      <itemizedlist>
+      <para>2020-08-18</para>
+        <listitem revision="sysv">
+          <para>[dj] - Update to lfs-bootscripts-20200818.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <itemizedlist>
+      <para>2020-08-15</para>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-5.08. Fixes
+          <ulink url="&lfs-ticket-root;4714">#4714</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to libpipeline-1.5.3. Fixes
+          <ulink url="&lfs-ticket-root;4713">#4713</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iproute2-5.8.0. Fixes
+          <ulink url="&lfs-ticket-root;4712">#4712</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.8.1. Fixes
+          <ulink url="&lfs-ticket-root;4708">#4708</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem>
       <itemizedlist>
       <para>2020-08-11</para>
@@ -360,7 +401,7 @@
           <para>[pierre] - Fix bash tests: add a couple of symlinks
           from /bin to /tools, create the tester user with the uid of
           the tty owner, run the bash tests with su &lt;&lt; EOF, and
-          explicitely defining stdin (with help from thomas and bdubbs).</para>
+          explicitly defining stdin (with help from thomas and bdubbs).</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -694,36 +735,6 @@
         <listitem>
           <para>[bdubbs] - Update to perl-5.30.2. Fixes
           <ulink url="&lfs-ticket-root;4614">#4614</ulink>.</para>
-        </listitem>
-      </itemizedlist>
-    </listitem>
-
-    <listitem>
-      <para>2020-03-29</para>
-      <itemizedlist>
-        <listitem>
-          <para>[bdubbs] - Textual updates thanks to Kevin Buckley.</para>
-        </listitem>
-      </itemizedlist>
-    </listitem>
-
-    <listitem revision="systemd">
-      <para>2020-03-19</para>
-      <itemizedlist>
-        <listitem>
-          <para>[renodr] - Update to systemd-245. Fixes
-          <ulink url="&lfs-ticket-root;4593">#4593</ulink>.</para>
-        </listitem>
-      </itemizedlist>
-    </listitem>
-
-    <listitem revision="systemd">
-      <para>2020-03-18</para>
-      <itemizedlist>
-        <listitem>
-          <para>[renodr] - Make minor modifications to the kernel configuration
-          in order to match the configuration options to there current positions
-          in Linux-5.5</para>
         </listitem>
       </itemizedlist>
     </listitem>
