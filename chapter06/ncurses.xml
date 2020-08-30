@@ -181,6 +181,7 @@ CXX="$LFS_TGT-g++ -m32"             \
             --mandir=/usr/share/man \
             --with-shared           \
             --without-debug         \
+            --without-ada           \
             --without-normal        \
             --enable-pc-files       \
             --enable-widec          \
@@ -219,6 +220,7 @@ CXX="$LFS_TGT-g++ -mx32"            \
             --mandir=/usr/share/man \
             --with-shared           \
             --without-debug         \
+            --without-ada           \
             --without-normal        \
             --enable-pc-files       \
             --enable-widec          \
