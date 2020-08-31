@@ -42,6 +42,16 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
     -->
+
+    <listitem>
+      <para>2020-09-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - LFS-10.0 released.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem>
       <itemizedlist>
       <para>2020-08-28</para>
