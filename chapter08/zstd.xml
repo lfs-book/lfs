@@ -82,7 +82,8 @@ ln -sfv ../../lib/$(readlink /usr/lib/libzstd.so) /usr/lib/libzstd.so</userinput
 
 <screen><userinput remap="install">CC="gcc -m32" make prefix=/usr DESTDIR=$PWD/DESTDIR install
 cp -Rv DESTDIR/usr/lib/* &usr-lib-m32;/
-sed -e "/^libdir/s/lib$&lib-m32;/" -i &usr-lib-m32;/pkgconfig/libzstd.pc</userinput></screen>
+sed -e "/^libdir/s/lib$&lib-m32;/" -i &usr-lib-m32;/pkgconfig/libzstd.pc
+rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- m32 -->
 
@@ -105,7 +106,8 @@ sed -e "/^libdir/s/lib$&lib-m32;/" -i &usr-lib-m32;/pkgconfig/libzstd.pc</userin
 
 <screen><userinput remap="install">CC="gcc -mx32" make prefix=/usr DESTDIR=$PWD/DESTDIR install
 cp -Rv DESTDIR/usr/lib/* &usr-lib-mx32;/
-sed -e "/^libdir/s/lib$&lib-mx32;/" -i &usr-lib-mx32;/pkgconfig/libzstd.pc</userinput></screen>
+sed -e "/^libdir/s/lib$&lib-mx32;/" -i &usr-lib-mx32;/pkgconfig/libzstd.pc
+rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- mx32 -->
 

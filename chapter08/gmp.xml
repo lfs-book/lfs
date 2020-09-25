@@ -134,7 +134,7 @@ make install-html</userinput></screen>
     <para>Generic libraries can be created by running
     the following:</para>
 
-<screen><userinput remap="pre">cp -v configfsf.guess config.guess
+<screen role="nodump"><userinput remap="pre">cp -v configfsf.guess config.guess
 cp -v configfsf.sub   config.sub</userinput></screen>
 
     <para>Prepare GMP for compilation:</para>
@@ -206,7 +206,7 @@ rm -rf DESTDIR</userinput></screen>
     <para>Generic libraries can be created by running
     the following:</para>
 
-<screen><userinput remap="pre">cp -v configfsf.guess config.guess
+<screen role="nodump"><userinput remap="pre">cp -v configfsf.guess config.guess
 cp -v configfsf.sub   config.sub</userinput></screen>
 
     <para>Prepare GMP for compilation:</para>
