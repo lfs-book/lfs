@@ -45,12 +45,12 @@
     <!--<listitem>
       <para>Bash &bash-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Bc &bc-version;</para>
-    </listitem>-->
-    <!--<listitem>
+    </listitem>
+    <listitem>
       <para>Binutils-&binutils-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Bison-&bison-version;</para>
     </listitem>
@@ -78,9 +78,9 @@
     <!--<listitem revision="sysv">
        <para>Eudev-&eudev-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
        <para>Expat-&expat-version;</para>
-    </listitem>-->
+    </listitem>
     <!-- <listitem>
        <para>Expect-&expect-version;</para>
     </listitem>-->
@@ -114,9 +114,9 @@
     <!--<listitem>
       <para>Gperf-&gperf-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Grep-&grep-version;</para>
-    </lititem>-->
+    </listitem>
     <!--<listitem>
       <para>Groff-&groff-version;</para>
     </listitem>-->
@@ -126,27 +126,27 @@
     <!--<listitem>
       <para>Gzip-&gzip-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>IANA-Etc-&iana-etc-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Inetutils-&inetutils-version;</para>
     </listitem>-->
     <!--<listitem>
       <para>Intltool-&intltool-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>IPRoute2-&iproute2-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Kbd-&kbd-version;</para>
     </listitem>-->
     <!--<listitem>
       <para>Kmod-&kmod-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Less-&less-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>LFS-Bootscripts-&lfs-bootscripts-version;</para>
     </listitem>-->
@@ -195,9 +195,9 @@
     <listitem>
       <para>Ninja-&ninja-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Openssl-&openssl-version;</para>
-    </listitem>-->
+    </listitem>
     <!-- <listitem>
       <para>Patch-&patch-version;</para>
     </listitem>-->
@@ -213,9 +213,9 @@
     <!--<listitem>
       <para>Psmisc-&psmisc-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Python-&python-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Readline-&readline-version;</para>
     </listitem>-->
@@ -243,15 +243,15 @@
     <!--<listitem>
       <para>Texinfo-&texinfo-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Tzdata-&tzdata-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Util-Linux-&util-linux-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Vim-&vim-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>XML-Parser-&xml-parser-version;</para>
     </listitem>-->
@@ -278,6 +278,10 @@
   <itemizedlist>
     <title>Added:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
+    <listitem>
+      <para>autoconf-2.69-consolidated_fixes-1.patch</para>
+    </listitem>
+
 
   </itemizedlist>
 
