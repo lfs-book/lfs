@@ -47,6 +47,141 @@
 
     <listitem>
       <itemizedlist>
+      <para>2020-11-01</para>
+        <listitem>
+          <para>[bdubbs] - Update to elfutils-0.182. Fixes
+          <ulink url="&lfs-ticket-root;4748">#4748</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to meson-0.56.0. Fixes
+          <ulink url="&lfs-ticket-root;4747">#4747</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.9.2. Fixes
+          <ulink url="&lfs-ticket-root;4746">#4746</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to mpc-1.2.1. Fixes
+          <ulink url="&lfs-ticket-root;4744">#4744</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to less-563. Fixes
+          <ulink url="&lfs-ticket-root;4743">#4743</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to tzdata-2020d. Fixes
+          <ulink url="&lfs-ticket-root;4742">#4742</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="sysv">
+      <itemizedlist>
+      <para>2020-10-19</para>
+        <listitem>
+          <para>[dj] - Update to lfs-bootscripts-20201019.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <itemizedlist>
+      <para>2020-10-20</para>
+        <listitem>
+          <para>[bdubbs] - Update to iproute2-5.9.0. Fixes
+          <ulink url="&lfs-ticket-root;4739">#4739</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to tzdata-2020c. Fixes
+          <ulink url="&lfs-ticket-root;4741">#4741</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.9.1. Fixes
+          <ulink url="&lfs-ticket-root;4740">#4740</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <itemizedlist>
+      <para>2020-10-15</para>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20201012. Addresses
+          <ulink url="&lfs-ticket-root;4722">#4722</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to vim-8.2.1845. Addresses
+          <ulink url="&lfs-ticket-root;4500">#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bison-3.7.3. Fixes
+          <ulink url="&lfs-ticket-root;4738">#4738</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to tzdata-2020b. Fixes
+          <ulink url="&lfs-ticket-root;4737">#4737</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to libcap-2.44. Fixes
+          <ulink url="&lfs-ticket-root;4735">#4735</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to Python-3.9. Fixes
+          <ulink url="&lfs-ticket-root;4736">#4736</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to expat-2.2.10. Fixes
+          <ulink url="&lfs-ticket-root;4734">#4734</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bc-3.1.6. Fixes
+          <ulink url="&lfs-ticket-root;4732">#4732</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.9. Fixes
+          <ulink url="&lfs-ticket-root;4733">#4733</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <itemizedlist>
+      <para>2020-10-01</para>
+        <listitem>
+          <para>[bdubbs] - Update to grep-3.5. Fixes
+          <ulink url="&lfs-ticket-root;4731">#4731</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to Python-3.8.6. Fixes
+          <ulink url="&lfs-ticket-root;4730">#4730</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to openssl-1.1.1h. Fixes
+          <ulink url="&lfs-ticket-root;4729">#4729</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to binutils-2.35.1. Fixes
+          <ulink url="&lfs-ticket-root;4728">#4728</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.8.12. Fixes
+          <ulink url="&lfs-ticket-root;4727">#4727</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <itemizedlist>
+      <para>2020-09-27</para>
+        <listitem>
+           <para>[bdubbs] - Add autoconf-2.69-consolidated_fixes-1.patch
+           which allows autoconf tests to pass.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <itemizedlist>
       <para>2020-09-15</para>
         <listitem>
           <para>[bdubbs] - Update to linux-5.8.9. Fixes
