@@ -128,8 +128,7 @@ ln -s ../../../libgcc/gthr-posix.h $LFS_TGT/libgcc/gthr-default.h</userinput></s
     --disable-libssp                               \
     --disable-libvtv                               \
     --disable-libstdcxx                            \
-    --enable-languages=c,c++                       \
-    --with-system-zlib</userinput></screen>
+    --enable-languages=c,c++</userinput></screen>
 
     <variablelist>
       <title>The meaning of the new configure options:</title><!-- WIP -->
