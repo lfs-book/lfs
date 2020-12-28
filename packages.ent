@@ -29,38 +29,38 @@
 <!ENTITY attr-fin-du "4.2 MB">
 <!ENTITY attr-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY autoconf-version "2.69">
-<!ENTITY autoconf-size "1,186 KB">
+<!ENTITY autoconf-version "2.70">
+<!ENTITY autoconf-size "1,315 KB">
 <!ENTITY autoconf-url "&gnu;autoconf/autoconf-&autoconf-version;.tar.xz">
-<!ENTITY autoconf-md5 "50f97f4159805e374639a73e2636f22e">
+<!ENTITY autoconf-md5 "e4453011b18da194b565bf282948f997">
 <!ENTITY autoconf-home "&gnu-software;autoconf/">
 <!ENTITY autoconf-fin-du "79 MB">
 <!ENTITY autoconf-fin-sbu-tests "3.5">
 <!ENTITY autoconf-fin-sbu "less than 0.1 SBU (about &autoconf-fin-sbu-tests; SBU with tests)">
 
-<!ENTITY automake-version "1.16.2">
+<!ENTITY automake-version "1.16.3">
 <!ENTITY am-minor-version "1.16">
-<!ENTITY automake-size "1,510 KB">
+<!ENTITY automake-size "1,554 KB">
 <!ENTITY automake-url "&gnu;automake/automake-&automake-version;.tar.xz">
-<!ENTITY automake-md5 "6cb234c86f3f984df29ce758e6d0d1d7">
+<!ENTITY automake-md5 "c27f608a4e1f302ec7ce42f1251c184e">
 <!ENTITY automake-home "&gnu-software;automake/">
 <!ENTITY automake-fin-du "108 MB">
 <!ENTITY automake-fin-sbu "less than 0.1 SBU (about 9.6 SBU with tests)">
 
-<!ENTITY bash-version "5.0">
-<!ENTITY bash-size "9,898 KB">
+<!ENTITY bash-version "5.1">
+<!ENTITY bash-size "10,214 KB">
 <!ENTITY bash-url "&gnu;bash/bash-&bash-version;.tar.gz">
-<!ENTITY bash-md5 "2b44b47b905be16f45709648f671820b">
+<!ENTITY bash-md5 "bb91a17fd6c9032c26d0b2b78b50aff5">
 <!ENTITY bash-home "&gnu-software;bash/">
 <!ENTITY bash-tmp-du "64 MB">
 <!ENTITY bash-tmp-sbu "0.4 SBU">
 <!ENTITY bash-fin-du "48 MB">
 <!ENTITY bash-fin-sbu "2.4 SBU">
 
-<!ENTITY bc-version "3.1.6">
-<!ENTITY bc-size "207 KB">
+<!ENTITY bc-version "3.2.4">
+<!ENTITY bc-size "221 KB">
 <!ENTITY bc-url "https://github.com/gavinhoward/bc/releases/download/&bc-version;/bc-&bc-version;.tar.xz">
-<!ENTITY bc-md5 "bd5e3922d95098ef3dcbddf3f93321fb">
+<!ENTITY bc-md5 "03d74ea465bb4181f683d1cd53d432e1">
 <!ENTITY bc-home "https://git.yzena.com/gavin/bc">
 <!ENTITY bc-fin-du "6.5 MB">
 <!ENTITY bc-fin-sbu "less than 0.1 SBU">
@@ -319,10 +319,10 @@
 <!ENTITY gzip-fin-du "19 MB">
 <!ENTITY gzip-fin-sbu "0.1 SBU">
 
-<!ENTITY iana-etc-version "20201110">
-<!ENTITY iana-etc-size "577 KB">
+<!ENTITY iana-etc-version "20201124">
+<!ENTITY iana-etc-size "578 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "8c06f1320cf43b3868963707838dca51">
+<!ENTITY iana-etc-md5 "c334faba23f49fffe02cab0077b30828">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.7 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -391,10 +391,10 @@
 <!ENTITY lfs-bootscripts-cfg-du "BOOTSCRIPTS-INSTALL-KB KB"> 
 <!ENTITY lfs-bootscripts-cfg-sbu "less than 0.1 SBU">
 
-<!ENTITY libcap-version "2.45">
-<!ENTITY libcap-size "125 KB">
+<!ENTITY libcap-version "2.46">
+<!ENTITY libcap-size "127 KB">
 <!ENTITY libcap-url "&kernel;linux/libs/security/linux-privs/libcap2/libcap-&libcap-version;.tar.xz">
-<!ENTITY libcap-md5 "e4d4c04ad28a3b601e374c0367113236">
+<!ENTITY libcap-md5 "58ffae7d6a3226d6648cdb5d6f389cbf">
 <!ENTITY libcap-home "https://sites.google.com/site/fullycapable/">
 <!ENTITY libcap-fin-du "11 MB">
 <!ENTITY libcap-fin-sbu "less than 0.1 SBU">
@@ -425,12 +425,12 @@
 
 <!ENTITY linux-major-version "5">
 <!ENTITY linux-minor-version "9">
-<!ENTITY linux-patch-version "8">
+<!ENTITY linux-patch-version "14">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "112,833 KB">
+<!ENTITY linux-size "112,849 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "8ff3b8f25f5234b03e15540846540594">
+<!ENTITY linux-md5 "4727d38ee292c83c230a30a1db067983">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 5.8.3 / gcc-10.2.0 on x86_64 : minimum is
  allnoconfig extended for a hopefully-bootable build on desktop machine,
@@ -514,18 +514,18 @@
 <!ENTITY ncurses-fin-du "33 MB">
 <!ENTITY ncurses-fin-sbu "0.4 SBU">
 
-<!ENTITY ninja-version "1.10.1">
-<!ENTITY ninja-size "207 KB">
+<!ENTITY ninja-version "1.10.2">
+<!ENTITY ninja-size "209 KB">
 <!ENTITY ninja-url "&github;/ninja-build/ninja/archive/v&ninja-version;/ninja-&ninja-version;.tar.gz">
-<!ENTITY ninja-md5 "05c1bb5ef41c85057fa6abdffa243dcd">
+<!ENTITY ninja-md5 "639f75bc2e3b19ab893eaf2c810d4eb4">
 <!ENTITY ninja-home "https://ninja-build.org/">
 <!ENTITY ninja-fin-du "78 MB">
 <!ENTITY ninja-fin-sbu "0.2 SBU">
 
-<!ENTITY openssl-version "1.1.1h">
-<!ENTITY openssl-size "9,581 KB">
+<!ENTITY openssl-version "1.1.1i">
+<!ENTITY openssl-size "9,579 KB">
 <!ENTITY openssl-url "https://www.openssl.org/source/openssl-&openssl-version;.tar.gz">
-<!ENTITY openssl-md5 "53840c70434793127a3574433494e8d3">
+<!ENTITY openssl-md5 "08987c3cf125202e2b0840035efb392c">
 <!ENTITY openssl-home "https://www.openssl.org/">
 <!ENTITY openssl-fin-du "150 MB">
 <!ENTITY openssl-fin-sbu "2.1 SBU">
@@ -581,24 +581,24 @@
 <!-- If python minor version changes, updates in python and 
      meson pages will be needed: python3.6 and python3.6m -->
 
-<!ENTITY python-version "3.9.0">
+<!ENTITY python-version "3.9.1">
 <!ENTITY python-minor "3.9">
-<!ENTITY python-size "18,424 KB">
+<!ENTITY python-size "18,455 KB">
 <!ENTITY python-url "https://www.python.org/ftp/python/&python-version;/Python-&python-version;.tar.xz">
-<!ENTITY python-md5 "6ebfe157f6e88d9eabfbaf3fa92129f6">
+<!ENTITY python-md5 "61981498e75ac8f00adcb908281fadb6">
 <!ENTITY python-home "https://www.python.org/">
 <!ENTITY python-tmp-du "353 MB">
 <!ENTITY python-tmp-sbu "1.2 SBU">
 <!ENTITY python-fin-du "248 MB">
 <!ENTITY python-fin-sbu "1.3 SBU">
 <!ENTITY python-docs-url "https://www.python.org/ftp/python/doc/&python-version;/python-&python-version;-docs-html.tar.bz2">
-<!ENTITY python-docs-md5 "9d2425d666883b98add3a6c809809147">
-<!ENTITY python-docs-size "6,613 KB">
+<!ENTITY python-docs-md5 "89fd591994e303186c349014b8f9e0fd">
+<!ENTITY python-docs-size "6,648 KB">
 
-<!ENTITY readline-version "8.0">
-<!ENTITY readline-size "2,907 KB">
+<!ENTITY readline-version "8.1">
+<!ENTITY readline-size "2,924 KB">
 <!ENTITY readline-url "&gnu;readline/readline-&readline-version;.tar.gz">
-<!ENTITY readline-md5 "7e6c1f16aee3244a69aba6e438295ca3">
+<!ENTITY readline-md5 "e9557dd5b1409f5d7b37ef717c64518e">
 <!ENTITY readline-home "https://tiswww.case.edu/php/chet/readline/rltop.html">
 <!ENTITY readline-fin-du "15 MB">
 <!ENTITY readline-fin-sbu "0.1 SBU">
@@ -629,26 +629,26 @@
 <!ENTITY sysklogd-fin-du "0.6 MB">
 <!ENTITY sysklogd-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY systemd-version  "246">
+<!ENTITY systemd-version  "247">
 <!--<!ENTITY systemd-stable   "6b4878d">-->
 <!-- The above entity is used whenever we move to a stable backport branch. In the event of a critical problem or kernel
      change that is incompatible, we will switch to the backport branch until the next stable release. -->
-<!ENTITY systemd-size     "9,312 KB">
+<!ENTITY systemd-size     "9,656 KB">
 <!ENTITY systemd-url      "&github;/systemd/systemd/archive/v&systemd-version;/systemd-&systemd-version;.tar.gz">
 <!--<!ENTITY systemd-url      "&anduin-sources;/systemd-&systemd-version;-&systemd-stable;.tar.xz">-->
-<!ENTITY systemd-md5      "a3e9efa72d0309dd26513a221cdff31b">
+<!ENTITY systemd-md5      "b0d6e603b814908acc69db29bbfb023c">
 <!ENTITY systemd-home     "https://www.freedesktop.org/wiki/Software/systemd/">
-<!ENTITY systemd-man-size "592 KB">
+<!ENTITY systemd-man-size "612 KB">
 <!--<!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-version;-&systemd-stable;.tar.xz">-->
 <!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-version;.tar.xz">
-<!ENTITY systemd-man-md5  "819cc8ccffe51cb1863846fcb59a784a">
-<!ENTITY systemd-fin-du   "262 MB">
-<!ENTITY systemd-fin-sbu  "2.0 SBU">
+<!ENTITY systemd-man-md5  "438c98be200e1c3b308e58a3399d4465">
+<!ENTITY systemd-fin-du   "264 MB">
+<!ENTITY systemd-fin-sbu  "1.8 SBU">
 
-<!ENTITY sysvinit-version "2.97">
-<!ENTITY sysvinit-size "124 KB">
+<!ENTITY sysvinit-version "2.98">
+<!ENTITY sysvinit-size "125 KB">
 <!ENTITY sysvinit-url "&savannah;/releases/sysvinit/sysvinit-&sysvinit-version;.tar.xz">
-<!ENTITY sysvinit-md5 "e11bc4b3eac6e6ddee7f8306230749a9">
+<!ENTITY sysvinit-md5 "e3254f7622ea5cf2322b1b386a98ba59">
 <!ENTITY sysvinit-home "https://savannah.nongnu.org/projects/sysvinit">
 <!ENTITY sysvinit-fin-du "1.4 MB">
 <!ENTITY sysvinit-fin-sbu "less than 0.1 SBU">
@@ -698,23 +698,23 @@
 <!ENTITY udev-lfs-home    " ">
 
 <!ENTITY util-linux-minor "2.36">
-<!ENTITY util-linux-version "2.36"> <!-- 2.33.x -->
-<!ENTITY util-linux-size "5,120 KB">
+<!ENTITY util-linux-version "2.36.1"> <!-- 2.33.x -->
+<!ENTITY util-linux-size "5,110 KB">
 <!ENTITY util-linux-url "&kernel;linux/utils/util-linux/v&util-linux-minor;/util-linux-&util-linux-version;.tar.xz">
-<!ENTITY util-linux-md5 "fe7c0f7e439f08970e462c9d44599903">
+<!ENTITY util-linux-md5 "b0b702979d47043d9c4d8ba93be21e20">
 <!ENTITY util-linux-home "http://freecode.com/projects/util-linux">
 <!ENTITY util-linux-tmp-du "133 MB">
 <!ENTITY util-linux-tmp-sbu "0.8 SBU">
 <!ENTITY util-linux-fin-du "260 MB">
 <!ENTITY util-linux-fin-sbu "1.2 SBU">
 
-<!ENTITY vim-version "8.2.1845">
+<!ENTITY vim-version "8.2.2070">
 <!ENTITY vim-majmin "82">
 <!ENTITY vim-docdir "vim/vim82">
-<!ENTITY vim-size "14,846 KB">
+<!ENTITY vim-size "14,968 KB">
 <!--<!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">-->
 <!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.gz">
-<!ENTITY vim-md5 "085cf5e6204c3e9348d9e56b422adfba">
+<!ENTITY vim-md5 "52ecae95a255a4e9221d81e6ad64e6a2">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "201 MB">
 <!ENTITY vim-fin-sbu "2.2 SBU">
