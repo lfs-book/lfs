@@ -77,7 +77,7 @@ find &usr-lib-mx32; -name \*.la -delete</userinput></screen>
 <screen><userinput>find /usr -depth -name $(uname -m)-lfs-linux-gnu\* | xargs rm -rf</userinput></screen>
 
    <para>The <filename class="directory">/tools</filename> directory can also
-   be removed to further gain some place:</para>
+   be removed to further gain some space:</para>
 
 <screen><userinput>rm -rf /tools</userinput></screen>
 

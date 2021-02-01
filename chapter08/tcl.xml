@@ -3,8 +3,8 @@
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
   %general-entities;
-  <!ENTITY tdbc-ver          "1.1.1">
-  <!ENTITY itcl-ver          "4.2.0">
+  <!ENTITY tdbc-ver          "1.1.2">
+  <!ENTITY itcl-ver          "4.2.1">
 ]>
 
 <sect1 id="ch-tools-tcl" role="wrap">
@@ -57,7 +57,7 @@
 
     <para>First, unpack the documentation by issuing the following command:</para>
 
-<screen><userinput remap="pre">tar -xf ../tcl8.6.10-html.tar.gz --strip-components=1</userinput></screen>
+<screen><userinput remap="pre">tar -xf ../tcl&tcl-version;-html.tar.gz --strip-components=1</userinput></screen>
 
     <para>Prepare Tcl for compilation:</para>
 
