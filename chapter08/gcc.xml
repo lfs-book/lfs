@@ -143,7 +143,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     apparently related to the en_HK locale.</para>
 
     <para>Additionally the following tests related to the following files
-    are known to fail with glibc-2.32: asan_test.C, co-ret-17-void-ret-coro.C, 
+    are known to fail with glibc-2.33: asan_test.C, co-ret-17-void-ret-coro.C, 
     pr95519-05-gro.C, pr80166.c.</para>
 
 <!-- don't fail anymore after the move of iana-etc and /etc/hosts
@@ -192,8 +192,7 @@ rm -rf /usr/lib/gcc/$(gcc -dumpmachine)/&gcc-version;/include-fixed/bits/</useri
     <para>Add a compatibility symlink to enable building programs with
     Link Time Optimization (LTO):</para> 
 
-<screen><userinput remap="install">install -v -dm755 /usr/lib/bfd-plugins
-ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so \
+<screen><userinput remap="install">ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so \
         /usr/lib/bfd-plugins/</userinput></screen>
 
     <para>Now that our final toolchain is in place, it is important to again ensure

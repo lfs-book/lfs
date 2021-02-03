@@ -46,6 +46,39 @@
     -->
     <listitem>
       <itemizedlist>
+      <para>2021-02-02</para>
+        <listitem>
+          <para>[pierre] - Move tcl, expect, and dejagnu just before binutils
+          in chapter 8: this allows to build them against chapter 8
+          glibc.</para>
+        </listitem>
+        <listitem>
+          <para>[pierre] - To allow building with newer version of glibc
+          than the host distribution, build a "file" executable for the
+          host before cross-compiling it.</para>
+        </listitem>
+        <listitem>
+          <para>[pierre] - Replace the relinked libctf (which may incorrectly
+          link against libz from the host distribution) with the one that
+          was linked during "make" in binutils-pass2.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bc-3.2.6. Fixes
+          <ulink url="&lfs-ticket-root;4800">#4800</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to glibc-2.33. Fixes
+          <ulink url="&lfs-ticket-root;4799">#4799</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Minor change to mountfs boot script. Fixes
+          <ulink url="&lfs-ticket-root;4798">#4798</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <itemizedlist>
       <para>2021-02-01</para>
         <listitem>
           <para>[bdubbs] - Update to vim-8.2.2433. Addresses
