@@ -177,6 +177,7 @@ echo "INPUT(-lncursesw)" > $LFS/usr/lib/libncurses.so</userinput></screen>
 CXX="$LFS_TGT-g++ -m32"             \
 ./configure --prefix=/usr           \
             --host=$LFS_TGT32       \
+            --build=$(./config.guess)    \
             --libdir=&usr-lib-m32;     \
             --mandir=/usr/share/man \
             --with-shared           \
@@ -216,6 +217,7 @@ rm -rf DESTDIR</userinput></screen>
 CXX="$LFS_TGT-g++ -mx32"            \
 ./configure --prefix=/usr           \
             --host=$LFS_TGTX32      \
+            --build=$(./config.guess)    \
             --libdir=&usr-lib-mx32;    \
             --mandir=/usr/share/man \
             --with-shared           \
