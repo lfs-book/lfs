@@ -44,6 +44,104 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
     -->
+
+    <listitem>
+      <itemizedlist>
+      <para>2021-02-18</para>
+        <listitem>
+          <para>[bdubbs] - Fix a glibc bug that causes issues with chrooted applications. Fixes
+          <ulink url="&lfs-ticket-root;4817">#4817</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bc-3.3.0. Fixes
+          <ulink url="&lfs-ticket-root;4819">#4819</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to openssl-1.1.1j. Fixes
+          <ulink url="&lfs-ticket-root;4816">#4816</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to meson-0.57.0. Fixes
+          <ulink url="&lfs-ticket-root;4815">#4815</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.10.17. Fixes
+          <ulink url="&lfs-ticket-root;4807">#4807</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <itemizedlist>
+      <para>2021-02-14</para>
+        <listitem>
+          <para>[renodr] - Add a command explanation for 'pwait'.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to util-linux-2.36.2. Fixes
+          <ulink url="&lfs-ticket-root;4812">#4812</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to tar-1.34. Fixes
+          <ulink url="&lfs-ticket-root;4813">#4813</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to psmisc-23.4. Fixes
+          <ulink url="&lfs-ticket-root;4805">#4805</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to procps-ng-3.3.17. Fixes
+          <ulink url="&lfs-ticket-root;4811">#4811</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-db-2.9.4. Fixes
+          <ulink url="&lfs-ticket-root;4808">#4808</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to eudev-3.2.10. Fixes
+          <ulink url="&lfs-ticket-root;4810">#4810</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to elfutils-0.183. Fixes
+          <ulink url="&lfs-ticket-root;4806">#4806</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to e2fsprogs-1.46.1. Fixes
+          <ulink url="&lfs-ticket-root;4809">#4809</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bc-3.2.7. Fixes
+          <ulink url="&lfs-ticket-root;4814">#4814</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <itemizedlist>
+      <para>2021-02-01</para>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20210202. Addresses
+          <ulink url="&lfs-ticket-root;4722">#4722</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to inetutils-2.0. Fixes
+          <ulink url="&lfs-ticket-root;4803">#4803</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to libcap-2.48. Fixes
+          <ulink url="&lfs-ticket-root;4802">#4802</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to binutils-2.36.1. Fixes
+          <ulink url="&lfs-ticket-root;4804">#4804</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.10.13. Fixes
+          <ulink url="&lfs-ticket-root;4801">#4801</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem>
       <itemizedlist>
       <para>2021-02-02</para>

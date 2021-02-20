@@ -203,7 +203,7 @@ rm -rf DESTDIR</userinput></screen>
         <term><filename class="libraryfile">libreadline</filename></term>
         <listitem>
           <para>Provides a set of commands for manipulating text entered in an
-          interactive session of a program.</para>
+          interactive session of a program</para>
           <indexterm zone="ch-system-readline libreadline">
             <primary sortas="c-libreadline">libreadline</primary>
           </indexterm>
