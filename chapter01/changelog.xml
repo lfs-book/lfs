@@ -44,6 +44,134 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
     -->
+    <listitem>
+      <para>2021-03-26</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Update to openssl-1.1.1k (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;4838">#4838</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to attr-2.5.1. Fixes
+          <ulink url="&lfs-ticket-root;4833">#4833</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to linux-5.11.10. Fixes
+          <ulink url="&lfs-ticket-root;4834">#4834</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to bc-3.3.4. Fixes
+          <ulink url="&lfs-ticket-root;4835">#4835</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to man-pages-5.11. Fixes
+          <ulink url="&lfs-ticket-root;4836">#4836</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to expat-2.3.0. Fixes
+          <ulink url="&lfs-ticket-root;4837">#4837</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to acl-2.3.1. Fixes
+          <ulink url="&lfs-ticket-root;4832">#4832</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-03-17</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Use <option>-j1</option> for Binutils
+		    installation.  Thanks report from Hans Meier.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-03-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to vim-8.2.2604. Addreses
+          <ulink url="&lfs-ticket-root;4500">#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20210304. Addreses
+          <ulink url="&lfs-ticket-root;4722">#4722</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to zstd-1.4.9. Fixes
+          <ulink url="&lfs-ticket-root;4827">#4827</ulink>.</para>
+        </listitem>
+        <listitem revision="sysv">
+          <para>[bdubbs] - Update to sysvinit-2.99. Fixes
+          <ulink url="&lfs-ticket-root;4822">#4822</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.11.6. Fixes
+          <ulink url="&lfs-ticket-root;4824">#4824</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to libcap-2.49. Fixes
+          <ulink url="&lfs-ticket-root;4831">#4831</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iproute2-5.11.0. Fixes
+          <ulink url="&lfs-ticket-root;4823">#4823</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to e2fsprogs-1.46.2. Fixes
+          <ulink url="&lfs-ticket-root;4826">#4826</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bison-3.7.6. Fixes
+          <ulink url="&lfs-ticket-root;4828">#4828</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bc-3.3.3. Fixes
+          <ulink url="&lfs-ticket-root;4825">#4825</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to attr-2.5.0. Fixes
+          <ulink url="&lfs-ticket-root;4830">#4830</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to acl-2.3.0. Fixes
+          <ulink url="&lfs-ticket-root;4829">#4829</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="systemd">
+      <para>2021-03-05</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Simplify the installation of systemd man pages.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="systemd">
+      <para>2021-03-04</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Patch systemd-247 so that it will function with
+          Linux-5.11 API headers.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-03-02</para>
+      <itemizedlist>
+        <listitem>
+          <para>[pierre] - Fix a header file for python, so that
+          <command>#include &lt;python&python-minor;/Python.h&gt;</command>
+          works.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
     <listitem>
       <para>2021-03-01</para>

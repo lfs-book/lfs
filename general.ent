@@ -1,13 +1,13 @@
-<!ENTITY version         "SVN-20210301">
+<!ENTITY version         "SVN-20210326">
 <!ENTITY short-version   "svn">  <!-- Used below in &blfs-book; 
                                       Change to x.y for release but not -rc releases -->
 <!ENTITY generic-version "development"> <!-- Use "development"  or "x.y[-pre{x}]" -->
 
-<!ENTITY versiond        "20210301-systemd">
+<!ENTITY versiond        "20210326-systemd">
 <!ENTITY short-versiond  "systemd">
 <!ENTITY generic-versiond "systemd"> 
 
-<!ENTITY releasedate     "March 1st, 2021">
+<!ENTITY releasedate     "March 26th, 2021">
 
 <!ENTITY copyrightdate   "1999-2021"><!-- jhalfs needs a literal dash, not &ndash; -->
 
@@ -42,6 +42,7 @@
                          
 <!ENTITY gnu             "https://ftp.gnu.org/gnu/">
 <!ENTITY gnu-software    "https://www.gnu.org/software/">
+<!ENTITY alpha-gnu       "https://alpha.gnu.org/gnu/">
 <!ENTITY kernel          "https://www.kernel.org/pub/">
 <!ENTITY sourceforge     "https://prdownloads.sourceforge.net/">
 <!ENTITY savannah        "https://download.savannah.gnu.org">

@@ -718,7 +718,9 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>None</seg>
+          <seg>
+            <ulink url="&blfs-root;/view/stable/general/libseccomp.html">Libseccomp</ulink>
+          </seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1116,7 +1118,7 @@
         <segtitle>&external;</segtitle>
 
         <seglistitem>
-          <seg>Ghostscript</seg>
+          <seg>Ghostscript and uchardet</seg>
         </seglistitem>
       </segmentedlist>
 
