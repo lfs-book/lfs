@@ -132,7 +132,7 @@ tmpdir:
 	$(Q)rm -f $(RENDERTMP)/*md5sum*
 	$(Q)rm -f $(RENDERTMP)/*pdf.fo
 
-validate: tmpdir
+validate: tmpdir version
 	@echo "Processing bootscripts..."
 	$(Q)bash process-scripts.sh
 
@@ -202,6 +202,9 @@ $(BASEDIR)/md5sums: stylesheets/wget-list.xsl chapter03/chapter03.xml \
        "s/BOOTSCRIPTS-MD5SUM/$(shell md5sum lfs-bootscripts*.tar.xz | cut -d' ' -f1)/" \
        $(BASEDIR)/md5sums
 
+version:
+	$(Q)./git-version.sh
+
 #dump-commands: validate
 #	@echo "Dumping book commands..."
 #	$(Q)xsltproc --nonet                     \
@@ -219,5 +222,5 @@ $(BASEDIR)/md5sums: stylesheets/wget-list.xsl chapter03/chapter03.xml \
 
 all: book nochunks pdf # dump-commands
 
-.PHONY : all book dump-commands nochunks pdf profile-html tmpdir validate md5sums wget-list
+.PHONY : all book dump-commands nochunks pdf profile-html tmpdir validate md5sums wget-list version
 
