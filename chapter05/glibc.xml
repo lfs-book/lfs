@@ -58,21 +58,16 @@ esac</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64
 ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64/ld-lsb-x86-64.so.3</userinput></screen>
 
-    <note>
-      <para>
-        The above command is correct.  The <command>ln</command> command has
-        a few syntactic versions, so be sure to check
-		<command>info coreutils ln</command> and <filename>ln(1)</filename>
-		before reporting what you may think is an error.
-	  </para>
-    </note>
-
     <para>Some of the Glibc programs use the non-FHS compliant
     <filename class="directory">/var/db</filename> directory to store their
     runtime data. Apply the following patch to make such programs store their
     runtime data in the FHS-compliant locations:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../glibc-&glibc-version;-fhs-1.patch</userinput></screen>
+
+    <para>Fix a build issue with gcc-11.1:</para>
+
+<screen><userinput remap="pre">sed 's/amx_/amx-/' -i sysdeps/x86/tst-cpu-features-supports.c</userinput></screen>
 
     <para>The Glibc documentation recommends building Glibc 
     in a dedicated build directory:</para>
@@ -88,7 +83,7 @@ cd       build</userinput></screen>
       --build=$(../scripts/config.guess) \
       --enable-kernel=&min-kernel;                \
       --with-headers=$LFS/usr/include    \
-      libc_cv_slibdir=/lib</userinput></screen>
+      libc_cv_slibdir=/usr/lib</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">../configure                             \
       --prefix=/usr                      \
       --host=$LFS_TGT                    \
@@ -96,12 +91,7 @@ cd       build</userinput></screen>
       --enable-kernel=&min-kernel;                \
       --with-headers=$LFS/usr/include    \
       --enable-multi-arch                \
-      --libdir=/usr/lib                  \
-      --libexecdir=/usr/lib              \
-      libc_cv_slibdir=/lib</userinput></screen>
-<!--
-      libc_cv_forced_unwind=yes          \
-      libc_cv_c_cleanup=yes</userinput></screen> -->
+      libc_cv_slibdir=/usr/lib</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -135,9 +125,9 @@ cd       build</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>libc_cv_slibdir=/lib</parameter></term>
+        <term><parameter>libc_cv_slibdir=/usr/lib</parameter></term>
         <listitem>
-          <para>This ensures that the library is installed in /lib instead
+          <para>This ensures that the library is installed in /usr/lib instead
           of the default /lib64 on 64 bit machines.</para>
         </listitem>
       </varlistentry>
@@ -277,7 +267,7 @@ CXX="$LFS_TGT-g++ -m32" \
       --enable-multi-arch                \
       --libdir=&usr-lib-m32;                \
       --libexecdir=&usr-lib-m32;            \
-      libc_cv_slibdir=&lib-m32;</userinput></screen>
+      libc_cv_slibdir=&usr-lib-m32;</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -349,7 +339,7 @@ CXX="$LFS_TGT-g++ -mx32" \
       --enable-multi-arch                \
       --libdir=&usr-lib-mx32;               \
       --libexecdir=&usr-lib-mx32;           \
-      libc_cv_slibdir=&lib-mx32;</userinput></screen>
+      libc_cv_slibdir=&usr-lib-mx32;</userinput></screen>
 
     <para>Compile the package:</para>
 
