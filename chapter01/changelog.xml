@@ -44,9 +44,15 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
     -->
+
     <listitem>
       <para>2021-05-12</para>
       <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Removed instructions for running tests
+          in Python due to an idefinite hang in the partial
+          LFS envrionment.</para>
+        </listitem>
         <listitem>
           <para>[renodr] - Moved LFS to a merged-/usr configuration. Thanks
           goes to Xi Ruoyao for doing almost all of the work. Fixes
@@ -57,7 +63,7 @@
           <ulink url="&lfs-ticket-root;4847">#4847</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[renodr] - Fix a FTBFS when building glibc-2.30 with
+          <para>[renodr] - Fix a FTBFS when building glibc-2.33 with
           gcc-11.1.0.</para>
         </listitem>
         <listitem revision="systemd">
