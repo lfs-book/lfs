@@ -103,7 +103,7 @@
 <screen><userinput remap="configure">CC="gcc -m32" CXX="g++ -m32" ./configure \
     --prefix=/usr            \
     --disable-static         \
-    --libdir=&usr-lib-m32;     \
+    --libdir=/usr/lib32     \
     --with-gcc-arch=i686     \
     --host=i686-pc-linux-gnu</userinput></screen>
 
@@ -118,7 +118,7 @@
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR&usr-lib-m32;/* &usr-lib-m32;
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- m32 -->
@@ -139,7 +139,7 @@ rm -rf DESTDIR</userinput></screen>
 <screen><userinput remap="configure">CC="gcc -mx32" CXX="g++ -mx32" ./configure \
     --prefix=/usr            \
     --disable-static         \
-    --libdir=&usr-lib-mx32;     \
+    --libdir=/usr/libx32     \
     --with-gcc-arch=x86_64   \
     --host=x86_64-unknown-linux-gnux32</userinput></screen>
 
@@ -154,7 +154,7 @@ rm -rf DESTDIR</userinput></screen>
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR&usr-lib-mx32;/* &usr-lib-mx32;
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
 rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- mx32 -->

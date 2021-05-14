@@ -97,7 +97,7 @@ CC="gcc -m32 -march=i686"  \
 CXX="g++ -m32 -march=i686" \
     ./config               \
     --prefix=/usr          \
-    --libdir=&usr-lib-m32;    \
+    --libdir=/usr/lib32    \
     --openssldir=/etc/ssl  \
     --libdir=lib32         \
     shared                 \
@@ -110,7 +110,7 @@ CXX="g++ -m32 -march=i686" \
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR&usr-lib-m32;/* &usr-lib-m32;
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- m32 -->
@@ -133,7 +133,7 @@ CC="gcc -mx32"            \
 CXX="g++ -mx32"           \
     ./config              \
     --prefix=/usr         \
-    --libdir=&usr-lib-mx32;  \
+    --libdir=/usr/libx32  \
     --openssldir=/etc/ssl \
     --libdir=libx32       \
     shared                \
@@ -146,7 +146,7 @@ CXX="g++ -mx32"           \
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR&usr-lib-mx32;/* &usr-lib-mx32;
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
 rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- mx32 -->

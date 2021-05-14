@@ -51,9 +51,11 @@
 
 <screen><userinput remap="pre">patch -Np1 -i ../systemd-&systemd-version;-upstream_fixes-1.patch</userinput></screen>
 
+<!-- Seems to be not needed anymore with 248
     <para>Remove tests that cannot be built in chroot:</para>
 
 <screen><userinput remap="pre">sed '177,$ d' -i src/resolve/meson.build</userinput></screen>
+-->
 
     <para>Remove an unneeded group,
     <systemitem class="groupname">render</systemitem>, from the default udev
@@ -239,7 +241,7 @@ done</userinput></screen>
 
     <para>Prepare systemd for compilation:</para>
 
-    <screen><userinput remap="configure">PKG_CONFIG_PATH="&usr-lib-m32;/pkgconfig" \
+    <screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
 CC="gcc -m32 -march=i686"              \
 CXX="g++ -m32 -march=i686"             \
 LANG=en_US.UTF-8                       \
@@ -256,7 +258,7 @@ meson --prefix=/usr                    \
       -Dldconfig=false                 \
       -Dmount-path=/bin/mount          \
       -Drootprefix=                    \
-      -Drootlibdir=&usr-lib-m32;          \
+      -Drootlibdir=/usr/lib32          \
       -Dsplit-usr=true                 \
       -Dsulogin-path=/sbin/sulogin     \
       -Dsysusers=false                 \
@@ -271,7 +273,7 @@ meson --prefix=/usr                    \
     <para>Install the package:</para>
 
 <screen><userinput remap="install">LANG=en_US.UTF-8 DESTDIR=$PWD/DESTDIR ninja install
-cp -Rv DESTDIR&usr-lib-m32;/* &usr-lib-m32;
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR
 rm -f /usr/bin/xsltproc</userinput></screen>
 
@@ -299,7 +301,7 @@ sed '/long drift_freq;/s@long @int64_t @' -i src/timesync/timesyncd-manager.h</u
 
     <para>Prepare systemd for compilation:</para>
 
-<screen><userinput remap="configure">PKG_CONFIG_PATH="&usr-lib-mx32;/pkgconfig" \
+<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
 CC="gcc -mx32"                          \
 CXX="g++ -mx32"                         \
 CFLAGS+="-Wno-error=shift-overflow"     \
@@ -318,7 +320,7 @@ meson --prefix=/usr                     \
       -Dldconfig=false                  \
       -Dmount-path=/bin/mount           \
       -Drootprefix=                     \
-      -Drootlibdir=&usr-lib-mx32;          \
+      -Drootlibdir=/usr/libx32          \
       -Dsplit-usr=true                  \
       -Dsulogin-path=/sbin/sulogin      \
       -Dsysusers=false                  \
@@ -333,7 +335,7 @@ meson --prefix=/usr                     \
     <para>Install the package:</para>
 
 <screen><userinput remap="install">LANG=en_US.UTF-8 DESTDIR=$PWD/DESTDIR ninja install
-cp -Rv DESTDIR&usr-lib-m32;/* &usr-lib-m32;
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR
 rm -f /usr/bin/xsltproc</userinput></screen>
 

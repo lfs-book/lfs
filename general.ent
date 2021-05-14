@@ -63,11 +63,3 @@
 
 <!ENTITY % patches-entities SYSTEM "patches.ent">
 %patches-entities;
-
-<!-- multilib definitions -->
-<!ENTITY lib-m32          "/lib32">
-<!ENTITY lib-mx32         "/libx32">
-<!ENTITY usr-lib-m32      "/usr/lib32">
-<!ENTITY usr-lib-mx32     "/usr/libx32">
-<!ENTITY usr-inc-m32      "/usr/include/m32">
-<!ENTITY usr-inc-mx32     "/usr/include/mx32">

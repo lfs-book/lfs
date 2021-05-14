@@ -83,7 +83,7 @@ rm /usr/lib/libelf.a</userinput></screen>
 
 <screen><userinput remap="configure">CC="gcc -m32" ./configure \
     --prefix=/usr            \
-    --libdir=&usr-lib-m32;     \
+    --libdir=/usr/lib32     \
     --host=i686-pc-linux-gnu \
     --disable-debuginfod     \
     --enable-libdebuginfod=dummy</userinput></screen>
@@ -95,8 +95,8 @@ rm /usr/lib/libelf.a</userinput></screen>
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR -C libelf install
-install -vDm644 config/libelf.pc DESTDIR&usr-lib-m32;/pkgconfig/libelf.pc
-cp -Rv DESTDIR&usr-lib-m32;/* &usr-lib-m32;
+install -vDm644 config/libelf.pc DESTDIR/usr/lib32/pkgconfig/libelf.pc
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- m32 -->
@@ -116,7 +116,7 @@ rm -rf DESTDIR</userinput></screen>
 
 <screen><userinput remap="configure">CC="gcc -mx32" ./configure \
     --prefix=/usr                 \
-    --libdir=&usr-lib-m32;           \
+    --libdir=/usr/lib32           \
     --host=x86_64-pc-linux-gnux32 \
     --disable-debuginfod          \
     --enable-libdebuginfod=dummy</userinput></screen>
@@ -128,8 +128,8 @@ rm -rf DESTDIR</userinput></screen>
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR -C libelf install
-install -vDm644 config/libelf.pc DESTDIR&usr-lib-mx32;/pkgconfig/libelf.pc
-cp -Rv DESTDIR&usr-lib-mx32;/* &usr-lib-mx32;
+install -vDm644 config/libelf.pc DESTDIR/usr/libx32/pkgconfig/libelf.pc
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
 rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- mx32 -->

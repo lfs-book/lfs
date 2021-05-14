@@ -83,7 +83,8 @@ cd       build</userinput></screen>
       --build=$(../scripts/config.guess) \
       --enable-kernel=&min-kernel;                \
       --with-headers=$LFS/usr/include    \
-      libc_cv_slibdir=/usr/lib</userinput></screen>
+      libc_cv_slibdir=/usr/lib           \
+      libc_cv_rtlddir=/usr/lib</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">../configure                             \
       --prefix=/usr                      \
       --host=$LFS_TGT                    \
@@ -91,7 +92,8 @@ cd       build</userinput></screen>
       --enable-kernel=&min-kernel;                \
       --with-headers=$LFS/usr/include    \
       --enable-multi-arch                \
-      libc_cv_slibdir=/usr/lib</userinput></screen>
+      libc_cv_slibdir=/usr/lib           \
+      libc_cv_rtlddir=/usr/lib</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -129,6 +131,14 @@ cd       build</userinput></screen>
         <listitem>
           <para>This ensures that the library is installed in /usr/lib instead
           of the default /lib64 on 64 bit machines.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>libc_cv_rtlddir=/usr/lib</parameter></term>
+        <listitem>
+          <para>Fix hardcoded path to the executable loader in the
+            <command>ldd</command> script.</para>
         </listitem>
       </varlistentry>
 
@@ -196,6 +206,36 @@ cd       build</userinput></screen>
 
     </variablelist>
 
+    <!--
+      The /usr which gets removed from the RTLDLIST by the sed
+      below is set by the libc_cv_rtlddir=/usr/lib above. When
+      changing the libc_cv_rtlddir to /lib, the content of the
+      ldd script does not need to be patched, but some other
+      symlinks created by glibc itself will be not that correct
+      and needs to be fixed by other symlinks.
+
+      First setting /usr and than removing /usr seems strange,
+      but it looks like that libc_cv_rtlddir has more effect than
+      only the pathes in ldd (it has influence on which symlinks
+      to the loader are created where) and makes the handling
+      in a multilib environment much easier.
+      To me, it feels better to go the way with adding/removing
+      /usr than to introduce a symlink hell.
+      
+      Another option to get ldd working properly is to set a
+      symlink as "ln -svf lib /usr/lib64" but it has been reported
+      that we used that already years ago but dropped it since
+      libtool will complain sometimes with "library has been moved"
+      warnings.
+      Don't know if this is still the case - if not, this one
+      symlink seems to be the cleanest way and the sed on ldd will
+      be obsolete.
+    -->
+    <para>Fix hardcoded path to the executable loader in
+    <command>ldd</command> script:</para>
+
+<screen><userinput remap="install">sed '/RTLDLIST=/s@/usr@@g' -i $LFS/usr/bin/ldd</userinput></screen>
+
     <caution>
       <para>At this point, it is imperative to stop and ensure that the basic
       functions (compiling and linking) of the new toolchain are working as
@@ -245,7 +285,7 @@ readelf -l a.out | grep '/ld-linux'</userinput></screen>
     <title>Building Glibc - 32bit</title>
 
     <para>Now recompile for m32. The extracted source can be
-    reused but needs to cleaned before installing the m32
+    reused but needs to be cleaned before installing the m32
     version of Glibc.</para>
 
     <para>Clear the build directory and remove artefacts from
@@ -265,9 +305,10 @@ CXX="$LFS_TGT-g++ -m32" \
       --enable-kernel=&min-kernel;                \
       --with-headers=$LFS/usr/include    \
       --enable-multi-arch                \
-      --libdir=&usr-lib-m32;                \
-      --libexecdir=&usr-lib-m32;            \
-      libc_cv_slibdir=&usr-lib-m32;</userinput></screen>
+      --libdir=/usr/lib32                \
+      --libexecdir=/usr/lib32            \
+      libc_cv_slibdir=/usr/lib32           \
+      libc_cv_rtlddir=/usr/lib32</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -276,10 +317,11 @@ CXX="$LFS_TGT-g++ -m32" \
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -a DESTDIR&usr-lib-m32; $LFS/usr/
+cp -a DESTDIR/usr/lib32 $LFS/usr/
 install -vm644 DESTDIR/usr/include/gnu/{lib-names,stubs}-32.h \
                $LFS/usr/include/gnu/
-ln -svf ..&lib-m32;/ld-linux.so.2 $LFS/lib/ld-linux.so.2</userinput></screen>
+ln -svf ../lib32/ld-linux.so.2 $LFS/lib/ld-linux.so.2</userinput></screen>
+
 
     <caution>
       <para>At this point, it is imperative to stop and ensure that the basic
@@ -316,7 +358,7 @@ readelf -l a.out | grep '/ld-linux'</userinput></screen>
     <title>Building Glibc - x32bit</title>
 
     <para>Now recompile for mx32. The extracted source can be
-    reused but needs to cleaned before installing the mx32
+    reused but needs to be cleaned before installing the mx32
     version of Glibc.</para>
 
     <para>Clear the build directory and remove artefacts from
@@ -336,9 +378,10 @@ CXX="$LFS_TGT-g++ -mx32" \
       --enable-kernel=&min-kernel;                \
       --with-headers=$LFS/usr/include    \
       --enable-multi-arch                \
-      --libdir=&usr-lib-mx32;               \
-      --libexecdir=&usr-lib-mx32;           \
-      libc_cv_slibdir=&usr-lib-mx32;</userinput></screen>
+      --libdir=/usr/libx32               \
+      --libexecdir=/usr/libx32           \
+      libc_cv_slibdir=/usr/libx32           \
+      libc_cv_rtlddir=/usr/libx32</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -347,10 +390,10 @@ CXX="$LFS_TGT-g++ -mx32" \
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -a DESTDIR&usr-lib-mx32; $LFS/usr/
+cp -a DESTDIR/usr/libx32 $LFS/usr/
 install -vm644 DESTDIR/usr/include/gnu/{lib-names,stubs}-x32.h \
                $LFS/usr/include/gnu/
-ln -svf ..&lib-mx32;/ld-linux-x32.so.2 $LFS/lib/ld-linux-x32.so.2</userinput></screen>
+ln -svf ../libx32/ld-linux-x32.so.2 $LFS/lib/ld-linux-x32.so.2</userinput></screen>
 
     <caution>
       <para>At this point, it is imperative to stop and ensure that the basic

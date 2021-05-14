@@ -40,7 +40,7 @@ esac</userinput></screen>
 
   <para arch="ml_32,ml_x32,ml_all">Some more directories exists for
   multilib support. Change their ownership, too:</para>
-<screen arch="ml_32,ml_x32,ml_all"><userinput arch="ml_32,ml_all">chown -R root:root $LFS&lib-m32;</userinput>
-<userinput arch="ml_x32,ml_all">chown -R root:root $LFS&lib-mx32;</userinput></screen>
+<screen arch="ml_32,ml_x32,ml_all"><userinput arch="ml_32,ml_all">chown -R root:root $LFS/lib32</userinput>
+<userinput arch="ml_x32,ml_all">chown -R root:root $LFS/libx32</userinput></screen>
   
 </sect1>

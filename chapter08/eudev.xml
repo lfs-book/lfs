@@ -101,11 +101,11 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
             --prefix=/usr                \
             --bindir=/sbin               \
             --sbindir=/sbin              \
-            --libdir=&usr-lib-m32;          \
+            --libdir=/usr/lib32          \
             --sysconfdir=/etc            \
-            --libexecdir=&lib-m32;          \
+            --libexecdir=/lib32          \
             --with-rootprefix=           \
-            --with-rootlibdir=&usr-lib-m32; \
+            --with-rootlibdir=/usr/lib32 \
             --disable-manpages           \
             --disable-static             \
             --config-cache</userinput></screen>
@@ -117,7 +117,7 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR&usr-lib-m32;/* &usr-lib-m32;
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- m32 -->
@@ -139,11 +139,11 @@ rm -rf DESTDIR</userinput></screen>
 ./configure --prefix=/usr                \
             --bindir=/sbin               \
             --sbindir=/sbin              \
-            --libdir=&usr-lib-mx32;          \
+            --libdir=/usr/libx32          \
             --sysconfdir=/etc            \
-            --libexecdir=&lib-mx32;         \
+            --libexecdir=/libx32         \
             --with-rootprefix=           \
-            --with-rootlibdir=&usr-lib-mx32; \
+            --with-rootlibdir=/usr/libx32 \
             --disable-manpages           \
             --disable-static             \
             --config-cache</userinput></screen>
@@ -155,7 +155,7 @@ rm -rf DESTDIR</userinput></screen>
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR&usr-lib-mx32;/* &usr-lib-mx32;
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
 rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- mx32 -->

@@ -29,13 +29,13 @@ done
 case $(uname -m) in
   x86_64) mkdir -pv $LFS/lib64 ;;
 esac</userinput></screen>
-<screen arch="ml_32"><userinput>mkdir -pv $LFS&usr-lib-m32;
-ln -sv usr&lib-m32; $LFS&lib-m32;</userinput></screen>
-<screen arch="ml_x32"><userinput>mkdir -pv $LFS&usr-lib-mx32;
-ln -sv usr&lib-mx32; $LFS&lib-mx32;</userinput></screen>
+<screen arch="ml_32"><userinput>mkdir -pv $LFS/usr/lib32
+ln -sv usr/lib32 $LFS/lib32</userinput></screen>
+<screen arch="ml_x32"><userinput>mkdir -pv $LFS/usr/libx32
+ln -sv usr/libx32 $LFS/libx32</userinput></screen>
 <screen arch="ml_all"><userinput>mkdir -pv $LFS/usr/lib{,x}32
-ln -sv usr&lib-m32; $LFS&lib-m32;
-ln -sv usr&lib-mx32; $LFS&lib-mx32;</userinput></screen>
+ln -sv usr/lib32 $LFS/lib32
+ln -sv usr/libx32 $LFS/libx32</userinput></screen>
 
     <note>
       <para>

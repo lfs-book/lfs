@@ -151,7 +151,7 @@
             --disable-pylibmount \
             --disable-static     \
             --without-python     \
-            --libdir=&usr-lib-m32;      \
+            --libdir=/usr/lib32      \
             --host=i686-pc-linux-gnu</userinput></screen>
 
     <para>Compile the package:</para>
@@ -161,7 +161,7 @@
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR&usr-lib-m32;/* &usr-lib-m32;
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- m32 -->
@@ -191,7 +191,7 @@ rm -rf DESTDIR</userinput></screen>
             --disable-pylibmount \
             --disable-static     \
             --without-python     \
-            --libdir=&usr-lib-mx32; \
+            --libdir=/usr/libx32 \
             --host=x86_64-pc-linux-gnux32</userinput></screen>
 
     <para>Compile the package:</para>
@@ -201,7 +201,7 @@ rm -rf DESTDIR</userinput></screen>
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR&usr-lib-mx32;/* &usr-lib-mx32;
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
 rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- mx32 -->

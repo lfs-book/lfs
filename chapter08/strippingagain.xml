@@ -44,14 +44,14 @@ for LIB in $save_usrlib; do
     objcopy --add-gnu-debuglink=$LIB.dbg $LIB
 done</userinput>
 <userinput arch="ml_32,ml_all">
-cd &usr-lib-m32;
+cd /usr/lib32
 for LIB in $save_usrlib; do
     objcopy --only-keep-debug $LIB $LIB.dbg 
     strip --strip-unneeded $LIB
     objcopy --add-gnu-debuglink=$LIB.dbg $LIB 
 done</userinput>
 <userinput arch="ml_x32,ml_all">
-cd &usr-lib-mx32;
+cd /usr/libx32
 for LIB in $save_usrlib; do
     objcopy --only-keep-debug $LIB $LIB.dbg 
     strip --strip-unneeded $LIB
@@ -70,16 +70,16 @@ unset LIB save_usrlib</userinput></screen>
   <para>Now the binaries and libraries can be stripped:</para>
 <screen><userinput>find /usr/lib -type f -name \*.a \
    -exec strip --strip-debug {} ';'</userinput>
-<userinput arch="ml_32,ml_all">find &usr-lib-m32; -type f -name \*.a \
+<userinput arch="ml_32,ml_all">find /usr/lib32 -type f -name \*.a \
    -exec strip --strip-debug {} ';'</userinput>
-<userinput arch="ml_x32,ml_all">find &usr-lib-mx32; -type f -name \*.a \
+<userinput arch="ml_x32,ml_all">find /usr/libx32 -type f -name \*.a \
    -exec strip --strip-debug {} ';'</userinput><userinput>
 
 find /usr/lib -type f -name \*.so* ! -name \*dbg \
    -exec strip --strip-unneeded {} ';'</userinput>
-<userinput arch="ml_32,ml_all">find &usr-lib-m32; -type f -name \*.so* ! -name \*dbg \
+<userinput arch="ml_32,ml_all">find /usr/lib32 -type f -name \*.so* ! -name \*dbg \
    -exec strip --strip-unneeded {} ';'</userinput>
-<userinput arch="ml_x32,ml_all">find &usr-lib-mx32; -type f -name \*.so* ! -name \*dbg \
+<userinput arch="ml_x32,ml_all">find /usr/libx32 -type f -name \*.so* ! -name \*dbg \
    -exec strip --strip-unneeded {} ';'</userinput><userinput>
 
 find /usr/{bin,sbin,libexec} -type f \

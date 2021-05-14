@@ -44,8 +44,8 @@ chroot "$LFS" /usr/bin/env -i          \
   To remove them, run:</para>
 
 <screen><userinput>find /usr/lib /usr/libexec -name \*.la -delete</userinput><userinput arch="ml_32,ml_all">
-find &usr-lib-m32; -name \*.la -delete</userinput><userinput arch="ml_x32,ml_all">
-find &usr-lib-mx32; -name \*.la -delete</userinput></screen>
+find /usr/lib32 -name \*.la -delete</userinput><userinput arch="ml_x32,ml_all">
+find /usr/libx32 -name \*.la -delete</userinput></screen>
 
    <para>For more information about libtool archive files, see the <ulink
    url="&blfs-book;/introduction/la-files.html">BLFS section "About Libtool

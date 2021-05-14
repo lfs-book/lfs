@@ -115,7 +115,7 @@ sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
 
 <screen><userinput remap="configure">CC="gcc -m32" ./configure \
     --prefix=/usr                     \
-    --libdir=&usr-lib-m32;               \
+    --libdir=/usr/lib32               \
     --disable-static                  \
     --host=i686-pc-linux-gnu</userinput></screen>
 
@@ -126,7 +126,7 @@ sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR&usr-lib-m32;/* &usr-lib-m32;
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- m32 -->
@@ -146,7 +146,7 @@ rm -rf DESTDIR</userinput></screen>
 
 <screen><userinput remap="configure">CC="gcc -mx32" ./configure \
     --prefix=/usr          \
-    --libdir=&usr-lib-mx32;   \
+    --libdir=/usr/libx32   \
     --disable-static       \
     --host=x86_64-pc-linux-gnux32</userinput></screen>
 
@@ -157,7 +157,7 @@ rm -rf DESTDIR</userinput></screen>
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR&usr-lib-mx32;/* &usr-lib-mx32;
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
 rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- mx32 -->

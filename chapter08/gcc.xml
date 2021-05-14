@@ -55,7 +55,7 @@ esac</userinput></screen>
     libraries to <quote>lib</quote>:</para>
 
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e '/m64=/s/lib64/lib/' \
-    -e '/m32=/s/m32=.*/m32=..\&lib-m32;$(call if_multiarch,:i386-linux-gnu)/' \
+    -e '/m32=/s/m32=.*/m32=..\/lib32$(call if_multiarch,:i386-linux-gnu)/' \
     -i.orig gcc/config/i386/t-linux64</userinput></screen>
 
     <para>The GCC documentation recommends building GCC in a dedicated build directory:</para>
