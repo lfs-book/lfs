@@ -83,8 +83,7 @@ cd       build</userinput></screen>
       --build=$(../scripts/config.guess) \
       --enable-kernel=&min-kernel;                \
       --with-headers=$LFS/usr/include    \
-      libc_cv_slibdir=/usr/lib           \
-      libc_cv_rtlddir=/usr/lib</userinput></screen>
+      libc_cv_slibdir=/usr/lib</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">../configure                             \
       --prefix=/usr                      \
       --host=$LFS_TGT                    \
@@ -92,8 +91,7 @@ cd       build</userinput></screen>
       --enable-kernel=&min-kernel;                \
       --with-headers=$LFS/usr/include    \
       --enable-multi-arch                \
-      libc_cv_slibdir=/usr/lib           \
-      libc_cv_rtlddir=/usr/lib</userinput></screen>
+      libc_cv_slibdir=/usr/lib</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -206,31 +204,6 @@ cd       build</userinput></screen>
 
     </variablelist>
 
-    <!--
-      The /usr which gets removed from the RTLDLIST by the sed
-      below is set by the libc_cv_rtlddir=/usr/lib above. When
-      changing the libc_cv_rtlddir to /lib, the content of the
-      ldd script does not need to be patched, but some other
-      symlinks created by glibc itself will be not that correct
-      and needs to be fixed by other symlinks.
-
-      First setting /usr and than removing /usr seems strange,
-      but it looks like that libc_cv_rtlddir has more effect than
-      only the pathes in ldd (it has influence on which symlinks
-      to the loader are created where) and makes the handling
-      in a multilib environment much easier.
-      To me, it feels better to go the way with adding/removing
-      /usr than to introduce a symlink hell.
-      
-      Another option to get ldd working properly is to set a
-      symlink as "ln -svf lib /usr/lib64" but it has been reported
-      that we used that already years ago but dropped it since
-      libtool will complain sometimes with "library has been moved"
-      warnings.
-      Don't know if this is still the case - if not, this one
-      symlink seems to be the cleanest way and the sed on ldd will
-      be obsolete.
-    -->
     <para>Fix hardcoded path to the executable loader in
     <command>ldd</command> script:</para>
 
@@ -307,8 +280,7 @@ CXX="$LFS_TGT-g++ -m32" \
       --enable-multi-arch                \
       --libdir=/usr/lib32                \
       --libexecdir=/usr/lib32            \
-      libc_cv_slibdir=/usr/lib32           \
-      libc_cv_rtlddir=/usr/lib32</userinput></screen>
+      libc_cv_slibdir=/usr/lib32</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -380,8 +352,7 @@ CXX="$LFS_TGT-g++ -mx32" \
       --enable-multi-arch                \
       --libdir=/usr/libx32               \
       --libexecdir=/usr/libx32           \
-      libc_cv_slibdir=/usr/libx32           \
-      libc_cv_rtlddir=/usr/libx32</userinput></screen>
+      libc_cv_slibdir=/usr/libx32</userinput></screen>
 
     <para>Compile the package:</para>
 
