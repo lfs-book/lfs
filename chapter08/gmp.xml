@@ -143,11 +143,12 @@ cp -v configfsf.sub   config.sub</userinput></screen>
 CFLAGS="-m32 -O2 -pedantic -fomit-frame-pointer -mtune=generic -march=i686" \
 CXXFLAGS="$CFLAGS" \
 PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
-./configure             \
-    --prefix=/usr       \
-    --disable-static    \
-    --enable-cxx        \
-    --libdir=/usr/lib32 \
+./configure                      \
+    --host=i686-pc-linux-gnu     \
+    --prefix=/usr                \
+    --disable-static             \
+    --enable-cxx                 \
+    --libdir=/usr/lib32          \
     --includedir=/usr/include/m32/gmp</userinput></screen>
 
     <variablelist>
@@ -215,11 +216,12 @@ cp -v configfsf.sub   config.sub</userinput></screen>
 CFLAGS="-mx32 -O2 -pedantic -fomit-frame-pointer -mtune=generic -march=x86-64" \
 CXXFLAGS="$CFLAGS" \
 PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
-./configure              \
-    --prefix=/usr        \
-    --disable-static     \
-    --enable-cxx         \
-    --libdir=/usr/libx32 \
+./configure                       \
+    --host=x86_64-pc-linux-gnux32 \
+    --prefix=/usr                 \
+    --disable-static              \
+    --enable-cxx                  \
+    --libdir=/usr/libx32          \
     --includedir=/usr/include/mx32/gmp</userinput></screen>
 
     <para>Compile the package:</para>

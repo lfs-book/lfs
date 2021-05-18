@@ -116,7 +116,6 @@ CC="gcc -m32 -march=i686"  \
 CXX="g++ -m32 -march=i686" \
     ./config               \
     --prefix=/usr          \
-    --libdir=/usr/lib32    \
     --openssldir=/etc/ssl  \
     --libdir=lib32         \
     shared                 \
@@ -152,7 +151,6 @@ CC="gcc -mx32"            \
 CXX="g++ -mx32"           \
     ./config              \
     --prefix=/usr         \
-    --libdir=/usr/libx32  \
     --openssldir=/etc/ssl \
     --libdir=libx32       \
     shared                \
