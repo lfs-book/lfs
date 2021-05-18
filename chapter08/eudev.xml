@@ -97,17 +97,13 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
     <para>Prepare Eudev for compilation:</para>
 
 <screen><userinput remap="configure">CC="gcc -m32" \
-./configure --host=i686-pc-linux-gnu     \
-            --prefix=/usr                \
-            --bindir=/sbin               \
-            --sbindir=/sbin              \
-            --libdir=/usr/lib32          \
-            --sysconfdir=/etc            \
-            --libexecdir=/lib32          \
-            --with-rootprefix=           \
-            --with-rootlibdir=/usr/lib32 \
-            --disable-manpages           \
-            --disable-static             \
+./configure --host=i686-pc-linux-gnu       \
+            --prefix=/usr                  \
+            --bindir=/usr/sbin             \
+            --libdir=/usr/lib32            \
+            --sysconfdir=/etc              \
+            --disable-manpages             \
+            --disable-static               \
             --config-cache</userinput></screen>
 
     <para>Compile the package:</para>
@@ -136,16 +132,13 @@ rm -rf DESTDIR</userinput></screen>
     <para>Prepare Eudev for compilation:</para>
 
 <screen><userinput remap="configure">CC="gcc -mx32" \
-./configure --prefix=/usr                \
-            --bindir=/sbin               \
-            --sbindir=/sbin              \
-            --libdir=/usr/libx32          \
-            --sysconfdir=/etc            \
-            --libexecdir=/libx32         \
-            --with-rootprefix=           \
-            --with-rootlibdir=/usr/libx32 \
-            --disable-manpages           \
-            --disable-static             \
+./configure --host=x86_64-lfs-linux-gnux32 \
+            --prefix=/usr                  \
+            --bindir=/usr/sbin             \
+            --libdir=/usr/libx32           \
+            --sysconfdir=/etc              \
+            --disable-manpages             \
+            --disable-static               \
             --config-cache</userinput></screen>
 
     <para>Compile the package:</para>
