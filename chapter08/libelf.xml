@@ -117,7 +117,7 @@ rm -rf DESTDIR</userinput></screen>
 <screen><userinput remap="configure">CC="gcc -mx32" ./configure \
     --host=x86_64-pc-linux-gnux32 \
     --prefix=/usr                 \
-    --libdir=/usr/lib32           \
+    --libdir=/usr/libx32          \
     --disable-debuginfod          \
     --enable-libdebuginfod=dummy</userinput></screen>
 
