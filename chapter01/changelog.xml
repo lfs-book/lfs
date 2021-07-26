@@ -44,6 +44,29 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
     -->
+
+    <listitem>
+      <para>2021-07-25</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Add workaround to strip libraries 
+          correctly.</para>
+        </listitem>
+        <listitem>
+          <para>[xry111] - Add workaround to install Binutils-2.37 man pages
+          correctly.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to shadow-4.9. Fixes
+          <ulink url="&lfs-ticket-root;4891">#4891</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to util-linux 2.37.1. Fixes
+          <ulink url="&lfs-ticket-root;4890">#4890</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem>
       <para>2021-07-23</para>
       <itemizedlist>
