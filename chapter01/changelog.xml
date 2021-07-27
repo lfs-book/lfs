@@ -46,6 +46,24 @@
     -->
 
     <listitem>
+      <para>2021-07-26</para>
+      <itemizedlist>
+        <listitem>
+          <para>[thomas] - Fix a programming error in shadow-4.9</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2021-07-25</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - (Hopefully) complete stripping workaround.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2021-07-25</para>
       <itemizedlist>
         <listitem>
