@@ -89,7 +89,6 @@
     symbols.</para>
 
     <para>Strip off debugging symbols from binaries:</para>
-    <!-- arch="default" ml_32 ml_x32 ml_all -->
 
     <screen role="nodump"><userinput>cd $LFS/tools/$LFS_TGT
 bin/strip --strip-unneeded $LFS/usr/lib/*</userinput><userinput arch="ml_32">
