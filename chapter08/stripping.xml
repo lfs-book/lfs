@@ -131,7 +131,7 @@ for i in $(find /usr/lib -type f -name \*.so* ! -name \*dbg) \
     esac
 done</userinput><userinput arch="ml_32,ml_all">
 for i in $(find /usr/lib32 -type f -name \*.so* ! -name \*dbg); do
-    case "$online_usrlib $save_usrlib" in
+    case "$online_usrbin $online_usrlib $save_usrlib" in
         *$(basename $i)* )
             ;;
         * ) strip --strip-unneeded $i
@@ -139,7 +139,7 @@ for i in $(find /usr/lib32 -type f -name \*.so* ! -name \*dbg); do
     esac
 done</userinput><userinput arch="ml_x32,ml_all">
 for i in $(find /usr/libx32 -type f -name \*.so* ! -name \*dbg); do
-    case "$online_usrlib $save_usrlib" in
+    case "$online_usrbin $online_usrlib $save_usrlib" in
         *$(basename $i)* )
             ;;
         * ) strip --strip-unneeded $i
