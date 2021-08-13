@@ -23,10 +23,10 @@
     shared libraries, specially when using non-autotools build systems.
     While still in chroot, remove those files now:</para>
 
-<screen><userinput>find /usr/{lib,libexec} -name \*.la -delete</userinput>
-<userinput arch="ml_32">find /usr/lib32 -name \*.la -delete</userinput>
-<userinput arch="ml_x32">find /usr/libx32 -name \*.la -delete</userinput>
-<userinput arch="ml_all">find /usr/lib{,x}32 -name \*.la -delete</userinput></screen>
+<screen><userinput>find /usr/{lib,libexec} -name \*.la -delete</userinput><userinput arch="ml_32">
+find /usr/lib32 -name \*.la -delete</userinput><userinput arch="ml_x32">
+find /usr/libx32 -name \*.la -delete</userinput><userinput arch="ml_all">
+find /usr/lib{,x}32 -name \*.la -delete</userinput></screen>
 
     <para>
       The current system size is now about 3 GB, however 
