@@ -43,6 +43,15 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
     <listitem>
+      <para>2021-08-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - LFS-11.0-rc1 released.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2021-08-14</para>
       <itemizedlist>
         <listitem>
