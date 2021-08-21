@@ -42,12 +42,16 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
     -->
+
     <listitem>
       <para>2021-08-20</para>
       <itemizedlist>
         <listitem>
-           <para>[bdubbs] - Add a sed to glibc in Chapter 8 to fix a 
-           critical security issue.</para>
+          <para>[renodr] - LFS 11.0-rc2 released.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Add a sed to glibc in Chapter 8 to fix a 
+          critical security issue.</para>
         </listitem>
       </itemizedlist>
     </listitem>
