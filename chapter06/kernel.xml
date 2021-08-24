@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-tools-kernel" role="wrap">
+  <?dbhtml filename="kernel.html"?>
+
+  <sect1info condition="script">
+    <productname>kernel</productname>
+    <productnumber>&linux-version;</productnumber>
+    <address>&linux-url;</address>
+  </sect1info>
+
+  <title>Linux-&linux-version;</title>
+
+  <indexterm zone="ch-tools-kernel">
+    <primary sortas="a-Linux">Linux</primary>
+    <secondary>tools</secondary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The Linux package contains the Linux kernel.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&linux-tmp-sbu;</seg>
+        <seg>&linux-tmp-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of the kernel</title>
+
+    <para>Building the kernel involves a few steps&mdash;configuration,
+    compilation, and installation. Read the <filename>README</filename> file
+    in the kernel source tree for alternative methods to the way this book
+    configures the kernel.</para>
+
+    <para>Prepare for compilation by running the following command:</para>
+
+<screen><userinput remap="pre">make mrproper</userinput></screen>
+
+    <para>This ensures that the kernel tree is absolutely clean. The
+    kernel team recommends that this command be issued prior to each
+    kernel compilation. Do not rely on the source tree being clean after
+    un-tarring.</para>
+
+    <para>There are several ways to configure the kernel options. Usually,
+    This is done through a menu-driven interface, for example:</para>
+
+<screen role="nodump"><userinput>make ARCH=x86 CROSS_COMPILE=$LFS_TGT- menuconfig</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of make environment variables:</title>
+
+      <varlistentry>
+        <term><command>ARCH=x86</command></term>
+        <listitem>
+          <para>Configure the kernel for running on the target machine.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><command>CROSS_COMPILE=$LFS_TGT-</command></term>
+        <listitem>
+          <para>Build the kernel with Binutils and GCC built in
+          <xref linkend='chapter-cross-tools'/>.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><command>menuconfig</command></term>
+        <listitem>
+          <para>This launches an ncurses menu-driven interface. For other
+          (graphical) interfaces, type <command>make help</command>.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>(optional) <parameter>LANG=&lt;host_LANG_value&gt; LC_ALL=</parameter></term>
+        <listitem>
+          <para>This establishes the locale setting to the one used on the
+          host.  This may be needed for a proper menuconfig ncurses interface
+          line drawing on a UTF-8 linux text console.</para>
+
+          <para>If used, be sure to replace
+          <replaceable>&lt;host_LANG_value&gt;</replaceable> by the value of
+          the <envar>$LANG</envar> variable from your host.  You can
+          alternatively use instead the host's value of <envar>$LC_ALL</envar>
+          or <envar>$LC_CTYPE</envar>.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <note>
+    
+      <para>A good starting place for setting up the kernel configuration is to
+      run <command>make ARCH=x86 CROSS_COMPILE=$LFS_TGT- defconfig</command>. This will set the base
+      configuration to a good state that takes your target system architecture
+      into account.</para>
+
+    </note>
+
+      <para>Read <xref linkend='ch-bootable-kernel'/> for more information
+      about kernel configuration.  You should enable or disable some kernel
+      configuration options now:</para>
+
+    <variablelist>
+      <title>Kernel configuration options and explanation:</title>
+
+      <varlistentry>
+        <term>Set <parameter>CONFIG_MODULES=n</parameter></term>
+        <listitem>
+          <para>Modular kernel needs <command>modprobe</command> tool from
+          <application>Kmod</application> to load modules, which is not
+          installed in the temporary system.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Enable <parameter>CONFIG_EXT2</parameter>,
+                     <parameter>CONFIG_EXT4</parameter>,
+                 and <parameter>CONFIG_VFAT_FS</parameter></term>
+        <listitem>
+          <para>They are needed to access the filesystems we'll make for the
+          target system.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>Compile the kernel image:</para>
+
+<screen><userinput remap="make">make ARCH=x86 CROSS_COMPILE=$LFS_TGT-</userinput></screen>
+
+    <para>Install the kernel image into the
+    <filename class="directory">$LFS/boot</filename> directory:</para>
+
+  <screen><userinput remap="install">install -vm644 arch/x86/boot/bzImage $LFS/boot/vmlinuz</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title/>
+
+    <para>Details on this package are located in
+    <xref linkend="contents-kernel" role="."/></para>
+
+  </sect2>
+
+</sect1>
