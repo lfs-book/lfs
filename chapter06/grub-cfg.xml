@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-bootable-temp" role="wrap">
+  <?dbhtml filename="grub-cfg.html"?>
+
+  <sect1info condition="script">
+    <productname>grub</productname>
+    <productnumber>&grub-version;</productnumber>
+    <address>&grub-url;</address>
+  </sect1info>
+
+  <title>Making the Temporary System Bootable</title>
+
+  <sect2>
+    <title>Introduction</title>
+
+    <para>In a normal LFS building procedure, we will chroot into the
+    temporary system and continue to build additional temporary tools.
+    But, as we've explained, in the Cross Edition we need to make the
+    temporary system bootable and boot it on the target system.</para>
+  </sect2>
+
+  <sect2>
+    <title>Creating the GRUB Configuration File</title>
+
+    <para>Generate <filename>$LFS/boot/grub/grub.cfg</filename>:</para>
+
+    <screen><userinput>cat &gt; $LFS/boot/grub/grub.cfg &lt;&lt; "EOF"
+<literal># Begin /boot/grub/grub.cfg
+set default=0
+set timeout=5
+
+menuentry "LFS Temporary System" {
+        linux   /vmlinux root=/dev/sda3 rw init=/bin/bash
+        boot
+}</literal>
+EOF</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the linux command options:</title>
+
+      <varlistentry>
+        <term><parameter>root=/dev/sda3</parameter></term>
+        <listitem>
+          <para>We will use the third parition as the partition for the
+          root filesystem of the LFS system.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>rw</parameter></term>
+        <listitem>
+          <para>Tell the kernel to mount the root filesystem read-write.
+          In normal distros there is <parameter>ro</parameter> instead, so
+          the kernel will mount the root filesystem read-only.  Then
+          the <command>init</command> process can check the filesystem
+          integrity and remount it read-write.  For the temporary system
+          it's not needed.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>init=/bin/bash</parameter></term>
+        <listitem>
+          <para>By default the kernel runs <command>/sbin/init</command>
+          as the first process.  It's provided by SysVinit or Systemd
+          package, which is not installed yet.  We explicitly tell the
+          kernel to run <command>/bin/bash</command> instead to start a
+          shell, so we can run further commands interactively.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>(optional) <parameter>console=ttyS0,115200</parameter></term>
+        <listitem>
+          <para>Use the serial port at <filename>/dev/ttyS0</filename> as
+          the output console device.  It's very useful if the virtual
+          console is not avaliable (for example, the target system may lack
+          graphic output, or the framebuffer console may be too slow).
+          And, by connecting the host system and the target system with a
+          NULL modem or USB serial converter, it will be able to copy the
+          commands from the book and paste it into a terminal emulator
+          (for example,
+          <ulink url='&blfs-book;general/screen.html'>GNU Screen</ulink>)
+          on the host, to execute them on the target system.
+          <parameter>115200</parameter> specifies the baudrate, the default
+          (9600) is too slow for large amount of console output building
+          LFS.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <note><para>From <application>GRUB</application>'s perspective, the
+    kernel files are relative to the partition used.  We will use a
+    a separate /boot partition, so /boot is not needed in the above
+    <emphasis>linux</emphasis> line.
+    </para></note>
+
+   </sect2>
+
+   <sect2>
+     <title>Copy the Temporary System to the Target Machine</title>
+
+     <note>
+       <para>The commands in the subsection must be performed on the host
+       system while logged in as user
+       <systemitem class="username">root</systemitem>
+       and no longer as user <systemitem class="username">lfs</systemitem>.
+       Also, double check that <envar>$LFS</envar> is set in <systemitem
+       class="username">root</systemitem>'s environment.</para>
+     </note>
+
+     <para>Now it's the time to copy the
+     <filename class="directory">$LFS</filename> hierarchy over to your
+     target machine.  You'll need a <quote>moveable</quote> device for this.
+     Using a normal USB stick is likely a bad choice: the USB sticks are
+     generally not optimized for reading or writing many small files
+     (which will happen building packages from source). Especially, if a
+     ext filesystem is used, the performance can be very bad.  You may use
+     a USB to SATA adapter and a HDD or SSD (then you can directly connect
+     it onto the SATA port of the target system, or continuing to use the
+     adapter on a USB port of the target system), or a USB stick with an I/O
+     controller for SSD (these USB sticks are significantly more expansive
+     than a normal one).</para>
+
+     <para>Create a GUID partition table on the device, and then create
+	 three partitions on it. The first will be used as the BIOS boot
+     partition, 1 MB is sufficient enough.  But if you want to use EFI to
+     boot your LFS system later, assign 100 MB for it so it will be possible
+     to convert it into an EFI system partition. The second partition will
+     be used as the boot partition, 500 MB is sufficient enough.  The third
+     will be the root partition, it should be at least 20 GB.</para>
+
+     <para>Create filesystems for the partitions:</para>
+
+<screen><userinput role='nodump'>mkfs.ext4 /dev/<replaceable>sdx</replaceable>2
+mkfs.ext4 /dev/<replaceable>sdx</replaceable>3</userinput></screen>
+
+     <para>
+       It's not needed to create a filesystem for the BIOS boot partition.
+       But, its type should be set to <quote>BIOS boot</quote> in
+       the partition table using <command>fdisk</command>:
+     </para>
+
+<screen role="nodump"><userinput>fdisk /dev/<replaceable>sdx</replaceable></userinput>
+<literal>
+Welcome to fdisk (util-linux &util-linux-version;).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): </literal><userinput>t</userinput>
+<literal>Partition number (1-9, default 9): </literal><userinput>1</userinput>
+<literal>Partition type or alias (type L to list all): </literal><userinput>BIOS boot</userinput>
+<literal>Changed type of partition 'Linux' to 'BIOS boot'.
+
+Command (m for help): </literal><userinput>w</userinput>
+<literal>The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.</literal></screen>
+
+     <para><replaceable>sdx</replaceable> should be replaced with the name
+     of the device node corresponding to your moveable device. Then mount
+     the filesystems:</para>
+
+<screen><userinput role='nodump'>mkdir -pv /mnt/lfs-target
+mount -v -t ext4 /dev/<replaceable>sdx</replaceable>3 /mnt/lfs-target
+mkdir -pv /mnt/lfs-target/boot
+mount -v -t ext4 /dev/<replaceable>sdx</replaceable>2 /mnt/lfs-target/boot</userinput></screen>
+
+     <para>Copy the temporary system onto the device, and change the
+     ownership of the copy to user
+     <systemitem class="username">root</systemitem>:</para>
+
+<screen><userinput role='nodump'>cp -av $LFS/* /mnt/lfs-target
+chown -R root:root /mnt/lfs-target</userinput></screen>
+
+     <para>Install the bootloader onto the device:</para>
+
+<screen><userinput role='nodump'>$LFS/tools/sbin/lfs-grub-install          \
+    --target=i386-pc                      \
+    --boot-directory=/mnt/lfs-target/boot \
+    /dev/<replaceable>sdx</replaceable></userinput></screen>
+
+     <para>Create the mountpoint for
+     <systemitem class="filesystem">devtmpfs</systemitem>, so the kernel
+     will mount it automatically:</para>
+
+<screen><userinput role='nodump'>install -v -dm755 /mnt/lfs-target/dev</userinput></screen>
+
+     <para>Now, unmount the device:</para>
+
+<screen><userinput role='nodump'>umount -Rv /mnt/lfs-target</userinput></screen>
+
+     <para>Now unplug the device and connect it onto the target system,
+     and boot the target system with this device as the boot device.
+     Read the manual from the vendor of the target system to know how to
+     select the boot device.</para>
+
+  </sect2>
+
+</sect1>
