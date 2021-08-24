@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-tools-mount-setsid" role="wrap">
+  <?dbhtml filename="util-linux.html"?>
+
+  <sect1info condition="script">
+    <productname>util-linux</productname>
+    <productnumber>&util-linux-version;</productnumber>
+    <address>&util-linux-url;</address>
+  </sect1info>
+
+  <title>Programs from Util-linux-&util-linux-version;</title>
+
+  <indexterm zone="ch-tools-mount-setsid">
+    <primary sortas="a-mount-setsid">programs from util-linux</primary>
+    <secondary>tools</secondary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para><command>agetty</command>, <command>mount</command>, and
+    <command>setsid</command> are utilities in
+    <application>Util-Linux</application>.  We need them to
+    set up the environment once we boot the temporary system.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&mount-setsid-sbu;</seg>
+        <seg>&mount-setsid-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of agetty, setsid and mount</title>
+
+    <para>Prepare Util-linux for compilation:</para>
+
+<screen><userinput remap="configure">./configure --build=$(config/config.guess) --host=$LFS_TGT --disable-shared</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the configure option:</title>
+
+      <varlistentry>
+        <term><parameter>--disable-shared</parameter></term>
+        <listitem>
+          <para>We do not need to install any of the shared libraries at
+          this time, therefore there is no need to build them.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>We only need three tools from the package now, build them:</para>
+
+<screen><userinput remap="make">make agetty mount setsid</userinput></screen>
+
+    <para>Install the tools:</para>
+
+<screen><userinput remap="install">install -vm755 agetty       $LFS/usr/sbin
+install -vm755 mount setsid $LFS/usr/bin</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title/>
+
+    <para>Details on this package are located in
+    <xref linkend="contents-utillinux" role="."/></para>
+
+  </sect2>
+
+</sect1>
