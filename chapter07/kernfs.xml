@@ -22,58 +22,22 @@
     <para>Begin by creating directories onto which the file systems will be
     mounted:</para>
 
-<screen><userinput>mkdir -pv $LFS/{dev,proc,sys,run}</userinput></screen>
-
-  <sect2>
-    <title>Creating Initial Device Nodes</title>
-
-    <para>When the kernel boots the system, it requires the presence of a few
-    device nodes, in particular the <filename
-    class="devicefile">console</filename> and <filename
-    class="devicefile">null</filename> devices. The device nodes must be
-    created on the hard disk so that they are available before the kernel
-    populates <systemitem class="filesystem">/dev</systemitem>), and
-    additionally when Linux is started with
-    <parameter>init=/bin/bash</parameter>. Create the devices by running the
-    following commands:</para>
-
-<screen><userinput>mknod -m 600 $LFS/dev/console c 5 1
-mknod -m 666 $LFS/dev/null c 1 3</userinput></screen>
-
-  </sect2>
-
-  <sect2 id="ch-tools-bindmount">
-    <title>Mounting and Populating /dev</title>
-
-      <para>The recommended method of populating the <filename
-      class="directory">/dev</filename> directory with devices is to mount a
-      virtual filesystem (such as <systemitem
-      class="filesystem">tmpfs</systemitem>) on the <filename
-      class="directory">/dev</filename> directory, and allow the devices to be
-      created dynamically on that virtual filesystem as they are detected or
-      accessed. Device creation is generally done during the boot process
-      by Udev. Since this new system does not yet have Udev and has not yet
-      been booted, it is necessary to mount and populate <filename
-      class="directory">/dev</filename> manually. This is accomplished by bind
-      mounting the host system's <filename class="directory">/dev</filename>
-      directory. A bind mount is a special type of mount that allows you to
-      create a mirror of a directory or mount point to some other location. Use
-      the following command to achieve this:</para>
-
-<screen><userinput>mount -v --bind /dev $LFS/dev</userinput></screen>
-
-  </sect2>
+<screen><userinput>mkdir -pv /{proc,sys,run}</userinput></screen>
 
   <sect2 id="ch-tools-kernfsmount">
     <title>Mounting Virtual Kernel File Systems</title>
 
-      <para>Now mount the remaining virtual kernel filesystems:</para>
+    <para>The kernel has already mounted
+    <systemitem class="filesystem">devtmpfs</systemitem>.
+    Mount the remaining virtual kernel filesystems:</para>
 
-<screen><userinput>mount -v --bind /dev/pts $LFS/dev/pts
-mount -vt proc proc $LFS/proc
-mount -vt sysfs sysfs $LFS/sys
-mount -vt tmpfs tmpfs $LFS/run</userinput></screen>
-<!--
+<screen><userinput>mkdir -pv /dev/{pts,shm}
+mount -vt devpts /dev/pts /dev/pts -o gid=5,mode=620
+mount -vt proc  proc  /proc
+mount -vt sysfs sysfs /sys
+mount -vt tmpfs tmpfs /run
+mount -vt tmpfs tmpfs /dev/shm</userinput></screen>
+
     <variablelist>
       <title>The meaning of the mount options for devpts:</title>
 
@@ -101,15 +65,23 @@ mount -vt tmpfs tmpfs $LFS/run</userinput></screen>
       </varlistentry>
 
     </variablelist>
--->
-      <para>In some host systems, <filename>/dev/shm</filename> is a
-      symbolic link to <filename class="directory">/run/shm</filename>.
-      The /run tmpfs was mounted above so in this case only a
-      directory needs to be created.</para>
 
-<screen><userinput>if [ -h $LFS/dev/shm ]; then
-  mkdir -pv $LFS/$(readlink $LFS/dev/shm)
-fi</userinput></screen>
+  </sect2>
+
+  <sect2 id="ch-tools-devadjust">
+    <title>Adjusting devtmpfs</title>
+
+    <para>Now <systemitem class='filesystem'>proc</systemitem> filesystem
+    is mounted, we can replace the device nodes for standard I/O streams
+    with symlinks to pseudo files in
+    <filename class="directory">/proc/self/fd</filename> (which are symlinks
+    to the files connected to the standard I/O streams for the current
+    process).  This is necessary for I/O redirection in the building system
+    of some packages to function properly:</para>
+
+<screen><userinput>ln -sfv /proc/self/fd/0 /dev/stdin
+ln -sfv /proc/self/fd/1 /dev/stdout
+ln -sfv /proc/self/fd/2 /dev/stderr</userinput></screen>
 
   </sect2>
 

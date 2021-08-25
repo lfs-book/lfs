@@ -64,31 +64,16 @@
 
     <itemizedlist>
       <listitem>
-         <para>The /mnt/lfs partition must be mounted.</para>
+        <para>You must boot the temporary system on the target machine.</para>
       </listitem>
 
       <listitem>
-        <para>A few operations, from <quote>Changing Ownership</quote> to
-        <quote>Entering the Chroot Environment</quote> must be done as the
-        <systemitem class="username">root</systemitem> user, with the LFS
-        environment variable set for the
-        <systemitem class="username">root</systemitem>user.</para>
+        <para>A few operations, from
+        <quote>Preparing Virtual Kernel File Systems</quote> to
+        <quote>Setting up Environment</quote> must be done as the
+        <systemitem class="username">root</systemitem> user.</para>
       </listitem>
 
-      <listitem>
-         <para> When entering chroot, the LFS environment variable must be set
-         for <systemitem class="username">root</systemitem>. The LFS
-         variable is not used afterwards.</para>
-      </listitem>
-
-      <listitem>
-         <para> The virtual file systems must be mounted.  This can be done
-         before or after entering chroot by changing to a host virtual terminal
-         and, as <systemitem class="username">root</systemitem>, running the
-         commands in
-         <xref linkend='ch-tools-bindmount'/> and
-         <xref linkend='ch-tools-kernfsmount'/>.</para>
-      </listitem>
     </itemizedlist>
   </sect2>
 </sect1>

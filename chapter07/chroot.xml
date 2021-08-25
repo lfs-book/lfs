@@ -6,45 +6,58 @@
 ]>
 
 <sect1 id="ch-tools-chroot">
-  <?dbhtml filename="chroot.html"?>
+  <?dbhtml filename="env.html"?>
 
-  <title>Entering the Chroot Environment</title>
+  <title>Setting up the Environment</title>
 
-  <para>Now that all the packages which are required to build the rest of the
-  needed tools are on the system, it is time to enter the chroot environment to
-  finish installing the remaining temporary tools. This environment will be in
-  use also for installing the final system. As user <systemitem
-  class="username">root</systemitem>, run the following command to enter the
-  environment that is, at the moment, populated with only the temporary
-  tools:</para>
+    <para>The standard I/O streams of the initial shell process is connected
+    with <filename>/dev/console</filename>.  However, the testsuite of some
+    packages may expect the standard I/O streams to be connected with a
+    <quote>real</quote> TTY device node.  Spawn a new shell process on the
+    TTY device with <command>agetty</command>:</para>
 
-<screen role="nodump"><userinput>chroot "$LFS" /usr/bin/env -i   \
+<screen role="nodump"><userinput>agetty -n -l /bin/bash <replaceable>tty0</replaceable></userinput></screen>
+
+    <para>If you are working via a serial console, replace
+    <replaceable>tty0</replaceable> with the name of the serial console
+    device node, for example <literal>ttyS0</literal>.</para>
+
+    <para>The command above spawns a new shell process on the TTY device
+    specified in the command, and the initial shell process will run in
+    background as an init process with very limited functions. The new shell
+    process will output:</para>
+
+<screen role="nodump"><computeroutput>bash: cannot set terminal process group (-1): Inappropriate ioctl for device
+bash: no job control in this shell</computeroutput></screen>
+
+    <para>This is normal because the shell is not assigned with a
+    controlling terminal yet.  Now set up controlling terminal and
+    environment variables:</para>
+
+<screen><userinput>exec setsid -c /usr/bin/env -i  \
     HOME=/root                  \
     TERM="$TERM"                \
-    PS1='(lfs chroot) \u:\w\$ ' \
+    PS1='(lfs) \u:\w\$ '        \
     PATH=/usr/bin:/usr/sbin     \
     /bin/bash --login</userinput></screen>
 
+    <para>The command replace the current shell process with a new shell
+    process, with controlling terminal set up.</para>
+
   <para>The <parameter>-i</parameter> option given to the <command>env</command>
-  command will clear all variables of the chroot environment. After that, only
+  command will clear all variables of the environment. After that, only
   the <envar>HOME</envar>, <envar>TERM</envar>, <envar>PS1</envar>, and
   <envar>PATH</envar> variables are set again. The
   <parameter>TERM=$TERM</parameter> construct will set the <envar>TERM</envar>
-  variable inside chroot to the same value as outside chroot. This variable is
+  variable to the default value specified by <command>agetty</command>. This variable is
   needed for programs like <command>vim</command> and <command>less</command>
   to operate properly.  If other variables are desired, such as
   <envar>CFLAGS</envar> or <envar>CXXFLAGS</envar>, this is a good place to set
   them again.</para>
 
-  <para>From this point on, there is no need to use the
-  <envar>LFS</envar> variable anymore because all work will be restricted
-  to the LFS file system.  This is because the Bash shell is told that
-  <filename class="directory">$LFS</filename> is now the root
-  (<filename class="directory">/</filename>) directory.</para>
-
   <para>Notice that <filename class="directory">/tools/bin</filename> is not
   in the <envar>PATH</envar>. This means that the cross toolchain will no longer be
-  used in the chroot environment.</para>
+  used on the target machine.</para>
 
   <para>Note that the <command>bash</command> prompt will say
   <computeroutput>I have no name!</computeroutput> This is normal because the
@@ -52,12 +65,12 @@
 
   <note>
     <para>It is important that all the commands throughout the remainder of this
-    chapter and the following chapters are run from within the chroot
-    environment. If you leave this environment for any reason (rebooting for
+    chapter and the following chapters are run from within the environment
+    we've set. If you leave this environment for any reason (rebooting for
     example), ensure that the virtual kernel filesystems are mounted as
-    explained in <xref linkend="ch-tools-bindmount"/> and <xref
-    linkend="ch-tools-kernfsmount"/> and enter chroot again before continuing
-    with the installation.</para>
+    explained in <xref linkend="ch-tools-kernfsmount"/> and
+    <xref linkend="ch-tools-devadjust"/> and set up the environment again before
+    continuing with the installation.</para>
   </note>
 
 </sect1>

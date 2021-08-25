@@ -12,21 +12,21 @@
 
   <para>This chapter shows how to build the last missing bits of the temporary
   system: the tools needed by the build machinery of various packages.  Now
-  that all circular dependencies have been resolved, a <quote>chroot</quote>
-  environment, completely isolated from the host operating system (except for
-  the running kernel), can be used for the build.</para>
+  that all circular dependencies have been resolved and the temporary system
+  is already bootable, we can boot it on the target machine and it would be
+  completely isolated from the host operating system.  Then we can continue
+  to build on the target machine.</para>
 
-  <para>For proper operation of the isolated environment, some communication
+  <para>For proper operation of the temporary system, some communication
   with the running kernel must be established. This is done through the
   so-called <emphasis>Virtual Kernel File Systems</emphasis>, which must be
-  mounted when entering the chroot environment. You may want to check
-  that they are mounted by issuing <command>findmnt</command>.</para>
+  mounted as soon as possible after boot. You may want to check
+  that they are mounted by issuing <command>mount</command>.</para>
 
-  <para>Until <xref linkend="ch-tools-chroot"/>, the commands must be
-  run as <systemitem class="username">root</systemitem>, with the
-  <envar>LFS</envar> variable set. After entering chroot, all commands
-  are run as root, fortunately without access to the OS of the computer
-  you built LFS on. Be careful anyway, as it is easy to destroy the whole
-  LFS system with badly formed commands.</para>
+  <para>All commands in this and following chapters are run as root on the
+  target system, fortunately without access to the host system.
+  Be careful anyway, as if the storage devices of your target system already
+  contain some important data, it's possible to destroy them with badly
+  formed commands.</para>
 
 </sect1>
