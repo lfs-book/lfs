@@ -70,16 +70,16 @@ cd       build</userinput></screen>
 
     <para>Now prepare Binutils for compilation:</para>
 
-<screen arch="default"><userinput remap="configure">../configure --prefix=$LFS/tools       \
-             --with-sysroot=$LFS        \
-             --target=$LFS_TGT          \
-             --disable-nls              \
+    <screen arch="default"><userinput remap="configure">../configure --prefix=$LFS/tools \
+             --with-sysroot=$LFS \
+             --target=$LFS_TGT   \
+             --disable-nls       \
              --disable-werror</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">../configure --prefix=$LFS/tools       \
-             --with-sysroot=$LFS        \
-             --target=$LFS_TGT          \
-             --disable-nls              \
-             --disable-werror           \
+             --with-sysroot=$LFS \
+             --target=$LFS_TGT   \
+             --disable-nls       \
+             --disable-werror    \
              --enable-multilib</userinput></screen>
 
     <variablelist>
