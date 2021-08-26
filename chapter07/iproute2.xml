@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-tools-lo" role="wrap">
+  <?dbhtml filename="lo-iface.html"?>
+
+  <sect1info condition="script">
+    <productname>iproute2</productname>
+    <productnumber>&iproute2-version;</productnumber>
+    <address>&iproute2-url;</address>
+  </sect1info>
+
+  <title>Setting Up Loopback Network Interface with IPRoute-&iproute2-version;</title>
+
+  <indexterm zone="ch-tools-lo">
+    <primary sortas="a-IPRoute2">IPRoute2</primary>
+    <secondary>tools</secondary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The IPRoute2 package contains programs for basic and advanced IPV4-based
+    networking. Now we need <command>ip</command> from it to bring up
+    loopback network interface, which is expected by the testsuites of
+    various packages.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&iproute2-tmp-sbu;</seg>
+        <seg>&iproute2-tmp-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Use IPRoute2 to Set Up Loopback Network Interface</title>
+
+    <para>IPRoute2 package has several dependencies not installed yet, but
+    we only need <command>ip</command> utility from the package now.
+    Disable the build of other utilities:</para>
+
+<screen><userinput remap="pre">sed '/SUBDIRS/s/=.*/=lib ip/' -i Makefile</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">PKG_CONFIG=false make</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the environment variable:</title>
+
+      <varlistentry>
+        <term><parameter>PKG_CONFIG=false</parameter></term>
+        <listitem>
+          <para>The building system attempts to find dependencies with
+          <command>pkg-config</command>, which is not installed yet.
+          We can override it since <command>ip</command> utility does not
+          need these dependencies.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>It's not needed to install the <command>ip</command> utility now.
+    Just bring up the loopback interface:</para>
+
+<screen><userinput remap="install">ip/ip link set lo up</userinput></screen>
+
+    <para>Verify the result:</para>
+
+<screen><userinput remap="install">ip/ip addr</userinput></screen>
+
+    <para>The command above should show <literal>127.0.0.1/8</literal>
+    as the IPv4 address of <literal>lo</literal>, and
+    <literal>::1/128</literal> as the IPv6 address.</para>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title/>
+
+    <para>Details on this package are located in <xref linkend="contents-iproute2" role="."/></para>
+
+  </sect2>
+
+</sect1>

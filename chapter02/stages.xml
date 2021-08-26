@@ -70,8 +70,13 @@
       <listitem>
         <para>A few operations, from
         <quote>Preparing Virtual Kernel File Systems</quote> to
-        <quote>Setting up Environment</quote> must be done as the
-        <systemitem class="username">root</systemitem> user.</para>
+        <quote>Setting up Environment</quote> must be done.</para>
+      </listitem>
+
+      <listitem>
+        <para>The operations in <xref linkend="ch-tools-lo"/> must be done
+        before starting or continuing from
+        <xref linkend="chapter-building-system"/>.</para>
       </listitem>
 
     </itemizedlist>
