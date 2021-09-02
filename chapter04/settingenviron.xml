@@ -60,6 +60,7 @@ LFS_TGTX32=x86_64-lfs-linux-gnux32
 PATH=/usr/bin
 if [ ! -L /bin ]; then PATH=/bin:$PATH; fi
 PATH=$LFS/tools/bin:$PATH
+CONFIG_SITE=$LFS/usr/share/config.site
 export LFS LC_ALL LFS_TGT LFS_TGT32 LFS_TGTX32 PATH</literal>
 EOF</userinput></screen>
 
