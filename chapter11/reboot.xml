@@ -56,7 +56,7 @@
     <listitem><para>If you want to access your new system from a remote system
     within a comfortable GUI environment, install <ulink revision="sysv"
     url='&blfs-book;postlfs/openssh.html'>openssh</ulink><ulink revision="systemd"
-    url='&blfs-systemd-book;postlfs/openssh.html'>openssh</ulink>. 
+    url='&blfs-systemd-book;postlfs/openssh.html'>openssh</ulink>.
     </para></listitem>
 
     <listitem><para>To make fetching files over the internet easier, install

@@ -65,7 +65,7 @@ ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64/ld-lsb-x86-64.so.3</userinput></s
 
 <screen><userinput remap="pre">patch -Np1 -i ../glibc-&glibc-version;-fhs-1.patch</userinput></screen>
 
-    <para>The Glibc documentation recommends building Glibc 
+    <para>The Glibc documentation recommends building Glibc
     in a dedicated build directory:</para>
 
 <screen><userinput remap="pre">mkdir -v build
@@ -150,7 +150,7 @@ cd       build</userinput></screen>
     generally harmless. This <command>msgfmt</command> program is part of the
     Gettext package which the host distribution should provide.</para>
 
-    <note><para>There have been reports that this package may fail when 
+    <note><para>There have been reports that this package may fail when
     building as a "parallel make".  If this occurs, rerun the make command
     with a "-j1" option.</para></note>
 

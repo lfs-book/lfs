@@ -82,7 +82,7 @@ esac</userinput></screen>
     -i.orig gcc/config/i386/t-linux64
 </userinput></screen>
 
-    <para>The GCC documentation recommends building GCC 
+    <para>The GCC documentation recommends building GCC
     in a dedicated build directory:</para>
 
 <screen><userinput remap="pre">mkdir -v build
@@ -90,31 +90,31 @@ cd       build</userinput></screen>
 
     <para>Prepare GCC for compilation:</para>
 
-<screen arch="default"><userinput remap="configure">../configure                                       \
-    --target=$LFS_TGT                              \
-    --prefix=$LFS/tools                            \
-    --with-glibc-version=2.11                      \
-    --with-sysroot=$LFS                            \
-    --with-newlib                                  \
-    --without-headers                              \
-    --enable-initfini-array                        \
-    --disable-nls                                  \
-    --disable-shared                               \
-    --disable-multilib                             \
-    --disable-decimal-float                        \
-    --disable-threads                              \
-    --disable-libatomic                            \
-    --disable-libgomp                              \
-    --disable-libquadmath                          \
-    --disable-libssp                               \
-    --disable-libvtv                               \
-    --disable-libstdcxx                            \
+<screen arch="default"><userinput remap="configure">../configure                  \
+    --target=$LFS_TGT         \
+    --prefix=$LFS/tools       \
+    --with-glibc-version=2.11 \
+    --with-sysroot=$LFS       \
+    --with-newlib             \
+    --without-headers         \
+    --enable-initfini-array   \
+    --disable-nls             \
+    --disable-shared          \
+    --disable-multilib        \
+    --disable-decimal-float   \
+    --disable-threads         \
+    --disable-libatomic       \
+    --disable-libgomp         \
+    --disable-libquadmath     \
+    --disable-libssp          \
+    --disable-libvtv          \
+    --disable-libstdcxx       \
     --enable-languages=c,c++</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure" 
     arch="ml_32">mlist=m64,m32</userinput><userinput remap="configure"
     arch="ml_x32">mlist=m64,mx32</userinput><userinput remap="configure"
     arch="ml_all">mlist=m64,m32,mx32</userinput>
-<userinput remap="configure">../configure                                       \
+<userinput remap="configure">../configure                  \
     --target=$LFS_TGT                              \
     --prefix=$LFS/tools                            \
     --with-glibc-version=2.11                      \
@@ -142,7 +142,7 @@ cd       build</userinput></screen>
         <term><parameter>--with-glibc-version=2.11</parameter></term>
         <listitem>
           <para>This option ensures the package will be compatible with the host's
-          version of glibc.  It is set to the minimum glibc requirement 
+          version of glibc.  It is set to the minimum glibc requirement
           specified in the <xref linkend="ch-partitioning-hostreqs"/>.</para>
         </listitem>
       </varlistentry>
@@ -201,7 +201,7 @@ cd       build</userinput></screen>
 
       <varlistentry>
         <term><parameter>--disable-decimal-float, --disable-threads,
-              --disable-libatomic, --disable-libgomp, 
+              --disable-libatomic, --disable-libgomp,
         --disable-libquadmath, --disable-libssp, --disable-libvtv,
         --disable-libstdcxx</parameter></term>
         <listitem>
