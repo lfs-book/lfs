@@ -48,7 +48,7 @@ find /usr/lib32 -name \*.la -delete</userinput><userinput arch="ml_x32,ml_all">
 find /usr/libx32 -name \*.la -delete</userinput></screen>
 
    <para>For more information about libtool archive files, see the <ulink
-   url="&blfs-book;/introduction/la-files.html">BLFS section "About Libtool
+   url="&blfs-book;introduction/la-files.html">BLFS section "About Libtool
    Archive (.la) files"</ulink>.</para>
 
    <para>The compiler built in <xref linkend="chapter-temporary-tools"/> and
