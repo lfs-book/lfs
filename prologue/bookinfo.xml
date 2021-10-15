@@ -7,10 +7,7 @@
 
 <bookinfo>
   <title>Linux From Scratch</title>
-  <subtitle arch="default" revision='sysv'>Version &version;</subtitle>
-  <subtitle arch="default" revision='systemd'>Version &versiond;</subtitle>
-  <subtitle arch="ml_32,ml_x32,ml_all" revision='sysv'>Version &version;-multilib</subtitle>
-  <subtitle arch="ml_32,ml_x32,ml_all" revision='systemd'>Version &versiond;-multilib</subtitle>
+  <subtitle>Version &version;<phrase arch="ml_32,ml_x32,ml_all">-multilib</phrase></subtitle>
   <subtitle>Published &releasedate;</subtitle>
 
   <authorgroup>
