@@ -121,11 +121,11 @@ sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
+<screen><userinput remap="make">make SHLIB_LIBS="-lncursesw"</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+<screen><userinput remap="install">make SHLIB_LIBS="-lncursesw" DESTDIR=$PWD/DESTDIR install
 cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR</userinput></screen>
 
@@ -152,11 +152,11 @@ rm -rf DESTDIR</userinput></screen>
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
+<screen><userinput remap="make">make SHLIB_LIBS="-lncursesw"</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+<screen><userinput remap="install">make SHLIB_LIBS="-lncursesw" DESTDIR=$PWD/DESTDIR install
 cp -Rv DESTDIR/usr/libx32/* /usr/libx32
 rm -rf DESTDIR</userinput></screen>
 
