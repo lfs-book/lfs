@@ -85,7 +85,36 @@
     <para>Continue only if you and your system meets the following 
       requirements:
       <itemizedlist>
-        <listitem><para>you have a x86_64 compatible machine</para></listitem>
+        <listitem>
+          <para>you have a x86_64 compatible machine</para>
+          <note><para>
+            If you have access to the kernel config for your system,
+            you will need to have
+            <parameter>CONFIG_IA32_EMULATION=y</parameter>
+            set in order to build for <parameter>m32</parameter> and
+            <parameter>CONFIG_X86_X32=y</parameter> set in order to
+            build for <parameter>mx32</parameter>. 
+          </para>
+          <para>
+           If you do not have access to the kernel config for your system,
+            you may be able to test for compatability by running the 
+            following commands:
+          </para>
+<screen><userinput>echo 'int main(){}' &gt; dummy.c
+gcc -m32 dummy.c
+./a.out
+
+gcc -mx32 dummy.c
+./a.out</userinput></screen>
+          <para>
+            If either of the <command>./a.out</command> commands results in an 
+            "Exec format error" message, then you do not have a system kernel
+            capable of building for that architecture within LFS, and so you
+            should probably look to build an LFS system without Multilib, but
+            with the required kernel capabilities, and use that to build a
+            Multilib system.
+          </para></note>
+        </listitem>
         <listitem><para>you already have some experience with LFS</para></listitem>
         <listitem><para>you have a need for 32-bit support</para></listitem>
       </itemizedlist>

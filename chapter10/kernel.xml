@@ -173,18 +173,17 @@ File systems  ---&gt;
       </para>
 
 <screen arch="ml_32">Binary Emulations  ---&gt;
-    [*] IA32 Emulation
-    &lt;M&gt;   IA32 a.out support
+    [*] IA32 Emulation [CONFIG_IA32_EMULATION]
+    &lt;M&gt;   IA32 a.out support [CONFIG_IA32_AOUT]
 </screen>
 <screen arch="ml_x32">Binary Emulations  ---&gt;
-    [*] x32 ABI for 64-bit mode
+    [*] x32 ABI for 64-bit mode [CONFIG_X86_X32]
 </screen>
 <screen arch="ml_all">Binary Emulations  ---&gt;
-    [*] IA32 Emulation
-    &lt;M&gt;   IA32 a.out support
-    [*] x32 ABI for 64-bit mode
+    [*] IA32 Emulation [CONFIG_IA32_EMULATION]
+    &lt;M&gt;   IA32 a.out support [CONFIG_IA32_AOUT]
+    [*] x32 ABI for 64-bit mode [CONFIG_X86_X32]
 </screen>
-
     </note>
     
     <variablelist>
