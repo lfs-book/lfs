@@ -127,6 +127,11 @@ su tester -c "make -k check"</userinput></screen>
 
 <screen><userinput remap="pre">make distclean</userinput></screen>
 
+    <para>Move a tool out of the way which is optionally used by
+    configure but will report invalid pathes for multilib builds.</para>
+
+<screen><userinput remap="configure">mv /usr/bin/ncursesw6-config{,.tmp}</userinput></screen>
+
     <para>Prepare Util-linux for compilation:</para>
 
 <screen revision="sysv"><userinput remap="configure">CC="gcc -m32" \
@@ -144,8 +149,7 @@ su tester -c "make -k check"</userinput></screen>
             --disable-static         \
             --without-python         \
             --without-systemd        \
-            --without-systemdsystemunitdir \
-            --enable-libmount-force-mountinfo</userinput></screen>
+            --without-systemdsystemunitdir</userinput></screen>
 
 <screen revision="systemd"><userinput remap="configure">CC="gcc -m32" \
 ./configure ADJTIME_PATH=/var/lib/hwclock/adjtime   \
@@ -160,8 +164,11 @@ su tester -c "make -k check"</userinput></screen>
             --disable-runuser        \
             --disable-pylibmount     \
             --disable-static         \
-            --without-python         \
-            --enable-libmount-force-mountinfo</userinput></screen>
+            --without-python</userinput></screen>
+
+    <para>Restore the tool previously moved away:</para>
+
+<screen><userinput remap="configure">mv /usr/bin/ncursesw6-config{.tmp,}</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -186,6 +193,11 @@ rm -rf DESTDIR</userinput></screen>
 
 <screen><userinput remap="pre">make distclean</userinput></screen>
 
+    <para>Move a tool out of the way which is optionally used by
+    configure but will report invalid pathes for multilib builds.</para>
+
+<screen><userinput remap="configure">mv /usr/bin/ncursesw6-config{,.tmp}</userinput></screen>
+
     <para>Prepare Util-linux for compilation:</para>
 
 <screen revision="sysv"><userinput remap="configure">CC="gcc -mx32" \
@@ -203,8 +215,7 @@ rm -rf DESTDIR</userinput></screen>
             --disable-static     \
             --without-python     \
             --without-systemd    \
-            --without-systemdsystemunitdir \
-            --enable-libmount-force-mountinfo</userinput></screen>
+            --without-systemdsystemunitdir</userinput></screen>
 
 <screen revision="systemd"><userinput remap="configure">CC="gcc -mx32" \
 ./configure ADJTIME_PATH=/var/lib/hwclock/adjtime   \
@@ -219,8 +230,11 @@ rm -rf DESTDIR</userinput></screen>
             --disable-runuser    \
             --disable-pylibmount \
             --disable-static     \
-            --without-python     \
-            --enable-libmount-force-mountinfo</userinput></screen>
+            --without-python</userinput></screen>
+
+    <para>Restore the tool previously moved away:</para>
+
+<screen><userinput remap="configure">mv /usr/bin/ncursesw6-config{.tmp,}</userinput></screen>
 
     <para>Compile the package:</para>
 
