@@ -17,6 +17,5 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="creatingpartition.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="creatingfilesystem.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="aboutlfs.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mounting.xml"/>
 
 </chapter>

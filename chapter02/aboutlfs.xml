@@ -15,10 +15,8 @@
   throughout the LFS build process. It should be set to the name of the
   directory where you will be building your LFS system - we will use
   <filename class="directory">/mnt/lfs</filename> as an example, but the
-  directory choice is up to you. If you are building LFS on a separate
-  partition, this directory will be the mount point for the partition.
-  Choose a directory location and set the variable with the
-  following command:</para>
+  directory choice is up to you. Choose a directory location and set the
+  variable with the following command:</para>
 
 <screen role="nodump"><userinput>export LFS=<replaceable>/mnt/lfs</replaceable></userinput></screen>
 
@@ -27,6 +25,13 @@
   will automatically replace <quote>$LFS</quote> with
   <quote>/mnt/lfs</quote> (or whatever the variable was set to) when it
   processes the command line.</para>
+
+  <para>Create the directory:</para>
+
+<screen role="nodump"><userinput>mkdir -pv $LFS</userinput></screen>
+
+  <para>If you don't have much space in the partition holding the directory,
+  you can mount another partition on it.</para>
 
   <caution>
   <para>Do not forget to check that <envar>LFS</envar> is set whenever
