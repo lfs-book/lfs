@@ -20,15 +20,18 @@
   <para>Create the required directory layout by running the following as
   <systemitem class="username">root</systemitem>:</para>
 
-<screen><userinput>mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
+<screen><userinput>mkdir -pv $LFS/{boot,etc,var} $LFS/usr/{bin,lib,sbin}
 
 for i in bin lib sbin; do
   ln -sv usr/$i $LFS/$i
-done
+done</userinput></screen>
 
-case $(uname -m) in
-  x86_64) mkdir -pv $LFS/lib64 ;;
-esac</userinput></screen>
+  <para>Some targets (for example, x86_64) needs
+  <filename class="directory">/lib64</filename> directory.  If you are
+  building for one of those targets, create it as
+  <systemitem class="username">root</systemitem>:</para>
+
+<screen><userinput>mkdir -pv $LFS/lib64</userinput></screen>
 
   <para>Programs in <xref linkend="chapter-temporary-tools"/> will be compiled
   with a cross-compiler (more details in section <xref

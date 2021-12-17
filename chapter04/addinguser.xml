@@ -80,10 +80,7 @@ useradd -s /bin/bash -g lfs -m -k /dev/null lfs</userinput></screen>
   all directories under <filename class="directory">$LFS</filename> by making
   <systemitem class="username">lfs</systemitem> the directory owner:</para>
 
-<screen><userinput>chown -v lfs $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
-case $(uname -m) in
-  x86_64) chown -v lfs $LFS/lib64 ;;
-esac</userinput></screen>
+<screen><userinput>chown -v lfs $LFS/{usr{,/*},lib*,boot,var,etc,bin,sbin,tools}</userinput></screen>
 
   <para>If a separate working directory was created as suggested, give
   user <systemitem class="username">lfs</systemitem> ownership of this
