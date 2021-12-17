@@ -42,7 +42,7 @@ EOF</userinput></screen>
 umask 022
 LFS=/mnt/lfs
 LC_ALL=POSIX
-LFS_TGT=$(uname -m)-lfs-linux-gnu
+LFS_TGT=<replaceable>x86_64</replaceable>-lfs-linux-gnu
 PATH=/usr/bin
 if [ ! -L /bin ]; then PATH=/bin:$PATH; fi
 PATH=$LFS/tools/bin:$PATH
@@ -103,12 +103,15 @@ EOF</userinput></screen>
     </varlistentry>
 
     <varlistentry>
-      <term><parameter>LFS_TGT=(uname -m)-lfs-linux-gnu</parameter></term>
+      <term><parameter>LFS_TGT=<replaceable>x86_64</replaceable>-lfs-linux-gnu</parameter></term>
       <listitem>
   <para>The <envar>LFS_TGT</envar> variable sets a non-default, but compatible machine
   description for use when building our cross compiler and linker and when cross
   compiling our temporary toolchain. More information is contained in
-  <xref linkend="ch-tools-toolchaintechnotes" role=""/>.</para>
+  <xref linkend="ch-tools-toolchaintechnotes" role=""/>.
+  If you are not building for 64-bit x86, replace
+  <replaceable>x86_64</replaceable> with some value suitable for your target
+  machine, for example <literal>i686</literal> for 32-bit x86.</para>
       </listitem>
     </varlistentry>
 
