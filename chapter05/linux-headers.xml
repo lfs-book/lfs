@@ -56,9 +56,10 @@
     used, because it requires <application>rsync</application>, which may not
     be available. The headers are first placed in
     <filename class="directory">./usr</filename>, then copied to the needed
-    location.</para>
+    location.  Replace <replaceable>x86</replaceable> with a value suitable
+    for your target machine if it's not a 32-bit or 64-bit x86:</para>
 
-<screen><userinput remap="make">make headers
+<screen><userinput remap="make">make headers ARCH=<replaceable>x86</replaceable>
 find usr/include -name '.*' -delete
 rm usr/include/Makefile
 </userinput><userinput remap="install">cp -rv usr/include $LFS/usr</userinput></screen>
