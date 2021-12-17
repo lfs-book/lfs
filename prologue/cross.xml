@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="pre-cross">
+  <?dbhtml filename="cross.html"?>
+
+  <title>About the Cross Edition</title>
+
+  <para>While LFS has provided an approach to build a Linux system entirely
+  from source code, it builds the LFS system in a
+  <emphasis>chroot</emphasis> environment.  The chroot environment is almost
+  seperate from the host distribution, but it still relies on the hardware
+  and Linux kernel from the host system.</para>
+
+  <para>The Cross Edition contains modification to the LFS book, allowing
+  to boot the temporary system instead of chroot.  So it's possible to
+  bootstrap a Linux system for a target where no Linux distribution exists.
+  And, the kernel ABI may frequently change at the early stage porting Linux
+  to a new hardware.  The modification in this edition completely removes
+  the dependency on the kernel from the host distribution, allowing to
+  rebuild the entire system with a new kernel ABI.</para>
+
+  <para>If you already have a Linux distribution running on the hardware
+  where you need a Linux From Scratch system, with the kernel ABI you want,
+  and it's compatible with the Host System Requirements specified by the
+  LFS book, it's likely you should read the original LFS book instead of
+  this edition.</para>
+
+  <para>This edition contains instructions to bootstrap a Linux system for
+  x86 (32-bit or 64-bit).  It may looks irrational because it's easy to
+  find a host distribution for x86, but this edition can be a start point
+  where you can further modify the instruction for other hardware.</para>
+
+  <sect2>
+    <title>History of Cross LFS</title>
+
+    <para>A project named <emphasis>Cross Linux From Scratch</emphasis>
+    was forked from LFS in 2006, by Joe Ciccone, Jim Gifford, and
+    Ryan Oliver.  It has been inactive since 2017.  Its history can still
+    be explored at <ulink url='https://trac.clfs.org/'/>.</para>
+
+    <para>In 2020, Pierre Labastie modified the LFS book to cross-compile
+    the temporary packages before entering the chroot environment.  The main
+    purpose of this approach was to fix multiple issues found by Iterative
+    Comparision Analysis.  With Pierre's work, the only change needed by
+    this edition is basically <quote>to reboot instead of chroot</quote>.
+    However, some additional steps is needed to make the system bootable
+    at the end of Chapter 6, and setting up an environment suitable for
+    building and test packages at the start of Chapter 7.  Then this Cross
+    Edition is created to demonstrate these steps.</para>
+  </sect2>
+
+</sect1>
