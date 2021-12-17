@@ -131,6 +131,43 @@
       </varlistentry>
 
       <varlistentry>
+        <term>Set <parameter>CONFIG_EXTRA_FIRMWARE="<replaceable>a.bin b.bin</replaceable>"</parameter></term>
+        <listitem>
+          <para>Build firmware blobs into the kernel.  Some drivers may
+          require the firmwares to be in-kernel if the driver is not built
+          as module.</para>
+          <note>
+            <para>
+              The kernel binaries with third-party blobs are not
+              distributable.  If you distribute such a kernel binary to
+              others, you may violate GPL.  It's recommended to remove the
+              temporary kernel image after you've successfully boot your LFS
+              system with the new kernel image, which will be installed in
+              <xref linkend="ch-bootable-kernel"/>.
+            </para>
+          </note>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Set <parameter>CONFIG_EXTRA_FIRMWARE_DIR="<replaceable>$LFS</replaceable>/lib/firmware"</parameter></term>
+        <listitem>
+          <para>The building system will search
+          <filename class="directory">/lib/firmware</filename> for firmware
+          blobs in <parameter>CONFIG_EXTRA_FIRMWARE</parameter>.  Note that
+          you'll need to install the needed firmwares into
+          <filename class="directory">$LFS/lib/firmware</filename> first,
+          and manually replace <envar>$LFS</envar> with the value in
+          configuration.  The firmwares in
+          <filename class="directory">$LFS/lib/filename</filename> will be
+          copied to the target machine along with the system, so kernel and
+          kernel modules which will be built in
+          <xref linkend="ch-bootable-kernel"/> can load them without
+          <parameter>CONFIG_EXTRA_FIRMWARE</parameter>.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
         <term>Enable <parameter>CONFIG_EXT2</parameter>,
                      <parameter>CONFIG_EXT4</parameter>,
                  and <parameter>CONFIG_VFAT_FS</parameter></term>
