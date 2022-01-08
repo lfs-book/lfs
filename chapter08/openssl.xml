@@ -112,15 +112,13 @@ make MANSUFFIX=ssl install</userinput></screen>
 
     <para>Prepare OpenSSL for compilation:</para>
 
-<screen><userinput remap="configure">MACHINE="i686"             \
-CC="gcc -m32 -march=i686"  \
-CXX="g++ -m32 -march=i686" \
-    ./config               \
-    --prefix=/usr          \
-    --openssldir=/etc/ssl  \
-    --libdir=lib32         \
-    shared                 \
-    zlib-dynamic</userinput></screen>
+<screen><userinput remap="configure">CFLAGS="-m32 -march=i686 -Wall -O3" CXXFLAGS="$CFLAGS" \
+./config --prefix=/usr         \
+         --openssldir=/etc/ssl \
+         --libdir=lib32        \
+         shared                \
+         zlib-dynamic          \
+         linux-generic32</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -147,15 +145,13 @@ rm -rf DESTDIR</userinput></screen>
 
     <para>Prepare OpenSSL for compilation:</para>
 
-<screen><userinput remap="configure">MACHINE="x86_64"          \
-CC="gcc -mx32"            \
-CXX="g++ -mx32"           \
-    ./config              \
-    --prefix=/usr         \
-    --openssldir=/etc/ssl \
-    --libdir=libx32       \
-    shared                \
-    zlib-dynamic</userinput></screen>
+<screen><userinput remap="configure">CFLAGS="-mx32 -march=x86-64 -Wall -O3" CXXFLAGS="$CFLAGS" \
+./config --prefix=/usr         \
+         --openssldir=/etc/ssl \
+         --libdir=libx32       \
+         shared                \
+         zlib-dynamic          \
+         linux-x32</userinput></screen>
 
     <para>Compile the package:</para>
 
