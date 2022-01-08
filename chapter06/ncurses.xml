@@ -183,9 +183,8 @@ CXX="$LFS_TGT-g++ -m32"             \
             --without-debug         \
             --without-ada           \
             --without-normal        \
-            --enable-pc-files       \
-            --enable-widec          \
-            --with-pkg-config-libdir=/usr/lib32/pkgconfig</userinput></screen>
+            --disable-stripping     \
+            --enable-widec</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -223,9 +222,8 @@ CXX="$LFS_TGT-g++ -mx32"            \
             --without-debug         \
             --without-ada           \
             --without-normal        \
-            --enable-pc-files       \
-            --enable-widec          \
-            --with-pkg-config-libdir=/usr/libx32/pkgconfig</userinput></screen>
+            --disable-stripping     \
+            --enable-widec</userinput></screen>
 
     <para>Compile the package:</para>
 
