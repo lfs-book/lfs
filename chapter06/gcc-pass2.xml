@@ -52,9 +52,7 @@ mv -v mpfr-&mpfr-version; mpfr
 tar -xf ../gmp-&gmp-version;.tar.xz
 mv -v gmp-&gmp-version; gmp
 tar -xf ../mpc-&mpc-version;.tar.gz
-mv -v mpc-&mpc-version; mpc</userinput>
-<userinput remap="pre" arch="ml_32,ml_x32,ml_all">tar -xf ../isl-&isl-version;.tar.xz
-mv -v isl-&isl-version; isl</userinput></screen>
+mv -v mpc-&mpc-version; mpc</userinput></screen>
 
 
     <para arch="default">If building on x86_64, change the default directory name for 64-bit
