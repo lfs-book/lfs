@@ -89,7 +89,6 @@ cd       build</userinput></screen>
              --enable-multilib           \
              --with-multilib-list=$mlist \
              --disable-bootstrap         \
-             --with-isl                  \
              --with-system-zlib</userinput></screen>
 
     <para>Note that for other programming languages there are some prerequisites that
