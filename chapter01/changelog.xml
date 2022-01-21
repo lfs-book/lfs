@@ -50,6 +50,10 @@
           <para>[pierre] - Update to meson-0.61.1. Fixes
           <ulink url="&lfs-ticket-root;4985">#4985</ulink>.</para>
         </listitem>
+        <listitem arch="ml_32,ml_x32,ml_all">
+          <para>[thomas] - Upgrade ISL-0.24, change download location and
+            fix usage in the final gcc.</para>
+        </listitem>
       </itemizedlist>
     </listitem>
 
