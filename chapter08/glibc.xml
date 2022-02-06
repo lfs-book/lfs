@@ -49,6 +49,10 @@
     <screen><userinput remap="pre">sed -e '/NOTIFY_REMOVED)/s/)/ \&amp;\&amp; data.attr != NULL)/' \
     -i sysdeps/unix/sysv/linux/mq_notify.c</userinput></screen>
 -->
+    <para>Fix some issues identified after release of Glibc-&glibc-version;:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-patch;</userinput></screen>
+    
     <para>Some of the Glibc programs use the non-FHS compliant
     <filename class="directory">/var/db</filename> directory to store
     their runtime data. Apply the following patch to make such programs
