@@ -240,10 +240,10 @@
 <!ENTITY libstdcpp-tmpp2-du "1.1 GB">
 <!ENTITY libstdcpp-tmpp2-sbu "0.8 SBU">
 
-<!ENTITY gdbm-version "1.22">
-<!ENTITY gdbm-size "1065 KB">
+<!ENTITY gdbm-version "1.23">
+<!ENTITY gdbm-size "1,092 KB">
 <!ENTITY gdbm-url "&gnu;gdbm/gdbm-&gdbm-version;.tar.gz">
-<!ENTITY gdbm-md5 "0bbd38f12656e4728e2f7c4708aec014">
+<!ENTITY gdbm-md5 "8551961e36bf8c70b7500d255d3658ec">
 <!ENTITY gdbm-home "&gnu-software;gdbm/">
 <!ENTITY gdbm-fin-du "11 MB">
 <!ENTITY gdbm-fin-sbu "0.1 SBU">
@@ -476,10 +476,10 @@
 <!ENTITY make-fin-du "13 MB">
 <!ENTITY make-fin-sbu "0.6 SBU">
 
-<!ENTITY man-db-version "2.9.4">
-<!ENTITY man-db-size "1,865 KB">
+<!ENTITY man-db-version "2.10.0">
+<!ENTITY man-db-size "1,844 KB">
 <!ENTITY man-db-url "&savannah;/releases/man-db/man-db-&man-db-version;.tar.xz">
-<!ENTITY man-db-md5 "6e233a555f7b9ae91ce7cd0faa322bce">
+<!ENTITY man-db-md5 "96009cd422f2e62b01b8c4de0f5691f1">
 <!ENTITY man-db-home "https://www.nongnu.org/man-db/">
 <!ENTITY man-db-fin-du "38 MB">
 <!ENTITY man-db-fin-sbu "0.4 SBU">
@@ -685,15 +685,15 @@
 <!ENTITY tar-fin-du "40 MB">
 <!ENTITY tar-fin-sbu "1.9 SBU">
 
-<!ENTITY tcl-version "8.6.11">
+<!ENTITY tcl-version "8.6.12">
 <!ENTITY tcl-major-version "8.6">
-<!ENTITY tcl-size "10,020 KB">
+<!ENTITY tcl-size "10,112 KB">
 <!ENTITY tcl-url "https://downloads.sourceforge.net/tcl/tcl&tcl-version;-src.tar.gz">
-<!ENTITY tcl-md5 "8a4c004f48984a03a7747e9ba06e4da4">
+<!ENTITY tcl-md5 "87ea890821d2221f2ab5157bc5eb885f">
 <!ENTITY tcl-home "http://tcl.sourceforge.net/">
 <!ENTITY tcl-docs-url "https://downloads.sourceforge.net/tcl/tcl&tcl-version;-html.tar.gz">
-<!ENTITY tcl-docs-md5 "e358a9140c3a171e42f18c8a7f6a36ea">
-<!ENTITY tcl-docs-size "1,172 KB">
+<!ENTITY tcl-docs-md5 "a0d1a5b60bbb68f2f0bd3066a19c527a">
+<!ENTITY tcl-docs-size "1,176 KB">
 <!ENTITY tcl-tmp-du "80 MB">
 <!ENTITY tcl-tmp-sbu "3.7 SBU">
 

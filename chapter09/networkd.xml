@@ -192,7 +192,12 @@ EOF</userinput></screen>
 
       <para>When using <command>systemd-resolved</command> for DNS
       configuration, it creates the file
-      <filename>/run/systemd/resolve/resolv.conf</filename>.</para>
+      <filename>/run/systemd/resolve/stub-resolv.conf</filename>.
+      And, if <filename>/etc/resolv.conf</filename> does not exist, it
+      will be created by <command>systemd-resolved</command> as a symlink to
+      <filename>/run/systemd/resolve/stub-resolv.conf</filename>. So it's
+      unnecessary to create a <filename>/etc/resolv.conf</filename>
+      manually.</para>
       <!--Create a
       symlink in <filename>/etc</filename> to use the generated file:</para>
 
@@ -344,7 +349,7 @@ EOF</userinput></screen>
      changed for specific uses or requirements (if assigned an IP address by a
      network/system administrator and the machine will be connected to an
      existing network). The optional alias name(s) can be omitted, and the
-     <replaceable>&lt;192.168.0.2</replaceable> line can be omitted if you
+     <replaceable>&lt;192.168.0.2&gt;</replaceable> line can be omitted if you
      are using a connection configured with DHCP or IPv6 Autoconfiguration.</para>
 
      <para>The ::1 entry is the IPv6 counterpart of 127.0.0.1 and represents

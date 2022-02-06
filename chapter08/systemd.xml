@@ -58,7 +58,6 @@
 <screen><userinput remap="configure">mkdir -p build
 cd       build
 
-LANG=en_US.UTF-8                    \
 meson --prefix=/usr                 \
       --sysconfdir=/etc             \
       --localstatedir=/var          \
@@ -131,7 +130,7 @@ meson --prefix=/usr                 \
           services responsible for setting up the
           <filename>/etc/group</filename> and
           <filename>/etc/passwd</filename> files. Both files
-          were created earlier in this chapter. This daemon is not useful
+          were created in the previous chapter. This daemon is not useful
           on an LFS system since user accounts are manually created.</para>
         </listitem>
       </varlistentry>
@@ -173,11 +172,11 @@ meson --prefix=/usr                 \
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">LANG=en_US.UTF-8 ninja</userinput></screen>
+<screen><userinput remap="make">ninja</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">LANG=en_US.UTF-8 ninja install</userinput></screen>
+<screen><userinput remap="install">ninja install</userinput></screen>
 
     <para>Install the man pages:</para>
 
