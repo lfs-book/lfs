@@ -43,6 +43,9 @@
       <para>2022-02-15</para>
       <itemizedlist>
         <listitem>
+          <para>[bdubbs] - LFS-11.1-rc1 released.</para>
+        </listitem>
+        <listitem>
           <para>[bdubbs] - Add binutils-2.38 LTO patch. Fixes
           <ulink url="&lfs-ticket-root;5011">#5011</ulink>.</para>
         </listitem>
