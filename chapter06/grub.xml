@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-tools-grub" role="wrap">
+  <?dbhtml filename="grub.html"?>
+
+  <sect1info condition="script">
+    <productname>grub</productname>
+    <productnumber>&grub-version;</productnumber>
+    <address>&grub-url;</address>
+  </sect1info>
+
+  <title>GRUB-&grub-version;</title>
+
+  <indexterm zone="ch-tools-grub">
+    <primary sortas="a-Grub">GRUB</primary>
+    <secondary>tools</secondary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="../chapter08/grub.xml"
+    xpointer="xpointer(/sect1/sect2[1]/para[1])"/>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&grub-tmp-sbu;</seg>
+        <seg>&grub-tmp-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of GRUB</title>
+
+    <para>Prepare GRUB for compilation:</para>
+
+<screen><userinput remap="configure">./configure --prefix=$LFS/tools               \
+            --build=$(build-aux/config.guess) \
+            --host=$(build-aux/config.guess)  \
+            --target=$LFS_TGT                 \
+            --program-prefix=lfs-             \
+            --disable-werror</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the new configure options:</title>
+
+      <varlistentry>
+        <term><parameter>--build=..., --host=..., and --target=$LFS_TGT</parameter></term>
+        <listitem>
+          <para>This allows the build to generate GRUB utilities running on
+          the host system, but generating the bootloader files for $LFS_TGT.
+          Then we can use the bootloader files to boot the temporary system
+          on the target machine.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--program-prefix=lfs-</parameter></term>
+        <listitem>
+          <para>This ensures that the installed programs have
+          <literal>lfs-</literal> prepended to their names, to better
+          distinguish them from the GRUB installation of the host
+          distro.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-werror</parameter></term>
+        <listitem>
+          <para>This allows the build to complete with warnings introduced
+          by more recent Flex versions.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title/>
+
+    <para>Details on this package are located in
+    <xref linkend="contents-gRUB" role="."/></para>
+
+  </sect2>
+
+</sect1>

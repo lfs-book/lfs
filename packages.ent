@@ -309,6 +309,8 @@
 <!ENTITY grub-home "&gnu-software;grub/">
 <!ENTITY grub-fin-du "158 MB">
 <!ENTITY grub-fin-sbu "0.7 SBU">
+<!ENTITY grub-tmp-du "158 MB">
+<!ENTITY grub-tmp-sbu "0.7 SBU">
 
 <!ENTITY gzip-version "1.11">
 <!ENTITY gzip-size "786 KB">
