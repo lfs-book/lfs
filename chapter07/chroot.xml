@@ -63,6 +63,11 @@ bash: no job control in this shell</computeroutput></screen>
   <computeroutput>I have no name!</computeroutput> This is normal because the
   <filename>/etc/passwd</filename> file has not been created yet.</para>
 
+  <para>Now set up a temporary hostname, which is required by test suite of
+  some packages:</para>
+
+<screen><userinput>hostname lfs</userinput></screen>
+
   <note>
     <para>It is important that all the commands throughout the remainder of this
     chapter and the following chapters are run from within the environment
