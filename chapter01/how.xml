@@ -8,11 +8,11 @@
 <sect1 id="ch-intro-how">
   <?dbhtml filename="how.html"?>
 
-  <title>How to Build an LFS System</title>
+  <title>How to Cross Build an LFS System</title>
 
   <para>The LFS system will be built by using an already installed
-  Linux distribution (such as Debian, OpenMandriva, Fedora, or openSUSE). This
-  existing Linux system (the host) will be used as a starting point to
+  UNIX-like system (such as Debian Linux or Mac OS X). This
+  existing UNIX-like system (the host) will be used as a starting point to
   provide necessary programs, including a compiler, linker, and shell,
   to build the new system. Select the <quote>development</quote> option
   during the distribution installation to be able to access these
@@ -53,19 +53,19 @@
   <para><xref linkend="chapter-temporary-tools"/> shows you how to
   cross-compile basic utilities using the just built cross-toolchain.</para>
 
-  <para><xref linkend="chapter-chroot-temporary-tools"/> then enters a
-  "chroot" environment and uses the previously built tools to build
-  the additional tools needed to build and test the final system.</para>
+  <para><xref linkend="chapter-chroot-temporary-tools"/> then boots the
+  minimal Linux environment on the target machine and uses the previously
+  built tools to build the additional tools needed to build and test the
+  final system.  Note that in the book the minimal Linux environment may be
+  referred as <quote>chroot environment</quote> only to keep the consistency
+  with the original LFS book.</para>
 
   <para>This effort to isolate the new system from the host distribution may
   seem excessive. A full technical explanation as to why this is done is
   provided in <xref linkend="ch-tools-toolchaintechnotes"/>.</para>
 
   <para>In <xref linkend="chapter-building-system"/>, The
-  full LFS system is built. Another advantage provided by the chroot
-  environment is that it allows you to continue using the host system
-  while LFS is being built. While waiting for package compilations to
-  complete, you can continue using your computer as normal.</para>
+  full LFS system is built.</para>
 
   <para>To finish the installation, the basic system configuration is set up in
   <xref linkend="chapter-config"/>, and the kernel and boot loader are set
