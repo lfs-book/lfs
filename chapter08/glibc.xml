@@ -72,7 +72,7 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="configure">../configure --prefix=/usr                            \
              --disable-werror                         \
-             --enable-kernel=&min-kernel;                      \
+             --enable-kernel=&linux-major-version;.&linux-minor-version;                     \
              --enable-stack-protector=strong          \
              --with-headers=/usr/include              \
              libc_cv_slibdir=/usr/lib</userinput></screen>
@@ -89,10 +89,11 @@ cd       build</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--enable-kernel=&min-kernel;</parameter></term>
+        <term><parameter>--enable-kernel=&linux-major-version;.&linux-minor-version;</parameter></term>
         <listitem>
           <para>This option tells the build system that this glibc may
-          be used with kernels as old as &min-kernel;. This means generating
+          be used with kernels as old as
+          &linux-major-version;.&linux-minor-version;. This means generating
           workarounds in case a system call introduced in a later version
           cannot be used.</para>
         </listitem>

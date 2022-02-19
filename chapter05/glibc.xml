@@ -91,7 +91,7 @@ cd       build</userinput></screen>
       --prefix=/usr                      \
       --host=$LFS_TGT                    \
       --build=$(../scripts/config.guess) \
-      --enable-kernel=&min-kernel;                \
+      --enable-kernel=&linux-major-version;.&linux-minor-version;               \
       --with-headers=$LFS/usr/include    \
       libc_cv_slibdir=/usr/lib</userinput></screen>
 
@@ -108,11 +108,13 @@ cd       build</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--enable-kernel=&min-kernel;</parameter></term>
+        <term><parameter>--enable-kernel=&linux-major-version;.&linux-minor-version;</parameter></term>
         <listitem>
-          <para>This tells Glibc to compile the library with support
-          for &min-kernel; and later Linux kernels.  Workarounds for older
-          kernels are not enabled.</para>
+          <para>This option tells the build system that this glibc may
+          be used with kernels as old as
+          &linux-major-version;.&linux-minor-version;. This means generating
+          workarounds in case a system call introduced in a later version
+          cannot be used.</para>
         </listitem>
       </varlistentry>
 
