@@ -35,6 +35,11 @@
     </listitem>
 
     <listitem>
+      <!-- needed to cross build the kernel in chapter 6 -->
+      <para><emphasis role="strong">Bc-1.07.0</emphasis></para>
+    </listitem>
+
+    <listitem>
       <para><emphasis role="strong">Bison-2.7</emphasis> (/usr/bin/yacc
       should be a link to bison or small script that executes bison)</para>
     </listitem>
@@ -139,6 +144,7 @@ echo "/bin/sh -&gt; $MYSH"
 echo $MYSH | grep -q bash || echo "ERROR: /bin/sh does not point to bash"
 unset MYSH
 
+bc --version | head -n1
 echo -n "Binutils: "; ld --version | head -n1 | cut -d" " -f3-
 bison --version | head -n1
 

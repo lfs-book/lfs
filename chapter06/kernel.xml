@@ -168,12 +168,24 @@
       </varlistentry>
 
       <varlistentry>
-        <term>Enable <parameter>CONFIG_EXT2</parameter>,
-                     <parameter>CONFIG_EXT4</parameter>,
-                 and <parameter>CONFIG_VFAT_FS</parameter></term>
+        <term>Set <parameter>CONFIG_EXT2=y</parameter>,
+                  <parameter>CONFIG_EXT4=y</parameter>,
+              and <parameter>CONFIG_VFAT_FS=y</parameter></term>
         <listitem>
           <para>They are needed to access the filesystems we'll make for the
           target system.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Set <parameter>CONFIG_MODULE_SIG=n</parameter>,
+                  <parameter>CONFIG_SECURITY=n</parameter>,
+              and <parameter>CONFIG_STACK_VALIDATION=n</parameter></term>
+        <listitem>
+          <para>They are unneeded for the temporary kernel, and they need
+          additional dependencies which may be unavailable on the host
+          distro. You can enable them building the kernel for the final LFS
+          system in Chapter 10 if you need these features.</para>
         </listitem>
       </varlistentry>
     </variablelist>
