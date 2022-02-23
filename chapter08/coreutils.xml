@@ -116,6 +116,10 @@ FORCE_UNSAFE_CONFIGURE=1 ./configure \
 
 <screen><userinput remap="test">make NON_ROOT_USERNAME=tester check-root</userinput></screen>
 
+    <!-- TODO: Only happens in clfs-ng.  Need to investigate.  -->
+    <para>One test named <filename>chroot-credentials.sh</filename> is
+    known to fail, but it will pass after booting the LFS system.</para>
+
     <para>We're going to run the remainder of the tests as the
     <systemitem class="username">tester</systemitem> user. Certain tests
     require that the user be a member of more than one group. So that
