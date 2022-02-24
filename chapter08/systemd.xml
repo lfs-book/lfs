@@ -51,7 +51,7 @@
     rules:</para>
 
  <screen><userinput remap="pre">sed -i -e 's/GROUP="render"/GROUP="video"/' \
-        -e 's/GROUP="sgx", //' rules.d/50-udev-default.rules.in</userinput></screen>
+       -e 's/GROUP="sgx", //' rules.d/50-udev-default.rules.in</userinput></screen>
 
     <para>Prepare systemd for compilation:</para>
 
@@ -194,13 +194,6 @@ meson --prefix=/usr                 \
     <para>Setup the basic target structure:</para>
 
 <screen><userinput remap="adjust">systemctl preset-all</userinput></screen>
-
-    <para>Disable a service that is known to cause problems with systems that
-    use a network configuration other than what is provided by
-    systemd-networkd:</para>
-    <!-- Observed halting startup with dhcpcd handling the primary NIC -->
-
-<screen><userinput remap="adjust">systemctl disable systemd-time-wait-sync.service</userinput></screen>
 
 <!-- dev: 50-pid-max.conf is not removed in BLFS, so I commented the following out.
           If it causes any trouble, we can add this back and also copy it into BLFS -->
