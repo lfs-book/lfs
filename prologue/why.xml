@@ -291,7 +291,16 @@
 
         <para>This package contains programs for basic and advanced IPv4 and
         IPv6 networking.  It was chosen over the other common network
-        tools package (net-tools) for its IPv6 capabilities.  </para>
+        tools package (net-tools) for its IPv6 capabilities.</para>
+      </listitem>
+
+      <listitem>
+        <para>ISL</para>
+
+	<para>This package provides a thread-safe C library for manipulating 
+	sets and relations of integer points bounded by affine constraints.
+        It is used as backend polyhedral library in the GCC Graphite framework
+        and in the LLVM Polly framework for loop optimizations.</para>
       </listitem>
 
       <listitem revision="systemd">

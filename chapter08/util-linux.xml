@@ -511,16 +511,6 @@ su tester -c "make -k check"</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="i386">
-        <term><command>i386</command></term>
-        <listitem>
-          <para>A symbolic link to setarch</para>
-          <indexterm zone="ch-system-util-linux i386">
-            <primary sortas="b-i386">i386</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
       <varlistentry id="ionice">
         <term><command>ionice</command></term>
         <listitem>
@@ -1255,16 +1245,6 @@ su tester -c "make -k check"</userinput></screen>
           <para>Wipes a filesystem signature from a device</para>
           <indexterm zone="ch-system-util-linux wipefs">
             <primary sortas="b-wipefs">wipefs</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="x86_64">
-        <term><command>x86_64</command></term>
-        <listitem>
-          <para>A symbolic link to setarch</para>
-          <indexterm zone="ch-system-util-linux x86_64">
-            <primary sortas="b-x86_64">x86_64</primary>
           </indexterm>
         </listitem>
       </varlistentry>

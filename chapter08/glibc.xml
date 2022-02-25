@@ -49,6 +49,7 @@
     <screen><userinput remap="pre">sed -e '/NOTIFY_REMOVED)/s/)/ \&amp;\&amp; data.attr != NULL)/' \
     -i sysdeps/unix/sysv/linux/mq_notify.c</userinput></screen>
 -->
+
     <para>Some of the Glibc programs use the non-FHS compliant
     <filename class="directory">/var/db</filename> directory to store
     their runtime data. Apply the following patch to make such programs
@@ -139,8 +140,8 @@ cd       build</userinput></screen>
 
 <!-- Use remap="make" here to work around a jhalfs issue. -->
 <!--<screen><userinput remap="make">case $(uname -m) in
-  i?86)   ln -sfnv $PWD/elf/ld-linux.so.2        /lib ;;
-  x86_64) ln -sfnv $PWD/elf/ld-linux-x86-64.so.2 /lib ;;
+  arm*)   ln -sfnv $PWD/elf/ld-linux-armhf.so.3        /lib ;;
+  aarch64) ln -sfnv $PWD/elf/ld-linux-aarch64.so.1 /lib ;;
 esac</userinput></screen>
 
     <note><para>The symbolic link above is needed to run the tests at this
@@ -433,7 +434,8 @@ unset ZONEINFO</userinput></screen>
     </indexterm>
 
     <para>By default, the dynamic loader (<filename
-    class="libraryfile">/lib/ld-linux.so.2</filename>) searches through
+    class="libraryfile">/lib/ld-linux-armhf.so.3
+    /lib/ld-linux-aarch64.so.1</filename>) searches through
     <filename class="directory">/lib</filename> and <filename
     class="directory">/usr/lib</filename> for dynamic libraries that are
     needed by programs as they are run. However, if there are libraries in
@@ -482,11 +484,10 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
       <seglistitem>
         <seg>gencat, getconf, getent, iconv, iconvconfig, ldconfig,
         ldd, lddlibc4,
-        ld.so (symlink to ld-linux-x86-64.so.2 or ld-linux.so.2),
-        locale, localedef, makedb, mtrace, nscd,
+        locale, localedef, makedb, mtrace, ncsd,
         pcprofiledump, pldd, sln, sotruss, sprof, tzselect, xtrace,
         zdump, and zic</seg>
-        <seg>ld-linux-x86-64.so.2, ld-linux.so.2,
+        <seg>ld-linux-aarch64.so.1 or ld-linux{,-armhf}.so.3,
         libBrokenLocale.{a,so}, libanl.{a,so},
         libc.{a,so}, libc_nonshared.a, libc_malloc_debug.so,
         libcrypt.{a,so}, libdl.{a,so.2}, libg.a, libm.{a,so},

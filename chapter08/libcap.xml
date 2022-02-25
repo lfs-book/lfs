@@ -59,8 +59,8 @@
         <listitem>
           <para>This parameter sets the library directory to
           <filename>/usr/lib</filename> rather than
-          <filename>/usr/lib64</filename> on x86_64. It has no effect on
-          x86.</para>
+          <filename>/usr/lib64</filename> on aarch64. It has no effect on
+          arm.</para>
         </listitem>
       </varlistentry>
     </variablelist>

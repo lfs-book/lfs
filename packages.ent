@@ -229,7 +229,7 @@
 <!ENTITY gcc-tmpp2-sbu "11 SBU">
 <!ENTITY gcc-fin-du "4.3 GB ">
 <!ENTITY gcc-fin-sbu "153 SBU (with tests)">
-<!ENTITY libquadmath-version "0.0.0">
+<!--!ENTITY libquadmath-version "0.0.0"-->
 <!ENTITY libstdcpp-version   "6.0.29">
 <!ENTITY libitm-version      "1.0.0">
 <!ENTITY libatomic-version   "1.2.0">
@@ -352,6 +352,15 @@
 <!ENTITY iproute2-home "&kernel;linux/utils/net/iproute2/">
 <!ENTITY iproute2-fin-du "15 MB">
 <!ENTITY iproute2-fin-sbu "0.2 SBU">
+
+<!ENTITY isl-version "0.24">
+<!ENTITY isl-size "1,886 KB">
+<!ENTITY isl-url "https://libisl.sourceforge.io/isl-&isl-version;.tar.xz">
+<!ENTITY isl-md5 "fae030f604a9537adc2502990a8ab4d1">
+<!ENTITY isl-sha256 "043105cc544f416b48736fff8caf077fb0663a717d06b1113f16e391ac99ebad">
+<!ENTITY isl-home "https://libisl.sourceforge.io">
+<!ENTITY isl-fin-du "5.6 MB">
+<!ENTITY isl-fin-sbu "0.4 SBU">
 
 <!ENTITY jinja2-version "3.0.3">
 <!ENTITY jinja2-size "263 KB">

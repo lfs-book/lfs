@@ -49,13 +49,13 @@
     -e 's/return kAltStackSize/return SIGSTKSZ * 4/' \
     -i libsanitizer/sanitizer_common/sanitizer_posix_libcdep.cpp</userinput></screen>
 
-    <para>If building on x86_64, change the default directory name for 64-bit
+    <para>If building on aarch64, change the default directory name for 64-bit
     libraries to <quote>lib</quote>:</para>
 
 <screen><userinput remap="pre">case $(uname -m) in
-  x86_64)
-    sed -e '/m64=/s/lib64/lib/' \
-        -i.orig gcc/config/i386/t-linux64
+  aarch64)
+    sed -e '/mabi.lp64=/s/lib64/lib/' \
+        -i.orig gcc/config/aarch64/t-aarch64-linux
   ;;
 esac</userinput></screen>
 
@@ -221,9 +221,9 @@ rm -rf /usr/lib/gcc/$(gcc -dumpmachine)/&gcc-version;/include-fixed/bits/</useri
     href="adjusting.xml"
     xpointer="xpointer(//*[@os='f'])"/>
 
-<screen><computeroutput>/usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/../../../../lib/crt1.o succeeded
-/usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/../../../../lib/crti.o succeeded
-/usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/../../../../lib/crtn.o succeeded</computeroutput></screen>
+<screen><computeroutput>/usr/lib/gcc/aarch64-unknown-linux-gnu/&gcc-version;/../../../../lib/crt1.o succeeded
+/usr/lib/gcc/aarch64-unknown-linux-gnu/&gcc-version;/../../../../lib/crti.o succeeded
+/usr/lib/gcc/aarch64-unknown-linux-gnu/&gcc-version;/../../../../lib/crtn.o succeeded</computeroutput></screen>
 
   <para>Depending on your machine architecture, the above may differ slightly.
   The difference will be the name of the directory
@@ -243,9 +243,9 @@ rm -rf /usr/lib/gcc/$(gcc -dumpmachine)/&gcc-version;/include-fixed/bits/</useri
     xpointer="xpointer(//*[@os='h'])"/>
 
 <screen><computeroutput>#include &lt;...&gt; search starts here:
- /usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/include
+ /usr/lib/gcc/aarch-64-unknown-linux-gnu/&gcc-version;/include
  /usr/local/include
- /usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/include-fixed
+ /usr/lib/gcc/aarch64-unknown-linux-gnu/&gcc-version;/include-fixed
  /usr/include</computeroutput></screen>
 
    <para>Again, the directory named after your target triplet may be
@@ -263,23 +263,19 @@ rm -rf /usr/lib/gcc/$(gcc -dumpmachine)/&gcc-version;/include-fixed/bits/</useri
     href="adjusting.xml"
     xpointer="xpointer(//*[@os='k'])"/>
 
-<screen><computeroutput>SEARCH_DIR("/usr/x86_64-pc-linux-gnu/lib64")
+<screen><computeroutput>SEARCH_DIR("/usr/aarch64-unknown-linux-gnu/lib64")
 SEARCH_DIR("/usr/local/lib64")
 SEARCH_DIR("/lib64")
 SEARCH_DIR("/usr/lib64")
-SEARCH_DIR("/usr/x86_64-pc-linux-gnu/lib")
+SEARCH_DIR("/usr/aarch64-unknown-linux-gnu/lib")
 SEARCH_DIR("/usr/local/lib")
 SEARCH_DIR("/lib")
 SEARCH_DIR("/usr/lib");</computeroutput></screen>
 
    <para>A 32-bit system may see a few different directories. For example, here
-   is the output from an i686 machine:</para>
+   is the output from a 32bit ARM  machine:</para>
 
-<screen><computeroutput>SEARCH_DIR("/usr/i686-pc-linux-gnu/lib32")
-SEARCH_DIR("/usr/local/lib32")
-SEARCH_DIR("/lib32")
-SEARCH_DIR("/usr/lib32")
-SEARCH_DIR("/usr/i686-pc-linux-gnu/lib")
+<screen><computeroutput>SEARCH_DIR("/usr/armv6l-unknown-linux-gnueabihf/lib")
 SEARCH_DIR("/usr/local/lib")
 SEARCH_DIR("/lib")
 SEARCH_DIR("/usr/lib");</computeroutput></screen>
@@ -351,7 +347,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         <seg>libasan.{a,so}, libatomic.{a,so}, libcc1.so, libgcc.a, libgcc_eh.a,
         libgcc_s.so, libgcov.a, libgomp.{a,so}, libitm.{a,so},
         liblsan.{a,so}, liblto_plugin.so,
-        libquadmath.{a,so}, libssp.{a,so}, libssp_nonshared.a,
+        libssp.{a,so}, libssp_nonshared.a,
         libstdc++.{a,so}, libstdc++fs.a, libsupc++.a, libtsan.{a,so},
         and libubsan.{a,so}</seg>
 

@@ -918,8 +918,8 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Diffutils, Findutils, Gawk, GCC,
-          Gettext, Glibc, GMP, Grep, M4, Make, MPC, MPFR, Patch, Perl, Sed,
-          Tar, Texinfo, and Zstd</seg>
+          Gettext, Glibc, GMP, Grep, ISL, M4, Make, MPC, MPFR, Patch, Perl, 
+          Sed, Tar, Texinfo, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -949,8 +949,6 @@
         <seglistitem>
           <seg>
              <ulink url="http://gcc.gnu.org/wiki/GNAT">GNAT</ulink>
-             and
-             <ulink url="https://repo.or.cz/isl.git">ISL</ulink>
           </seg>
         </seglistitem>
       </segmentedlist>
@@ -1472,6 +1470,45 @@
           </seg>
         </seglistitem>
       </segmentedlist>
+
+<!-- Begin ISL dependency info -->
+  <bridgehead renderas="sect2" id="isl-dep">ISL</bridgehead>
+
+      <segmentedlist id="isl-depends">
+        <segtitle>&dependencies;</segtitle>
+        <seglistitem>
+          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep,
+          GMP, Make, Sed, and Texinfo</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="isl-rundeps">
+        <segtitle>&runtime;</segtitle>
+        <seglistitem>
+          <seg>Glibc, GMP</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="isl-testdeps">
+        <segtitle>&testsuites;</segtitle>
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="isl-before">
+        <segtitle>&before;</segtitle>
+        <seglistitem>
+          <seg>GCC</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="isl-optdeps">
+        <segtitle>&external;</segtitle>
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+</segmentedlist>
 
 <!-- Begin Jinja2 dependency info -->
   <bridgehead renderas="sect2" id="jinja2-dep">Jinja2</bridgehead>

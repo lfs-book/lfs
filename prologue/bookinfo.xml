@@ -29,7 +29,14 @@
       <firstname>Editor: DJ</firstname>
       <surname>Lucas</surname>
     </author>
+
+    <author>
+      <firstname>Editor: William</firstname>
+      <surname>Harrington</surname>
+    </author>
+
   </authorgroup>
+
 
   <copyright id="copyright">
     <year>&copyrightdate;</year>
@@ -37,8 +44,6 @@
   </copyright>
 
   <legalnotice>
-
-    <para>Copyright &copy; &copyrightdate;, Gerard Beekmans</para>
 
     <para>All rights reserved.</para>
 

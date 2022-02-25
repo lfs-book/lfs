@@ -50,11 +50,12 @@
 
     <para>Prepare Expect for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr           \
-            --with-tcl=/usr/lib     \
-            --enable-shared         \
-            --mandir=/usr/share/man \
-            --with-tclinclude=/usr/include</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr                   \
+            --with-tcl=/usr/lib            \
+            --enable-shared                \
+            --mandir=/usr/share/man        \
+            --with-tclinclude=/usr/include \
+            --build=$(uname -m)-unknown-linux-gnu</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -73,6 +74,14 @@
         <listitem>
           <para>This explicitly tells Expect where to find Tcl's internal
           headers.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--build=$(uname -m)-uknown-linux-gnu</parameter></term>
+        <listitem>
+	  <para>This tells Expect what the architecture build of the machine
+          is for ARM.</para>
         </listitem>
       </varlistentry>
 

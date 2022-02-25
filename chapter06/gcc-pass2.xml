@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
-    <para>As in the first build of GCC, the GMP, MPFR, and MPC packages are
+    <para>As in the first build of GCC, the GMP, ISL, MPFR, and MPC packages are
     required. Unpack the tarballs and move them into the required directory
     names:</para>
 
@@ -52,22 +52,21 @@ mv -v mpfr-&mpfr-version; mpfr
 tar -xf ../gmp-&gmp-version;.tar.xz
 mv -v gmp-&gmp-version; gmp
 tar -xf ../mpc-&mpc-version;.tar.gz
-mv -v mpc-&mpc-version; mpc</userinput></screen>
+mv -v mpc-&mpc-version; mpc
+tar -xf ../isl-&isl-version;.tar.xz
+mv -v isl-&isl-version; isl</userinput></screen>
 
-    <para>If building on x86_64, change the default directory name for 64-bit
+
+    <para>If building on aarch64, change the default directory name for 64-bit
     libraries to <quote>lib</quote>:</para>
 
 <screen><userinput remap="pre">case $(uname -m) in
-  x86_64)
-    sed -e '/m64=/s/lib64/lib/' -i.orig gcc/config/i386/t-linux64
+  aarch64)
+    sed -e '/mabi.lp64=/s/lib64/lib/' \
+        -i.orig gcc/config/aarch64/t-aarch64-linux
   ;;
 esac</userinput></screen>
-<!--
-    <para>Fix an issue with GCC-10.1 when building with a cross
-    compiler:</para>
 
-<screen><userinput remap="pre">patch -Np1 -i ../&gcc-cross-patch;</userinput></screen>
--->
     <para>Create a separate build directory again:</para>
 
 <screen><userinput remap="pre">mkdir -v build
@@ -122,7 +121,7 @@ ln -s ../../../libgcc/gthr-posix.h $LFS_TGT/libgcc/gthr-default.h</userinput></s
         <term><parameter>--enable-initfini-array</parameter></term>
         <listitem>
           <para>This option is automatically enabled when building a native
-          compiler with a native compiler on x86. But here, we build with
+          compiler with a native compiler on ARM. But here, we build with
           a cross compiler, so we need to explicitly set this option.</para>
         </listitem>
       </varlistentry>

@@ -64,13 +64,13 @@
 cd unix
 ./configure --prefix=/usr           \
             --mandir=/usr/share/man \
-            $([ "$(uname -m)" = x86_64 ] &amp;&amp; echo --enable-64bit)</userinput></screen>
+            $([ "$(uname -m)" = aarch64 ] &amp;&amp; echo --enable-64bit)</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
 
       <varlistentry>
-        <term><parameter>$([ "$(uname -m)" = x86_64 ] &amp;&amp; echo --enable-64bit)</parameter></term>
+        <term><parameter>$([ "$(uname -m)" = aarch64 ] &amp;&amp; echo --enable-64bit)</parameter></term>
         <listitem>
           <para>The construct <parameter>$(&lt;shell command&gt;)</parameter>
           is replaced by the output of the shell command.  Here this output is

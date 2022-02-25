@@ -71,14 +71,12 @@ Ask your system administrator to create more.</computeroutput></screen>
 <screen><userinput remap="pre">sed -i '63d' etc/texi2pod.pl
 find -name \*.1 -delete</userinput></screen>
 -->
+<!--
+    <para>Now remove one test that prevents the tests from running
+    to completion:</para>
 
-    <para>
-      Now make a fix identified upstream that affects building some packages:
-     </para>
-
-<screen><userinput remap="pre">sed -e '/R_386_TLS_LE /i \   || (TYPE) == R_386_TLS_IE \\' \
-    -i ./bfd/elfxx-x86.h</userinput></screen>
-
+<screen><userinput remap="pre">sed -i '/@\tincremental_copy/d' gold/testsuite/Makefile.in</userinput></screen>
+-->
     <para>The Binutils documentation recommends building Binutils
     in a dedicated build directory:</para>
 
@@ -152,9 +150,9 @@ cd       build</userinput></screen>
           <para>Normally, the tooldir (the directory where the executables will
           ultimately be located) is set to <filename
           class="directory">$(exec_prefix)/$(target_alias)</filename>. For
-          example, x86_64 machines would expand that to <filename
-          class="directory">/usr/x86_64-pc-linux-gnu</filename>. Because this is
-          a custom system, this target-specific directory in <filename
+          example, aarch64 machines would expand that to <filename
+	  class="directory">/usr/aarch64-unknown-linux-gnu</filename>. Because
+	  this is a custom system, this target-specific directory in <filename
           class="directory">/usr</filename> is not required. <filename
           class="directory">$(exec_prefix)/$(target_alias)</filename> would be
           used if the system was used to cross-compile (for example, compiling a

@@ -138,6 +138,9 @@
     <listitem>
       <para>IPRoute2-&iproute2-version;</para>
     </listitem>
+    <!--<listitem>
+      <para>ISL-&isl-version;</para>
+    </listitem>-->
     <listitem revision="systemd">
       <para>Jinja2-&jinja2-version;</para>
     </listitem>

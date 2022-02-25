@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-isl" role="wrap">
+  <?dbhtml filename="isl.html"?>
+
+  <sect1info condition="script">
+    <productname>isl</productname>
+    <productnumber>&isl-version;</productnumber>
+    <address>&isl-url;</address>
+  </sect1info>
+
+  <title>ISL-&isl-version;</title>
+
+  <indexterm zone="ch-system-isl">
+    <primary sortas="a-ISL">ISL</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>ISL is a library for manipulating sets and relations of integer points    bounded by linear constraints.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&isl-fin-sbu;</seg>
+        <seg>&isl-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of ISL</title>
+
+    <note>
+	    <para>CFLAGS and CXXFLAGS can use the following flags for using ISL
+	    with Graphite loop optimizations:
+      <userinput>-fgraphite-identity -ftree-loop-distribution 
+      -floop-nest-optimize -floop-strip-mine -floop-interchange -floop-block 
+      -ftree-loop-distribute-patterns</userinput>
+      </para>
+    </note>
+
+    <para>Prepare ISL for compilation:</para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr    \
+            --disable-static \
+            --docdir=/usr/share/doc/isl-&isl-version;</userinput></screen>
+
+    <para>Compile the package and generate the HTML documentation:</para>
+
+<screen><userinput remap="make">make
+make html</userinput></screen>
+
+    <para>To test the results, issue:</para>
+
+<screen><userinput remap="test">make check</userinput></screen>
+
+    <para>Install the package and its documentation:</para>
+
+<screen><userinput remap="install">make install
+make install-html</userinput></screen>
+
+  </sect2>
+
+
+  <sect2 id="contents-isl" role="content">
+    <title>Contents of ISL</title>
+
+    <segmentedlist>
+      <segtitle>Installed Libraries</segtitle>
+      <segtitle>Installed Directory</segtitle>
+
+      <seglistitem>
+        <seg>libisl.so</seg>
+        <seg>/usr/share/doc/isl-&isl-version;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="libisl">
+        <term><filename class="libraryfile">libisl</filename></term>
+        <listitem>
+          <para>The Integer Set Library</para>
+          <indexterm zone="ch-system-isl libisl">
+            <primary sortas="c-libisl">libisl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

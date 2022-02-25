@@ -50,6 +50,16 @@
       </para>
     </note>
 
+    <note>
+      <para>
+        GRUB2 with EFI support can be used with some devices, like the
+	Odroid-C2, and maybe others. Two stage loading is done where the
+	first grub.cfg can be found by U-boot, and act as a pointer to
+	the real grub.cfg with the menu. More info may be found at
+        <ulink url="http://rglinuxtech.com/?p=2595">this page</ulink>.
+      </para>
+    </note>
+
     <para>Prepare GRUB for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr          \

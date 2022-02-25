@@ -51,7 +51,8 @@ sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
 
     <para>Prepare Readline for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr    \
+    <screen><userinput remap="configure">./configure --prefix=/usr    \
+            --disable-bracketed-paste-default \
             --disable-static \
             --with-curses    \
             --docdir=/usr/share/doc/readline-&readline-version;</userinput></screen>
@@ -66,6 +67,15 @@ sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
 	       library functions in the curses library, rather than a separate
 	       termcap library. It allows generating a correct
 	       <filename>readline.pc</filename> file.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-bracketed-paste-default</parameter></term>
+        <listitem>
+          <para>Bracketed paste mode is enabled by default. Set this default
+		  to off. Omit this configure option if bracketed paste is 
+                  desired.</para>
         </listitem>
       </varlistentry>
 

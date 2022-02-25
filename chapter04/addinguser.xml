@@ -82,7 +82,7 @@ useradd -s /bin/bash -g lfs -m -k /dev/null lfs</userinput></screen>
 
 <screen><userinput>chown -v lfs $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
 case $(uname -m) in
-  x86_64) chown -v lfs $LFS/lib64 ;;
+  aarch64) chown -v lfs $LFS/lib64 ;;
 esac</userinput></screen>
 
   <para>If a separate working directory was created as suggested, give
