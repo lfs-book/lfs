@@ -20,8 +20,8 @@
 
     <para>Second, the libtool .la files are only useful when linking with static
     libraries. They are unneeded and potentially harmful when using dynamic
-    shared libraries, especially when using non-autotools build systems.
-    While still in chroot, remove those files now:</para>
+    shared libraries, specially when using non-autotools build systems.
+    While still on the target machine, remove those files now:</para>
 
 <screen><userinput>find /usr/{lib,libexec} -name \*.la -delete</userinput></screen>
 
@@ -57,51 +57,15 @@
     </para></note>
 
     <para>
-      The following steps are performed from outside the chroot
-      environment. That means, you have to leave the chroot environment
-      first before continuing. The reason for that is to
-      get access to file system locations outside of the chroot
-      environment to store/read the backup archive which should
-      not be placed within the
-      <filename class="directory">$LFS</filename> hierarchy for
-      safety reasons.
+       If you are making a backup, mount the partition for backup:
     </para>
 
-    <para>
-       If you have decided to make a backup, leave the chroot environment:
-    </para>
-
-<screen role="nodump"><userinput>exit</userinput></screen>
-
-    <important>
-      <para>
-        All of the following instructions are executed by
-        <systemitem class="username">root</systemitem> on your host system.
-        Take extra care about the commands you're going to run as mistakes
-        here can modify your host system. Be aware that the
-        environment variable <envar>LFS</envar>
-        is set for user <systemitem class="username">lfs</systemitem> by default
-        but may <emphasis>not</emphasis> be set for
-        <systemitem class="username">root</systemitem>.
-     </para>
-     <para>
-        Whenever commands are to be executed by <systemitem class="username">root</systemitem>,
-        make sure you have set <envar>LFS</envar>.
-     </para>
-     <para>
-        This has been discussed in <xref linkend='ch-partitioning-aboutlfs'/>.
-      </para>
-    </important>
-
-    <para>Before making a backup, unmount the virtual file systems:</para>
-
-<screen role="nodump"><userinput>umount $LFS/dev/pts
-umount $LFS/{sys,proc,run,dev}</userinput></screen>
+<screen role="nodump"><userinput>mount -v /dev/sda<replaceable>4</replaceable> /mnt</userinput></screen>
 
     <para>
       Make sure you have at least 1 GB free disk space (the source tarballs
-      will be included in the backup archive) on the filesystem containing
-      directory where you create the backup archive.
+      will be included in the backup archive) in the partition prepared for
+      backup.
     </para>
 
     <para>
@@ -127,8 +91,15 @@ umount $LFS/{sys,proc,run,dev}</userinput></screen>
        </para>
     </note>
 
-<screen role="nodump"><userinput>cd $LFS
-tar -cJpf $HOME/lfs-temp-tools-&version;.tar.xz .</userinput></screen>
+<screen role="nodump"><userinput>cd /
+tar -cJpf /mnt/lfs-temp-tools-&version;.tar.xz . \
+    --exclude="dev/*" --exclude="proc/*"
+    --exclude="sys/*" --exclude="run/*"
+    --exclude="mnt/*"</userinput></screen>
+
+    <para>Unmount the partition containing the backup:</para>
+
+<screen role="nodump"><userinput>umount /mnt</userinput></screen>
 
     <note>
       <para>
@@ -145,38 +116,54 @@ tar -cJpf $HOME/lfs-temp-tools-&version;.tar.xz .</userinput></screen>
     <para>
       In case some mistakes have been made and you need to start over, you can
       use this backup to restore the system and save some recovery time.
-      Since the sources are located under
-      <filename class="directory">$LFS</filename>, they are included in the
-      backup archive as well, so they do not need to be downloaded again. After
-      checking that <envar>$LFS</envar> is set properly,
-      restore the backup by executing the following commands:
+      Since the sources are included in the
+      backup archive as well, so they do not need to be downloaded again.
     </para>
+
+    <warning><para>
+      Power off the target system and reconnect the disk containing LFS
+      temporary system to the host for restoring the backup.  It's necessary
+      to avoid overwriting some binaries being used.  Because the package
+      providing <command>shutdown</command> command is not built yet, the
+      system can't be shut down cleanly.  Issue <command>sync</command> to
+      ensure all filesystem writes cached in memory to be really written
+      into the disk, then power off the system physically (for example,
+      unplug the AC cord).
+    </para></warning>
+
+    <para>Mount the LFS partition and the backup partition on
+    <emphasis role="bold">the host system</emphasis>:</para>
 
 <!-- Make the following look different so users don't blindly run the
      restore when they don't need to. -->
 
+<screen role="nodump"><computeroutput>mkdir -pv /mnt/lfs-{target,backup}
+mount -v -t ext4 <replaceable>/dev/sdx</replaceable>3 /mnt/lfs-target
+mount -v -t ext4 <replaceable>/dev/sdx4</replaceable> /mnt/lfs-backup</computeroutput></screen>
+
+
     <warning><para>The following commands are extremely dangerous.  If
     you run <command>rm -rf ./*</command> as the root user and you
-    do not change to the $LFS directory or the <envar>LFS</envar>
-    environment variable is not set for the root user, it will destroy
-    your entire host system.  YOU ARE WARNED.</para></warning>
+    do not change to the <filename>lfs-target</filename> directory,
+    it will destroy your entire host system.
+    YOU ARE WARNED.</para></warning>
 
-<screen role="nodump"><computeroutput>cd $LFS
+<screen role="nodump"><computeroutput>cd /mnt/lfs-target
 rm -rf ./*
-tar -xpf $HOME/lfs-temp-tools-&version;.tar.xz</computeroutput></screen>
+tar -xpf /mnt/lfs-backup/lfs-temp-tools-&version;.tar.xz</computeroutput></screen>
 
     <para>
-       Again, double check that the environment has been setup properly
-       and continue building the rest of the system.
+       Again, unmount the two partitions, reconnect the device to the target
+       machine, boot it and continue building the rest of system:
     </para>
+
+<screen role="nodump"><computeroutput>umount /mnt/lfs-{target,backup}</computeroutput></screen>
 
     <important>
       <para>
-         If you left the chroot environment to create a backup or restart
-         building using a restore, remember to check that the virtual
-         filesystems are still mounted (<command>findmnt | grep
-         $LFS</command>).  If they are not mounted, remount them now as
-         described in <xref linkend='ch-tools-kernfs'/> and re-enter the chroot
+         If you reboot your target machine and restart
+         building using a restore, remount the virtual filesystems now as
+         described in <xref linkend='ch-tools-kernfs'/> and re-enter the build
          environment (see <xref linkend='ch-tools-chroot'/>) before continuing.
        </para>
     </important>

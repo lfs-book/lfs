@@ -164,6 +164,14 @@ Command (m for help): </literal><userinput>w</userinput>
 Calling ioctl() to re-read partition table.
 Syncing disks.</literal></screen>
 
+     <para>In <xref linkend="ch-tools-cleanup"/> it's optional to make a
+     backup for the temporary system.  If you'd like to do so, prepare
+     another parition (1 GB should be enough) and make an
+     <systemitem class="filesystem">ext4</systemitem> filesystem to hold
+     the backup:</para>
+
+<screen><userinput role='nodump'>mkfs.ext4 /dev/<replaceable>sdx4</replaceable></userinput></screen>
+
      <para><replaceable>sdx</replaceable> should be replaced with the name
      of the device node corresponding to your moveable device. Then mount
      the filesystems:</para>
