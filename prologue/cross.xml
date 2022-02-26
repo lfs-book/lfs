@@ -52,6 +52,14 @@
     at the end of Chapter 6, and setting up an environment suitable for
     building and test packages at the start of Chapter 7.  Then this Cross
     Edition is created to demonstrate these steps.</para>
+
+    <para>Unlike the legacy CLFS project, in the Cross Edition we don't
+    build any package containing an <command>init</command> process for the
+    temporary system to boot on the target machine.  The temporary system
+    is booted with a shell running as PID 1, and some necessary jobs of a
+    normal <command>init</command> process are manually done with commands.
+    This minimizes the difference from the main LFS book, and also helpful
+    to learn the initialization steps booting a Linux system.</para>
   </sect2>
 
 </sect1>

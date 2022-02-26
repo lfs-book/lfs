@@ -10,6 +10,15 @@
 
   <title>Introduction</title>
 
+  <warning>
+    <para>Please make sure the temporary system is already booted on the
+    target machine.  All commands in this chapter and the following chapters
+    should be executed on the target machine instead of the host distro,
+    unless the book explicitly says a command is for the host.  Running a
+    command for the temporary system on the host can completely destroy the
+    host distro.</para>
+  </warning>
+
   <para>This chapter shows how to build the last missing bits of the temporary
   system: the tools needed by the build machinery of various packages.  Now
   that all circular dependencies have been resolved and the temporary system
