@@ -386,11 +386,11 @@
 <!ENTITY less-fin-sbu "less than 0.1 SBU">
 
 <!ENTITY lfs-bootscripts-version "20210608">      <!-- Scripts depend on this format -->
-<!ENTITY lfs-bootscripts-size "BOOTSCRIPTS-SIZE KB">
+<!ENTITY lfs-bootscripts-size "32 KB">
 <!ENTITY lfs-bootscripts-url "&downloads-root;lfs-bootscripts-&lfs-bootscripts-version;.tar.xz">
-<!ENTITY lfs-bootscripts-md5 "BOOTSCRIPTS-MD5SUM">
+<!ENTITY lfs-bootscripts-md5 "0f51a074cc4faaff93b3c80e9ab27b0c">
 <!ENTITY lfs-bootscripts-home " ">
-<!ENTITY lfs-bootscripts-cfg-du "BOOTSCRIPTS-INSTALL-KB KB">
+<!ENTITY lfs-bootscripts-cfg-du "244 KB">
 <!ENTITY lfs-bootscripts-cfg-sbu "less than 0.1 SBU">
 
 <!ENTITY libcap-version "2.63">
