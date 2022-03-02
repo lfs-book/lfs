@@ -43,7 +43,7 @@ EOF</userinput></screen>
 umask 022
 LFS=/mnt/lfs
 LC_ALL=POSIX
-LFS_TGT=$(uname -m)-lfs-linux-gnu
+LFS_TGT=mips64el-lfs-linux-gnuabi64
 PATH=/usr/bin
 if [ ! -L /bin ]; then PATH=/bin:$PATH; fi
 PATH=$LFS/tools/bin:$PATH
