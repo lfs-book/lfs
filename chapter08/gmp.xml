@@ -40,7 +40,7 @@
 
   <sect2 role="installation">
     <title>Installation of GMP</title>
-
+<!--
     <note>
       <para>If you are building for 32-bit x86, but you have a CPU which is
       capable of running 64-bit code <emphasis>and</emphasis> you have specified
@@ -49,7 +49,7 @@
       Avoid this by invoking the configure command below with
 <screen role="nodump"><userinput><parameter>ABI=32</parameter> ./configure ...</userinput></screen></para>
     </note>
-
+-->
     <note>
       <para>The default settings of GMP produce libraries optimized for
       the host processor.  If libraries suitable for processors less
@@ -67,6 +67,7 @@
 <screen><userinput remap="configure">./configure --prefix=/usr    \
             --enable-cxx     \
             --disable-static \
+            ABI=64           \
             --docdir=/usr/share/doc/gmp-&gmp-version;</userinput></screen>
 
     <variablelist>
@@ -76,6 +77,14 @@
         <term><parameter>--enable-cxx</parameter></term>
         <listitem>
           <para>This parameter enables C++ support</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>ABI=64</parameter></term>
+        <listitem>
+          <para>This package defaults to use N32 ABI on 64-bit MIPS systems,
+          but LFS expects 64-bit ABI.</para>
         </listitem>
       </varlistentry>
 
