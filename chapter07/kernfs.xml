@@ -76,12 +76,14 @@ mount -vt tmpfs tmpfs /dev/shm</userinput></screen>
     with symlinks to pseudo files in
     <filename class="directory">/proc/self/fd</filename> (which are symlinks
     to the files connected to the standard I/O streams for the current
-    process).  This is necessary for I/O redirection in the building system
-    of some packages to function properly:</para>
+    process).  And, create another symlink recommended by the kernel
+    documentation.  These are necessary for I/O redirection in the building
+    system of some packages to function properly:</para>
 
 <screen><userinput>ln -sfv /proc/self/fd/0 /dev/stdin
 ln -sfv /proc/self/fd/1 /dev/stdout
-ln -sfv /proc/self/fd/2 /dev/stderr</userinput></screen>
+ln -sfv /proc/self/fd/2 /dev/stderr
+ln -sv  /proc/self/fd   /dev</userinput></screen>
 
   </sect2>
 
