@@ -44,6 +44,10 @@
       <para>2022-03-15</para>
       <itemizedlist>
         <listitem>
+          <para>[bdubbs] - Update to meson-0.61.3. Fixes
+          <ulink url="&lfs-ticket-root;5023">#5023</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[xry111] - Update to expat-2.4.7. Fixes
           <ulink url="&lfs-ticket-root;5019">#5019</ulink>.</para>
         </listitem>
@@ -96,7 +100,7 @@
           <para>[xry111] - Update to MarkupSafe-2.1.0. Fixes
           <ulink url="&lfs-ticket-root;5015">#5015</ulink>.</para>
         </listitem>
-        <listitem>
+        <listitem revision="systemd">
           <para>[xry111] - Update to dbus-1.14.0. Fixes
           <ulink url="&lfs-ticket-root;5017">#5017</ulink>.</para>
         </listitem>
