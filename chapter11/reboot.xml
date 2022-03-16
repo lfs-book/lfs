@@ -83,6 +83,10 @@
   <para>Now that we have said that, let's move on to booting our shiny new LFS
   installation for the first time!</para>
 
+  <para>Unmount the boot partition:</para>
+
+<screen role="nodump"><userinput>umount /boot</userinput></screen>
+
   <para>Synchronize cached writes to prevent data loss on reboot without a
   fully functional <command>init</command> process:</para>
 
