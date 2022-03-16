@@ -114,11 +114,12 @@ FORCE_UNSAFE_CONFIGURE=1 ./configure \
     <para>Now the test suite is ready to be run. First, run the tests that are
     meant to be run as user <systemitem class="username">root</systemitem>:</para>
 
-<screen><userinput remap="test">make NON_ROOT_USERNAME=tester check-root</userinput></screen>
-
-    <!-- TODO: Only happens in clfs-ng.  Need to investigate.  -->
-    <para>One test named <filename>chroot-credentials.sh</filename> is
-    known to fail, but it will pass after booting the LFS system.</para>
+    <!-- CLFS note: "su -c" to set the supplementary group IDs.
+         For a normal LFS build, they are already set by 'login' or 'su'.
+         But for CLFS there is no such tool available at the beginning of
+         chapter 7.  Currently coreutils is the only package of which the
+         test suite needs the supplementary GIDs set up.  -->
+<screen><userinput remap="test">su -c 'make NON_ROOT_USERNAME=tester check-root'</userinput></screen>
 
     <para>We're going to run the remainder of the tests as the
     <systemitem class="username">tester</systemitem> user. Certain tests
