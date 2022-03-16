@@ -76,26 +76,12 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
     there access GRUB modules in the boot partition.  The default location
     is /boot/grub/.</para>
 
-    <para>The location of the boot partition is a choice of the user that
-    affects the configuration.  One recommendation is to have a separate small
-    (suggested size is 200 MB) partition just for boot information.  That way
-    each build, whether LFS or some commercial distro, can access the same boot
-    files and access can be made from any booted system.  If you choose to do
-    this, you will need to mount the separate partition, move all files in the
-    current <filename class="directory">/boot</filename> directory (e.g. the
-    linux kernel you just built in the previous section) to the new partition.
-    You will then need to unmount the partition and remount it as <filename
-    class="directory">/boot</filename>.  If you do this, be sure to update
-    <filename>/etc/fstab</filename>.</para>
-
-    <para>Using the current lfs partition will also work, but configuration
-    for multiple systems is more difficult.</para>
-
-    <para>Using the above information, determine the appropriate
-    designator for the root partition (or boot partition, if a separate
-    one is used). For the following example, it is assumed that the root
-    (or separate boot) partition is <filename
-    class="partition">sda2</filename>.</para>
+    <para>For the following example, it is assumed that the root
+    partition is <filename class="partition">sda3</filename>, and the
+    seperate boot partition is
+    <filename class="partition">sda2</filename>.  Replace
+    <replaceable>sda</replaceable> to the name of the device node for your
+    disk where LFS is being built.</para>
 
     <para>Install the GRUB files into <filename
     class="directory">/boot/grub</filename> and set up the boot track:</para>
@@ -144,7 +130,7 @@ insmod ext2
 set root=(hd0,2)
 
 menuentry "GNU/Linux, Linux &linux-version;-lfs-&version;" {
-        linux   /boot/vmlinuz-&linux-version;-lfs-&version; root=/dev/sda2 ro
+        linux   /vmlinuz-&linux-version;-lfs-&version; root=/dev/sda3 ro
 }</literal>
 EOF</userinput></screen>
 
