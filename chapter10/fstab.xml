@@ -25,8 +25,8 @@
 # file system  mount-point  type     options             dump  fsck
 #                                                              order
 
-/dev/<replaceable>&lt;xxx&gt;</replaceable>     /            <replaceable>&lt;fff&gt;</replaceable>    defaults            1     1
-/dev/<replaceable>&lt;yyy&gt;</replaceable>     swap         swap     pri=1               0     0
+/dev/<replaceable>sda</replaceable>3      /            ext4     defaults            1     1
+/dev/<replaceable>sda</replaceable>2      /boot        ext4     defaults            0     2
 proc           /proc        proc     nosuid,noexec,nodev 0     0
 sysfs          /sys         sysfs    nosuid,noexec,nodev 0     0
 devpts         /dev/pts     devpts   gid=5,mode=620      0     0
@@ -42,18 +42,14 @@ EOF</userinput></screen>
 # file system  mount-point  type     options             dump  fsck
 #                                                              order
 
-/dev/<replaceable>&lt;xxx&gt;</replaceable>     /            <replaceable>&lt;fff&gt;</replaceable>    defaults            1     1
-/dev/<replaceable>&lt;yyy&gt;</replaceable>     swap         swap     pri=1               0     0
+/dev/<replaceable>sda</replaceable>3      /            ext4     defaults            1     1
+/dev/<replaceable>sda</replaceable>2      /boot        ext4     defaults            0     2
 
 # End /etc/fstab</literal>
 EOF</userinput></screen>
 
-  <para>Replace <replaceable>&lt;xxx&gt;</replaceable>,
-  <replaceable>&lt;yyy&gt;</replaceable>, and <replaceable>&lt;fff&gt;</replaceable>
-  with the values appropriate for the system, for example, <filename
-  class="partition">sda2</filename>, <filename
-  class="partition">sda5</filename>, and <systemitem
-  class="filesystem">ext4</systemitem>. For details on the six
+  <para>Replace <replaceable>sda</replaceable> to the name of the device
+  node for your disk where LFS is being built.  For details on the six
   fields in this file, see <command>man 5 fstab</command>.</para>
 
   <para>Filesystems with MS-DOS or Windows origin (i.e. vfat, ntfs, smbfs,
