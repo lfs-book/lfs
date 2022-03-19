@@ -95,12 +95,9 @@ cd       build</userinput></screen>
       </varlistentry>
 
       <varlistentry arch="ml_32,ml_x32,ml_all">
-        <term><parameter>--disable-multilib</parameter></term>
+        <term><parameter>--enable-multilib</parameter>, <parameter>--with-multilib-list=...</parameter></term>
         <listitem>
-          <para>Even when building the multilib version, this switch is 
-          given. This is because the additionally built libraries are
-          not required in this stage and some disk space and compile
-          time can be saved.</para>
+          <para>Enable building multilib objects for the selected archs.</para>
         </listitem>
       </varlistentry>
 
