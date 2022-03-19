@@ -117,8 +117,9 @@ cd       build</userinput></screen>
 <userinput remap="configure">../configure                                       \
     --build=$(../config.guess)                     \
     --host=$LFS_TGT                                \
+    --target=$LFS_TGT                              \
+    LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc      \
     --prefix=/usr                                  \
-    CC_FOR_TARGET=$LFS_TGT-gcc                     \
     --with-build-sysroot=$LFS                      \
     --enable-initfini-array                        \
     --disable-nls                                  \
@@ -129,9 +130,10 @@ cd       build</userinput></screen>
     --disable-libquadmath                          \
     --disable-libssp                               \
     --disable-libvtv                               \
-    --disable-libstdcxx                            \
     --enable-languages=c,c++</userinput></screen>
-
+<!--
+    LDFLAGS_FOR_TARGET="-L$PWD/$LFS_TGT/libgcc -L$PWD/$LFS_TGT/32/libgcc -L$PWD/$LFS_TGT/x32/libgcc" \
+-->
     <variablelist>
       <title>The meaning of the new configure options:</title><!-- WIP -->
 
