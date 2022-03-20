@@ -60,16 +60,11 @@ cd       build</userinput></screen>
 
     <para>Prepare libstdc++ for compilation:</para>
 
-<screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure" 
-    arch="ml_32">mlist=m64,m32</userinput><userinput remap="configure"
-    arch="ml_x32">mlist=m64,mx32</userinput><userinput remap="configure"
-    arch="ml_all">mlist=m64,m32,mx32</userinput>
-<userinput remap="configure">../libstdc++-v3/configure           \
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">../libstdc++-v3/configure           \
     --host=$LFS_TGT                 \
     --build=$(../config.guess)      \
     --prefix=/usr                   \
     --enable-multilib               \
-    --with-multilib-list=$mlist     \
     --disable-nls                   \
     --disable-libstdcxx-pch         \
     --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/&gcc-version;</userinput></screen>
@@ -95,9 +90,9 @@ cd       build</userinput></screen>
       </varlistentry>
 
       <varlistentry arch="ml_32,ml_x32,ml_all">
-        <term><parameter>--enable-multilib</parameter>, <parameter>--with-multilib-list=...</parameter></term>
+        <term><parameter>--enable-multilib</parameter></term>
         <listitem>
-          <para>Enable building multilib objects for the selected archs.</para>
+          <para>Enable building multilib objects.</para>
         </listitem>
       </varlistentry>
 
