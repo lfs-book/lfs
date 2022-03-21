@@ -178,9 +178,13 @@
       </varlistentry>
 
       <varlistentry>
-        <term>Set <parameter>CONFIG_MODULE_SIG=n</parameter>,
-                  <parameter>CONFIG_SECURITY=n</parameter>,
-              and <parameter>CONFIG_STACK_VALIDATION=n</parameter></term>
+        <term>
+          Set <parameter>CONFIG_MODULE_SIG=n</parameter>,
+              <parameter>CONFIG_SECURITY=n</parameter>,
+              <parameter>CONFIG_STACK_VALIDATION=n</parameter>,
+              <parameter>CONFIG_SYSTEM_TRUSTED_KEYRING=n</parameter>,
+          and <parameter>CONFIG_SYSTEM_REVOCATION_LIST=n</parameter>
+        </term>
         <listitem>
           <para>They are unneeded for the temporary kernel, and they need
           additional dependencies which may be unavailable on the host
