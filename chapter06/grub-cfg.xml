@@ -37,7 +37,7 @@ set default=0
 set timeout=5
 
 menuentry "LFS Temporary System" {
-        linux   /vmlinux root=/dev/sda3 rw init=/bin/bash
+        linux   /vmlinuz root=/dev/sda3 rw init=/bin/bash
         boot
 }</literal>
 EOF</userinput></screen>
