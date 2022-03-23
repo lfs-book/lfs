@@ -201,7 +201,7 @@
     <para>Install the kernel image into the
     <filename class="directory">$LFS/boot</filename> directory:</para>
 
-  <screen><userinput remap="install">install -vm644 vmlinux $LFS/boot/vmlinux</userinput></screen>
+  <screen><userinput remap="install">install -vm644 arch/x86/boot/bzImage $LFS/boot/vmlinuz</userinput></screen>
 
   </sect2>
 
