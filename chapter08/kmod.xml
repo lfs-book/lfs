@@ -119,6 +119,7 @@ make clean</userinput></screen>
     --libdir=/usr/lib32           \
     --sysconfdir=/etc             \
     --with-xz                     \
+    --with-zstd                   \
     --with-zlib                   \
     --with-rootlibdir=/usr/lib32</userinput></screen>
 
@@ -155,6 +156,7 @@ make clean</userinput></screen>
     --libdir=/usr/libx32          \
     --sysconfdir=/etc             \
     --with-xz                     \
+    --with-zstd                   \
     --with-zlib                   \
     --with-rootlibdir=/usr/libx32</userinput></screen>
 
