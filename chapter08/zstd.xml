@@ -82,7 +82,7 @@
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">CC="gcc -m32" make</userinput></screen>
+<screen><userinput remap="make">CC="gcc -m32" make prefix=/usr</userinput></screen>
 
     <para>Install the package:</para>
 
@@ -106,7 +106,7 @@ rm -rf DESTDIR</userinput></screen>
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">CC="gcc -mx32" make</userinput></screen>
+<screen><userinput remap="make">CC="gcc -mx32" make prefix=/usr</userinput></screen>
 
     <para>Install the package:</para>
 
