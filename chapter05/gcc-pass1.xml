@@ -115,7 +115,7 @@ cd       build</userinput></screen>
 <userinput remap="configure">../configure                  \
     --target=$LFS_TGT                              \
     --prefix=$LFS/tools                            \
-    --with-glibc-version=2.11                      \
+    --with-glibc-version=&glibc-version;                      \
     --with-sysroot=$LFS                            \
     --with-newlib                                  \
     --without-headers                              \
