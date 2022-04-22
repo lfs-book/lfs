@@ -83,8 +83,8 @@ useradd -s /bin/bash -g lfs -m -k /dev/null lfs</userinput></screen>
 <screen><userinput>chown -v lfs $LFS/{usr{,/*},lib*,boot,var,etc,bin,sbin,tools}</userinput></screen>
 
   <note><para>In some host systems, the following command does not complete
-  properly and suspends the login to the lfs user to the background.  If the
-  prompt "lfs:~$" does not appear immediately, entering the
+  properly and suspends the login to the &lfs-user; user to the background.
+  If the prompt "lfs:~$" does not appear immediately, entering the
   <command>fg</command> command will fix the issue.</para></note>
 
   <para>Next, login as user <systemitem class="username">lfs</systemitem>.

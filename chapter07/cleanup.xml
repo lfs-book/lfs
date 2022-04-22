@@ -136,7 +136,7 @@ mount -v -t ext4 <replaceable>/dev/sdx4</replaceable> /mnt/lfs-backup</computero
 
 
     <warning><para>The following commands are extremely dangerous.  If
-    you run <command>rm -rf ./*</command> as the root user and you
+    you run <command>rm -rf ./*</command> as the &root; user and you
     do not change to the <filename>lfs-target</filename> directory,
     it will destroy your entire host system.
     YOU ARE WARNED.</para></warning>

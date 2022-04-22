@@ -249,7 +249,7 @@ File systems  ---&gt;
       <para>As the cross-built LFS system has a separate /boot partition,
       the files copied below should go there. The easiest way to do that is
       to mount <filename class="directory">/boot</filename> before
-      proceeding.  As the root user:</para>
+      proceeding.  As the &root; user:</para>
 
 <screen role="nodump"><userinput>mount /boot</userinput></screen>
 
