@@ -173,10 +173,11 @@ cp -v -R doc/* /usr/share/doc/ncurses-&ncurses-version;</userinput></screen>
       following commands:</para>
 
 <screen role="nodump"><userinput>make distclean
-./configure --prefix=/usr    \
-            --with-shared    \
-            --without-normal \
-            --without-debug  \
+./configure --prefix=/usr     \
+            --with-shared     \
+            --without-normal  \
+            --with-cxx-shared \
+            --without-debug   \
             --without-cxx-binding \
             --with-abi-version=5
 make sources libs
@@ -205,6 +206,7 @@ cp -av lib/lib*.so.5* /usr/lib</userinput></screen>
             --with-shared           \
             --without-debug         \
             --without-normal        \
+            --with-cxx-shared       \
             --enable-pc-files       \
             --enable-widec          \
             --with-pkg-config-libdir=/usr/lib32/pkgconfig</userinput></screen>

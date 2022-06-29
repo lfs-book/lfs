@@ -209,9 +209,10 @@ CXX="$LFS_TGT-g++ -m32"             \
             --libdir=/usr/lib32     \
             --mandir=/usr/share/man \
             --with-shared           \
+            --without-normal        \
+            --with-cxx-shared       \
             --without-debug         \
             --without-ada           \
-            --without-normal        \
             --disable-stripping     \
             --enable-widec</userinput></screen>
 
@@ -248,9 +249,10 @@ CXX="$LFS_TGT-g++ -mx32"            \
             --libdir=/usr/libx32    \
             --mandir=/usr/share/man \
             --with-shared           \
+            --without-normal        \
+            --with-cxx-shared       \
             --without-debug         \
             --without-ada           \
-            --without-normal        \
             --disable-stripping     \
             --enable-widec</userinput></screen>
 
