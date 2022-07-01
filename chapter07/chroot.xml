@@ -10,6 +10,13 @@
 
   <title>Setting up the Environment</title>
 
+    <para>The current shell is also the <command>init</command> process,
+    so exiting from it will cause kernel panic.  Prevent exiting from the
+    shell accidentally:</para>
+
+<screen role="nodump"><userinput>enable -n exit
+readonly IGNOREEOF=1000</userinput></screen>
+
     <para>The standard I/O streams of the initial shell process is connected
     with <filename>/dev/console</filename>.  However, the testsuite of some
     packages may expect the standard I/O streams to be connected with a
