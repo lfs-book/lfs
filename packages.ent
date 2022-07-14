@@ -353,11 +353,11 @@
 <!ENTITY iproute2-fin-du "15 MB">
 <!ENTITY iproute2-fin-sbu "0.2 SBU">
 
-<!ENTITY isl-version "0.24">
-<!ENTITY isl-size "1,886 KB">
+<!ENTITY isl-version "0.25">
+<!ENTITY isl-size "1,977 KB">
 <!ENTITY isl-url "https://libisl.sourceforge.io/isl-&isl-version;.tar.xz">
-<!ENTITY isl-md5 "fae030f604a9537adc2502990a8ab4d1">
-<!ENTITY isl-sha256 "043105cc544f416b48736fff8caf077fb0663a717d06b1113f16e391ac99ebad">
+<!ENTITY isl-md5 "69cee1cb1db3a5a6856095958ee1ff6c">
+<!ENTITY isl-sha256 "be7b210647ccadf90a2f0b000fca11a4d40546374a850db67adb32fad4b230d9">
 <!ENTITY isl-home "https://libisl.sourceforge.io">
 <!ENTITY isl-fin-du "5.6 MB">
 <!ENTITY isl-fin-sbu "0.4 SBU">
