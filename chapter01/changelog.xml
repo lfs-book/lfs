@@ -39,6 +39,14 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
     -->
+    <listitem>
+      <para>2022-07-14</para>
+      <itemizedlist>
+        <listitem>
+          <para>[William] - Update to ISL-0.25.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
     <listitem>
       <para>2022-07-01</para>
