@@ -31,7 +31,7 @@
   this edition.</para>
 
   <para>This edition contains instructions to bootstrap a Linux system for
-  x86 (32-bit or 64-bit).  It may looks irrational because it's easy to
+  x86 (32-bit or 64-bit).  It may look irrational because it's easy to
   find a host distribution for x86, but this edition can be a start point
   where you can further modify the instruction for other hardware.</para>
 
