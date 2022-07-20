@@ -39,16 +39,7 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
     -->
-    <listitem>
-      <para>2022-07-14</para>
-      <itemizedlist>
-        <listitem>
-          <para>[William] - Update to ISL-0.25.</para>
-        </listitem>
-      </itemizedlist>
-    </listitem>
-
-    <listitem>
+   <listitem>
       <para>2022-07-15</para>
       <itemizedlist>
         <listitem>
@@ -70,6 +61,15 @@
         <listitem>
           <para>[bdubbs] - Update to OpenSSL-3.0.5. Fixes
           <ulink url="&lfs-ticket-root;5080">#5080</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2022-07-14</para>
+      <itemizedlist>
+        <listitem>
+          <para>[William] - Update to ISL-0.25.</para>
         </listitem>
       </itemizedlist>
     </listitem>
