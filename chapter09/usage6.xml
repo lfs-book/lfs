@@ -11,6 +11,40 @@
 
   <title>S6 Usage and Configuration</title>
 
-  <para>Add more info about S6 here.</para>
+  <para>*** Add more info about S6 here. ***</para>
+
+  <para>Now setup some essential scripts for booting.</para>
+
+<!--
+  Following setup is taken from
+    https://skarnet.org/software/s6-linux-init/quickstart.html
+  It builds the required programs (init, reboot, ...).
   
+  The system is bootable with this config, but it has
+  * only one tty (tty1)
+  * root-fs is mounted R/O
+  * no virtual filesystems (like /proc) are mounted
+  * messages breaks thru to console
+  
+  ... but it boots ;-)
+-->  
+  <para>Make sure that the configuration directory exists:</para>
+  
+<screen><userinput>mkdir -p /etc/s6-linux-init</userinput></screen>  
+
+  <para>Setup a temporary directory:</para>
+
+<screen><userinput>tmpdir=$(mktemp -d)</userinput></screen>  
+
+  <para>Create essential programs and move them to a
+  directory representing the current setup:</para>
+
+<screen><userinput>s6-linux-init-maker -1 -G "/sbin/agetty 38400 tty1" $tmpdir
+mv $tmpdir /etc/etc/s6-linux-init/current
+</userinput></screen>  
+
+  <para>Install the essential programs in the file system:</para>
+
+<screen><userinput>cp -av /etc/etc/s6-linux-init/current/bin/* /sbin/</userinput></screen>  
+
 </sect1>
