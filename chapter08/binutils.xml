@@ -87,7 +87,6 @@ cd       build</userinput></screen>
 
     <para>Prepare Binutils for compilation:</para>
 
-<<<<<<< HEAD
 <screen arch="default"><userinput remap="configure">../configure --prefix=/usr       \
              --sysconfdir=/etc   \
              --enable-gold       \
