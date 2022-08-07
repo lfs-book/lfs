@@ -19,6 +19,11 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="introductiond.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="networkd.xml"/>
 
+  <!-- s6 -->
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="introduction6.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="network6.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="usage6.xml"/>
+  
   <!-- common -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="udev.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="symlinks.xml"/>

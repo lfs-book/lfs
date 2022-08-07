@@ -16,7 +16,7 @@
   </indexterm>
 
   <para>In <xref linkend="chapter-building-system"/>, we installed the udev
-  package when <phrase revision="sysv">eudev</phrase>
+  package when <phrase revision="sysv,s6">eudev</phrase>
   <phrase revision="systemd">systemd</phrase> was built. Before we go into the
   details regarding how this works, a brief history of previous methods of
   handling devices is in order.</para>
@@ -227,7 +227,7 @@
       the <filename>modprobe.d(5)</filename> manual page for more information
       on <quote>softdep</quote> syntax and capabilities.</para>
 
-      <para revision="sysv">If the module in question is not a wrapper and is
+      <para revision="sysv,s6">If the module in question is not a wrapper and is
       useful by itself, configure the <command>modules</command> bootscript to
       load this module on system boot. To do this, add the module name to the
       <filename>/etc/sysconfig/modules</filename> file on a separate line.

@@ -52,7 +52,7 @@
             --with-vgrind=/usr/bin/vgrind         \
             --with-grap=/usr/bin/grap</userinput></screen>
 
-<screen revision="sysv"><userinput remap="configure">./configure --prefix=/usr                         \
+<screen revision="sysv,s6"><userinput remap="configure">./configure --prefix=/usr                         \
             --docdir=/usr/share/doc/man-db-&man-db-version; \
             --sysconfdir=/etc                     \
             --disable-setuid                      \
@@ -97,7 +97,7 @@
         </listitem>
       </varlistentry>
 
-      <varlistentry revision="sysv">
+      <varlistentry revision="sysv,s6">
         <term><parameter>--with-systemd...</parameter></term>
         <listitem>
           <para>These parameters prevent installing unneeded systemd

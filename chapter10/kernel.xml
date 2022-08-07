@@ -105,7 +105,7 @@
       <para>Be sure to enable/disable/set the following features or the system might
       not work correctly or boot at all:</para>
 
-      <screen role="nodump" revision="sysv">General setup -->
+      <screen role="nodump" revision="sysv,s6">General setup -->
    [ ] Compile the kernel with warnings as errors [CONFIG_WERROR]
    &lt; &gt; Enable kernel headers through /sys/kernel/kheaders.tar.xz [CONFIG_IKHEADERS]
 Device Drivers  ---&gt;
@@ -156,7 +156,7 @@ File systems  ---&gt;
       required, it is highly recommended by the systemd developers.</para>
     </note>
 
-    <para revision="sysv">There are several other options that may be desired
+    <para revision="sysv,s6">There are several other options that may be desired
     depending on the requirements for the system. For a list of options needed
     for BLFS packages, see the <ulink
     url="&lfs-root;blfs/view/&short-version;/longindex.html#kernel-config-index">BLFS

@@ -3,9 +3,15 @@
 if [ "$1" = sysv ]; then
 	SYSV="INCLUDE"
 	SYSTEMD="IGNORE "
+	S6="IGNORE "
 elif [ "$1" = systemd ]; then
 	SYSV="IGNORE "
 	SYSTEMD="INCLUDE"
+	S6="IGNORE "
+elif [ "$1" = s6 ]; then
+	SYSV="IGNORE "
+	SYSTEMD="IGNORE "
+	S6="INCLUDE "
 else
 	echo You must provide either \"sysv\" or \"systemd\" as argument
 	exit 1
@@ -13,6 +19,7 @@ fi
 
 echo "<!ENTITY % sysv    \"$SYSV\">"     >  conditional.ent
 echo "<!ENTITY % systemd \"$SYSTEMD\">"  >> conditional.ent
+echo "<!ENTITY % s6      \"$S6\">"       >> conditional.ent
 
 if ! git status > /dev/null; then
 	# Either it's not a git repository, or git is unavaliable.
@@ -22,6 +29,9 @@ if ! git status > /dev/null; then
 	echo "]]>"                                             >> version.ent
 	echo "<![ %systemd; ["                                 >> version.ent
 	echo "<!ENTITY version           \"unknown-systemd\">" >> version.ent
+	echo "]]>"                                             >> version.ent
+	echo "<![ %s6; ["                                      >> version.ent
+	echo "<!ENTITY version           \"unknown-s6\">"      >> version.ent
 	echo "]]>"                                             >> version.ent
 	echo "<!ENTITY releasedate       \"unknown\">"         >> version.ent
 	echo "<!ENTITY copyrightdate     \"1999-2022\">"       >> version.ent
@@ -51,10 +61,12 @@ sha="$(git describe --abbrev=1)"
 rev=$(echo "$sha" | sed 's/-g[^-]*$//')
 version="$rev"
 versiond="$rev-systemd"
+version6="$rev-s6"
 
 if [ "$(git diff HEAD | wc -l)" != "0" ]; then
 	version="$version+"
 	versiond="$versiond+"
+	version6="$version6+"
 fi
 
 echo "<![ %sysv; ["                                        >  version.ent
@@ -62,6 +74,9 @@ echo "<!ENTITY version           \"$version\">"            >> version.ent
 echo "]]>"                                                 >> version.ent
 echo "<![ %systemd; ["                                     >> version.ent
 echo "<!ENTITY version          \"$versiond\">"            >> version.ent
+echo "]]>"                                                 >> version.ent
+echo "<![ %s6; ["                                          >> version.ent
+echo "<!ENTITY version          \"$version6\">"            >> version.ent
 echo "]]>"                                                 >> version.ent
 echo "<!ENTITY releasedate       \"$full_date\">"          >> version.ent
 echo "<!ENTITY copyrightdate     \"1999-$year\">"          >> version.ent

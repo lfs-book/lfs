@@ -18,20 +18,32 @@ endif
 
 ifneq ($(REV), sysv)
   ifneq ($(REV), systemd)
-    $(error REV must be 'sysv' (default) or 'systemd'.)
+    ifneq ($(REV), s6)
+      $(error REV must be 'sysv' (default), 'systemd' or 's6'.)
+    endif
   endif
 endif
 
 ifeq ($(REV), sysv)
+  # SysV
   BASEDIR         ?= ~/lfs-book
   PDF_OUTPUT      ?= LFS-BOOK.pdf
   NOCHUNKS_OUTPUT ?= LFS-BOOK.html
   DUMPDIR         ?= ~/cross-lfs-commands
 else
+ifeq ($(REV), systemd)
+  # systemd
   BASEDIR         ?= ~/lfs-systemd
   PDF_OUTPUT      ?= LFS-SYSD-BOOK.pdf
   NOCHUNKS_OUTPUT ?= LFS-SYSD-BOOK.html
   DUMPDIR         ?= ~/lfs-sysd-commands
+else
+  # S6
+  BASEDIR         ?= ~/lfs-s6
+  PDF_OUTPUT      ?= LFS-S6-BOOK.pdf
+  NOCHUNKS_OUTPUT ?= LFS-S6-BOOK.html
+  DUMPDIR         ?= ~/lfs-s6-commands
+endif
 endif
 
 book: validate profile-html

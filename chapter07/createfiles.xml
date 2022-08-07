@@ -60,7 +60,7 @@ EOF</userinput></screen>
   <para>Create the <filename>/etc/passwd</filename> file by running the following
   command:</para>
 
-<screen revision="sysv"><userinput>cat &gt; /etc/passwd &lt;&lt; "EOF"
+<screen revision="sysv,s6"><userinput>cat &gt; /etc/passwd &lt;&lt; "EOF"
 <literal>root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/dev/null:/usr/bin/false
 daemon:x:6:6:Daemon User:/dev/null:/usr/bin/false
@@ -92,7 +92,7 @@ EOF</userinput></screen>
   <para>Create the <filename>/etc/group</filename> file by running the following
   command:</para>
 
-<screen revision="sysv"><userinput>cat &gt; /etc/group &lt;&lt; "EOF"
+<screen revision="sysv,s6"><userinput>cat &gt; /etc/group &lt;&lt; "EOF"
 <literal>root:x:0:
 bin:x:1:daemon
 sys:x:2:
@@ -168,7 +168,7 @@ EOF</userinput></screen>
   with a GID of 1 be present. The GID of 5 is widely used for
   <systemitem class="groupname">tty</systemitem> group, and the number 5 is
   also used in <phrase revision="systemd">systemd</phrase>
-  <phrase revision="sysv"><filename>/etc/fstab</filename></phrase> for the
+  <phrase revision="sysv,s6"><filename>/etc/fstab</filename></phrase> for the
   <systemitem class="filesystem">devpts</systemitem> filesystem.
   All other group names and GIDs can be chosen freely by the system
   administrator since well-written programs do not depend on GID numbers,

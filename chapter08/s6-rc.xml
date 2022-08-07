@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-s6-rc" role="wrap" revision="s6">
+  <?dbhtml filename="s6-rc.html"?>
+
+  <sect1info condition="script">
+    <productname>s6-rc</productname>
+    <productnumber>&s6-rc-version;</productnumber>
+    <address>&s6-rc-url;</address>
+  </sect1info>
+
+  <title>s6-rc-&s6-rc-version;</title>
+
+  <indexterm zone="ch-system-s6-rc">
+    <primary sortas="a-s6-rc">s6-rc</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The s6-rc package contains library routines for the
+    S6 init system.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&s6-rc-fin-sbu;</seg>
+        <seg>&s6-rc-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of s6-rc</title>
+
+    <para>Prepare s6-rc for compilation:</para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
+
+<!--
+    <variablelist>
+      <title>The meaning of the configure options:</title>
+
+      <varlistentry>
+        <term><parameter>- -blah=blubb</parameter></term>
+        <listitem>
+          <para>blah blah</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+-->
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-s6-rc" role="content">
+    <title>Contents of s6-rc</title>
+
+    <segmentedlist>
+      <segtitle>Installed programs</segtitle>
+      <segtitle>Installed libraries</segtitle>
+      <segtitle>Installed directories</segtitle>
+
+      <seglistitem>
+        <seg>s6-rc-x, s6-rc-y, s6-rc-z, ...</seg>
+        <seg>libx, liby, libz ...</seg>
+        <seg>dirx, diry, dirz ...</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="s6-rc-x">
+        <term><command>s6-rc-x</command></term>
+        <listitem>
+          <para>Is used to blah blah</para>
+          <indexterm zone="ch-system-s6-rc s6-rc-x">
+            <primary sortas="b-s6-rc-x">s6-rc-x</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+  </sect2>
+
+</sect1>

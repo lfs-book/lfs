@@ -75,7 +75,7 @@
         <listitem><para>/etc/vimrc                   </para></listitem>
         <listitem><para>/root/.bash_profile          </para></listitem>
         <listitem><para>/root/.bashrc                </para></listitem>
-        <listitem revision="sysv"><para>/etc/sysconfig/ifconfig.eth0 </para></listitem>
+        <listitem revision="sysv,s6"><para>/etc/sysconfig/ifconfig.eth0 </para></listitem>
       </itemizedlist>
     </listitem>
   </itemizedlist>

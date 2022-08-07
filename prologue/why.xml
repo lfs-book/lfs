@@ -137,7 +137,7 @@
         tested file systems that Linux supports.</para>
       </listitem>
 
-      <listitem revision="sysv">
+      <listitem revision="sysv,s6">
         <para>Eudev</para>
 
         <para>This package is a device manager.  It dynamically controls the ownership,

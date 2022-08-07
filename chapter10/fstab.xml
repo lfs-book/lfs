@@ -19,7 +19,7 @@
   which must be checked (for integrity errors) prior to mounting. Create a new
   file systems table like this:</para>
 
-<screen revision="sysv"><userinput>cat &gt; /etc/fstab &lt;&lt; "EOF"
+<screen revision="sysv,s6"><userinput>cat &gt; /etc/fstab &lt;&lt; "EOF"
 <literal># Begin /etc/fstab
 
 # file system  mount-point  type     options             dump  fsck

@@ -163,6 +163,16 @@
 <!ENTITY eudev-fin-du "83 MB">
 <!ENTITY eudev-fin-sbu "0.2 SBU">
 
+<!ENTITY execline-version "2.9.0.1"><!-- S6 init -->
+<!ENTITY execline-size "9999 KB">
+<!ENTITY execline-url "https://skarnet.org/software/execline/execline-&execline-version;.tar.gz">
+<!ENTITY execline-md5 "8652a16f687ff766da137e199f9183e0">
+<!ENTITY execline-home "https://skarnet.org/software/execline/">
+<!ENTITY execline-tmp-du "9999 MB">
+<!ENTITY execline-tmp-sbu "9999 SBU">
+<!ENTITY execline-fin-du "9999 MB">
+<!ENTITY execline-fin-sbu "9999 SBU">
+
 <!ENTITY expat-version "2.4.8">
 <!ENTITY expat-size "444 KB">
 <!ENTITY expat-url "&sourceforge;expat/expat-&expat-version;.tar.xz">
@@ -613,6 +623,46 @@
 <!ENTITY readline-home "https://tiswww.case.edu/php/chet/readline/rltop.html">
 <!ENTITY readline-fin-du "15 MB">
 <!ENTITY readline-fin-sbu "0.1 SBU">
+
+<!ENTITY skalibs-version "2.12.0.1"><!-- S6 init -->
+<!ENTITY skalibs-size "9999 KB">
+<!ENTITY skalibs-url "https://skarnet.org/software/skalibs/skalibs-&skalibs-version;.tar.gz">
+<!ENTITY skalibs-md5 "296c02c94adea3355faed44e65893d2e">
+<!ENTITY skalibs-home "https://skarnet.org/software/skalibs/">
+<!ENTITY skalibs-tmp-du "9999 MB">
+<!ENTITY skalibs-tmp-sbu "9999 SBU">
+<!ENTITY skalibs-fin-du "9999 MB">
+<!ENTITY skalibs-fin-sbu "9999 SBU">
+
+<!ENTITY s6-version "2.11.1.2"><!-- S6 init -->
+<!ENTITY s6-size "9999 KB">
+<!ENTITY s6-url "https://skarnet.org/software/s6/s6-&s6-version;.tar.gz">
+<!ENTITY s6-md5 "55725b335698c79d41ebde5608bf313d">
+<!ENTITY s6-home "https://skarnet.org/software/s6/">
+<!ENTITY s6-tmp-du "9999 MB">
+<!ENTITY s6-tmp-sbu "9999 SBU">
+<!ENTITY s6-fin-du "9999 MB">
+<!ENTITY s6-fin-sbu "9999 SBU">
+
+<!ENTITY s6-rc-version "0.5.3.2"><!-- S6 init -->
+<!ENTITY s6-rc-size "9999 KB">
+<!ENTITY s6-rc-url "https://skarnet.org/software/s6-rc/s6-rc-&s6-rc-version;.tar.gz">
+<!ENTITY s6-rc-md5 "30395a4bfaea2b1720765b087a0d7aa9">
+<!ENTITY s6-rc-home "https://skarnet.org/software/s6-rc/">
+<!ENTITY s6-rc-tmp-du "9999 MB">
+<!ENTITY s6-rc-tmp-sbu "9999 SBU">
+<!ENTITY s6-rc-fin-du "9999 MB">
+<!ENTITY s6-rc-fin-sbu "9999 SBU">
+
+<!ENTITY s6-init-version "1.0.8.0"><!-- S6 init -->
+<!ENTITY s6-init-size "9999 KB">
+<!ENTITY s6-init-url "https://skarnet.org/software/s6-linux-init/s6-linux-init-&s6-init-version;.tar.gz">
+<!ENTITY s6-init-md5 "c970118871adc59c2c8126a83fb93589">
+<!ENTITY s6-init-home "https://skarnet.org/software/s6-linux-init/">
+<!ENTITY s6-init-tmp-du "9999 MB">
+<!ENTITY s6-init-tmp-sbu "9999 SBU">
+<!ENTITY s6-init-fin-du "9999 MB">
+<!ENTITY s6-init-fin-sbu "9999 SBU">
 
 <!ENTITY sed-version "4.8">
 <!ENTITY sed-size "1,317 KB">

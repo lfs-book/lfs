@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-skalibs" role="wrap" revision="s6">
+  <?dbhtml filename="skalibs.html"?>
+
+  <sect1info condition="script">
+    <productname>skalibs</productname>
+    <productnumber>&skalibs-version;</productnumber>
+    <address>&skalibs-url;</address>
+  </sect1info>
+
+  <title>skalibs-&skalibs-version;</title>
+
+  <indexterm zone="ch-system-skalibs">
+    <primary sortas="a-skalibs">skalibs</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The skalibs package contains library routines for the
+    S6 init system.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&skalibs-fin-sbu;</seg>
+        <seg>&skalibs-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of skalibs</title>
+
+    <para>Prepare skalibs for compilation:</para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
+
+<!--
+    <variablelist>
+      <title>The meaning of the configure options:</title>
+
+      <varlistentry>
+        <term><parameter>- -blah=blubb</parameter></term>
+        <listitem>
+          <para>blah blah</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+-->
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-skalibs" role="content">
+    <title>Contents of skalibs</title>
+
+    <segmentedlist>
+      <segtitle>Installed programs</segtitle>
+      <segtitle>Installed libraries</segtitle>
+      <segtitle>Installed directories</segtitle>
+
+      <seglistitem>
+        <seg>skalibs-x, skalibs-y, skalibs-z, ...</seg>
+        <seg>libx, liby, libz ...</seg>
+        <seg>dirx, diry, dirz ...</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="skalibs-x">
+        <term><command>skalibs-x</command></term>
+        <listitem>
+          <para>Is used to blah blah</para>
+          <indexterm zone="ch-system-skalibs skalibs-x">
+            <primary sortas="b-skalibs-x">skalibs-x</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+  </sect2>
+
+</sect1>

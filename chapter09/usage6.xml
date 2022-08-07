@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  <!ENTITY site               SYSTEM "../appendices/rc.site.script">
+  %general-entities;
+]>
+
+<sect1 id="ch-config-usage" revision="s6">
+  <?dbhtml filename="usage.html"?>
+
+  <title>S6 Usage and Configuration</title>
+
+  <para>Add more info about S6 here.</para>
+  
+</sect1>

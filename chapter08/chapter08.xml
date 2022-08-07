@@ -96,13 +96,18 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="man-db.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="procps.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="util-linux.xml"/>
-
-  <!-- Both sysv and systemd builds -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="e2fsprogs.xml"/>
 
   <!-- sysv only -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="sysklogd.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="sysvinit.xml"/>
+
+  <!-- s6 only -->
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="skalibs.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="execline.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="s6.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="s6-rc.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="s6-init.xml"/>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="aboutdebug.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="stripping.xml"/>

@@ -30,6 +30,10 @@
 <!ENTITY short-version  "systemd"> <!-- Used below in &blfs-book; -->
 <!ENTITY errata          "&lfs-root;lfs/errata/systemd/">
 ]]>
+<![ %s6; [
+<!ENTITY short-version   "svn-s6">    <!-- Used below in &blfs-book; -->
+<!ENTITY errata          "&lfs-root;lfs/errata/development/">
+]]>
 <!ENTITY generic-version "development"> <!-- Used below in
                                              &patches-root;,
                                              &donwloads-root;, and
@@ -44,6 +48,10 @@
 <![ %systemd; [
 <!ENTITY version         "%relnum;-systemd">
 <!ENTITY short-version   "stable-systemd"> <!-- Used below in &blfs-book; -->
+]]>
+<![ %s6; [
+<!ENTITY version         "%relnum;-s6">
+<!ENTITY short-version   "%relnum;-s6">  <!-- Used below in &blfs-book; -->
 ]]>
 <!ENTITY errata          "&lfs-root;lfs/errata/&version;/">
 <!ENTITY generic-version "%relnum;"> <!-- Used below in
@@ -63,6 +71,10 @@
 <!ENTITY version         "%relnum;-systemd-rc%rcnum;">
 <!ENTITY short-version   "systemd">  <!-- Used below in &blfs-book; -->
 ]]>
+<![ %s6; [
+<!ENTITY version         "%relnum;-s6-rc%rcnum;">
+<!ENTITY short-version   "s6">  <!-- Used below in &blfs-book; -->
+]]>
 <!ENTITY errata          "&lfs-root;lfs/errata/&version;/">
 <!ENTITY generic-version "%relnum;-rc%rcnum;"> <!-- Used below in
                                                     &patches-root;,
@@ -77,6 +89,9 @@
 ]]>
 <![ %systemd; [
 <!ENTITY wget-list       "wget-list-systemd">
+]]>
+<![ %s6; [
+<!ENTITY wget-list       "wget-list-s6">
 ]]>
 
 <!ENTITY lfs-root        "https://www.linuxfromscratch.org/">

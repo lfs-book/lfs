@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-system-eudev" role="wrap" revision="sysv">
+<sect1 id="ch-system-eudev" role="wrap" revision="sysv,s6">
   <?dbhtml filename="eudev.html"?>
 
   <sect1info condition="script">
@@ -133,7 +133,7 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
       <bridgehead renderas="sect3">Short Descriptions</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
-      <varlistentry id="udevadm" revision="sysv">
+      <varlistentry id="udevadm" revision="sysv,s6">
         <term><command>udevadm</command></term>
         <listitem>
           <para>Generic udev administration tool: controls the udevd daemon,

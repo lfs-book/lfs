@@ -174,11 +174,20 @@
       </listitem>
     </varlistentry>
 
-    <varlistentry revision="sysv">
+    <varlistentry revision="sysv,s6">
       <term>Eudev (&eudev-version;) - <token>&eudev-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="&eudev-url;"/></para>
         <para>MD5 sum: <literal>&eudev-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry revision="s6">
+      <term>execline (&execline-version;) - <token>&execline-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&execline-home;"/></para>
+        <para>Download: <ulink url="&execline-url;"/></para>
+        <para>MD5 sum: <literal>&execline-md5;</literal></para>
       </listitem>
     </varlistentry>
 
@@ -656,6 +665,42 @@
       </listitem>
     </varlistentry>
 
+    <varlistentry revision="s6">
+      <term>skalibs (&skalibs-version;) - <token>&skalibs-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&skalibs-home;"/></para>
+        <para>Download: <ulink url="&skalibs-url;"/></para>
+        <para>MD5 sum: <literal>&skalibs-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry revision="s6">
+      <term>S6 (&s6-version;) - <token>&s6-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&s6-home;"/></para>
+        <para>Download: <ulink url="&s6-url;"/></para>
+        <para>MD5 sum: <literal>&s6-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry revision="s6">
+      <term>S6-rc (&s6-rc-version;) - <token>&s6-rc-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&s6-rc-home;"/></para>
+        <para>Download: <ulink url="&s6-rc-url;"/></para>
+        <para>MD5 sum: <literal>&s6-rc-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry revision="s6">
+      <term>S6-linux-init (&s6-init-version;) - <token>&s6-init-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&s6-init-home;"/></para>
+        <para>Download: <ulink url="&s6-init-url;"/></para>
+        <para>MD5 sum: <literal>&s6-init-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
     <varlistentry revision="sysv">
       <term>Sysklogd (&sysklogd-version;) - <token>&sysklogd-size;</token>:</term>
       <listitem>
@@ -688,7 +733,6 @@
         </note>
       </listitem>
     </varlistentry>
-
 
     <varlistentry revision="sysv">
       <term>Sysvinit (&sysvinit-version;) - <token>&sysvinit-size;</token>:</term>
@@ -743,7 +787,7 @@
       </listitem>
     </varlistentry>
 
-    <varlistentry revision="sysv">
+    <varlistentry revision="sysv,s6">
       <term>Udev-lfs Tarball (&udev-lfs-version;) - <token>&udev-lfs-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="&udev-lfs-url;"/></para>

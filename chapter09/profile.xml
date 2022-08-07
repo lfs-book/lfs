@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-config-profile" revision="sysv">
+<sect1 id="ch-config-profile" revision="sysv,s6">
   <?dbhtml filename="profile.html"?>
 
   <title>The Bash Shell Startup Files</title>

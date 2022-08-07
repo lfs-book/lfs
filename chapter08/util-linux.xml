@@ -44,7 +44,7 @@
 
     <para>Prepare Util-linux for compilation:</para>
 
-<screen revision="sysv"><userinput remap="configure">./configure ADJTIME_PATH=/var/lib/hwclock/adjtime   \
+<screen revision="sysv,s6"><userinput remap="configure">./configure ADJTIME_PATH=/var/lib/hwclock/adjtime   \
             --bindir=/usr/bin    \
             --libdir=/usr/lib    \
             --sbindir=/usr/sbin  \
