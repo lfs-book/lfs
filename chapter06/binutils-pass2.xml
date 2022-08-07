@@ -64,6 +64,7 @@ cd       build</userinput></screen>
     --host=$LFS_TGT            \
     --disable-nls              \
     --enable-shared            \
+    --enable-gprofng=no        \
     --disable-werror           \
     --enable-64-bit-bfd</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">../configure                   \
