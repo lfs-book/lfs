@@ -43,20 +43,19 @@
 
     <para>Prepare s6-init for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr \
+            --skeldir=/etc/s6-linux-init/skel</userinput></screen>
 
-<!--
     <variablelist>
       <title>The meaning of the configure options:</title>
 
       <varlistentry>
-        <term><parameter>- -blah=blubb</parameter></term>
+        <term><parameter>--skeldir=/etc/s6-linux-init/skel</parameter></term>
         <listitem>
-          <para>blah blah</para>
+          <para>Set directory where to store essential files for the init process</para>
         </listitem>
       </varlistentry>
     </variablelist>
--->
 
     <para>Compile the package:</para>
 
