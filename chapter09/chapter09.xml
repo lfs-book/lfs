@@ -21,6 +21,7 @@
 
   <!-- s6 -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="introduction6.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="bootscripts6.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="network6.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="usage6.xml"/>
   

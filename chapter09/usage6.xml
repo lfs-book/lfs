@@ -11,9 +11,70 @@
 
   <title>S6 Usage and Configuration</title>
 
-  <para>*** Add more info about S6 here. ***</para>
+  <para>Some information about S6 in general and in detail...</para>
+  
+  <sect2>
+    <title>Terminology</title>
 
-  <para>Now setup some essential scripts for booting.</para>
+    <para>
+      S6 does not look that trivial on the first view. Some
+      clarification on the terminology of S6 might help to understand
+      what is talked about.
+    </para>
+
+    <itemizedlist>
+      <listitem>
+	<para>service directory</para>
+	<para>
+          A directory, where your service definitions are
+	  stored. That is the direcory where all the directories
+	  containing <filename>type</filename>, <filename>up</filename>,
+	  <filename>down</filename> and <filename>dependencies</filename>
+	  resides in. In the service directory can be much more
+	  service definitions be stored than you might actually are
+	  going to use.
+	</para>
+      </listitem>
+      
+      <listitem>
+	<para>scan directory</para>
+	<para>
+          Pretty much same structure as a <emphasis>service directory</emphasis>
+          but it contains only that services which are used on your
+          system. The scandir can contain symbolic links to services
+          in the <emphasis>service directory</emphasis>.
+	</para>
+      </listitem>
+    </itemizedlist>
+    
+  </sect2>
+  
+  <sect2>
+    <title>The boot scripts</title>
+    
+    <para>Now setup some essential scripts for booting.</para>
+
+    <para>
+      After init has been started, the s6 rc.init file is read.
+      The file can be found in <filename class="directory">/etc/s6-linux-init/skel</filename>.
+      This file can be used to start the S6 service manager as well
+      as optionally other service managers. To enable s6-rc, execute
+      following command to uncomment the respective line:
+    </para>
+
+<screen><userinput>sed -e "s/^# s6-rc-init/s6-rc-init/" \
+    -i /etc/s6-linux-init/skel/rc.init</userinput></screen>
+
+    <note>
+      <para>
+        Whenever you change files in the skel directory, it is
+        required to reinstall them using the <filename>s6-linux-init-maker</filename>
+        script.
+      </para>
+      <para>
+        Execute the following commands to rebuild the files.
+      </para>
+    </note>
 
 <!--
   Following setup is taken from
@@ -28,23 +89,26 @@
   
   ... but it boots ;-)
 -->  
-  <para>Make sure that the configuration directory exists:</para>
+    <para>Make sure that the configuration directory exists:</para>
   
 <screen><userinput>mkdir -p /etc/s6-linux-init</userinput></screen>  
 
-  <para>Setup a temporary directory:</para>
+    <para>Setup a temporary directory name (the directory itself
+    must not exist):</para>
 
-<screen><userinput>tmpdir=$(mktemp -d)</userinput></screen>  
+<screen><userinput>tmpdir=$(mktemp -d -u)</userinput></screen>  
 
-  <para>Create essential programs and move them to a
-  directory representing the current setup:</para>
+    <para>Create essential programs and move them to a
+      directory representing the current setup:</para>
 
-<screen><userinput>s6-linux-init-maker -1 -G "/sbin/agetty 38400 tty1" $tmpdir
+<screen><userinput>s6-linux-init-maker -1 -G "/sbin/agetty -J 38400 tty1" $tmpdir
 mv $tmpdir /etc/etc/s6-linux-init/current
 </userinput></screen>  
 
-  <para>Install the essential programs in the file system:</para>
+    <para>Install the essential programs in the file system:</para>
 
 <screen><userinput>cp -av /etc/etc/s6-linux-init/current/bin/* /sbin/</userinput></screen>  
 
+  </sect2>
+  
 </sect1>
