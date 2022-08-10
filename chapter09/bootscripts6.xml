@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-config-bootscripts6" role="wrap" revision="s6">
+  <?dbhtml filename="bootscripts.html"?>
+
+  <sect1info condition="script">
+    <productname>bootscripts</productname>
+    <productnumber>&lfs-bootscripts-version;</productnumber>
+    <address>&lfs-bootscripts-url;</address>
+  </sect1info>
+
+  <title>LFS-Bootscripts-&lfs-bootscripts-version;</title>
+
+  <indexterm zone="ch-config-bootscripts6">
+    <primary sortas="a-Bootscripts">Bootscripts</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The LFS-Bootscripts package contains a set of scripts to start/stop
+    the LFS system at bootup/shutdown.
+    The configuration files and procedures needed to
+    customize the boot process are described in the following sections.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&lfs-bootscripts-cfg-sbu;</seg>
+        <seg>&lfs-bootscripts-cfg-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of LFS-Bootscripts</title>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-bootscripts" role="content">
+    <title>Contents of LFS-Bootscripts</title>
+    <segmentedlist>
+      <segtitle>Installed scripts</segtitle>
+      <segtitle>Installed directories</segtitle>
+
+      <seglistitem>
+        <seg>blah, ...</seg>
+        <seg>dir, ...</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="blah-bootscripts">
+        <term><command>blah</command></term>
+        <listitem>
+          <para>Blah does something</para>
+          <indexterm zone="ch-config-bootscripts6 blah-bootscripts">
+            <primary sortas="d-blah">blah</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>
