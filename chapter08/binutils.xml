@@ -56,13 +56,13 @@
 
 <screen><computeroutput>The system has no more ptys.
 Ask your system administrator to create more.</computeroutput></screen>
-
+<!--
     <para>Upstream has made a patch to fix a problem when using binutils
     for building some BLFS packages with Link Time Optimization (LTO)
     enabled.  Apply that now:</para>
 
  <screen><userinput remap="pre">patch -Np1 -i ../&binutils-lto-patch;</userinput></screen>
-
+-->
 <!--
     <para>An error in the building system causes the shipped man pages to
     be empty.  Workaround the issue and remove the shipped man pages, so the
@@ -88,6 +88,7 @@ cd       build</userinput></screen>
     <para>Prepare Binutils for compilation:</para>
 
 <screen><userinput remap="configure">../configure --prefix=/usr       \
+             --sysconfdir=/etc   \
              --enable-gold       \
              --enable-ld=default \
              --enable-plugins    \
@@ -199,7 +200,7 @@ cd       build</userinput></screen>
       <segtitle>Installed directory</segtitle>
 
       <seglistitem>
-        <seg>addr2line, ar, as, c++filt, dwp, elfedit, gprof, ld, ld.bfd, ld.gold, nm,
+        <seg>addr2line, ar, as, c++filt, dwp, elfedit, gprof, gprofng, ld, ld.bfd, ld.gold, nm,
         objcopy, objdump, ranlib, readelf, size, strings, and strip</seg>
         <seg>libbfd.so, libctf.so, libctf-nobfd.so, and libopcodes.so</seg>
         <seg>/usr/lib/ldscripts</seg>
@@ -282,6 +283,16 @@ cd       build</userinput></screen>
           <para>Displays call graph profile data</para>
           <indexterm zone="ch-system-binutils gprof">
             <primary sortas="b-gprof">gprof</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gprofng">
+        <term><command>gprofng</command></term>
+        <listitem>
+          <para>Gather and analyze performance data</para>
+          <indexterm zone="ch-system-binutils gprofng">
+            <primary sortas="b-gprofng">gprofng</primary>
           </indexterm>
         </listitem>
       </varlistentry>
