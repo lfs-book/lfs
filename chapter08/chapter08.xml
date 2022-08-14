@@ -108,6 +108,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="s6.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="s6-rc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="s6-init.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="s6-utils.xml"/>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="aboutdebug.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="stripping.xml"/>

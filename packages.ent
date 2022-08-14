@@ -664,6 +664,16 @@
 <!ENTITY s6-init-fin-du "9999 MB">
 <!ENTITY s6-init-fin-sbu "9999 SBU">
 
+<!ENTITY s6-utils-version "2.6.0.0"><!-- S6 init -->
+<!ENTITY s6-utils-size "9999 KB">
+<!ENTITY s6-utils-url "https://skarnet.org/software/s6-linux-utils/s6-linux-utils-&s6-utils-version;.tar.gz">
+<!ENTITY s6-utils-md5 "5f7c1722badf34128003c57491253e6e">
+<!ENTITY s6-utils-home "https://skarnet.org/software/s6-linux-utils/">
+<!ENTITY s6-utils-tmp-du "9999 MB">
+<!ENTITY s6-utils-tmp-sbu "9999 SBU">
+<!ENTITY s6-utils-fin-du "9999 MB">
+<!ENTITY s6-utils-fin-sbu "9999 SBU">
+
 <!ENTITY sed-version "4.8">
 <!ENTITY sed-size "1,317 KB">
 <!ENTITY sed-url "&gnu;sed/sed-&sed-version;.tar.xz">

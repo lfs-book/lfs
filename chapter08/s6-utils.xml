@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-s6-utils" role="wrap" revision="s6">
+  <?dbhtml filename="s6-utils.html"?>
+
+  <sect1info condition="script">
+    <productname>s6-utils</productname>
+    <productnumber>&s6-utils-version;</productnumber>
+    <address>&s6-utils-url;</address>
+  </sect1info>
+
+  <title>s6-utils-&s6-utils-version;</title>
+
+  <indexterm zone="ch-system-s6-utils">
+    <primary sortas="a-s6-utils">s6-utils</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>s6-linux-init is a set of minimalistic tools used to
+    create a s6-based init system, including a /sbin/init binary,
+    on a Linux kernel.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&s6-utils-fin-sbu;</seg>
+        <seg>&s6-utils-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of s6-linux-utils</title>
+
+    <para>Prepare s6-utils for compilation:</para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
+
+<!--
+    <variablelist>
+      <title>The meaning of the configure options:</title>
+
+      <varlistentry>
+        <term><parameter>--skeldir=/etc/s6-linux-init/skel</parameter></term>
+        <listitem>
+          <para>Set directory where to store essential files for the init process</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+-->
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-s6-utils" role="content">
+    <title>Contents of s6-utils</title>
+
+    <segmentedlist>
+      <segtitle>Installed programs</segtitle>
+      <segtitle>Installed libraries</segtitle>
+      <segtitle>Installed directories</segtitle>
+
+      <seglistitem>
+        <seg>s6-utils-x, s6-utils-y, s6-utils-z, ...</seg>
+        <seg>libx, liby, libz ...</seg>
+        <seg>dirx, diry, dirz ...</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="s6-utils-x">
+        <term><command>s6-utils-x</command></term>
+        <listitem>
+          <para>Is used to blah blah</para>
+          <indexterm zone="ch-system-s6-utils s6-utils-x">
+            <primary sortas="b-s6-utils-x">s6-utils-x</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+  </sect2>
+
+</sect1>
