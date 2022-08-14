@@ -50,7 +50,7 @@
       <title>The meaning of the configure options:</title>
 
       <varlistentry>
-        <term><parameter>--skeldir=/etc/s6-linux-init/skel</parameter></term>
+        <term><parameter>- -skeldir=/etc/s6-linux-init/skel</parameter></term>
         <listitem>
           <para>Set directory where to store essential files for the init process</para>
         </listitem>
