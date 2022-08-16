@@ -11,6 +11,18 @@ all: links
 
 install: all
 
+install-s6: s6-files
+
+s6-dirs:
+	install -d -m ${DIRMODE}  ${ETCDIR}/s6-rc/services
+
+s6-files: s6-dirs
+	cp -a s6/services/mount-virtfs    ${ETCDIR}/s6-rc/services/
+	  cp -a s6/services/mount-procfs  ${ETCDIR}/s6-rc/services/
+	  cp -a s6/services/mount-sysfs   ${ETCDIR}/s6-rc/services/
+	cp -a s6/services/hostname        ${ETCDIR}/s6-rc/services/
+	cp -a s6/services/default         ${ETCDIR}/s6-rc/services/
+
 create-dirs:
 	install -d -m ${DIRMODE}  ${ETCDIR}/rc.d/rc0.d
 	install -d -m ${DIRMODE}  ${ETCDIR}/rc.d/rc1.d
@@ -128,5 +140,5 @@ uninstall:
           ${SBIN}/ifup ${SBIN}/ifdown ${MAN8}/ifup.8 ${MAN8}/ifdown.8 \
           ${ETCDIR}/sysconfig/rc
 
-.PHONY: all create-dirs install files links rcS rc0 rc1 rc2 rc3 rc4 rc5 rc6 uninstall
+.PHONY: all create-dirs install files links rcS rc0 rc1 rc2 rc3 rc4 rc5 rc6 uninstall install-s6
 

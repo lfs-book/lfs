@@ -102,12 +102,12 @@
       directory representing the current setup:</para>
 
 <screen><userinput>s6-linux-init-maker -1 -G "/sbin/agetty -J 38400 tty1" $tmpdir
-mv $tmpdir /etc/etc/s6-linux-init/current
+mv $tmpdir /etc/s6-linux-init/current
 </userinput></screen>  
 
     <para>Install the essential programs in the file system:</para>
 
-<screen><userinput>cp -av /etc/etc/s6-linux-init/current/bin/* /sbin/</userinput></screen>  
+<screen><userinput>cp -av /etc/s6-linux-init/current/bin/* /sbin/</userinput></screen>  
 
   </sect2>
   

@@ -45,7 +45,7 @@
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make install</userinput></screen>
+<screen><userinput remap="install">make install-s6</userinput></screen>
 
   </sect2>
 

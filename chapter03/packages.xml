@@ -183,7 +183,7 @@
     </varlistentry>
 
     <varlistentry revision="s6">
-      <term>execline (&execline-version;) - <token>&execline-size;</token>:</term>
+      <term>Execline (&execline-version;) - <token>&execline-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&execline-home;"/></para>
         <para>Download: <ulink url="&execline-url;"/></para>
@@ -409,7 +409,7 @@
       </listitem>
     </varlistentry>
 
-    <varlistentry revision="sysv">
+    <varlistentry revision="sysv,s6">
       <term>LFS-Bootscripts (&lfs-bootscripts-version;) - <token>&lfs-bootscripts-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&lfs-bootscripts-home;"/></para>
@@ -666,7 +666,7 @@
     </varlistentry>
 
     <varlistentry revision="s6">
-      <term>skalibs (&skalibs-version;) - <token>&skalibs-size;</token>:</term>
+      <term>Skalibs (&skalibs-version;) - <token>&skalibs-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&skalibs-home;"/></para>
         <para>Download: <ulink url="&skalibs-url;"/></para>
@@ -698,6 +698,15 @@
         <para>Home page: <ulink url="&s6-init-home;"/></para>
         <para>Download: <ulink url="&s6-init-url;"/></para>
         <para>MD5 sum: <literal>&s6-init-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry revision="s6">
+      <term>S6-utils (&s6-utils-version;) - <token>&s6-utils-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&s6-utils-home;"/></para>
+        <para>Download: <ulink url="&s6-utils-url;"/></para>
+        <para>MD5 sum: <literal>&s6-utils-md5;</literal></para>
       </listitem>
     </varlistentry>
 
