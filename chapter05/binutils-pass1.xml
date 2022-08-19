@@ -80,6 +80,7 @@ cd       build</userinput></screen>
              --with-sysroot=$LFS \
              --target=$LFS_TGT   \
              --disable-nls       \
+             --enable-gprofng=no \
              --disable-werror    \
              --enable-multilib</userinput></screen>
 
