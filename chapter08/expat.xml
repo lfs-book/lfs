@@ -81,7 +81,8 @@ make clean</userinput></screen>
     <para>Prepare Expat for compilation:</para>
 
 <screen><userinput remap="configure">CC="gcc -m32" ./configure \
-    --prefix=/usr         \
+    --prefix=/usr        \
+    --disable-static     \
     --libdir=/usr/lib32  \
     --host=i686-pc-linux-gnu</userinput></screen>
 
@@ -113,7 +114,8 @@ make clean</userinput></screen>
     <para>Prepare Expat for compilation:</para>
 
 <screen><userinput remap="configure">CC="gcc -mx32" ./configure \
-    --prefix=/usr         \
+    --prefix=/usr        \
+    --disable-static     \
     --libdir=/usr/libx32 \
     --host=x86_64-pc-linux-gnux32</userinput></screen>
 

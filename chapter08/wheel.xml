@@ -86,7 +86,7 @@
         <seg>wheel</seg>
         <seg>
            /usr/lib/python&python-minor;/site-packages/wheel and
-           /usr/lib/python&python-minor;/site-packages/wheel-0.37.1-py3.10.egg-info
+           /usr/lib/python&python-minor;/site-packages/wheel-&wheel-version;-py&python-minor;.egg-info
         </seg>
       </seglistitem>
     </segmentedlist>
