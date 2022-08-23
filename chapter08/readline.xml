@@ -117,7 +117,8 @@ sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
     --host=i686-pc-linux-gnu      \
     --prefix=/usr                 \
     --libdir=/usr/lib32           \
-    --disable-static</userinput></screen>
+    --disable-static              \
+    --with-curses</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -148,7 +149,8 @@ rm -rf DESTDIR</userinput></screen>
     --host=x86_64-pc-linux-gnux32 \
     --prefix=/usr                 \
     --libdir=/usr/libx32          \
-    --disable-static</userinput></screen>
+    --disable-static              \
+    --with-curses</userinput></screen>
 
     <para>Compile the package:</para>
 

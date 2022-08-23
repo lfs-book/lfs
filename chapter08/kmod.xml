@@ -118,6 +118,7 @@ make clean</userinput></screen>
     --prefix=/usr                 \
     --libdir=/usr/lib32           \
     --sysconfdir=/etc             \
+    --with-openssl                \
     --with-xz                     \
     --with-zstd                   \
     --with-zlib                   \
@@ -155,6 +156,7 @@ make clean</userinput></screen>
     --prefix=/usr                 \
     --libdir=/usr/libx32          \
     --sysconfdir=/etc             \
+    --with-openssl                \
     --with-xz                     \
     --with-zstd                   \
     --with-zlib                   \

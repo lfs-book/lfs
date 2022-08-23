@@ -104,8 +104,7 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
             --libdir=/usr/lib32            \
             --sysconfdir=/etc              \
             --disable-manpages             \
-            --disable-static               \
-            --config-cache</userinput></screen>
+            --disable-static</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -139,8 +138,7 @@ rm -rf DESTDIR</userinput></screen>
             --libdir=/usr/libx32           \
             --sysconfdir=/etc              \
             --disable-manpages             \
-            --disable-static               \
-            --config-cache</userinput></screen>
+            --disable-static</userinput></screen>
 
     <para>Compile the package:</para>
 

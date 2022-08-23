@@ -141,6 +141,8 @@
 
 <screen><userinput remap="configure">CC="gcc -m32" \
 ./configure ADJTIME_PATH=/var/lib/hwclock/adjtime    \
+            --libdir=/usr/lib32      \
+            --host=i686-pc-linux-gnu \
             --docdir=/usr/share/doc/util-linux-&util-linux-version; \
             --disable-chfn-chsh  \
             --disable-login      \
@@ -151,8 +153,7 @@
             --disable-pylibmount \
             --disable-static     \
             --without-python     \
-            --libdir=/usr/lib32      \
-            --host=i686-pc-linux-gnu</userinput></screen>
+            runstatedir=/run</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -181,6 +182,8 @@ rm -rf DESTDIR</userinput></screen>
 
 <screen><userinput remap="configure">CC="gcc -mx32" \
 ./configure ADJTIME_PATH=/var/lib/hwclock/adjtime    \
+            --libdir=/usr/libx32 \
+            --host=x86_64-pc-linux-gnux32 \
             --docdir=/usr/share/doc/util-linux-&util-linux-version; \
             --disable-chfn-chsh  \
             --disable-login      \
@@ -191,8 +194,7 @@ rm -rf DESTDIR</userinput></screen>
             --disable-pylibmount \
             --disable-static     \
             --without-python     \
-            --libdir=/usr/libx32 \
-            --host=x86_64-pc-linux-gnux32</userinput></screen>
+            runstatedir=/run</userinput></screen>
 
     <para>Compile the package:</para>
 
