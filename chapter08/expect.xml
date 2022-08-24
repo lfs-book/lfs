@@ -48,6 +48,12 @@
   <sect2 role="installation">
     <title>Installation of Expect</title>
 
+    <para>Update two config scripts to allow building this package for
+    AArch64:</para>
+
+<screen><userinput remap="pre">tar -C tclconfig -xf ../autoconf-&autoconf-version;.tar.xz --strip-components=2 \
+    autoconf-&autoconf-version;/build-aux/config.{guess,sub}</userinput></screen>
+
     <para>Prepare Expect for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr           \
