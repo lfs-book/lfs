@@ -58,14 +58,11 @@ mv -v gmp-&gmp-version; gmp
 tar -xf ../mpc-&mpc-version;.tar.gz
 mv -v mpc-&mpc-version; mpc</userinput></screen>
 
-    <para>If building on x86_64, change the default directory name for 64-bit
-    libraries to <quote>lib</quote>:</para>
+    <para>On ARM64 hosts, set the default directory name for
+    64-bit libraries to <quote>lib</quote>:</para>
 
-<screen><userinput remap="pre">case $(uname -m) in
-  x86_64)
-    sed -e '/m64=/s/lib64/lib/' -i.orig gcc/config/i386/t-linux64
-  ;;
-esac</userinput></screen>
+<screen><userinput remap="pre">sed -e '/lp64=/s/lib64/lib/' \
+    -i.orig gcc/config/aarch64/t-aarch64-linux</userinput></screen>
 
     <para>Override the building rule of libgcc and libstdc++ headers, to
     allow building these libraries with POSIX threads support:</para>
