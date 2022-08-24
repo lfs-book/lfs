@@ -447,7 +447,7 @@ unset ZONEINFO</userinput></screen>
     </indexterm>
 
     <para>By default, the dynamic loader (<filename
-    class="libraryfile">/lib/ld-linux.so.2</filename>) searches through
+    class="libraryfile">/lib/ld-linux-aarch64.so.1</filename>) searches through
     <filename class="directory">/usr/lib</filename> for dynamic libraries
     that are needed by programs as they are run. However, if there are
     libraries in directories other than
@@ -495,11 +495,11 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
       <seglistitem>
         <seg>gencat, getconf, getent, iconv, iconvconfig, ldconfig,
         ldd, lddlibc4,
-        ld.so (symlink to ld-linux-x86-64.so.2 or ld-linux.so.2),
+        ld.so (symlink to ld-linux-aarch64[_be].so.1),
         locale, localedef, makedb, mtrace, nscd,
         pcprofiledump, pldd, sln, sotruss, sprof, tzselect, xtrace,
         zdump, and zic</seg>
-        <seg>ld-linux-x86-64.so.2, ld-linux.so.2,
+        <seg>ld-linux-aarch64[_be].so.1,
         libBrokenLocale.{a,so}, libanl.{a,so},
         libc.{a,so}, libc_nonshared.a, libc_malloc_debug.so,
         libcrypt.{a,so}, libdl.{a,so.2}, libg.a, libm.{a,so},
