@@ -43,27 +43,6 @@
   <sect2 role="installation">
     <title>Installation of Glibc</title>
 
-    <para>First, create a symbolic link for LSB compliance. Additionally,
-    for x86_64, create a compatibility symbolic link required for proper
-    operation of the dynamic library loader:</para>
-
-<screen><userinput remap="pre">case $(uname -m) in
-    i?86)   ln -sfv ld-linux.so.2 $LFS/lib/ld-lsb.so.3
-    ;;
-    x86_64) ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64
-            ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64/ld-lsb-x86-64.so.3
-    ;;
-esac</userinput></screen>
-
-    <note>
-      <para>
-        The above command is correct.  The <command>ln</command> command has
-        a few syntactic versions, so be sure to check
-        <command>info coreutils ln</command> and <filename>ln(1)</filename>
-        before reporting what you may think is an error.
-      </para>
-    </note>
-
     <para>Some of the Glibc programs use the non-FHS compliant
     <filename class="directory">/var/db</filename> directory to store their
     runtime data. Apply the following patch to make such programs store their
