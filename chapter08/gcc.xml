@@ -137,6 +137,20 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     as both XPASS and FAIL.  It's because the test file for this known issue
     is not well written.</para>
 
+    <!-- Already known via gcc-testresults@gcc.gnu.org -->
+    <para>On ARM64,
+    four g++ tests related to <filename>Waddress-5.C</filename>,
+    twelve g++ tests related to <filename>attrs-10.C</filename>,
+    four g++ tests related to <filename>declare-simd-8.C</filename>,
+    one gcc tests related to <filename>ssa-dom-thread-7.c</filename>,
+    one gcc tests related to <filename>fcsel_1.c</filename>,
+    one gcc tests related to <filename>mgeneral-regs_3.c</filename>, and
+    four gcc tests related to <filename>vqdmlalh_laneq*.c</filename>
+    are known to fail.</para>
+
+    <!-- Need further investigation -->
+    <para>Many gcc and g++ tests related to hwasan are known to fail.</para>
+
     <para>A few unexpected failures cannot always be avoided. The GCC developers
     are usually aware of these issues, but have not resolved them yet.
     Unless the test results are vastly different from those at the above URL,
