@@ -214,9 +214,9 @@ readelf -l a.out | grep ': /lib'</userinput></screen>
 
   <para>The output of the last command should be:</para>
 
-<screen><computeroutput>/usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/../../../../lib/crt1.o succeeded
-/usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/../../../../lib/crti.o succeeded
-/usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/../../../../lib/crtn.o succeeded</computeroutput></screen>
+<screen><computeroutput>/usr/lib/gcc/aarch64-unknown-linux-gnu/&gcc-version;/../../../../lib/crt1.o succeeded
+/usr/lib/gcc/aarch64-unknown-linux-gnu/&gcc-version;/../../../../lib/crti.o succeeded
+/usr/lib/gcc/aarch64-unknown-linux-gnu/&gcc-version;/../../../../lib/crtn.o succeeded</computeroutput></screen>
 
   <para>Depending on your machine architecture, the above may differ slightly.
   The difference will be the name of the directory
@@ -233,9 +233,9 @@ readelf -l a.out | grep ': /lib'</userinput></screen>
   <para>This command should return the following output:</para>
 
 <screen><computeroutput>#include &lt;...&gt; search starts here:
- /usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/include
+ /usr/lib/gcc/aarch64-unknown-linux-gnu/&gcc-version;/include
  /usr/local/include
- /usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/include-fixed
+ /usr/lib/gcc/aarch64-unknown-linux-gnu/&gcc-version;/include-fixed
  /usr/include</computeroutput></screen>
 
    <para>Again, the directory named after your target triplet may be
@@ -248,11 +248,11 @@ readelf -l a.out | grep ': /lib'</userinput></screen>
   <para>References to paths that have components with '-linux-gnu' should
   be ignored, but otherwise the output of the last command should be:</para>
 
-<screen><computeroutput>SEARCH_DIR("/usr/x86_64-pc-linux-gnu/lib64")
+<screen><computeroutput>SEARCH_DIR("/usr/aarch64-unknown-linux-gnu/lib64")
 SEARCH_DIR("/usr/local/lib64")
 SEARCH_DIR("/lib64")
 SEARCH_DIR("/usr/lib64")
-SEARCH_DIR("/usr/x86_64-pc-linux-gnu/lib")
+SEARCH_DIR("/usr/aarch64-unknown-linux-gnu/lib")
 SEARCH_DIR("/usr/local/lib")
 SEARCH_DIR("/lib")
 SEARCH_DIR("/usr/lib");</computeroutput></screen>
