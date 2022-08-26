@@ -289,7 +289,7 @@ File systems  ---&gt;
     used. The filename below can be changed to suit your taste, but the stem of
     the filename should be <emphasis>vmlinuz</emphasis> to be compatible with
     the automatic setup of the boot process described in the next section.  The
-    following command assumes an x86 architecture:</para>
+    following command assumes an ARM64 architecture:</para>
 
 <screen><userinput remap="install">cp -iv arch/arm64/boot/Image /boot/vmlinuz-&linux-version;-lfs-&version;</userinput></screen>
 

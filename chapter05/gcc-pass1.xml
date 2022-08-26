@@ -140,8 +140,7 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>--disable-multilib</parameter></term>
         <listitem>
-          <para>On x86_64, LFS does not support a multilib configuration.
-          This switch is harmless for x86.</para>
+          <para>On ARM64, LFS does not support a multilib configuration.</para>
         </listitem>
       </varlistentry>
 
