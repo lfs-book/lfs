@@ -45,6 +45,14 @@
     across the keymaps in the Kbd package. The following patch fixes this
     issue for i386 keymaps:</para>
 
+    <note>
+      <para>
+        Don't skip the patch just because it mentions "i386".  The keymaps
+        for the keyboards most common on the market (qwerty or dvorak) are
+        in "i386" catagory.
+      </para>
+    </note>
+
 <screen><userinput remap="pre">patch -Np1 -i ../&kbd-backspace-patch;</userinput></screen>
 
     <para>After patching, the backspace key generates the character with code 127,
