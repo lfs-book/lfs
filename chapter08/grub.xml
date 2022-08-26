@@ -42,11 +42,22 @@
 
     <note>
       <para>
-        If your system has UEFI support and you wish to boot LFS with UEFI,
-        you can skip this package in LFS,
-        and install GRUB with UEFI support (and its dependencies) by following
-        the instructions on
-        <ulink url="&blfs-book;postlfs/grub-efi.html">the BLFS page</ulink>.
+        On LoongArch systems, the following instruction builds GRUB for UEFI.
+        But the built GRUB lacks some features because a few optional
+        dependencies of GRUB for UEFI is beyond the scope of LFS and not
+        installed yet.
+      </para>
+      <para>
+        If your system firmware does not support UEFI, you need to skip the
+        content of this page and try to figure out how to boot your system.
+      </para>
+      <para>
+        If your system firmware supports UEFI and you want a fully
+        functional GRUB, you can skip the content of this page,
+        and install GRUB with UEFI support (and its dependencies) following
+        <ulink url="&blfs-book;postlfs/grub-efi.html">the BLFS page</ulink>
+        (with <parameter>--target=x86_64</parameter> removed) at the end of
+        this chapter.
       </para>
     </note>
 
