@@ -18,10 +18,19 @@
 
   <note>
     <para>
-      If your system has UEFI support and you wish to boot LFS with UEFI,
-      you should skip this page, and config GRUB with UEFI support
+      This section assume your system has UEFI support and you wish to boot
+      LFS with UEFI and GRUB built following the instructions in Chapter 8.
+    </para>
+    <para>
+      If you've installed GRUB for UEFI with optional dependencies following
+      BLFS, you should skip this page, and config GRUB with UEFI support
       using the instructions provided in
       <ulink url="&blfs-book;postlfs/grub-setup.html">the BLFS page</ulink>.
+    </para>
+    <para>
+      If your system does not support UEFI or you don't want to use it,
+      you'll need to figure out how to configure the booting process of
+      the system on your own.
     </para>
   </note>
 
@@ -34,18 +43,23 @@
     just want to modify your current boot loader, e.g. Grub-Legacy, GRUB2, or
     LILO.</para></warning>
 
-    <para> Ensure that an emergency boot disk is ready to <quote>rescue</quote>
+    <para>Ensure that an emergency boot disk is ready to <quote>rescue</quote>
     the computer if the computer becomes unusable (un-bootable).  If you do not
-    already have a boot device, you can create one.  In order for the procedure
-    below to work, you need to jump ahead to BLFS and install
-    <userinput>xorriso</userinput> from the <ulink
-    url="&blfs-book;multimedia/libisoburn.html">
-    libisoburn</ulink> package.</para>
+    already have a boot device, you can create one.  To create a emergency
+    boot device for UEFI, consult section <quote>Create an Emergency Boot
+    Disk</quote> in
+	<ulink url="&blfs-book;postlfs/grub-setup.html">the BLFS page</ulink>.</para>
 
-<screen role="nodump"><userinput>cd /tmp
-grub-mkrescue --output=grub-img.iso
-xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></screen>
+  </sect2>
 
+  <sect2>
+    <title>Turn off Secure Boot</title>
+
+    <para>LFS does not have the essential packages to support Secure Boot.
+    To set up the boot process following the instructions in this section,
+    Secure Boot must be turned off from the configuration interface of the
+    firmware. Read the documentation provided by the manufacturer of your
+    system to find out how.</para>
   </sect2>
 
   <sect2>
@@ -71,10 +85,30 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
   <sect2>
     <title>Setting Up the Configuration</title>
 
-    <para>GRUB works by writing data to the first physical track of the
-    hard disk.  This area is not part of any file system.  The programs
-    there access GRUB modules in the boot partition.  The default location
-    is /boot/grub/.</para>
+    <para>GRUB works by creating an EFI executable in the EFI System
+    Partition (ESP).  You can find the ESP with:</para>
+
+<screen role="nodump"><userinput>fdisk -l | grep 'EFI System'</userinput></screen>
+
+    <para>If no ESP exists on your hard drive (for example, you are building
+    LFS on a fresh new system with a Live CD as the host distro), read
+    <ulink url="&blfs-book;postlfs/grub-setup.html">the BLFS page</ulink>
+    for the instruction to create an ESP on your hard drive.</para>
+
+    <para>If the ESP is not mounted at
+    <filename class="directory">/boot/efi</filename> (in the chroot),
+    mount it now:</para>
+
+<screen role="nodump"><userinput>mount /boot/efi</userinput></screen>
+
+    <note>
+      <para>The path to the device node is intentionally omitted in the
+      command.  We expect the entry for mounting the ESP to
+      <filename class="directory">/boot/efi</filename> is already in
+      <filename>/etc/fstab</filename>.  Add the entry before running the
+      command if you forgot to create an entry for the ESP in
+      <xref linkend="ch-bootable-fstab"/>.</para>
+    </note>
 
     <para>The location of the boot partition is a choice of the user that
     affects the configuration.  One recommendation is to have a separate small
@@ -98,23 +132,50 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
     class="partition">sda2</filename>.</para>
 
     <para>Install the GRUB files into <filename
-    class="directory">/boot/grub</filename> and set up the boot track:</para>
+    class="directory">/boot/grub</filename> and the GRUB EFI executable into
+    <filename class="directory">/boot/efi/EFI/BOOTAA64.EFI</filename>:</para>
 
     <warning>
-      <para>The following command will overwrite the current boot loader. Do not
-      run the command if this is not desired, for example, if using a third party
-      boot manager to manage the Master Boot Record (MBR).</para>
+      <para>The following command will overwrite
+      <filename>BOOTAA64.EFI</filename>. Do not run the command if this is
+      not desired, for example, if it contains a third party boot manager.
+      You can backup it with <command>cp</command> as it's a regular
+      file.</para>
     </warning>
 
-<screen role="nodump"><userinput>grub-install /dev/sda</userinput></screen>
+<screen role="nodump"><userinput>grub-install --removable</userinput></screen>
 
     <note>
-      <para>If the system has been booted using UEFI,
-      <command>grub-install</command> will try to install files for the
-      <emphasis>x86_64-efi</emphasis> target, but those files
-      have not been installed in <xref linkend="chapter-building-system"/>.
-      If this is the case, add <option>--target i386-pc</option> to the
-      command above.</para>
+      <para>
+        <parameter>--removable</parameter> may seem strange here.  The UEFI
+        firmware searches EFI executables for boot loaders in a hardcoded
+        path, <filename>EFI/BOOTAA64.EFI</filename> in the ESP, and other
+        boot loader paths listed in the EFI variables.  We've not installed
+        the utilities for manipulating EFI variables so we need to install
+        the EFI executable into the hardcoded path.  The hardcoded path is
+        usually used by removable devices (for example, USB thumb devices)
+        so the <command>grub-install</command> option for this purpose is
+        named <parameter>--removable</parameter>.
+      </para>
+      <para>
+        UEFI implementation usually prefers the boot loaders with paths
+        recorded in an EFI variable, to the boot loader with the hardcoded
+        search path.  You may need to invoke the boot device selection menu
+        or setting interface of your EFI firmware on next boot to explicitly
+        select the bootloader.
+      </para>
+      <para>
+        Some UEFI implementation may completely skip the hardcoded path if
+        there are other boot loaders in the same hard drive with paths
+        recorded in an EFI variable.  Then you need to create an EFI
+        variable for the newly installed boot loader.  Install
+        <ulink url="&blfs-book;postlfs/efibootmgr.html">efibootmgr</ulink>,
+        then run the following commands:
+<screen role="nodump"><userinput>mount -v -t efivarfs efivarfs /sys/firmware/efi/efivars
+efibootmgr -c -L LFS -l \EFI\BOOT\BOOTAA64.EFI -d /dev/sda</userinput></screen>
+        Replace <filename>/dev/sda</filename> with the device node of the
+        hard drive where you are installing GRUB into.
+      </para>
     </note>
 
 <!-- This does not seem to be true any more
