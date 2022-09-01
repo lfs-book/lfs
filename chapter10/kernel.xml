@@ -149,6 +149,23 @@ File systems  ---&gt;
    [*] Inotify support for userspace [CONFIG_INOTIFY_USER]
        Pseudo filesystems  ---&gt;
         [*] Tmpfs POSIX Access Control Lists [CONFIG_TMPFS_POSIX_ACL]</screen>
+
+      <para>Enable some additional features if you are building a 64-bit
+      system.  If you are using menuconfig, enable them in the order of
+      <parameter>CONFIG_PCI_MSI</parameter> first, then
+      <parameter>CONFIG_IRQ_REMAP</parameter>, at last
+      <parameter>CONFIG_X86_X2APIC</parameter> because an option only
+      shows up after its dependencies are selected.</para>
+
+      <screen role="nodump">Processor type and features ---&gt;
+  [*] Support x2apic [CONFIG_X86_X2APIC]
+Memory Management options  ---&gt;
+  [ ] Enable userfaultfd() system call [CONFIG_USERFAULTFD]
+Device Drivers ---&gt;
+  [*] PCI Support ---&gt; [CONFIG_PCI]
+    [*] Message Signaled Interrupts (MSI and MSI-X) [CONFIG_PCI_MSI]
+  [*] IOMMU Hardware Support ---&gt; [CONFIG_IOMMU_SUPPORT]
+    [*] Support for Interrupt Remapping [CONFIG_IRQ_REMAP]</screen>
     </note>
 
     <note revision="systemd">
@@ -222,6 +239,28 @@ File systems  ---&gt;
           <para>This will mount the kernel view of the devices on /dev
           upon switching to root filesystem just before starting
           init.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>Support x2apic</parameter></term>
+        <listitem>
+          <para>Support running the interrupt controller of 64-bit x86
+          processors in x2APIC mode.  x2APIC may be enabled by firmware on
+          64-bit x86 systems, and a kernel without this option enabled will
+          panic on boot if x2APIC is enabled by firmware.  This option has
+          has no effect, but also does no harm if x2APIC is disabled by the
+          firmware.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>Enable userfaultfd() system call</parameter></term>
+        <listitem>
+          <para>If this option is enabled, a security vulnerability not
+          resolved in Linux-&linux-version; yet will be exploitable.
+          Disable this option to avoid the vulnerability.  This system call
+          is not used by any part of LFS or BLFS.</para>
         </listitem>
       </varlistentry>
 

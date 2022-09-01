@@ -173,6 +173,12 @@ esac</userinput></screen>
         addresses.</para> <!-- PR 24816 -->
       </listitem>
 
+      <!-- https://sourceware.org/pipermail/libc-alpha/2022-August/141567.html -->
+      <listitem>
+        <para>The <emphasis>stdlib/tst-arc4random-thread</emphasis>
+        test is known to fail if the host kernel is relatively old.</para>
+      </listitem>
+
       <listitem>
         <para>Some tests, for example
         <emphasis>nss/tst-nss-files-hosts-multi</emphasis>,
@@ -180,16 +186,6 @@ esac</userinput></screen>
         timeout.</para>
       </listitem>
 
-      <!--
-        https://lists.linuxfromscratch.org/sympa/arc/lfs-support/2022-06/msg00022.html
-        https://sourceware.org/pipermail/libc-alpha/2022-June/139839.html
-      -->
-      <listitem>
-        <para>About 27 tests, for example <emphasis>elf/tst-pldd</emphasis>,
-        are known to fail if the kernel supports namespaces (see
-        <filename>namespaces(7)</filename> for details) but the host distro
-        has disabled them via sysctl.</para>
-      </listitem>
 <!--
       <listitem>
         <para>The <emphasis>rt/tst-cputimer{1,2,3}</emphasis> tests depend on
@@ -453,10 +449,9 @@ unset ZONEINFO</userinput></screen>
 
     <para>By default, the dynamic loader (<filename
     class="libraryfile">/lib/ld-linux.so.2</filename>) searches through
-    <filename class="directory">/lib</filename> and <filename
-    class="directory">/usr/lib</filename> for dynamic libraries that are
-    needed by programs as they are run. However, if there are libraries in
-    directories other than <filename class="directory">/lib</filename> and
+    <filename class="directory">/usr/lib</filename> for dynamic libraries
+    that are needed by programs as they are run. However, if there are
+    libraries in directories other than
     <filename class="directory">/usr/lib</filename>, these need to be added
     to the <filename>/etc/ld.so.conf</filename> file in order for the
     dynamic loader to find them. Two directories that are commonly known

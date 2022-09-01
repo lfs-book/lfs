@@ -60,8 +60,7 @@
     for your target machine if it's not a 32-bit or 64-bit x86:</para>
 
 <screen><userinput remap="make">make headers ARCH=<replaceable>x86</replaceable>
-find usr/include -name '.*' -delete
-rm usr/include/Makefile
+find usr/include -type f ! -name '*.h' -delete
 </userinput><userinput remap="install">cp -rv usr/include $LFS/usr</userinput></screen>
 
   </sect2>
