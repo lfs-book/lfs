@@ -93,6 +93,8 @@ cd       build</userinput></screen>
 <userinput remap="configure">../configure --prefix=/usr               \
              LD=ld                       \
              --enable-languages=c,c++    \
+             --enable-default-pie        \
+             --enable-default-ssp        \
              --enable-multilib           \
              --with-multilib-list=$mlist \
              --disable-bootstrap         \

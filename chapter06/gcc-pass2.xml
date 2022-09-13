@@ -120,6 +120,8 @@ cd       build</userinput></screen>
     LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc      \
     --prefix=/usr                                  \
     --with-build-sysroot=$LFS                      \
+    --enable-default-pie                           \
+    --enable-default-ssp                           \
     --enable-initfini-array                        \
     --disable-nls                                  \
     --enable-multilib --with-multilib-list=$mlist  \
