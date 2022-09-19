@@ -43,8 +43,8 @@
 
     <note>
        <para>
-          Classically, run level 2 above was defined as 
-          "multi-user mode without networking", but this was only the case 
+          Classically, run level 2 above was defined as
+          "multi-user mode without networking", but this was only the case
           many years ago when multiple users could log into a system connected via
           serial ports.  In today's environment it makes no sense and
           we designate it now as "reserved".
@@ -166,7 +166,7 @@ EOF</userinput></screen>
   <parameter>stop</parameter> to stop something. The logic behind this
   is that when a user is going to reboot or halt the system, nothing
   needs to be started, but the order of shutdown needs to be controlled.
-  For these run levels, all <emphasis>K</emphasis> prefixed scripts will be 
+  For these run levels, all <emphasis>K</emphasis> prefixed scripts will be
   run before any <emphasis>S</emphasis> prefixed scripts are run with the
   <parameter>stop</parameter> parameter.
   </para>
@@ -334,7 +334,7 @@ EOF</userinput></screen>
   <filename>/etc/sysconfig/console</filename> file for configuration
   information.  Decide which keymap and screen font will be used. Various
   language-specific HOWTOs can also help with this, see <ulink
-  url="http://www.tldp.org/HOWTO/HOWTO-INDEX/other-lang.html"/>. If still in
+  url="https://tldp.org/HOWTO/HOWTO-INDEX/other-lang.html"/>. If still in
   doubt, look in the <filename class="directory">/usr/share/keymaps</filename>
   and <filename class="directory">/usr/share/consolefonts</filename> directories
   for valid keymaps and screen fonts. Read <filename>loadkeys(1)</filename> and

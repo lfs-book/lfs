@@ -73,6 +73,8 @@ cd       build</userinput></screen>
 <screen><userinput remap="configure">../configure --prefix=/usr            \
              LD=ld                    \
              --enable-languages=c,c++ \
+             --enable-default-pie     \
+             --enable-default-ssp     \
              --disable-multilib       \
              --disable-bootstrap      \
              --with-system-zlib</userinput></screen>
@@ -103,13 +105,34 @@ cd       build</userinput></screen>
       </varlistentry>
     </variablelist>
 
+    <note>
+      <anchor id="pie-ssp-info" xreflabel="note on PIE and SSP"/>
+      <para>
+        PIE (position-independent executable) is a technique to produce
+        binary programs that can be loaded anywhere in memory.  Without PIE,
+        the security feature named ASLR (Address Space Layout Randomization)
+        can be applied for the shared libraries, but not the exectutable
+        itself.  Enabling PIE allows ASLR for the executables in addition to
+        the shared libraries, and mitigates some attacks based on fixed
+        addresses of sensitive code or data in the executables.
+      </para>
+      <para>
+        SSP (Stack Smashing Protection) is a technique to ensure
+        that the parameter stack is not corrupted. Stack corruption can
+        for example alter the return address of a subroutine,
+        which would allow transferring control to some dangerous code
+        (existing in the program or shared libraries, or injected by the
+        attacker somehow) instead of the original one.
+      </para>
+    </note>
+
     <para>Compile the package:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
     <important>
       <para>In this section, the test suite for GCC is considered
-      important, but it takes a long time. First time builders are 
+      important, but it takes a long time. First time builders are
       encouraged to not skip it.  The time to run the tests can be
       reduced significantly by adding -jx to the make command below
       where x is the number of cores on your system.</para>
@@ -135,6 +158,10 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <para>Results can be compared with those located at <ulink
     url="&test-results;"/> and
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
+
+    <para>In gcc, eleven tests, in the i386 test suite are known to FAIL.
+    It's because the test files do not account for the
+    <parameter>--enable-default-pie</parameter> option.</para>
 
     <para>In g++, four tests related to PR100400 are known to be reported
     as both XPASS and FAIL.  It's because the test file for this known issue
@@ -199,11 +226,11 @@ readelf -l a.out | grep ': /lib'</userinput></screen>
 
   <para>Now make sure that we're setup to use the correct start files:</para>
 
-<screen><userinput>grep -o '/usr/lib.*/crt[1in].*succeeded' dummy.log</userinput></screen>
+<screen><userinput>grep -E -o '/usr/lib.*/S?crt[1in].*succeeded' dummy.log</userinput></screen>
 
   <para>The output of the last command should be:</para>
 
-<screen><computeroutput>/usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/../../../../lib/crt1.o succeeded
+<screen><computeroutput>/usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/../../../../lib/Scrt1.o succeeded
 /usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/../../../../lib/crti.o succeeded
 /usr/lib/gcc/x86_64-pc-linux-gnu/&gcc-version;/../../../../lib/crtn.o succeeded</computeroutput></screen>
 
@@ -561,7 +588,8 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         <term><filename class="libraryfile">libssp</filename></term>
         <listitem>
           <para>Contains routines supporting GCC's stack-smashing protection
-          functionality</para>
+          functionality.  Normally it's unused because glibc also provides
+          those routines</para>
           <indexterm zone="ch-system-gcc libssp">
             <primary sortas="c-libssp">libssp</primary>
           </indexterm>

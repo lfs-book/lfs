@@ -122,7 +122,7 @@
     </para>
 
     <!-- To editors: crash of shell process was very rare but really
-         observed.  We can't simply remove /usr/lib/libncursesw.so.6.x like 
+         observed.  We can't simply remove /usr/lib/libncursesw.so.6.x like
          how we handle libmozjs-xx.so in BLFS because bash needs it, and
          make will spawn new shell processes during "make install".  -->
 
@@ -131,8 +131,7 @@
     in-place.  It may crash the shell process which is using code and data
     from the library file.  Install the package with
     <literal>DESTDIR</literal>, and replace the library file correctly using
-    <command>install</command> command.  A useless static archive which is
-    not handled by <command>configure</command> is also removed:</para>
+    <command>install</command> command:</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/dest install
 install -vm755 dest/usr/lib/libncursesw.so.&ncurses-version; /usr/lib
@@ -212,6 +211,7 @@ cp -av lib/lib*.so.5* /usr/lib</userinput></screen>
            libformw.so,
            libmenuw.so,
            libncursesw.so,
+           libncurses++w.so,
            libpanelw.so, and their non-wide-character counterparts without "w"
               in the library names.</seg>
         <seg>
@@ -362,6 +362,16 @@ cp -av lib/lib*.so.5* /usr/lib</userinput></screen>
           menuconfig</command></para>
           <indexterm zone="ch-system-ncurses libncursesw">
             <primary sortas="c-libncursesw">libncursesw</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libncurses__w">
+        <term><filename class="libraryfile">libncurses++w</filename></term>
+        <listitem>
+          <para>Contains C++ binding for other libraries in this package</para>
+          <indexterm zone="ch-system-ncurses libncurses__w">
+            <primary sortas="c-libncurses++w">libncurses++w</primary>
           </indexterm>
         </listitem>
       </varlistentry>

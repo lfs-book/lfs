@@ -9,17 +9,22 @@
   <?dbhtml filename="reboot.html"?>
 
   <title>Rebooting the System</title>
+  <para>
+    Now that all of the software has been installed, it is time to reboot
+    your computer. However, there are still a few things to check.
+    Here are some suggestions:</para>
 
-  <para>Now that all of the software has been installed, it is time to reboot
-  your computer. However, you should be aware of a few things. The system you
+
+<!--
+  The system you
   have created in this book is quite minimal, and most likely will not have
   the functionality you would need to be able to continue forward. By installing
   a few extra packages from the BLFS book while still in our current chroot
   environment, you can leave yourself in a much better position to continue on
   once you reboot into your new LFS installation. Here are some suggestions:</para>
-
+-->
   <itemizedlist>
-
+<!--
     <listitem><para>A text mode browser such as <ulink
     url='&blfs-book;basicnet/lynx.html'>Lynx</ulink>
     will allow you to easily view the BLFS book in one virtual terminal, while
@@ -60,14 +65,21 @@
     install <ulink
     url='&blfs-book;basicnet/wpa_supplicant.html'>wpa_supplicant</ulink>.
     </para></listitem>
+-->
+    <listitem>
+      <para>
+        Install any <ulink
+        url='&blfs-book;postlfs/firmware.html'>firmware</ulink> needed if the
+        kernel driver for your hardware requires some firmware files to function
+        properly.
+      </para>
+    </listitem>
 
-    <listitem><para>Install <ulink
-    url='&blfs-book;postlfs/firmware.html'>firmwares</ulink> if the kernel
-    driver for your hardware require some firmware to function properly.
-    </para></listitem>
-
-    <listitem><para>Finally, a review of the following configuration files
-    is also appropriate at this point.</para>
+    <listitem>
+      <para>
+        A review of the following configuration files
+        is also appropriate at this point.
+      </para>
 
       <itemizedlist>
         <listitem><para>/etc/bashrc                  </para></listitem>
@@ -97,7 +109,7 @@
 
 <screen role="nodump"><userinput>sync</userinput></screen>
 
-  <para>Now, reboot the system with:</para>
+  <para>Now, reboot the system:</para>
 
 <screen role="nodump"><userinput>reboot -ff</userinput></screen>
 
