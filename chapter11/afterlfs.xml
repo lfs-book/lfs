@@ -73,107 +73,6 @@
     </para>
 
   <sect3>
-  <title>Work from the LFS host in chroot</title>
-
-    <para>
-      This method provides a complete graphical environment where a full
-      featured browser and copy/paste capabilites are available. This method
-      allows using applications like the host's version of wget to download
-      package sources to a location available when working in the chroot
-      envirnment.
-    </para>
-
-    <para>
-       In order to properly build packages in chroot, you will also need to
-       remember to mount the virtual file systems if they are not already
-       mounted. One way to do this is to create a script on the
-       <emphasis role="bold">HOST</emphasis> system:
-    </para>
-
-<screen><command>cat &gt; ~/mount-virt.sh &lt;&lt; "EOF"
-#!/bin/bash
-
-function mountbind
-{
-   if ! mountpoint $LFS/$1 >/dev/null; then
-     $SUDO mount --bind /$1 $LFS/$1
-     echo $LFS/$1 mounted
-   else
-     echo $LFS/$1 already mounted
-   fi
-}
-
-function mounttype
-{
-   if ! mountpoint $LFS/$1 >/dev/null; then
-     $SUDO mount -t $2 $3 $4 $5 $LFS/$1
-     echo $LFS/$1 mounted
-   else
-     echo $LFS/$1 already mounted
-   fi
-}
-
-if [ $EUID -ne 0 ]; then
-  SUDO=sudo
-else
-  SUDO=""
-fi
-
-if [ x$LFS == x ]; then
-  echo "LFS not set"
-  exit 1
-fi
-
-mountbind dev
-mounttype dev/pts devpts devpts -o gid=5,mode=620
-mounttype proc    proc   proc
-mounttype sys     sysfs  sysfs
-mounttype run     tmpfs  run
-mkdir $LFS/run/shm
-#mountbind usr/src
-#mountbind boot
-#mountbind home
-EOF</command></screen>
-
-    <para>
-       Note that the last three commands in the script are commented out. These
-       are useful if those directories are mounted as separate partitions on the
-       host system and will be mounted when booting the completed LFS/BLFS system.
-    </para>
-
-    <para>
-        The script can be run with <command>bash ~/mount-virt.sh</command> as
-        either a regular user (recommended) or as &root;. If run as a regular
-        user, sudo is required on the host system.
-    </para>
-
-    <para>
-        Another issue pointed out by the script is where to store downloaded
-        package files. This location is arbitrary. It can be in a regular
-        user's home directory such as ~/sources or in a global location like
-        /usr/src. Our recommendation is not to mix BLFS sources and LFS sources
-        in (from the chroot environment) /sources. In any case, the packages
-        must be accessible inside the chroot environment.
-    </para>
-
-    <para>
-        A last convenience feature presented here is to streamline the process
-        of entering the chroot environment. This can be done with an alias
-        placed in a user's ~/.bashrc file on the host system:
-    </para>
-
-<screen><command>alias lfs='sudo /usr/sbin/chroot /mnt/lfs /usr/bin/env -i HOME=/root TERM="$TERM" PS1="\u:\w\\\\$ "
-PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash --login'</command></screen>
-
-     <para>
-       This alias is a little tricky because of the quoting and levels of
-       backslash characters. It must be all on a single line. The above command
-       has been split in two for presentation purposes.
-    </para>
-
-  </sect3>
-
-  <sect3>
   <title>Work remotely via ssh</title>
 
     <para>
@@ -181,11 +80,8 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash --login'</command></screen>
        requires installing
         <ulink url="&blfs-book;postlfs/openssh.html">sshd</ulink> and
         <ulink url="&blfs-book;basicnet/wget.html">wget</ulink>
-       on the LFS system, usually in chroot. It also requires a second
-       computer. This method has the advantage of being simple by not requiring
-       the complexity of the chroot environment. It also uses your LFS built
-       kernel for all additional packages and still provides a complete system
-       for installing packages.
+       on the LFS system, usually in the LFS command line. It also requires
+       a second computer.
     </para>
 
   </sect3>
@@ -202,7 +98,8 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash --login'</command></screen>
         <ulink url="&blfs-book;general/gpm.html">gpm</ulink>, and
         <ulink url="&blfs-book;basicnet/links.html">links</ulink>
         (or <ulink url="&blfs-book;basicnet/lynx.html">lynx</ulink>)
-       in chroot and then rebooting into the new LFS system. At this
+       after rebooting into the new LFS system.  You may need a removable
+       stroage device to copy these packages into the target system. At this
        point the default system has six virtual consoles. Switching
        consoles is as easy as using the
        <keycombo>
