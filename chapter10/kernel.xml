@@ -105,19 +105,30 @@
       <para>Be sure to enable/disable/set the following features or the system might
       not work correctly or boot at all:</para>
 
-      <screen role="nodump" revision="sysv">General setup -->
+      <screen role="nodump" revision="sysv">Processor type and features ---&gt;
+   [*] Build a relocatable kernel [CONFIG_RELOCATABLE]
+   [*]   Randomize the address of the kernel image (KASLR) [CONFIG_RANDOMIZE_BASE]
+General setup ---&gt;
    [ ] Compile the kernel with warnings as errors [CONFIG_WERROR]
    &lt; &gt; Enable kernel headers through /sys/kernel/kheaders.tar.xz [CONFIG_IKHEADERS]
+General architecture-dependent options  ---&gt;
+   [*] Stack Protector buffer overflow detection [CONFIG_STACKPROTECTOR]
+   [*]   Strong Stack Protector [CONFIG_STACKPROTECTOR_STRONG]
 Device Drivers  ---&gt;
   Graphics support ---&gt;
    Frame buffer Devices ---&gt;
-      [*] Support for frame buffer devices ----
+      &lt;*&gt; Support for frame buffer devices ---&gt;
+   Console display driver support ---&gt;
+      [*] Framebuffer Console support [CONFIG_FRAMEBUFFER_CONSOLE]
   Generic Driver Options  ---&gt;
    [ ] Support for uevent helper [CONFIG_UEVENT_HELPER]
    [*] Maintain a devtmpfs filesystem to mount at /dev [CONFIG_DEVTMPFS]
    [*]   Automount devtmpfs at /dev, after the kernel mounted the rootfs [CONFIG_DEVTMPFS_MOUNT]</screen>
 
-      <screen role="nodump" revision="systemd">General setup -->
+      <screen role="nodump" revision="systemd">Processor type and features ---&gt;
+   [*] Build a relocatable kernel [CONFIG_RELOCATABLE]
+   [*]   Randomize the address of the kernel image (KASLR) [CONFIG_RANDOMIZE_BASE]
+General setup ---&gt;
    [ ] Compile the kernel with warnings as errors [CONFIG_WERROR]
    [ ] Auditing Support [CONFIG_AUDIT]
    CPU/Task time and stats accounting ---&gt;
@@ -130,6 +141,8 @@ Device Drivers  ---&gt;
       [*] open by fhandle syscalls [CONFIG_FHANDLE]
 General architecture-dependent options  ---&gt;
    [*] Enable seccomp to safely compute untrusted bytecode [CONFIG_SECCOMP]
+   [*] Stack Protector buffer overflow detection [CONFIG_STACKPROTECTOR]
+   [*]   Strong Stack Protector [CONFIG_STACKPROTECTOR_STRONG]
 Networking support  ---&gt;
   Networking options  ---&gt;
    &lt;*&gt; The IPv6 protocol [CONFIG_IPV6]
@@ -145,16 +158,12 @@ Device Drivers  ---&gt;
   Graphics support ---&gt;
    Frame buffer Devices ---&gt;
       &lt;*&gt; Support for frame buffer devices ---&gt;
+   Console display driver support ---&gt;
+      [*] Framebuffer Console support [CONFIG_FRAMEBUFFER_CONSOLE]
 File systems  ---&gt;
    [*] Inotify support for userspace [CONFIG_INOTIFY_USER]
        Pseudo filesystems  ---&gt;
         [*] Tmpfs POSIX Access Control Lists [CONFIG_TMPFS_POSIX_ACL]</screen>
-
-      <para>Disable a feature which is security compromised in this kernel
-      release:</para>
-
-      <screen role="nodump">Memory Management options  ---&gt;
-  [ ] Enable userfaultfd() system call [CONFIG_USERFAULTFD]</screen>
     </note>
 
     <note revision="systemd">
@@ -180,6 +189,14 @@ File systems  ---&gt;
       <title>The rationale for the above configuration items:</title>
 
       <varlistentry>
+        <term><parameter>Randomize the address of the kernel image (KASLR)</parameter></term>
+        <listitem>
+          <para>Enable ASLR for kernel image, to mitigate some attacks based
+          on fixed addresses of sensitive data or code in the kernel.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
         <term>
           <parameter>
             Compile the kernel with warnings as errors
@@ -201,6 +218,16 @@ File systems  ---&gt;
         <listitem>
           <para>This will require <command>cpio</command> building the kernel.
           <command>cpio</command> is not installed by LFS.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>Strong Stack Protector</parameter></term>
+        <listitem>
+          <para>Enable SSP for the kernel.  We've enabled it for the entire
+          userspace with <parameter>--enable-default-ssp</parameter>
+          configuring GCC, but the kernel does not use GCC default setting
+          for SSP.  We enable it explicitly here.</para>
         </listitem>
       </varlistentry>
 
@@ -232,12 +259,16 @@ File systems  ---&gt;
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>Enable userfaultfd() system call</parameter></term>
+        <term><parameter>Framebuffer Console support</parameter></term>
         <listitem>
-          <para>If this option is enabled, a security vulnerability not
-          resolved in Linux-&linux-version; yet will be exploitable.
-          Disable this option to avoid the vulnerability.  This system call
-          is not used by any part of LFS or BLFS.</para>
+          <para>This is needed to display the Linux console on a frame
+          buffer device.  To allow the kernel to print debug messages at an
+          early boot stage, it shouldn't be built as a kernel module
+          unless an initramfs will be used. And, if
+          <option>CONFIG_DRM</option> (Direct Rendering Manager) is enabled,
+          it's likely <option>CONFIG_DRM_FBDEV_EMULATION</option> (Enable
+          legacy fbdev support for your modesetting driver) should be
+          enabled as well.</para>
         </listitem>
       </varlistentry>
 

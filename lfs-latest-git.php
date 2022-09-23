@@ -34,7 +34,7 @@ function find_max( $lines, $regex_match, $regex_replace )
 
      // Isolate the version and put in an array
      $slice = preg_replace( $regex_replace, "$1", $line );
-     if ( $slice == $line ) continue;
+     if ( strcmp( $slice, $line ) == 0 ) continue;
 
      array_push( $a, $slice );
   }
@@ -266,6 +266,15 @@ if ( $package == "zstd"       ) $dirpath = "https://github.com/facebook/zstd/rel
   if ( $package == "elfutils" )
      return find_max( $lines, "/^\d/", "/^(\d[\d\.]+\d)\/.*$/" );
 
+  if ( $package == "iana-etc" )
+     return find_max( $lines, "/^\s*20\d\d/", "/^\s+(\d+).*$/" );
+
+  if ( $package == "meson" )
+     return find_max( $lines, "/^\s+\d\./", "/^\s+([\d\.]+)$/" );
+
+  if ( $package == "shadow" )
+     return find_max( $lines, "/^\s+\d\./", "/^\s+([\d\.]+)$/" );
+
   if ( $package == "XML-Parser" )
   {
      $max = find_max( $lines, "/$package/", "/^.*$package-([\d\._]*\d).tar.*$/" );
@@ -291,6 +300,9 @@ if ( $package == "zstd"       ) $dirpath = "https://github.com/facebook/zstd/rel
      $max = find_max( $lines, "/FILE5/", "/^.*FILE(5_\d+)*$/" );
      return str_replace( "_", ".", $max );
   }
+
+  if ( $package == "libffi" )
+     return find_max( $lines, "/v\d/", "/^.*v([\d\.]+)$/" );
 
   if ( $package == "procps-ng" )
      return find_max( $lines, "/v\d/", "/^.*v([\d\.]+)$/" );

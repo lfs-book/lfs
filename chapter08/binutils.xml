@@ -167,13 +167,24 @@ cd       build</userinput></screen>
       condition.
     </para>
 
+    <para>Twelve tests fail in the <command>gold</command> testsuite when the
+    <option>--enable-default-pie</option> and
+    <option>--enable-default-ssp</option> options are passed to GCC.
+    <!-- Caused by egrep deprecation.  Note that we don't "patch" temp grep.
+         And it seems unworthy to add a sed into temp grep just for one test
+         failure.  (I don't really agree to "patch" grep in the first place,
+         anyway.) -->
+    The test named <filename>ar with versioned solib</filename> is also
+    known to fail.</para>
+
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make tooldir=/usr install</userinput></screen>
 
-    <para>Remove useless static libraries:</para>
+    <para>Remove useless static libraries and an empty man page:</para>
 
-<screen><userinput remap="install">rm -fv /usr/lib/lib{bfd,ctf,ctf-nobfd,opcodes}.a</userinput></screen>
+<screen><userinput remap="install">rm -fv /usr/lib/lib{bfd,ctf,ctf-nobfd,opcodes}.a
+rm -fv /usr/share/man/man1/gprofng.1</userinput></screen>
 
   </sect2>
 

@@ -83,6 +83,8 @@ cd       build</userinput></screen>
     --with-sysroot=$LFS       \
     --with-newlib             \
     --without-headers         \
+    --enable-default-pie      \
+    --enable-default-ssp      \
     --disable-nls             \
     --disable-shared          \
     --disable-multilib        \
@@ -125,6 +127,20 @@ cd       build</userinput></screen>
           standard headers compatible with the target system. For our
           purposes these headers will not be needed. This switch prevents
           GCC from looking for them.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+      <term><parameter>--enable-default-pie and
+      --enable-default-ssp</parameter></term>
+        <listitem>
+          <para>Those switches allow GCC to compile programs with
+           some hardening security features (more information on those in
+           the <xref linkend="pie-ssp-info"/> in chapter 8) by default. The
+           are not strictly needed at this stage, since the compiler will
+           only produce temporary executables. But it is cleaner to have the
+           temporary packages be as close as possible to the final ones.
+          </para>
         </listitem>
       </varlistentry>
 
