@@ -167,9 +167,7 @@ cd       build</userinput></screen>
       condition.
     </para>
 
-    <para>Twelve tests fail in the <command>gold</command> testsuite when the
-    <option>--enable-default-pie</option> and
-    <option>--enable-default-ssp</option> options are passed to GCC.
+    <para>
     <!-- Caused by egrep deprecation.  Note that we don't "patch" temp grep.
          And it seems unworthy to add a sed into temp grep just for one test
          failure.  (I don't really agree to "patch" grep in the first place,
