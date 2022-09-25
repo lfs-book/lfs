@@ -25,7 +25,9 @@
       If you've installed GRUB for UEFI with optional dependencies following
       BLFS, you should skip this page, and config GRUB with UEFI support
       using the instructions provided in
-      <ulink url="&blfs-book;postlfs/grub-setup.html">the BLFS page</ulink>.
+      <ulink url="&blfs-book;postlfs/grub-setup.html">the BLFS page</ulink>,
+      but replace <parameter>--target=x86_64-efi</parameter> with
+      <parameter>--target=arm64-efi</parameter> for the ARM64 system.
     </para>
     <para>
       If your system does not support UEFI or you don't want to use it,
@@ -99,7 +101,8 @@
     <filename class="directory">/boot/efi</filename> (in the chroot),
     mount it now:</para>
 
-<screen role="nodump"><userinput>mount /boot/efi</userinput></screen>
+<screen role="nodump"><userinput>mkdir -pv /boot/efi
+mount /boot/efi</userinput></screen>
 
     <note>
       <para>The path to the device node is intentionally omitted in the
@@ -171,10 +174,16 @@
         variable for the newly installed boot loader.  Install
         <ulink url="&blfs-book;postlfs/efibootmgr.html">efibootmgr</ulink>,
         then run the following commands:
+
 <screen role="nodump"><userinput>mount -v -t efivarfs efivarfs /sys/firmware/efi/efivars
-efibootmgr -c -L LFS -l \EFI\BOOT\BOOTAA64.EFI -d /dev/sda</userinput></screen>
+efibootmgr -B -L LFS || true
+efibootmgr -c -L LFS -l \EFI\BOOT\BOOTAA64.EFI -d /dev/sda
+umount /sys/firmware/efi/efivars</userinput></screen>
+
         Replace <filename>/dev/sda</filename> with the device node of the
-        hard drive where you are installing GRUB into.
+        hard drive where you are installing GRUB into.  For some UEFI
+        firmwares, <option>-e 3</option> option may be needed for the
+        <command>efibootmgr -c</command> command.
       </para>
     </note>
 
