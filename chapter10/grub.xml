@@ -177,7 +177,7 @@ mount /boot/efi</userinput></screen>
 
 <screen role="nodump"><userinput>mount -v -t efivarfs efivarfs /sys/firmware/efi/efivars
 efibootmgr -B -L LFS || true
-efibootmgr -c -L LFS -l \EFI\BOOT\BOOTAA64.EFI -d /dev/sda
+efibootmgr -c -L LFS -l '\EFI\BOOT\BOOTAA64.EFI' -d /dev/sda
 umount /sys/firmware/efi/efivars</userinput></screen>
 
         Replace <filename>/dev/sda</filename> with the device node of the
