@@ -104,24 +104,6 @@
     system.</para> </sect3>
 
     <sect3>
-    <title>The Grub Bios Partition</title>
-
-    <para>If the <emphasis>boot disk</emphasis> has been partitioned with a
-    GUID Partition Table (GPT), then a small, typically 1 MB, partition must be
-    created if it does not already exist.  This partition is not formatted, but
-    must be available for GRUB to use during installation of the boot
-    loader. This partition will normally be labeled 'BIOS Boot' if using
-    <command>fdisk</command> or have a code of <emphasis>EF02</emphasis> if
-    using the <command>gdisk</command> command.</para>
-
-    <note><para>The Grub Bios partition must be on the drive that the BIOS
-    uses to boot the system.  This is not necessarily the drive that holds
-    the LFS root partition. The disks on a system may use different
-    partition table types. The necessity of the Grub Bios partition depends
-    only on the partition table type of the boot disk.</para></note>
-    </sect3>
-
-    <sect3>
     <title>Convenience Partitions</title>
 
     <para>There are several other partitions that are not required, but should
