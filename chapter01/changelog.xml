@@ -41,6 +41,27 @@
     -->
 
     <listitem>
+      <para>2022-09-22</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to expat-2.4.9 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5117">#5117</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2022-09-20</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Adapt instructions depending on
+          host setup of /dev/shm when creating virtual filesystems
+          for chroot.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2022-09-15</para>
       <itemizedlist>
         <listitem>

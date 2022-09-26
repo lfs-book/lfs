@@ -85,6 +85,17 @@ ln -sfv /proc/self/fd/1 /dev/stdout
 ln -sfv /proc/self/fd/2 /dev/stderr
 ln -sv  /proc/self/fd   /dev</userinput></screen>
 
+      <para>In other cases <filename>/dev/shm</filename> is a mountpoint 
+      for a tmpfs. In that case the mount of /dev above will only create
+      /dev/shm in the chroot environment as a directory. In this situation
+      we explicitly mount a tmpfs,</para>
+
+<screen><userinput>if [ -h $LFS/dev/shm ]; then
+  mkdir -pv $LFS/$(readlink $LFS/dev/shm)
+else
+  mount -t tmpfs -o nosuid,nodev tmpfs $LFS/dev/shm
+fi</userinput></screen>
+
   </sect2>
 
 </sect1>

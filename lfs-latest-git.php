@@ -301,6 +301,9 @@ if ( $package == "zstd"       ) $dirpath = "https://github.com/facebook/zstd/rel
      return str_replace( "_", ".", $max );
   }
 
+  if ( $package == "libffi" )
+     return find_max( $lines, "/v\d/", "/^.*v([\d\.]+)$/" );
+
   if ( $package == "procps-ng" )
      return find_max( $lines, "/v\d/", "/^.*v([\d\.]+)$/" );
 
