@@ -26,7 +26,7 @@ ifeq ($(REV), sysv)
   BASEDIR         ?= ~/lfs-book
   PDF_OUTPUT      ?= LFS-BOOK.pdf
   NOCHUNKS_OUTPUT ?= LFS-BOOK.html
-  DUMPDIR         ?= ~/cross-lfs-commands
+  DUMPDIR         ?= ~/lfs-commands
 else
   BASEDIR         ?= ~/lfs-systemd
   PDF_OUTPUT      ?= LFS-SYSD-BOOK.pdf
@@ -150,7 +150,7 @@ validate: tmpdir version
 	$(Q)xmllint --nonet                      \
                --noent                      \
                --postvalid                  \
-	            -o $(RENDERTMP)/lfs-full.xml \
+               -o $(RENDERTMP)/lfs-full.xml \
                $(RENDERTMP)/lfs-html2.xml
 
 	$(Q)rm -f appendices/*.script
@@ -161,9 +161,9 @@ profile-html:
 	@echo "Generating profiled XML for XHTML..."
 	$(Q)xsltproc --nonet                              \
                 --stringparam profile.condition html \
-	             --output $(RENDERTMP)/lfs-html.xml   \
+                --output $(RENDERTMP)/lfs-html.xml   \
                 stylesheets/lfs-xsl/profile.xsl      \
-	             $(RENDERTMP)/lfs-full.xml
+                $(RENDERTMP)/lfs-full.xml
 
 wget-list: $(BASEDIR)/wget-list $(BASEDIR)/wget-list-$(REV)
 $(BASEDIR)/wget-list: stylesheets/wget-list.xsl chapter03/chapter03.xml \
@@ -172,7 +172,7 @@ $(BASEDIR)/wget-list: stylesheets/wget-list.xsl chapter03/chapter03.xml \
 	$(Q)mkdir -p $(BASEDIR)
 	$(Q)xsltproc --xinclude --nonet            \
                 --output $(BASEDIR)/wget-list \
-	             stylesheets/wget-list.xsl     \
+                stylesheets/wget-list.xsl     \
                 chapter03/chapter03.xml
 
 $(BASEDIR)/wget-list-$(REV): stylesheets/wget-list.xsl \
@@ -212,22 +212,17 @@ $(BASEDIR)/md5sums: stylesheets/wget-list.xsl chapter03/chapter03.xml \
 version:
 	$(Q)./git-version.sh $(REV)
 
-#dump-commands: validate
-#	@echo "Dumping book commands..."
-#	$(Q)xsltproc --nonet                     \
-#      --output $(RENDERTMP)/lfs-html.xml    \
-#      --stringparam profile.revision $(REV) \
-#      stylesheets/lfs-xsl/profile.xsl       \
-#      $(RENDERTMP)/lfs-full.xml
+dump-commands: validate
+	@echo "Dumping book commands..."
 
-#	$(Q)rm -rf $(DUMPDIR)
+	$(Q)rm -rf $(DUMPDIR)
 
-#	$(Q)xsltproc --output $(DUMPDIR)/          \
-#                stylesheets/dump-commands.xsl \
-#                $(RENDERTMP)/lfs-html.xml
-#	@echo "Dumping book commands complete in $(DUMPDIR)"
+	$(Q)xsltproc --output $(DUMPDIR)/          \
+                stylesheets/dump-commands.xsl \
+                $(RENDERTMP)/lfs-full.xml
+	@echo "Dumping book commands complete in $(DUMPDIR)"
 
-all: book nochunks pdf # dump-commands
+all: book nochunks pdf dump-commands
 
 .PHONY : all book dump-commands nochunks pdf profile-html tmpdir validate md5sums wget-list version
 

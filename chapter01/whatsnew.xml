@@ -11,6 +11,14 @@
 
   <title>What's new since the last release</title>
 
+  <para>In 11.3 release, <parameter>--enable-default-pie</parameter>
+  and <parameter>--enable-default-ssp</parameter> are enabled for GCC.
+  They can mitigate some type of malicious attacks but they cannot provide
+  a full protection.  In case if you are reading a programming textbook,
+  you may need to disable PIE and SSP with GCC options
+  <parameter>-fno-pie -no-pie -fno-stack-protection</parameter>
+  because some textbooks assume they were disabled by default.</para>
+
   <para>Below is a list of package updates made since the previous
   release of the book.</para>
 
@@ -38,9 +46,9 @@
     <!--<listitem>
       <para>Automake-&automake-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Bash &bash-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Bc &bc-version;</para>
     </listitem>
@@ -62,9 +70,9 @@
     <!--<listitem>
       <para>DejaGNU-&dejagnu-version;</para>
     </listitem>-->
-    <!--<listitem revision="systemd">
+    <listitem revision="systemd">
       <para>D-Bus-&dbus-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Diffutils-&diffutils-version;</para>
     </listitem>-->
@@ -74,9 +82,9 @@
     <!--<listitem revision="sysv">
        <para>Eudev-&eudev-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
        <para>Expat-&expat-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
        <para>Expect-&expect-version;</para>
     </listitem>-->
@@ -122,9 +130,9 @@
     <!--<listitem>
       <para>Gzip-&gzip-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>IANA-Etc-&iana-etc-version;</para>
-   </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Inetutils-&inetutils-version;</para>
     </listitem>-->
@@ -149,15 +157,15 @@
     <!--<listitem>
       <para>LFS-Bootscripts-&lfs-bootscripts-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Libcap-&libcap-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Libelf-&elfutils-version; (from elfutils)</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Libffi-&libffi-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Libpipeline-&libpipeline-version;</para>
     </listitem>-->
@@ -218,9 +226,9 @@
     <listitem>
       <para>Python-&python-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Readline-&readline-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Sed-&sed-version;</para>
     </listitem>-->
@@ -245,9 +253,9 @@
    <!--<listitem>
       <para>Texinfo-&texinfo-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Tzdata-&tzdata-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Util-Linux-&util-linux-version;</para>
     </listitem>-->
