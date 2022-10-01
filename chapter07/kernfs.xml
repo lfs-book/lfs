@@ -37,7 +37,7 @@ mount -vt devpts /dev/pts /dev/pts -o gid=5,mode=620
 mount -vt proc  proc  /proc
 mount -vt sysfs sysfs /sys
 mount -vt tmpfs tmpfs /run
-mount -vt tmpfs tmpfs /dev/shm</userinput></screen>
+mount -vt tmpfs tmpfs /dev/shm -o nosuid,nodev</userinput></screen>
 
     <variablelist>
       <title>The meaning of the mount options for devpts:</title>
