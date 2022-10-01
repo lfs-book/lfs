@@ -18,8 +18,7 @@
     systems exported by the kernel to communicate 
     with the kernel itself. These file systems are virtual: no disk
     space is used for them. The content of the file systems resides in
-    memory. These file systems must be mounted in the $LFS directory tree
-    so the applications can find them in the chroot environment.</para>
+    memory.</para>
 
     <para>Begin by creating directories on which the file systems will be
     mounted:</para>
