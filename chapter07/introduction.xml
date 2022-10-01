@@ -20,7 +20,7 @@
   </warning>
 
   <para>This chapter shows how to build the last missing bits of the temporary
-  system: the tools needed by the build machinery of various packages.  Now
+  system: the tools needed to build the various packages.  Now
   that all circular dependencies have been resolved and the temporary system
   is already bootable, we can boot it on the target machine and it would be
   completely isolated from the host operating system.  Then we can continue
@@ -28,14 +28,14 @@
 
   <para>For proper operation of the temporary system, some communication
   with the running kernel must be established. This is done through the
-  so-called <emphasis>Virtual Kernel File Systems</emphasis>, which must be
+  so-called <emphasis>Virtual Kernel File Systems</emphasis>, which will be
   mounted as soon as possible after boot. You may want to check
   that they are mounted by issuing <command>mount</command>.</para>
 
   <para>All commands in this and following chapters are run as &root; on the
   target system, fortunately without access to the host system.
   Be careful anyway, as if the storage devices of your target system already
-  contain some important data, it's possible to destroy them with badly
-  formed commands.</para>
+  contain some important data, it's possible to destroy them with bad
+  commands.</para>
 
 </sect1>
