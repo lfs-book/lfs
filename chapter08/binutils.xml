@@ -160,6 +160,10 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="test">make -k check</userinput></screen>
 
+    <para>For a list of failed tests, run:</para>
+
+<screen><userinput remap="test">grep '^FAIL:' $(find -name '*.log')</userinput></screen>
+
     <para>
     <!-- Caused by egrep deprecation.  Note that we don't "patch" temp grep.
          And it seems unworthy to add a sed into temp grep just for one test
