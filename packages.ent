@@ -104,6 +104,15 @@
 <!ENTITY check-fin-du "12 MB">
 <!ENTITY check-fin-sbu "0.1 SBU (about 3.6 SBU with tests)">
 
+<!ENTITY cmake-majmin "3.24">
+<!ENTITY cmake-version "&cmake-majmin;.2">
+<!ENTITY cmake-size "10,156 KB">
+<!ENTITY cmake-url "https://cmake.org/files/v&cmake-majmin;/cmake-&cmake-version;.tar.gz">
+<!ENTITY cmake-md5 "84d08f30b110401d8178f0708c19f1fe">
+<!ENTITY cmake-home "https://cmake.org/">
+<!ENTITY cmake-tmp-sbu "3.0 SBU">
+<!ENTITY cmake-tmp-du "443 MB">
+
 <!ENTITY coreutils-version "9.1">
 <!ENTITY coreutils-size "5,570 KB">
 <!ENTITY coreutils-url "&gnu;coreutils/coreutils-&coreutils-version;.tar.xz">
