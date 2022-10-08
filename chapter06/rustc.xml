@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-tools-rustc" role="wrap">
+  <?dbhtml filename="rustc.html"?>
+
+  <sect1info condition="script">
+    <productname>Rustc</productname>
+    <productnumber>&rustc-version;</productnumber>
+    <address>&rustc-url;</address>
+  </sect1info>
+
+  <title>Rustc-&rustc-version;</title>
+
+  <indexterm zone="ch-tools-rustc">
+    <primary sortas="a-Rustc">Rustc</primary>
+    <secondary>tools</secondary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The Rust programming language is designed to be a safe,
+    concurrent, practical language.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&rustc-tmp-sbu;</seg>
+        <seg>&rustc-tmp-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of Rustc</title>
+
+    <para>Tell Rustc how to support <envar>$LFS_TGT</envar> triplet:</para>
+
+<screen><userinput remap="pre">cp -v compiler/rustc_target/src/spec/x86_64_{unknown,lfs}_linux_gnu.rs
+cp -v compiler/rustc_target/src/spec/i686_{unknown,lfs}_linux_gnu.rs
+cp -v compiler/rustc_target/src/spec/i586_{unknown,lfs}_linux_gnu.rs
+sed -i.orig compiler/rustc_target/src/spec/mod.rs                        \
+    -e '/targets!/a\    ("x86_64-lfs-linux-gnu", x86_64_lfs_linux_gnu),' \
+    -e '/targets!/a\    ("i686-lfs-linux-gnu", i686_lfs_linux_gnu),'     \
+    -e '/targets!/a\    ("i586-lfs-linux-gnu", i586_lfs_linux_gnu),'</userinput></screen>
+
+    <para>In the first pass, build Rustc as a cross compiler for
+    <envar>$LFS_TGT</envar>.  Create a suitable configuration:</para>
+
+<screen><userinput remap="pre">install -vm755 src/llvm-project/llvm/cmake/config.guess config.guess
+cat &gt; pass1.toml &lt;&lt; EOF<literal>
+[llvm]
+link-shared = true
+
+[build]
+# omit docs to save time and space (default is to build them)
+docs = false
+
+# install cargo as well as rustc, but skip other tools as they are
+# not necessary for temporary installation
+extended = true
+tools = ["cargo"]
+
+# don't download crates during build
+locked-deps = true
+vendor = true
+
+# build both the native compiler and the cross compiler
+# native compiler is necessary because Rust heavily uses meta-programming
+target = [ "</literal>$(./config.guess)<literal>", "</literal>$LFS_TGT<literal>" ]
+
+[rust]
+channel = "stable"
+
+# LFS does not install the FileCheck executable from llvm,
+# so disable codegen tests
+codegen-tests = false
+
+[target.</literal>$(./config.guess)<literal>]
+# link Rustc to LLVM pass 1
+llvm-config = "</literal>$LFS<literal>/tools/bin/llvm-config"
+
+[target.</literal>$LFS_TGT<literal>]
+cc     = "</literal>$LFS<literal>/tools/bin/</literal>$LFS_TGT<literal>-gcc"
+cxx    = "</literal>$LFS<literal>/tools/bin/</literal>$LFS_TGT<literal>-g++"
+ar     = "</literal>$LFS<literal>/tools/bin/</literal>$LFS_TGT<literal>-ar"
+ranlib = "</literal>$LFS<literal>/tools/bin/</literal>$LFS_TGT<literal>-ranlib"
+
+# not ld: on Linux platforms Rustc uses GCC driver for linking
+linker = "</literal>$LFS<literal>/tools/bin/</literal>$LFS_TGT<literal>-gcc"
+</literal>EOF</userinput></screen>
+
+    <para>Build the cross compiler and target libraries:</para>
+
+<screen><userinput remap="make">python3 x.py build --stage 1 library --config pass1.toml</userinput></screen>
+
+    <para>In the second pass, build Rustc as a native compiler on
+    <envar>$LFS_TGT</envar>:</para>
+
+<screen><userinput remap="pre">cat &gt; pass2.toml &lt;&lt; EOF<literal>
+[llvm]
+link-shared = true
+
+[build]
+docs = false
+extended = true
+tools = ["cargo"]
+locked-deps = true
+vendor = true
+
+# build the native compiler for this triplet
+host = [ "</literal>$LFS_TGT<literal>" ]
+
+[install]
+prefix = "/opt/rustc-&rustc-version;"
+docdir = "share/doc/rustc-&rustc-version;"
+
+[rust]
+channel = "stable"
+rpath = false
+
+# BLFS does not install the FileCheck executable from llvm,
+# so disable codegen tests
+codegen-tests = false
+
+[target.</literal>$(./config.guess)<literal>]
+llvm-config = "</literal>$LFS<literal>/tools/bin/llvm-config"
+
+[target.</literal>$LFS_TGT<literal>]
+cc     = "</literal>$LFS<literal>/tools/bin/</literal>$LFS_TGT<literal>-gcc"
+cxx    = "</literal>$LFS<literal>/tools/bin/</literal>$LFS_TGT<literal>-g++"
+ar     = "</literal>$LFS<literal>/tools/bin/</literal>$LFS_TGT<literal>-ar"
+ranlib = "</literal>$LFS<literal>/tools/bin/</literal>$LFS_TGT<literal>-ranlib"
+linker = "</literal>$LFS<literal>/tools/bin/</literal>$LFS_TGT<literal>-gcc"
+
+# link Rustc to LLVM pass 2
+llvm-config = "</literal>$LFS<literal>/tools/</literal>$LFS_TGT<literal>/bin/llvm-config"
+</literal>EOF</userinput></screen>
+
+    <para>Build the native compiler:</para>
+
+<screen><userinput remap="make">env {X86_64,I{5,6}86}_LFS_LINUX_GNU_OPENSSL_DIR=$LFS/usr \
+python3 x.py build --keep-stage 0     \
+                   --keep-stage-std 1 \
+                   --stage 2          \
+                   --config pass2.toml</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="make">env {X86_64,I{5,6}86}_LFS_LINUX_GNU_OPENSSL_DIR=$LFS/usr \
+    DESTDIR=$LFS                                         \
+python3 x.py install --keep-stage 0     \
+                     --keep-stage-std 1 \
+                     --stage 2          \
+                     --config pass2.toml
+ln -sv rustc-&rustc-version; $LFS/opt/rustc</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title/>
+
+    <para>Details on this package are located in TODO.</para>
+  </sect2>
+
+</sect1>

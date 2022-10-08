@@ -632,6 +632,16 @@
 <!ENTITY readline-fin-du "15 MB">
 <!ENTITY readline-fin-sbu "0.1 SBU">
 
+<!ENTITY rustc-version "1.64.0">
+<!ENTITY rustc-size "134,612 KB">
+<!ENTITY rustc-url "https://static.rust-lang.org/dist/rustc-&rustc-version;-src.tar.xz">
+<!ENTITY rustc-md5 "e77ac3a786d013604061b17f99dd9b27">
+<!ENTITY rustc-home "https://www.rust-lang.org/">
+<!ENTITY rustc-tmp-sbu "21 SBU">
+<!ENTITY rustc-tmp-du "10,000 MB">
+<!ENTITY rustc-final-sbu "21 SBU">
+<!ENTITY rustc-final-du "10,000 MB">
+
 <!ENTITY sed-version "4.8">
 <!ENTITY sed-size "1,317 KB">
 <!ENTITY sed-url "&gnu;sed/sed-&sed-version;.tar.xz">
