@@ -1,0 +1,1339 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-llvm" role="wrap">
+  <?dbhtml filename="llvm.html"?>
+
+  <sect1info condition="script">
+    <productname>LLVM</productname>
+    <productnumber>&llvm-version;</productnumber>
+    <address>&llvm-url;</address>
+  </sect1info>
+
+  <title>LLVM-&llvm-version;</title>
+
+  <indexterm zone="ch-system-llvm">
+    <primary sortas="a-LLVM">LLVM</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The LLVM package contains a collection of modular and reusable
+    compiler and toolchain technologies.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&llvm-final-sbu;</seg>
+        <seg>&llvm-final-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of LLVM</title>
+
+    <para>Prepare some CMake modules needed by LLVM building system:</para>
+
+<screen><userinput remap="pre">tar -xf ../llvm-cmake-&llvm-version;.src.tar.xz
+mv cmake-&llvm-version;.src ../cmake</userinput></screen>
+
+    <para>Embed clang and compiler-rt into the source tree to build them
+    altogether:</para>
+
+<screen><userinput remap="pre">tar -xf ../clang-&llvm-version;.src.tar.xz
+mv clang-&llvm-version;.src tools/clang
+tar -xf ../compiler-rt-&llvm-version;.src.tar.xz
+mv compiler-rt-&llvm-version;.src projects/compiler-rt</userinput></screen>
+
+    <para>Apply a patch to enable SSP by default for clang:</para>
+
+<screen><userinput remap="pre">patch -Np2 -d tools/clang &lt; ../clang-&llvm-version;-enable_default_ssp-1.patch</userinput></screen>
+
+    <para>The LLVM documentation recommends building LLVM in a dedicated
+    build directory:</para>
+
+<screen><userinput remap="pre">mkdir -v build
+cd       build</userinput></screen>
+
+    <para>Prepare LLVM for compilation:</para>
+
+<screen><userinput remap="configure">CC=gcc CXX=g++ cmake                            \
+      -DCMAKE_INSTALL_PREFIX=/usr               \
+      -DLLVM_ENABLE_FFI=ON                      \
+      -DCMAKE_BUILD_TYPE=Release                \
+      -DLLVM_BUILD_LLVM_DYLIB=ON                \
+      -DLLVM_LINK_LLVM_DYLIB=ON                 \
+      -DLLVM_ENABLE_RTTI=ON                     \
+      -DLLVM_TARGETS_TO_BUILD="host;AMDGPU;BPF" \
+      -DLLVM_BINUTILS_INCDIR=/usr/include       \
+      -DLLVM_INCLUDE_BENCHMARKS=OFF             \
+      -DCLANG_DEFAULT_PIE_ON_LINUX=ON           \
+      -Wno-dev -G Ninja ..</userinput></screen>
+
+    <variablelist id='llvm-cmake-options'>
+      <title>The meaning of the configure options:</title>
+
+      <varlistentry>
+        <term><parameter>-DLLVM_ENABLE_FFI=ON</parameter></term>
+        <listitem>
+          <para>Allows LLVM to use libffi.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-DLLVM_BUILD_LLVM_DYLIB=ON</parameter></term>
+        <listitem>
+          <para>This switch builds the libraries as static and links all of
+          them into an unique shared one. This is the recommended way of
+          building a shared library.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-DLLVM_LINK_LLVM_DYLIB=ON</parameter></term>
+        <listitem>
+          <para>This switch enables linking the tools against the shared
+          library instead of the static ones. It slightly reduces their
+          size.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-DLLVM_ENABLE_RTTI=ON</parameter></term>
+        <listitem>
+          <para>This switch is used to build LLVM with run-time type
+          information. This is required for some packages, for example
+          Mesa (in BLFS).</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-DLLVM_BINUTILS_INCDIR=/usr/include</parameter></term>
+        <listitem>
+          <para>This switch is used to tell the build system the location
+          of binutils headers. This allows the building of
+          <filename class='libraryfile'>LLVMgold.so</filename>, which is
+          needed for building programs with <command>clang</command> and
+          Link Time Optimization (LTO).</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-DLLVM_INCLUDE_BENCHMARKS=OFF</parameter></term>
+        <listitem>
+          <para>Disables generation build targets for the LLVM benchmarks.
+          Benchmarking needs additional code that is not currently
+          available.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-DCLANG_DEFAULT_PIE_ON_LINUX=ON</parameter></term>
+        <listitem>
+          <para>Makes <option>-fpie</option> the default when compiling
+          programs.  Together with the ASLR feature enabled in the kernel,
+          this defeats some kind of attacks based on known memory
+          layouts.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>Compile LLVM by running:</para>
+
+<screen><userinput remap="make">ninja</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">ninja install</userinput></screen>
+
+    <para>Clean up the source directory:</para>
+
+<screen><userinput remap="install">rm -rf ../../cmake</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content" id='contents-llvm'>
+    <title>Contents</title>
+
+    <segmentedlist>
+      <segtitle>Installed Programs</segtitle>
+      <segtitle>Installed Libraries</segtitle>
+      <segtitle>Installed Directories</segtitle>
+
+      <seglistitem>
+        <seg>
+          bugpoint, c-index-test, clang, clang++ (symlinks to
+          clang-&lt;version&gt;), clang-&lt;version&gt;, clang-check, clang-cl,
+          clang-cpp (last two symlinks to clang), clang-extdef-mapping, clang-format,
+          clang-linker-wrapper, clang-nvlink-wrapper,
+          clang-offload-bundler, clang-offload-packager, clang-offload-wrapper,
+          clang-refactor, clang-rename, clang-repl, clang-scan-deps,
+          diagtool, dsymutil, git-clang-format, hmaptool, intercept-build, llc, lli,
+          llvm-addr2line (symlink to llvm-symbolizer),
+          llvm-ar, llvm-as, llvm-bcanalyzer,
+          llvm-bitcode-strip (symlink to llvm-objcopy), llvm-cat,
+          llvm-cfi-verify, llvm-config, llvm-cov, llvm-c-test, llvm-cvtres,
+          llvm-cxxdump, llvm-cxxfilt, llvm-cxxmap,
+          llvm-debuginfod, llvm-debuginfod-find,
+          llvm-diff, llvm-dis, llvm-dlltool (symlink to llvm-ar),
+          llvm-dwarfdump, llvm-dwarfutil,
+          llvm-dwp, llvm-exegesis, llvm-extract, llvm-gsymutil, llvm-ifs,
+          llvm-install-name-tool (symlink to llvm-objcopy), llvm-jitlink,
+          llvm-lib (symlink to llvm-ar), llvm-libtool-darwin, llvm-link,
+          llvm-lipo, llvm-lto, llvm-lto2, llvm-mc, llvm-mca, llvm-ml,
+          llvm-modextract, llvm-mt, llvm-nm, llvm-objcopy, llvm-objdump,
+          llvm-opt-report, llvm-otool (symlink to llv-objdump),
+          llvm-pdbutil, llvm-profdata, llvm-profgen,
+          llvm-ranlib (symlink to llvm-ar), llvm-rc,
+          llvm-readelf (symlink to llvm-readobj), llvm-readobj, llvm-reduce,
+          llvm-remark-size-diff,
+          llvm-rtdyld, llvm-sim, llvm-size, llvm-split, llvm-stress,
+          llvm-strings, llvm-strip (symlink to llvm-objcopy), llvm-symbolizer,
+          llvm-tapi-diff, llvm-tblgen, llvm-undname, llvm-windres (symlink to
+          llvm-rc), llvm-xray, opt, sancov, sanstats, scan-build,
+          scan-build-py, scan-view, split-file, and verify-uselistorder
+        </seg>
+        <seg>
+          libLLVM.so,
+          libLLVM*.a (96 libraries),
+          libLTO.so,
+          libRemarks.so,
+          libclang.so,
+          libclang-cpp.so,
+          libclang*.a (41 libraries),
+          and LLVMgold.so
+        </seg>
+        <seg>
+          /usr/include/{clang,clang-c,llvm,llvm-c},
+          /usr/lib/{clang,cmake/{clang,llvm},libear,libscanbuild},
+          /usr/share/{clang,opt-viewer,scan-build,scan-view}, and
+          /usr/share/doc/llvm-&llvm-version;
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="bugpoint">
+        <term><command>bugpoint</command></term>
+        <listitem>
+          <para>
+            is the automatic test case reduction tool
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-bugpoint">bugpoint</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="c-index-test">
+        <term><command>c-index-test</command></term>
+        <listitem>
+          <para>
+            is used to test the libclang API and demonstrate its usage
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-c-index-test">c-index-test</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="clang">
+        <term><command>clang</command></term>
+        <listitem>
+          <para>
+            is the <application>Clang</application> C, C++,
+            and Objective-C compiler
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-clang">clang</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="clang-check">
+        <term><command>clang-check</command></term>
+        <listitem>
+          <para>
+            is a tool to perform static code analysis and display Abstract
+            Syntax Trees (AST)
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-clang-check">clang-check</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="clang-extdef-mapping">
+        <term><command>clang-extdef-mapping</command></term>
+        <listitem>
+          <para>
+            is a tool to collect the USR name and location of external
+            definitions in a source file
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-clang-extdef-mapping">clang-extdef-mapping</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="clang-format">
+        <term><command>clang-format</command></term>
+        <listitem>
+          <para>
+            is a tool to format C/C++/Java/JavaScript/Objective-C/Protobuf
+            code
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-clang-format">clang-format</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="clang-linker-wrapper">
+        <term><command>clang-linker-wrapper</command></term>
+        <listitem>
+          <para>
+            is a wrapper utility over the host linker
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-clang-linker-wrapper">clang-linker-wrapper</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="clang-nvlink-wrapper">
+        <term><command>clang-nvlink-wrapper</command></term>
+        <listitem>
+          <para>
+            is a wrapper tool over the nvlink program
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-clang-nvlink-wrapper">clang-nvlink-wrapper</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="clang-offload-bundler">
+        <term><command>clang-offload-bundler</command></term>
+        <listitem>
+          <para>
+            is a tool to bundle/unbundle OpenMP offloaded files associated with
+            a common source file
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-clang-offload-bundler">clang-offload-bundler</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="clang-offload-packager">
+        <term><command>clang-offload-packager</command></term>
+        <listitem>
+          <para>
+            is a tool to bundle several object files into a single binary,
+            which can then be used to create a fatbinary containing offloading
+            code
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-clang-offload-packager">clang-offload-packager</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="clang-offload-wrapper">
+        <term><command>clang-offload-wrapper</command></term>
+        <listitem>
+          <para>
+            is a tool to create wrapper bitcode for offload target binaries
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-clang-offload-wrapper">clang-offload-wrapper</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="clang-refactor">
+        <term><command>clang-refactor</command></term>
+        <listitem>
+          <para>
+            is a Clang-based refactoring tool for C, C++ and Objective-C
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-clang-refactor">clang-refactor</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="clang-rename">
+        <term><command>clang-rename</command></term>
+        <listitem>
+          <para>
+            is a tool to rename symbols in C/C++ programs
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-clang-rename">clang-rename</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="clang-scan-deps">
+        <term><command>clang-scan-deps</command></term>
+        <listitem>
+          <para>
+            is a tool to scan for dependencies in a source file
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-clang-scan-deps">clang-scan-deps</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="diagtool">
+        <term><command>diagtool</command></term>
+        <listitem>
+          <para>
+            is a combination of tools for dealing with diagnostics in clang
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-diagtool">diagtool</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="dsymutil">
+        <term><command>dsymutil</command></term>
+        <listitem>
+          <para>
+            is a tool used to manipulate archived DWARF debug symbol files,
+            compatible with the Darwin command <command>dsymutil</command>
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-dsymutil">dsymutil</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="git-clang-format">
+        <term><command>git-clang-format</command></term>
+        <listitem>
+          <para>
+            runs clang-format on git generated patches (requires Git)
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-git-clang-format">git-clang-format</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="hmaptool">
+        <term><command>hmaptool</command></term>
+        <listitem>
+          <para>
+            is a Python tool to dump and construct header maps
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-hmaptool">hmaptool</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llc">
+        <term><command>llc</command></term>
+        <listitem>
+          <para>
+            is the <application>LLVM</application> static compiler
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llc">llc</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="lli">
+        <term><command>lli</command></term>
+        <listitem>
+          <para>
+            is used to directly execute programs from
+            <application>LLVM</application> bitcode
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-lli">lli</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-addr2line">
+        <term><command>llvm-addr2line</command></term>
+        <listitem>
+          <para>
+            is a tool used to convert addresses into file names and line
+            numbers
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-addr2line">llvm-addr2line</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-ar">
+        <term><command>llvm-ar</command></term>
+        <listitem>
+          <para>
+            is the <application>LLVM</application> archiver
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-ar">llvm-ar</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-as">
+        <term><command>llvm-as</command></term>
+        <listitem>
+          <para>
+            is the <application>LLVM</application> assembler
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-as">llvm-as</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-bcanalyzer">
+        <term><command>llvm-bcanalyzer</command></term>
+        <listitem>
+          <para>
+            is the <application>LLVM</application> bitcode analyzer
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-bcanalyzer">llvm-bcanalyzer</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-bitcode-strip">
+        <term><command>llvm-bitcode-strip</command></term>
+        <listitem>
+          <para>
+            strips LLVM bitcode from an object
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-bitcode-strip">llvm-bitcode-strip</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-cat">
+        <term><command>llvm-cat</command></term>
+        <listitem>
+          <para>
+            is a tool to concatenate llvm modules
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-cat">llvm-cat</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-cfi-verify">
+        <term><command>llvm-cfi-verify</command></term>
+        <listitem>
+          <para>
+            identifies whether Control Flow Integrity protects all indirect
+            control flow instructions in the provided object file, DSO, or
+            binary
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-cfi-verify">llvm-cfi-verify</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-config">
+        <term><command>llvm-config</command></term>
+        <listitem>
+          <para>
+            Prints <application>LLVM</application> compilation options
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-config">llvm-config</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-cov">
+        <term><command>llvm-cov</command></term>
+        <listitem>
+          <para>
+            is used to emit coverage information
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-cov">llvm-cov</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-c-test">
+        <term><command>llvm-c-test</command></term>
+        <listitem>
+          <para>
+            is a bytecode disassembler
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-c-test">llvm-c-test</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-cvtres">
+        <term><command>llvm-cvtres</command></term>
+        <listitem>
+          <para>
+            is a tool to convert Microsoft resource files to COFF
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-cvtres">llvm-cvtres</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-cxxdump">
+        <term><command>llvm-cxxdump</command></term>
+        <listitem>
+          <para>
+            is used as a C++ ABI Data Dumper
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-cxxdump">llvm-cxxdump</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-cxxfilt">
+        <term><command>llvm-cxxfilt</command></term>
+        <listitem>
+          <para>
+            is used to demangle C++ symbols in llvm code
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-cxxfilt">llvm-cxxfilt</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-cxxmap">
+        <term><command>llvm-cxxmap</command></term>
+        <listitem>
+          <para>
+            is used to remap C++ mangled symbols
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-cxxmap">llvm-cxxmap</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-debuginfod">
+        <term><command>llvm-debuginfod</command></term>
+        <listitem>
+          <para>
+            is a service providing debug information over an HTTP API for
+            analyzing stripped binaries
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-debuginfod">llvm-debuginfod</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-debuginfod-find">
+        <term><command>llvm-debuginfod-find</command></term>
+        <listitem>
+          <para>
+            is an interface to the <command>llvm-debuginfod</command> daemon
+            for finding debuginfod artifacts
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-debuginfod-find">llvm-debuginfod-find</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-diff">
+        <term><command>llvm-diff</command></term>
+        <listitem>
+          <para>
+            is the <application>LLVM</application> structural
+            '<command>diff</command>'
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-diff">llvm-diff</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-dis">
+        <term><command>llvm-dis</command></term>
+        <listitem>
+          <para>
+            is the <application>LLVM</application> disassembler
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-dis">llvm-dis</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-dwarfdump">
+        <term><command>llvm-dwarfdump</command></term>
+        <listitem>
+          <para>
+            prints the content of DWARF sections in object files
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-dwarfdump">llvm-dwarfdump</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-dwarfutil">
+        <term><command>llvm-dwarfutil</command></term>
+        <listitem>
+          <para>
+            is a tool to copy and manipulate debug info
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-dwarfutil">llvm-dwarfutil</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-dwp">
+        <term><command>llvm-dwp</command></term>
+        <listitem>
+          <para>
+            merges split DWARF files
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-dwp">llvm-dwp</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-elfabi">
+        <term><command>llvm-elfabi</command></term>
+        <listitem>
+          <para>
+            is used to read information about an ELF binary's ABI
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-elfabi">llvm-elfabi</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-exegesis">
+        <term><command>llvm-exegesis</command></term>
+        <listitem>
+          <para>
+            is a benchmarking tool that uses information available in LLVM to
+            measure host machine instruction characteristics like latency or
+            port decomposition
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-exegesis">llvm-exegesis</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-extract">
+        <term><command>llvm-extract</command></term>
+        <listitem>
+          <para>
+            is used to extract a function from an
+            <application>LLVM</application> module
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-extract">llvm-extract</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-gsymutil">
+        <term><command>llvm-gsymutil</command></term>
+        <listitem>
+          <para>
+            is used to process GSYM Symbolication Format files which
+            convert memory addresses to function name and source file
+            line. These files are smaller than DWARF or Breakpad files
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-gsymutil">llvm-gsymutil</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-ifs">
+        <term><command>llvm-ifs</command></term>
+        <listitem>
+          <para>
+            is used to merge interface stubs with object files
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-ifs">llvm-ifs</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-install-name-tool">
+        <term><command>llvm-install-name-tool</command></term>
+        <listitem>
+          <para>
+            is used to rewrite load commands into MachO binary format
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-install-name-tool">llvm-install-name-tool</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-jitlink">
+        <term><command>llvm-jitlink</command></term>
+        <listitem>
+          <para>
+            is used to parse relocatable object files to make their contents
+            executable in a target process
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-jitlink">llvm-jitlink</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-libtool-darwin">
+        <term><command>llvm-libtool-darwin</command></term>
+        <listitem>
+          <para>
+            provides basic libtool functionality on Darwin-based systems.
+            This is mostly useful if you are generating binaries for macOS
+            systems
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-libtool-darwin">llvm-libtool-darwin</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-link">
+        <term><command>llvm-link</command></term>
+        <listitem>
+          <para>
+            is the <application>LLVM</application> linker
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-link">llvm-link</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-lipo">
+        <term><command>llvm-lipo</command></term>
+        <listitem>
+          <para>
+            is used to create universal binaries from MachO files
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-lipo">llvm-lipo</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-lto">
+        <term><command>llvm-lto</command></term>
+        <listitem>
+          <para>
+            is the <application>LLVM</application> LTO (link time optimization)
+            linker
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-lto">llvm-lto</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-lto2">
+        <term><command>llvm-lto2</command></term>
+        <listitem>
+          <para>
+            is a test harness for the resolution based LTO interface
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-lto2">llvm-lto2</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-mc">
+        <term><command>llvm-mc</command></term>
+        <listitem>
+          <para>
+            is a standalone machine code assembler/disassembler
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-mc">llvm-mc</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-mca">
+        <term><command>llvm-mca</command></term>
+        <listitem>
+          <para>
+            is a performance analysis tool to statically measure the
+            performance of machine code
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-mca">llvm-mca</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+<!--  <varlistentry id="llvm-mcmarkup">
+        <term><command>llvm-mcmarkup</command></term>
+        <listitem>
+          <para>
+            is a parser for machine code markup.
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-mcmarkup">llvm-mcmarkup</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>-->
+
+      <varlistentry id="llvm-ml">
+        <term><command>llvm-ml</command></term>
+        <listitem>
+          <para>
+            is a playground for machine code provided by LLVM
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-ml">llvm-ml</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-modextract">
+        <term><command>llvm-modextract</command></term>
+        <listitem>
+          <para>
+            is a tool to extract one module from multimodule bitcode files
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-modextract">llvm-modextract</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-mt">
+        <term><command>llvm-mt</command></term>
+        <listitem>
+          <para>
+            is a tool to generate signed files and catalogs from a
+            side-by-side assembly manifest (used for Microsoft SDK)
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-mt">llvm-mt</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-nm">
+        <term><command>llvm-nm</command></term>
+        <listitem>
+          <para>
+            is used to list <application>LLVM</application> bitcode
+            and object file's symbol table
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-nm">llvm-nm</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-objcopy">
+        <term><command>llvm-objcopy</command></term>
+        <listitem>
+          <para>
+            is LLVM's version of an objcopy tool
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-objcopy">llvm-objcopy</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-objdump">
+        <term><command>llvm-objdump</command></term>
+        <listitem>
+          <para>
+            is an <application>LLVM</application> object file dumper
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-objdump">llvm-objdump</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-opt-report">
+        <term><command>llvm-opt-report</command></term>
+        <listitem>
+          <para>
+            is a tool to generate an optimization report from YAML optimization
+            record files
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-opt-report">llvm-opt-report</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-pdbutil">
+        <term><command>llvm-pdbutil</command></term>
+        <listitem>
+          <para>
+            is a PDB (Program Database) dumper. PDB is a Microsoft format
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-pdbutil">llvm-pdbutil</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-profdata">
+        <term><command>llvm-profdata</command></term>
+        <listitem>
+          <para>
+            is a small tool to manipulate and print profile data files
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-profdata">llvm-profdata</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-profgen">
+        <term><command>llvm-profgen</command></term>
+        <listitem>
+          <para>
+            generates LLVM SPGO profiling information
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-profgen">llvm-profgen</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-ranlib">
+        <term><command>llvm-ranlib</command></term>
+        <listitem>
+          <para>
+            is used to generate an index for a <application>LLVM</application>
+            archive
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-ranlib">llvm-ranlib</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-rc">
+        <term><command>llvm-rc</command></term>
+        <listitem>
+          <para>
+            is a platform-independent tool to compile resource scripts
+            into binary resource files
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-rc">llvm-rc</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-readobj">
+        <term><command>llvm-readobj</command></term>
+        <listitem>
+          <para>
+            displays low-level format-specific information about object files
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-readobj">llvm-readobj</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-reduce">
+        <term><command>llvm-reduce</command></term>
+        <listitem>
+          <para>
+            is used to automatically reduce testcases
+            when running a test suite
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-reduce">llvm-reduce</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-remark-size-diff">
+        <term><command>llvm-remark-size-diff</command></term>
+        <listitem>
+          <para>
+            reports the difference in instruction count and stack size
+            remarks between two remark files
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-remark-size-diff">llvm-remark-size-diff</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-rtdyld">
+        <term><command>llvm-rtdyld</command></term>
+        <listitem>
+          <para>
+            is the <application>LLVM</application> MC-JIT tool
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-rtdyld">llvm-rtdyld</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-size">
+        <term><command>llvm-size</command></term>
+        <listitem>
+          <para>
+            is the <application>LLVM</application> object size dumper
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-size">llvm-size</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-split">
+        <term><command>llvm-split</command></term>
+        <listitem>
+          <para>
+            is the <application>LLVM</application> module splitter
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-split">llvm-split</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-stress">
+        <term><command>llvm-stress</command></term>
+        <listitem>
+          <para>
+            is used to generate random
+            <filename class="extension">.ll</filename> files
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-stress">llvm-stress</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-strings">
+        <term><command>llvm-strings</command></term>
+        <listitem>
+          <para>
+            print strings found in a binary (object file, executable, or
+            archive library)
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-strings">llvm-strings</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-symbolizer">
+        <term><command>llvm-symbolizer</command></term>
+        <listitem>
+          <para>
+            converts addresses into source code locations
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-symbolizer">llvm-symbolizer</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-tblgen">
+        <term><command>llvm-tblgen</command></term>
+        <listitem>
+          <para>
+            is the <application>LLVM</application> Target Description
+            To C++ Code Generator
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-tblgen">llvm-tblgen</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-undname">
+        <term><command>llvm-undname</command></term>
+        <listitem>
+          <para>
+            is a tool to demangle names
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-undname">llvm-undname</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="llvm-xray">
+        <term><command>llvm-xray</command></term>
+        <listitem>
+          <para>
+            is an implementation of Google's XRay function call tracing system
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-llvm-xray">llvm-xray</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="intercept-build">
+        <term><command>intercept-build</command></term>
+        <listitem>
+          <para>
+            generates a database of build commands for a project
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-intercept-build">intercept-build</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+
+      <varlistentry id="opt">
+        <term><command>opt</command></term>
+        <listitem>
+          <para>
+            is the <application>LLVM</application> optimizer
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-opt">opt</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="sancov">
+        <term><command>sancov</command></term>
+        <listitem>
+          <para>
+            is the sanitizer coverage processing tool
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-sancov">sancov</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="sanstats">
+        <term><command>sanstats</command></term>
+        <listitem>
+          <para>
+            is the sanitizer statistics processing tool
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-sanstats">sanstats</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="scan-build">
+        <term><command>scan-build</command></term>
+        <listitem>
+          <para>
+            is a <application>Perl</application> script that invokes the
+            <application>Clang</application> static analyzer
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-scan-build">scan-build</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="scan-build-py">
+        <term><command>scan-build-py</command></term>
+        <listitem>
+          <para>
+            is a <application>Python</application> script that invokes the
+            <application>Clang</application> static analyzer
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-scan-build-py">scan-build-py</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="scan-view">
+        <term><command>scan-view</command></term>
+        <listitem>
+          <para>
+            is a viewer for <application>Clang</application> static analyzer
+            results
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-scan-view">scan-view</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="split-file">
+        <term><command>split-file</command></term>
+        <listitem>
+          <para>
+            splits an input file into multiple parts separated by regex
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-split-file">split-file</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="verify-uselistorder">
+        <term><command>verify-uselistorder</command></term>
+        <listitem>
+          <para>
+            is the <application>LLVM</application> tool to verify use-list
+            order
+          </para>
+          <indexterm zone="ch-system-llvm">
+            <primary sortas="b-verify-uselistorder">verify-uselistorder</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+  </sect2>
+</sect1>
