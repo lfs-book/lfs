@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-tools-llvm-pass2" role="wrap">
+  <?dbhtml filename="llvm-pass2.html"?>
+
+  <sect1info condition="script">
+    <productname>LLVM</productname>
+    <productnumber>&llvm-version;</productnumber>
+    <address>&llvm-url;</address>
+  </sect1info>
+
+  <title>LLVM-&llvm-version; - Pass 2</title>
+
+  <indexterm zone="ch-tools-llvm-pass2">
+    <primary sortas="a-LLVM">LLVM</primary>
+    <secondary>tools, pass 2</secondary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The LLVM package contains a collection of modular and reusable
+    compiler and toolchain technologies.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&llvm-tmpp2-sbu;</seg>
+        <seg>&llvm-tmpp2-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of LLVM</title>
+
+    <para>Prepare some CMake modules needed by LLVM building system:</para>
+
+<screen><userinput remap="pre">tar -xf ../llvm-cmake-&llvm-version;.src.tar.xz
+mv cmake-&llvm-version;.src ../cmake</userinput></screen>
+
+    <para>The LLVM documentation recommends building LLVM in a dedicated
+    build directory:</para>
+
+<screen><userinput remap="pre">mkdir -v build
+cd       build</userinput></screen>
+
+    <para>For cross-compiling LLVM, create a CMake toolchain description
+    file:</para>
+
+<screen><userinput remap="pre">cat &gt; cross.cmake &lt;&lt; EOF
+<literal># the name of the target operating system
+set(CMAKE_SYSTEM_NAME Linux)
+
+# which compilers to use for C and C++
+set(CMAKE_C_COMPILER   </literal>$LFS_TGT<literal>-gcc)
+set(CMAKE_CXX_COMPILER </literal>$LFS_TGT<literal>-g++)
+
+# where is the target environment located
+set(CMAKE_FIND_ROOT_PATH  </literal>$LFS<literal>)
+
+# adjust the default behavior of the FIND_XXX() commands:
+# search programs in the host environment
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+
+# search headers and libraries in the target environment
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)</literal>
+EOF</userinput></screen>
+
+    <para>Prepare LLVM for compilation:</para>
+
+<screen><userinput remap="configure">OPTS="-DLLVM_ENABLE_FFI=OFF;\
+-DLLVM_BUILD_LLVM_DYLIB=ON;\
+-DLLVM_LINK_LLVM_DYLIB=ON;\
+-DLLVM_ENABLE_RTTI=ON;\
+-DLLVM_TARGETS_TO_BUILD=host;\
+-DLLVM_INCLUDE_BENCHMARKS=OFF"
+
+CC=gcc CXX=g++ cmake                           \
+    -DCMAKE_INSTALL_PREFIX=$LFS/tools/$LFS_TGT \
+    -DCMAKE_BUILD_TYPE=Release                 \
+    -DCMAKE_TOOLCHAIN_FILE=cross.cmake         \
+    -DLLVM_TABLEGEN=$LFS/tools/bin/llvm-tblgen \
+    $(echo $OPTS | sed 's/;/ /g')              \
+    -DCROSS_TOOLCHAIN_FLAGS_NATIVE=$OPTS       \
+    -Wno-dev ..
+
+unset OPTS</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the configure options:</title>
+
+      <varlistentry>
+        <term><parameter>-DLLVM_ENABLE_FFI=OFF</parameter></term>
+        <listitem>
+          <para>Allow building LLVM without libffi installed in $LFS.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-DLLVM_TABLEGEN=$LFS/tools/bin/llvm-tblgen</parameter></term>
+        <listitem>
+          <para>Use <command>llvm-tblgen</command> from LLVM pass 1, instead
+          of building it again for the host distro.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+          <command>OPTS=...</command>,
+          <parameter>$(echo $OPTS | sed 's/;/ ')</parameter>, and
+          <parameter>-DCROSS_TOOLCHAIN_FLAGS_NATIVE=$OPTS</parameter></term>
+        <listitem>
+          <para>Use the same configuration for cross compiling LLVM to
+          generate <command>llvm-config</command> which is runnable on the
+          host distro.  <command>llvm-config</command> will be used building
+          Rustc Pass 2.  This option ensures it will correctly output the
+          configuration of the cross compiled LLVM libraries.  We save the
+          configuration in an environment variable to avoid typing the same
+          options again.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>For the meaning of other CMake options, see TODO.</para>
+
+    <para>Compile LLVM by running:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the headers and shared library:</para>
+
+<screen><userinput remap="install">DESTDIR=$PWD/dest make install
+cp -av dest/$LFS/tools/$LFS_TGT/lib/libLLVM*.so \
+            $LFS/tools/$LFS_TGT/lib
+cp -av dest/$LFS/tools/$LFS_TGT/include/* \
+            $LFS/tools/$LFS_TGT/include</userinput></screen>
+
+    <para>Install another copy of the shared library into
+    <filename class='directory'>$LFS/usr/lib</filename>, so it will be able
+    to be used in the chroot environment:</para>
+
+<screen><userinput remap="install">cp -av dest/$LFS/tools/$LFS_TGT/lib/libLLVM*.so $LFS/usr/lib</userinput></screen>
+
+    <para>Install <command>llvm-config</command>:</para>
+
+<screen><userinput remap="install">install -vm755 NATIVE/bin/llvm-config $LFS/tools/$LFS_TGT/bin</userinput></screen>
+
+    <para>Clean up the source directory:</para>
+
+<screen><userinput remap="install">rm -rf ../../cmake</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title/>
+
+    <para>Details on this package are located in TODO.</para>
+  </sect2>
+
+</sect1>

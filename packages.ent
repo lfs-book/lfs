@@ -459,6 +459,8 @@
 <!ENTITY llvm-home "https://llvm.org/">
 <!ENTITY llvm-tmpp1-sbu "20 SBU">
 <!ENTITY llvm-tmpp1-du "3,800 MB">
+<!ENTITY llvm-tmpp2-sbu "20 SBU">
+<!ENTITY llvm-tmpp2-du "3,800 MB">
 
 <!ENTITY m4-version "1.4.19">
 <!ENTITY m4-size "1,617 KB">
