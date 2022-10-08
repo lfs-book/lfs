@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-cmake" role="wrap">
+  <?dbhtml filename="cmake.html"?>
+
+  <sect1info condition="script">
+    <productname>cmake</productname>
+    <productnumber>&cmake-version;</productnumber>
+    <address>&cmake-url;</address>
+  </sect1info>
+
+  <title>CMake-&cmake-version;</title>
+
+  <indexterm zone="ch-system-cmake">
+    <primary sortas="a-CMake">CMake</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The CMake package contains a modern toolset used for generating
+    Makefiles. It is a successor of the auto-generated configure script and
+    aims to be platform- and compiler-independent. A significant user of
+    CMake is LLVM.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&cmake-final-sbu;</seg>
+        <seg>&cmake-final-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of CMake</title>
+
+    <para>Prevents applications using CMake from attempting to install files
+    into <filename class='directory'>lib64</filename>:</para>
+
+<screen><userinput remap="pre">sed -i '/"lib64"/s/64//' Modules/GNUInstallDirs.cmake</userinput></screen>
+
+    <para>Prepare CMake for compilation:</para>
+
+<screen><userinput remap="configure">./bootstrap --prefix=/usr --no-system-libs</userinput></screen>
+
+    <para>Compile CMake by running:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content" id='contents-cmake'>
+    <title>Contents of CMake</title>
+
+    <segmentedlist>
+      <segtitle>Installed Programs</segtitle>
+      <segtitle>Installed Directories</segtitle>
+
+      <seglistitem>
+        <seg>
+          ccmake, cmake, cpack, and ctest
+        </seg>
+        <seg>
+          /usr/share/cmake-&cmake-majmin; and
+          /usr/share/doc/cmake-&cmake-version;
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="ccmake">
+        <term><command>ccmake</command></term>
+        <listitem>
+          <para>
+            is a curses based interactive frontend to
+            <command>cmake</command>
+          </para>
+          <indexterm zone="ch-system-cmake">
+            <primary sortas="b-ccmake">ccmake</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="cmake-prog">
+        <term><command>cmake</command></term>
+        <listitem>
+          <para>
+            is the makefile generator
+          </para>
+          <indexterm zone="ch-system-cmake">
+            <primary sortas="b-cmake">cmake</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="cpack">
+        <term><command>cpack</command></term>
+        <listitem>
+          <para>
+            is the <application>CMake</application> packaging program
+          </para>
+          <indexterm zone="ch-system-cmake">
+            <primary sortas="b-cpack">cpack</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="ctest">
+        <term><command>ctest</command></term>
+        <listitem>
+          <para>
+            is a testing utility for cmake-generated build trees
+          </para>
+          <indexterm zone="ch-system-cmake">
+            <primary sortas="b-ctest">ctest</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+  </sect2>
+</sect1>

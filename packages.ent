@@ -112,6 +112,8 @@
 <!ENTITY cmake-home "https://cmake.org/">
 <!ENTITY cmake-tmp-sbu "3.0 SBU">
 <!ENTITY cmake-tmp-du "443 MB">
+<!ENTITY cmake-final-sbu "3.0 SBU">
+<!ENTITY cmake-final-du "443 MB">
 
 <!ENTITY coreutils-version "9.1">
 <!ENTITY coreutils-size "5,570 KB">
