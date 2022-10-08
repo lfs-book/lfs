@@ -155,6 +155,26 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="install">make DESTDIR=$LFS install</userinput></screen>
 
+    <para>
+      Remove the libtool archive files because they are harmful for
+      cross compilation:
+    </para>
+
+<screen><userinput remap="install">rm -v $LFS/usr/lib/*.la</userinput></screen>
+
+    <para>
+      Adjust GCC pass 1 so it will be able to use
+      <filename class="libraryfile">libgcc</filename> and C++ headers from
+      GCC pass 2.  It's necessary for cross compiling LLVM:
+    </para>
+
+<screen><userinput remap="install">mv -v  $LFS/tools/lib/gcc/$LFS_TGT/&gcc-version;/libgcc.a{,.old}
+ln -sv $LFS/usr/lib/libgcc_s.so.1 \
+       $LFS/tools/lib/gcc/$LFS_TGT/&gcc-version;/libgcc.a
+mv -v  $LFS/tools/$LFS_TGT/include/c++{,.old}
+ln -sv $LFS/usr/include/c++ \
+       $LFS/tools/$LFS_TGT/include/c++</userinput></screen>
+
     <para>As a finishing touch, create a utility symlink. Many programs and scripts
     run <command>cc</command> instead of <command>gcc</command>, which is
     used to keep programs generic and therefore usable on all kinds of UNIX
