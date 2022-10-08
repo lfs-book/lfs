@@ -553,6 +553,8 @@
 <!ENTITY openssl-url "https://www.openssl.org/source/openssl-&openssl-version;.tar.gz">
 <!ENTITY openssl-md5 "163bb3e58c143793d1dc6a6ec7d185d5">
 <!ENTITY openssl-home "https://www.openssl.org/">
+<!ENTITY openssl-tmp-du "476 MB">
+<!ENTITY openssl-tmp-sbu "5.0 SBU">
 <!ENTITY openssl-fin-du "476 MB">
 <!ENTITY openssl-fin-sbu "5.0 SBU">
 

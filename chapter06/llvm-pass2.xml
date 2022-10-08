@@ -164,7 +164,8 @@ cp -av dest/$LFS/tools/$LFS_TGT/include/* \
   <sect2 role="content">
     <title/>
 
-    <para>Details on this package are located in TODO.</para>
+    <para>Details on this package are located in
+    <xref linkend="contents-openssl" role="."/></para>
   </sect2>
 
 </sect1>

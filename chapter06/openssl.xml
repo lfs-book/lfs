@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-tools-openssl" role="wrap">
+  <?dbhtml filename="openssl.html"?>
+
+  <sect1info condition="script">
+    <productname>openssl</productname>
+    <productnumber>&openssl-version;</productnumber>
+    <address>&openssl-url;</address>
+  </sect1info>
+
+  <title>OpenSSL-&openssl-version;</title>
+
+  <indexterm zone="ch-tools-openssl">
+    <primary sortas="a-OpenSSL">OpenSSL</primary>
+    <secondary>tools</secondary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The OpenSSL package contains  management tools and libraries relating
+    to cryptography. These are useful for providing cryptographic functions
+    to other packages, such as OpenSSH, email applications, and web browsers
+    (for accessing HTTPS sites).  </para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&openssl-tmp-sbu;</seg>
+        <seg>&openssl-tmp-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of OpenSSL</title>
+
+    <para>Prepare OpenSSL for compilation:</para>
+
+<screen><userinput remap="configure">./config --prefix=/usr                         \
+         --openssldir=/etc/ssl                 \
+         --libdir=lib                          \
+         --cross-compile-prefix=$LFS_TGT-      \
+         shared                                \
+         linux-$(uname -m | sed 's/i[0-9]/x/')</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the configure options:</title>
+
+      <varlistentry>
+        <term><parameter>--cross-compile-prefix=$LFS_TGT-</parameter></term>
+        <listitem>
+          <para>Cross compile the package with the tools of which the name
+          is prefixed with <envar>$LFS_TGT</envar><literal>-</literal>.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>linux-$(uname -m | sed 's/i[0-9]/x/')</parameter></term>
+        <listitem>
+          <para>Specify the cross compile target.  The
+          <command>sed</command> command guarantees
+          <literal>linux-x86</literal> is selected for 32-bit x86.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
+make DESTDIR=$LFS MANSUFFIX=ssl install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title/>
+
+    <para>Details on this package are located in TODO.</para>
+  </sect2>
+
+</sect1>
