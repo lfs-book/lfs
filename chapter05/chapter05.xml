@@ -18,5 +18,6 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="glibc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libstdc++.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="cmake.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="llvm-pass1.xml"/>
 
 </chapter>

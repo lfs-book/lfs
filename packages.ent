@@ -452,6 +452,14 @@
 <!ENTITY linux-headers-fin-du "1 GB">
 <!ENTITY linux-headers-fin-sbu "0.1 SBU">-->
 
+<!ENTITY llvm-version "15.0.1">
+<!ENTITY llvm-size "52,272 KB">
+<!ENTITY llvm-url "https://github.com/llvm/llvm-project/releases/download/llvmorg-&llvm-version;/llvm-&llvm-version;.src.tar.xz">
+<!ENTITY llvm-md5 "f517bb2708fe68907bd48642c4fac5fe">
+<!ENTITY llvm-home "https://llvm.org/">
+<!ENTITY llvm-tmpp1-sbu "20 SBU">
+<!ENTITY llvm-tmpp1-du "3,800 MB">
+
 <!ENTITY m4-version "1.4.19">
 <!ENTITY m4-size "1,617 KB">
 <!ENTITY m4-url "&gnu;m4/m4-&m4-version;.tar.xz">
