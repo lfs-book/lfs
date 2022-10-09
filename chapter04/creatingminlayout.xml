@@ -21,7 +21,7 @@
   <para>Create the required directory layout by issuing the following commands as
   <systemitem class="username">root</systemitem>:</para>
 
-<screen><userinput>mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
+<screen><userinput>mkdir -pv $LFS/{etc,opt,var} $LFS/usr/{bin,lib,sbin}
 
 for i in bin lib sbin; do
   ln -sv usr/$i $LFS/$i

@@ -33,7 +33,7 @@
   user <systemitem class="username">root</systemitem> by running the following
   command:</para>
 
-<screen><userinput>chown -R root:root $LFS/{usr,lib,var,etc,bin,sbin,tools}
+<screen><userinput>chown -R root:root $LFS/{usr,lib,var,etc,opt,bin,sbin,tools}
 case $(uname -m) in
   x86_64) chown -R root:root $LFS/lib64 ;;
 esac</userinput></screen>
