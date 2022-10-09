@@ -469,17 +469,22 @@ unset ZONEINFO</userinput></screen>
 </literal>
 EOF</userinput></screen>
 
-  <para>If desired, the dynamic loader can also search a directory and
+  <para>The dynamic loader can also search a directory and
   include the contents of files found there.  Generally the files in
   this include directory are one line specifying the desired library path.
-  To add this capability run the following commands:</para>
+  Add this capability:</para>
 
-<screen role="nodump"><userinput>cat &gt;&gt; /etc/ld.so.conf &lt;&lt; "EOF"
+<screen><userinput>cat &gt;&gt; /etc/ld.so.conf &lt;&lt; "EOF"
 <literal># Add an include directory
 include /etc/ld.so.conf.d/*.conf
 </literal>
 EOF
 mkdir -pv /etc/ld.so.conf.d</userinput></screen>
+
+  <para>Tell the dynamic loader how to find the libraries for Rustc:</para>
+
+<screen><userinput>echo /opt/rustc/lib > /etc/ld.so.conf.d/rust.conf
+ldconfig</userinput></screen>
 
   </sect3>
   </sect2>
