@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-rustc" role="wrap">
+  <?dbhtml filename="rustc.html"?>
+
+  <sect1info condition="script">
+    <productname>Rustc</productname>
+    <productnumber>&rustc-version;</productnumber>
+    <address>&rustc-url;</address>
+  </sect1info>
+
+  <title>Rustc-&rustc-version;</title>
+
+  <indexterm zone="ch-system-rustc">
+    <primary sortas="a-Rustc">Rustc</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The Rust programming language is designed to be a safe,
+    concurrent, practical language.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&rustc-final-sbu;</seg>
+        <seg>&rustc-final-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of Rustc</title>
+
+    <para>We will build Rustc as a native compiler for the canonical
+    triplet.  But the building process still refers to the host triplet
+	of the temporary Rustc installed in &ch-tmp-cross;.  So we need to
+    tell Rustc how to support the LFS-specific triplet again.  However this
+    time we don't want to hard code the LFS-specific triplet in the final
+    Rustc, so create a JSON file to describe the target instead of modifying
+    the source code:</para>
+
+<screen><userinput remap="pre">mkdir target
+RUSTC_BOOTSTRAP=1 rustc -Z unstable-options      \
+                        --print target-spec-json \
+                        &gt; target/$(uname -m)-lfs-linux-gnu.json
+sed '/is-builtin/d'    -i target/$(uname -m)-lfs-linux-gnu.json</userinput></screen>
+
+    <para>Create a suitable config.toml file for building Rustc for the
+    final LFS system:</para>
+
+<screen><userinput remap="pre">cat &gt; config.toml &lt;&lt; EOF<literal>
+[llvm]
+link-shared = true
+
+[build]
+docs = false
+locked-deps = true
+vendor = true
+
+# install cargo, clippy, etc. as well as rustc
+extended = true
+
+# build the native compiler for this triplet
+host = [ "</literal>$(uname -m)<literal>-unknown-linux-gnu" ]
+
+# use temporary Rustc as the bootstrapping compiler
+cargo = "/opt/rustc/bin/cargo"
+rustc = "/opt/rustc/bin/rustc"
+
+[install]
+prefix = "/opt/rustc-&rustc-version;"
+docdir = "share/doc/rustc-&rustc-version;"
+
+[rust]
+channel = "stable"
+rpath = false
+codegen-tests = false
+
+[target.</literal>$(uname -m)<literal>-lfs-linux-gnu]
+# during bootstrap the native compiler for host is rebuilt
+# so we need to specify this again
+llvm-config = "/usr/bin/llvm-config"
+
+[target.</literal>$(uname -m)<literal>-unknown-linux-gnu]
+cc     = "gcc"
+cxx    = "g++"
+ar     = "ar"
+ranlib = "ranlib"
+linker = "gcc"
+
+llvm-config = "/usr/bin/llvm-config"
+</literal>EOF</userinput></screen>
+
+    <para>Compile Rustc by running:</para>
+
+<screen><userinput remap="make">RUST_TARGET_PATH=$PWD/target \
+PKG_CONFIG_ALLOW_CROSS=1     \
+python3 x.py build --stage 2</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">RUST_TARGET_PATH=$PWD/target \
+PKG_CONFIG_ALLOW_CROSS=1     \
+DESTDIR=$PWD/dest            \
+python3 x.py install --stage 2
+
+mv -v /opt/rustc-&rustc-version;{,.old}
+cp -av dest/* /
+ldconfig</userinput></screen>
+
+    <para>Perform a sanity check:</para>
+
+<screen><userinput>echo 'fn main() { println!("hello"); }' &gt; hello.rs
+rustc --target=$(uname -m)-unknown-linux-gnu hello.rs
+./hello</userinput></screen>
+
+    <para>There should be no error messages, and the output should be
+    <literal>hello</literal>.  Once the sanity check passed, remove the
+    temporary Rustc installation:</para>
+
+<screen><userinput remap="install">rm -rf /opt/rustc-&rustc-version;.old</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content" id="contents-rustc">
+    <title>Contents of Rustc</title>
+
+    <segmentedlist>
+      <segtitle>Installed Programs</segtitle>
+      <segtitle>Installed Libraries</segtitle>
+      <segtitle>Installed Directories</segtitle>
+
+      <seglistitem>
+        <seg>
+          cargo-clippy, cargo-fmt, cargo, clippy-driver,
+          rls, rust-analyzer, rust-demangler, rust-gdb,
+          rust-gdbgui, rust-lldb, rustc, rustdoc, and rustfmt
+        </seg>
+        <seg>
+          librustc-driver-&lt;16-byte-hash&gt;.so,
+          libstd-&lt;16-byte-hash&gt;.so, and
+          libtest-&lt;16-byte-hash&gt;.so
+        </seg>
+        <seg>
+          ~/.cargo,
+          /opt/rustc, symbolic link to
+          /opt/rustc-&rustc-version;
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="cargo-clippy">
+        <term><command>cargo-clippy</command></term>
+        <listitem>
+          <para>
+            provides lint checks for a cargo package
+          </para>
+          <indexterm zone="ch-system-rustc">
+            <primary sortas="b-cargo-clippy">cargo-clippy</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="cargo-fmt">
+        <term><command>cargo-fmt</command></term>
+        <listitem>
+          <para>
+            formats all bin and lib files of the current crate using
+            rustfmt
+          </para>
+          <indexterm zone="ch-system-rustc">
+            <primary sortas="b-cargo-fmt">cargo-fmt</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="cargo">
+        <term><command>cargo</command></term>
+        <listitem>
+          <para>
+            is the Package Manager for Rust
+          </para>
+          <indexterm zone="ch-system-rustc">
+            <primary sortas="b-cargo">cargo</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="clippy-driver">
+        <term><command>clippy-driver</command></term>
+        <listitem>
+          <para>
+            provides lint checks for Rust
+          </para>
+          <indexterm zone="ch-system-rustc">
+            <primary sortas="b-clippy-driver">clippy-driver</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="rls">
+        <term><command>rls</command></term>
+        <listitem>
+          <para>
+            is the Rust Language Server. This can run in the background to
+            provide IDEs, editors, and other tools with information about Rust
+            programs
+          </para>
+          <indexterm zone="ch-system-rustc">
+            <primary sortas="b-rls">rls</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="rust-analyzer">
+        <term><command>rust-analyzer</command></term>
+        <listitem>
+          <para>
+            is an implementation of Language Server Protocol for the Rust
+            programming language.
+          </para>
+          <indexterm zone="ch-system-rustc">
+            <primary sortas="b-rust-analyzer">rust-analyzer</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="rust-demangler">
+        <term><command>rust-demangler</command></term>
+        <listitem>
+          <para>
+            converts a list of Rust mangled symbols into a
+            corresponding list of demangled symbols
+          </para>
+          <indexterm zone="ch-system-rustc">
+            <primary sortas="b-rust-demangler">rust-demangler</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="rust-gdb">
+        <term><command>rust-gdb</command></term>
+        <listitem>
+          <para>
+            is a wrapper script for gdb, pulling in Python pretty-printing
+            modules installed in
+            <filename class="directory">/opt/rustc-&rustc-version;/lib/rustlib/etc</filename>
+          </para>
+          <indexterm zone="ch-system-rustc">
+            <primary sortas="b-rust-gdb">rust-gdb</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="rust-gdbgui">
+        <term><command>rust-gdbgui</command></term>
+        <listitem>
+          <para>
+            is a wrapper script for a graphical front end to gdb that runs in a
+            browser
+          </para>
+          <indexterm zone="ch-system-rustc">
+            <primary sortas="b-rust-gdbgui">rust-gdbgui</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="rust-lldb">
+        <term><command>rust-lldb</command></term>
+        <listitem>
+          <para>
+            is a wrapper script for LLDB (the LLVM debugger)
+            pulling in the Python pretty-printing modules
+          </para>
+          <indexterm zone="ch-system-rustc">
+            <primary sortas="b-rust-lldb">rust=lldb</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="rustc">
+        <term><command>rustc</command></term>
+        <listitem>
+          <para>
+            is the rust compiler
+          </para>
+          <indexterm zone="ch-system-rustc">
+            <primary sortas="b-rustc">rustc</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="rustdoc">
+        <term><command>rustdoc</command></term>
+        <listitem>
+          <para>
+            generates documentation from rust source code
+          </para>
+          <indexterm zone="ch-system-rustc">
+            <primary sortas="b-rustdoc">rustdoc</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="rustfmt">
+        <term><command>rustfmt</command></term>
+        <listitem>
+          <para>
+            formats rust code
+          </para>
+          <indexterm zone="ch-system-rustc">
+            <primary sortas="b-rustfmt">rustfmt</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libstd">
+        <term><filename class="libraryfile">libstd-&lt;16-byte-hash&gt;.so</filename></term>
+        <listitem>
+          <para>
+            is the Rust Standard Library, the foundation of portable Rust software
+          </para>
+          <indexterm zone="ch-system-rustc">
+            <primary sortas="c-libstd">libstd-&lt;16-byte-hash&gt;.so</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+  </sect2>
+</sect1>
