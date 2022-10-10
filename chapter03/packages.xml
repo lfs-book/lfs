@@ -121,6 +121,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>Cmake (&cmake-version;) - <token>&cmake-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&cmake-home;"/></para>
+        <para>Download: <ulink url="&cmake-url;"/></para>
+        <para>MD5 sum: <literal>&cmake-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Coreutils (&coreutils-version;) - <token>&coreutils-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&coreutils-home;"/></para>
@@ -469,6 +478,24 @@
     </varlistentry>
 
     <varlistentry>
+      <term>LLVM-cmake Modules (&llvm-cmake-version;) - <token>&llvm-cmake-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&llvm-cmake-home;"/></para>
+        <para>Download: <ulink url="&llvm-cmake-url;"/></para>
+        <para>MD5 sum: <literal>&llvm-cmake-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>LLVM (&llvm-version;) - <token>&llvm-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&llvm-home;"/></para>
+        <para>Download: <ulink url="&llvm-url;"/></para>
+        <para>MD5 sum: <literal>&llvm-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>M4 (&m4-version;) - <token>&m4-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&m4-home;"/></para>
@@ -635,6 +662,24 @@
         <para>Home page: <ulink url="&readline-home;"/></para>
         <para>Download: <ulink url="&readline-url;"/></para>
         <para>MD5 sum: <literal>&readline-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Rustc (&rustc-version;) - <token>&rustc-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&rustc-home;"/></para>
+        <para>Download: <ulink url="&rustc-url;"/></para>
+        <para>MD5 sum: <literal>&rustc-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Rust-Bindgen (&rust-bindgen-version;) - <token>&rust-bindgen-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&rust-bindgen-home;"/></para>
+        <para>Download: <ulink url="&rust-bindgen-url;"/></para>
+        <para>MD5 sum: <literal>&rust-bindgen-md5;</literal></para>
       </listitem>
     </varlistentry>
 
