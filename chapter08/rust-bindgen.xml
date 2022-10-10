@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-rust-bindgen" role="wrap">
+  <?dbhtml filename="rust-bindgen.html"?>
+
+  <sect1info condition="script">
+    <productname>rust-bindgen</productname>
+    <productnumber>&rust-bindgen-version;</productnumber>
+    <address>&rust-bindgen-url;</address>
+  </sect1info>
+
+  <title>Rust-bindgen-&rust-bindgen-version;</title>
+
+  <indexterm zone="ch-system-rust-bindgen">
+    <primary sortas="a-rust-bindgen">rust-bindgen</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Rust-bindgen automatically generates Rust FFI bindings to C and
+    C++ libraries.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&rust-bindgen-fin-sbu;</seg>
+        <seg>&rust-bindgen-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of Rust-bindgen</title>
+
+    <para>Build rust-bindgen with:</para>
+
+<screen><userinput remap="configure">cargo build --release</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the build option:</title>
+
+      <varlistentry>
+        <term><parameter>--release</parameter></term>
+        <listitem>
+          <para>Build this package with optimization suitable for stable
+          release.  The default (<option>--debug</option>) will produce
+          unoptimized binary.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>The testsuite needs <command>rustup</command> which is beyond the
+    scope of LFS.</para>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">install -vm755 target/release/bindgen /usr/bin</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-rust-bindgen" role="content">
+    <title>Contents of Rust-bindgen</title>
+
+    <segmentedlist>
+      <segtitle>Installed programs</segtitle>
+
+      <seglistitem>
+        <seg>bindgen</seg>
+      </seglistitem>
+    </segmentedlist>
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="bindgen">
+        <term><command>bindgen</command></term>
+        <listitem>
+          <para>generates Rust bindings from C/C++ headers</para>
+          <indexterm zone="ch-system-rust-bindgen bindgen">
+            <primary sortas="b-bindgen">bindgen</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>
+

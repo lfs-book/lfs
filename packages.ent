@@ -646,6 +646,14 @@
 <!ENTITY rustc-final-sbu "21 SBU">
 <!ENTITY rustc-final-du "10,000 MB">
 
+<!ENTITY rust-bindgen-version "0.60.1-lfs-1">
+<!ENTITY rust-bindgen-size "7,524 KB">
+<!ENTITY rust-bindgen-url "https://linuxfromscratch.org/~xry111/rust-bindgen/rust-bindgen-&rust-bindgen-version;.tar.xz">
+<!ENTITY rust-bindgen-md5 "6ade6ad51b8a5463c29ada3ddc6f23f6">
+<!ENTITY rust-bindgen-home "https://rust-lang.github.io/rust-bindgen/">
+<!ENTITY rust-bindgen-fin-du "237 MB">
+<!ENTITY rust-bindgen-fin-sbu "1.9 SBU">
+
 <!ENTITY sed-version "4.8">
 <!ENTITY sed-size "1,317 KB">
 <!ENTITY sed-url "&gnu;sed/sed-&sed-version;.tar.xz">
