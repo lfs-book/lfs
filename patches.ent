@@ -64,7 +64,11 @@
 <!ENTITY libpipeline-checks-patch "libpipeline-&libpipeline-version;-check_fixes-3.patch">
 <!ENTITY libpipeline-checks-patch-md5 "0cd71f98eadaee07647d021d2e4c8621">
 <!ENTITY libpipeline-checks-patch-size "22 KB">
-
+-->
+<!ENTITY llvm-dftssp-patch "clang-&llvm-version;-enable_default_ssp-1.patch">
+<!ENTITY llvm-dftssp-patch-md5 "a16b457669702bd5e1e7bee2cfabe6af">
+<!ENTITY llvm-dftssp-patch-size "3.9 KB">
+<!--
 <!ENTITY meson-fix-patch "meson-&meson-version;-upstream_fix-2.patch">
 <!ENTITY meson-fix-patch-md5 "dd0b2187d287abcb41c3dd7e497b7df3">
 <!ENTITY meson-fix-patch-size "5.5 KB">

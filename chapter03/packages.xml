@@ -487,6 +487,24 @@
     </varlistentry>
 
     <varlistentry>
+      <term>LLVM Clang (&llvm-version;) - <token>&llvm-clang-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&llvm-home;"/></para>
+        <para>Download: <ulink url="&llvm-clang-url;"/></para>
+        <para>MD5 sum: <literal>&llvm-clang-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>LLVM Compiler (&llvm-version;) - <token>&llvm-comp-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&llvm-home;"/></para>
+        <para>Download: <ulink url="&llvm-comp-url;"/></para>
+        <para>MD5 sum: <literal>&llvm-comp-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>LLVM CMake Modules (&llvm-version;) - <token>&llvm-cmake-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&llvm-home;"/></para>

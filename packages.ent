@@ -466,6 +466,14 @@
 <!ENTITY llvm-final-sbu "20 SBU">
 <!ENTITY llvm-final-du "3,800 MB">
 
+<!ENTITY llvm-clang-url "https://github.com/llvm/llvm-project/releases/download/llvmorg-&llvm-version;/clang-&llvm-version;.src.tar.xz">
+<!ENTITY llvm-clang-md5 "abb7f1286b084b7c149fd83c7b1d8564">
+<!ENTITY llvm-clang-size "18 MB">
+
+<!ENTITY llvm-comp-url "https://github.com/llvm/llvm-project/releases/download/llvmorg-&llvm-version;/compiler-rt-&llvm-version;.src.tar.xz">
+<!ENTITY llvm-comp-md5 "6dd59ad1f511915e4d70872c91014ddc">
+<!ENTITY llvm-comp-size "2.2 MB">
+
 <!-- TODO: if we merge Rust into trunk, create a symlink on anduin and
            use &anduin-sources; instead -->
 <!ENTITY llvm-cmake-url "https://anduin.linuxfromscratch.org/BLFS/llvm/llvm-cmake-15.0.1.src.tar.xz">
