@@ -466,6 +466,12 @@
 <!ENTITY llvm-final-sbu "20 SBU">
 <!ENTITY llvm-final-du "3,800 MB">
 
+<!-- TODO: if we merge Rust into trunk, create a symlink on anduin and
+           use &anduin-sources; instead -->
+<!ENTITY llvm-cmake-url "https://anduin.linuxfromscratch.org/BLFS/llvm/llvm-cmake-15.0.1.src.tar.xz">
+<!ENTITY llvm-cmake-md5 "8b768b6128baf4e6797ae54a10bc0ed2">
+<!ENTITY llvm-cmake-size "8 KB">
+
 <!ENTITY m4-version "1.4.19">
 <!ENTITY m4-size "1,617 KB">
 <!ENTITY m4-url "&gnu;m4/m4-&m4-version;.tar.xz">
