@@ -478,20 +478,20 @@
     </varlistentry>
 
     <varlistentry>
-      <term>LLVM-cmake Modules (&llvm-cmake-version;) - <token>&llvm-cmake-size;</token>:</term>
-      <listitem>
-        <para>Home page: <ulink url="&llvm-cmake-home;"/></para>
-        <para>Download: <ulink url="&llvm-cmake-url;"/></para>
-        <para>MD5 sum: <literal>&llvm-cmake-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
       <term>LLVM (&llvm-version;) - <token>&llvm-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&llvm-home;"/></para>
         <para>Download: <ulink url="&llvm-url;"/></para>
         <para>MD5 sum: <literal>&llvm-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>LLVM CMake Modules (&llvm-version;) - <token>&llvm-cmake-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&llvm-home;"/></para>
+        <para>Download: <ulink url="&llvm-cmake-url;"/></para>
+        <para>MD5 sum: <literal>&llvm-cmake-md5;</literal></para>
       </listitem>
     </varlistentry>
 

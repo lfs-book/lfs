@@ -53,7 +53,13 @@ sed -i.orig compiler/rustc_target/src/spec/mod.rs                        \
     -e '/targets!/a\    ("i586-lfs-linux-gnu", i586_lfs_linux_gnu),'</userinput></screen>
 
     <para>In the first pass, build Rustc as a cross compiler for
-    <envar>$LFS_TGT</envar>.  Create a suitable configuration:</para>
+    <envar>$LFS_TGT</envar>.  The cross compiler will link to LLVM Pass 1,
+    so we need to tell the dynamic linker of the host distro where to find
+    the LLVM Pass 1 dynamic library:</para>
+
+<screen><userinput remap="pre">export LD_LIBRARY_PATH=$LFS/tools/lib</userinput></screen>
+
+    <para>Create a suitable configuration:</para>
 
 <screen><userinput remap="pre">install -vm755 src/llvm-project/llvm/cmake/config.guess config.guess
 cat &gt; pass1.toml &lt;&lt; EOF<literal>
@@ -162,6 +168,14 @@ python3 x.py install --keep-stage 0     \
                      --stage 2          \
                      --config pass2.toml
 ln -sv rustc-&rustc-version; $LFS/opt/rustc</userinput></screen>
+
+    <!-- Maybe we should just set LD_LIBRARY_PATH=$LFS/tools
+         during the entire chapter 5 and 6.  But doing so will need to
+         modify .bashrc of lfs user.  For now just unset it, so the manual
+         build is consistent with jhalfs.  -->
+    <para>Clean up the environment:</para>
+
+<screen><userinput remap="make">unset LD_LIBRARY_PATH</userinput></screen>
 
   </sect2>
 
