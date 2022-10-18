@@ -35,8 +35,8 @@
         Runtime Languages, and Imaging.  Some parts of Core and Desktop
         specifications are architecture specific.  There are also two trial
         specifications: Gtk3 and Graphics.  LFS attempts to conform to the LSB
-        specifications for the IA32 (32-bit x86) or AMD64 (x86_64)
-        architectures discussed in the previous section.</para>
+        generic specifications.  The architecture specific part of LSB does
+        not exist for ARM64.</para>
 
         <note><para>Many people do not agree with these requirements.
         The main purpose of the LSB is to ensure that proprietary software
