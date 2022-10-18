@@ -11,16 +11,16 @@
 
   <title>What's new since the last release</title>
 
-  <para>In 11.3 release, <parameter>--enable-default-pie</parameter>
+  <para>In the 11.3 release, <parameter>--enable-default-pie</parameter>
   and <parameter>--enable-default-ssp</parameter> are enabled for GCC.
-  They can mitigate some type of malicious attacks but they cannot provide
-  a full protection.  In case if you are reading a programming textbook,
-  you may need to disable PIE and SSP with GCC options
-  <parameter>-fno-pie -no-pie -fno-stack-protection</parameter>
-  because some textbooks assume they were disabled by default.</para>
+  These techniques can mitigate some malicious attacks, but they do not provide
+  perfect security.  If you are reading LFS and a programming textbook,
+  you may need to disable PIE and SSP with the GCC options
+  <parameter>-fno-pie -no-pie -fno-stack-protection</parameter>,
+  because some textbooks assume these options are disabled by default.</para>
 
-  <para>Below is a list of package updates made since the previous
-  release of the book.</para>
+  <para>Here is a list of the packages updated since the previous
+  release of LFS.</para>
 
   <!--
     Every package in the book is listed in the "Upgraded to:" section.
@@ -106,9 +106,9 @@
     <!--<listitem>
        <para>GDBM-&gdbm-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Gettext-&gettext-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Glibc-&glibc-version;</para>
     </listitem>-->
@@ -139,9 +139,9 @@
     <!--<listitem>
       <para>Intltool-&intltool-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>IPRoute2-&iproute2-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem revision="systemd">
       <para>Jinja2-&jinja2-version;</para>
     </listitem>-->
@@ -184,9 +184,9 @@
     <!--<listitem>
       <para>Man-DB-&man-db-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Man-pages-&man-pages-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem revision="systemd">
       <para>MarkupSafe-&markupsafe-version;</para>
     </listitem>-->
@@ -259,18 +259,18 @@
     <!--<listitem>
       <para>Util-Linux-&util-linux-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Vim-&vim-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>XML-Parser-&xml-parser-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>XZ-Utils-&xz-version;</para>
-    </listitem>-->
-    <!--<listitem>
+    </listitem>
+    <listitem>
       <para>Zlib-&zlib-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Zstd-&zstd-version;</para>
     </listitem>-->
@@ -289,9 +289,12 @@
     <title>Added:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
 
-    <!--<listitem>
-      <para>&xz-upstream-fix-patch;</para>
-    </listitem>-->
+    <listitem>
+      <para>&bash-fixes-patch;</para>
+    </listitem>
+    <listitem>
+      <para>&readline-fixes-patch;</para>
+    </listitem>
   </itemizedlist>
 
   <itemizedlist>

@@ -13,7 +13,8 @@
 <para>The target architectures of this LFS edition are ARM64 (sometimes
 called AArch64) CPUs.  On the other hand, the instructions in this book may
 work on 32-bit ARM CPUs with some modifications. To build a system that
-utilizes one of these CPUs, the main prerequisite, in addition to those on
+utilizes one of these alternative CPUs, the main prerequisite, in
+addition to those on
 the next page, is an existing Linux system such as an earlier LFS
 installation, Ubuntu, Red Hat/Fedora, SuSE, or other distribution that
 targets the architecture that you have.</para>
@@ -23,9 +24,9 @@ targets the architecture that you have.</para>
 only.  Building a <quote>multi-lib</quote> system requires compiling many
 applications twice, once for a 32-bit system and once for a 64-bit system.
 This is not directly supported in LFS because it would interfere with the
-educational objective of providing the instructions needed for a
-straightforward base Linux system. Some LFS/BLFS editors maintain a fork
-of LFS for multilib, which is accessible at <ulink
+educational objective of providing the minimal instructions needed for a
+base Linux system. Some LFS/BLFS editors maintain a multilib fork
+of LFS, accessible at <ulink
 url="https://www.linuxfromscratch.org/~thomas/multilib/index.html"/>. But
 the multilib edition is for x86_64, and multilib is an advanced topic
 anyway.</para>
