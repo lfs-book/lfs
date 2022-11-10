@@ -586,6 +586,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>Pip (&pip-version;) - <token>&pip-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&pip-home;"/></para>
+        <para>Download: <ulink url="&pip-url;"/></para>
+        <para>MD5 sum: <literal>&pip-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Pkg-config (&pkgconfig-version;) - <token>&pkgconfig-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&pkgconfig-home;"/></para>
@@ -644,6 +653,15 @@
         <para>Home page: <ulink url="&sed-home;"/></para>
         <para>Download: <ulink url="&sed-url;"/></para>
         <para>MD5 sum: <literal>&sed-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Setuptools (&setuptools-version;) - <token>&setuptools-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&setuptools-home;"/></para>
+        <para>Download: <ulink url="&setuptools-url;"/></para>
+        <para>MD5 sum: <literal>&setuptools-md5;</literal></para>
       </listitem>
     </varlistentry>
 
