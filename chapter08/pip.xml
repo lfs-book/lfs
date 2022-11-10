@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-pip" role="wrap">
+  <?dbhtml filename="pip.html"?>
+
+  <sect1info condition="script">
+    <productname>pip</productname>
+    <productnumber>&pip-version;</productnumber>
+    <address>&pip-url;</address>
+  </sect1info>
+
+  <title>Pip-&pip-version;</title>
+
+  <indexterm zone="ch-system-pip">
+    <primary sortas="a-pip">pip</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Pip is the PyPA recommended tool for installing Python packages.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+      <seglistitem>
+        <seg>&pip-fin-sbu;</seg>
+        <seg>&pip-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of Pip</title>
+
+	<para>Remove useless Windows PE executables:</para>
+
+<screen><userinput remap="make">find -name \*.exe -delete
+sed '/\.exe/d' -i setup.py</userinput></screen>
+
+	<para>Disable the installation of unversioned <command>pip</command>
+    script, to prevent a potential conflict if Python 2 will be installed
+    later (in BLFS):</para>
+
+<screen><userinput remap="make">sed '/pip=/d' -i setup.py</userinput></screen>
+
+    <para>Build the pip package.  The building process needs pip itself,
+    set <envar>PYTHONPATH</envar> so <command>python3</command> will be able
+    to find it:</para>
+
+<screen><userinput remap="make">PYTHONPATH=src \
+python3 -m pip wheel -w dist --no-build-isolation --no-deps $PWD</userinput></screen>
+
+    <para>Install pip with the following command:</para>
+
+<screen><userinput remap="install">PYTHONPATH=src \
+python&python-minor; -m pip install --no-index --find-links dist pip --force-reinstall</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the install command:</title>
+
+      <varlistentry>
+        <term><command>python&python-minor;</command></term>
+        <listitem>
+           <para>It's used instead of <command>python3</command>, to ensure
+           the name of Python interpreter in the installed
+           <command>pip3.11</command> script to be
+           <command>python&python-minor;</command>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+
+  <sect2 id="contents-pip" role="content">
+    <title>Contents of Pip</title>
+
+    <segmentedlist>
+      <segtitle>Installed program</segtitle>
+      <segtitle>Installed directories</segtitle>
+
+      <seglistitem>
+        <seg>pip3 and pip&python-minor;</seg>
+        <seg>
+           /usr/lib/python&python-minor;/site-packages/pip and
+           /usr/lib/python&python-minor;/site-packages/pip-&pip-version;.dist-info
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="pip-pip3">
+        <term><command>pip3</command></term>
+        <listitem>
+          <para>
+            The package installer for Python. You can use pip to install
+            packages from Python Package Index and other indexes
+          </para>
+          <indexterm zone="ch-system-pip">
+            <primary sortas="b-pip3">pip3</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="pip-pip&python-minor;">
+        <term><command>pip&python-minor;</command></term>
+        <listitem>
+          <para>
+            Another copy of <command>pip3</command>, can be used to manage
+            Python modules for Python-&python-minor; if a new Python 3 minor
+            version is installed.
+          </para>
+          <indexterm zone="ch-system-pip">
+            <primary sortas="b-pip3">pip3</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+  </sect2>
+
+</sect1>
+

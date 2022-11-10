@@ -607,6 +607,8 @@
 <!ENTITY pip-url "&pypi-src;/p/pip/pip-&pip-version;.tar.gz">
 <!ENTITY pip-md5 "996f58a94fe0b8b82b6795c42bd171ba">
 <!ENTITY pip-home "&pypi-home;/pip/">
+<!ENTITY pip-fin-du "23,600 KB">
+<!ENTITY pip-fin-sbu "less than 0.1 SBU">
 
 <!ENTITY readline-version "8.2">
 <!ENTITY readline-soversion "8.2"><!-- used for stripping -->
