@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-setuptools" role="wrap">
+  <?dbhtml filename="setuptools.html"?>
+
+  <sect1info condition="script">
+    <productname>setuptools</productname>
+    <productnumber>&setuptools-version;</productnumber>
+    <address>&setuptools-url;</address>
+  </sect1info>
+
+  <title>Setuptools-&setuptools-version;</title>
+
+  <indexterm zone="ch-system-setuptools">
+    <primary sortas="a-setuptools">setuptools</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Setuptools is a Python library for downloading, building,
+    installing, upgrading, and uninstalling Python packages easily.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+      <seglistitem>
+        <seg>&setuptools-fin-sbu;</seg>
+        <seg>&setuptools-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of Setuptools</title>
+
+    <para>The installation of setuptools needs pip.  Prepare the temporary
+    copy of it:</para>
+
+<screen><userinput remap="pre">tar xf ../pip-&pip-version;.tar.gz</userinput></screen>
+
+    <para>Remove useless Windows PE executables:</para>
+
+<screen><userinput remap="pre">find -name \*.exe -delete
+sed '/\.exe$/d' -i setuptools.egg-info/SOURCES.txt</userinput></screen>
+
+    <para>Build the setuptools package.  The building process needs pip
+    and setuptools itself, set <envar>PYTHONPATH</envar> so
+    <command>python3</command> will be able to find them:</para>
+
+<screen><userinput remap="make">PYTHONPATH=pip-&pip-version;/src:. \
+python3 -m pip wheel -w dist --no-build-isolation --no-deps $PWD</userinput></screen>
+
+    <para>Install setuptools with the following command:</para>
+
+<screen><userinput remap="install">PYTHONPATH=pip-&pip-version;/src:. \
+python3 -m pip install --no-index --find-links dist setuptools --force-reinstall</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-setuptools" role="content">
+    <title>Contents of Setuptools</title>
+
+    <segmentedlist>
+      <segtitle>Installed directories</segtitle>
+
+      <seglistitem>
+        <seg>
+           /usr/lib/python&python-minor;/site-packages/_distutils_hack,
+           /usr/lib/python&python-minor;/site-packages/pkg_resources,
+           /usr/lib/python&python-minor;/site-packages/setuptools, and
+           /usr/lib/python&python-minor;/site-packages/setuptools-&setuptools-version;.dist-info
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+</sect1>

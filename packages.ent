@@ -632,6 +632,8 @@
 <!ENTITY setuptools-url "&pypi-src;/s/setuptools/setuptools-&setuptools-version;.tar.gz">
 <!ENTITY setuptools-md5 "3f062858ddfb5efa564c9c02a30cb104">
 <!ENTITY setuptools-home "&pypi-home;/setuptools/">
+<!ENTITY setuptools-fin-du "29,068 KB">
+<!ENTITY setuptools-fin-sbu "less than 0.1 SBU">
 
 <!ENTITY shadow-version "4.12.3">
 <!ENTITY shadow-size "1,707 KB">
