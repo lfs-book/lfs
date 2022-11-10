@@ -40,39 +40,52 @@
   <sect2 role="installation">
     <title>Installation of Wheel</title>
 
+    <para>The installation of wheel needs pip and setuptools.
+    Prepare the temporary copies of them:</para>
+
+<screen><userinput remap="pre">tar xf ../pip-&pip-version;.tar.gz
+tar xf ../setuptools-&setuptools-version;.tar.gz</userinput></screen>
+
+    <para>Build the wheel package.  The building process needs pip,
+    setuptools, and wheel itself, set <envar>PYTHONPATH</envar> so
+    <command>python3</command> will be able to find them:</para>
+
+<screen><userinput remap="make">PYTHONPATH=pip-&pip-version;/src:setuptools-&setuptools-version;:src \
+python3 -m pip wheel -w dist --no-build-isolation --no-deps $PWD</userinput></screen>
+
     <para>Install wheel with the following command:</para>
 
-<screen><userinput remap="install">pip3 install --no-index $PWD</userinput></screen>
+<screen><userinput remap="install">PYTHONPATH=pip-&pip-version;/src:setuptools-&setuptools-version;:src \
+python3 -m pip install --no-index --find-links dist wheel --force-reinstall</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the pip3 options:</title>
+      <title>The meaning of the install parameters:</title>
 
       <varlistentry>
-        <term><command>install</command></term>
+        <term><parameter>-w dist</parameter></term>
         <listitem>
-           <para>Install the package.</para>
+           <para>Put the created wheel into the
+           <filename class='directory'>dist</filename> directory.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--no-index</parameter></term>
+        <term><parameter>--find-links dist</parameter></term>
         <listitem>
-          <para>Prevent pip from fetching files from the online package
-          repository (PyPI). If packages are installed in the correct order,
-          then it won't need to fetch any files in the first place, but this
-          option adds some safety in case of user error.</para>
+           <para>Install wheel from the
+           <filename class='directory'>dist</filename> directory.</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>$PWD</parameter></term>
+        <term><parameter>--force-reinstall</parameter></term>
         <listitem>
-           <para>Look for files to install in the current working directory.</para>
+           <para>Install the package even if it can be found in
+           <envar>PYTHONPATH</envar>.</para>
         </listitem>
       </varlistentry>
 
     </variablelist>
-
   </sect2>
 
   <sect2 id="contents-wheel" role="content">

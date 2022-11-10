@@ -602,6 +602,12 @@
 <!ENTITY python-docs-md5 "b740495c9f6714e0998894ed8d1cb379">
 <!ENTITY python-docs-size "7,484 KB">
 
+<!ENTITY pip-version "22.3.1">
+<!ENTITY pip-size "2,032 KB">
+<!ENTITY pip-url "&pypi-src;/p/pip/pip-&pip-version;.tar.gz">
+<!ENTITY pip-md5 "996f58a94fe0b8b82b6795c42bd171ba">
+<!ENTITY pip-home "&pypi-home;/pip/">
+
 <!ENTITY readline-version "8.2">
 <!ENTITY readline-soversion "8.2"><!-- used for stripping -->
 <!ENTITY readline-size "2,973 KB">
@@ -620,6 +626,12 @@
 <!ENTITY sed-tmp-sbu "0.1 SBU">
 <!ENTITY sed-fin-du "31 MB">
 <!ENTITY sed-fin-sbu "0.4 SBU">
+
+<!ENTITY setuptools-version "65.5.1">
+<!ENTITY setuptools-size "2,556 KB">
+<!ENTITY setuptools-url "&pypi-src;/s/setuptools/setuptools-&setuptools-version;.tar.gz">
+<!ENTITY setuptools-md5 "3f062858ddfb5efa564c9c02a30cb104">
+<!ENTITY setuptools-home "&pypi-home;/setuptools/">
 
 <!ENTITY shadow-version "4.12.3">
 <!ENTITY shadow-size "1,707 KB">
@@ -733,7 +745,7 @@
 <!ENTITY wheel-url "&pypi-src;/w/wheel/wheel-&wheel-version;.tar.gz">
 <!ENTITY wheel-md5 "f490f1399e5903706cb1d4fbed9ecb28">
 <!ENTITY wheel-home "&pypi-home;/wheel/">
-<!ENTITY wheel-fin-du "956 KB">
+<!ENTITY wheel-fin-du "28,700 KB">
 <!ENTITY wheel-fin-sbu "less than 0.1 SBU">
 
 <!ENTITY xml-parser-version "2.46">
