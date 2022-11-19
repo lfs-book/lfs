@@ -15,12 +15,12 @@
   </indexterm>
 
     <para>Applications running in user space utilize various file 
-    systems exported by the kernel to communicate 
+    systems created by the kernel to communicate 
     with the kernel itself. These file systems are virtual: no disk
-    space is used for them. The content of the file systems resides in
+    space is used for them. The content of these file systems resides in
     memory.</para>
 
-    <para>Begin by creating directories on which the file systems will be
+    <para>Begin by creating the directories on which these virtual file systems will be
     mounted:</para>
 
 <screen><userinput>mkdir -pv /{proc,sys,run}</userinput></screen>
@@ -30,7 +30,7 @@
 
     <para>The kernel has already mounted
     <systemitem class="filesystem">devtmpfs</systemitem>.
-    Mount the remaining virtual kernel filesystems:</para>
+    Mount the remaining virtual kernel file systems:</para>
 
 <screen><userinput>mkdir -pv /dev/{pts,shm}
 mount -vt devpts /dev/pts /dev/pts -o gid=5,mode=620

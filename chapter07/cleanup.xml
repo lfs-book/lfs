@@ -13,15 +13,15 @@
   <sect2>
     <title>Cleaning</title>
 
-    <para>First, remove the currently installed documentation to prevent them
+    <para>First, remove the currently installed documentation files to prevent them
     from ending up in the final system, and to save about 35 MB:</para>
 
 <screen><userinput>rm -rf /usr/share/{info,man,doc}/*</userinput></screen>
 
     <para>Second, on a modern Linux system, the libtool .la files are only
-    useful for libltdl.  No libraries in LFS are expected to be loaded by
-    libltdl, and it's known that some .la files can cause BLFS packages
-    fail to build.  Remove those files now:</para>
+    useful for libltdl.  No libraries in LFS are loaded by
+    libltdl, and it's known that some .la files can cause BLFS package
+    failures.  Remove those files now:</para>
 
 <screen><userinput>find /usr/{lib,libexec} -name \*.la -delete</userinput></screen>
 
@@ -42,9 +42,9 @@
       and your current LFS system is in a good state. Your system can now be
       backed up for later reuse. In case of fatal failures in the subsequent
       chapters, it often turns out that removing everything and starting over
-      (more carefully) is the best option to recover. Unfortunately, all the
+      (more carefully) is the best way to recover. Unfortunately, all the
       temporary files will be removed, too. To avoid spending extra time to
-      redo something which has been built successfully, creating a backup of
+      redo something which has been done successfully, creating a backup of
       the current LFS system may prove useful.
     </para>
 
@@ -71,10 +71,7 @@
     <para>
       Note that the instructions below specify the home directory of the host
       system's <systemitem class="username">root</systemitem> user, which is
-      typically found on the root filesystem.
-    </para>
-
-    <para>
+      typically found on the root file system.
       Replace <envar>$HOME</envar> by a directory of your choice if you
       do not want to have the backup stored in <systemitem
       class="username">root</systemitem>'s home directory.
