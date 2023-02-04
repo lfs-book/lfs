@@ -114,8 +114,7 @@
     --prefix=/usr            \
     --libdir=/usr/lib32      \
     --disable-static         \
-    --with-gcc-arch=i686     \
-    --disable-exec-static-tramp</userinput></screen>
+    --with-gcc-arch=i686</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -151,8 +150,7 @@ rm -rf DESTDIR</userinput></screen>
     --prefix=/usr            \
     --libdir=/usr/libx32     \
     --disable-static         \
-    --with-gcc-arch=x86_64   \
-    --disable-exec-static-tramp</userinput></screen>
+    --with-gcc-arch=x86_64</userinput></screen>
 
     <para>Compile the package:</para>
 
