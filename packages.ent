@@ -120,7 +120,7 @@
 <!ENTITY dbus-md5 "e809d7aa905ad82adeaf1d59db5445b1">
 <!ENTITY dbus-home "https://www.freedesktop.org/wiki/Software/dbus">
 <!ENTITY dbus-fin-du "19 MB">
-<!ENTITY dbus-fin-sbu "0.2 SBU">
+<!ENTITY dbus-fin-sbu "0.1 SBU">
 
 <!ENTITY dejagnu-version "1.6.3">
 <!ENTITY dejagnu-size "608 KB">
@@ -364,7 +364,7 @@
 <!ENTITY jinja2-url "&pypi-src;/J/Jinja2/Jinja2-&jinja2-version;.tar.gz">
 <!ENTITY jinja2-md5 "d31148abd89c1df1cdb077a55db27d02">
 <!ENTITY jinja2-home "https://jinja.palletsprojects.com/en/3.0.x/">
-<!ENTITY jinja2-fin-du "3.0 MB">
+<!ENTITY jinja2-fin-du "3.4 MB">
 <!ENTITY jinja2-fin-sbu "less than 0.1 SBU">
 
 <!ENTITY kbd-version "2.5.1">
@@ -477,10 +477,10 @@
 <!ENTITY man-db-fin-du "40 MB">
 <!ENTITY man-db-fin-sbu "0.2 SBU">
 
-<!ENTITY man-pages-version "6.02">
-<!ENTITY man-pages-size "1,759 KB">
+<!ENTITY man-pages-version "6.03">
+<!ENTITY man-pages-size "2,134 KB">
 <!ENTITY man-pages-url "&kernel;linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "05b9e8ce59f6257141fe9e4edd5bd149">
+<!ENTITY man-pages-md5 "c62b7c944bb0887a35edab7cab301357">
 <!ENTITY man-pages-home "https://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-fin-du "32 MB">
 <!ENTITY man-pages-fin-sbu "less than 0.1 SBU">
@@ -490,7 +490,7 @@
 <!ENTITY markupsafe-url "&pypi-src;/M/MarkupSafe/MarkupSafe-&markupsafe-version;.tar.gz">
 <!ENTITY markupsafe-md5 "02f337b98aef11bd0fee9c5ae860173b">
 <!ENTITY markupsafe-home "https://palletsprojects.com/p/markupsafe/">
-<!ENTITY markupsafe-fin-du "168 KB">
+<!ENTITY markupsafe-fin-du "544 KB">
 <!ENTITY markupsafe-fin-sbu "less than 0.1 SBU">
 
 <!ENTITY meson-version "1.0.0">
@@ -658,7 +658,7 @@
 <!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-man-version;.tar.xz">
 <!ENTITY systemd-man-md5  "c1df1aefdbc4840b5f82a8783f3b72c1">
 <!ENTITY systemd-fin-du   "258 MB">
-<!ENTITY systemd-fin-sbu  "2.5 SBU">
+<!ENTITY systemd-fin-sbu  "0.7 SBU">
 
 <!ENTITY sysvinit-version "3.06">
 <!ENTITY sysvinit-size "247 KB">
