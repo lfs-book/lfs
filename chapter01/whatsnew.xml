@@ -109,9 +109,9 @@
     <listitem>
       <para>Gettext-&gettext-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Glibc-&glibc-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>GMP-&gmp-version;</para>
     </listitem>-->
@@ -291,11 +291,11 @@
   <itemizedlist>
     <title>Added:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
-<!--
+
     <listitem>
-      <para>&bash-fixes-patch;</para>
+      <para>&grub-upstream-fixes-patch;</para>
     </listitem>
--->
+
     <listitem>
       <para>&readline-fixes-patch;</para>
     </listitem>
