@@ -43,17 +43,22 @@
   <sect2 role="installation">
     <title>Installation of Glibc</title>
 
-    <para>First, fix an issue building Glibc with parallel jobs and Make-4.4
-    or later:</para>
-
-<screen><userinput remap="pre">sed '/MAKEFLAGS :=/s/)r/) -r/' -i Makerules</userinput></screen>
-
     <para>Some of the Glibc programs use the non-FHS compliant
     <filename class="directory">/var/db</filename> directory to store
     their runtime data. Apply the following patch to make such programs
     store their runtime data in the FHS-compliant locations:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
+
+    <!-- https://sourceware.org/bugzilla/show_bug.cgi?id=30068
+         Upstream fix also added a test case and renamed "prec" to
+         "prec_inc".  We'll test this with MPFR test suite so we don't
+         need the test here, and the renaming does not affect program
+         behavior.  -->
+    <para>Fix a security issue identified upstream:</para>
+
+<screen><userinput remap="pre">sed '/width -=/s/workend - string/number_length/' \
+    -i stdio-common/vfprintf-process-arg.c</userinput></screen>
 
     <para>The Glibc documentation recommends building Glibc
     in a dedicated build directory:</para>
@@ -163,12 +168,6 @@ esac</userinput></screen>
       <listitem>
         <para><emphasis>misc/tst-ttyname</emphasis>
         is known to fail in the LFS chroot environment.</para>
-      </listitem>
-
-      <listitem>
-        <para>The <emphasis>nss/tst-nss-files-hosts-long</emphasis>
-        test is known to fail if the system has no non-loopback IP
-        addresses.</para> <!-- PR 24816 -->
       </listitem>
 
       <!-- https://sourceware.org/pipermail/libc-alpha/2022-August/141567.html -->

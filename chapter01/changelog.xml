@@ -40,6 +40,185 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
     <listitem>
+      <para>2023-02-19</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Apply a patch for GRUB for an issue triggered
+          with e2fsprogs-1.47.0.  Fixes
+          <ulink url="&lfs-ticket-root;5219">#5219</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2023-02-13</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-6.03. Fixes
+          <ulink url="&lfs-ticket-root;5216">#5216</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2023-02-11</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20230202. Addresses 
+          <ulink url="&lfs-ticket-root;5006">#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to zstd-1.5.4. Fixes
+          <ulink url="&lfs-ticket-root;5215">#5215</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to Python3-3.11.2. Fixes
+          <ulink url="&lfs-ticket-root;5214">#5214</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to e2fsprogs-1.47.0. Fixes
+          <ulink url="&lfs-ticket-root;5213">#5213</ulink>.</para>
+        </listitem>
+        <listitem revision="systemd">
+          <para>[bdubbs] - Update to dbus-1.14.6. Fixes
+          <ulink url="&lfs-ticket-root;5212">#5212</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.1.11. Fixes
+          <ulink url="&lfs-ticket-root;5210">#5210</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to libcap-2.67. Fixes
+          <ulink url="&lfs-ticket-root;5209">#5209</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bc-6.2.4. Fixes
+          <ulink url="&lfs-ticket-root;5207">#5207</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2023-02-07</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Update to OpenSSL-3.0.8 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5211">#5211</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to e2fsprogs-1.46.6 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5208">#5208</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="systemd">
+      <para>2023-02-06</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Repackage the systemd man pages to prevent stray
+          man pages from ending up in /usr/share/man.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2023-02-02</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Update to glibc-2.37.  Fixes
+          <ulink url="&lfs-ticket-root;5203">#5203</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[xry111] - Update to bc-6.2.3. Fixes
+          <ulink url="&lfs-ticket-root;5204">#5204</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[xry111] - Update to linux-6.1.9. Fixes
+          <ulink url="&lfs-ticket-root;5205">#5205</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[xry111] - Update to vim-9.0.1273. Addresses
+          <ulink url="&lfs-ticket-root;4500">#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[xry111] - Remove
+          <option>--disable-exec-static-tramp</option> for libffi.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2023-02-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to texinfo-7.0.2. Fixes
+          <ulink url="&lfs-ticket-root;5202">#5202</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.1.8. Fixes
+          <ulink url="&lfs-ticket-root;5201">#5201</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to diffutils-3.9. Fixes
+          <ulink url="&lfs-ticket-root;5199">#5199</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="systemd">
+      <para>2023-01-22</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to MarkupSafe-2.1.2. Fixes
+          <ulink url="&lfs-ticket-root;5200">#5200</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2023-01-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[thomas] - Add libsframe to online_usrlib in stripping.
+            libsframe.so.0.0.0 is in use by strip.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20230109. Addresses 
+          <ulink url="&lfs-ticket-root;5006">#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to binutils-2.40. Fixes
+          <ulink url="&lfs-ticket-root;5198">#5198</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bc-6.2.2. Fixes
+          <ulink url="&lfs-ticket-root;5192">#5192</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.1.6. Fixes
+          <ulink url="&lfs-ticket-root;5193">#5193</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-db-2.11.2. Fixes
+          <ulink url="&lfs-ticket-root;5196">#5196</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to mpfr-4.2.0. Fixes
+          <ulink url="&lfs-ticket-root;5195">#5195</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to ncurses-6.4. Fixes
+          <ulink url="&lfs-ticket-root;5194">#5194</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to xz-5.4.1. Fixes
+          <ulink url="&lfs-ticket-root;5197">#5197</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2023-01-01</para><!-- Happy New Year! -->
       <itemizedlist>
         <listitem>
