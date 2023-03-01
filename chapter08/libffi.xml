@@ -90,9 +90,6 @@
 
 <screen><userinput remap="test">make check</userinput></screen>
 
-    <!-- https://github.com/libffi/libffi/actions/runs/3084390461/jobs/4986488117 -->
-    <para>90 tests are known to fail on ARM64.</para>
-
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
