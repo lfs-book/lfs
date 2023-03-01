@@ -193,14 +193,13 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     four g++ tests related to <filename>declare-simd-8.C</filename>,
     one gcc tests related to <filename>ssa-dom-thread-7.c</filename>,
     one gcc tests related to <filename>fcsel_1.c</filename>,
-    one gcc tests related to <filename>mgeneral-regs_3.c</filename>, and
+    one gcc tests related to <filename>mgeneral-regs_3.c</filename>,
+    one gcc tests related to <filename>auto-init-7.c</filename>, and
     four gcc tests related to <filename>vqdmlalh_laneq*.c</filename>
     are known to fail.</para>
 
     <!-- Need further investigation -->
-    <para>Many gcc and g++ tests related to hwasan are known to fail.
-    And, two tests related to <filename>thread_leak1.c</filename> are known
-    to fail for both gcc and g++.</para>
+    <para>Many gcc and g++ tests related to hwasan are known to fail.</para>
 
     <para>A few unexpected failures cannot always be avoided. The GCC developers
     are usually aware of these issues, but have not resolved them yet.
