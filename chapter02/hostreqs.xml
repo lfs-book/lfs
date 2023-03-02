@@ -15,6 +15,11 @@
 
      <para>The LFS editors recommend that the system CPU have at least
      four cores and that the system have at least 8 GB of memory. 
+
+     For the Cross Edition, it's recommended that both the system running
+     the host distribution and the target system should meet the
+     requirements.
+
      Older systems that do not meet these requirements will still work,
      but the time to build packages will be significantly longer
      than documented.
