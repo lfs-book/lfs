@@ -185,21 +185,10 @@ ver_check()
    fi
 }
 
-ver_kernel()
-{
-   kver=$(uname -r | grep -E -o '[0-9\.]+')
-   if printf '%s\n' $1 $kver | sort --version-sort --check &amp;>/dev/null
-   then 
-     printf "OK:    Linux Kernel $kver >= $1\n"; return 0;
-   else 
-     printf "ERROR: Linux Kernel ($kver) is TOO OLD ($1 or later required)\n" "$kver"; 
-     return 1; 
-   fi
-}
-
 # Coreutils first because-sort needs Coreutils >= 7.0
 ver_check Coreutils      sort     7.0 || bail "--version-sort unsupported"
 ver_check Bash           bash     3.2
+ver_check Bc             bc       1.07.0
 ver_check Binutils       ld       2.13.1
 ver_check Bison          bison    2.7
 ver_check Diffutils      diff     2.8.1
@@ -218,7 +207,6 @@ ver_check Sed            sed      4.1.5
 ver_check Tar            tar      1.22
 ver_check Texinfo        texi2any 4.7
 ver_check Xz             xz       5.0.0
-ver_kernel &min-kernel;
 
 alias_check() {
    if $1 --version 2>&amp;1 | grep -qi $2
