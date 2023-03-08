@@ -96,11 +96,10 @@
     administrator to create more</computeroutput></quote>, it indicates
     you've not mounted the
     <systemitem class="filesystem">devpts</systemitem> file system
-    correctly.  You need to exit from the chroot environment, read
-    <xref linkend='ch-tools-kernfs'/> again, and ensure the
+    correctly.  You need to read
+    <xref linkend='ch-tools-kernfs'/> again and ensure the
     <systemitem class="filesystem">devpts</systemitem> file system (and
-    other virtual kernel file systems) mounted correctly.  Then reenter
-    the chroot environment following <xref linkend='ch-tools-chroot'/>.
+    other virtual kernel file systems) mounted correctly.
     This issue needs to be resolved before continuing.</para>
 
     <para>Install the package:</para>
