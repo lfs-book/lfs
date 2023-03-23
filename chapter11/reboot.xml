@@ -146,7 +146,7 @@ umount -v $LFS</userinput></screen>
 
   <para>
     If your reboot is <emphasis role="bold">not</emphasis> successful, it
-    is time to troubleshoot.  For hints on solving inital booting problems, see
+    is time to troubleshoot.  For hints on solving initial booting problems, see
     <ulink url="https://www.linuxfromscratch.org/lfs/troubleshooting.html"/>.
   </para>
 
