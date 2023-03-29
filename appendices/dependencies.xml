@@ -3262,7 +3262,7 @@
       <segmentedlist id="zstd-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Binutils, Coreutils, GCC, Glibc, Gzip, Make, and Xz</seg>
+          <seg>Binutils, Coreutils, GCC, Glibc, Gzip, Make, Xz, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
