@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-flit-core" role="wrap">
+  <?dbhtml filename="flit-core.html"?>
+
+  <sect1info condition="script">
+    <productname>flit-core</productname>
+    <productnumber>&flit-core-version;</productnumber>
+    <address>&flit-core-url;</address>
+  </sect1info>
+
+  <title>Flit-Core-&flit-core-version;</title>
+
+  <indexterm zone="ch-system-flit-core">
+    <primary sortas="a-flit-core">Flit-core</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>Flit-core is the distribution-building parts of Flit (a packaging
+    tool for simple Python modules).</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+      <seglistitem>
+        <seg>&flit-core-fin-sbu;</seg>
+        <seg>&flit-core-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of Flit-Core</title>
+
+    <para>Build the package:</para>
+
+<screen><userinput remap="install">pip3 wheel -w dist --no-build-isolation --no-deps $PWD</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">pip3 install --no-index --no-user --find-links dist flit_core</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the pip3 configuration options and commands:</title>
+
+      <varlistentry>
+        <term><command>wheel</command></term>
+        <listitem>
+           <para>This command builds the wheel archive for this package.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-w dist</parameter></term>
+        <listitem>
+           <para>Instructs pip to put the created wheel into the
+           <filename class='directory'>dist</filename> directory.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><command>install</command></term>
+        <listitem>
+           <para>This command installs the package.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--no-build-isolation</parameter>,
+              <parameter>--no-deps</parameter>, and
+              <parameter>--no-index</parameter></term>
+        <listitem>
+          <para>These options prevent fetching files from the online package
+          repository (PyPI). If packages are installed in the correct order,
+          pip won't need to fetch any files in the first place; these
+          options add some safety in case of user error.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--find-links dist</parameter></term>
+        <listitem>
+           <para>Instructs pip to search for wheel archives in the
+           <filename class='directory'>dist</filename> directory.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+
+  <sect2 id="contents-flit-core" role="content">
+    <title>Contents of Flit-Core</title>
+
+    <segmentedlist>
+      <segtitle>Installed directory</segtitle>
+
+      <seglistitem>
+         <seg>
+            /usr/lib/python&python-minor;/site-packages/flit_core and
+            /usr/lib/python&python-minor;/site-packages/flit_core-&flit-core-version;.dist-info
+         </seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+</sect1>
+

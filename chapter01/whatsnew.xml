@@ -292,6 +292,10 @@
     <title>Added:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
 
+    <listitem>
+      <para>Flit-core-&flit-core-version;</para>
+    </listitem>
+
     <!--<listitem>
       <para>&grub-upstream-fixes-patch;</para>
     </listitem>-->

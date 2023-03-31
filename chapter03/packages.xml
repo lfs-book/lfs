@@ -228,6 +228,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>Flit-core (&flit-core-version;) - <token>&flit-core-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&flit-core-home;"/></para>
+        <para>Download: <ulink url="&flit-core-url;"/></para>
+        <para>MD5 sum: <literal>&flit-core-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Gawk (&gawk-version;) - <token>&gawk-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&gawk-home;"/></para>
