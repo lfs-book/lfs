@@ -77,6 +77,12 @@
 
     <listitem>
       <para>
+        Ensure a password is set for the &root; user.
+      </para>
+    </listitem>
+
+    <listitem>
+      <para>
         A review of the following configuration files
         is also appropriate at this point.
       </para>
@@ -133,7 +139,15 @@ umount -v $LFS</userinput></screen>
   <para>Assuming the GRUB boot loader was set up as outlined earlier, the menu
   is set to boot <emphasis>LFS &version;</emphasis> automatically.</para>
 
-  <para>When the reboot is complete, the LFS system is ready for use and
-  more software may be added to suit your needs.</para>
+  <para>When the reboot is complete, the LFS system is ready for use.  What you
+  will see is a simple <quote>login: </quote> prompt.  At this point, you can
+  proceed to <ulink url="&blfs-book;">the BLFS Book</ulink>
+  where you can add more software to suit your needs.</para>
+
+  <para>
+    If your reboot is <emphasis role="bold">not</emphasis> successful, it
+    is time to troubleshoot.  For hints on solving initial booting problems, see
+    <ulink url="https://www.linuxfromscratch.org/lfs/troubleshooting.html"/>.
+  </para>
 
 </sect1>

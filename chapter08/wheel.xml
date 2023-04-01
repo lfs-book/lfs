@@ -42,65 +42,12 @@
 
     <para>Compile Wheel with the following command:</para>
 
-<screen><userinput remap="make">PYTHONPATH=src pip3 wheel -w dist --no-build-isolation --no-deps $PWD</userinput></screen>
+<screen><userinput remap="make">pip3 wheel -w dist --no-build-isolation --no-deps $PWD</userinput></screen>
 
     <para>Install Wheel with the following command:</para>
 
 <screen><userinput remap="install">pip3 install --no-index --find-links=dist wheel</userinput></screen>
 
-    <variablelist>
-      <title>The meaning of the pip3 configuration options and commands:</title>
-
-      <varlistentry>
-        <term><envar>PYTHONPATH=src</envar></term>
-        <listitem>
-           <para>Allows this package (not installed yet) to build a
-           wheel archive for itself, to avoid a chicken-or-egg problem.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><command>wheel</command></term>
-        <listitem>
-           <para>This command builds the wheel archive for this package.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>-w dist</parameter></term>
-        <listitem>
-           <para>Instructs pip to put the created wheel into the
-           <filename class='directory'>dist</filename> directory.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><command>install</command></term>
-        <listitem>
-           <para>This command installs the package.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--no-build-isolation</parameter>,
-              <parameter>--no-deps</parameter>, and
-              <parameter>--no-index</parameter></term>
-        <listitem>
-          <para>These options prevent fetching files from the online package
-          repository (PyPI). If packages are installed in the correct order,
-          pip won't need to fetch any files in the first place; these
-          options add some safety in case of user error.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--find-links dist</parameter></term>
-        <listitem>
-           <para>Instructs pip to search for wheel archives in the
-           <filename class='directory'>dist</filename> directory.</para>
-        </listitem>
-      </varlistentry>
-    </variablelist>
   </sect2>
 
   <sect2 id="contents-wheel" role="content">
