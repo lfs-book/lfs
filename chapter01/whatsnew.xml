@@ -118,9 +118,9 @@
     <!--<listitem>
       <para>Gperf-&gperf-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Grep-&grep-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Groff-&groff-version;</para>
     </listitem>-->
@@ -130,9 +130,9 @@
     <!--<listitem>
       <para>Gzip-&gzip-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>IANA-Etc-&iana-etc-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Inetutils-&inetutils-version;</para>
     </listitem>-->
@@ -291,6 +291,10 @@
   <itemizedlist>
     <title>Added:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
+
+    <listitem>
+      <para>Flit-core-&flit-core-version;</para>
+    </listitem>
 
     <!--<listitem>
       <para>&grub-upstream-fixes-patch;</para>

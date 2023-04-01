@@ -58,10 +58,10 @@
 <!ENTITY bash-fin-du "52 MB">
 <!ENTITY bash-fin-sbu "1.2 SBU">
 
-<!ENTITY bc-version "6.3.1">
-<!ENTITY bc-size "448 KB">
+<!ENTITY bc-version "6.5.0">
+<!ENTITY bc-size "452 KB">
 <!ENTITY bc-url "https://github.com/gavinhoward/bc/releases/download/&bc-version;/bc-&bc-version;.tar.xz">
-<!ENTITY bc-md5 "70caa7c8a273d7152ad015823e887455">
+<!ENTITY bc-md5 "e4757f48340dfe74af0d5be7ea56f7c7">
 <!ENTITY bc-home "https://git.gavinhoward.com/gavin/bc">
 <!ENTITY bc-fin-du "7.6 MB">
 <!ENTITY bc-fin-sbu "less than 0.1 SBU">
@@ -104,10 +104,10 @@
 <!ENTITY check-fin-du "12 MB">
 <!ENTITY check-fin-sbu "0.1 SBU (about 1.7 SBU with tests)">
 
-<!ENTITY coreutils-version "9.1">
-<!ENTITY coreutils-size "5,570 KB">
+<!ENTITY coreutils-version "9.2">
+<!ENTITY coreutils-size "5,644 KB">
 <!ENTITY coreutils-url "&gnu;coreutils/coreutils-&coreutils-version;.tar.xz">
-<!ENTITY coreutils-md5 "8b1ca4e018a7dce9bb937faec6618671">
+<!ENTITY coreutils-md5 "4a8a5097d8d7315ccfd6be7eafc8c862">
 <!ENTITY coreutils-home "&gnu-software;coreutils/">
 <!ENTITY coreutils-tmp-du "162 MB">
 <!ENTITY coreutils-tmp-sbu "0.3 SBU">
@@ -207,6 +207,14 @@
 <!ENTITY flex-fin-du "33 MB">
 <!ENTITY flex-fin-sbu "0.1 SBU">
 
+<!ENTITY flit-core-version "3.8.0">
+<!ENTITY flit-core-size "44 KB">
+<!ENTITY flit-core-url "&pypi-src;/f/flit-core/flit_core-&flit-core-version;.tar.gz">
+<!ENTITY flit-core-md5 "7c41da13273f7787709a24f74e0f5a99">
+<!ENTITY flit-core-home "&pypi-home;/flit-core/">
+<!ENTITY flit-core-fin-du "736 KB">
+<!ENTITY flit-core-fin-sbu "less than 0.1 SBU">
+
 <!ENTITY gawk-version "5.2.1">
 <!ENTITY gawk-size "3,332 KB">
 <!ENTITY gawk-url "&gnu;gawk/gawk-&gawk-version;.tar.xz">
@@ -281,10 +289,10 @@
 <!ENTITY gperf-fin-du "6.1 MB">
 <!ENTITY gperf-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY grep-version "3.8">
-<!ENTITY grep-size "1,670 KB">
+<!ENTITY grep-version "3.10">
+<!ENTITY grep-size "1,652 KB">
 <!ENTITY grep-url "&gnu;grep/grep-&grep-version;.tar.xz">
-<!ENTITY grep-md5 "dc6e4d18d4659e6e7552fc4a183c8ac9">
+<!ENTITY grep-md5 "ab3f063ad4596b7d094fb5f66cf327d6">
 <!ENTITY grep-home "&gnu-software;grep/">
 <!ENTITY grep-tmp-du "25 MB">
 <!ENTITY grep-tmp-sbu "0.2 SBU">
@@ -319,10 +327,10 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.3 SBU">
 
-<!ENTITY iana-etc-version "20230202">
-<!ENTITY iana-etc-size "586 KB">
+<!ENTITY iana-etc-version "20230306">
+<!ENTITY iana-etc-size "587 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "e64685d046cd0dfe94b5c66e294cf9ef">
+<!ENTITY iana-etc-md5 "b25ebfa2a9ae359a64abaa8331347505">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -394,10 +402,10 @@
 <!ENTITY lfs-bootscripts-cfg-du "BOOTSCRIPTS-INSTALL-KB KB">
 <!ENTITY lfs-bootscripts-cfg-sbu "less than 0.1 SBU">
 
-<!ENTITY libcap-version "2.67">
-<!ENTITY libcap-size "183 KB">
+<!ENTITY libcap-version "2.68">
+<!ENTITY libcap-size "188 KB">
 <!ENTITY libcap-url "&kernel;linux/libs/security/linux-privs/libcap2/libcap-&libcap-version;.tar.xz">
-<!ENTITY libcap-md5 "06333f4301657298890fd8d6f1fb4793">
+<!ENTITY libcap-md5 "ffb9e9c87704f92ac75201327841e753">
 <!ENTITY libcap-home "https://sites.google.com/site/fullycapable/">
 <!ENTITY libcap-fin-du "2.9 MB">
 <!ENTITY libcap-fin-sbu "less than 0.1 SBU">
@@ -428,12 +436,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "2">
-<!ENTITY linux-patch-version "2">
+<!ENTITY linux-patch-version "9">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "133,236 KB">
+<!ENTITY linux-size "133,256 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "03b17feb98f92131a465b09f3a12e715">
+<!ENTITY linux-md5 "f54e2a251b1abd5b56e46ed0de569275">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 5.13.4 / gcc-11.1.0 on x86_64 : minimum is
  allnoconfig rounded down to allow for ongoing cleanups,
@@ -532,10 +540,10 @@
 <!ENTITY ninja-fin-du "77 MB">
 <!ENTITY ninja-fin-sbu "0.3 SBU">
 
-<!ENTITY openssl-version "3.0.8">
-<!ENTITY openssl-size "14,800 KB">
+<!ENTITY openssl-version "3.1.0">
+<!ENTITY openssl-size "15,164 KB">
 <!ENTITY openssl-url "https://www.openssl.org/source/openssl-&openssl-version;.tar.gz">
-<!ENTITY openssl-md5 "61e017cf4fea1b599048f621f1490fbd">
+<!ENTITY openssl-md5 "f6c520aa2206d4d1fa71ea30b5e9a56d">
 <!ENTITY openssl-home "https://www.openssl.org/">
 <!ENTITY openssl-fin-du "520 MB">
 <!ENTITY openssl-fin-sbu "3.2 SBU">
@@ -687,20 +695,20 @@
 <!ENTITY tcl-tmp-du "89 MB">
 <!ENTITY tcl-tmp-sbu "2.7 SBU">
 
-<!ENTITY texinfo-version "7.0.2">
-<!ENTITY texinfo-size "4,762 KB">
+<!ENTITY texinfo-version "7.0.3">
+<!ENTITY texinfo-size "4,776 KB">
 <!ENTITY texinfo-url "&gnu;texinfo/texinfo-&texinfo-version;.tar.xz">
-<!ENTITY texinfo-md5 "be9500f3a361525622850ecb1b1fc024">
+<!ENTITY texinfo-md5 "37bf94fd255729a14d4ea3dda119f81a">
 <!ENTITY texinfo-home "&gnu-software;texinfo/">
 <!ENTITY texinfo-tmp-du "116 MB">
 <!ENTITY texinfo-tmp-sbu "0.2 SBU">
 <!ENTITY texinfo-fin-du "128 MB">
 <!ENTITY texinfo-fin-sbu "0.3 SBU">
 
-<!ENTITY tzdata-version "2022g">
-<!ENTITY tzdata-size "430 KB">
+<!ENTITY tzdata-version "2023c">
+<!ENTITY tzdata-size "436 KB">
 <!ENTITY tzdata-url "https://www.iana.org/time-zones/repository/releases/tzdata&tzdata-version;.tar.gz">
-<!ENTITY tzdata-md5 "884250fd2a8a55f6322900ad4ab94d7b">
+<!ENTITY tzdata-md5 "5aa672bf129b44dd915f8232de38e49a">
 <!ENTITY tzdata-home "https://www.iana.org/time-zones">
 
 <!ENTITY udev-lfs-version "udev-lfs-20171102">
@@ -734,10 +742,10 @@
 <!ENTITY vim-fin-du "235 MB">
 <!ENTITY vim-fin-sbu "2.4 SBU">
 
-<!ENTITY wheel-version "0.38.4">
-<!ENTITY wheel-size "66 KB">
+<!ENTITY wheel-version "0.40.0">
+<!ENTITY wheel-size "96 KB">
 <!ENTITY wheel-url "&pypi-src;/w/wheel/wheel-&wheel-version;.tar.gz">
-<!ENTITY wheel-md5 "83bb4e7bd4d687d398733f341a64ab91">
+<!ENTITY wheel-md5 "ec5004c46d1905da98bb5bc1a10ddd21">
 <!ENTITY wheel-home "&pypi-home;/wheel/">
 <!ENTITY wheel-fin-du "1.3 MB">
 <!ENTITY wheel-fin-sbu "less than 0.1 SBU">
@@ -750,10 +758,10 @@
 <!ENTITY xml-parser-fin-du "2.3 MB">
 <!ENTITY xml-parser-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY xz-version "5.4.1">
-<!ENTITY xz-size "1,451 KB">
+<!ENTITY xz-version "5.4.2">
+<!ENTITY xz-size "1,576 KB">
 <!ENTITY xz-url "https://tukaani.org/xz/xz-&xz-version;.tar.xz">
-<!ENTITY xz-md5 "47d831c659e94071d5dd384d0d1ed4c6">
+<!ENTITY xz-md5 "1dcdf002d9a69f48ff67be84964af0d8">
 <!ENTITY xz-home "https://tukaani.org/xz">
 <!ENTITY xz-tmp-du "20 MB">
 <!ENTITY xz-tmp-sbu "0.1 SBU">

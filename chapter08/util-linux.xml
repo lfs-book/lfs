@@ -985,12 +985,12 @@ su tester -c "make -k check"</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="rkfill">
-        <term><command>rkfill</command></term>
+      <varlistentry id="rfkill">
+        <term><command>rfkill</command></term>
         <listitem>
           <para>Tool for enabling and disabling wireless devices</para>
-          <indexterm zone="ch-system-util-linux rkfill">
-            <primary sortas="b-rkfill">rkfill</primary>
+          <indexterm zone="ch-system-util-linux rfkill">
+            <primary sortas="b-rfkill">rfkill</primary>
           </indexterm>
         </listitem>
       </varlistentry>

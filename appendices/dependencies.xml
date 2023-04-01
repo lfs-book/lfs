@@ -876,6 +876,48 @@
         </seglistitem>
       </segmentedlist>
 
+<!-- Begin Flit-core dependency info -->
+  <bridgehead renderas="sect2" id="flit-core-dep">Flit-Core</bridgehead>
+
+      <segmentedlist id="flit-core-depends">
+        <segtitle>&dependencies;</segtitle>
+        <seglistitem>
+          <seg>Python</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="flit-core-rundeps">
+        <segtitle>&runtime;</segtitle>
+        <seglistitem>
+          <seg>Python</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="flit-core-testdeps">
+        <segtitle>&testsuites;</segtitle>
+        <seglistitem>
+          <seg>No test suite available</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="flit-core-before">
+        <segtitle>&before;</segtitle>
+        <seglistitem>
+          <seg>Wheel</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="flit-core-optdeps">
+        <segtitle>&external;</segtitle>
+        <seglistitem>
+          <seg>
+            <ulink url='&blfs-book;general/python-modules.html#pytest'>pytest</ulink>
+            and
+            <ulink url='&pypi-home;/testpath'>testpath</ulink>
+          </seg>
+        </seglistitem>
+      </segmentedlist>
+
 <!-- Begin Gawk dependency info -->
   <bridgehead renderas="sect2" id="gawk-dep">Gawk</bridgehead>
 
@@ -3104,7 +3146,7 @@
       <segmentedlist id="wheel-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Python</seg>
+          <seg>Python and Flit-core</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -3262,7 +3304,7 @@
       <segmentedlist id="zstd-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Binutils, Coreutils, GCC, Glibc, Gzip, Make, and Xz</seg>
+          <seg>Binutils, Coreutils, GCC, Glibc, Gzip, Make, Xz, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
