@@ -934,7 +934,9 @@ readelf -l a.out | grep '/ld-linux-x32'</userinput></screen>
       <varlistentry id="libanl">
         <term><filename class="libraryfile">libanl</filename></term>
         <listitem>
-          <para>An asynchronous name lookup library</para>
+          <para>Dummy library containing no functions.  Previously was the
+          asynchronous name lookup library, whose functions are now in
+          <filename class='libraryfile'>libc</filename></para>
           <indexterm zone="ch-system-glibc libanl">
             <primary sortas="c-libanl">libanl</primary>
           </indexterm>
@@ -1075,8 +1077,9 @@ readelf -l a.out | grep '/ld-linux-x32'</userinput></screen>
         <listitem>
           <para>Dummy library containing no functions. Previously contained
           functions providing most of the interfaces specified
-          by the POSIX.1b Realtime Extension, now the functions are in
-          <filename class="libraryfile">libc</filename></para>
+          by the POSIX.1c Threads Extensions and the semaphore interfaces
+          specified by the POSIX.1b Real-time Extensions, now the functions
+          are in <filename class="libraryfile">libc</filename></para>
           <indexterm zone="ch-system-glibc libpthread">
             <primary sortas="c-libpthread">libpthread</primary>
           </indexterm>
@@ -1098,7 +1101,7 @@ readelf -l a.out | grep '/ld-linux-x32'</userinput></screen>
         <term><filename class="libraryfile">librt</filename></term>
         <listitem>
           <para>Contains functions providing most of the interfaces specified
-          by the POSIX.1b Realtime Extension</para>
+          by the POSIX.1b Real-time Extensions</para>
           <indexterm zone="ch-system-glibc librt">
             <primary sortas="c-librt">librt</primary>
           </indexterm>
