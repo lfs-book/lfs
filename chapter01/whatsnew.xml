@@ -184,9 +184,9 @@
     <!--<listitem>
       <para>Man-DB-&man-db-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Man-pages-&man-pages-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem revision="systemd">
       <para>MarkupSafe-&markupsafe-version;</para>
     </listitem>-->
@@ -223,9 +223,9 @@
     <!--<listitem>
       <para>Psmisc-&psmisc-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Python-&python-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Readline-&readline-version;</para>
     </listitem>-->
@@ -259,9 +259,9 @@
     <!--<listitem>
       <para>Util-Linux-&util-linux-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Vim-&vim-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>wheel-&wheel-version;</para>
     </listitem>-->
@@ -274,9 +274,9 @@
     <!--<listitem>
       <para>Zlib-&zlib-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Zstd-&zstd-version;</para>
-    </listitem>-->
+    </listitem>
   </itemizedlist>
 
   <!--<itemizedlist>
