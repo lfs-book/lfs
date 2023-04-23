@@ -79,10 +79,14 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>This package does come with a test suite, but it requires several
+    <para>To test the results, issue:</para>
+
+<screen><userinput remap="test">make check</userinput></screen>
+
+    <para>Many tests are disabled because they require additional
     packages that are not included in LFS. Instructions for running the
-    test suite can be found in the BLFS book at
-    <ulink url="&blfs-book;general/dbus.html"/>.</para>
+    comprehensive test suite can be found in
+    <ulink url="&blfs-book;general/dbus.html">the BLFS book</ulink>.</para>
 
     <para>Install the package:</para>
 
@@ -107,7 +111,7 @@
         <seg>dbus-cleanup-sockets, dbus-daemon, dbus-launch, dbus-monitor,
         dbus-run-session, dbus-send, dbus-test-tool,
         dbus-update-activation-environment, and dbus-uuidgen</seg>
-        <seg>libdbus-1.{a,so}</seg>
+        <seg>libdbus-1.so</seg>
         <seg>/etc/dbus-1, /usr/include/dbus-1.0, /usr/lib/dbus-1.0,
         /usr/share/dbus-1, /usr/share/doc/dbus-&dbus-version;,
         and /var/lib/dbus</seg>

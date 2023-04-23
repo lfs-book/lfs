@@ -325,10 +325,10 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.3 SBU">
 
-<!ENTITY iana-etc-version "20230306">
+<!ENTITY iana-etc-version "20230405">
 <!ENTITY iana-etc-size "587 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "b25ebfa2a9ae359a64abaa8331347505">
+<!ENTITY iana-etc-md5 "c8931836fa045c98b3a4eefdd911d54c">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -432,12 +432,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "2">
-<!ENTITY linux-patch-version "9">
+<!ENTITY linux-patch-version "11">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "133,256 KB">
+<!ENTITY linux-size "133,276 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "f54e2a251b1abd5b56e46ed0de569275">
+<!ENTITY linux-md5 "78d3ab3a52fe283aabca27dad4005d07">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 5.13.4 / gcc-11.1.0 on x86_64 : minimum is
  allnoconfig rounded down to allow for ongoing cleanups,
@@ -476,10 +476,10 @@
 <!ENTITY man-db-fin-du "40 MB">
 <!ENTITY man-db-fin-sbu "0.2 SBU">
 
-<!ENTITY man-pages-version "6.03">
-<!ENTITY man-pages-size "2,134 KB">
+<!ENTITY man-pages-version "6.04">
+<!ENTITY man-pages-size "2,137 KB">
 <!ENTITY man-pages-url "&kernel;linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "c62b7c944bb0887a35edab7cab301357">
+<!ENTITY man-pages-md5 "bbce1456edfa75a66c189cc594af6c4d">
 <!ENTITY man-pages-home "https://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-fin-du "32 MB">
 <!ENTITY man-pages-fin-sbu "less than 0.1 SBU">
@@ -492,10 +492,10 @@
 <!ENTITY markupsafe-fin-du "544 KB">
 <!ENTITY markupsafe-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY meson-version "1.0.1">
-<!ENTITY meson-size "2,056 KB">
+<!ENTITY meson-version "1.1.0">
+<!ENTITY meson-size "2,075 KB">
 <!ENTITY meson-url "&github;/mesonbuild/meson/releases/download/&meson-version;/meson-&meson-version;.tar.gz">
-<!ENTITY meson-md5 "843ba549bb2a199d9e04092116a7e749">
+<!ENTITY meson-md5 "94ea898bcf799470878e60809be80467">
 <!ENTITY meson-home "https://mesonbuild.com">
 <!ENTITY meson-fin-du "41 MB">
 <!ENTITY meson-fin-sbu "less than 0.1 SBU">
@@ -593,19 +593,19 @@
 <!-- If python minor version changes, updates in python and
      meson pages will be needed: python3.6 and python3.6m -->
 
-<!ENTITY python-version "3.11.2">
+<!ENTITY python-version "3.11.3">
 <!ENTITY python-minor "3.11">
-<!ENTITY python-size "19,428 KB">
+<!ENTITY python-size "19,440 KB">
 <!ENTITY python-url "https://www.python.org/ftp/python/&python-version;/Python-&python-version;.tar.xz">
-<!ENTITY python-md5 "a957cffb58a89303b62124896881950b">
+<!ENTITY python-md5 "c8d52fc4fb8ad9932a11d86d142ee73a">
 <!ENTITY python-home "https://www.python.org/">
 <!ENTITY python-tmp-du "529 MB">
 <!ENTITY python-tmp-sbu "0.4 SBU">
 <!ENTITY python-fin-du "372 MB">
 <!ENTITY python-fin-sbu "2.0 SBU">
 <!ENTITY python-docs-url "https://www.python.org/ftp/python/doc/&python-version;/python-&python-version;-docs-html.tar.bz2">
-<!ENTITY python-docs-md5 "eb4132c780b60b5782a4f66b29b08d5c">
-<!ENTITY python-docs-size "7,598 KB">
+<!ENTITY python-docs-md5 "7a1fc1824f7c96e779ef35fe10dde120">
+<!ENTITY python-docs-size "7,597 KB">
 
 <!ENTITY readline-version "8.2">
 <!ENTITY readline-soversion "8.2"><!-- used for stripping -->
@@ -722,13 +722,13 @@
 <!ENTITY util-linux-fin-du "283 MB">
 <!ENTITY util-linux-fin-sbu "0.5 SBU">
 
-<!ENTITY vim-version "9.0.1273">
+<!ENTITY vim-version "9.0.1452">
 <!-- <!ENTITY vim-majmin "90"> -->
 <!ENTITY vim-docdir "vim/vim90">
-<!ENTITY vim-size "10,892 KB">
+<!ENTITY vim-size "10,585 KB">
 <!--<!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">-->
-<!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.xz">
-<!ENTITY vim-md5 "9c80755d2d95ec4ef713f66e57671797">
+<!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.gz">
+<!ENTITY vim-md5 "dccf279f33a1df7e4e81941f38306de3">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "235 MB">
 <!ENTITY vim-fin-sbu "2.4 SBU">
@@ -767,10 +767,10 @@
 <!ENTITY zlib-fin-du "6.2 MB">
 <!ENTITY zlib-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY zstd-version "1.5.4">
-<!ENTITY zstd-size "2,111 KB">
+<!ENTITY zstd-version "1.5.5">
+<!ENTITY zstd-size "2,314 KB">
 <!ENTITY zstd-url "https://github.com/facebook/zstd/releases/download/v&zstd-version;/zstd-&zstd-version;.tar.gz">
-<!ENTITY zstd-md5 "2352b1f9ccc7446641046bb3d440c3ed">
+<!ENTITY zstd-md5 "63251602329a106220e0a5ad26ba656f">
 <!ENTITY zstd-home "https://facebook.github.io/zstd/">
 <!ENTITY zstd-fin-du "75 MB">
 <!ENTITY zstd-fin-sbu "0.4 SBU">
