@@ -168,7 +168,7 @@
       <varlistentry id="gperl">
         <term><command>gperl</command></term>
         <listitem>
-          <para>Preprocesor for groff, allowing the insertion of perl code
+          <para>Preprocessor for groff, allowing the insertion of perl code
           into groff files</para>
           <indexterm zone="ch-system-groff gperl">
             <primary sortas="b-gperl">gperl</primary>
@@ -179,7 +179,7 @@
       <varlistentry id="gpinyin">
         <term><command>gpinyin</command></term>
         <listitem>
-          <para>Preprocesor for groff, allowing the insertion of Pinyin
+          <para>Preprocessor for groff, allowing the insertion of Pinyin
           (Mandarin Chinese spelled with the Roman alphabet) into groff files.</para>
           <indexterm zone="ch-system-groff gpinyin">
             <primary sortas="b-gpinyin">gpinyin</primary>

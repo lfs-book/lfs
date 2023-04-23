@@ -75,7 +75,7 @@ rm /usr/lib/libelf.a</userinput></screen>
 
       <seglistitem>
         <seg>
-          libelf.so (symlink) and libelf-&elfutils-version;.so
+          libelf.so 
         </seg>
         <seg>
           /usr/include/elfutils
@@ -90,7 +90,7 @@ rm /usr/lib/libelf.a</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libelf">
-        <term><filename class="libraryfile">libelf</filename></term>
+        <term><filename class="libraryfile">libelf.so</filename></term>
         <listitem>
           <para>Contains API functions to handle ELF object files</para>
           <indexterm zone="ch-system-libelf libelf">

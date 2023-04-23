@@ -101,7 +101,11 @@
 su tester -c "make -k check"</userinput></screen>
 
     <para>The <emphasis>hardlink</emphasis> tests will fail if the host's kernel
-    does not have the option CONFIG_CRYPTO_USER_API_HASH set. In addition,
+    does not have the option <option>CONFIG_CRYPTO_USER_API_HASH</option>
+    enabled or does not have any options providing a SHA256 implementation
+    (for example, <option>CONFIG_CRYPTO_SHA256</option>, or
+    <option>CONFIG_CRYPTO_SHA256_SSSE3</option> if the CPU supports
+    Supplemental SSE3) enabled. In addition,
     two sub-tests from misc: mbsencode and one sub-test from script: replay are 
     known to fail.</para>
 

@@ -40,8 +40,6 @@
   <sect2 role="installation">
     <title>Installation of Eudev</title>
 
-    
-
     <para>First fix the location of udev rules in the .pc file:</para>
 
 <screen><userinput remap="pre">sed -i '/udevdir/a udev_dir=${udevdir}' src/udev/udev.pc.in</userinput></screen>
@@ -87,6 +85,20 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
       <primary sortas="a-Eudev">Eudev</primary>
       <secondary>configuring</secondary>
     </indexterm>
+
+    <indexterm zone="conf-eudev">
+      <primary sortas="e-/etc/udev/rules.d/65-kvm.rules">/etc/udev/rules.d/65-kvm.rules</primary>
+    </indexterm>
+
+    <para>
+      The default udev rule installed by Eudev would allow all users to
+      access <filename class='devicefile'>/dev/kvm</filename>.  The editors
+      consider it dangerous.  Create a configuration file to override it:
+    </para>
+
+<screen><userinput remap="configure">cat > /etc/udev/rules.d/65-kvm.rules &lt;&lt; "EOF"
+<literal>KERNEL=="kvm", GROUP="kvm", MODE="0660", TAG+="uaccess"</literal>
+EOF</userinput></screen>
 
     <indexterm zone="conf-eudev">
       <primary sortas="e-/etc/udev/hwdb.bin">/etc/udev/hwdb.bin</primary>

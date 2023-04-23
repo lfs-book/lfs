@@ -103,8 +103,8 @@ function max_parent( $dirpath, $prefix )
 
   $lines = http_get_file( $dirpath );
 
-  $regex_match   = "#${prefix}[\d\.]+/#";
-  $regex_replace = "#^.*(${prefix}[\d\.]+)/.*$#";
+  $regex_match   = "#{$prefix}[\d\.]+/#";
+  $regex_replace = "#^.*({$prefix}[\d\.]+)/.*$#";
   $max           = find_max( $lines, $regex_match, $regex_replace );
 
   return "$dirpath/$max";
@@ -126,6 +126,7 @@ if ( $package == "expect"     ) $dirpath = "https://sourceforge.net/projects/exp
 if ( $package == "eudev"      ) $dirpath = "https://github.com/eudev-project/eudev/releases";
 if ( $package == "file"       ) $dirpath = "https://github.com/file/file/tags";
 if ( $package == "flex"       ) $dirpath = "https://github.com/westes/flex/releases";
+if ( $package == "flit_core"  ) $dirpath = "https://pypi.org/project/flit-core/";
 if ( $package == "gcc"        ) $dirpath = max_parent( $dirpath, "gcc-" );
 if ( $package == "iana-etc"   ) $dirpath = "https://github.com/Mic92/iana-etc/releases";
 if ( $package == "intltool"   ) $dirpath = "https://launchpad.net/intltool/trunk";
@@ -307,6 +308,9 @@ if ( $package == "zstd"       ) $dirpath = "https://github.com/facebook/zstd/rel
 
   if ( $package == "libffi" )
      return find_max( $lines, "/v\d/", "/^.*v([\d\.]+)$/" );
+
+  if ( $package == "flit_core" )
+     return find_max( $lines, "/flit-core /", "/^.*flit-core ([\d\.]+)$/" );
 
   if ( $package == "procps-ng" )
      return find_max( $lines, "/v\d/", "/^.*v([\d\.]+)$/" );
@@ -503,7 +507,7 @@ table td {
    {
       $v    = get_packages( $pkg, $dir );
       $flag = ( $vers[ $pkg ] != $v ) ? "*" : "";
-      echo "<tr><td>$pkg</td> <td>${vers[ $pkg ]}</td> <td>$v</td> <td>$flag</td></tr>\n";
+      echo "<tr><td>$pkg</td> <td>{$vers[ $pkg ]}</td> <td>$v</td> <td>$flag</td></tr>\n";
    }
 
    echo "</table>
