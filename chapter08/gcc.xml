@@ -119,6 +119,17 @@ cd       build</userinput></screen>
       </varlistentry>
 
       <varlistentry>
+        <term><parameter>--disable-fixincludes</parameter></term>
+        <listitem>
+          <para>By default, during the installation of GCC some system
+          headers would be <quote>fixed</quote> to be used with GCC.  This
+          is not necessary for a modern Linux system, and potentionally
+          harmful if a package is reinstalled after installing GCC.  This
+          switch prevents GCC from <quote>fixing</quote> the headers.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
         <term><parameter>--with-system-zlib</parameter></term>
         <listitem>
           <para>This switch tells GCC to link to the system installed copy of
@@ -181,14 +192,14 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     url="&test-results;"/> and
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
-    <para>Eleven tests in the i386 test suite for the gcc compiler are known to FAIL.
-    It's because the test files do not account for the
-    <parameter>--enable-default-pie</parameter> option.</para>
- <!--
-    <para>Four tests related to PR100400 may be reported
-    as both XPASS and FAIL when testing the g++ compiler; the test file
-    is not well written.</para>
- -->
+    <para>Two tests named <filename>pr104610.c</filename> and
+    <filename>pr69482-1.c</filename> are known to fail because the test
+    files does not account for the
+    <parameter>--enable-default-ssp</parameter> option.
+    <!-- https://gcc.gnu.org/PR106375 and https://gcc.gnu.org/PR109353 -->
+    Additionally, two tests named <filename>copy.cc</filename> and
+    <filename>pr56837.c</filename> are known to fail.</para>
+
     <para>A few unexpected failures cannot always be avoided. The GCC developers
     are usually aware of these issues, but have not resolved them yet.
     Unless the test results are vastly different from those at the above URL,
