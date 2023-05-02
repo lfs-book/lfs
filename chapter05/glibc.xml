@@ -233,13 +233,13 @@ readelf -l a.out | grep ld-linux</userinput></screen>
     package, especially Binutils-pass2 or GCC-pass2, fails to build, it is
     an indication that something has gone wrong with the
     preceding Binutils, GCC, or Glibc installations.</para></note>
-
+<!--
     <para>Now that our cross-toolchain is complete, finalize the installation
     of the limits.h header. To do this, run a utility provided by the GCC
     developers:</para>
 
 <screen><userinput>$LFS/tools/libexec/gcc/$LFS_TGT/&gcc-version;/install-tools/mkheaders</userinput></screen>
-
+-->
   </sect2>
 
   <!-- - - - - - - - - - -->

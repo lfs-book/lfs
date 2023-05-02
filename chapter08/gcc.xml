@@ -85,6 +85,7 @@ cd       build</userinput></screen>
              --enable-default-ssp     \
              --disable-multilib       \
              --disable-bootstrap      \
+             --disable-fixinclude     \
              --with-system-zlib</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure" 
   arch="ml_32" >mlist=m64,m32</userinput><userinput remap="configure"
@@ -183,11 +184,11 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <para>Eleven tests in the i386 test suite for the gcc compiler are known to FAIL.
     It's because the test files do not account for the
     <parameter>--enable-default-pie</parameter> option.</para>
-
+ <!--
     <para>Four tests related to PR100400 may be reported
     as both XPASS and FAIL when testing the g++ compiler; the test file
     is not well written.</para>
-
+ -->
     <para>A few unexpected failures cannot always be avoided. The GCC developers
     are usually aware of these issues, but have not resolved them yet.
     Unless the test results are vastly different from those at the above URL,
