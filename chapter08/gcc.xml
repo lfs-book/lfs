@@ -85,7 +85,7 @@ cd       build</userinput></screen>
              --enable-default-ssp     \
              --disable-multilib       \
              --disable-bootstrap      \
-             --disable-fixinclude     \
+             --disable-fixincludes    \
              --with-system-zlib</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure" 
   arch="ml_32" >mlist=m64,m32</userinput><userinput remap="configure"
