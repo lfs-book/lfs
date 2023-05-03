@@ -367,10 +367,10 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         and lto-dump</seg>
 
         <seg>libasan.{a,so}, libatomic.{a,so}, libcc1.so, libgcc.a, libgcc_eh.a,
-        libgcc_s.so, libgcov.a, libgomp.{a,so}, libitm.{a,so},
+        libgcc_s.so, libgcov.a, libgomp.{a,so}, libhwasan.{a,so}, libitm.{a,so},
         liblsan.{a,so}, liblto_plugin.so,
         libquadmath.{a,so}, libssp.{a,so}, libssp_nonshared.a,
-        libstdc++.{a,so}, libstdc++fs.a, libsupc++.a, libtsan.{a,so},
+        libstdc++.{a,so}, libstdc++exp.a, libstdc++fs.a, libsupc++.a, libtsan.{a,so},
         and libubsan.{a,so}</seg>
 
         <seg>/usr/include/c++, /usr/lib/gcc, /usr/libexec/gcc, and
@@ -577,6 +577,16 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="libhwasan">
+        <term><filename class="libraryfile">libhwasan</filename></term>
+        <listitem>
+          <para>The Hardware-assisted Address Sanitizer runtime library</para>
+          <indexterm zone="ch-system-gcc libhwasan">
+            <primary sortas="c-libhwasan">libhwasan</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="libitm">
         <term><filename class="libraryfile">libitm</filename></term>
         <listitem>
@@ -636,6 +646,16 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
           <para>The standard C++ library</para>
           <indexterm zone="ch-system-gcc libstdc">
             <primary sortas="c-libstdc++">libstdc++</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libstdcexp">
+        <term><filename class="libraryfile">libstdc++exp</filename></term>
+        <listitem>
+          <para>Experimental C++ Contracts library</para>
+          <indexterm zone="ch-system-gcc libstdcexp">
+            <primary sortas="c-libstdc++exp">libstdc++exp</primary>
           </indexterm>
         </listitem>
       </varlistentry>
