@@ -66,6 +66,14 @@
           Perl test suite.</para>
         </listitem>
       </varlistentry>
+
+      <varlistentry>
+        <term><envar>gl_cv_macro_MB_CUR_MAX_good=y</envar></term>
+        <listitem>
+          <para>This is needed to work around an issue in the gnulib copy
+          shipped by the package which would break cross compilation.</para>
+        </listitem>
+      </varlistentry>
     </variablelist>
 
     <para>Compile the package:</para>
