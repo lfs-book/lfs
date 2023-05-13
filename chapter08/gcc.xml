@@ -197,8 +197,12 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     files does not account for the
     <parameter>--enable-default-ssp</parameter> option.
     <!-- https://gcc.gnu.org/PR106375 and https://gcc.gnu.org/PR109353 -->
-    Additionally, two tests named <filename>copy.cc</filename> and
-    <filename>pr56837.c</filename> are known to fail.</para>
+    Two tests named <filename>copy.cc</filename> and
+    <filename>pr56837.c</filename> are known to fail.
+    <!-- https://gcc.gnu.org/PR107855#c6 -->
+    Additionally, several tests in the
+    <filename class='directory'>vect</filename> directory are known to fail
+    if the hardware does not support AVX.</para>
 
     <para>A few unexpected failures cannot always be avoided. The GCC developers
     are usually aware of these issues, but have not resolved them yet.

@@ -215,10 +215,10 @@
 <!ENTITY flit-core-fin-du "736 KB">
 <!ENTITY flit-core-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY gawk-version "5.2.1">
-<!ENTITY gawk-size "3,332 KB">
+<!ENTITY gawk-version "5.2.2">
+<!ENTITY gawk-size "3,324 KB">
 <!ENTITY gawk-url "&gnu;gawk/gawk-&gawk-version;.tar.xz">
-<!ENTITY gawk-md5 "02956bc5d117a7437bb4f7039f23b964">
+<!ENTITY gawk-md5 "d63b4de2c722cbd9b8cc8e6f14d78a1e">
 <!ENTITY gawk-home "&gnu-software;gawk/">
 <!ENTITY gawk-tmp-du "47 MB">
 <!ENTITY gawk-tmp-sbu "0.1 SBU">
@@ -391,10 +391,10 @@
 <!ENTITY kmod-fin-du "12 MB">
 <!ENTITY kmod-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY less-version "632">
-<!ENTITY less-size "367 KB">
+<!ENTITY less-version "633">
+<!ENTITY less-size "368 KB">
 <!ENTITY less-url "https://www.greenwoodsoftware.com/less/less-&less-version;.tar.gz">
-<!ENTITY less-md5 "334873e16f3d2ff6d9862a28ae362b31">
+<!ENTITY less-md5 "35cc7734e9e6224388ab7b9a214da4da">
 <!ENTITY less-home "https://www.greenwoodsoftware.com/less/">
 <!ENTITY less-fin-du "4.3 MB">
 <!ENTITY less-fin-sbu "less than 0.1 SBU">
@@ -441,12 +441,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "3">
-<!ENTITY linux-patch-version "1">
+<!ENTITY linux-patch-version "2">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "133,726 KB">
+<!ENTITY linux-size "133,704 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "615864e9c7fd3a289d645b819dbd48eb">
+<!ENTITY linux-md5 "646d9e1f4f62d01f53dc2fd6b4ea9005">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 5.13.4 / gcc-11.1.0 on x86_64 : minimum is
  allnoconfig rounded down to allow for ongoing cleanups,
@@ -758,10 +758,10 @@
 <!ENTITY xml-parser-fin-du "2.3 MB">
 <!ENTITY xml-parser-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY xz-version "5.4.2">
-<!ENTITY xz-size "1,576 KB">
+<!ENTITY xz-version "5.4.3">
+<!ENTITY xz-size "1,628 KB">
 <!ENTITY xz-url "https://tukaani.org/xz/xz-&xz-version;.tar.xz">
-<!ENTITY xz-md5 "1dcdf002d9a69f48ff67be84964af0d8">
+<!ENTITY xz-md5 "0bc7220eab3cc37018e0f1965b6ce75a">
 <!ENTITY xz-home "https://tukaani.org/xz">
 <!ENTITY xz-tmp-du "20 MB">
 <!ENTITY xz-tmp-sbu "0.1 SBU">
