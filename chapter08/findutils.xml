@@ -47,11 +47,24 @@
 
     <para>Prepare Findutils for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr --localstatedir=/var/lib/locate</userinput></screen>
+<!-- no longer needed with gcc13
+<screen><userinput remap="configure">case $(uname -m) in
+    i?86)   TIME_T_32_BIT_OK=yes ./configure - -prefix=/usr - -localstatedir=/var/lib/locate ;;
+    x86_64) ./configure - -prefix=/usr - -localstatedir=/var/lib/locate ;;
+esac</userinput></screen>
+-->
+    <screen><userinput remap="configure">./configure --prefix=/usr --localstatedir=/var/lib/locate</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
-
+<!--
+      <varlistentry>
+        <term><command>TIME_32_BIT_OK=yes</command></term>
+        <listitem>
+          <para>This setting is needed for building on a 32 bit system.</para>
+        </listitem>
+      </varlistentry>
+-->
       <varlistentry>
         <term><parameter>--localstatedir</parameter></term>
         <listitem>

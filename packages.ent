@@ -104,10 +104,10 @@
 <!ENTITY check-fin-du "12 MB">
 <!ENTITY check-fin-sbu "0.1 SBU (about 1.7 SBU with tests)">
 
-<!ENTITY coreutils-version "9.2">
-<!ENTITY coreutils-size "5,644 KB">
+<!ENTITY coreutils-version "9.3">
+<!ENTITY coreutils-size "5,673 KB">
 <!ENTITY coreutils-url "&gnu;coreutils/coreutils-&coreutils-version;.tar.xz">
-<!ENTITY coreutils-md5 "4a8a5097d8d7315ccfd6be7eafc8c862">
+<!ENTITY coreutils-md5 "040b4b7acaf89499834bfc79609af29f">
 <!ENTITY coreutils-home "&gnu-software;coreutils/">
 <!ENTITY coreutils-tmp-du "162 MB">
 <!ENTITY coreutils-tmp-sbu "0.3 SBU">
@@ -215,20 +215,20 @@
 <!ENTITY flit-core-fin-du "736 KB">
 <!ENTITY flit-core-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY gawk-version "5.2.1">
-<!ENTITY gawk-size "3,332 KB">
+<!ENTITY gawk-version "5.2.2">
+<!ENTITY gawk-size "3,324 KB">
 <!ENTITY gawk-url "&gnu;gawk/gawk-&gawk-version;.tar.xz">
-<!ENTITY gawk-md5 "02956bc5d117a7437bb4f7039f23b964">
+<!ENTITY gawk-md5 "d63b4de2c722cbd9b8cc8e6f14d78a1e">
 <!ENTITY gawk-home "&gnu-software;gawk/">
 <!ENTITY gawk-tmp-du "47 MB">
 <!ENTITY gawk-tmp-sbu "0.1 SBU">
 <!ENTITY gawk-fin-du "43 MB">
 <!ENTITY gawk-fin-sbu "0.2 SBU">
 
-<!ENTITY gcc-version "12.2.0">
-<!ENTITY gcc-size "82,662 KB">
+<!ENTITY gcc-version "13.1.0">
+<!ENTITY gcc-size "85,402 KB">
 <!ENTITY gcc-url "&gnu;gcc/gcc-&gcc-version;/gcc-&gcc-version;.tar.xz">
-<!ENTITY gcc-md5 "73bafd0af874439dcdb9fc063b6fb069">
+<!ENTITY gcc-md5 "43e4de77f2218c83ca675257ea1af9ef">
 <!ENTITY gcc-sha256 "">
 <!ENTITY gcc-home "https://gcc.gnu.org/">
 <!ENTITY gcc-tmpp1-du "3.8 GB">
@@ -238,7 +238,7 @@
 <!ENTITY gcc-fin-du "5.1 GB ">
 <!ENTITY gcc-fin-sbu "43 SBU (with tests)">
 <!ENTITY libquadmath-version "0.0.0">
-<!ENTITY libstdcpp-version   "6.0.30">
+<!ENTITY libstdcpp-version   "6.0.31">
 <!ENTITY libitm-version      "1.0.0">
 <!ENTITY libatomic-version   "1.2.0">
 
@@ -325,10 +325,10 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.3 SBU">
 
-<!ENTITY iana-etc-version "20230405">
+<!ENTITY iana-etc-version "20230418">
 <!ENTITY iana-etc-size "587 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "c8931836fa045c98b3a4eefdd911d54c">
+<!ENTITY iana-etc-md5 "284e39f1cfdc0870923e65fc99ac3de0">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -350,10 +350,10 @@
 <!ENTITY intltool-fin-du "1.5 MB">
 <!ENTITY intltool-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY iproute2-version "6.2.0">
-<!ENTITY iproute2-size "892 KB">
+<!ENTITY iproute2-version "6.3.0">
+<!ENTITY iproute2-size "894 KB">
 <!ENTITY iproute2-url "&kernel;linux/utils/net/iproute2/iproute2-&iproute2-version;.tar.xz">
-<!ENTITY iproute2-md5 "85861856a856f6d358c6d9a4fc9088c9">
+<!ENTITY iproute2-md5 "53ecd48564c75d5fa4b5325d47344d68">
 <!ENTITY iproute2-home "&kernel;linux/utils/net/iproute2/">
 <!ENTITY iproute2-fin-du "17 MB">
 <!ENTITY iproute2-fin-sbu "0.1 SBU">
@@ -382,10 +382,10 @@
 <!ENTITY kmod-fin-du "12 MB">
 <!ENTITY kmod-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY less-version "608">
-<!ENTITY less-size "354 KB">
+<!ENTITY less-version "633">
+<!ENTITY less-size "368 KB">
 <!ENTITY less-url "https://www.greenwoodsoftware.com/less/less-&less-version;.tar.gz">
-<!ENTITY less-md5 "1cdec714569d830a68f4cff11203cdba">
+<!ENTITY less-md5 "35cc7734e9e6224388ab7b9a214da4da">
 <!ENTITY less-home "https://www.greenwoodsoftware.com/less/">
 <!ENTITY less-fin-du "4.3 MB">
 <!ENTITY less-fin-sbu "less than 0.1 SBU">
@@ -431,13 +431,13 @@
 <!ENTITY libtool-fin-sbu "1.4 SBU">
 
 <!ENTITY linux-major-version "6">
-<!ENTITY linux-minor-version "2">
-<!ENTITY linux-patch-version "11">
+<!ENTITY linux-minor-version "3">
+<!ENTITY linux-patch-version "2">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "133,276 KB">
+<!ENTITY linux-size "133,704 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "78d3ab3a52fe283aabca27dad4005d07">
+<!ENTITY linux-md5 "646d9e1f4f62d01f53dc2fd6b4ea9005">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 5.13.4 / gcc-11.1.0 on x86_64 : minimum is
  allnoconfig rounded down to allow for ongoing cleanups,
@@ -554,12 +554,12 @@
 
 <!ENTITY perl-version-major "5">
 <!ENTITY perl-version-minor "36">
-<!ENTITY perl-version-patch "0">
+<!ENTITY perl-version-patch "1">
 <!ENTITY perl-version-min "&perl-version-major;.&perl-version-minor;">
 <!ENTITY perl-version "&perl-version-major;.&perl-version-minor;.&perl-version-patch;">
-<!ENTITY perl-size "12,746 KB">
+<!ENTITY perl-size "12,748 KB">
 <!ENTITY perl-url "https://www.cpan.org/src/5.0/perl-&perl-version;.tar.xz">
-<!ENTITY perl-md5 "826e42da130011699172fd655e49cfa2">
+<!ENTITY perl-md5 "825f6b1d7e03b22522e0bdb992fbb728">
 <!ENTITY perl-home "https://www.perl.org/">
 <!ENTITY perl-tmp-du "281 MB">
 <!ENTITY perl-tmp-sbu "0.6 SBU">
@@ -659,10 +659,10 @@
 <!ENTITY systemd-fin-du   "258 MB">
 <!ENTITY systemd-fin-sbu  "0.7 SBU">
 
-<!ENTITY sysvinit-version "3.06">
-<!ENTITY sysvinit-size "247 KB">
+<!ENTITY sysvinit-version "3.07">
+<!ENTITY sysvinit-size "258 KB">
 <!ENTITY sysvinit-url "&github;/slicer69/sysvinit/releases/download/&sysvinit-version;/sysvinit-&sysvinit-version;.tar.xz">
-<!ENTITY sysvinit-md5 "96771d0a88315c91199830ea49b859ca">
+<!ENTITY sysvinit-md5 "190398c660af29c97d892126d2a95e28">
 <!ENTITY sysvinit-home "&savannah-nongnu;/projects/sysvinit">
 <!ENTITY sysvinit-fin-du "4.4 MB">
 <!ENTITY sysvinit-fin-sbu "less than 0.1 SBU">
@@ -722,13 +722,13 @@
 <!ENTITY util-linux-fin-du "283 MB">
 <!ENTITY util-linux-fin-sbu "0.5 SBU">
 
-<!ENTITY vim-version "9.0.1452">
+<!ENTITY vim-version "9.0.1503">
 <!-- <!ENTITY vim-majmin "90"> -->
 <!ENTITY vim-docdir "vim/vim90">
-<!ENTITY vim-size "10,585 KB">
+<!ENTITY vim-size "16,612 KB">
 <!--<!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">-->
 <!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.gz">
-<!ENTITY vim-md5 "dccf279f33a1df7e4e81941f38306de3">
+<!ENTITY vim-md5 "2214efcad25b1f31c89c33f932fa8dc1">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "235 MB">
 <!ENTITY vim-fin-sbu "2.4 SBU">
@@ -749,10 +749,10 @@
 <!ENTITY xml-parser-fin-du "2.3 MB">
 <!ENTITY xml-parser-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY xz-version "5.4.2">
-<!ENTITY xz-size "1,576 KB">
+<!ENTITY xz-version "5.4.3">
+<!ENTITY xz-size "1,628 KB">
 <!ENTITY xz-url "https://tukaani.org/xz/xz-&xz-version;.tar.xz">
-<!ENTITY xz-md5 "1dcdf002d9a69f48ff67be84964af0d8">
+<!ENTITY xz-md5 "0bc7220eab3cc37018e0f1965b6ce75a">
 <!ENTITY xz-home "https://tukaani.org/xz">
 <!ENTITY xz-tmp-du "20 MB">
 <!ENTITY xz-tmp-sbu "0.1 SBU">

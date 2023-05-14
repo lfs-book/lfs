@@ -74,6 +74,7 @@ cd       build</userinput></screen>
              --enable-default-ssp     \
              --disable-multilib       \
              --disable-bootstrap      \
+             --disable-fixincludes    \
              --with-system-zlib</userinput></screen>
 
     <para>GCC supports seven different computer languages, but the
@@ -90,6 +91,17 @@ cd       build</userinput></screen>
           <para>This parameter makes the configure script use the ld program installed
           by the Binutils package built earlier in this chapter, rather than
           the cross-built version which would otherwise be used.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-fixincludes</parameter></term>
+        <listitem>
+          <para>By default, during the installation of GCC some system
+          headers would be <quote>fixed</quote> to be used with GCC.  This
+          is not necessary for a modern Linux system, and potentionally
+          harmful if a package is reinstalled after installing GCC.  This
+          switch prevents GCC from <quote>fixing</quote> the headers.</para>
         </listitem>
       </varlistentry>
 
@@ -156,6 +168,12 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     url="&test-results;"/> and
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
+    <para>
+    <!-- https://gcc.gnu.org/PR106375 and https://gcc.gnu.org/PR109353 -->
+    Two tests named <filename>copy.cc</filename> and
+    <filename>pr56837.c</filename> are known to fail.
+    </para>
+
     <para>In gcc tests, the tests related to
     <filename>fuse_adrp_add_1.c</filename>,
     <filename>pr63304_1.c</filename>,
@@ -181,10 +199,6 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     to fail.  The g++ test related to <filename>pr103147-10.C</filename>
     is known to fail.  They are because the test files do not account for
     the <parameter>--enable-default-ssp</parameter> option.</para>
-
-    <para>In g++, four tests related to PR100400 are known to be reported
-    as both XPASS and FAIL.  It's because the test file for this known issue
-    is not well written.</para>
 
     <!-- Already known via gcc-testresults@gcc.gnu.org -->
     <para>On ARM64,
@@ -367,10 +381,10 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         and lto-dump</seg>
 
         <seg>libasan.{a,so}, libatomic.{a,so}, libcc1.so, libgcc.a, libgcc_eh.a,
-        libgcc_s.so, libgcov.a, libgomp.{a,so}, libitm.{a,so},
+        libgcc_s.so, libgcov.a, libgomp.{a,so}, libhwasan.{a,so}, libitm.{a,so},
         liblsan.{a,so}, liblto_plugin.so,
         libquadmath.{a,so}, libssp.{a,so}, libssp_nonshared.a,
-        libstdc++.{a,so}, libstdc++fs.a, libsupc++.a, libtsan.{a,so},
+        libstdc++.{a,so}, libstdc++exp.a, libstdc++fs.a, libsupc++.a, libtsan.{a,so},
         and libubsan.{a,so}</seg>
 
         <seg>/usr/include/c++, /usr/lib/gcc, /usr/libexec/gcc, and
@@ -577,6 +591,16 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="libhwasan">
+        <term><filename class="libraryfile">libhwasan</filename></term>
+        <listitem>
+          <para>The Hardware-assisted Address Sanitizer runtime library</para>
+          <indexterm zone="ch-system-gcc libhwasan">
+            <primary sortas="c-libhwasan">libhwasan</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="libitm">
         <term><filename class="libraryfile">libitm</filename></term>
         <listitem>
@@ -636,6 +660,16 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
           <para>The standard C++ library</para>
           <indexterm zone="ch-system-gcc libstdc">
             <primary sortas="c-libstdc++">libstdc++</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libstdcexp">
+        <term><filename class="libraryfile">libstdc++exp</filename></term>
+        <listitem>
+          <para>Experimental C++ Contracts library</para>
+          <indexterm zone="ch-system-gcc libstdcexp">
+            <primary sortas="c-libstdc++exp">libstdc++exp</primary>
           </indexterm>
         </listitem>
       </varlistentry>
