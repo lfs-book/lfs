@@ -42,8 +42,8 @@
 
     <para>
       Remove several inappropriate uses of the <literal>pure</literal>
-      attribute or they'd cause runtime issues when the package is built
-      with GCC 13 or later:
+      attribute that cause runtime issues when the package is built
+      with gcc-13 or later:
     </para>
 
 <screen><userinput remap='pre'>sed '/bus_message_type_from_string/s/_pure_//' \
