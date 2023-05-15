@@ -169,48 +169,10 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
     <para>
-    <!-- https://gcc.gnu.org/PR106375 and https://gcc.gnu.org/PR109353 -->
+    <!-- https://gcc.gnu.org/PR107915 and https://gcc.gnu.org/PR109353 -->
     Two tests named <filename>copy.cc</filename> and
-    <filename>pr56837.c</filename> are known to fail.
+    <filename>contracts-tmpl-spec2.C</filename> are known to fail.
     </para>
-
-    <para>In gcc tests, the tests related to
-    <filename>fuse_adrp_add_1.c</filename>,
-    <filename>pr63304_1.c</filename>,
-    <filename>pr70120-2.c</filename>,
-    <filename>pr78733.c</filename>,
-    <filename>pr78796.c</filename>,
-    <filename>pr79041-2.c</filename>,
-    <filename>pr94530.c</filename>,
-    <filename>pr94577.c</filename>,
-    <filename>reload-valid-spoff.c</filename>, and
-    many <filename>aapcs64</filename> tests are known to fail.
-    They are because the test files do not account for the
-    <parameter>--enable-default-pie</parameter> option.</para>
-
-    <para>In gcc tests, the tests related to
-    <filename>pr104005.c</filename>,
-    <filename>pr103147-10.C</filename>,
-    <filename>shrink_wrap_1.c</filename>,
-    <filename>stack-check-cfa-1.c</filename>,
-    <filename>stack-check-cfa-2.c</filename>,
-    <filename>test_frame_17.c</filename>, and
-    many <filename>sve/pcs</filename> tests are known
-    to fail.  The g++ test related to <filename>pr103147-10.C</filename>
-    is known to fail.  They are because the test files do not account for
-    the <parameter>--enable-default-ssp</parameter> option.</para>
-
-    <!-- Already known via gcc-testresults@gcc.gnu.org -->
-    <para>On ARM64,
-    four g++ tests related to <filename>Waddress-5.C</filename>,
-    twelve g++ tests related to <filename>attrs-10.C</filename>,
-    four g++ tests related to <filename>declare-simd-8.C</filename>,
-    one gcc tests related to <filename>ssa-dom-thread-7.c</filename>,
-    one gcc tests related to <filename>fcsel_1.c</filename>,
-    one gcc tests related to <filename>mgeneral-regs_3.c</filename>,
-    one gcc tests related to <filename>auto-init-7.c</filename>, and
-    four gcc tests related to <filename>vqdmlalh_laneq*.c</filename>
-    are known to fail.</para>
 
     <!-- Need further investigation -->
     <para>Many gcc and g++ tests related to hwasan are known to fail.</para>
