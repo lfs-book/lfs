@@ -39,11 +39,11 @@
 
   <sect2 role="installation">
     <title>Installation of Eudev</title>
-
+    <!-- No longer seems needed. bdubbs 5/18/23
     <para>First fix the location of udev rules in the .pc file:</para>
 
 <screen><userinput remap="pre">sed -i '/udevdir/a udev_dir=${udevdir}' src/udev/udev.pc.in</userinput></screen>
-
+-->
     <para>Prepare Eudev for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr           \

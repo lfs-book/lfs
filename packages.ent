@@ -156,10 +156,10 @@
 <!ENTITY elfutils-fin-du "120 MB">
 <!ENTITY elfutils-fin-sbu "0.3 SBU">
 
-<!ENTITY eudev-version "3.2.11">
-<!ENTITY eudev-size "2,075 KB">
+<!ENTITY eudev-version "3.2.12">
+<!ENTITY eudev-size "2,145 KB">
 <!ENTITY eudev-url "https://github.com/eudev-project/eudev/releases/download/v&eudev-version;/eudev-&eudev-version;.tar.gz">
-<!ENTITY eudev-md5 "417ba948335736d4d81874fba47a30f7">
+<!ENTITY eudev-md5 "6f1559ca7c27013ff68816e2732498a3">
 <!ENTITY eudev-fin-du "83 MB">
 <!ENTITY eudev-fin-sbu "0.1 SBU">
 
@@ -207,10 +207,10 @@
 <!ENTITY flex-fin-du "33 MB">
 <!ENTITY flex-fin-sbu "0.1 SBU">
 
-<!ENTITY flit-core-version "3.8.0">
-<!ENTITY flit-core-size "44 KB">
+<!ENTITY flit-core-version "3.9.0">
+<!ENTITY flit-core-size "41 KB">
 <!ENTITY flit-core-url "&pypi-src;/f/flit-core/flit_core-&flit-core-version;.tar.gz">
-<!ENTITY flit-core-md5 "7c41da13273f7787709a24f74e0f5a99">
+<!ENTITY flit-core-md5 "3bc52f1952b9a78361114147da63c35b">
 <!ENTITY flit-core-home "&pypi-home;/flit-core/">
 <!ENTITY flit-core-fin-du "736 KB">
 <!ENTITY flit-core-fin-sbu "less than 0.1 SBU">
@@ -289,10 +289,10 @@
 <!ENTITY gperf-fin-du "6.1 MB">
 <!ENTITY gperf-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY grep-version "3.10">
-<!ENTITY grep-size "1,652 KB">
+<!ENTITY grep-version "3.11">
+<!ENTITY grep-size "1,664 KB">
 <!ENTITY grep-url "&gnu;grep/grep-&grep-version;.tar.xz">
-<!ENTITY grep-md5 "ab3f063ad4596b7d094fb5f66cf327d6">
+<!ENTITY grep-md5 "7c9bbd74492131245f7cdb291fa142c0">
 <!ENTITY grep-home "&gnu-software;grep/">
 <!ENTITY grep-tmp-du "25 MB">
 <!ENTITY grep-tmp-sbu "0.2 SBU">
@@ -398,10 +398,10 @@
 <!ENTITY lfs-bootscripts-cfg-du "BOOTSCRIPTS-INSTALL-KB KB">
 <!ENTITY lfs-bootscripts-cfg-sbu "less than 0.1 SBU">
 
-<!ENTITY libcap-version "2.68">
-<!ENTITY libcap-size "188 KB">
+<!ENTITY libcap-version "2.69">
+<!ENTITY libcap-size "185 KB">
 <!ENTITY libcap-url "&kernel;linux/libs/security/linux-privs/libcap2/libcap-&libcap-version;.tar.xz">
-<!ENTITY libcap-md5 "ffb9e9c87704f92ac75201327841e753">
+<!ENTITY libcap-md5 "4667bacb837f9ac4adb4a1a0266f4b65">
 <!ENTITY libcap-home "https://sites.google.com/site/fullycapable/">
 <!ENTITY libcap-fin-du "2.9 MB">
 <!ENTITY libcap-fin-sbu "less than 0.1 SBU">
@@ -432,12 +432,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "3">
-<!ENTITY linux-patch-version "2">
+<!ENTITY linux-patch-version "3">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "133,704 KB">
+<!ENTITY linux-size "133,722 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "646d9e1f4f62d01f53dc2fd6b4ea9005">
+<!ENTITY linux-md5 "900468549dbd8cc9b44efd85d9e934e6">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 5.13.4 / gcc-11.1.0 on x86_64 : minimum is
  allnoconfig rounded down to allow for ongoing cleanups,
@@ -711,11 +711,11 @@
 <!ENTITY udev-lfs-md5     "27cd82f9a61422e186b9d6759ddf1634">
 <!ENTITY udev-lfs-home    " ">
 
-<!ENTITY util-linux-minor "2.38">
-<!ENTITY util-linux-version "2.38.1"> <!-- 2.33.x -->
-<!ENTITY util-linux-size "7,321 KB">
+<!ENTITY util-linux-minor "2.39">
+<!ENTITY util-linux-version "2.39"> <!-- 2.33.x -->
+<!ENTITY util-linux-size "7,914 KB">
 <!ENTITY util-linux-url "&kernel;linux/utils/util-linux/v&util-linux-minor;/util-linux-&util-linux-version;.tar.xz">
-<!ENTITY util-linux-md5 "cd11456f4ddd31f7fbfdd9488c0c0d02">
+<!ENTITY util-linux-md5 "16579e594a8ef2e6236b38b9ab36cccf">
 <!ENTITY util-linux-home "https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/">
 <!ENTITY util-linux-tmp-du "150 MB">
 <!ENTITY util-linux-tmp-sbu "0.2 SBU">
