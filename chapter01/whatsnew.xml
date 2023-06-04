@@ -85,15 +85,15 @@
     <!--<listitem revision="systemd">
       <para>D-Bus-&dbus-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Diffutils-&diffutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
        <para>E2fsprogs-&e2fsprogs-version;</para>
     </listitem>-->
-    <!--<listitem revision="sysv">
+    <listitem revision="sysv">
        <para>Eudev-&eudev-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
        <para>Expat-&expat-version;</para>
     </listitem>-->
@@ -109,6 +109,9 @@
     <!--<listitem>
       <para>Flex-&flex-version;</para>
     </listitem>-->
+    <listitem>
+      <para>Flit-core-&flit-core-version;</para>
+    </listitem>
     <!--<listitem>
       <para>Gawk-&gawk-version;</para>
     </listitem>-->
@@ -169,9 +172,9 @@
     <!--<listitem>
       <para>LFS-Bootscripts-&lfs-bootscripts-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Libcap-&libcap-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Libelf-&elfutils-version; (from elfutils)</para>
     </listitem>
@@ -199,9 +202,9 @@
     <listitem>
       <para>Man-pages-&man-pages-version;</para>
     </listitem>
-    <!--<listitem revision="systemd">
+    <listitem revision="systemd">
       <para>MarkupSafe-&markupsafe-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Meson-&meson-version;</para>
     </listitem>
@@ -217,9 +220,9 @@
     <!--<listitem>
       <para>Ninja-&ninja-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Openssl-&openssl-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Patch-&patch-version;</para>
     </listitem>-->
@@ -268,9 +271,9 @@
     <!--<listitem>
       <para>Tzdata-&tzdata-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Util-Linux-&util-linux-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Vim-&vim-version;</para>
     </listitem>

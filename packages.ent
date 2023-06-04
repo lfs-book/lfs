@@ -58,10 +58,10 @@
 <!ENTITY bash-fin-du "52 MB">
 <!ENTITY bash-fin-sbu "1.2 SBU">
 
-<!ENTITY bc-version "6.5.0">
-<!ENTITY bc-size "452 KB">
+<!ENTITY bc-version "6.6.0">
+<!ENTITY bc-size "455 KB">
 <!ENTITY bc-url "https://github.com/gavinhoward/bc/releases/download/&bc-version;/bc-&bc-version;.tar.xz">
-<!ENTITY bc-md5 "e4757f48340dfe74af0d5be7ea56f7c7">
+<!ENTITY bc-md5 "a148cbaaf8ff813b7289a00539e74a5f">
 <!ENTITY bc-home "https://git.gavinhoward.com/gavin/bc">
 <!ENTITY bc-fin-du "7.6 MB">
 <!ENTITY bc-fin-sbu "less than 0.1 SBU">
@@ -130,10 +130,10 @@
 <!ENTITY dejagnu-tmp-du "6.9 MB">
 <!ENTITY dejagnu-tmp-sbu "0.1 SBU">
 
-<!ENTITY diffutils-version "3.9">
-<!ENTITY diffutils-size "1,551 KB">
+<!ENTITY diffutils-version "3.10">
+<!ENTITY diffutils-size "1,587 KB">
 <!ENTITY diffutils-url "&gnu;diffutils/diffutils-&diffutils-version;.tar.xz">
-<!ENTITY diffutils-md5 "cf0a65266058bf22fe3feb69e57ffc5b">
+<!ENTITY diffutils-md5 "2745c50f6f4e395e7b7d52f902d075bf">
 <!ENTITY diffutils-home "&gnu-software;diffutils/">
 <!ENTITY diffutils-tmp-du "26 MB">
 <!ENTITY diffutils-tmp-sbu "0.2 SBU">
@@ -156,10 +156,10 @@
 <!ENTITY elfutils-fin-du "120 MB">
 <!ENTITY elfutils-fin-sbu "0.3 SBU">
 
-<!ENTITY eudev-version "3.2.11">
-<!ENTITY eudev-size "2,075 KB">
+<!ENTITY eudev-version "3.2.12">
+<!ENTITY eudev-size "2,145 KB">
 <!ENTITY eudev-url "https://github.com/eudev-project/eudev/releases/download/v&eudev-version;/eudev-&eudev-version;.tar.gz">
-<!ENTITY eudev-md5 "417ba948335736d4d81874fba47a30f7">
+<!ENTITY eudev-md5 "6f1559ca7c27013ff68816e2732498a3">
 <!ENTITY eudev-fin-du "83 MB">
 <!ENTITY eudev-fin-sbu "0.1 SBU">
 
@@ -207,10 +207,10 @@
 <!ENTITY flex-fin-du "33 MB">
 <!ENTITY flex-fin-sbu "0.1 SBU">
 
-<!ENTITY flit-core-version "3.8.0">
-<!ENTITY flit-core-size "44 KB">
+<!ENTITY flit-core-version "3.9.0">
+<!ENTITY flit-core-size "41 KB">
 <!ENTITY flit-core-url "&pypi-src;/f/flit-core/flit_core-&flit-core-version;.tar.gz">
-<!ENTITY flit-core-md5 "7c41da13273f7787709a24f74e0f5a99">
+<!ENTITY flit-core-md5 "3bc52f1952b9a78361114147da63c35b">
 <!ENTITY flit-core-home "&pypi-home;/flit-core/">
 <!ENTITY flit-core-fin-du "736 KB">
 <!ENTITY flit-core-fin-sbu "less than 0.1 SBU">
@@ -289,10 +289,10 @@
 <!ENTITY gperf-fin-du "6.1 MB">
 <!ENTITY gperf-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY grep-version "3.10">
-<!ENTITY grep-size "1,652 KB">
+<!ENTITY grep-version "3.11">
+<!ENTITY grep-size "1,664 KB">
 <!ENTITY grep-url "&gnu;grep/grep-&grep-version;.tar.xz">
-<!ENTITY grep-md5 "ab3f063ad4596b7d094fb5f66cf327d6">
+<!ENTITY grep-md5 "7c9bbd74492131245f7cdb291fa142c0">
 <!ENTITY grep-home "&gnu-software;grep/">
 <!ENTITY grep-tmp-du "25 MB">
 <!ENTITY grep-tmp-sbu "0.2 SBU">
@@ -325,10 +325,10 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.3 SBU">
 
-<!ENTITY iana-etc-version "20230418">
+<!ENTITY iana-etc-version "20230524">
 <!ENTITY iana-etc-size "587 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "284e39f1cfdc0870923e65fc99ac3de0">
+<!ENTITY iana-etc-md5 "16d24a6c990cc98fea65eec05738a5a5">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -407,10 +407,10 @@
 <!ENTITY lfs-bootscripts-cfg-du "BOOTSCRIPTS-INSTALL-KB KB">
 <!ENTITY lfs-bootscripts-cfg-sbu "less than 0.1 SBU">
 
-<!ENTITY libcap-version "2.68">
-<!ENTITY libcap-size "188 KB">
+<!ENTITY libcap-version "2.69">
+<!ENTITY libcap-size "185 KB">
 <!ENTITY libcap-url "&kernel;linux/libs/security/linux-privs/libcap2/libcap-&libcap-version;.tar.xz">
-<!ENTITY libcap-md5 "ffb9e9c87704f92ac75201327841e753">
+<!ENTITY libcap-md5 "4667bacb837f9ac4adb4a1a0266f4b65">
 <!ENTITY libcap-home "https://sites.google.com/site/fullycapable/">
 <!ENTITY libcap-fin-du "2.9 MB">
 <!ENTITY libcap-fin-sbu "less than 0.1 SBU">
@@ -441,12 +441,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "3">
-<!ENTITY linux-patch-version "2">
+<!ENTITY linux-patch-version "5">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "133,704 KB">
+<!ENTITY linux-size "133,718 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "646d9e1f4f62d01f53dc2fd6b4ea9005">
+<!ENTITY linux-md5 "9b517d394dc1446890b4b15bdf8afa9f">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 5.13.4 / gcc-11.1.0 on x86_64 : minimum is
  allnoconfig rounded down to allow for ongoing cleanups,
@@ -493,18 +493,18 @@
 <!ENTITY man-pages-fin-du "32 MB">
 <!ENTITY man-pages-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY markupsafe-version "2.1.2">
+<!ENTITY markupsafe-version "2.1.3">
 <!ENTITY markupsafe-size "19 KB">
 <!ENTITY markupsafe-url "&pypi-src;/M/MarkupSafe/MarkupSafe-&markupsafe-version;.tar.gz">
-<!ENTITY markupsafe-md5 "02f337b98aef11bd0fee9c5ae860173b">
+<!ENTITY markupsafe-md5 "ca33f119bd0551ce15837f58bb180214">
 <!ENTITY markupsafe-home "https://palletsprojects.com/p/markupsafe/">
 <!ENTITY markupsafe-fin-du "544 KB">
 <!ENTITY markupsafe-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY meson-version "1.1.0">
-<!ENTITY meson-size "2,075 KB">
+<!ENTITY meson-version "1.1.1">
+<!ENTITY meson-size "2,076 KB">
 <!ENTITY meson-url "&github;/mesonbuild/meson/releases/download/&meson-version;/meson-&meson-version;.tar.gz">
-<!ENTITY meson-md5 "94ea898bcf799470878e60809be80467">
+<!ENTITY meson-md5 "0f810b31b26156989ac9321fa2063a04">
 <!ENTITY meson-home "https://mesonbuild.com">
 <!ENTITY meson-fin-du "41 MB">
 <!ENTITY meson-fin-sbu "less than 0.1 SBU">
@@ -543,10 +543,10 @@
 <!ENTITY ninja-fin-du "77 MB">
 <!ENTITY ninja-fin-sbu "0.3 SBU">
 
-<!ENTITY openssl-version "3.1.0">
-<!ENTITY openssl-size "15,164 KB">
+<!ENTITY openssl-version "3.1.1">
+<!ENTITY openssl-size "15,181 KB">
 <!ENTITY openssl-url "https://www.openssl.org/source/openssl-&openssl-version;.tar.gz">
-<!ENTITY openssl-md5 "f6c520aa2206d4d1fa71ea30b5e9a56d">
+<!ENTITY openssl-md5 "1864b75e31fb4a6e0a07fd832529add3">
 <!ENTITY openssl-home "https://www.openssl.org/">
 <!ENTITY openssl-fin-du "520 MB">
 <!ENTITY openssl-fin-sbu "3.2 SBU">
@@ -720,11 +720,11 @@
 <!ENTITY udev-lfs-md5     "27cd82f9a61422e186b9d6759ddf1634">
 <!ENTITY udev-lfs-home    " ">
 
-<!ENTITY util-linux-minor "2.38">
-<!ENTITY util-linux-version "2.38.1"> <!-- 2.33.x -->
-<!ENTITY util-linux-size "7,321 KB">
+<!ENTITY util-linux-minor "2.39">
+<!ENTITY util-linux-version "2.39"> <!-- 2.33.x -->
+<!ENTITY util-linux-size "7,914 KB">
 <!ENTITY util-linux-url "&kernel;linux/utils/util-linux/v&util-linux-minor;/util-linux-&util-linux-version;.tar.xz">
-<!ENTITY util-linux-md5 "cd11456f4ddd31f7fbfdd9488c0c0d02">
+<!ENTITY util-linux-md5 "16579e594a8ef2e6236b38b9ab36cccf">
 <!ENTITY util-linux-home "https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/">
 <!ENTITY util-linux-tmp-du "150 MB">
 <!ENTITY util-linux-tmp-sbu "0.2 SBU">

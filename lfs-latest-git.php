@@ -292,7 +292,7 @@ if ( $package == "zstd"       ) $dirpath = "https://github.com/facebook/zstd/rel
      return find_max( $lines, "/tcl\d/", "/^.*tcl(\d\.[\d\.]*\d)-src.*$/" );
 
   if ( $package == "ninja" )
-     return find_max( $lines, "/v\d/", "/^.*v(\d[\d\.]*\d).*$/" );
+     return find_max( $lines, "/^ *v\d/", "/^.*v(\d[\d\.]*\d).*$/" );
 
   if ( $package == "gmp" )
      return find_max( $lines, "/$package/", "/^.*$package-([\d\._]*\d[a-z]?).tar.*$/" );
