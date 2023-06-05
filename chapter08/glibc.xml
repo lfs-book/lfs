@@ -76,7 +76,7 @@ cd       build</userinput></screen>
 
 <screen arch="default"><userinput remap="configure">../configure --prefix=/usr                            \
              --disable-werror                         \
-             --enable-kernel=&min-kernel;                      \
+             --enable-kernel=&min-kernel;                     \
              --enable-stack-protector=strong          \
              --with-headers=/usr/include              \
              libc_cv_slibdir=/usr/lib</userinput></screen>

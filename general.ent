@@ -91,7 +91,11 @@
 <!ENTITY livecd-root     "&lfs-root;livecd/">
 <!ENTITY test-results    "&lfs-root;lfs/build-logs/&generic-version;/">
 <!ENTITY secadv          "&lfs-root;lfs/advisories/">
+
+<!-- 4.14 EOL is Jan 2024
+     so for LFS 11.5 we may consider moving to 4.19 -->
 <!ENTITY min-kernel      "4.14">
+
 <!--
 <!ENTITY patches-rootd   "&lfs-root;patches/lfs/&generic-versiond;/">
 <!ENTITY downloads-rootd "&lfs-root;lfs/downloads/&generic-versiond;/">

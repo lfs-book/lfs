@@ -92,7 +92,7 @@ cd       build</userinput></screen>
       --prefix=/usr                      \
       --host=$LFS_TGT                    \
       --build=$(../scripts/config.guess) \
-      --enable-kernel=&min-kernel;                \
+      --enable-kernel=&min-kernel;               \
       --with-headers=$LFS/usr/include    \
       libc_cv_slibdir=/usr/lib</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">../configure                             \
