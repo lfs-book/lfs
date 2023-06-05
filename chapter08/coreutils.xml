@@ -54,11 +54,12 @@
     </note>
 
     <!-- https://bugs.gnu.org/62403 -->
+<!--
     <para>Fix a bug in checksum utilities causing failed checks not
     reported correctly:</para>
 
 <screen><userinput remap="pre">sed '/if ( ! match/s/ed_checksums//' -i src/digest.c</userinput></screen>
-
+-->
     <para>Now prepare Coreutils for compilation:</para>
 
 <screen><userinput remap="configure">autoreconf -fiv

@@ -43,13 +43,17 @@
   <sect2 role="installation">
     <title>Installation of Coreutils</title>
 
+<!--
+<screen><userinput remap="configure">export gl_cv_macro_MB_CUR_MAX_good=y</userinput></screen>
+-->
     <para>Prepare Coreutils for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr                     \
             --host=$LFS_TGT                   \
             --build=$(build-aux/config.guess) \
             --enable-install-program=hostname \
-            --enable-no-install-program=kill,uptime</userinput></screen>
+            --enable-no-install-program=kill,uptime \
+            gl_cv_macro_MB_CUR_MAX_good=y</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -60,6 +64,14 @@
           <para>This enables the <command>hostname</command> binary to be built
           and installed &ndash; it is disabled by default but is required by the
           Perl test suite.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><envar>gl_cv_macro_MB_CUR_MAX_good=y</envar></term>
+        <listitem>
+          <para>This is needed to work around an issue in the gnulib copy
+          shipped by the package which would break cross compilation.</para>
         </listitem>
       </varlistentry>
     </variablelist>

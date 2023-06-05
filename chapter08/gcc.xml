@@ -77,6 +77,7 @@ cd       build</userinput></screen>
              --enable-default-ssp     \
              --disable-multilib       \
              --disable-bootstrap      \
+             --disable-fixincludes    \
              --with-system-zlib</userinput></screen>
 
     <para>GCC supports seven different computer languages, but the
@@ -93,6 +94,17 @@ cd       build</userinput></screen>
           <para>This parameter makes the configure script use the ld program installed
           by the Binutils package built earlier in this chapter, rather than
           the cross-built version which would otherwise be used.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-fixincludes</parameter></term>
+        <listitem>
+          <para>By default, during the installation of GCC some system
+          headers would be <quote>fixed</quote> to be used with GCC.  This
+          is not necessary for a modern Linux system, and potentially 
+          harmful if a package is reinstalled after installing GCC.  This
+          switch prevents GCC from <quote>fixing</quote> the headers.</para>
         </listitem>
       </varlistentry>
 
@@ -159,13 +171,17 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     url="&test-results;"/> and
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
-    <para>Eleven tests in the i386 test suite for the gcc compiler are known to FAIL.
-    It's because the test files do not account for the
-    <parameter>--enable-default-pie</parameter> option.</para>
-
-    <para>Four tests related to PR100400 may be reported
-    as both XPASS and FAIL when testing the g++ compiler; the test file
-    is not well written.</para>
+    <para>Two tests named <filename>pr104610.c</filename> and
+    <filename>pr69482-1.c</filename> are known to fail because the test
+    files does not account for the
+    <parameter>--enable-default-ssp</parameter> option.
+    <!-- https://gcc.gnu.org/PR106375 and https://gcc.gnu.org/PR109353 -->
+    Two tests named <filename>copy.cc</filename> and
+    <filename>pr56837.c</filename> are known to fail.
+    <!-- https://gcc.gnu.org/PR107855#c6 -->
+    Additionally, several tests in the
+    <filename class='directory'>vect</filename> directory are known to fail
+    if the hardware does not support AVX.</para>
 
     <para>A few unexpected failures cannot always be avoided. The GCC developers
     are usually aware of these issues, but have not resolved them yet.
@@ -333,10 +349,10 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         and lto-dump</seg>
 
         <seg>libasan.{a,so}, libatomic.{a,so}, libcc1.so, libgcc.a, libgcc_eh.a,
-        libgcc_s.so, libgcov.a, libgomp.{a,so}, libitm.{a,so},
+        libgcc_s.so, libgcov.a, libgomp.{a,so}, libhwasan.{a,so}, libitm.{a,so},
         liblsan.{a,so}, liblto_plugin.so,
         libquadmath.{a,so}, libssp.{a,so}, libssp_nonshared.a,
-        libstdc++.{a,so}, libstdc++fs.a, libsupc++.a, libtsan.{a,so},
+        libstdc++.{a,so}, libstdc++exp.a, libstdc++fs.a, libsupc++.a, libtsan.{a,so},
         and libubsan.{a,so}</seg>
 
         <seg>/usr/include/c++, /usr/lib/gcc, /usr/libexec/gcc, and
@@ -543,6 +559,16 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="libhwasan">
+        <term><filename class="libraryfile">libhwasan</filename></term>
+        <listitem>
+          <para>The Hardware-assisted Address Sanitizer runtime library</para>
+          <indexterm zone="ch-system-gcc libhwasan">
+            <primary sortas="c-libhwasan">libhwasan</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="libitm">
         <term><filename class="libraryfile">libitm</filename></term>
         <listitem>
@@ -602,6 +628,16 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
           <para>The standard C++ library</para>
           <indexterm zone="ch-system-gcc libstdc">
             <primary sortas="c-libstdc++">libstdc++</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libstdcexp">
+        <term><filename class="libraryfile">libstdc++exp</filename></term>
+        <listitem>
+          <para>Experimental C++ Contracts library</para>
+          <indexterm zone="ch-system-gcc libstdcexp">
+            <primary sortas="c-libstdc++exp">libstdc++exp</primary>
           </indexterm>
         </listitem>
       </varlistentry>

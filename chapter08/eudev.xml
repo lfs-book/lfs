@@ -39,10 +39,18 @@
 
   <sect2 role="installation">
     <title>Installation of Eudev</title>
-
+    <!-- No longer seems needed. bdubbs 5/18/23
     <para>First fix the location of udev rules in the .pc file:</para>
 
 <screen><userinput remap="pre">sed -i '/udevdir/a udev_dir=${udevdir}' src/udev/udev.pc.in</userinput></screen>
+-->
+    <!-- different from systemd: we do not have a render group and file is
+    named differently -->
+    <para>Remove an unneeded group
+    <systemitem class="groupname">sgx</systemitem>, from the default udev
+    rules:</para>
+
+<screen><userinput remap="pre">sed -i -e 's/GROUP="sgx", //' rules/50-udev-default.rules</userinput></screen>
 
     <para>Prepare Eudev for compilation:</para>
 
@@ -96,7 +104,7 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
       consider it dangerous.  Create a configuration file to override it:
     </para>
 
-<screen><userinput remap="configure">cat > /etc/udev/rules.d/65-kvm.rules &lt;&lt; "EOF"
+<screen><userinput>cat > /etc/udev/rules.d/65-kvm.rules &lt;&lt; "EOF"
 <literal>KERNEL=="kvm", GROUP="kvm", MODE="0660", TAG+="uaccess"</literal>
 EOF</userinput></screen>
 
