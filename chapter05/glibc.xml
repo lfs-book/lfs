@@ -68,7 +68,7 @@ cd       build</userinput></screen>
       --prefix=/usr                      \
       --host=$LFS_TGT                    \
       --build=$(../scripts/config.guess) \
-      --enable-kernel=&min-kernel;                \
+      --enable-kernel=&min-kernel;               \
       --with-headers=$LFS/usr/include    \
       libc_cv_slibdir=/usr/lib</userinput></screen>
 
