@@ -114,10 +114,10 @@
 <!ENTITY coreutils-fin-du "156 MB">
 <!ENTITY coreutils-fin-sbu "0.9 SBU">
 
-<!ENTITY dbus-version "1.14.6">
-<!ENTITY dbus-size "1,339 KB">
+<!ENTITY dbus-version "1.14.8">
+<!ENTITY dbus-size "1,340 KB">
 <!ENTITY dbus-url "https://dbus.freedesktop.org/releases/dbus/dbus-&dbus-version;.tar.xz">
-<!ENTITY dbus-md5 "e809d7aa905ad82adeaf1d59db5445b1">
+<!ENTITY dbus-md5 "da42f55aeec51b355587bc3062fc2d41">
 <!ENTITY dbus-home "https://www.freedesktop.org/wiki/Software/dbus">
 <!ENTITY dbus-fin-du "19 MB">
 <!ENTITY dbus-fin-sbu "0.1 SBU">
@@ -441,12 +441,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "3">
-<!ENTITY linux-patch-version "5">
+<!ENTITY linux-patch-version "6">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "133,718 KB">
+<!ENTITY linux-size "133,687 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "9b517d394dc1446890b4b15bdf8afa9f">
+<!ENTITY linux-md5 "b30b7e0367fee0505eecbef74d852256">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 5.13.4 / gcc-11.1.0 on x86_64 : minimum is
  allnoconfig rounded down to allow for ongoing cleanups,
@@ -602,19 +602,19 @@
 <!-- If python minor version changes, updates in python and
      meson pages will be needed: python3.6 and python3.6m -->
 
-<!ENTITY python-version "3.11.3">
+<!ENTITY python-version "3.11.4">
 <!ENTITY python-minor "3.11">
-<!ENTITY python-size "19,440 KB">
+<!ENTITY python-size "19,488 KB">
 <!ENTITY python-url "https://www.python.org/ftp/python/&python-version;/Python-&python-version;.tar.xz">
-<!ENTITY python-md5 "c8d52fc4fb8ad9932a11d86d142ee73a">
+<!ENTITY python-md5 "fb7f7eae520285788449d569e45b6718">
 <!ENTITY python-home "https://www.python.org/">
 <!ENTITY python-tmp-du "529 MB">
 <!ENTITY python-tmp-sbu "0.4 SBU">
 <!ENTITY python-fin-du "372 MB">
 <!ENTITY python-fin-sbu "2.0 SBU">
 <!ENTITY python-docs-url "https://www.python.org/ftp/python/doc/&python-version;/python-&python-version;-docs-html.tar.bz2">
-<!ENTITY python-docs-md5 "7a1fc1824f7c96e779ef35fe10dde120">
-<!ENTITY python-docs-size "7,597 KB">
+<!ENTITY python-docs-md5 "cdce7b1189bcf52947f3b434ab04d7e2">
+<!ENTITY python-docs-size "7,649 KB">
 
 <!ENTITY readline-version "8.2">
 <!ENTITY readline-soversion "8.2"><!-- used for stripping -->
