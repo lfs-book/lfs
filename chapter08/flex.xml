@@ -51,6 +51,10 @@
     This is not present, so we use an environment variable to skip this process.
     Now, prepare Flex for compilation:</para> -->
 
+    &update-config-text;
+
+<screen><userinput remap="pre">tar -C build-aux &update-config-arg;</userinput></screen>
+
     <para>Prepare Flex for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr \
