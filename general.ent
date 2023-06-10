@@ -137,3 +137,14 @@
 
 <!ENTITY % patches-entities SYSTEM "patches.ent">
 %patches-entities;
+
+<!ENTITY update-config-text
+  "<para>Update the auxilary scripts of the building system to allow
+   building it for LoongArch:</para>">
+
+<!-- Use "tar &update-config-arg" or "tar -C build-aux update-config-arg"
+     We cannot append -C build-aux after these arguments because -C only
+     affects options that follow.  -->
+<!ENTITY update-config-arg
+  "-xvf ../autoconf-&autoconf-version;.tar.xz --strip-components=2 \
+    autoconf-&autoconf-version;/build-aux/config.{guess,sub}">
