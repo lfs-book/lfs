@@ -46,8 +46,8 @@
   (The related entry in <xref linkend="pkgmgmt-upgrade-issues"/> gives the
   rationale for using the <command>install</command> command here.)</para>
 
-  <note><para>The ELF loader's name is ld-linux-x86-64.so.2 on 64-bit systems
-  and ld-linux.so.2 on 32-bit systems.  The construct below selects the
+  <note><para>The ELF loader's name may vary on different systems.
+  The construct below selects the
   correct name for the current architecture, excluding anything ending
   with <quote>g</quote>, in case the commands below have already been
   run.</para></note>
