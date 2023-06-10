@@ -21,15 +21,11 @@
   <para>Create the required directory layout by issuing the following commands as
   <systemitem class="username">root</systemitem>:</para>
 
-<screen><userinput>mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
+<screen><userinput>mkdir -pv $LFS/{etc,lib64,var} $LFS/usr/{bin,lib,sbin}
 
 for i in bin lib sbin; do
   ln -sv usr/$i $LFS/$i
-done
-
-case $(uname -m) in
-  x86_64) mkdir -pv $LFS/lib64 ;;
-esac</userinput></screen>
+done</userinput></screen>
 
   <para>Programs in <xref linkend="chapter-temporary-tools"/> will be compiled
   with a cross-compiler (more details can be found in section <xref
