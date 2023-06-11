@@ -46,6 +46,10 @@
 
     <screen><userinput remap="pre">sed -i '/test_mkfds/s/^/#/' tests/helpers/Makemodule.am</userinput></screen>
 
+    <para>Disable a test which does not compile on LoongArch:</para>
+
+    <screen><userinput remap="pre">sed -i '/test_enosys/s/^/#/' tests/helpers/Makemodule.am</userinput></screen>
+
     <para>Prepare Util-linux for compilation:</para>
 
 <screen revision="sysv"><userinput remap="configure">./configure ADJTIME_PATH=/var/lib/hwclock/adjtime \
@@ -114,6 +118,10 @@ su tester -c "make -k check"</userinput></screen>
     Supplemental SSE3) enabled. In addition,
     two sub-tests from misc: mbsencode and one sub-test from script: replay are 
     known to fail.</para>
+
+    <!-- Related to non-4K page size. -->
+    <para>Two tests named <filename>fadvise/drop</filename> and
+    <filename>fincore/count</filename> are known to fail.</para>
 
     <para>Install the package:</para>
 
