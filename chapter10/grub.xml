@@ -137,7 +137,7 @@ mount /boot/efi</userinput></screen>
 
     <para>Install the GRUB files into <filename
     class="directory">/boot/grub</filename> and the GRUB EFI executable into
-    <filename class="directory">/boot/efi/EFI/BOOTAA64.EFI</filename>:</para>
+	<filename class="directory">/boot/efi/EFI/BOOT/BOOTAA64.EFI</filename>:</para>
 
     <warning>
       <para>The following command will overwrite
@@ -153,7 +153,7 @@ mount /boot/efi</userinput></screen>
       <para>
         <parameter>--removable</parameter> may seem strange here.  The UEFI
         firmware searches EFI executables for boot loaders in a hardcoded
-        path, <filename>EFI/BOOTAA64.EFI</filename> in the ESP, and other
+        path, <filename>EFI/BOOT/BOOTAA64.EFI</filename> in the ESP, and other
         boot loader paths listed in the EFI variables.  We've not installed
         the utilities for manipulating EFI variables so we need to install
         the EFI executable into the hardcoded path.  The hardcoded path is
