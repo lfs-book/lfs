@@ -58,6 +58,9 @@
 
 <screen><userinput remap="test">make check</userinput></screen>
 
+    <para>7 tests are known to fail because the support for LoongArch is
+    not complete in this Libelf release.</para>
+
     <para>Install only Libelf:</para>
 
 <screen><userinput remap="install">make -C libelf install
