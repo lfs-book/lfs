@@ -54,6 +54,7 @@
 <screen><userinput remap="configure">./config --prefix=/usr         \
          --openssldir=/etc/ssl \
          --libdir=lib          \
+         linux-generic64       \
          shared                \
          zlib-dynamic</userinput></screen>
 
