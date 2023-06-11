@@ -40,6 +40,10 @@
   <sect2 role="installation">
     <title>Installation of Check</title>
 
+    &update-config-text;
+
+<screen><userinput remap="pre">tar &update-config-arg;</userinput></screen>
+
     <para>Prepare Check for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --disable-static</userinput></screen>
