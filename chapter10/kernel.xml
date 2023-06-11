@@ -172,25 +172,26 @@ General architecture-dependent options  ---&gt;
    [*] Enable seccomp to safely compute untrusted bytecode [CONFIG_SECCOMP]
    [*] Stack Protector buffer overflow detection [CONFIG_STACKPROTECTOR]
    [*]   Strong Stack Protector [CONFIG_STACKPROTECTOR_STRONG]
-Networking support  ---&gt;
-  Networking options  ---&gt;
-   &lt;*&gt; The IPv6 protocol [CONFIG_IPV6]
+[*] Networking support  ---&gt;   [CONFIG_NET]
+   Networking options  ---&gt;
+      [*] TCP/IP networking [CONFIG_INET]
+      &lt;*&gt;   The IPv6 protocol [CONFIG_IPV6]
 Device Drivers  ---&gt;
-  Generic Driver Options  ---&gt;
-   [ ] Support for uevent helper [CONFIG_UEVENT_HELPER]
-   [*] Maintain a devtmpfs filesystem to mount at /dev [CONFIG_DEVTMPFS]
-   [*]   Automount devtmpfs at /dev, after the kernel mounted the rootfs [CONFIG_DEVTMPFS_MOUNT]
-   Firmware Loader ---&gt;
-      [ ] Enable the firmware sysfs fallback mechanism [CONFIG_FW_LOADER_USER_HELPER]
-  Firmware Drivers   ---&gt;
-   [*] Export DMI identification via sysfs to userspace [CONFIG_DMIID]
-   EFI (Extensible Firmware Interface) Support  ---&gt;
-     [*] Enable the generic EFI decompressor [CONFIG_EFI_ZBOOT]
-  Graphics support ---&gt;
-   Frame buffer Devices ---&gt;
-      &lt;*&gt; Support for frame buffer devices ---&gt;
-   Console display driver support ---&gt;
-      [*] Framebuffer Console support [CONFIG_FRAMEBUFFER_CONSOLE]
+   Generic Driver Options  ---&gt;
+      [ ] Support for uevent helper [CONFIG_UEVENT_HELPER]
+      [*] Maintain a devtmpfs filesystem to mount at /dev [CONFIG_DEVTMPFS]
+      [*]   Automount devtmpfs at /dev, after the kernel mounted the rootfs [CONFIG_DEVTMPFS_MOUNT]
+      Firmware Loader ---&gt;
+         [ ] Enable the firmware sysfs fallback mechanism [CONFIG_FW_LOADER_USER_HELPER]
+   Firmware Drivers   ---&gt;
+      [*] Export DMI identification via sysfs to userspace [CONFIG_DMIID]
+      EFI (Extensible Firmware Interface) Support  ---&gt;
+         [*] Enable the generic EFI decompressor [CONFIG_EFI_ZBOOT]
+   Graphics support ---&gt;
+      Frame buffer Devices ---&gt;
+         &lt;*&gt; Support for frame buffer devices ---&gt;
+      Console display driver support ---&gt;
+         [*] Framebuffer Console support [CONFIG_FRAMEBUFFER_CONSOLE]
 File systems  ---&gt;
    [*] Inotify support for userspace [CONFIG_INOTIFY_USER]
        Pseudo filesystems  ---&gt;
