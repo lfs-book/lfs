@@ -146,7 +146,7 @@ su tester -c "make -k check"</userinput></screen>
         chmem, choom, chrt, col, colcrt, colrm, column, ctrlaltdel, delpart, dmesg,
         eject, fallocate, fdisk, fincore, findfs, findmnt, flock, fsck,
         fsck.cramfs, fsck.minix, fsfreeze, fstrim, getopt, hardlink, hexdump, hwclock,
-        i386 (link to setarch), ionice, ipcmk, ipcrm, ipcs, irqtop, isosize, kill, last, 
+        ionice, ipcmk, ipcrm, ipcs, irqtop, isosize, kill, last, 
         lastb (link to last), ldattach, linux32 (link to setarch), linux64 (link to setarch),
         logger, look, losetup, lsblk, lscpu, lsipc, lsirq, lsfd, lslocks, lslogins,
         lsmem, lsns, mcookie, mesg, mkfs, mkfs.bfs, mkfs.cramfs, mkfs.minix, mkswap,
@@ -155,7 +155,7 @@ su tester -c "make -k check"</userinput></screen>
         scriptlive, scriptreplay, setarch, setsid, setterm, sfdisk, sulogin, swaplabel,
         swapoff, swapon, switch_root, taskset, uclampset, ul,
         umount, uname26 (link to setarch), unshare, utmpdump, uuidd, uuidgen, uuidparse,
-        wall, wdctl, whereis, wipefs, x86_64 (link to setarch), and zramctl</seg>
+        wall, wdctl, whereis, wipefs, and zramctl</seg>
         <seg>libblkid.so, libfdisk.so, libmount.so,
         libsmartcols.so, and libuuid.so</seg>
         <seg>/usr/include/blkid,
@@ -534,16 +534,6 @@ su tester -c "make -k check"</userinput></screen>
           clock</para>
           <indexterm zone="ch-system-util-linux hwclock">
             <primary sortas="b-hwclock">hwclock</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="i386">
-        <term><command>i386</command></term>
-        <listitem>
-          <para>A symbolic link to setarch</para>
-          <indexterm zone="ch-system-util-linux i386">
-            <primary sortas="b-i386">i386</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -1293,16 +1283,6 @@ su tester -c "make -k check"</userinput></screen>
           <para>Wipes a filesystem signature from a device</para>
           <indexterm zone="ch-system-util-linux wipefs">
             <primary sortas="b-wipefs">wipefs</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="x86_64">
-        <term><command>x86_64</command></term>
-        <listitem>
-          <para>A symbolic link to setarch</para>
-          <indexterm zone="ch-system-util-linux x86_64">
-            <primary sortas="b-x86_64">x86_64</primary>
           </indexterm>
         </listitem>
       </varlistentry>
