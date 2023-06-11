@@ -307,10 +307,10 @@
 <!ENTITY groff-fin-du "89 MB">
 <!ENTITY groff-fin-sbu "0.2 SBU">
 
-<!ENTITY grub-version "2.06">
-<!ENTITY grub-size "6,428 KB">
-<!ENTITY grub-url "https://ftp.gnu.org/gnu/grub/grub-&grub-version;.tar.xz">
-<!ENTITY grub-md5 "cf0fd928b1e5479c8108ee52cb114363">
+<!ENTITY grub-version "2.11-pre-gc016a969d">
+<!ENTITY grub-size "6,780 KB">
+<!ENTITY grub-url "https://www.linuxfromscratch.org/~xry111/lfs/download/grub-&grub-version;.tar.xz">
+<!ENTITY grub-md5 "b12b756edf519f7ee546652401b040d3">
 <!ENTITY grub-home "&gnu-software;grub/">
 <!ENTITY grub-fin-du "161 MB">
 <!ENTITY grub-fin-sbu "0.3 SBU">

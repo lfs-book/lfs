@@ -40,6 +40,16 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
     <listitem>
+      <para>2023-06-11</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Update to grub-2.11-pre-gc016a969d for
+          LoongArch support.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2023-06-09</para>
       <itemizedlist>
         <listitem revision='systemd'>
