@@ -84,7 +84,7 @@
         <para>MD5 sum: <literal>&glibc-fhs-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+<!--
     <varlistentry>
       <term>GRUB Upstream Fixes Patch - <token>&grub-upstream-fixes-patch-size;</token>:</term>
       <listitem>
@@ -92,7 +92,7 @@
         <para>MD5 sum: <literal>&grub-upstream-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+-->
     <varlistentry>
       <term>Kbd Backspace/Delete Fix Patch - <token>&kbd-backspace-patch-size;</token>:</term>
       <listitem>
