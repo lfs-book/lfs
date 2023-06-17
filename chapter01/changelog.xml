@@ -44,6 +44,14 @@
       <para>2023-06-17</para>
       <itemizedlist>
         <listitem>
+          <para>[xry111] - Update to linux-6.3.8.  Fixes
+          <ulink url='&lfs-ticket-root;5272'>#5272</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[xry111] - Update to kbd-2.6.0.  Fixes
+          <ulink url='&lfs-ticket-root;5273'>#5273</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[rahul] - Changed from pkg-config to pkgconf 1.9.5.</para>
         </listitem>
       </itemizedlist>
