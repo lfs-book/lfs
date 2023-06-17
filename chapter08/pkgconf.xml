@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-pkgconf" role="wrap">
+  <?dbhtml filename="pkgconf.html"?>
+
+  <sect1info condition="script">
+    <productname>pkgconf</productname>
+    <productnumber>&pkgconf-version;</productnumber>
+    <address>&pkgconf-url;</address>
+  </sect1info>
+
+  <title>Pkgconf-&pkgconf-version;</title>
+
+  <indexterm zone="ch-system-pkgconf">
+    <primary sortas="a-pkgconf">Pkgconf</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The pkgconf package is a 
+    successor to pkg-config and contains a tool for passing the include path
+    and/or library paths to build tools during the configure and make phases
+    of package installations.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&pkgconf-fin-sbu;</seg>
+        <seg>&pkgconf-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of Pkgconf</title>
+
+    <para>Prepare Pkgconf for compilation:</para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr              \
+            --disable-static           \
+            --docdir=/usr/share/doc/pkgconf-&pkgconf-version;</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+    <para>To maintain compatibility with the original Pkg-config create a
+    symlink:</para>
+
+<screen><userinput remap="install">ln -sfv pkgconf /usr/bin/pkg-config</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-pkgconf" role="content">
+    <title>Contents of Pkgconf</title>
+
+    <segmentedlist>
+      <segtitle>Installed programs</segtitle>
+      <segtitle>Installed library</segtitle>
+      <segtitle>Installed directory</segtitle>
+
+      <seglistitem>
+        <seg>pkgconf, pkg-config (link to pkgconf), and bomtool</seg>
+        <seg>libpkgconf.so</seg>
+        <seg>/usr/share/doc/pkgconf-&pkgconf-version;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="pkgconf">
+        <term><command>pkgconf</command></term>
+        <listitem>
+          <para>Returns meta information for the specified library or
+          package</para>
+          <indexterm zone="ch-system-pkgconf pkgconf">
+            <primary sortas="b-pkgconf">pkgconf</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="bomtool">
+        <term><command>bomtool</command></term>
+        <listitem>
+          <para>Generates a Software Bill Of Materials from pkg-config .pc
+          files</para>
+          <indexterm zone="ch-system-pkgconf bomtool">
+            <primary sortas="b-bomtool">bomtool</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libpkgconf">
+        <term><filename class="libraryfile">libpkgconf</filename></term>
+        <listitem>
+          <para>Contains most of pkgconf's functionality, while allowing
+          other tools like IDEs and compilers to use its frameworks</para>
+          <indexterm zone="ch-system-pkgconf libpkgconf">
+            <primary sortas="c-libpkgconf">libpkgconf</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+
+</sect1>

@@ -1607,7 +1607,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Bison, Coreutils, Flex, GCC, Gettext, Glibc,
-          Gzip, Make, OpenSSL, Pkg-config, Sed, Xz, and Zlib</seg>
+          Gzip, Make, OpenSSL, Pkgconf, Sed, Xz, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2484,9 +2484,9 @@
       </segmentedlist>
 
 <!-- Begin Pkg-config dependency info -->
-  <bridgehead renderas="sect2" id="pkgconfig-dep">Pkg-config</bridgehead>
+  <bridgehead renderas="sect2" id="pkgconf-dep">Pkgconf</bridgehead>
 
-      <segmentedlist id="pkgconfig-depends">
+      <segmentedlist id="pkgconf-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Gawk, GCC, Glibc, Grep, Make,
@@ -2494,33 +2494,31 @@
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="pkgconfig-rundeps">
+      <segmentedlist id="pkgconf-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
           <seg>Glibc</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="pkgconfig-testdeps">
+      <segmentedlist id="pkgconf-testdeps">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
           <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="pkgoonfig-before">
+      <segmentedlist id="pkgconf-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
           <seg>Kmod</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="pkgconfig-optdeps">
+      <segmentedlist id="pkgconf-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
-          <seg>
-            <ulink url="&blfs-book;general/glib2.html">Glib2</ulink>
-          </seg>
+          <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 

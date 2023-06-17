@@ -566,13 +566,13 @@
 <!ENTITY perl-fin-du "234 MB">
 <!ENTITY perl-fin-sbu "7.9 SBU">
 
-<!ENTITY pkgconfig-version "0.29.2">
-<!ENTITY pkgconfig-size "1,970 KB">
-<!ENTITY pkgconfig-url "https://pkg-config.freedesktop.org/releases/pkg-config-&pkgconfig-version;.tar.gz">
-<!ENTITY pkgconfig-md5 "f6e931e319531b736fadc017f470e68a">
-<!ENTITY pkgconfig-home "https://www.freedesktop.org/wiki/Software/pkg-config">
-<!ENTITY pkgconfig-fin-du "29 MB">
-<!ENTITY pkgconfig-fin-sbu "0.1 SBU">
+<!ENTITY pkgconf-version "1.9.5">
+<!ENTITY pkgconf-size "304 KB">
+<!ENTITY pkgconf-url "https://distfiles.dereferenced.org/pkgconf/pkgconf-&pkgconf-version;.tar.xz">
+<!ENTITY pkgconf-md5 "0a8b69723bef4ebad83e9c8b43a75cc7">
+<!ENTITY pkgconf-home "http://pkgconf.org/">
+<!ENTITY pkgconf-fin-du "8.1 MB">
+<!ENTITY pkgconf-fin-sbu "less than 0.1 SBU">
 
 <!ENTITY procps-ng-version "4.0.3">
 <!ENTITY procps-ng-size "1,268 KB">
