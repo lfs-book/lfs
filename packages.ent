@@ -375,10 +375,10 @@
 <!ENTITY jinja2-fin-du "3.4 MB">
 <!ENTITY jinja2-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY kbd-version "2.5.1">
-<!ENTITY kbd-size "1,457 KB">
+<!ENTITY kbd-version "2.6.0">
+<!ENTITY kbd-size "1,560 KB">
 <!ENTITY kbd-url "https://www.kernel.org/pub/linux/utils/kbd/kbd-&kbd-version;.tar.xz">
-<!ENTITY kbd-md5 "10f10c0a9d897807733f2e2419814abb">
+<!ENTITY kbd-md5 "a8331144fc8e9421108c10311f28e078">
 <!ENTITY kbd-home "https://kbd-project.org/">
 <!ENTITY kbd-fin-du "35 MB">
 <!ENTITY kbd-fin-sbu "0.1 SBU">
@@ -441,12 +441,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "3">
-<!ENTITY linux-patch-version "6">
+<!ENTITY linux-patch-version "8">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "133,687 KB">
+<!ENTITY linux-size "133,708 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "b30b7e0367fee0505eecbef74d852256">
+<!ENTITY linux-md5 "237a5269575160fed17c7f55d93cc46c">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 5.13.4 / gcc-11.1.0 on x86_64 : minimum is
  allnoconfig rounded down to allow for ongoing cleanups,
@@ -575,13 +575,13 @@
 <!ENTITY perl-fin-du "234 MB">
 <!ENTITY perl-fin-sbu "7.9 SBU">
 
-<!ENTITY pkgconfig-version "0.29.2">
-<!ENTITY pkgconfig-size "1,970 KB">
-<!ENTITY pkgconfig-url "https://pkg-config.freedesktop.org/releases/pkg-config-&pkgconfig-version;.tar.gz">
-<!ENTITY pkgconfig-md5 "f6e931e319531b736fadc017f470e68a">
-<!ENTITY pkgconfig-home "https://www.freedesktop.org/wiki/Software/pkg-config">
-<!ENTITY pkgconfig-fin-du "29 MB">
-<!ENTITY pkgconfig-fin-sbu "0.1 SBU">
+<!ENTITY pkgconf-version "1.9.5">
+<!ENTITY pkgconf-size "304 KB">
+<!ENTITY pkgconf-url "https://distfiles.dereferenced.org/pkgconf/pkgconf-&pkgconf-version;.tar.xz">
+<!ENTITY pkgconf-md5 "0a8b69723bef4ebad83e9c8b43a75cc7">
+<!ENTITY pkgconf-home "http://pkgconf.org/">
+<!ENTITY pkgconf-fin-du "8.1 MB">
+<!ENTITY pkgconf-fin-sbu "less than 0.1 SBU">
 
 <!ENTITY procps-ng-version "4.0.3">
 <!ENTITY procps-ng-size "1,268 KB">
