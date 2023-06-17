@@ -52,7 +52,8 @@
           <ulink url='&lfs-ticket-root;5273'>#5273</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[rahul] - Changed from pkg-config to pkgconf 1.9.5.</para>
+          <para>[rahul] - Changed from pkg-config to pkgconf 1.9.5.  Fixes
+          <ulink url='&lfs-ticket-root;5274'>#5274</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
