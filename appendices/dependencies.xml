@@ -1000,7 +1000,8 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-             <ulink url="https://gcc.gnu.org/wiki/GNAT">GNAT</ulink>
+             <ulink url="https://www.gdcproject.org/">GDC</ulink>,
+             <ulink url="https://gcc.gnu.org/wiki/GNAT">GNAT</ulink>,
              and
              <ulink url="https://repo.or.cz/isl.git">ISL</ulink>
           </seg>
