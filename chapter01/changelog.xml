@@ -41,6 +41,15 @@
     -->
 
     <listitem>
+      <para>2023-06-20</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Patch libelf for LoongArch support.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2023-06-17</para>
       <itemizedlist>
         <listitem>

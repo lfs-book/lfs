@@ -44,6 +44,11 @@
       <para>Libelf is part of the elfutils-&elfutils-version; package. Use
       the elfutils-&elfutils-version;.tar.bz2 file as the source tarball.</para>
 
+    <para>Add LoongArch support for this package:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../&elfutils-loongarch-patch;
+autoreconf -fi</userinput></screen>
+
     <para>Prepare Libelf for compilation:</para>
 
     <screen><userinput remap="configure">./configure --prefix=/usr                \
@@ -57,9 +62,6 @@
     <para>To test the results, issue:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
-
-    <para>7 tests are known to fail because the support for LoongArch is
-    not complete in this Libelf release.</para>
 
     <para>Install only Libelf:</para>
 

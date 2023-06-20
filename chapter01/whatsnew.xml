@@ -309,6 +309,10 @@
     </listitem>
 
     <listitem>
+      <para>&elfutils-loongarch-patch;</para>
+    </listitem>
+
+    <listitem>
       <para>Flit-core-&flit-core-version;</para>
     </listitem>
 
