@@ -432,7 +432,9 @@
       <segmentedlist id="check-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg>
+            <ulink url='&github;/testing-cabal/subunit'>libsubunit</ulink>
+          </seg>
         </seglistitem>
       </segmentedlist>
 
@@ -489,7 +491,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep,
-          Make, Sed, Systemd, and Util-linux</seg>
+          Make, Pkgconf, Sed, Systemd, and Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -606,7 +608,9 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep,
-          Gzip, Make, Sed, Texinfo, and Util-linux</seg>
+          Gzip, Make, Pkgconf, Sed,
+          <phrase revision='systemd'>Systemd, </phrase>Texinfo, and
+          Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -996,7 +1000,8 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-             <ulink url="https://gcc.gnu.org/wiki/GNAT">GNAT</ulink>
+             <ulink url="https://www.gdcproject.org/">GDC</ulink>,
+             <ulink url="https://gcc.gnu.org/wiki/GNAT">GNAT</ulink>,
              and
              <ulink url="https://repo.or.cz/isl.git">ISL</ulink>
           </seg>
@@ -1485,7 +1490,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
          <seg>Bash, Bison, Coreutils, Flex, GCC, Glibc, Make, Libcap, Libelf,
-         Linux API Headers, and Zlib</seg>
+         Linux API Headers, Pkgconf, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1516,7 +1521,7 @@
           <seg>
             <ulink url="&blfs-book;server/db.html">Berkeley DB</ulink>,
             <ulink url="&blfs-book;postlfs/iptables.html">iptables</ulink>,
-            <ulink url="https://github.com/libbpf/libbpf">libbpf</ulink>,
+            <ulink url="&github;/libbpf/libbpf">libbpf</ulink>,
             <ulink url="&blfs-book;basicnet/libmnl.html">libmnl</ulink>, and
             <ulink url="&blfs-book;basicnet/libtirpc.html">libtirpc</ulink>
           </seg>
@@ -1607,7 +1612,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Bison, Coreutils, Flex, GCC, Gettext, Glibc,
-          Gzip, Make, OpenSSL, Pkg-config, Sed, Xz, and Zlib</seg>
+          Gzip, Make, OpenSSL, Pkgconf, Sed, Xz, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1822,7 +1827,7 @@
       <segmentedlist id="libpipeline-testdeps">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
-          <seg>Check</seg>
+          <seg>Check and Pkgconf</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2051,7 +2056,8 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Bzip2, Coreutils, Flex, GCC, GDBM, Gettext,
-          Glibc, Grep, Groff, Gzip, Less, Libpipeline, Make, Sed, and Xz</seg>
+          Glibc, Grep, Groff, Gzip, Less, Libpipeline, Make, Pkgconf, Sed,
+          <phrase revision='systemd'>Systemd, </phrase>and Xz</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2484,9 +2490,9 @@
       </segmentedlist>
 
 <!-- Begin Pkg-config dependency info -->
-  <bridgehead renderas="sect2" id="pkgconfig-dep">Pkg-config</bridgehead>
+  <bridgehead renderas="sect2" id="pkgconf-dep">Pkgconf</bridgehead>
 
-      <segmentedlist id="pkgconfig-depends">
+      <segmentedlist id="pkgconf-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Gawk, GCC, Glibc, Grep, Make,
@@ -2494,33 +2500,33 @@
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="pkgconfig-rundeps">
+      <segmentedlist id="pkgconf-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
           <seg>Glibc</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="pkgconfig-testdeps">
+      <segmentedlist id="pkgconf-testdeps">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
           <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="pkgoonfig-before">
+      <segmentedlist id="pkgconf-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>Kmod</seg>
+          <seg><phrase revision='systemd'>D-Bus, </phrase>E2fsprogs,
+          IProute2, Kmod, Man-DB, Procps-ng, Python,
+		  <phrase revision='systemd'>Systemd, </phrase>and Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="pkgconfig-optdeps">
+      <segmentedlist id="pkgconf-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
-          <seg>
-            <ulink url="&blfs-book;general/glib2.html">Glib2</ulink>
-          </seg>
+          <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2530,7 +2536,9 @@
       <segmentedlist id="procps-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, Coreutils, GCC, Glibc, Make, and Ncurses</seg>
+          <seg>Bash, Binutils, Coreutils, GCC, Glibc, Make, Ncurses,
+          <phrase revision='sysv'>and </phrase>Pkgconf<phrase
+          revision='systemd'>, and Systemd</phrase></seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2558,7 +2566,12 @@
       <segmentedlist id="procps-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg>
+            <phrase revision='systemd'>None</phrase>
+            <phrase revision='sysv'>
+              <ulink url='&blfs-book;general/elogind.xml'>elogind</ulink>
+            </phrase>
+          </seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2608,7 +2621,8 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Expat, GCC, Gdbm, Gettext, Glibc,
-          Grep, Libffi, Make, Ncurses, OpenSSL, Sed, and Util-linux</seg>
+          Grep, Libffi, Make, Ncurses, OpenSSL, Pkgconf, Sed, and
+          Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2812,8 +2826,8 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
          <seg>Acl, Attr, Bash, Binutils, Coreutils, Diffutils, Expat, Gawk,
-         GCC, Glibc, Gperf, Grep, Jinja2, Libcap, Meson, Sed, Util-linux,
-         and Zstd</seg>
+         GCC, Glibc, Gperf, Grep, Jinja2, Libcap, Meson, Pkgconf, Sed,
+         Util-linux, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2834,7 +2848,7 @@
       <segmentedlist id="systemd-before" revision='systemd'>
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg>D-Bus, E2fsprogs, Man-DB, Procps-ng, and Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -3056,8 +3070,8 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Diffutils,
-          <phrase revision="sysv">Eudev, </phrase>Findutils, Gawk,
-          GCC, Gettext, Glibc, Grep, Make, Ncurses, Sed,
+          <phrase revision="sysv">Eudev, </phrase>File, Findutils, Gawk,
+          GCC, Gettext, Glibc, Grep, Make, Ncurses, Pkgconf, Sed,
           <phrase revision="systemd">Systemd, </phrase>and Zlib</seg>
         </seglistitem>
       </segmentedlist>
@@ -3089,10 +3103,14 @@
           <seg>
             <ulink
               url="https://people.redhat.com/sgrubb/libcap-ng/">Libcap-NG</ulink>,
+            <ulink url="&github;/openSUSE/libeconf">libeconf</ulink>,
+            <ulink url="https://pagure.io/libuser/">libuser</ulink>,
+            <ulink url="&github;/altlinux/libutempter">libutempter</ulink>,
             <ulink
-              url="&blfs-book;postlfs/linux-pam.html">Linux-PAM</ulink>
-            and <ulink
-              url="&blfs-book;postlfs/smartmontools.html">smartmontools</ulink>
+              url="&blfs-book;postlfs/linux-pam.html">Linux-PAM</ulink>,
+            <ulink
+              url="&blfs-book;postlfs/smartmontools.html">smartmontools</ulink>, and
+            <ulink url="&blfs-book;general/slang.html">slang</ulink>
           </seg>
         </seglistitem>
       </segmentedlist>
