@@ -57,10 +57,11 @@
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>To maintain compatibility with the original Pkg-config create a
-    symlink:</para>
+    <para>To maintain compatibility with the original Pkg-config create two
+    symlinks:</para>
 
-<screen><userinput remap="install">ln -sfv pkgconf /usr/bin/pkg-config</userinput></screen>
+<screen><userinput remap="install">ln -sv pkgconf   /usr/bin/pkg-config
+ln -sv pkgconf.1 /usr/share/man/man1/pkg-config.1</userinput></screen>
 
   </sect2>
 
