@@ -195,9 +195,9 @@ esac</userinput></screen>
 
 <screen><userinput remap="install">touch /etc/ld.so.conf</userinput></screen>
 
-    <para>Fix the Makefile to skip an unneeded sanity check
-    that fails in the LFS partial environment:
-    </para>
+    <!-- https://sourceware.org/bugzilla/show_bug.cgi?id=21911 -->
+    <para>Fix the Makefile to skip an outdated sanity check
+    that fails with a modern Glibc configuration:</para>
 
 <screen><userinput remap="install">sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile</userinput></screen>
 

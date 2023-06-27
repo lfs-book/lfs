@@ -229,9 +229,6 @@
     <listitem>
       <para>Perl-&perl-version;</para>
     </listitem>
-    <!--<listitem>
-      <para>Pkg-config-&pkgconfig-version;</para>
-    </listitem>-->
     <listitem>
       <para>Procps-ng-&procps-ng-version;</para>
     </listitem>
@@ -308,6 +305,10 @@
     <listitem><para></para></listitem>  <!-- satisfy build -->
 
     <listitem>
+      <para>Pkgconf-&flit-core-version;</para>
+    </listitem>
+
+    <listitem>
       <para>Flit-core-&flit-core-version;</para>
     </listitem>
 
@@ -327,6 +328,10 @@
   <itemizedlist>
     <title>Removed:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
+
+    <listitem>
+      <para>Pkg-config-0.29.2</para>
+    </listitem>
 
     <listitem>
       <para>systemd-252-security_fix-1.patch</para>
