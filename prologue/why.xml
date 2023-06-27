@@ -487,10 +487,14 @@
       </listitem>
 
       <listitem>
-        <para>Pkg-config</para>
+        <para>Pkgconf</para>
 
-        <para>This package provides a program that returns meta-data about an
-        installed library or package.</para>
+        <para>This package contains a program which helps to configure
+        compiler and linker flags for development libraries.  The program
+        can be used as a drop-in replacement of
+        <command>pkg-config</command>, which is needed by the building
+        system of many packages.  It's maintained more actively and slightly
+        faster than the original Pkg-config package.</para>
       </listitem>
 
       <listitem>

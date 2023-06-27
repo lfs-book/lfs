@@ -214,12 +214,14 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     for "historical" reasons.</para>
 
 <screen><userinput remap="install">ln -svr /usr/bin/cpp /usr/lib</userinput></screen>
-  <!-- already done earlier
-    <para>Many packages use the name <command>cc</command> to call the C
-    compiler. To satisfy those packages, create a symlink:</para>
 
-<screen><userinput remap="install">ln -sv gcc /usr/bin/cc</userinput></screen>
-  -->
+    <para>Many packages use the name <command>cc</command> to call the C
+    compiler.  We've already created <command>cc</command> as a symlink in
+    <xref linkend='ch-tools-gcc-pass2'/>, create its man page as a symlink
+    as well:</para>
+
+<screen><userinput remap="install">ln -sv gcc.1 /usr/share/man/man1/cc.1</userinput></screen>
+
     <para>Add a compatibility symlink to enable building programs with
     Link Time Optimization (LTO):</para>
 
