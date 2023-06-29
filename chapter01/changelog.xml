@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>2023-06-29</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Add libxcrypt-4.4.35.  Fixes
+          <ulink url='&lfs-ticket-root;5280'>#5280</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2023-06-17</para>
       <itemizedlist>
         <listitem>

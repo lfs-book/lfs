@@ -305,6 +305,10 @@
     <listitem><para></para></listitem>  <!-- satisfy build -->
 
     <listitem>
+      <para>Libxcrypt-&libxcrypt-version;</para>
+    </listitem>
+
+    <listitem>
       <para>Pkgconf-&flit-core-version;</para>
     </listitem>
 
