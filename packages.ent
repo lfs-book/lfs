@@ -350,10 +350,10 @@
 <!ENTITY intltool-fin-du "1.5 MB">
 <!ENTITY intltool-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY iproute2-version "6.3.0">
-<!ENTITY iproute2-size "894 KB">
+<!ENTITY iproute2-version "6.4.0">
+<!ENTITY iproute2-size "904 KB">
 <!ENTITY iproute2-url "&kernel;linux/utils/net/iproute2/iproute2-&iproute2-version;.tar.xz">
-<!ENTITY iproute2-md5 "53ecd48564c75d5fa4b5325d47344d68">
+<!ENTITY iproute2-md5 "90ce0eb84a8f1e2b14ffa77e8eb3f5ed">
 <!ENTITY iproute2-home "&kernel;linux/utils/net/iproute2/">
 <!ENTITY iproute2-fin-du "17 MB">
 <!ENTITY iproute2-fin-sbu "0.1 SBU">
@@ -431,13 +431,13 @@
 <!ENTITY libtool-fin-sbu "1.4 SBU">
 
 <!ENTITY linux-major-version "6">
-<!ENTITY linux-minor-version "3">
-<!ENTITY linux-patch-version "10">
+<!ENTITY linux-minor-version "4">
+<!ENTITY linux-patch-version "1">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "133,750 KB">
+<!ENTITY linux-size "134,584 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "c3c1d7ab7644ad3d3ad10919c679243f">
+<!ENTITY linux-md5 "ab345e1ea1c103c311248f078d92a160">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 5.13.4 / gcc-11.1.0 on x86_64 : minimum is
  allnoconfig rounded down to allow for ongoing cleanups,
