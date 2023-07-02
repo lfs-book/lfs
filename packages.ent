@@ -568,7 +568,7 @@
 
 <!ENTITY pkgconf-version "1.9.5">
 <!ENTITY pkgconf-size "304 KB">
-<!ENTITY pkgconf-url "https://distfiles.dereferenced.org/pkgconf/pkgconf-&pkgconf-version;.tar.xz">
+<!ENTITY pkgconf-url "https://gentoo.osuosl.org/distfiles/pkgconf-&pkgconf-version;.tar.xz">
 <!ENTITY pkgconf-md5 "0a8b69723bef4ebad83e9c8b43a75cc7">
 <!ENTITY pkgconf-home "http://pkgconf.org/">
 <!ENTITY pkgconf-fin-du "8.1 MB">
