@@ -41,11 +41,41 @@
     -->
 
     <listitem>
-      <para>2023-06-29</para>
+      <para>2023-07-02</para>
       <itemizedlist>
         <listitem>
           <para>[xry111] - Add libxcrypt-4.4.35.  Fixes
           <ulink url='&lfs-ticket-root;5280'>#5280</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2023-07-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20230615.  Addresses
+          <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to vim-9.0.1671.  Addresses
+          <ulink url='&lfs-ticket-root;4500'>#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to util-linux-2.39.1.  Addresses
+          <ulink url='&lfs-ticket-root;5278'>#5278</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.3.10.  Addresses
+          <ulink url='&lfs-ticket-root;5276'>#5276</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[rahul] - Update to kbd-2.6.1.  Fixes
+          <ulink url='&lfs-ticket-root;5279'>#5279</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gettext-0.22.  Fixes
+          <ulink url='&lfs-ticket-root;5275'>#5275</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
