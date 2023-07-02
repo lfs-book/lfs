@@ -430,6 +430,14 @@
 <!ENTITY libtool-fin-du "44 MB">
 <!ENTITY libtool-fin-sbu "1.4 SBU">
 
+<!ENTITY libxcrypt-version "4.4.35">
+<!ENTITY libxcrypt-size "612 KB">
+<!ENTITY libxcrypt-url "&github;/besser82/libxcrypt/releases/download/&libxcrypt-version;/libxcrypt-&libxcrypt-version;.tar.xz">
+<!ENTITY libxcrypt-md5 "1d8487dfc43ee8e31a858456b868f836">
+<!ENTITY libxcrypt-home "&github;/besser82/libxcrypt/">
+<!ENTITY libxcrypt-fin-du "16 MB">
+<!ENTITY libxcrypt-fin-sbu "0.1 SBU">
+
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "4">
 <!ENTITY linux-patch-version "1">
