@@ -108,6 +108,11 @@ function max_parent( $dirpath, $prefix )
   return "$dirpath/$max";
 }
 
+function github( $path )
+{
+  return "https://api.github.com/repos/$path/releases/latest";
+}
+
 function get_packages( $package, $dirpath )
 {
   global $exceptions;
@@ -129,6 +134,7 @@ if ( $package == "gcc"        ) $dirpath = max_parent( $dirpath, "gcc-" );
 if ( $package == "iana-etc"   ) $dirpath = "https://github.com/Mic92/iana-etc/releases";
 if ( $package == "intltool"   ) $dirpath = "https://launchpad.net/intltool/trunk";
 if ( $package == "libffi"     ) $dirpath = "https://github.com/libffi/libffi/releases";
+if ( $package == "libxcrypt"  ) $dirpath = github("besser82/libxcrypt");
 if ( $package == "meson"      ) $dirpath = "https://github.com/mesonbuild/meson/releases";
 if ( $package == "mpc"        ) $dirpath = "https://ftp.gnu.org/gnu/mpc";
 if ( $package == "mpfr"       ) $dirpath = "https://mpfr.loria.fr/mpfr-current";
@@ -330,6 +336,9 @@ if ( $package == "zstd"       ) $dirpath = "https://github.com/facebook/zstd/rel
 
   if ( $package == "zstd" )
      return find_max( $lines, "/Zstandard v/", "/^.*v([\d\.]+).*$/" );
+
+  if ( preg_match( "/api.github.com/", $dirpath) )
+     return ltrim(json_decode(join("", $lines))->tag_name, "v");
 
   // Most packages are in the form $package-n.n.n
   // Occasionally there are dashes (e.g. 201-1)
