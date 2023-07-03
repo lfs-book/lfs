@@ -970,8 +970,8 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Diffutils, Findutils, Gawk, GCC,
-          Gettext, Glibc, GMP, Grep, M4, Make, MPC, MPFR, Patch, Perl, Sed,
-          Tar, Texinfo, and Zstd</seg>
+          Gettext, Glibc, GMP, Grep, Libxcrypt, M4, Make, MPC, MPFR, Patch,
+          Perl, Sed, Tar, Texinfo, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1885,6 +1885,47 @@
         </seglistitem>
       </segmentedlist>
 
+<!-- Begin Libxcrypt dependency info -->
+  <bridgehead renderas="sect2" id="libxcrypt-dep">Libxcrypt</bridgehead>
+
+      <segmentedlist id="libxcrypt-depends">
+        <segtitle>&dependencies;</segtitle>
+        <seglistitem>
+          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep,
+          Make, and Sed</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="libxcrypt-rundeps">
+        <segtitle>&runtime;</segtitle>
+        <seglistitem>
+          <seg>Glibc</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="libxcrypt-testdeps">
+        <segtitle>&testsuites;</segtitle>
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="libxcrypt-before">
+        <segtitle>&before;</segtitle>
+        <seglistitem>
+          <seg>GCC, Perl, Python,
+          <phrase revision='sysv'>and </phrase>Shadow<phrase
+          revision='systemd'>, and Systemd</phrase></seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="libxcrypt-optdeps">
+        <segtitle>&external;</segtitle>
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
 <!-- Begin Linux dependency info -->
   <bridgehead renderas="sect2" id="linux-dep">Linux</bridgehead>
 
@@ -2455,14 +2496,14 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Gawk, GCC, GDBM, Glibc, Grep, Groff,
-          Make, Sed, and Zlib</seg>
+          Libxcrypt, Make, Sed, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
       <segmentedlist id="perl-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
-          <seg>GDBM and Glibc</seg>
+          <seg>GDBM, Glibc, and Libxcrypt</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2621,7 +2662,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Expat, GCC, Gdbm, Gettext, Glibc,
-          Grep, Libffi, Make, Ncurses, OpenSSL, Pkgconf, Sed, and
+          Grep, Libffi, Libxcrypt, Make, Ncurses, OpenSSL, Pkgconf, Sed, and
           Util-linux</seg>
         </seglistitem>
       </segmentedlist>
@@ -2629,8 +2670,8 @@
       <segmentedlist id="python-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
-          <seg>Bzip2, Expat, Gdbm, Glibc, Libffi, Ncurses, OpenSSL, and
-          Zlib</seg>
+          <seg>Bzip2, Expat, Gdbm, Glibc, Libffi, Libxcrypt, Ncurses,
+          OpenSSL, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2745,14 +2786,14 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Acl, Attr, Bash, Binutils, Coreutils, Diffutils, Findutils, Gawk,
-          GCC, Gettext, Glibc, Grep, Libcap, Make, and Sed</seg>
+          GCC, Gettext, Glibc, Grep, Libcap, Libxcrypt, Make, and Sed</seg>
         </seglistitem>
       </segmentedlist>
 
       <segmentedlist id="shadow-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
-          <seg>Glibc</seg>
+          <seg>Glibc and Libxcrypt</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2826,15 +2867,15 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
          <seg>Acl, Attr, Bash, Binutils, Coreutils, Diffutils, Expat, Gawk,
-         GCC, Glibc, Gperf, Grep, Jinja2, Libcap, Meson, Pkgconf, Sed,
-         Util-linux, and Zstd</seg>
+         GCC, Glibc, Gperf, Grep, Jinja2, Libcap, Libxcrypt, Meson,
+         Pkgconf, Sed, Util-linux, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
       <segmentedlist id="systemd-rundeps" revision='systemd'>
         <segtitle>&runtime;</segtitle>
         <seglistitem>
-          <seg>Acl, Attr, Glibc, Libcap, and Util-linux</seg>
+          <seg>Acl, Attr, Glibc, Libcap, Libxcrypt, and Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 

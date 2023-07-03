@@ -253,10 +253,10 @@
 <!ENTITY gdbm-fin-du "13 MB">
 <!ENTITY gdbm-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY gettext-version "0.21.1">
-<!ENTITY gettext-size "9,819 KB">
+<!ENTITY gettext-version "0.22">
+<!ENTITY gettext-size "9,775 KB">
 <!ENTITY gettext-url "&gnu;gettext/gettext-&gettext-version;.tar.xz">
-<!ENTITY gettext-md5 "27fcc8a42dbc8f334f23a08f1f2fe00a">
+<!ENTITY gettext-md5 "db2f3daf34fd5b85ab1a56f9033e42d1">
 <!ENTITY gettext-home "&gnu-software;gettext/">
 <!ENTITY gettext-tmp-du "287 MB">
 <!ENTITY gettext-tmp-sbu "1.0 SBU">
@@ -325,10 +325,10 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.3 SBU">
 
-<!ENTITY iana-etc-version "20230524">
+<!ENTITY iana-etc-version "20230615">
 <!ENTITY iana-etc-size "587 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "16d24a6c990cc98fea65eec05738a5a5">
+<!ENTITY iana-etc-md5 "ac85479065338ce53fbf0e7184e64b87">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -350,10 +350,10 @@
 <!ENTITY intltool-fin-du "1.5 MB">
 <!ENTITY intltool-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY iproute2-version "6.3.0">
-<!ENTITY iproute2-size "894 KB">
+<!ENTITY iproute2-version "6.4.0">
+<!ENTITY iproute2-size "904 KB">
 <!ENTITY iproute2-url "&kernel;linux/utils/net/iproute2/iproute2-&iproute2-version;.tar.xz">
-<!ENTITY iproute2-md5 "53ecd48564c75d5fa4b5325d47344d68">
+<!ENTITY iproute2-md5 "90ce0eb84a8f1e2b14ffa77e8eb3f5ed">
 <!ENTITY iproute2-home "&kernel;linux/utils/net/iproute2/">
 <!ENTITY iproute2-fin-du "17 MB">
 <!ENTITY iproute2-fin-sbu "0.1 SBU">
@@ -366,10 +366,10 @@
 <!ENTITY jinja2-fin-du "3.4 MB">
 <!ENTITY jinja2-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY kbd-version "2.6.0">
-<!ENTITY kbd-size "1,560 KB">
+<!ENTITY kbd-version "2.6.1">
+<!ENTITY kbd-size "1,554 KB">
 <!ENTITY kbd-url "https://www.kernel.org/pub/linux/utils/kbd/kbd-&kbd-version;.tar.xz">
-<!ENTITY kbd-md5 "a8331144fc8e9421108c10311f28e078">
+<!ENTITY kbd-md5 "986241b5d94c6bd4ed2f6d2a5ab4320b">
 <!ENTITY kbd-home "https://kbd-project.org/">
 <!ENTITY kbd-fin-du "35 MB">
 <!ENTITY kbd-fin-sbu "0.1 SBU">
@@ -430,14 +430,22 @@
 <!ENTITY libtool-fin-du "44 MB">
 <!ENTITY libtool-fin-sbu "1.4 SBU">
 
+<!ENTITY libxcrypt-version "4.4.35">
+<!ENTITY libxcrypt-size "612 KB">
+<!ENTITY libxcrypt-url "&github;/besser82/libxcrypt/releases/download/&libxcrypt-version;/libxcrypt-&libxcrypt-version;.tar.xz">
+<!ENTITY libxcrypt-md5 "1d8487dfc43ee8e31a858456b868f836">
+<!ENTITY libxcrypt-home "&github;/besser82/libxcrypt/">
+<!ENTITY libxcrypt-fin-du "16 MB">
+<!ENTITY libxcrypt-fin-sbu "0.1 SBU">
+
 <!ENTITY linux-major-version "6">
-<!ENTITY linux-minor-version "3">
-<!ENTITY linux-patch-version "8">
+<!ENTITY linux-minor-version "4">
+<!ENTITY linux-patch-version "1">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "133,708 KB">
+<!ENTITY linux-size "134,584 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "237a5269575160fed17c7f55d93cc46c">
+<!ENTITY linux-md5 "ab345e1ea1c103c311248f078d92a160">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 5.13.4 / gcc-11.1.0 on x86_64 : minimum is
  allnoconfig rounded down to allow for ongoing cleanups,
@@ -568,7 +576,7 @@
 
 <!ENTITY pkgconf-version "1.9.5">
 <!ENTITY pkgconf-size "304 KB">
-<!ENTITY pkgconf-url "https://distfiles.dereferenced.org/pkgconf/pkgconf-&pkgconf-version;.tar.xz">
+<!ENTITY pkgconf-url "https://distfiles.ariadne.space/pkgconf/pkgconf-&pkgconf-version;.tar.xz">
 <!ENTITY pkgconf-md5 "0a8b69723bef4ebad83e9c8b43a75cc7">
 <!ENTITY pkgconf-home "http://pkgconf.org/">
 <!ENTITY pkgconf-fin-du "8.1 MB">
@@ -712,23 +720,23 @@
 <!ENTITY udev-lfs-home    " ">
 
 <!ENTITY util-linux-minor "2.39">
-<!ENTITY util-linux-version "2.39"> <!-- 2.33.x -->
-<!ENTITY util-linux-size "7,914 KB">
+<!ENTITY util-linux-version "2.39.1"> <!-- 2.33.x -->
+<!ENTITY util-linux-size "8,156 KB">
 <!ENTITY util-linux-url "&kernel;linux/utils/util-linux/v&util-linux-minor;/util-linux-&util-linux-version;.tar.xz">
-<!ENTITY util-linux-md5 "16579e594a8ef2e6236b38b9ab36cccf">
+<!ENTITY util-linux-md5 "c542cd7c0726254e4b3006a9b428201a">
 <!ENTITY util-linux-home "https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/">
 <!ENTITY util-linux-tmp-du "150 MB">
 <!ENTITY util-linux-tmp-sbu "0.2 SBU">
 <!ENTITY util-linux-fin-du "283 MB">
 <!ENTITY util-linux-fin-sbu "0.5 SBU">
 
-<!ENTITY vim-version "9.0.1503">
+<!ENTITY vim-version "9.0.1671">
 <!-- <!ENTITY vim-majmin "90"> -->
 <!ENTITY vim-docdir "vim/vim90">
-<!ENTITY vim-size "16,612 KB">
+<!ENTITY vim-size "16,669 KB">
 <!--<!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">-->
 <!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.gz">
-<!ENTITY vim-md5 "2214efcad25b1f31c89c33f932fa8dc1">
+<!ENTITY vim-md5 "243fce49db0dd93af7c2b12163f47fcf">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "235 MB">
 <!ENTITY vim-fin-sbu "2.4 SBU">

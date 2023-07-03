@@ -374,6 +374,17 @@
       </listitem>
 
       <listitem>
+        <para>Libxcrypt</para>
+
+        <para>This package provides the
+        <systemitem class='library'>libcrypt</systemitem> library
+        needed by various packages (notably, Shadow) for hashing passwords.
+        It replaces the obsolete
+        <systemitem class='library'>libcrypt</systemitem> implmentation in
+        Glibc.</para>
+      </listitem>
+
+      <listitem>
         <para>Linux Kernel</para>
 
         <para>This package is the Operating System.  It is the Linux in

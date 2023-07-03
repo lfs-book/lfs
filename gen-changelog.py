@@ -83,9 +83,9 @@ for (s, act) in [(upd, "Update to "), (add, "Add ")]:
         out = act + pkgver
         if pkgver in ticket:
             out += ' (#' + ticket[pkgver] + ')'
-        print(out)
+        print("-", out)
 for i in rem:
-    print("Remove", i)
+    print("-", "Remove", i)
 
 print("---------------------")
 
