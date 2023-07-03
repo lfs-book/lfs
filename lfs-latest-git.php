@@ -344,13 +344,15 @@ function get_current()
    // Fetech from git and get wget-list
    $current = array();
    #$lfssvn = "svn://svn.linuxfromscratch.org/LFS/trunk";
-   $lfsgit = "git://git.linuxfromscratch.org/lfs.git";
+   $lfsgit = "https://git.linuxfromscratch.org/lfs.git";
 
    $tmpdir = exec( "mktemp -d /tmp/lfscheck.XXXXXX" );
    $cdir   = getcwd();
    chdir( $tmpdir );
-   #exec ( "svn --quiet export $lfssvn LFS" );
-   exec ( "git clone $lfsgit LFS" );
+
+   # git-version.sh needs the history since the rx.y tag.
+   exec ( "git clone $lfsgit LFS --depth 1 --branch r11.2" );
+   exec ( "git -C LFS pull origin trunk" );
 
    # Make version.ent
    chdir( "$tmpdir/LFS" );
