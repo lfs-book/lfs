@@ -261,9 +261,6 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
   if ( $package == "e2fsprogs" )
      return find_max( $lines, "/v\d/", "/^.*v(\d[\d\.]+\d).*$/" );
 
-  if ( $package == "eudev" )
-     return find_max( $lines, "/Release/", "/^.*Release (\d[\d\.]+\d).*$/" );
-
   if ( $package == "expect" )
      return find_max( $lines, "/expect/", "/^.*expect(\d[\d\.]+\d).tar.*$/" );
 
@@ -313,9 +310,6 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
 
   if ( $package == "vim" )
      return find_max( $lines, "/v\d\./", "/^.*v([\d\.]+).*$/" );
-
-  if ( $package == "zstd" )
-     return find_max( $lines, "/Zstandard v/", "/^.*v([\d\.]+).*$/" );
 
   if ( preg_match( "/api.github.com/", $dirpath) )
      return ltrim(json_decode(join("", $lines))->tag_name, "v");
