@@ -69,17 +69,7 @@ function find_even_max( $lines, $regex_match, $regex_replace )
 
 function http_get_file( $url )
 {
-  if ( ! preg_match( "/sourceforge/", $url ) &&
-       ! preg_match( "/mpfr/",        $url ) &&
-       ! preg_match( "/psmisc/",      $url ) )
-  {
-    exec( "curl --location --silent --max-time 30 $url", $dir );
-
-    $s   = implode( "\n", $dir );
-    $dir = strip_tags( $s );
-    return explode( "\n", $dir );
-  }
-  else if ( preg_match( "/mpfr/", $url ) )
+  if ( preg_match( "/mpfr/", $url ) )
   {
     # There seems to be a problem with the mpfs certificate
     exec( "curl --location --silent --insecure --max-time 30 $url", $dir );
@@ -87,11 +77,19 @@ function http_get_file( $url )
     $dir = strip_tags( $s );
     return explode( "\n", $dir );
   }
-  else
+
+  if ( preg_match( "/sourceforge/", $url ) ||
+       preg_match( "/psmisc/",      $url ) )
   {
     exec( "lynx -dump $url 2>/dev/null", $lines );
     return $lines;
   }
+
+  exec( "curl --location --silent --max-time 30 $url", $dir );
+
+  $s   = implode( "\n", $dir );
+  $dir = strip_tags( $s );
+  return explode( "\n", $dir );
 }
 
 function max_parent( $dirpath, $prefix )
