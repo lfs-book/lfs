@@ -104,6 +104,7 @@ cd       build</userinput></screen>
     --disable-libatomic                            \
     --disable-libgomp                              \
     --disable-libquadmath                          \
+    --disable-libsanitizer                         \
     --disable-libssp                               \
     --disable-libvtv                               \
     --enable-languages=c,c++</userinput></screen>
@@ -173,6 +174,19 @@ cd       build</userinput></screen>
           built in this pass, instead of the static version that was built in GCC
           pass 1. This is necessary to support C++ exception
           handling.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-libsanitizer</parameter></term>
+        <listitem>
+          <para>Disable GCC sanitizer runtime libraries.  They are not
+          needed for the temporary installation.  This switch is necessary
+          to build GCC without
+          <systemitem class='library'>libcrypt</systemitem> installed for
+          the target.  In <xref linkend='ch-tools-gcc-pass1'/> it was
+          implied by <parameter>--disable-libstdcxx</parameter>, but now we
+          have to explicitly pass it.</para>
         </listitem>
       </varlistentry>
 

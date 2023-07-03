@@ -478,6 +478,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>Libxcrypt (&libxcrypt-version;) - <token>&libxcrypt-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&libxcrypt-home;"/></para>
+        <para>Download: <ulink url="&libxcrypt-url;"/></para>
+        <para>MD5 sum: <literal>&libxcrypt-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Linux (&linux-version;) - <token>&linux-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&linux-home;"/></para>

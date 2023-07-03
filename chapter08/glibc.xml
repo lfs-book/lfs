@@ -79,6 +79,7 @@ cd       build</userinput></screen>
              --enable-kernel=&min-kernel;                     \
              --enable-stack-protector=strong          \
              --with-headers=/usr/include              \
+             --disable-crypt                          \
              libc_cv_slibdir=/usr/lib</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">../configure --prefix=/usr                            \
              --disable-werror                         \
@@ -646,7 +647,7 @@ readelf -l a.out | grep '/ld-linux-x32'</userinput></screen>
         <seg>ld-linux-x86-64.so.2, ld-linux.so.2,
         libBrokenLocale.{a,so}, libanl.{a,so},
         libc.{a,so}, libc_nonshared.a, libc_malloc_debug.so,
-        libcrypt.{a,so}, libdl.{a,so.2}, libg.a, libm.{a,so},
+        libdl.{a,so.2}, libg.a, libm.{a,so},
         libmcheck.a, libmemusage.so, libmvec.{a,so}, libnsl.so.1,
         libnss_compat.so, libnss_dns.so, libnss_files.so, libnss_hesiod.so,
         libpcprofile.so, libpthread.{a,so.0},
@@ -948,16 +949,6 @@ readelf -l a.out | grep '/ld-linux-x32'</userinput></screen>
           <para>Turns on memory allocation checking when preloaded</para>
           <indexterm zone="ch-system-glibc libc_malloc_debug">
             <primary sortas="c-libc_malloc_debug">libc_malloc_debug</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libcrypt">
-        <term><filename class="libraryfile">libcrypt</filename></term>
-        <listitem>
-          <para>The cryptography library</para>
-          <indexterm zone="ch-system-glibc libcrypt">
-            <primary sortas="c-libcrypt">libcrypt</primary>
           </indexterm>
         </listitem>
       </varlistentry>
