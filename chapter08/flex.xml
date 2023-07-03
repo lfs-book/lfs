@@ -77,9 +77,11 @@
     try to run its predecessor, <command>lex</command>. To support those
     programs, create a symbolic link named <filename>lex</filename> that
     runs <filename>flex</filename> in <command>lex</command> emulation
-    mode:</para>
+    mode, and also create the man page of <command>lex</command> as a
+    symlink:</para>
 
-<screen><userinput remap="install">ln -sv flex /usr/bin/lex</userinput></screen>
+<screen><userinput remap="install">ln -sv flex   /usr/bin/lex
+ln -sv flex.1 /usr/share/man/man1/lex.1</userinput></screen>
 
   </sect2>
 
