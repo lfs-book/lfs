@@ -99,7 +99,7 @@
       no package installed by compiling from sources would link against
       them at runtime. However, the only known binary-only applications
       that link against these functions require ABI version 1.  If you must
-      have such libraries because of some binary-only application or to be
+      have such functions because of some binary-only application or to be
       to be compliant with LSB, build the package again with the following
       commands:</para>
 
