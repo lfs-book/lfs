@@ -166,7 +166,6 @@ General setup ---&gt;
    &lt; &gt; Enable kernel headers through /sys/kernel/kheaders.tar.xz [CONFIG_IKHEADERS]
    [*] Control Group support [CONFIG_CGROUPS]   ---&gt;
       [*] Memory controller [CONFIG_MEMCG]
-   [ ] Enable deprecated sysfs features to support old userspace tools [CONFIG_SYSFS_DEPRECATED]
    [ ] Configure standard kernel features (expert users) [CONFIG_EXPERT]
 General architecture-dependent options  ---&gt;
    [*] Enable seccomp to safely compute untrusted bytecode [CONFIG_SECCOMP]

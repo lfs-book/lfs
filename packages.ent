@@ -299,10 +299,10 @@
 <!ENTITY grep-fin-du "37 MB">
 <!ENTITY grep-fin-sbu "0.4 SBU">
 
-<!ENTITY groff-version "1.22.4">
-<!ENTITY groff-size "4,044 KB">
+<!ENTITY groff-version "1.23.0">
+<!ENTITY groff-size "7,259 KB">
 <!ENTITY groff-url "&gnu;groff/groff-&groff-version;.tar.gz">
-<!ENTITY groff-md5 "08fb04335e2f5e73f23ea4c3adbf0c5f">
+<!ENTITY groff-md5 "5e4f40315a22bb8a158748e7d5094c7d">
 <!ENTITY groff-home "&gnu-software;groff/">
 <!ENTITY groff-fin-du "89 MB">
 <!ENTITY groff-fin-sbu "0.2 SBU">
@@ -325,10 +325,10 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.3 SBU">
 
-<!ENTITY iana-etc-version "20230615">
-<!ENTITY iana-etc-size "587 KB">
+<!ENTITY iana-etc-version "20230629">
+<!ENTITY iana-etc-size "588 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "ac85479065338ce53fbf0e7184e64b87">
+<!ENTITY iana-etc-md5 "8c2e8385391306edbf4ca26ed4930a71">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -430,22 +430,22 @@
 <!ENTITY libtool-fin-du "44 MB">
 <!ENTITY libtool-fin-sbu "1.4 SBU">
 
-<!ENTITY libxcrypt-version "4.4.35">
-<!ENTITY libxcrypt-size "612 KB">
-<!ENTITY libxcrypt-url "&github;/besser82/libxcrypt/releases/download/&libxcrypt-version;/libxcrypt-&libxcrypt-version;.tar.xz">
-<!ENTITY libxcrypt-md5 "1d8487dfc43ee8e31a858456b868f836">
+<!ENTITY libxcrypt-version "4.4.36">
+<!ENTITY libxcrypt-size "610 KB">
+<!ENTITY libxcrypt-url "&github;/besser82/libxcrypt/releases/download/v&libxcrypt-version;/libxcrypt-&libxcrypt-version;.tar.xz">
+<!ENTITY libxcrypt-md5 "b84cd4104e08c975063ec6c4d0372446">
 <!ENTITY libxcrypt-home "&github;/besser82/libxcrypt/">
 <!ENTITY libxcrypt-fin-du "16 MB">
 <!ENTITY libxcrypt-fin-sbu "0.1 SBU">
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "4">
-<!ENTITY linux-patch-version "1">
+<!ENTITY linux-patch-version "3">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "134,584 KB">
+<!ENTITY linux-size "134,557 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "ab345e1ea1c103c311248f078d92a160">
+<!ENTITY linux-md5 "c83363136e61977c63d655733424d37a">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 5.13.4 / gcc-11.1.0 on x86_64 : minimum is
  allnoconfig rounded down to allow for ongoing cleanups,
@@ -561,13 +561,13 @@
 <!ENTITY patch-fin-sbu "0.1 SBU">
 
 <!ENTITY perl-version-major "5">
-<!ENTITY perl-version-minor "36">
-<!ENTITY perl-version-patch "1">
+<!ENTITY perl-version-minor "38">
+<!ENTITY perl-version-patch "0">
 <!ENTITY perl-version-min "&perl-version-major;.&perl-version-minor;">
 <!ENTITY perl-version "&perl-version-major;.&perl-version-minor;.&perl-version-patch;">
-<!ENTITY perl-size "12,748 KB">
+<!ENTITY perl-size "13,248 KB">
 <!ENTITY perl-url "https://www.cpan.org/src/5.0/perl-&perl-version;.tar.xz">
-<!ENTITY perl-md5 "825f6b1d7e03b22522e0bdb992fbb728">
+<!ENTITY perl-md5 "e1c8aaec897dd386c741f97eef9f2e87">
 <!ENTITY perl-home "https://www.perl.org/">
 <!ENTITY perl-tmp-du "281 MB">
 <!ENTITY perl-tmp-sbu "0.6 SBU">
