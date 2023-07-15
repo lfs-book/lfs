@@ -138,7 +138,7 @@ mount /boot/efi</userinput></screen>
 
     <para>Install the GRUB files into <filename
     class="directory">/boot/grub</filename> and the GRUB EFI executable into
-    <filename class="directory">/boot/efi/EFI/BOOT/BOOTLOONGARCH64.EFI</filename>:</para>
+    <filename>/boot/efi/EFI/BOOT/BOOTLOONGARCH64.EFI</filename>:</para>
 
     <warning>
       <para>The following command will overwrite
