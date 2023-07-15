@@ -41,6 +41,32 @@
     -->
 
     <listitem>
+      <para>2023-07-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20230629.  Addresses
+          <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.4.3.  Fixes
+          <ulink url='&lfs-ticket-root;5284'>#5284</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to  libxcrypt-4.4.36.  Fixes
+          <ulink url='&lfs-ticket-root;5283'>#5283</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to groff-1.23.0.  Fixes
+          <ulink url='&lfs-ticket-root;5282'>#5282</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to perl-5.38.0.  Fixes
+          <ulink url='&lfs-ticket-root;5281'>#5281</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2023-07-02</para>
       <itemizedlist>
         <listitem>
