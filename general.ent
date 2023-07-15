@@ -140,7 +140,7 @@
 
 <!ENTITY update-config-text
   "<para>Update the auxilary scripts of the building system to allow
-   building it for LoongArch:</para>">
+   building this package for LoongArch:</para>">
 
 <!-- Use "tar &update-config-arg" or "tar -C build-aux update-config-arg"
      We cannot append -C build-aux after these arguments because -C only
