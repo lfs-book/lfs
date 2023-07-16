@@ -91,9 +91,9 @@
     <!--<listitem>
        <para>E2fsprogs-&e2fsprogs-version;</para>
     </listitem>-->
-    <listitem revision="sysv">
-       <para>Eudev-&eudev-version;</para>
-    </listitem>
+    <!--<listitem revision="sysv">
+       <para>Udev-&systemd-version; (from systemd)</para>
+    </listitem>-->
     <!--<listitem>
        <para>Expat-&expat-version;</para>
     </listitem>-->
@@ -304,6 +304,10 @@
     <title>Added:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
 
+    <listitem revision="sysv">
+       <para>Udev-&systemd-version; (from systemd)</para>
+    </listitem>
+
     <listitem>
       <para>Libxcrypt-&libxcrypt-version;</para>
     </listitem>
@@ -332,6 +336,10 @@
   <itemizedlist>
     <title>Removed:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
+
+    <listitem>
+      <para>eudev-3.2.12</para>
+    </listitem>
 
     <listitem>
       <para>Pkg-config-0.29.2</para>
