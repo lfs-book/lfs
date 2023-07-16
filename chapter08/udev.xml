@@ -225,7 +225,7 @@ rm  /usr/share/man/man8/systemd-*.8</userinput></screen>
       <varlistentry id="udev-hwdb">
         <term><command>udev-hwdb</command></term>
         <listitem>
-          <para>Updates or query the hardware database.</para>
+          <para>Updates or queries the hardware database.</para>
           <indexterm zone="ch-system-udev udev-hwdb">
             <primary sortas="b-udev-hwdb">udev-hwdb</primary>
           </indexterm>
