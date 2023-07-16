@@ -115,6 +115,7 @@ meson setup \
     <para>Install the package:</para>
 
     <screen><userinput remap="install">install -vm755 -d {/usr/lib,/etc}/udev/{hwdb,rules}.d
+install -vm755 -d /usr/{lib,share}/pkgconfig
 install -vm755 udevadm                     /usr/bin/
 install -vm755 systemd-hwdb                /usr/bin/udev-hwdb
 ln      -sv    ../bin/udevadm              /usr/sbin/udevd
