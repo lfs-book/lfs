@@ -308,6 +308,14 @@
        <para>Udev-&systemd-version; (from systemd)</para>
     </listitem>
 
+    <listitem revision="sysv">
+      <para>Jinja2-&jinja2-version;</para>
+    </listitem>
+
+    <listitem revision="sysv">
+      <para>MarkupSafe-&markupsafe-version;</para>
+    </listitem>
+
     <listitem>
       <para>Libxcrypt-&libxcrypt-version;</para>
     </listitem>

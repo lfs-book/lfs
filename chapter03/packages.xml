@@ -379,7 +379,7 @@
       </listitem>
     </varlistentry>
 
-    <varlistentry revision="systemd">
+    <varlistentry>
       <term>Jinja2 (&jinja2-version;) - <token>&jinja2-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&jinja2-home;"/></para>
@@ -528,7 +528,7 @@
       </listitem>
     </varlistentry>
 
-    <varlistentry revision="systemd">
+    <varlistentry>
       <term>MarkupSafe (&markupsafe-version;) - <token>&markupsafe-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&markupsafe-home;"/></para>
