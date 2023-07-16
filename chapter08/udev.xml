@@ -133,6 +133,20 @@ install -vm755 $(find src/udev -type f | grep -F -v ".") /usr/lib/udev</userinpu
 <screen><userinput remap="install">tar -xvf ../../&udev-lfs-version;.tar.xz
 make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
 
+    <para>Install the man pages:</para>
+
+    <!-- Please make sure systemd man pages tarball has a common leading
+         component in the path.  -->
+<screen><userinput remap="install">tar -xf ../../systemd-man-pages-253.tar.xz --strip-components=1       \
+    -C /usr/share/man --wildcards '*/udev*' '*/libudev*'              \
+                                  '*/systemd-'{hwdb,udevd.service}.8
+sed 's/systemd\(\\\?-\)/udev-/' /usr/share/man/man8/systemd-hwdb.8    \
+                              > /usr/share/man/man8/udev-hwdb.8
+sed 's|lib.*udevd|sbin/udevd|'                                        \
+    /usr/share/man/man8/systemd-udevd.service.8                       \
+  > /usr/share/man/man8/udevd.8
+rm  /usr/share/man/man8/systemd-*.8</userinput></screen>
+
   </sect2>
 
   <sect2 id="conf-udev" role="configuration">
