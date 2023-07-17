@@ -156,13 +156,6 @@
 <!ENTITY elfutils-fin-du "120 MB">
 <!ENTITY elfutils-fin-sbu "0.3 SBU">
 
-<!ENTITY eudev-version "3.2.12">
-<!ENTITY eudev-size "2,145 KB">
-<!ENTITY eudev-url "https://github.com/eudev-project/eudev/releases/download/v&eudev-version;/eudev-&eudev-version;.tar.gz">
-<!ENTITY eudev-md5 "6f1559ca7c27013ff68816e2732498a3">
-<!ENTITY eudev-fin-du "83 MB">
-<!ENTITY eudev-fin-sbu "0.1 SBU">
-
 <!ENTITY expat-version "2.5.0">
 <!ENTITY expat-size "450 KB">
 <!ENTITY expat-url "&sourceforge;expat/expat-&expat-version;.tar.xz">
@@ -390,7 +383,7 @@
 <!ENTITY less-fin-du "4.3 MB">
 <!ENTITY less-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY lfs-bootscripts-version "20230101">      <!-- Scripts depend on this format -->
+<!ENTITY lfs-bootscripts-version "20230716">      <!-- Scripts depend on this format -->
 <!ENTITY lfs-bootscripts-size "BOOTSCRIPTS-SIZE KB">
 <!ENTITY lfs-bootscripts-url "&downloads-root;lfs-bootscripts-&lfs-bootscripts-version;.tar.xz">
 <!ENTITY lfs-bootscripts-md5 "BOOTSCRIPTS-MD5SUM">
@@ -712,6 +705,9 @@
 <!ENTITY tzdata-url "https://www.iana.org/time-zones/repository/releases/tzdata&tzdata-version;.tar.gz">
 <!ENTITY tzdata-md5 "5aa672bf129b44dd915f8232de38e49a">
 <!ENTITY tzdata-home "https://www.iana.org/time-zones">
+
+<!ENTITY udev-fin-du "130 MB">
+<!ENTITY udev-fin-sbu "0.2 SBU">
 
 <!ENTITY udev-lfs-version "udev-lfs-20171102">
 <!ENTITY udev-lfs-size    "11 KB">

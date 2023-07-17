@@ -44,6 +44,10 @@
       <para>2023-07-15</para>
       <itemizedlist>
         <listitem>
+          <para>[xry111] - Replace eudev-3.2.12 with udev from systemd-253.
+          Fixes <ulink url='&lfs-ticket-root;5285'>#5085</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[bdubbs] - Update to iana-etc-20230629.  Addresses
           <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
         </listitem>
