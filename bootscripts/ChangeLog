@@ -1,3 +1,6 @@
+2023-07-15 Xi Ruoyao <xry111@xry111.site>
+   * Use /bin/udevadm instead of /sbin/udevadm.
+
 2022-09-30 Bruce Dubbs <bdubbs@linuxfromscratch.org>
    * Mount /dev/shm as a tmpfs.
 
