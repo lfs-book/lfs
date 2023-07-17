@@ -51,6 +51,10 @@
  <screen><userinput remap="pre">sed -i -e 's/GROUP="render"/GROUP="video"/' \
        -e 's/GROUP="sgx", //' rules.d/50-udev-default.rules.in</userinput></screen>
 
+    <para>Remove one udev rule requiring a full Systemd installation:</para>
+
+ <screen><userinput remap="pre">sed '/systemd-sysctl/s/^/#/' -i rules.d/99-systemd.rules.in</userinput></screen>
+
     <para>Prepare Udev for compilation:</para>
 
 <screen><userinput remap="configure">mkdir -p build
@@ -111,6 +115,11 @@ meson setup \
       $(grep -o -E "^build (src/libudev|src/udev|rules.d|hwdb.d)[^:]*" \
         build.ninja | awk '{ print $2 }')                              \
       $(realpath libudev.so --relative-to .)</userinput></screen>
+
+    <para>Remove one udev rule file requiring a full Systemd
+    installation:</para>
+
+<screen><userinput remap="make">rm rules.d/90-vconsole.rules</userinput></screen>
 
     <para>Install the package:</para>
 
