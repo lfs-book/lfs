@@ -706,8 +706,8 @@
 <!ENTITY tzdata-md5 "5aa672bf129b44dd915f8232de38e49a">
 <!ENTITY tzdata-home "https://www.iana.org/time-zones">
 
-<!ENTITY udev-fin-du "83 MB">
-<!ENTITY udev-fin-sbu "0.1 SBU">
+<!ENTITY udev-fin-du "130 MB">
+<!ENTITY udev-fin-sbu "0.2 SBU">
 
 <!ENTITY udev-lfs-version "udev-lfs-20171102">
 <!ENTITY udev-lfs-size    "11 KB">
