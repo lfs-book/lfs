@@ -8,7 +8,7 @@
 
 <appendix id="rules" xreflabel="Appendix E" revision="sysv">
   <?dbhtml dir="scripts"?>
-  <?dbhtml filename="eudev-rules.html"?>
+  <?dbhtml filename="udev-rules.html"?>
 
   <title>Udev configuration rules</title>
 

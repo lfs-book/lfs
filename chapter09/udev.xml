@@ -16,7 +16,7 @@
   </indexterm>
 
   <para>In <xref linkend="chapter-building-system"/>, we installed the udev
-  daemon when <phrase revision="sysv">eudev</phrase>
+  daemon when <phrase revision="sysv">udev</phrase>
   <phrase revision="systemd">systemd</phrase> was built. Before we go into the
   details regarding how udev works, a brief history of previous methods of
   handling devices is in order.</para>
