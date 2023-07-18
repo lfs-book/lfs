@@ -159,6 +159,79 @@ rm  /usr/share/man/man8/systemd-*.8</userinput></screen>
 
   </sect2>
 
+  <!-- - - - - - - - - - -->
+  <!-- Multilib - 32bit  -->
+  <!-- - - - - - - - - - -->
+  <sect2 arch="ml_32,ml_all" role="installation">
+    <title>Installation of Udev - 32bit</title>
+
+    <para>Clean previous build (while still in the build directory):</para>
+
+<screen><userinput remap="pre">rm -rf *</userinput></screen>
+
+    <para>Prepare File for compilation:</para>
+
+<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
+CC="gcc -m32 -march=i686"              \
+CXX="g++ -m32 -march=i686"             \
+LANG=en_US.UTF-8                       \
+meson setup \
+      --prefix=/usr                 \
+      --buildtype=release           \
+      -Dmode=release                \
+      -Ddev-kvm-mode=0660           \
+      -Dlink-udev-shared=false      \
+      ..</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2><!-- m32 -->
+
+  <!-- - - - - - - - - - -->
+  <!-- Multilib - x32bit -->
+  <!-- - - - - - - - - - -->
+  <sect2 arch="ml_x32,ml_all" role="installation">
+    <title>Installation of Udev - x32bit</title>
+    <para>Clean previous build (while still in the build directory):</para>
+
+<screen><userinput remap="pre">rm -rf *</userinput></screen>
+
+    <para>Prepare File for compilation:</para>
+
+<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
+CC="gcc -mx32"                          \
+CXX="g++ -mx32"                         \
+CFLAGS+="-Wno-error=shift-overflow"     \
+CXXFLAGS+="-Wno-error=shift-overflow"   \
+LANG=en_US.UTF-8                        \
+meson setup \
+      --prefix=/usr                 \
+      --buildtype=release           \
+      -Dmode=release                \
+      -Ddev-kvm-mode=0660           \
+      -Dlink-udev-shared=false      \
+      ..</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
+cp -Rv DESTDIR/usr/libx32/* /usr/libx32
+rm -rf DESTDIR</userinput></screen>
+
+  </sect2><!-- mx32 -->
+  
   <sect2 id="conf-udev" role="configuration">
     <title>Configuring Udev</title>
 
