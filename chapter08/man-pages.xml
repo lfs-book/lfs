@@ -40,6 +40,12 @@
   <sect2 role="installation">
     <title>Installation of Man-pages</title>
 
+    <para>Remove two man pages for password hashing functions.
+    <application>Libxcrypt</application> will provide a better version
+    of these man pages:</para>
+
+<screen><userinput remap="pre">rm -v man3/crypt*</userinput></screen>
+
     <para>Install Man-pages by running:</para>
 
 <screen><userinput remap="install">make prefix=/usr install</userinput></screen>
