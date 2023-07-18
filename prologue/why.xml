@@ -138,7 +138,7 @@
       </listitem>
 
       <listitem revision="sysv">
-        <para>Eudev</para>
+        <para>Udev</para>
 
         <para>This package is a device manager.  It dynamically controls the ownership,
         permissions, names, and symbolic links of device nodes in the /dev directory when
@@ -233,7 +233,7 @@
 
         <para>This package produces a program that generates a perfect hash
         function from a set of keys. It is required by
-        <phrase revision='sysv'>Eudev</phrase>
+        <phrase revision='sysv'>Udev</phrase>
         <phrase revision='systemd'>Systemd</phrase>.</para>
       </listitem>
 
