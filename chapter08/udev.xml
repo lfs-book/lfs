@@ -212,8 +212,8 @@ sed -e "s;/usr/lib;&amp;32;g" src/libudev/libudev.pc > /usr/lib32/pkgconfig/libu
 <screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
 CC="gcc -mx32"                          \
 CXX="g++ -mx32"                         \
-CFLAGS+="-Wno-error=shift-overflow"     \
-CXXFLAGS+="-Wno-error=shift-overflow"   \
+CFLAGS+=" -Wno-error=shift-overflow"    \
+CXXFLAGS+=" -Wno-error=shift-overflow"  \
 LANG=en_US.UTF-8                        \
 meson setup \
       --prefix=/usr                 \

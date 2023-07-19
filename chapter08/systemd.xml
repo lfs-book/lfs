@@ -321,8 +321,8 @@ sed '/long drift_freq;/s@long @int64_t @' -i src/timesync/timesyncd-manager.h</u
 <screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
 CC="gcc -mx32"                          \
 CXX="g++ -mx32"                         \
-CFLAGS+="-Wno-error=shift-overflow"     \
-CXXFLAGS+="-Wno-error=shift-overflow"   \
+CFLAGS+=" -Wno-error=shift-overflow"    \
+CXXFLAGS+=" -Wno-error=shift-overflow"  \
 LANG=en_US.UTF-8                        \
 meson --prefix=/usr                     \
       --sysconfdir=/etc                 \
