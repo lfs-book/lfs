@@ -40,6 +40,17 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
 
+    <listitem revision='sysv'>
+      <para>2023-07-22</para>
+      <itemizedlist>
+        <listitem revision='sysv'>
+          <para>[xry111] - Make the mountvirtfs bootscript create essential
+          symlinks in /dev.  Fixes
+          <ulink url='&lfs-ticket-root;5289'>#5289</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem>
       <para>2023-07-15</para>
       <itemizedlist>
