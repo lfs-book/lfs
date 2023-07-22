@@ -2,6 +2,10 @@
    * In mountvirtfs, create symlinks /dev/{fd,std{in,out,err}} and
      /dev/core (optional).
 
+2023-07-16 Xi Ruoyao <xry111@xry111.site>
+   * In udev, set SYSTEMD_LOG_TARGET=kmsg so systemd-udevd will correctly
+     log messages.
+
 2023-07-15 Xi Ruoyao <xry111@xry111.site>
    * Use /bin/udevadm instead of /sbin/udevadm.
 
