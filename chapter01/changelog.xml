@@ -40,7 +40,7 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
 
-    <listitem>
+    <listitem revision='sysv'>
       <para>2023-07-22</para>
       <itemizedlist>
         <listitem revision='sysv'>
