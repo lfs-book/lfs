@@ -1,3 +1,7 @@
+2023-07-22 Xi Ruoyao <xry111@xry111.site>
+   * In mountvirtfs, create symlinks /dev/{fd,std{in,out,err}} and
+     /dev/core (optional).
+
 2023-07-15 Xi Ruoyao <xry111@xry111.site>
    * Use /bin/udevadm instead of /sbin/udevadm.
 
