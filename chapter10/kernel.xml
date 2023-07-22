@@ -463,8 +463,7 @@ Device Drivers ---&gt;
 
     <para>Install the documentation for the Linux kernel:</para>
 
-<screen><userinput remap="install">install -d /usr/share/doc/linux-&linux-version;
-cp -r Documentation/* /usr/share/doc/linux-&linux-version;</userinput></screen>
+<screen><userinput remap="install">cp -r Documentation -T /usr/share/doc/linux-&linux-version;</userinput></screen>
 
     <para>It is important to note that the files in the kernel source
     directory are not owned by <emphasis>root</emphasis>. Whenever a
