@@ -93,6 +93,7 @@ cd       build</userinput></screen>
       --build=$(../scripts/config.guess) \
       --enable-kernel=&linux-major-version;.&linux-minor-version;                \
       --with-headers=$LFS/usr/include    \
+      --disable-crypt                    \
       libc_cv_slibdir=/usr/lib</userinput></screen>
 
     <variablelist>

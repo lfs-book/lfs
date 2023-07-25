@@ -137,15 +137,6 @@
         tested file systems that Linux supports.</para>
       </listitem>
 
-      <listitem revision="sysv">
-        <para>Eudev</para>
-
-        <para>This package is a device manager.  It dynamically controls the ownership,
-        permissions, names, and symbolic links of device nodes in the /dev directory when
-        devices are added to or removed from the system.
-        </para>
-      </listitem>
-
       <listitem>
         <para>Expat</para>
 
@@ -233,7 +224,7 @@
 
         <para>This package produces a program that generates a perfect hash
         function from a set of keys. It is required by
-        <phrase revision='sysv'>Eudev</phrase>
+        <phrase revision='sysv'>Udev</phrase>
         <phrase revision='systemd'>Systemd</phrase>.</para>
       </listitem>
 
@@ -371,6 +362,17 @@
         script. It wraps the complexity of using shared libraries into a
         consistent, portable interface.  It is needed by the test
         suites in other LFS packages.</para>
+      </listitem>
+
+      <listitem>
+        <para>Libxcrypt</para>
+
+        <para>This package provides the
+        <systemitem class='library'>libcrypt</systemitem> library
+        needed by various packages (notably, Shadow) for hashing passwords.
+        It replaces the obsolete
+        <systemitem class='library'>libcrypt</systemitem> implmentation in
+        Glibc.</para>
       </listitem>
 
       <listitem>
@@ -566,6 +568,15 @@
         <para>This package provides the <application>init</application>
         program, the parent of all the other processes on a running Linux
         system. </para>
+      </listitem>
+
+      <listitem revision="sysv">
+        <para>Udev</para>
+
+        <para>This package is a device manager.  It dynamically controls the
+        ownership, permissions, names, and symbolic links of device nodes in
+        the /dev directory when devices are added to or removed from the
+        system.</para>
       </listitem>
 
       <listitem>

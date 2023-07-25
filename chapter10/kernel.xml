@@ -55,7 +55,7 @@
         LFS editors recommend that users not familiar with this process follow
         the procedures below fairly closely.  The objective is to get an
         initial system to a point where you can log in at the command line when
-        you reboot later in <xref linkend="ch-finish-reboot"/>.  At his point
+        you reboot later in <xref linkend="ch-finish-reboot"/>.  At this point
         optimization and customization is not a goal.
       </para>
 
@@ -163,7 +163,6 @@ General setup ---&gt;
    &lt; &gt; Enable kernel headers through /sys/kernel/kheaders.tar.xz [CONFIG_IKHEADERS]
    [*] Control Group support [CONFIG_CGROUPS]   ---&gt;
       [*] Memory controller [CONFIG_MEMCG]
-   [ ] Enable deprecated sysfs features to support old userspace tools [CONFIG_SYSFS_DEPRECATED]
    [ ] Configure standard kernel features (expert users) [CONFIG_EXPERT]
 General architecture-dependent options  ---&gt;
    [*] Enable seccomp to safely compute untrusted bytecode [CONFIG_SECCOMP]
@@ -307,7 +306,7 @@ Device Drivers ---&gt;
         <term><parameter>Support for uevent helper</parameter></term>
         <listitem>
           <para>Having this option set may interfere with device
-          management when using Udev/Eudev. </para>
+          management when using Udev.</para>
         </listitem>
       </varlistentry>
 
@@ -317,7 +316,7 @@ Device Drivers ---&gt;
           <para>This will create automated device nodes which are populated by the
           kernel, even without Udev running.  Udev then runs on top of this,
           managing permissions and adding symlinks.  This configuration
-          item is required for all users of Udev/Eudev.</para>
+          item is required for all users of Udev.</para>
         </listitem>
       </varlistentry>
 
@@ -430,8 +429,7 @@ Device Drivers ---&gt;
 
     <para>Install the documentation for the Linux kernel:</para>
 
-<screen><userinput remap="install">install -d /usr/share/doc/linux-&linux-version;
-cp -r Documentation/* /usr/share/doc/linux-&linux-version;</userinput></screen>
+<screen><userinput remap="install">cp -r Documentation -T /usr/share/doc/linux-&linux-version;</userinput></screen>
 
     <para>It is important to note that the files in the kernel source
     directory are not owned by <emphasis>root</emphasis>. Whenever a
