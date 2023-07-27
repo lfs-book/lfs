@@ -12,10 +12,11 @@
 
   <note>
     <para>
-      We strongly discourage posting your issues building one LFS package
-      directly onto the upstream support channel, without discussing via
-      a LFS support channel listed in <xref linkend="ch-intro-resources"/>
-      first.  Doing so is often quite inefficient because the upstream
+      In case you've hit an issue building one package with the LFS
+      instruction, we strongly discourage posting the issue directly onto
+      the upstream support channel before discussing via a LFS support
+      channel listed in <xref linkend="ch-intro-resources"/>.
+      Doing so is often quite inefficient because the upstream
       maintainers are rarely familiar with LFS building procedure.  Even if
       you've really hit an upstream issue, the LFS community can still help
       to isolate the information wanted by the upstream maintainers and make
