@@ -63,6 +63,10 @@ case "${1}" in
       log_info_msg2 " ${INFO}/dev/shm"
       mount -o nosuid,nodev /dev/shm || failed=1
 
+      mkdir -p /sys/fs/cgroup
+      log_info_msg2 " ${INFO}/sys/fs/cgroup"
+      mount -o nosuid,noexec,nodev /sys/fs/cgroup || failed=1
+
       (exit ${failed})
       evaluate_retval
       if [ "${failed}" = 1 ]; then

@@ -135,7 +135,12 @@
    [*]   Randomize the address of the kernel image (KASLR) [CONFIG_RANDOMIZE_BASE]
 General setup ---&gt;
    [ ] Compile the kernel with warnings as errors [CONFIG_WERROR]
+   CPU/Task time and stats accounting ---&gt;
+      [*] Pressure stall information tracking [CONFIG_PSI]
+      [ ]   Require boot parameter to enable pressure stall information tracking [CONFIG_PSI_DEFAULT_DISABLED]
    &lt; &gt; Enable kernel headers through /sys/kernel/kheaders.tar.xz [CONFIG_IKHEADERS]
+   [*] Control Group support [CONFIG_CGROUPS]   ---&gt;
+      [*] Memory controller [CONFIG_MEMCG]
    [ ] Configure standard kernel features (expert users) [CONFIG_EXPERT]
 General architecture-dependent options  ---&gt;
    [*] Stack Protector buffer overflow detection [CONFIG_STACKPROTECTOR]

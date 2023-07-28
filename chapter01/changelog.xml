@@ -41,6 +41,19 @@
     -->
 
     <listitem revision='sysv'>
+      <para>2023-07-28</para>
+      <itemizedlist>
+        <listitem revision='sysv'>
+          <para>[xry111] - Enable cgroup-based memory pressure information
+          in kernel, and add the cgroup file system into /etc/fstab and the
+          mountvirtfs bootscript.  This is a preparation for udev from
+          systemd-254.  Addresses
+          <ulink url='&lfs-ticket-root;5293'>#5293</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision='sysv'>
       <para>2023-07-22</para>
       <itemizedlist>
         <listitem revision='sysv'>
