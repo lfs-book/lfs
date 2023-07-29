@@ -192,7 +192,9 @@ meson setup \
 
     <!-- Please make sure systemd man pages tarball has a common leading
          component in the path.  -->
-<screen><userinput remap="install">tar -xf ../../systemd-man-pages-&systemd-man-version;.tar.xz --strip-components=1 -C /usr/share/man</userinput></screen>
+<screen><userinput remap="install">tar -xf ../../systemd-man-pages-&systemd-version;.tar.xz \
+    --no-same-owner --strip-components=1   \
+    -C /usr/share/man</userinput></screen>
 
     <para>Create the <filename>/etc/machine-id</filename> file needed by
     <command>systemd-journald</command>:</para>
