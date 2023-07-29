@@ -57,7 +57,8 @@
           <ulink url='&lfs-ticket-root;5287'>#5287</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to systemd-254. Fixes
+          <para>[bdubbs] - Update to<phrase revision='sysv'> udev
+          from</phrase> systemd-254. Fixes
           <ulink url='&lfs-ticket-root;5293'>#5293</ulink>.</para>
         </listitem>
         <listitem>
