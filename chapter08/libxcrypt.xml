@@ -142,7 +142,9 @@ cp -av .libs/libcrypt.so.1* /usr/lib</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">cp -av .libs/libcrypt.so.1* /usr/lib32/</userinput></screen>
+<screen><userinput remap="install">cp -av .libs/libcrypt.so* /usr/lib32/ &amp;&amp;
+make install-pkgconfigDATA &amp;&amp;
+ln -svf libxcrypt.pc /usr/lib32/pkgconfig/libcrypt.pc</userinput></screen>
 
   </sect2><!-- m32 -->
 
@@ -173,7 +175,9 @@ cp -av .libs/libcrypt.so.1* /usr/lib</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">cp -av .libs/libcrypt.so.1* /usr/libx32/</userinput></screen>
+<screen><userinput remap="install">cp -av .libs/libcrypt.so* /usr/libx32/ &amp;&amp;
+make install-pkgconfigDATA &amp;&amp;
+ln -svf libxcrypt.pc /usr/libx32/pkgconfig/libcrypt.pc</userinput></screen>
 
   </sect2><!-- mx32 -->
 
