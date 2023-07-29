@@ -371,7 +371,7 @@
         <systemitem class='library'>libcrypt</systemitem> library
         needed by various packages (notably, Shadow) for hashing passwords.
         It replaces the obsolete
-        <systemitem class='library'>libcrypt</systemitem> implmentation in
+        <systemitem class='library'>libcrypt</systemitem> implementation in
         Glibc.</para>
       </listitem>
 

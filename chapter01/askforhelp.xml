@@ -10,6 +10,28 @@
 
   <title>Help</title>
 
+  <note>
+    <para>
+      In case you've hit an issue building one package with the LFS
+      instruction, we strongly discourage posting the issue directly onto
+      the upstream support channel before discussing via a LFS support
+      channel listed in <xref linkend="ch-intro-resources"/>.
+      Doing so is often quite inefficient because the upstream
+      maintainers are rarely familiar with LFS building procedure.  Even if
+      you've really hit an upstream issue, the LFS community can still help
+      to isolate the information wanted by the upstream maintainers and make
+      a proper report.
+    </para>
+
+    <para>
+      If you must ask a question directly via an upstream support channel,
+      you shall at least note that many upstream projects have the support
+      channels separated from the bug tracker.  The <quote>bug</quote>
+      reports for asking questions are considered invalid and may annoy
+      upstream developers for these projects.
+    </para>
+  </note>
+
   <para>If an issue or a question is encountered while working through
   this book, please check the FAQ page at <ulink url="&faq-root;#generalfaq"/>.
   Questions are often already answered there. If your question is not

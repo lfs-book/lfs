@@ -192,10 +192,10 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     url="&test-results;"/> and
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
-    <para>Two tests named <filename>pr104610.c</filename> and
+ <para><!--Two tests named <filename>pr104610.c</filename> and
     <filename>pr69482-1.c</filename> are known to fail because the test
     files does not account for the
-    <parameter>--enable-default-ssp</parameter> option.
+    <parameter>- -enable-default-ssp</parameter> option.-->
     <!-- https://gcc.gnu.org/PR106375 and https://gcc.gnu.org/PR109353 -->
     Two tests named <filename>copy.cc</filename> and
     <filename>pr56837.c</filename> are known to fail.

@@ -1,3 +1,6 @@
+2023-07-28 Xi Ruoyao <xry111@xry111.site>
+   * In mountvirtfs, mount /sys/fs/cgroup for udev from systemd-254.
+
 2023-07-22 Xi Ruoyao <xry111@xry111.site>
    * In mountvirtfs, create symlinks /dev/{fd,std{in,out,err}} and
      /dev/core (optional).
