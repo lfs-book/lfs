@@ -130,84 +130,15 @@
       <para>Be sure to enable/disable/set the following features or the system might
       not work correctly or boot at all:</para>
 
-<screen role="nodump" revision="sysv"><emphasis role='blue'>G</emphasis>eneral setup ---&gt;
-   [ ] <emphasis role='blue'>C</emphasis>ompile the kernel with warnings as errors [CONFIG_WERROR]
-       <emphasis role='blue'>C</emphasis>PU/Task time and stats accounting ---&gt;
-         [*] <emphasis role='blue'>P</emphasis>ressure stall information tracking [CONFIG_PSI]
-         [ ] <emphasis role='blue'>R</emphasis>equire boot parameter to enable pressure stall information tracking 
-                                              [CONFIG_PSI_DEFAULT_DISABLED]
-   &lt; &gt; <emphasis role='blue'>E</emphasis>nable kernel headers through /sys/kernel/kheaders.tar.xz [CONFIG_IKHEADERS]
-   [*] <emphasis role='blue'>C</emphasis>ontrol Group support [CONFIG_CGROUPS]   ---&gt;
-      [*] M<emphasis role='blue'>e</emphasis>mory controller [CONFIG_MEMCG]
-   [ ] <emphasis role='blue'>C</emphasis>onfigure standard kernel features (expert users) [CONFIG_EXPERT]
+      <!-- To editors: for updating kernel configuration, edit
+           kernel/*.toml and regenerate kernel/*.xml with
+           "make -C kernel KERNEL_TREE=</usr/src/linux-&linux-version> -->
 
-<emphasis role='blue'>P</emphasis>rocessor type and features ---&gt;
-   [*] <emphasis role='blue'>B</emphasis>uild a relocatable kernel [CONFIG_RELOCATABLE]
-   [*]   <emphasis role='blue'>R</emphasis>andomize the address of the kernel image (KASLR) [CONFIG_RANDOMIZE_BASE]
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+        href="kernel/sysv.xml"/>
 
-<emphasis role='blue'>G</emphasis>eneral architecture-dependent options  ---&gt;
-   [*] <emphasis role='blue'>S</emphasis>tack Protector buffer overflow detection [CONFIG_STACKPROTECTOR]
-   [*]   <emphasis role='blue'>S</emphasis>trong Stack Protector [CONFIG_STACKPROTECTOR_STRONG]
-
-<emphasis role='blue'>D</emphasis>evice Drivers  ---&gt;
-   <emphasis role='blue'>G</emphasis>eneric Driver Options  ---&gt;
-     [ ] <emphasis role='blue'>S</emphasis>upport for uevent helper [CONFIG_UEVENT_HELPER]
-     [*] M<emphasis role='blue'>a</emphasis>intain a devtmpfs filesystem to mount at /dev [CONFIG_DEVTMPFS]
-     [*]   <emphasis role='blue'>A</emphasis>utomount devtmpfs at /dev, after the kernel mounted the rootfs 
-                                                       [CONFIG_DEVTMPFS_MOUNT]
-   <emphasis role='blue'>G</emphasis>raphics support ---&gt;
-     <emphasis role='blue'>F</emphasis>rame buffer Devices ---&gt;
-       &lt;*&gt; <emphasis role='blue'>S</emphasis>upport for frame buffer devices ---&gt;
-   <emphasis role='blue'>C</emphasis>onsole display driver support ---&gt;
-      [*] <emphasis role='blue'>F</emphasis>ramebuffer Console support [CONFIG_FRAMEBUFFER_CONSOLE]</screen>
-
-<screen role="nodump" revision="systemd">
-General setup ---&gt;
-   [ ] Compile the kernel with warnings as errors [CONFIG_WERROR]
-   [ ] Auditing Support [CONFIG_AUDIT]
-   CPU/Task time and stats accounting ---&gt;
-      [*] Pressure stall information tracking [CONFIG_PSI]
-      [ ] Require boot parameter to enable pressure stall information tracking 
-                                                            [CONFIG_PSI_DEFAULT_DISABLED]
-   &lt; &gt; Enable kernel headers through /sys/kernel/kheaders.tar.xz [CONFIG_IKHEADERS]
-   [*] Control Group support [CONFIG_CGROUPS]   ---&gt;
-      [*] Memory controller [CONFIG_MEMCG]
-   [ ] Configure standard kernel features (expert users) [CONFIG_EXPERT]
-
-Processor type and features ---&gt;
-   [*] Build a relocatable kernel [CONFIG_RELOCATABLE]
-   [*]   Randomize the address of the kernel image (KASLR) [CONFIG_RANDOMIZE_BASE]
-
-General architecture-dependent options  ---&gt;
-   [*] Enable seccomp to safely compute untrusted bytecode [CONFIG_SECCOMP]
-   [*] Stack Protector buffer overflow detection [CONFIG_STACKPROTECTOR]
-   [*] Strong Stack Protector [CONFIG_STACKPROTECTOR_STRONG]
-   
-[*] Networking support  ---&gt;   [CONFIG_NET]
-   Networking options  ---&gt;
-      [*] TCP/IP networking [CONFIG_INET]
-      &lt;*&gt;   The IPv6 protocol [CONFIG_IPV6]
-
-Device Drivers  ---&gt;
-   Generic Driver Options  ---&gt;
-      [ ] Support for uevent helper [CONFIG_UEVENT_HELPER]
-      [*] Maintain a devtmpfs filesystem to mount at /dev [CONFIG_DEVTMPFS]
-      [*] Automount devtmpfs at /dev, after the kernel mounted the rootfs 
-                                                          [CONFIG_DEVTMPFS_MOUNT]
-      Firmware Loader ---&gt;
-         [ ] Enable the firmware sysfs fallback mechanism [CONFIG_FW_LOADER_USER_HELPER]
-   Firmware Drivers   ---&gt;
-      [*] Export DMI identification via sysfs to userspace [CONFIG_DMIID]
-   Graphics support ---&gt;
-      Frame buffer Devices ---&gt;
-         &lt;*&gt; Support for frame buffer devices ---&gt;
-      Console display driver support ---&gt;
-         [*] Framebuffer Console support [CONFIG_FRAMEBUFFER_CONSOLE]
-
-File systems  ---&gt;
-   [*] Inotify support for userspace [CONFIG_INOTIFY_USER]
-       Pseudo filesystems  ---&gt;
-        [*] Tmpfs POSIX Access Control Lists [CONFIG_TMPFS_POSIX_ACL]</screen>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+        href="kernel/systemd.xml"/>
 
       <para>Enable some additional features if you are building a 64-bit
       system.  If you are using menuconfig, enable them in the order of
@@ -216,31 +147,23 @@ File systems  ---&gt;
       <parameter>CONFIG_X86_X2APIC</parameter> because an option only
       shows up after its dependencies are selected.</para>
 
-<screen role="nodump"><emphasis role='blue'>P</emphasis>rocessor type and features ---&gt;
-  [*] <emphasis role='blue'>S</emphasis>upport x2apic [CONFIG_X86_X2APIC]
-
-Device Drivers ---&gt;
-  [*] <emphasis role='blue'>P</emphasis>CI Support ---&gt; [CONFIG_PCI]
-    [*] M<emphasis role='blue'>e</emphasis>ssage Signaled Interrupts (MSI and MSI-X) [CONFIG_PCI_MSI]
-  [*] <emphasis role='blue'>I</emphasis>OMMU Hardware Support ---&gt; [CONFIG_IOMMU_SUPPORT]
-    [*] <emphasis role='blue'>S</emphasis>upport for Interrupt Remapping [CONFIG_IRQ_REMAP]</screen>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+        href="kernel/x2apic.xml"/>
 
       <para>If you are building a 32-bit system running on a hardware
       with RAM more than 4GB, adjust the configuration so the kernel will
       be able to use up to 64GB physical RAM:</para>
 
-      <screen role="nodump"><emphasis role='blue'>P</emphasis>rocessor type and features ---&gt;
-  H<emphasis role='blue'>i</emphasis>gh Memory Support ---&gt;
-    (X) <emphasis role='blue'>6</emphasis>4GB [CONFIG_HIGHMEM64G]</screen>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+        href="kernel/highmem.xml"/>
 
       <para>If the partition for the LFS system is in a NVME SSD (i. e. the
       device node for the partition is <filename>/dev/nvme*</filename>
       instead of <filename>/dev/sd*</filename>), enable NVME support or
       the LFS system won't boot:</para>
 
-      <screen role="nodump"><emphasis role='blue'>D</emphasis>evice Drivers ---&gt;
-  N<emphasis role='blue'>V</emphasis>ME Support ---&gt;
-    &lt;*&gt; N<emphasis role='blue'>V</emphasis>M Express block device [CONFIG_BLK_DEV_NVME]</screen>
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+        href="kernel/nvme.xml"/>
     </note>
 
     <note revision="systemd">
