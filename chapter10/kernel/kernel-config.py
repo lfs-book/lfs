@@ -243,6 +243,8 @@ for i in known_config:
     if i not in done:
         raise Exception("%s seems not exist" % i)
 
+sep = known_config.get('separate_toplevel_menu')
+
 for i0, val, i1, title, arrow, key, menu, comment in r:
     rem = max_line
 
@@ -275,7 +277,10 @@ for i0, val, i1, title, arrow, key, menu, comment in r:
         comment = [comment]
     if comment:
         comment = '\n'.join([' ' * i0 + '# ' + line for line in comment])
-        line = escape(comment) + ':\n' + line
+        buf += escape(comment) + ':'
+
+    if not menu and buf:
+        buf += ['']
 
     buf += [line.rstrip()]
 

@@ -13,12 +13,15 @@
   [*] <emphasis role='blue'>C</emphasis>ontrol Group support ---&gt;                                       [CGROUPS]
     [*] M<emphasis role='blue'>e</emphasis>mory controller                                                [MEMCG]
   [ ] <emphasis role='blue'>C</emphasis>onfigure standard kernel features (expert users) ---&gt;            [EXPERT]
+
 <emphasis role='blue'>P</emphasis>rocessor type and features ---&gt;
   [*] <emphasis role='blue'>B</emphasis>uild a relocatable kernel                                   [RELOCATABLE]
   [*]   <emphasis role='blue'>R</emphasis>andomize the address of the kernel image (KASLR)       [RANDOMIZE_BASE]
+
 <emphasis role='blue'>G</emphasis>eneral architecture-dependent options ---&gt;
   [*] <emphasis role='blue'>S</emphasis>tack Protector buffer overflow detection                 [STACKPROTECTOR]
   [*]   <emphasis role='blue'>S</emphasis>trong Stack Protector                           [STACKPROTECTOR_STRONG]
+
 <emphasis role='blue'>D</emphasis>evice Drivers ---&gt;
   <emphasis role='blue'>G</emphasis>eneric Driver Options ---&gt;
     [ ] <emphasis role='blue'>S</emphasis>upport for uevent helper                                [UEVENT_HELPER]
