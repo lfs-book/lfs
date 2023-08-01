@@ -173,10 +173,12 @@ esac</userinput></screen>
         is known to fail in the LFS chroot environment.</para>
       </listitem>
 
+<!-- Did not fail with glibc-2.38
       <listitem>
         <para><emphasis>misc/tst-ttyname</emphasis>
         is known to fail in the LFS chroot environment.</para>
       </listitem>
+-->
 
       <!-- https://sourceware.org/pipermail/libc-alpha/2022-August/141567.html -->
       <listitem>
