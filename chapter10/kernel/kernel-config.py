@@ -277,7 +277,7 @@ for i0, val, i1, title, arrow, key, menu, comment in r:
         comment = [comment]
     if comment:
         comment = '\n'.join([' ' * i0 + '# ' + line for line in comment])
-        buf += escape(comment) + ':'
+        buf += [escape(comment) + ':']
 
     if not menu and buf:
         buf += ['']
