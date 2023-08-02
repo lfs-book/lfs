@@ -44,8 +44,7 @@
 
     <para>Prepare Libxcrypt for compilation:</para>
 
-<screen><userinput remap="configure">
-./configure --target=$LFS_TGT            \
+<screen><userinput remap="configure">./configure --target=$LFS_TGT            \
             --prefix=/usr                \
             --enable-hashes=strong,glibc \
             --enable-obsolete-api=no     \
