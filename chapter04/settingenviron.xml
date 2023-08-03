@@ -118,7 +118,7 @@ EOF</userinput></screen>
     </varlistentry>
 
     <varlistentry>
-      <term><parameter>LFS_TGT=(uname -m)-lfs-linux-gnu</parameter></term>
+      <term><parameter>LFS_TGT=$(uname -m)-lfs-linux-gnu</parameter></term>
       <listitem>
   <para>The <envar>LFS_TGT</envar> variable sets a non-default, but compatible machine
   description for use when building our cross-compiler and linker and when
