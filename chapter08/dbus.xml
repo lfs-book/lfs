@@ -52,6 +52,7 @@
             --sysconfdir=/etc                    \
             --localstatedir=/var                 \
             --runstatedir=/run                   \
+            --enable-user-session                \
             --disable-static                     \
             --disable-doxygen-docs               \
             --disable-xml-docs                   \
@@ -70,6 +71,18 @@
           <para>These cause the PID file and the system bus socket
           to be in <filename class="directory">/run</filename>, instead of
           the deprecated <filename class="directory">/var/run</filename>.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+          <parameter>--enable-user-session</parameter>
+        </term>
+        <listitem>
+          <para>These ensures the D-Bus per-user service and socket unit
+          files are installed for Systemd.  They are not useful (but
+          harmless) in a base LFS installation, however they can be used
+          once systemd is rebuilt with PAM support in BLFS.</para>
         </listitem>
       </varlistentry>
 
