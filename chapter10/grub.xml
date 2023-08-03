@@ -141,6 +141,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
 set default=0
 set timeout=5
 
+insmod part_gpt
 insmod ext2
 set root=(hd0,2)
 
