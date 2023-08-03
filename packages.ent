@@ -43,7 +43,6 @@
 <!ENTITY automake-size "1,565 KB">
 <!ENTITY automake-url "&gnu;automake/automake-&automake-version;.tar.xz">
 <!ENTITY automake-md5 "4017e96f89fca45ca946f1c5db6be714">
-<!ENTITY automake-sha256 "80facc09885a57e6d49d06972c0ae1089c5fa8f4d4c7cfe5baea58e5085f136d">
 <!ENTITY automake-home "&gnu-software;automake/">
 <!ENTITY automake-fin-du "114 MB">
 <!ENTITY automake-fin-sbu "less than 0.1 SBU (about 7.3 SBU with tests)">
