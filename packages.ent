@@ -318,10 +318,10 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.3 SBU">
 
-<!ENTITY iana-etc-version "20230629">
+<!ENTITY iana-etc-version "20230804">
 <!ENTITY iana-etc-size "588 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "8c2e8385391306edbf4ca26ed4930a71">
+<!ENTITY iana-etc-md5 "449bdd47e3e9f0788f0bc6925afb6f22">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -442,12 +442,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "4">
-<!ENTITY linux-patch-version "7">
+<!ENTITY linux-patch-version "8">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "134,566 KB">
+<!ENTITY linux-size "134,589 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "f3d802a16823550866e7dcafb1350bb5">
+<!ENTITY linux-md5 "80f135995e79ed48c61064d151155bd7">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 5.13.4 / gcc-11.1.0 on x86_64 : minimum is
  allnoconfig rounded down to allow for ongoing cleanups,
@@ -486,10 +486,10 @@
 <!ENTITY man-db-fin-du "40 MB">
 <!ENTITY man-db-fin-sbu "0.2 SBU">
 
-<!ENTITY man-pages-version "6.05">
+<!ENTITY man-pages-version "6.05.01">
 <!ENTITY man-pages-size "2,144 KB">
 <!ENTITY man-pages-url "&kernel;linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "5e639b0495b84dbc3c93c3294234f6a3">
+<!ENTITY man-pages-md5 "de4563b797cf9b1e0b0d73628b35e442">
 <!ENTITY man-pages-home "https://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-fin-du "32 MB">
 <!ENTITY man-pages-fin-sbu "less than 0.1 SBU">
@@ -576,12 +576,12 @@
 <!ENTITY perl-fin-du "234 MB">
 <!ENTITY perl-fin-sbu "7.9 SBU">
 
-<!ENTITY pkgconf-version "1.9.5">
-<!ENTITY pkgconf-size "304 KB">
+<!ENTITY pkgconf-version "2.0.0">
+<!ENTITY pkgconf-size "303 KB">
 <!ENTITY pkgconf-url "https://distfiles.ariadne.space/pkgconf/pkgconf-&pkgconf-version;.tar.xz">
-<!ENTITY pkgconf-md5 "0a8b69723bef4ebad83e9c8b43a75cc7">
+<!ENTITY pkgconf-md5 "42ac3b1291aba9681136a74996ebffcd">
 <!ENTITY pkgconf-home "http://pkgconf.org/">
-<!ENTITY pkgconf-fin-du "8.1 MB">
+<!ENTITY pkgconf-fin-du "4.6 MB">
 <!ENTITY pkgconf-fin-sbu "less than 0.1 SBU">
 
 <!ENTITY procps-ng-version "4.0.3">
@@ -746,10 +746,10 @@
 <!ENTITY vim-fin-du "235 MB">
 <!ENTITY vim-fin-sbu "2.4 SBU">
 
-<!ENTITY wheel-version "0.41.0">
-<!ENTITY wheel-size "95 KB">
+<!ENTITY wheel-version "0.41.1">
+<!ENTITY wheel-size "96 KB">
 <!ENTITY wheel-url "&pypi-src;/w/wheel/wheel-&wheel-version;.tar.gz">
-<!ENTITY wheel-md5 "aa72e4a9847874aae8302108fb0fd333">
+<!ENTITY wheel-md5 "181cb3f4d8ed340c904a0e1c416d341d">
 <!ENTITY wheel-home "&pypi-home;/wheel/">
 <!ENTITY wheel-fin-du "1.3 MB">
 <!ENTITY wheel-fin-sbu "less than 0.1 SBU">
@@ -762,10 +762,10 @@
 <!ENTITY xml-parser-fin-du "2.3 MB">
 <!ENTITY xml-parser-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY xz-version "5.4.3">
-<!ENTITY xz-size "1,628 KB">
+<!ENTITY xz-version "5.4.4">
+<!ENTITY xz-size "1,623 KB">
 <!ENTITY xz-url "https://tukaani.org/xz/xz-&xz-version;.tar.xz">
-<!ENTITY xz-md5 "0bc7220eab3cc37018e0f1965b6ce75a">
+<!ENTITY xz-md5 "d83d6f64a64f88759e312b8a38c3add6">
 <!ENTITY xz-home "https://tukaani.org/xz">
 <!ENTITY xz-tmp-du "20 MB">
 <!ENTITY xz-tmp-sbu "0.1 SBU">

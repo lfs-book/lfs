@@ -39,6 +39,35 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
     -->
+    <listitem>
+      <para>2023-08-07</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to xz-5.4.4. Fixes
+          <ulink url='&lfs-ticket-root;5307'>#5307</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to wheel-0.41.1 (Python Module). Fixes
+          <ulink url='&lfs-ticket-root;5311'>#5311</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-6.05.01. Fixes
+          <ulink url='&lfs-ticket-root;5306'>#5306</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.4.8. Fixes
+          <ulink url='&lfs-ticket-root;5309'>#5309</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20230804.  Addresses
+          <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[rahul] - Update to pkgconf 2.0.0. Fixes
+          <ulink url='&lfs-ticket-root;5310'>#5310</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
     <listitem>
       <para>2023-08-01</para>
