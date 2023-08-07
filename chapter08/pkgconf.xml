@@ -41,7 +41,15 @@
   </sect2>
 
   <sect2 role="installation">
+
     <title>Installation of Pkgconf</title>
+
+    <para>Pkgconf 2.0.0 explicitly errors when attempting to run
+           --modversion with multiple packages. This breaks many
+           packages in BLFS. Run this sed to reinstate the old 
+           output for pkgconf.</para>
+
+     <screen><userinput remap="pre">sed -i '/1330,1336/s|^|//|' cli/main.c</userinput></screen>
 
     <para>Prepare Pkgconf for compilation:</para>
 

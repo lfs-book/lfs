@@ -227,6 +227,9 @@
       <para>Patch-&patch-version;</para>
     </listitem>-->
     <listitem>
+      <para>pkgconf-&pkgconf-version;</para>
+    </listitem>
+    <listitem>
       <para>Perl-&perl-version;</para>
     </listitem>
     <listitem>
@@ -280,9 +283,9 @@
     <!--<listitem>
       <para>XML-Parser-&xml-parser-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>XZ-Utils-&xz-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Zlib-&zlib-version;</para>
     </listitem>-->
@@ -321,7 +324,7 @@
     </listitem>
 
     <listitem>
-      <para>Pkgconf-&flit-core-version;</para>
+      <para>Pkgconf-&pkgconf-version;</para>
     </listitem>
 
     <listitem>
