@@ -62,11 +62,6 @@ mv -v gmp-&gmp-version; gmp
 tar -xf ../mpc-&mpc-version;.tar.gz
 mv -v mpc-&mpc-version; mpc</userinput></screen>
 
-    <para>Update the auxilary scripts of GMP building system to allow
-    building it for LoongArch:</para>
-
-<screen><userinput remap="pre">cp config.{guess,sub} gmp</userinput></screen>
-
     <para>Set the default directory name for
     64-bit libraries to <quote>lib</quote>:</para>
 
