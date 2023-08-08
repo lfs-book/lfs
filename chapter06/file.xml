@@ -43,10 +43,6 @@
   <sect2 role="installation">
     <title>Installation of File</title>
 
-    &update-config-text;
-
-<screen><userinput remap="pre">tar &update-config-arg;</userinput></screen>
-
     <para>
        The <command>file</command> command on the build host needs
        to be the same version as the one we are building in order to
