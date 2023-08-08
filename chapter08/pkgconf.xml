@@ -49,7 +49,7 @@
            packages in BLFS. Run this sed to reinstate the old 
            output for pkgconf.</para>
 
-     <screen><userinput remap="pre">sed -i '/1330,1336/s|^|//|' cli/main.c</userinput></screen>
+     <screen><userinput remap="pre">sed -i '1330,1336s|^|//|' cli/main.c</userinput></screen>
 
     <para>Prepare Pkgconf for compilation:</para>
 
