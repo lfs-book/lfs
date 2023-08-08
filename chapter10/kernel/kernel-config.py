@@ -23,7 +23,7 @@ menu_id = 1
 stack = []
 if_stack = []
 
-expand_var_mp = { 'SRCARCH': 'x86' }
+expand_var_mp = { 'SRCARCH': 'loongarch' }
 main_dep = {}
 
 def expand_var(s):
@@ -170,6 +170,9 @@ def load_kconfig(file):
                     continue
             if line.startswith('source') or line.startswith('\tsource'):
                 sub = expand_var(line.strip().split()[1].strip('"'))
+                # Ugly.  TODO: remove once this is resolved in kernel.
+                if file[:4] == 'arch' and sub == 'drivers/firmware/Kconfig':
+                    continue
                 r += load_kconfig(sub)
             elif line.startswith('config') or line.startswith('menu'):
                 config_buf = [line]
