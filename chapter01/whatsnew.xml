@@ -226,9 +226,9 @@
     <!--<listitem>
       <para>Patch-&patch-version;</para>
     </listitem>-->
-    <listitem>
-      <para>pkgconf-&pkgconf-version;</para>
-    </listitem>
+    <!--<listitem>
+      <para>Pkgconf-&pkgconf-version;</para>
+    </listitem>-->
     <listitem>
       <para>Perl-&perl-version;</para>
     </listitem>
