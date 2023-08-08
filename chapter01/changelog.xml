@@ -63,7 +63,7 @@
           <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[rahul] - Update to pkgconf 2.0.0. Fixes
+          <para>[rahul] - Update to pkgconf-2.0.0. Fixes
           <ulink url='&lfs-ticket-root;5310'>#5310</ulink>.</para>
         </listitem>
       </itemizedlist>
@@ -253,7 +253,7 @@
           <ulink url='&lfs-ticket-root;5273'>#5273</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[rahul] - Changed from pkg-config to pkgconf 1.9.5.  Fixes
+          <para>[rahul] - Changed from pkg-config to pkgconf-1.9.5.  Fixes
           <ulink url='&lfs-ticket-root;5274'>#5274</ulink>.</para>
         </listitem>
       </itemizedlist>
