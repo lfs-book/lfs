@@ -40,7 +40,7 @@
 
   <sect2 role="installation">
     <title>Installation of GMP</title>
-<!--
+
     <note>
       <para>If you are building for 32-bit x86, but you have a CPU which is
       capable of running 64-bit code <emphasis>and</emphasis> you have specified
@@ -49,10 +49,6 @@
       Avoid this by invoking the configure command below with
 <screen role="nodump"><userinput><parameter>ABI=32</parameter> ./configure ...</userinput></screen></para>
     </note>
--->
-    &update-config-text;
-
-<screen><userinput remap="pre">tar &update-config-arg;</userinput></screen>
 
     <note>
       <para>The default settings of GMP produce libraries optimized for
