@@ -99,6 +99,7 @@ cd       build</userinput></screen>
              --enable-multilib           \
              --with-multilib-list=$mlist \
              --disable-bootstrap         \
+             --disable-fixincludes       \
              --with-system-zlib</userinput></screen>
 
     <para>GCC supports seven different computer languages, but the
