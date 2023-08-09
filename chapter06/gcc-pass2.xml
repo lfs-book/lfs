@@ -121,19 +121,16 @@ cd       build</userinput></screen>
     --with-build-sysroot=$LFS                      \
     --enable-default-pie                           \
     --enable-default-ssp                           \
-    --enable-initfini-array                        \
     --disable-nls                                  \
     --enable-multilib --with-multilib-list=$mlist  \
-    --disable-decimal-float                        \
     --disable-libatomic                            \
     --disable-libgomp                              \
     --disable-libquadmath                          \
+    --disable-libsanitizer                         \
     --disable-libssp                               \
     --disable-libvtv                               \
     --enable-languages=c,c++</userinput></screen>
-<!--
-    LDFLAGS_FOR_TARGET="-L$PWD/$LFS_TGT/libgcc -L$PWD/$LFS_TGT/32/libgcc -L$PWD/$LFS_TGT/x32/libgcc" \
--->
+
     <variablelist>
       <title>The meaning of the new configure options:</title><!-- WIP -->
 
