@@ -61,12 +61,6 @@ su tester -c "PATH=$PATH make check"</userinput></screen>
 
 <screen><userinput remap="install">make LN='ln -f' install</userinput></screen>
 
-    <para>The installation process already created <command>awk</command>
-    as a symlink to <command>gawk</command>, create its man page as a
-    symlink as well:</para>
-
-<screen><userinput remap="install">ln -sv gawk.1 /usr/share/man/man1/awk.1</userinput></screen>
-
     <variablelist>
       <title>The meaning of the overridden make variable:</title>
 
@@ -78,6 +72,12 @@ su tester -c "PATH=$PATH make check"</userinput></screen>
        </listitem>
       </varlistentry>
    </variablelist>
+
+    <para>The installation process already created <command>awk</command>
+    as a symlink to <command>gawk</command>, create its man page as a
+    symlink as well:</para>
+
+<screen><userinput remap="install">ln -sv gawk.1 /usr/share/man/man1/awk.1</userinput></screen>
 
     <para>If desired, install the documentation:</para>
 
