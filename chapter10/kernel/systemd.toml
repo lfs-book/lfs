@@ -16,6 +16,8 @@ DEVTMPFS_MOUNT='*'
 FB='*'
 FRAMEBUFFER_CONSOLE='*'
 
+EFI_ZBOOT='*'
+
 AUDIT=' '
 NET='*'
 INET='*'
