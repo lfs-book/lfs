@@ -71,7 +71,43 @@
 
 <screen><userinput remap="install">ln -sv pkgconf   /usr/bin/pkg-config
 ln -sv pkgconf.1 /usr/share/man/man1/pkg-config.1</userinput></screen>
+<!--
+    <para arch="ml_32,ml_x32,ml_all">
+      For better support of the multilib platform create some
+      additional files by executing the following commands:
+    </para>
 
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="install">ln -sv pkgconf /usr/bin/i686-pc-linux-gnu-pkg-config
+ln -sv pkgconf /usr/bin/x86_64-pc-linux-gnux32-pkg-config
+ln -sv pkgconf /usr/bin/x86_64-pc-linux-gnu-pkg-config
+
+mkdir -pv /usr/share/pkgconfig/personality.d
+
+cat &gt; /usr/share/pkgconfig/personality.d/i686-pc-linux-gnu.personality &lt;&lt;EOF
+Triplet: i686-pc-linux-gnu
+SysrootDir: /
+DefaultSearchPaths: /usr/lib32/pkgconfig:/usr/share/pkgconfig
+SystemIncludePaths: /usr/include
+SystemLibraryPaths: /usr/lib32
+EOF
+
+cat &gt; /usr/share/pkgconfig/personality.d/x86_64-pc-linux-gnux32.personality &lt;&lt;EOF
+Triplet: x86_64-pc-linux-gnux32
+SysrootDir: /
+DefaultSearchPaths: /usr/libx32/pkgconfig:/usr/share/pkgconfig
+SystemIncludePaths: /usr/include
+SystemLibraryPaths: /usr/libx32
+EOF
+
+cat &gt; /usr/share/pkgconfig/personality.d/x86_64-pc-linux-gnu.personality &lt;&lt;EOF
+Triplet: x86_64-pc-linux-gnu
+SysrootDir: /
+DefaultSearchPaths: /usr/lib/pkgconfig:/usr/share/pkgconfig
+SystemIncludePaths: /usr/include
+SystemLibraryPaths: /usr/lib
+EOF
+</userinput></screen>
+-->
   </sect2>
 
   <sect2 id="contents-pkgconf" role="content">
