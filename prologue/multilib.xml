@@ -30,12 +30,12 @@
 
   <sect2><title>Why doing Multilib?</title>
 
-    <para>From a educational point of view, LFS in its 'native' form is
+    <para>From an educational point of view, LFS in its 'native' form is
       probably the best way to see how a Linux system is built from source.
       There is no need to confuse with different architectures. But when
       there is a need to run 32 binaries and you don't want to build the 
       whole system in 32 bit (which would be waste of ressources 
-      nowadays) than LFS-multilib is an option. Examples for such a
+      nowadays) then LFS-multilib is an option. Examples for such a
       need could be
       <itemizedlist>
         <listitem><para>Closed-source software without source only 
