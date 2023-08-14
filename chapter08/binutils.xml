@@ -153,7 +153,7 @@ cd       build</userinput></screen>
 
     <para>Remove useless static libraries:</para>
 
-<screen><userinput remap="install">rm -fv /usr/lib/lib{bfd,ctf,ctf-nobfd,sframe,opcodes}.a</userinput></screen>
+<screen><userinput remap="install">rm -fv /usr/lib/lib{bfd,ctf,ctf-nobfd,gprofng,opcodes,sframe}.a</userinput></screen>
 
   </sect2>
 
@@ -168,7 +168,8 @@ cd       build</userinput></screen>
       <seglistitem>
         <seg>addr2line, ar, as, c++filt, dwp, elfedit, gprof, gprofng, ld, ld.bfd, ld.gold, nm,
         objcopy, objdump, ranlib, readelf, size, strings, and strip</seg>
-        <seg>libbfd.so, libctf.so, libctf-nobfd.so, libopcodes.so, and libsframe.so</seg>
+        <seg>libbfd.so, libctf.so, libctf-nobfd.so, libgprofng.so,
+        libopcodes.so, and libsframe.so</seg>
         <seg>/usr/lib/ldscripts</seg>
       </seglistitem>
     </segmentedlist>
@@ -412,6 +413,17 @@ cd       build</userinput></screen>
           <para>A libctf variant which does not use libbfd functionality</para>
           <indexterm zone="ch-system-binutils libctf-nobfd">
             <primary sortas="c-libctf-nobfd">libctf-nobfd</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libgprofng">
+        <term><filename class="libraryfile">libgprofng</filename></term>
+        <listitem>
+          <para>A library containing most routines used by
+          <command>gprofng</command></para>
+          <indexterm zone="ch-system-binutils libgprofng">
+            <primary sortas="c-libgprofng">libgprofng</primary>
           </indexterm>
         </listitem>
       </varlistentry>
