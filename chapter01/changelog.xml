@@ -40,6 +40,36 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
     <listitem>
+      <para>2023-08-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to xz-5.4.4. Fixes
+          <ulink url='&lfs-ticket-root;5307'>#5307</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to less-643. Fixes
+          <ulink url='&lfs-ticket-root;5317'>#5317</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to meson-1.2.1. Fixes
+          <ulink url='&lfs-ticket-root;5314'>#5314</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.4.10. Fixes
+          <ulink url='&lfs-ticket-root;5313'>#5313</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20230810.  Addresses
+          <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[rahul] - Update to pkgconf-2.0.1. Fixes
+          <ulink url='&lfs-ticket-root;5315'>#5316</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2023-08-07</para>
       <itemizedlist>
         <listitem>
