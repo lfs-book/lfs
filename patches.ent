@@ -30,8 +30,8 @@
 <!ENTITY coreutils-chmod-patch-md5 "4709df88e68279e6ef357aa819ba5b1a">
 <!ENTITY coreutils-chmod-patch-size "3.8 KB">
 -->
-<!ENTITY elfutils-loongarch-patch "elfutils-&elfutils-version;-loongarch-2.patch">
-<!ENTITY elfutils-loongarch-patch-md5 "a16b92515f02dce39b123da2dc4030fc">
+<!ENTITY elfutils-loongarch-patch "elfutils-&elfutils-version;-loongarch-3.patch">
+<!ENTITY elfutils-loongarch-patch-md5 "cd7125a123145d1e2911b1dd2186793a">
 <!ENTITY elfutils-loongarch-patch-size "44 KB">
 <!--
 <!ENTITY flex-fixes-patch "flex-&flex-version;-upstream_fixes-3.patch">
