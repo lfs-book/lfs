@@ -43,8 +43,9 @@
       <para>2023-08-15</para>
       <itemizedlist>
         <listitem>
-          <para>[bdubbs] - Update to xz-5.4.4. Fixes
-          <ulink url='&lfs-ticket-root;5307'>#5307</ulink>.</para>
+          <para>[bdubbs] - Add a patch to fix a performance regression in
+          glibc's posix_memalign() function. Fixes
+          <ulink url='&lfs-ticket-root;5315'>#5315</ulink>.</para>
         </listitem>
         <listitem>
           <para>[bdubbs] - Update to less-643. Fixes
@@ -172,7 +173,7 @@
     <listitem revision='sysv'>
       <para>2023-07-28</para>
       <itemizedlist>
-        <listitem revision='sysv'>
+        <listitem>
           <para>[xry111] - Enable cgroup-based memory pressure information
           in kernel, and add the cgroup file system into /etc/fstab and the
           mountvirtfs bootscript.  This is a preparation for udev from
@@ -185,7 +186,7 @@
     <listitem revision='sysv'>
       <para>2023-07-22</para>
       <itemizedlist>
-        <listitem revision='sysv'>
+        <listitem>
           <para>[xry111] - Make the mountvirtfs bootscript create essential
           symlinks in /dev.  Fixes
           <ulink url='&lfs-ticket-root;5289'>#5289</ulink>.</para>
@@ -374,7 +375,7 @@
           <para>[bdubbs] - Update to flit_core-3.9.0. Fixes
           <ulink url='&lfs-ticket-root;5257'>#5257</ulink>.</para>
         </listitem>
-        <listitem>
+        <listitem revision="sysv">
           <para>[bdubbs] - Update to eudev-3.2.12. Fixes
           <ulink url='&lfs-ticket-root;5260'>#5260</ulink>.</para>
         </listitem>
