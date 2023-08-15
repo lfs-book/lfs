@@ -119,7 +119,7 @@
 <!ENTITY dbus-url "https://dbus.freedesktop.org/releases/dbus/dbus-&dbus-version;.tar.xz">
 <!ENTITY dbus-md5 "da42f55aeec51b355587bc3062fc2d41">
 <!ENTITY dbus-home "https://www.freedesktop.org/wiki/Software/dbus">
-<!ENTITY dbus-fin-du "19 MB">
+<!ENTITY dbus-fin-du "20 MB">
 <!ENTITY dbus-fin-sbu "0.1 SBU">
 
 <!ENTITY dejagnu-version "1.6.3">
@@ -666,7 +666,7 @@
 <!--<!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-version;-&systemd-stable;.tar.xz">-->
 <!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-man-version;.tar.xz">
 <!ENTITY systemd-man-md5  "fc32faeac581e1890ca27fcea3858410">
-<!ENTITY systemd-fin-du   "258 MB">
+<!ENTITY systemd-fin-du   "238 MB">
 <!ENTITY systemd-fin-sbu  "0.7 SBU">
 
 <!ENTITY sysvinit-version "3.07">
