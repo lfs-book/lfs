@@ -213,7 +213,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
       In the asan tests, several tests in <filename>asan_test.C</filename> 
         are known to fail.
       The test named <filename>interception-malloc-test-1.C</filename> 
-        are known to fail.
+        is known to fail.
     </para>
 
     <para>A few unexpected failures cannot always be avoided. The GCC developers
