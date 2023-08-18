@@ -709,10 +709,10 @@
 <!ENTITY udev-fin-du "138 MB">
 <!ENTITY udev-fin-sbu "0.2 SBU">
 
-<!ENTITY udev-lfs-version "udev-lfs-20230728">
+<!ENTITY udev-lfs-version "udev-lfs-20230818">
 <!ENTITY udev-lfs-size    "10 KB">
 <!ENTITY udev-lfs-url     "&anduin-sources;/&udev-lfs-version;.tar.xz">
-<!ENTITY udev-lfs-md5     "8a3b921e3a28d36ac46d17137d920268">
+<!ENTITY udev-lfs-md5     "acd4360d8a5c3ef320b9db88d275dae6">
 <!ENTITY udev-lfs-home    " ">
 
 <!ENTITY util-linux-minor "2.39">
