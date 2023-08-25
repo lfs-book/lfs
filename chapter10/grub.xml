@@ -19,8 +19,10 @@
   <note>
     <para>
       If your system has UEFI support and you wish to boot LFS with UEFI,
-      you should skip this page, and configure GRUB with UEFI support
-      using the instructions provided in
+      you should skip the instructions in this page but still learn the
+      syntax of <filename>grub.cfg</filename> and the method to specify
+      a partition in the file from this page, and configure GRUB with UEFI
+      support using the instructions provided in
       <ulink url="&blfs-book;postlfs/grub-setup.html">the BLFS page</ulink>.
     </para>
   </note>
