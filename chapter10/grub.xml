@@ -23,7 +23,9 @@
     </para>
     <para>
       If you've installed GRUB for UEFI with optional dependencies following
-      BLFS, you should skip this page, and configure GRUB with UEFI support
+      BLFS, you should skip the instructions in this page but still learn the
+      syntax of <filename>grub.cfg</filename> and the method to specify
+      a partition in the file from this page, and configure GRUB with UEFI
       using the instructions provided in
       <ulink url="&blfs-book;postlfs/grub-setup.html">the BLFS page</ulink>,
       but replace <parameter>--target=x86_64-efi</parameter> with
