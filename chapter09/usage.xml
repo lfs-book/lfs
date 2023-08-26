@@ -146,7 +146,7 @@ EOF</userinput></screen>
   an <emphasis>S</emphasis>, and all of them have two numbers following the
   initial letter. The K means to stop (kill) a service and the S means to start a
   service. The numbers determine the order in which the scripts are run, from 00
-  to 99&mdash;the smaller the number, the sooner tht script runs. When
+  to 99&mdash;the smaller the number, the sooner the script runs. When
   <command>init</command> switches to another run level, the appropriate services
   are either started or stopped, depending on the run level chosen.</para>
 
