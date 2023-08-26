@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-system-isl" role="wrap" arch="ml_32,ml_x32,ml_all">
+<sect1 id="ch-system-isl" role="wrap">
   <?dbhtml filename="isl.html"?>
 
   <sect1info condition="script">
