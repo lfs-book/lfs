@@ -37,7 +37,7 @@
 
       <para>The interface names depend on the implementation and
       configuration of the udev daemon running on the system.  The udev
-      daemon for LFS (installed in <xref linkend="ch-system-eudev"/>) will
+      daemon for LFS (installed in <xref linkend="ch-system-udev"/>) will
       not run until the LFS system is booted.  So the interface names 
       in the LFS system cannot always be determined by running
       those commands on the host distro,

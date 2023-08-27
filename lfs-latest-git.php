@@ -124,7 +124,6 @@ if ( $package == "e2fsprogs"  ) $dirpath = "https://sourceforge.net/projects/e2f
 if ( $package == "expat"      ) $dirpath = "https://sourceforge.net/projects/expat/files";
 if ( $package == "elfutils"   ) $dirpath = "https://sourceware.org/ftp/elfutils";
 if ( $package == "expect"     ) $dirpath = "https://sourceforge.net/projects/expect/files";
-if ( $package == "eudev"      ) $dirpath = github("eudev-project/eudev");
 if ( $package == "file"       ) $dirpath = "https://github.com/file/file/tags";
 if ( $package == "flex"       ) $dirpath = github("westes/flex");
 if ( $package == "flit_core"  ) $dirpath = "https://pypi.org/project/flit-core/";

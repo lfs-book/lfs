@@ -177,6 +177,17 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <!-- Need further investigation -->
     <para>Many gcc and g++ tests related to hwasan are known to fail.</para>
 
+    <para>
+      With Glibc-2.38, the analyzer tests named
+      <filename>data-model-4.c</filename> and
+      <filename>conftest-1.c</filename> 
+        are known to fail.
+      In the asan tests, several tests in <filename>asan_test.C</filename> 
+        are known to fail.
+      The test named <filename>interception-malloc-test-1.C</filename> 
+        is known to fail.
+    </para>
+
     <para>A few unexpected failures cannot always be avoided. The GCC developers
     are usually aware of these issues, but have not resolved them yet.
     Unless the test results are vastly different from those at the above URL,
