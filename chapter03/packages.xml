@@ -378,7 +378,7 @@
       </listitem>
     </varlistentry>
 
-    <varlistentry arch="ml_32,ml_x32,ml_all">
+    <varlistentry>
       <term>ISL (&isl-version;) - <token>&isl-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&isl-home;"/></para>
