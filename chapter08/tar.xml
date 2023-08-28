@@ -72,9 +72,17 @@
 
 <screen><userinput remap="test">make check</userinput></screen>
 
+    <!-- On one system the -j4 improvement is 167s - 46s = 121s (72.46%) -->
+    <note><para>The test time for Tar can be reduced significantly on a
+    system with multiple cores.  To do this, append
+    <command>TESTSUITEFLAGS=-j&lt;N&gt;</command> to the line above.  For
+    instance, using -j4 can reduce the test time by over 70
+    percent.</para></note>
+
     <para>One test, capabilities: binary store/restore, is known to fail if it is
     run because LFS lacks selinux, but will be skipped if the host kernel does
-    not support extended attributes on the filesystem used for building LFS.</para>
+    not support extended attributes or security labels on the filesystem
+    used for building LFS.</para>
 
     <para>Install the package:</para>
 
