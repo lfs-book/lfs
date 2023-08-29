@@ -101,7 +101,9 @@ make html</userinput></screen>
     instruction".  In this case, gmp should be reconfigured with the option
     <option>--host=none-linux-gnu</option> and rebuilt.</para></caution>
 
-    <para>Ensure that all 199 tests in the test suite passed.
+    <!-- Some tests PASS on a specific uarch but SKIP on other CPUs.
+         For example on K8 the following command outputs 200.  -->
+    <para>Ensure that at least 199 tests in the test suite passed.
     Check the results by issuing the following command:</para>
 
 <screen><userinput remap="test">awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log</userinput></screen>
