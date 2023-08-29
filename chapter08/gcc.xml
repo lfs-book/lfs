@@ -172,11 +172,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <!-- https://gcc.gnu.org/PR107915 and https://gcc.gnu.org/PR109353 -->
     Two tests named <filename>copy.cc</filename> and
     <filename>contracts-tmpl-spec2.C</filename> are known to fail.
-    <!--
-      It seems a regression in 13.2 but it does not happen in
-      https://gcc.gnu.org/pipermail/gcc-testresults/2023-August/792164.html.
-      I'll investigate further.
-    -->
+    <!-- https://gcc.gnu.org/PR111224 -->
     Some C++ module tests named <filename>xtreme-*</filename> are known to
     fail.
     </para>
