@@ -147,7 +147,7 @@
       <segmentedlist id="autoconf-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>Automake</seg>
+          <seg>Automake and Coreutils</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -189,7 +189,7 @@
       <segmentedlist id="automake-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg>Coreutils</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -447,8 +447,9 @@
       <segmentedlist id="coreutils-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, GMP, Grep,
-          Libcap, Make, OpenSSL, Patch, Perl, Sed, and Texinfo</seg>
+          <seg>Autoconf, Automake, Bash, Binutils, Coreutils, GCC, Gettext,
+          Glibc, GMP, Grep, Libcap, Make, OpenSSL, Patch, Perl, Sed, and
+          Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2516,7 +2517,7 @@
         <seglistitem>
           <seg><phrase revision='systemd'>D-Bus, </phrase>E2fsprogs,
           IProute2, Kmod, Man-DB, Procps-ng, Python,
-		  &systemd-udev;, and Util-linux</seg>
+          &systemd-udev;, and Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
