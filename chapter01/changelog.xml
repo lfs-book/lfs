@@ -44,6 +44,11 @@
       <para>2023-09-02</para>
       <itemizedlist>
         <listitem>
+           <para>[xry111] - Add --no-cache-dir option for pip3 wheel
+           commands.  Addresses
+           <ulink url='&blfs-ticket-root;18466'>BLFS #18466</ulink>.</para>
+        </listitem>
+        <listitem>
            <para>[bdubbs] - Update to vim-1837. Addresses
            <ulink url='&lfs-ticket-root;4500'>#4500</ulink>.</para>
         </listitem>
