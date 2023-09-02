@@ -83,9 +83,9 @@ Perhaps a new page - somthing like 'Upgrading an Existing LFS System'.
     <!--<listitem>
       <para>Check-&check-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Coreutils-&coreutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>DejaGNU-&dejagnu-version;</para>
     </listitem>-->
@@ -149,9 +149,9 @@ Perhaps a new page - somthing like 'Upgrading an Existing LFS System'.
     <!--<listitem>
       <para>GRUB-&grub-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Gzip-&gzip-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>IANA-Etc-&iana-etc-version;</para>
     </listitem>-->
@@ -167,9 +167,9 @@ Perhaps a new page - somthing like 'Upgrading an Existing LFS System'.
     <!--<listitem revision="systemd">
       <para>Jinja2-&jinja2-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Kbd-&kbd-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Kmod-&kmod-version;</para>
     </listitem>-->
@@ -218,9 +218,9 @@ Perhaps a new page - somthing like 'Upgrading an Existing LFS System'.
     <!--<listitem>
       <para>MPC-&mpc-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>MPFR-&mpfr-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Ncurses-&ncurses-version;</para>
     </listitem>-->
@@ -233,39 +233,39 @@ Perhaps a new page - somthing like 'Upgrading an Existing LFS System'.
     <!--<listitem>
       <para>Patch-&patch-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Pkgconf-&pkgconf-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Perl-&perl-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Procps-ng-&procps-ng-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Psmisc-&psmisc-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Python-&python-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Readline-&readline-version;</para>
     </listitem>-->
     <!--<listitem>
       <para>Sed-&sed-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Shadow-&shadow-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem revision="sysv">
       <para>Sysklogd-&sysklogd-version;</para>
     </listitem>-->
     <!--<listitem>
       <para>Systemd-&systemd-version;</para>
     </listitem>-->
-    <!--<listitem revision="sysv">
+    <listitem revision="sysv">
       <para>SysVinit-&sysvinit-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Tar-&tar-version;</para>
     </listitem>-->
@@ -278,24 +278,24 @@ Perhaps a new page - somthing like 'Upgrading an Existing LFS System'.
     <!--<listitem>
       <para>Tzdata-&tzdata-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Util-Linux-&util-linux-version;</para>
-    </listitem>-->
-    <!--<listitem>
+    </listitem>
+    <listitem>
       <para>Vim-&vim-version;</para>
-    </listitem>-->
-    <!--<listitem>
+    </listitem>
+    <listitem>
       <para>wheel-&wheel-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>XML-Parser-&xml-parser-version;</para>
     </listitem>-->
     <!--<listitem>
       <para>XZ-Utils-&xz-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Zlib-&zlib-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Zstd-&zstd-version;</para>
     </listitem>-->
