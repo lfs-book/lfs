@@ -68,6 +68,7 @@ meson setup \
       -Dmode=release                \
       -Dpamconfdir=no               \
       -Ddev-kvm-mode=0660           \
+      -Dnobody-group=nogroup        \
       -Ddocdir=/usr/share/doc/systemd-&systemd-version; \
       ..</userinput></screen>
 
@@ -176,6 +177,14 @@ meson setup \
           <para>The default udev rule would allow all users to access
           <filename class='devicefile'>/dev/kvm</filename>.  The editors
           consider it dangerous.  This option overrides it.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-Dnobody-group=nogroup</parameter></term>
+        <listitem>
+          <para>Tell the package what group name to use for
+          the 'nobody-group'.</para>
         </listitem>
       </varlistentry>
     </variablelist>
