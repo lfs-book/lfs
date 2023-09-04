@@ -11,36 +11,9 @@
 
   <title>What's new since the last release</title>
 
-<!--
-
-This does not belong on this page.  I don't want to address this now.
-At first I thought it would go on another page, but nothing seems to fit.
-Perhaps a new page - somthing like 'Upgrading an Existing LFS System'.
-  - Bruce 9/1/23
-
-  <caution>
-    <para>
-      During a development cycle of LFS, the instructions in the book is
-      often modified to adapt for a package update or take the advantage of
-      new features from updated packages.  Mixing up the instructions of
-      different versions of the LFS book can cause subtle breakages.  This
-      kind of issue is generally a result from reusing some script created
-      for a prior LFS release.  Such a reuse is strongly discouraged.  If
-      you are reusing scripts for a prior LFS release for any reason, you'll
-      need to be very careful to update the scripts to match current version
-      of the LFS book.
-    </para>
-  </caution>
-
-  <para>In the 12.0 release, <parameter>- -disable-fixincludes</parameter>
-  is set for GCC.  It's a configure switch newly added in GCC 13.1 to
-  prevent GCC from <quote>fixing</quote> the system headers.  Such a
-  <quote>fix</quote> is unnecessary for a modern Linux system and may cause
-  issues if a package is updated after installing GCC.</para>
-
   <para>Here is a list of the packages updated since the previous
   release of LFS.</para>
--->
+
   <!--
     Every package in the book is listed in the "Upgraded to:" section.
     Comment/uncomment as needed. DO NOT delete any of these lines unless that
