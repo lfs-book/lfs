@@ -145,7 +145,7 @@
     </listitem>
 
     <listitem>
-      <para><emphasis role="strong">Texinfo-4.7</emphasis></para>
+      <para><emphasis role="strong">Texinfo-5.0</emphasis></para>
     </listitem>
 
     <listitem>
@@ -173,7 +173,7 @@
   <para >To see whether your host system has all the appropriate versions, and
   the ability to compile programs, run the following commands:</para>
 
-<screen role="nodump"><userinput>cat &gt; version-check.sh &lt;&lt; "EOF"
+<screen role="nodump"><?dbfo keep-together="auto"?><userinput>cat &gt; version-check.sh &lt;&lt; "EOF"
 <literal>#!/bin/bash
 # A script to list version numbers of critical development tools
 
@@ -235,7 +235,7 @@ ver_check Perl           perl     5.8.8
 ver_check Python         python3  3.4
 ver_check Sed            sed      4.1.5
 ver_check Tar            tar      1.22
-ver_check Texinfo        texi2any 4.7
+ver_check Texinfo        texi2any 5.0
 ver_check Xz             xz       5.0.0
 ver_kernel &min-kernel;
 

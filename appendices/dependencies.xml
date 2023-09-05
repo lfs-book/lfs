@@ -147,7 +147,7 @@
       <segmentedlist id="autoconf-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>Automake</seg>
+          <seg>Automake and Coreutils</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -189,7 +189,7 @@
       <segmentedlist id="automake-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg>Coreutils</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -286,7 +286,8 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Diffutils, File, Flex, Gawk, GCC,
-          Glibc, Grep, Make, Perl, Sed, Texinfo, and Zlib</seg>
+          Glibc, Grep, Make, Perl, Pkgconf, Sed, Texinfo, Zlib, and
+          Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -437,6 +438,9 @@
         <seglistitem>
           <seg>
             <ulink url='&github;/testing-cabal/subunit'>libsubunit</ulink>
+            and
+            <ulink url='http://cyberelk.net/tim/software/patchutils/'>
+              patchutils</ulink>
           </seg>
         </seglistitem>
       </segmentedlist>
@@ -447,8 +451,9 @@
       <segmentedlist id="coreutils-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, GMP, Grep,
-          Libcap, Make, OpenSSL, Patch, Perl, Sed, and Texinfo</seg>
+          <seg>Autoconf, Automake, Bash, Binutils, Coreutils, GCC, Gettext,
+          Glibc, GMP, Grep, Libcap, Make, OpenSSL, Patch, Perl, Sed, and
+          Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2514,9 +2519,10 @@
       <segmentedlist id="pkgconf-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg><phrase revision='systemd'>D-Bus, </phrase>E2fsprogs,
+          <seg>Binutils,
+          <phrase revision='systemd'>D-Bus, </phrase>E2fsprogs,
           IProute2, Kmod, Man-DB, Procps-ng, Python,
-		  &systemd-udev;, and Util-linux</seg>
+          &systemd-udev;, and Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2566,7 +2572,7 @@
           <seg>
             <phrase revision='systemd'>None</phrase>
             <phrase revision='sysv'>
-              <ulink url='&blfs-book;general/elogind.xml'>elogind</ulink>
+              <ulink url='&blfs-book;general/elogind.html'>elogind</ulink>
             </phrase>
           </seg>
         </seglistitem>
@@ -2854,6 +2860,11 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
+            <ulink url="https://www.apparmor.net/">AppArmor</ulink>,
+            <ulink url="&github;/linux-audit/audit-userspace">
+              audit-userspace</ulink>,
+            <ulink url="&github;/scop/bash-completion">
+              bash-completion</ulink>,
             <ulink
               url="&blfs-book;postlfs/btrfs-progs.html">btrfs-progs</ulink>,
             <ulink url="&blfs-book;basicnet/curl.html">cURL</ulink>,
@@ -2861,20 +2872,20 @@
             <ulink url="&blfs-book;pst/docbook.html">docbook-xml</ulink>,
             <ulink
               url="&blfs-book;pst/docbook-xsl.html">docbook-xsl-nons</ulink>,
-            <ulink url="https://sourceware.org/elfutils/">elfutils</ulink>,
             <ulink url="&blfs-book;general/git.html">Git</ulink>,
-            <ulink
-              url="https://sourceforge.net/projects/gnu-efi/">gnu-efi</ulink>,
             <ulink url="&blfs-book;postlfs/gnutls.html">GnuTLS</ulink>,
             <ulink url="&blfs-book;postlfs/iptables.html">iptables</ulink>,
+            <ulink url='https://jekyllrb.com/'>jekyll</ulink>,
             <ulink url="https://www.kernel.org/pub/linux/utils/kernel/kexec/">
               kexec-tools</ulink>,
+            <ulink url='&github;/libbpf/libbpf'>libbpf</ulink>,
+            <ulink url="https://sourceware.org/elfutils/">libdw</ulink>,
             <ulink
               url="https://developers.yubico.com/libfido2/">libfido2</ulink>,
             <ulink url="&blfs-book;general/libgcrypt.html">libgcrypt</ulink>,
             <ulink url="&blfs-book;general/libidn2.html">libidn2</ulink>,
             <ulink url="https://www.gnu.org/software/libmicrohttpd/">
-              Libmicrohttpd</ulink>,
+              libmicrohttpd</ulink>,
             <ulink
               url="&blfs-book;postlfs/libpwquality.html">libpwquality</ulink>,
             <ulink url="&blfs-book;general/libseccomp.html">libseccomp</ulink>,
@@ -2889,16 +2900,23 @@
             <ulink url="&blfs-book;postlfs/p11-kit.html">p11-kit</ulink>,
             <ulink url="&blfs-book;general/pcre2.html">PCRE2</ulink>,
             <ulink url="&blfs-book;postlfs/polkit.html">Polkit</ulink>,
+            <ulink url='&pypi-home;/pyelftools'>pyelftools</ulink>,
             <ulink url="&blfs-book;postlfs/qemu.html">qemu</ulink>,
             <ulink url="&blfs-book;general/qrencode.html">qrencode</ulink>,
-            <ulink url="https://sourceforge.net/projects/linuxquota/">
-              quota-tools</ulink>,
+            <ulink url="https://sourceforge.net/projects/linuxquota/"
+              >quota-tools</ulink>,
+            <ulink url="https://rpm.org">rpm</ulink>,
             <ulink url="&blfs-book;basicnet/rsync.html">rsync</ulink>,
+            <ulink url="&github;/SELinuxProject/selinux">
+              SELinux</ulink>,
             <ulink url="&blfs-book;general/python-modules.html#sphinx">
               Sphinx</ulink>,
+            <ulink url="https://sourceware.org/systemtap/">
+              systemtap</ulink>,
             <ulink url="https://tpm2-tss.readthedocs.io/en/latest/">
               tpm2-tss</ulink>,
             <ulink url="&blfs-book;general/valgrind.html">Valgrind</ulink>,
+            <ulink url="https://xenproject.org">Xen</ulink>,
             and
             <ulink url="&blfs-book;postlfs/zsh.html">zsh</ulink>
           </seg>
@@ -3380,7 +3398,7 @@
       <segmentedlist id="zstd-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>GCC, Libelf, and &systemd-udev;</seg>
+          <seg>Binutils, GCC, Libelf, and &systemd-udev;</seg>
         </seglistitem>
       </segmentedlist>
 

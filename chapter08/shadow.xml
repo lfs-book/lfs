@@ -107,6 +107,7 @@ find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;</userinput></s
 ./configure --sysconfdir=/etc   \
             --disable-static    \
             --with-{b,yes}crypt \
+            --without-libbsd    \
             --with-group-name-max-length=32</userinput></screen>
 
     <variablelist>
@@ -141,6 +142,14 @@ find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;</userinput></s
         <listitem>
           <para>The longest permissible user name is 32 characters.  Make the maximum
           length of a group name the same.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--without-libbsd</parameter></term>
+        <listitem>
+           <para>Do not use the readpassphrase function from libbsd which
+           is not in LFS.  Use the internal copy instead.</para>
         </listitem>
       </varlistentry>
 

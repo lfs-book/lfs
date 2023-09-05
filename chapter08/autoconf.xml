@@ -153,7 +153,7 @@
           <para>Helps to create a <filename>configure.in</filename> file for a
           software package; it examines the source files in a directory tree,
           searching them for common portability issues, and creates a
-          <filename>configure.scan</filename> file that serves as as a
+          <filename>configure.scan</filename> file that serves as a
           preliminary <filename>configure.in</filename> file for the
           package</para>
           <indexterm zone="ch-system-autoconf autoscan">
