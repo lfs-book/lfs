@@ -41,6 +41,17 @@
     -->
 
     <listitem>
+      <para>2023-09-05</para>
+      <itemizedlist>
+        <listitem>
+           <para>[xry111] - Move pkgconf before binutils for binutils
+           building system to detect zstd properly.
+           <ulink url='&lfs-ticket-root;5340'>#5340</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2023-09-04</para>
       <itemizedlist>
         <listitem>
