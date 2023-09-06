@@ -294,7 +294,7 @@
       <segmentedlist id="binutils-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
-          <seg>Glibc and Zlib</seg>
+          <seg>Glibc, Zlib, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
