@@ -45,7 +45,7 @@
       <itemizedlist>
         <listitem>
            <para>[xry111] - Move pkgconf before binutils for binutils
-           building system to detect zstd properly.
+           building system to detect zstd properly.  Fixes
            <ulink url='&lfs-ticket-root;5340'>#5340</ulink>.</para>
         </listitem>
         <listitem>
