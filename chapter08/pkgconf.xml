@@ -43,15 +43,12 @@
   <sect2 role="installation">
 
     <title>Installation of Pkgconf</title>
-<!--
-    <para>Pkgconf-2.0.0 explicitly errors when attempting to run
-    <option>- -modversion</option> with multiple arguments, even if these
-    arguments are constraints for the same package.  This breaks many
-    packages in BLFS. Run this sed to reinstate the old
-    output for pkgconf:</para>
 
-     <screen><userinput remap="pre">sed -i '1330,1336s|^|//|' cli/main.c</userinput></screen>
--->
+    <!-- https://github.com/pkgconf/pkgconf/issues/317 -->
+    <para>Fix a regression in pkgconf-2.0.3 breaking BLFS packages:</para>
+
+    <screen><userinput remap="pre">sed -i 's/str\(cmp.*package\)/strn\1, strlen(pkg-&gt;why)/' cli/main.c</userinput></screen>
+
     <para>Prepare Pkgconf for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr              \
