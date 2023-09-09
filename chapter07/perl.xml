@@ -57,13 +57,43 @@
              -Dvendorarch=/usr/lib/perl5/&perl-version-min;/vendor_perl</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the new Configure options:</title>
+      <title>The meaning of the Configure options:</title>
+
       <varlistentry>
         <term><parameter>-des</parameter></term>
         <listitem>
           <para>This is a combination of three options: -d uses defaults for
           all items; -e ensures completion of all tasks; -s silences
           non-essential output.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-Dvendorprefix=/usr</parameter></term>
+        <listitem>
+          <para>This ensures <command>perl</command> knows how to
+          tell packages where they should install their Perl modules.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-Duseshrplib</parameter></term>
+        <listitem>
+          <para>Build <systemitem class='library'>libperl</systemitem>
+          needed by some Perl modules as a shared library, instead of
+          a static library.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-Dprivlib,-Darchlib,-Dsitelib,...</parameter></term>
+        <listitem>
+          <para>These settings define where Perl looks for installed
+          modules. The LFS editors chose to put them in a directory structure
+          based on the MAJOR.MINOR version of Perl (&perl-version-min;) which
+          allows upgrading Perl to newer patch levels (the patch level is
+          the last dot separated part in the full version string like
+          &perl-version;) without reinstalling all of the modules.</para>
         </listitem>
       </varlistentry>
 

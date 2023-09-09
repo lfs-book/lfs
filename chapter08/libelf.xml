@@ -136,8 +136,8 @@ rm -rf DESTDIR</userinput></screen>
     <title>Contents of Libelf</title>
 
     <segmentedlist>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installed library</segtitle>
+      <segtitle>Installed directory</segtitle>
 
       <seglistitem>
         <seg>
