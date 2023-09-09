@@ -42,7 +42,7 @@
   <sect2 role="installation">
     <title>Installation of Util-linux</title>
 
-    <para>First, disable a problem test:</para>
+    <para>First, disable a problematic test:</para>
 
     <screen><userinput remap="pre">sed -i '/test_mkfds/s/^/#/' tests/helpers/Makemodule.am</userinput></screen>
 
