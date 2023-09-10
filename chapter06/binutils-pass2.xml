@@ -49,7 +49,7 @@
          without-system-zlib.  If the resulted libctf.so still links against
          libz.so (check with readelf -d) despite we are saying
          without-system-zlib, then the issue is still unresolved.  -->
-    <para>Binutils relies on an internal libtool copy to link against
+    <para>Binutils building system relies on an shipped libtool copy to link against
     internal static libraries, but the libiberty and zlib copies shipped
     in the package do not use libtool.  This inconsistency may cause
     produced binaries mistakenly linked against libraries from the host
