@@ -55,6 +55,18 @@
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-memalign-patch;</userinput></screen>
 
+    <!-- CVE-2023-4527
+         https://sourceware.org/bugzilla/show_bug.cgi?id=30842
+         https://sourceware.org/ml/libc-alpha/2023-September/151522.html -->
+    <para>Then fix a security vulnerability exploitable when the
+    <option>no-aaaa</option> option is used in
+    <filename>/etc/resolv.conf</filename>:</para>
+
+<screen><userinput remap="pre">sed \
+  -E "/__res_context_search/\
+      {N;N;s/(search \(([^,]*,){6}[^,]*)NULL/\1\&amp;alt_dns_packet_buffer/}" \
+  -i resolv/nss_dns/dns-host.c</userinput></screen>
+
     <para>The Glibc documentation recommends building Glibc
     in a dedicated build directory:</para>
 
