@@ -178,9 +178,10 @@ EOF</userinput></screen>
        <secondary>/etc/hosts</secondary>
      </indexterm>
 
-     <para>Decide on the IP address, fully-qualified domain name (FQDN), and
-     possible aliases for use in the <filename>/etc/hosts</filename> file. The
-     syntax is:</para>
+     <para>Decide on a fully-qualified domain name (FQDN), and possible aliases
+     for use in the <filename>/etc/hosts</filename> file. If using static IP
+     addresses, you'll also need to decide on an IP address. The syntax
+     for a hosts file entry is:</para>
 
 <screen><literal>IP_address myhost.example.org aliases</literal></screen>
 
@@ -197,11 +198,18 @@ EOF</userinput></screen>
      <para>x can be any number in the range 16-31. y can be any number in the
      range 0-255.</para>
 
-     <para>A valid private IP address could be 192.168.1.1. A valid FQDN for
-     this IP could be lfs.example.org.</para>
+     <para>A valid private IP address could be 192.168.1.1.</para>
 
-     <para>Even if not using a network card, a valid FQDN is still required.
-     This is necessary for certain programs to operate correctly.</para>
+     <para>If the computer is to be visible to the Internet, a valid FQDN
+     can be the domain name itself, or a string resulted by concatenating a
+     prefix (often the hostname) and the domain name with a <quote>.</quote>
+     character.  And, you need to contact the domain provider to resolve the
+     FQDN to your public IP address.</para>
+
+     <para>Even if the computer is not visible to the Internet, a FQDN is
+     still needed for certain programs, such as MTAs, to operate properly.
+     A special FQDN, <literal>localhost.localdomain</literal>, can be used
+     for this purpose.</para>
 
      <para>Create the  <filename>/etc/hosts</filename> file by running:</para>
 
