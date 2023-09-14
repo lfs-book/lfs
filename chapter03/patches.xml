@@ -78,10 +78,10 @@
     </varlistentry>
 -->
     <varlistentry>
-      <term>Glibc Memalign Patch - <token>&glibc-memalign-patch-size;</token>:</term>
+      <term>Glibc Upstream Fixes Patch - <token>&glibc-upstream-fixes-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&glibc-memalign-patch;"/></para>
-        <para>MD5 sum: <literal>&glibc-memalign-patch-md5;</literal></para>
+        <para>Download: <ulink url="&patches-root;&glibc-upstream-fixes-patch;"/></para>
+        <para>MD5 sum: <literal>&glibc-upstream-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
 
