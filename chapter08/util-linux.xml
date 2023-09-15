@@ -42,7 +42,7 @@
   <sect2 role="installation">
     <title>Installation of Util-linux</title>
 
-    <para>First, disable a problem test:</para>
+    <para>First, disable a problematic test:</para>
 
     <screen><userinput remap="pre">sed -i '/test_mkfds/s/^/#/' tests/helpers/Makemodule.am</userinput></screen>
 
@@ -1230,7 +1230,8 @@ su tester -c "make -k check"</userinput></screen>
           <para>Creates new UUIDs. Each new UUID is a random number likely to be
           unique among all UUIDs created, on the local system and on other
           systems, in the past and in the future, with extremely high
-          probability (~340 trillion trillion trillion unique UUIDs are possible)</para>
+          probability (2<superscript>128</superscript> UUIDs are
+          possible)</para>
           <indexterm zone="ch-system-util-linux uuidgen">
             <primary sortas="b-uuidgen">uuidgen</primary>
           </indexterm>

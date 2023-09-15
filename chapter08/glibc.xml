@@ -50,15 +50,10 @@
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
 
-    <!-- https://sourceware.org/bugzilla/show_bug.cgi?id=30068
-         Upstream fix also added a test case and renamed "prec" to
-         "prec_inc".  We'll test this with MPFR test suite so we don't
-         need the test here, and the renaming does not affect program
-         behavior.  -->
-    <para>Fix a security issue identified upstream:</para>
+    <para>Now fix two security vulnerabilities and a regression causing the
+    posix_memalign() function very slow in some conditions:</para>
 
-<screen><userinput remap="pre">sed '/width -=/s/workend - string/number_length/' \
-    -i stdio-common/vfprintf-process-arg.c</userinput></screen>
+<screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-fixes-patch;</userinput></screen>
 
     <para>The Glibc documentation recommends building Glibc
     in a dedicated build directory:</para>
@@ -79,7 +74,6 @@ cd       build</userinput></screen>
              --enable-kernel=&linux-major-version;.&linux-minor-version;                      \
              --enable-stack-protector=strong          \
              --with-headers=/usr/include              \
-             --disable-crypt                          \
              libc_cv_slibdir=/usr/lib</userinput></screen>
 
     <variablelist>
@@ -167,10 +161,12 @@ esac</userinput></screen>
         is known to fail in the LFS chroot environment.</para>
       </listitem>
 
+<!-- Did not fail with glibc-2.38
       <listitem>
         <para><emphasis>misc/tst-ttyname</emphasis>
         is known to fail in the LFS chroot environment.</para>
       </listitem>
+-->
 
       <!-- https://sourceware.org/pipermail/libc-alpha/2022-August/141567.html -->
       <listitem>
@@ -325,7 +321,7 @@ localedef -i ja_JP -f SHIFT_JIS ja_JP.SJIS 2> /dev/null || true</userinput></scr
     <para>Create a new file <filename>/etc/nsswitch.conf</filename> by running the
     following:</para>
 
-<screen><userinput>cat &gt; /etc/nsswitch.conf &lt;&lt; "EOF"
+<screen revision='sysv'><userinput>cat &gt; /etc/nsswitch.conf &lt;&lt; "EOF"
 <literal># Begin /etc/nsswitch.conf
 
 passwd: files
@@ -333,6 +329,24 @@ group: files
 shadow: files
 
 hosts: files dns
+networks: files
+
+protocols: files
+services: files
+ethers: files
+rpc: files
+
+# End /etc/nsswitch.conf</literal>
+EOF</userinput></screen>
+
+<screen revision='systemd'><userinput>cat &gt; /etc/nsswitch.conf &lt;&lt; "EOF"
+<literal># Begin /etc/nsswitch.conf
+
+passwd: files systemd
+group: files systemd
+shadow: files systemd
+
+hosts: mymachines resolve [!UNAVAIL=return] files myhostname dns
 networks: files
 
 protocols: files

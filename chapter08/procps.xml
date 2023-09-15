@@ -67,31 +67,12 @@
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
-<!--
-    <para>The test suite needs some custom modifications for LFS.
-    Remove a test that fails when scripting does not use a tty device and
-    fix two others.
-    To run the test suite, run the following commands:</para>
+<screen revision='sysv'><userinput remap="make">make</userinput></screen>
+<screen revision='systemd'><userinput remap="make">make src_w_LDADD='$(LDADD) -lsystemd'</userinput></screen>
 
-<screen><userinput remap="test">sed -i -r 's|(pmap_initname)\\\$|\1|' testsuite/pmap.test/pmap.exp
-sed -i '/set tty/d' testsuite/pkill.test/pkill.exp
-rm testsuite/pgrep.test/pgrep.exp
-make check</userinput></screen>
--->
     <para> To run the test suite, run:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
-
-    <!-- It's because "free -v" shows "used" greater than "total", and
-         a negative "free" for "Comm" line.  The "total" value is from
-         "CommitLimit" in /proc/meminfo, which is the limit for one process.
-         But the "used" value is from "Committed_AS" in the same file,
-         which is the total commited virtual memory space of all processes.
-         I'll make a report to upstream anyway.  -->
-    <para>One test named <filename>free with commit</filename>
-    may fail if some applications with a custom memory allocator (for
-    example, JVM and Web browsers) are running on the host distro.</para>
 
     <para>Install the package:</para>
 

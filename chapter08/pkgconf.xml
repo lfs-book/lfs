@@ -41,7 +41,13 @@
   </sect2>
 
   <sect2 role="installation">
+
     <title>Installation of Pkgconf</title>
+
+    <!-- https://github.com/pkgconf/pkgconf/issues/317 -->
+    <para>Fix a regression in pkgconf-2.0.3 breaking BLFS packages:</para>
+
+    <screen><userinput remap="pre">sed -i 's/str\(cmp.*package\)/strn\1, strlen(pkg-&gt;why)/' cli/main.c</userinput></screen>
 
     <para>Prepare Pkgconf for compilation:</para>
 

@@ -54,10 +54,12 @@
       <para>The default settings of GMP produce libraries optimized for
       the host processor.  If libraries suitable for processors less
       capable than the host's CPU are desired, generic libraries can be
-      created by running the following:
+      created by appending the <option>--host=none-linux-gnu</option> option
+      to the <command>configure</command> command.</para>
 
-<screen role="nodump"><userinput>cp -v configfsf.guess config.guess
-cp -v configfsf.sub   config.sub</userinput></screen></para>
+      <!-- To editors: the configure script says "the none host is obsolete,
+           use - -disable-assembly", but don't believe it: with the latter
+           CFLAGS is still automatically set to -march=something.  -->
     </note>
 
     <para>Prepare GMP for compilation:</para>
@@ -106,9 +108,11 @@ make html</userinput></screen>
     the system capabilities and there will be errors in the tests or other
     applications using the gmp libraries with the message "Illegal
     instruction".  In this case, gmp should be reconfigured with the option
-    --build=x86_64-pc-linux-gnu and rebuilt.</para></caution>
+    <option>--host=none-linux-gnu</option> and rebuilt.</para></caution>
 
-    <para>Ensure that all 197 tests in the test suite passed.
+    <!-- Some tests PASS on a specific uarch but SKIP on other CPUs.
+         For example on K8 the following command outputs 200.  -->
+    <para>Ensure that at least 199 tests in the test suite passed.
     Check the results by issuing the following command:</para>
 
 <screen><userinput remap="test">awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log</userinput></screen>
@@ -124,7 +128,7 @@ make install-html</userinput></screen>
     <title>Contents of GMP</title>
 
     <segmentedlist>
-      <segtitle>Installed Libraries</segtitle>
+      <segtitle>Installed libraries</segtitle>
       <segtitle>Installed directory</segtitle>
 
       <seglistitem>

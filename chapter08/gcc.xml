@@ -171,10 +171,10 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     url="&test-results;"/> and
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
-    <para>Two tests named <filename>pr104610.c</filename> and
+ <para><!--Two tests named <filename>pr104610.c</filename> and
     <filename>pr69482-1.c</filename> are known to fail because the test
     files does not account for the
-    <parameter>--enable-default-ssp</parameter> option.
+    <parameter>- -enable-default-ssp</parameter> option.-->
     <!-- https://gcc.gnu.org/PR106375 and https://gcc.gnu.org/PR109353 -->
     Two tests named <filename>copy.cc</filename> and
     <filename>pr56837.c</filename> are known to fail.
@@ -182,6 +182,17 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     Additionally, several tests in the
     <filename class='directory'>vect</filename> directory are known to fail
     if the hardware does not support AVX.</para>
+
+    <para>
+      With Glibc-2.38, the analyzer tests named
+      <filename>data-model-4.c</filename> and
+      <filename>conftest-1.c</filename> 
+        are known to fail.
+      In the asan tests, several tests in <filename>asan_test.C</filename> 
+        are known to fail.
+      The test named <filename>interception-malloc-test-1.C</filename> 
+        is known to fail.
+    </para>
 
     <para>A few unexpected failures cannot always be avoided. The GCC developers
     are usually aware of these issues, but have not resolved them yet.

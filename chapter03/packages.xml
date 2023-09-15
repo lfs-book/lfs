@@ -62,7 +62,6 @@
         <para>Home page: <ulink url="&automake-home;"/></para>
         <para>Download: <ulink url="&automake-url;"/></para>
         <para>MD5 sum: <literal>&automake-md5;</literal></para>
-        <para>SHA256 sum: <literal>&automake-sha256;</literal></para>
       </listitem>
     </varlistentry>
 
