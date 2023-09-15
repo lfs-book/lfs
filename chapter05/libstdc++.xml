@@ -139,7 +139,7 @@ cd       build</userinput></screen>
     <para>Remove the libtool archive files because they are harmful for
     cross-compilation:</para>
 
-<screen><userinput remap="install">rm -v $LFS/usr/lib/lib{stdc++,stdc++fs,supc++}.la</userinput></screen>
+<screen><userinput remap="install">rm -v $LFS/usr/lib/lib{stdc++{,exp,fs},supc++}.la</userinput></screen>
 
   </sect2>
 
