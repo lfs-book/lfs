@@ -72,7 +72,9 @@
     </listitem>
 
     <listitem>
-      <para><emphasis role="strong">GCC-5.1</emphasis> including the C++
+      <!-- Pass 1 GCC FTBFS with GCC-5.1 because of
+           https://gcc.gnu.org/PR65801. -->
+      <para><emphasis role="strong">GCC-5.2</emphasis> including the C++
       compiler, <command>g++</command> (Versions greater than &gcc-version; are
       not recommended as they have not been tested). C and C++ standard
       libraries (with headers) must also be present so the C++ compiler can
@@ -224,8 +226,8 @@ ver_check Bison          bison    2.7
 ver_check Diffutils      diff     2.8.1
 ver_check Findutils      find     4.2.31
 ver_check Gawk           gawk     4.0.1
-ver_check GCC            gcc      5.1
-ver_check "GCC (C++)"    g++      5.1
+ver_check GCC            gcc      5.2
+ver_check "GCC (C++)"    g++      5.2
 ver_check Grep           grep     2.5.1a
 ver_check Gzip           gzip     1.3.12
 ver_check M4             m4       1.4.10
