@@ -11,6 +11,20 @@
 
   <title>General Compilation Instructions</title>
 
+  <caution>
+    <para>
+      During a development cycle of LFS, the instructions in the book are
+      often modified to adapt for a package update or take the advantage of
+      new features from updated packages.  Mixing up the instructions of
+      different versions of the LFS book can cause subtle breakages.  This
+      kind of issue is generally a result from reusing some script created
+      for a prior LFS release.  Such a reuse is strongly discouraged.  If
+      you are reusing scripts for a prior LFS release for any reason, you'll
+      need to be very careful to update the scripts to match current version
+      of the LFS book.
+    </para>
+  </caution>
+
   <para>Here are some things you should know about building each package:</para>
 
   <itemizedlist>

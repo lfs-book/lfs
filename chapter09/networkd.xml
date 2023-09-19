@@ -316,27 +316,18 @@ EOF</userinput></screen>
      <para>x can be any number in the range 16-31. y can be any number in the
      range 0-255.</para>
 
-     <para>A valid private IP address could be 192.168.1.1. A valid FQDN for
-     this IP could be lfs.example.org.</para>
+     <para>A valid private IP address could be 192.168.1.1.</para>
 
-     <para>Even if not using a network card, a valid FQDN is still required.
-     This is necessary for certain programs, such as MTAs, to operate properly.</para>
+     <para>If the computer is to be visible to the Internet, a valid FQDN
+     can be the domain name itself, or a string resulted by concatenating a
+     prefix (often the hostname) and the domain name with a <quote>.</quote>
+     character.  And, you need to contact the domain provider to resolve the
+     FQDN to your public IP address.</para>
 
-<!--
-     <para>Create the /etc/hosts file using the following command:</para>
-
-<screen role="nodump"><userinput>cat &gt; /etc/hosts &lt;&lt; "EOF"
-<literal># Begin /etc/hosts
-
-127.0.0.1 localhost.localdomain localhost
-127.0.1.1 <replaceable>&lt;FQDN&gt;</replaceable> <replaceable>&lt;HOSTNAME&gt;</replaceable>
-::1       localhost ip6-localhost ip6-loopback
-ff02::1   ip6-allnodes
-ff02::2   ip6-allrouters
-
-# End /etc/hosts</literal>
-EOF</userinput></screen>
--->
+     <para>Even if the computer is not visible to the Internet, a FQDN is
+     still needed for certain programs, such as MTAs, to operate properly.
+     A special FQDN, <literal>localhost.localdomain</literal>, can be used
+     for this purpose.</para>
 
      <para>Create the <filename>/etc/hosts</filename> file using the following
      command:</para>
@@ -344,28 +335,32 @@ EOF</userinput></screen>
 <screen><userinput>cat &gt; /etc/hosts &lt;&lt; "EOF"
 <literal># Begin /etc/hosts
 
-127.0.0.1 localhost.localdomain localhost
-127.0.1.1 <replaceable>&lt;FQDN&gt;</replaceable> <replaceable>&lt;HOSTNAME&gt;</replaceable>
-<replaceable>&lt;192.168.0.2&gt;</replaceable> <replaceable>&lt;FQDN&gt;</replaceable> <replaceable>&lt;HOSTNAME&gt;</replaceable> <replaceable>[alias1] [alias2] ...</replaceable>
-::1       localhost ip6-localhost ip6-loopback
+<replaceable>&lt;192.168.0.2&gt;</replaceable> <replaceable>&lt;FQDN&gt;</replaceable> <replaceable>[alias1] [alias2] ...</replaceable>
+::1       ip6-localhost ip6-loopback
 ff02::1   ip6-allnodes
 ff02::2   ip6-allrouters
 
 # End /etc/hosts</literal>
 EOF</userinput></screen>
 
-     <para>The <replaceable>&lt;192.168.0.2&gt;</replaceable>,
-     <replaceable>&lt;FQDN&gt;</replaceable>, and
-     <replaceable>&lt;HOSTNAME&gt;</replaceable> values need to be
+     <para>The <replaceable>&lt;192.168.0.2&gt;</replaceable> and
+     <replaceable>&lt;FQDN&gt;</replaceable> values need to be
      changed for specific uses or requirements (if assigned an IP address by a
      network/system administrator and the machine will be connected to an
      existing network). The optional alias name(s) can be omitted, and the
      <replaceable>&lt;192.168.0.2&gt;</replaceable> line can be omitted if you
-     are using a connection configured with DHCP or IPv6 Autoconfiguration.</para>
+     are using a connection configured with DHCP or IPv6 Autoconfiguration,
+     or using <literal>localhost.localdomain</literal> as the FQDN.</para>
+
+     <para>The <filename>/etc/hostname</filename> does not contain entries
+     for <literal>localhost</literal>,
+     <literal>localhost.localdomain</literal>, or the hostname (without a
+     domain) because they are handled by the
+     <systemitem class='library'>myhostname</systemitem> NSS module, read
+     the man page <filename>nss-myhostname(8)</filename> for details.</para>
 
      <para>The ::1 entry is the IPv6 counterpart of 127.0.0.1 and represents
-     the IPv6 loopback interface. 127.0.1.1 is a loopback entry reserved
-     specifically for the FQDN.</para>
+     the IPv6 loopback interface.</para>
 
    </sect2>
 

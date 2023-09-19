@@ -69,8 +69,8 @@ make install-html</userinput></screen>
     <title>Contents of MPC</title>
 
     <segmentedlist>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installed libraries</segtitle>
+      <segtitle>Installed directory</segtitle>
 
       <seglistitem>
         <seg>libmpc.so</seg>

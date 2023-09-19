@@ -122,6 +122,7 @@
 
 
     <note>
+      <?dbfo keep-together="auto"?>
       <para>A good starting place for setting up the kernel configuration is to
       run <command>make defconfig</command>. This will set the base
       configuration to a good state that takes your current system architecture
