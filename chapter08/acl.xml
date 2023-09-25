@@ -75,7 +75,7 @@
 
 <screen><userinput remap="pre">make distclean</userinput></screen>
 
-    <para>Prepare Xz for compilation:</para>
+    <para>Prepare Acl for compilation:</para>
 
 <screen><userinput remap="configure">CC="gcc -m32" ./configure \
     --prefix=/usr         \
@@ -107,7 +107,7 @@ rm -rf DESTDIR</userinput></screen>
 
 <screen><userinput remap="pre">make distclean</userinput></screen>
 
-    <para>Prepare Xz for compilation:</para>
+    <para>Prepare Acl for compilation:</para>
 
 <screen><userinput remap="configure">CC="gcc -mx32" ./configure \
     --prefix=/usr          \
