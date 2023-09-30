@@ -215,8 +215,23 @@ chmod -v 600  /var/log/btmp</userinput></screen>
   failed login attempts.  The <filename>/var/log/btmp</filename> file records
   the bad login attempts.</para>
 
-  <note><para>The <filename>/run/utmp</filename> file records the users that
-  are currently logged in.  This file is created dynamically in the boot
-  scripts.</para></note>
+  <!-- systemd no longer creates this -->
+  <note revision='sysv'><para>The <filename>/run/utmp</filename> file
+  records the users that are currently logged in.  This file is created
+  dynamically in the boot scripts.</para></note>
+
+  <!-- AFAIK they are not vital for system function, users requiring such
+       info should rely on systemd-logind or elogind or some custom PAM
+       module.  Maybe we can stop to create them at all.  -->
+  <note>
+    <para>
+      The <phrase revision='sysv'><filename>utmp</filename>,
+      </phrase><filename>wtmp</filename>, <filename>btmp</filename>, and
+      <filename>lastlog</filename> files use 32-bit integers for timestamp
+      and they'll be fundamentally broken after year 2038.  Many packages
+      have stopped using them and other packages are going to stop using
+      them.  Do not rely on the contents of them for anything.
+    </para>
+  </note>
 
 </sect1>
