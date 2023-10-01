@@ -227,10 +227,10 @@ chmod -v 600  /var/log/btmp</userinput></screen>
     <para>
       The <phrase revision='sysv'><filename>utmp</filename>,
       </phrase><filename>wtmp</filename>, <filename>btmp</filename>, and
-      <filename>lastlog</filename> files use 32-bit integers for timestamp
+      <filename>lastlog</filename> files use 32-bit integers for timestamps
       and they'll be fundamentally broken after year 2038.  Many packages
       have stopped using them and other packages are going to stop using
-      them.  Do not rely on the contents of them for anything.
+      them.  It is probably best to consider them deprecated..
     </para>
   </note>
 
