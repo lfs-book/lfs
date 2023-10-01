@@ -94,6 +94,7 @@ cd       build</userinput></screen>
       --build=$(../scripts/config.guess) \
       --enable-kernel=&min-kernel;               \
       --with-headers=$LFS/usr/include    \
+      --disable-nscd                     \
       libc_cv_slibdir=/usr/lib</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">../configure                             \
       --prefix=/usr                      \
@@ -140,6 +141,14 @@ cd       build</userinput></screen>
         <listitem>
           <para>This ensures that the library is installed in /usr/lib instead
           of the default /lib64 on 64-bit machines.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-nscd</parameter></term>
+        <listitem>
+          <para>Do not build the name service cache daemon which is no 
+          longer used.</para>
         </listitem>
       </varlistentry>
 
