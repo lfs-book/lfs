@@ -507,7 +507,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
         <seg>gencat, getconf, getent, iconv, iconvconfig, ldconfig,
         ldd, lddlibc4,
         ld.so (symlink to ld-linux-x86-64.so.2 or ld-linux.so.2),
-        locale, localedef, makedb, mtrace, nscd,
+        locale, localedef, makedb, mtrace,
         pcprofiledump, pldd, sln, sotruss, sprof, tzselect, xtrace,
         zdump, and zic</seg>
         <seg>ld-linux-x86-64.so.2, ld-linux.so.2,
@@ -527,7 +527,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
         /usr/include/protocols, /usr/include/rpc,
         /usr/include/sys, /usr/lib/audit, /usr/lib/gconv, /usr/lib/locale,
         /usr/libexec/getconf, /usr/share/i18n, /usr/share/zoneinfo,
-        /var/cache/nscd, and /var/lib/nss_db</seg>
+        and /var/lib/nss_db</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -657,17 +657,6 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
           in human-readable format</para>
           <indexterm zone="ch-system-glibc mtrace">
             <primary sortas="b-mtrace">mtrace</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="nscd">
-        <term><command>nscd</command></term>
-        <listitem>
-          <para>A daemon that provides a cache for the most common name
-          service requests</para>
-          <indexterm zone="ch-system-glibc nscd">
-            <primary sortas="b-nscd">nscd</primary>
           </indexterm>
         </listitem>
       </varlistentry>
