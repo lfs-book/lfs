@@ -230,7 +230,7 @@ chmod -v 600  /var/log/btmp</userinput></screen>
       <filename>lastlog</filename> files use 32-bit integers for timestamps
       and they'll be fundamentally broken after year 2038.  Many packages
       have stopped using them and other packages are going to stop using
-      them.  It is probably best to consider them deprecated..
+      them.  It is probably best to consider them deprecated.
     </para>
   </note>
 

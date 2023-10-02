@@ -198,7 +198,7 @@
       <para>Ninja-&ninja-version;</para>
     </listitem>-->
     <listitem>
-      <para>Openssl-&openssl-version;</para>
+      <para>OpenSSL-&openssl-version;</para>
     </listitem>
     <!--<listitem>
       <para>Patch-&patch-version;</para>
