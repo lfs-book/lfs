@@ -113,11 +113,7 @@
 
     <para>To test the results, issue:</para>
 
-<screen><userinput remap="test">make -k check</userinput></screen>
-
-    <!-- https://gitlab.com/man-db/man-db/-/issues/25 -->
-    <para>One test named <filename>man1/lexgrog.1</filename> is known
-    to fail.</para>
+<screen><userinput remap="test">make check</userinput></screen>
 
     <para>Install the package:</para>
 

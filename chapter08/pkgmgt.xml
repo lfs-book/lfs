@@ -69,6 +69,17 @@
         it.  </para>
       </listitem>
 
+      <listitem>
+        <para>Reinstalling the same version of Glibc (&glibc-version; for
+        this release of LFS) with patches should be safe when these patches
+        do not change ABI and API.  When a security vulnerability is found
+        in Glibc, we often need to apply such a patch to fix the
+        vulnerability and reinstall Glibc.  Consult
+        <ulink url='&lfs-root;lfs/advisories/'>LFS security
+        advisories</ulink> if you are alerted for a published Glibc security
+        vulnerability but unsure about the action to take.</para>
+      </listitem>
+
       <listitem> <para>If a package containing a shared library is updated, and
       if the name of the library changes, then any packages dynamically
       linked to the library must be recompiled, to link against the
