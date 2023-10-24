@@ -163,7 +163,7 @@
         provided by <application>coreutils</application> has already
         implemented this, and most packages use that command to install binary files and
         libraries.  This means that you won't be troubled by this issue most of the time.
-        However, the install process of some packages (notably Mozilla JS
+        However, the install process of some packages (notably SpiderMonkey
         in BLFS) just overwrites the file if it exists; this causes a crash. So
         it's safer to save your work and close unneeded running processes
         before updating a package.</para> <!-- binary is an adjective, not a noun. -->
