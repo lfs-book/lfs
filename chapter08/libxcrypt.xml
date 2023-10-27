@@ -125,7 +125,7 @@ cp -av .libs/libcrypt.so.1* /usr/lib</userinput></screen>
 
 <screen><userinput remap="pre">make distclean</userinput></screen>
 
-    <para>Prepare File for compilation:</para>
+    <para>Prepare Libxcrypt for compilation:</para>
 
 <screen><userinput remap="configure">CC="gcc -m32" \
 ./configure --prefix=/usr                \
@@ -158,7 +158,7 @@ ln -svf libxcrypt.pc /usr/lib32/pkgconfig/libcrypt.pc</userinput></screen>
 
 <screen><userinput remap="pre">make distclean</userinput></screen>
 
-    <para>Prepare File for compilation:</para>
+    <para>Prepare Libxcrypt for compilation:</para>
 
 <screen><userinput remap="configure">CC="gcc -mx32" \
 ./configure --prefix=/usr                 \
