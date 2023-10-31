@@ -669,6 +669,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>Setuptools (&setuptools-version;) - <token>&setuptools-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&setuptools-home;"/></para>
+        <para>Download: <ulink url="&setuptools-url;"/></para>
+        <para>MD5 sum: <literal>&setuptools-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Shadow (&shadow-version;) - <token>&shadow-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&shadow-home;"/></para>
