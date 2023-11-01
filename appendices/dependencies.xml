@@ -3281,7 +3281,7 @@
         <segtitle>&before;</segtitle>
         <seglistitem>
           <seg>
-            <phrase>Jinja2, MarkupSafe, Meson, and Setuptools</phrase>
+            Jinja2, MarkupSafe, Meson, and Setuptools
           </seg>
         </seglistitem>
       </segmentedlist>
