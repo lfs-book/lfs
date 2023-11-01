@@ -649,7 +649,7 @@
 <!ENTITY shadow-size "1,758 KB">
 <!ENTITY shadow-url "&github;/shadow-maint/shadow/releases/download/&shadow-version;/shadow-&shadow-version;.tar.xz">
 <!ENTITY shadow-md5 "effc1aa17590305647413125b966f1dd">
-<!ENTITY shadow-home "https://shadow-maint.github.io/shadow/">
+<!ENTITY shadow-home "&github;/shadow-maint/shadow/">
 <!ENTITY shadow-fin-du "46 MB">
 <!ENTITY shadow-fin-sbu "0.1 SBU">
 

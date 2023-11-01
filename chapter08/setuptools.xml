@@ -57,8 +57,10 @@
 
       <seglistitem>
          <seg>
-            /usr/lib/python&python-minor;/site-packages/flit_core and
-            /usr/lib/python&python-minor;/site-packages/flit_core-&setuptools-version;.dist-info
+            /usr/lib/python&python-minor;/site-packages/_distutils_hack,
+            /usr/lib/python&python-minor;/site-packages/pkg_resources,
+            /usr/lib/python&python-minor;/site-packages/setuptools, and
+            /usr/lib/python&python-minor;/site-packages/setuptools-&setuptools-version;.dist-info
          </seg>
       </seglistitem>
     </segmentedlist>
