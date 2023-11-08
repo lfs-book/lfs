@@ -196,19 +196,29 @@
       <para>This is a simplistic package management technique that does not need a
       special program to manage the packages. Each package is installed in a
       separate directory. For example, package foo-1.1 is installed in
-      <filename class='directory'>/usr/pkg/foo-1.1</filename>
-      and a symlink is made from <filename>/usr/pkg/foo</filename> to
-      <filename class='directory'>/usr/pkg/foo-1.1</filename>. When
+      <filename class='directory'>/opt/foo-1.1</filename>
+      and a symlink is made from <filename>/opt/foo</filename> to
+      <filename class='directory'>/opt/foo-1.1</filename>. When
       a new version foo-1.2 comes along, it is installed in
-      <filename class='directory'>/usr/pkg/foo-1.2</filename> and the previous
+      <filename class='directory'>/opt/foo-1.2</filename> and the previous
       symlink is replaced by a symlink to the new version.</para>
 
       <para>Environment variables such as <envar>PATH</envar>,
-      <envar>LD_LIBRARY_PATH</envar>, <envar>MANPATH</envar>,
-      <envar>INFOPATH</envar> and <envar>CPPFLAGS</envar> need to be expanded to
-      include <filename>/usr/pkg/foo</filename>. If you install more than a few packages,
-      this scheme becomes unmanageable.</para>
+      <envar>MANPATH</envar>, <envar>INFOPATH</envar>,
+      <envar>PKG_CONFIG_PATH</envar>, <envar>CPPFLAGS</envar>,
+      <envar>LDFLAGS</envar>, and the configuration file
+      <filename>/etc/ld.so.conf</filename> may need to be expanded to
+      include the corresponding subdirectories in
+      <filename class='directory'>/opt/foo-x.y</filename>.</para>
 
+      <para>
+        This scheme is used by the BLFS book to install some very large
+        packages to make it easier to upgrade them.  If you install more
+        than a few packages, this scheme becomes unmanageable.  And some
+        packages (for example Linux API headers and Glibc) may not work well
+        with this scheme.
+        <emphasis role='bold'>Never use this scheme system-wide.</emphasis>
+      </para>
     </sect3>
 
     <sect3>
