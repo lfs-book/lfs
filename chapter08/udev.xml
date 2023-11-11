@@ -117,9 +117,12 @@ meson setup \
       $(realpath libudev.so --relative-to .)</userinput></screen>
 
     <para>Remove one udev rule file requiring a full Systemd
-    installation:</para>
+    installation and four udev rule files for the login manager (if you need
+    a login manager, install the BLFS elogind package after finishing LFS;
+    the elogind package will install these udev rules as well):</para>
 
-<screen><userinput remap="make">rm rules.d/90-vconsole.rules</userinput></screen>
+<screen><userinput remap="make">rm rules.d/{70-uaccess,71-seat,73-seat-late,90-vconsole}.rules
+rm ../rules.d/70-power-switch.rules</userinput></screen>
 
     <para>Install the package:</para>
 
