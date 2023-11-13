@@ -44,11 +44,6 @@
       <para>Libelf is part of the elfutils-&elfutils-version; package. Use
       the elfutils-&elfutils-version;.tar.bz2 file as the source tarball.</para>
 
-    <para>Add LoongArch support for this package:</para>
-
-<screen><userinput remap="pre">patch -Np1 -i ../&elfutils-loongarch-patch;
-autoreconf -fi</userinput></screen>
-
     <para>Prepare Libelf for compilation:</para>
 
     <screen><userinput remap="configure">./configure --prefix=/usr                \
