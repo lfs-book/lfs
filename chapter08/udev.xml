@@ -139,11 +139,11 @@ install -vm644 src/libudev/*.pc                    /usr/lib/pkgconfig/
 install -vm644 src/udev/*.pc                       /usr/share/pkgconfig/
 install -vm644 ../src/udev/udev.conf               /etc/udev/
 install -vm644 rules.d/* ../rules.d/README         /usr/lib/udev/rules.d/
-install -vm644 $(echo ../rules.d/*.rules | \
-                 sed 's/70-power-switch.rules//')  /usr/lib/udev/rules.d/
+install -vm644 $(find ../rules.d/*.rules \
+                      -not -name '*power-switch*') /usr/lib/udev/rules.d/
 install -vm644 hwdb.d/*  ../hwdb.d/{*.hwdb,README} /usr/lib/udev/hwdb.d/
-install -vm755 $(find src/udev -type f \
-                               -not -name '*.*')   /usr/lib/udev</userinput></screen>
+install -vm755 $(find src/udev \
+                      -type f -not -name '*.*')    /usr/lib/udev</userinput></screen>
 
     <para>Install some custom rules and support files useful in an LFS
     environment:</para>

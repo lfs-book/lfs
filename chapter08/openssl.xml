@@ -63,7 +63,7 @@
 
     <para>To test the results, issue:</para>
 
-<screen><userinput remap="test">make test</userinput></screen>
+<screen><userinput remap="test">HARNESS_JOBS=<replaceable>$(nproc)</replaceable> make test</userinput></screen>
 
     <para>One test, 30-test_afalg.t, is known to fail if the host kernel
     does not have <option>CONFIG_CRYPTO_USER_API_SKCIPHER</option> enabled,
