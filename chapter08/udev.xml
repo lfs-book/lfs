@@ -66,6 +66,8 @@ meson setup \
       -Dmode=release                \
       -Ddev-kvm-mode=0660           \
       -Dlink-udev-shared=false      \
+      -Dlogind=false                \
+      -Dvconsole=false              \
       ..</userinput></screen>
 
     <variablelist>
@@ -107,38 +109,41 @@ meson setup \
           and it's too overkill for a udev-only installation.</para>
         </listitem>
       </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-Dlogind=false -Dvconsole=false</parameter></term>
+        <listitem>
+          <para>These options prevent the generation of several udev rule
+          files belonging to the other Systemd components that we won't
+          install.</para>
+        </listitem>
+      </varlistentry>
     </variablelist>
 
     <para>Only build the components needed for udev:</para>
 
-    <screen><userinput remap="make">ninja udevadm systemd-hwdb \
-      $(grep -o -E "^build (src/libudev|src/udev|rules.d|hwdb.d)[^:]*" \
-        build.ninja | awk '{ print $2 }')                              \
+    <screen><userinput remap="make">ninja udevadm systemd-hwdb                                           \
+      $(ninja -n | grep -Eo '(src/(lib)?udev|rules.d|hwdb.d)/[^ ]*') \
       $(realpath libudev.so --relative-to .)</userinput></screen>
-
-    <para>Remove one udev rule file requiring a full Systemd
-    installation and four udev rule files for the login manager (if you need
-    a login manager, install the BLFS elogind package after finishing LFS;
-    the elogind package will install these udev rules as well):</para>
-
-<screen><userinput remap="make">rm rules.d/{70-uaccess,71-seat,73-seat-late,90-vconsole}.rules
-rm ../rules.d/70-power-switch.rules</userinput></screen>
 
     <para>Install the package:</para>
 
     <screen><userinput remap="install">install -vm755 -d {/usr/lib,/etc}/udev/{hwdb,rules}.d
 install -vm755 -d /usr/{lib,share}/pkgconfig
-install -vm755 udevadm                     /usr/bin/
-install -vm755 systemd-hwdb                /usr/bin/udev-hwdb
-ln      -svfn  ../bin/udevadm              /usr/sbin/udevd
-cp      -av    libudev.so{,*[0-9]}         /usr/lib/
-install -vm644 ../src/libudev/libudev.h    /usr/include/
-install -vm644 src/libudev/*.pc            /usr/lib/pkgconfig/
-install -vm644 src/udev/*.pc               /usr/share/pkgconfig/
-install -vm644 ../src/udev/udev.conf       /etc/udev/
-install -vm644 rules.d/* ../rules.d/{*.rules,README} /usr/lib/udev/rules.d/
-install -vm644 hwdb.d/*  ../hwdb.d/{*.hwdb,README}   /usr/lib/udev/hwdb.d/
-install -vm755 $(find src/udev -type f | grep -F -v ".") /usr/lib/udev</userinput></screen>
+install -vm755 udevadm                             /usr/bin/
+install -vm755 systemd-hwdb                        /usr/bin/udev-hwdb
+ln      -svfn  ../bin/udevadm                      /usr/sbin/udevd
+cp      -av    libudev.so{,*[0-9]}                 /usr/lib/
+install -vm644 ../src/libudev/libudev.h            /usr/include/
+install -vm644 src/libudev/*.pc                    /usr/lib/pkgconfig/
+install -vm644 src/udev/*.pc                       /usr/share/pkgconfig/
+install -vm644 ../src/udev/udev.conf               /etc/udev/
+install -vm644 rules.d/* ../rules.d/README         /usr/lib/udev/rules.d/
+install -vm644 $(echo ../rules.d/*.rules |
+                 sed 's/70-power-switch.rules//')  /usr/lib/udev/rules.d/
+install -vm644 hwdb.d/*  ../hwdb.d/{*.hwdb,README} /usr/lib/udev/hwdb.d/
+install -vm755 $(find src/udev -type f \
+                               -not -name '*.*')   /usr/lib/udev</userinput></screen>
 
     <para>Install some custom rules and support files useful in an LFS
     environment:</para>
