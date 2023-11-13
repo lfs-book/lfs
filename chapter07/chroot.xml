@@ -23,7 +23,20 @@
     TERM="$TERM"                \
     PS1='(lfs chroot) \u:\w\$ ' \
     PATH=/usr/bin:/usr/sbin     \
+    MAKEFLAGS="-j<replaceable>$(nproc)</replaceable>"      \
+    TESTSUITEFLAGS="-j<replaceable>$(nproc)</replaceable>" \
     /bin/bash --login</userinput></screen>
+
+  <para>
+    Again, replace <replaceable>$(nproc)</replaceable> with the number
+    of logical cores you want to use for building packages in this chapter
+    and the following chapters if you don't want to use all available
+    logical cores.  The test suites of some packages (notably Autoconf,
+    Libtool, and Tar) in &ch-final; are not affected by
+    <envar>MAKEFLAGS</envar>, they use a <envar>TESTSUITEFLAGS</envar>
+    environment variable instead.  So we set it here as well for running
+    these test suites with multiple cores.
+  </para>
 
   <para>The <parameter>-i</parameter> option given to the <command>env</command>
   command will clear all the variables in the chroot environment. After that, only
