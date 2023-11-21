@@ -74,6 +74,7 @@ cd       build</userinput></screen>
              --enable-kernel=&linux-major-version;.&linux-minor-version;                      \
              --enable-stack-protector=strong          \
              --with-headers=/usr/include              \
+             --disable-nscd                           \
              libc_cv_slibdir=/usr/lib</userinput></screen>
 
     <variablelist>
@@ -112,6 +113,14 @@ cd       build</userinput></screen>
         <listitem>
           <para>This option tells the build system where to find the
           kernel API headers.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-nscd</parameter></term>
+        <listitem>
+          <para>Do not build the name service cache daemon which is no 
+          longer used.</para>
         </listitem>
       </varlistentry>
 
@@ -207,7 +216,7 @@ esac</userinput></screen>
     <command>ldd</command> script:</para>
 
 <screen><userinput remap="install">sed '/RTLDLIST=/s@/usr@@g' -i /usr/bin/ldd</userinput></screen>
-
+<!--
     <para>Install the configuration file and runtime directory for
     <command>nscd</command>:</para>
 
@@ -219,7 +228,7 @@ mkdir -pv /var/cache/nscd</userinput></screen>
 
     <screen revision="systemd"><userinput remap="install">install -v -Dm644 ../nscd/nscd.tmpfiles /usr/lib/tmpfiles.d/nscd.conf
 install -v -Dm644 ../nscd/nscd.service /usr/lib/systemd/system/nscd.service</userinput></screen>
-
+-->
     <para>Next, install the locales that can make the system respond in a
     different language.  None of these locales are required, but if some of them
     are missing, the test suites of some packages will skip important
@@ -499,7 +508,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
         <seg>gencat, getconf, getent, iconv, iconvconfig, ldconfig,
         ldd, lddlibc4,
         ld.so (symlink to ld-linux-x86-64.so.2 or ld-linux.so.2),
-        locale, localedef, makedb, mtrace, nscd,
+        locale, localedef, makedb, mtrace,
         pcprofiledump, pldd, sln, sotruss, sprof, tzselect, xtrace,
         zdump, and zic</seg>
         <seg>ld-linux-x86-64.so.2, ld-linux.so.2,
@@ -519,7 +528,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
         /usr/include/protocols, /usr/include/rpc,
         /usr/include/sys, /usr/lib/audit, /usr/lib/gconv, /usr/lib/locale,
         /usr/libexec/getconf, /usr/share/i18n, /usr/share/zoneinfo,
-        /var/cache/nscd, and /var/lib/nss_db</seg>
+        and /var/lib/nss_db</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -649,17 +658,6 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
           in human-readable format</para>
           <indexterm zone="ch-system-glibc mtrace">
             <primary sortas="b-mtrace">mtrace</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="nscd">
-        <term><command>nscd</command></term>
-        <listitem>
-          <para>A daemon that provides a cache for the most common name
-          service requests</para>
-          <indexterm zone="ch-system-glibc nscd">
-            <primary sortas="b-nscd">nscd</primary>
           </indexterm>
         </listitem>
       </varlistentry>

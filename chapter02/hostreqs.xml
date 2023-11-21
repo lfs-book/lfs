@@ -64,8 +64,9 @@
       should be a link to bison or a small script that executes bison)</para>
     </listitem>
 
+    <!-- In Coreutils-8.1 the nproc program is added.  -->
     <listitem>
-      <para><emphasis role="strong">Coreutils-7.0</emphasis></para>
+      <para><emphasis role="strong">Coreutils-8.1</emphasis></para>
     </listitem>
 
     <listitem>
@@ -82,7 +83,9 @@
     </listitem>
 
     <listitem>
-      <para><emphasis role="strong">GCC-5.1</emphasis> including the C++
+      <!-- Pass 1 GCC FTBFS with GCC-5.1 because of
+           https://gcc.gnu.org/PR65801. -->
+      <para><emphasis role="strong">GCC-5.2</emphasis> including the C++
       compiler, <command>g++</command> (Versions greater than &gcc-version; are
       not recommended as they have not been tested). C and C++ standard
       libraries (with headers) must also be present so the C++ compiler can
@@ -185,8 +188,8 @@ ver_check()
    fi
 }
 
-# Coreutils first because-sort needs Coreutils >= 7.0
-ver_check Coreutils      sort     7.0 || bail "--version-sort unsupported"
+# Coreutils first because --version-sort needs Coreutils >= 7.0
+ver_check Coreutils      sort     8.1 || bail "Coreutils too old, stop"
 ver_check Bash           bash     3.2
 ver_check Bc             bc       1.07.0
 ver_check Binutils       ld       2.13.1
@@ -194,8 +197,8 @@ ver_check Bison          bison    2.7
 ver_check Diffutils      diff     2.8.1
 ver_check Findutils      find     4.2.31
 ver_check Gawk           gawk     4.0.1
-ver_check GCC            gcc      5.1
-ver_check "GCC (C++)"    g++      5.1
+ver_check GCC            gcc      5.2
+ver_check "GCC (C++)"    g++      5.2
 ver_check Grep           grep     2.5.1a
 ver_check Gzip           gzip     1.3.12
 ver_check M4             m4       1.4.10
@@ -222,7 +225,13 @@ echo "Compiler check:"
 if printf "int main(){}" | g++ -x c++ -
 then echo "OK:    g++ works";
 else echo "ERROR: g++ does NOT work"; fi
-rm -f a.out</literal>
+rm -f a.out
+
+if [ "$(nproc)" = "" ]; then
+   echo "ERROR: nproc is not available or it produces empty output"
+else
+   echo "OK: nproc reports $(nproc) logical cores are available"
+fi</literal>
 EOF
 
 bash version-check.sh</userinput></screen>
