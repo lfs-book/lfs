@@ -35,7 +35,7 @@
   <para>All commands in this and following chapters are run as &root; on the
   target system, fortunately without access to the host system.
   Be careful anyway, as if the storage devices of your target system already
-  contain some important data, it's possible to destroy them with bad
+  contains some important data, it's possible to destroy them with bad
   commands.</para>
 
 </sect1>

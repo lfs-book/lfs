@@ -72,8 +72,9 @@ mount -vt tmpfs tmpfs /dev/shm -o nosuid,nodev</userinput></screen>
   <sect2 id="ch-tools-devadjust">
     <title>Adjusting devtmpfs</title>
 
-    <para>Now <systemitem class='filesystem'>proc</systemitem> filesystem
-    is mounted, we can replace the device nodes for standard I/O streams
+    <para>Now with the
+    <systemitem class='filesystem'>proc</systemitem> filesystem
+    mounted, we can replace the device nodes for standard I/O streams
     with symlinks to pseudo files in
     <filename class="directory">/proc/self/fd</filename> (which are symlinks
     to the files connected to the standard I/O streams for the current

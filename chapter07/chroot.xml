@@ -38,8 +38,8 @@ readonly IGNOREEOF=1000</userinput></screen>
 bash: no job control in this shell</computeroutput></screen>
 
     <para>This is normal because the shell is not assigned with a
-    controlling terminal yet.  Now set up controlling terminal and
-    environment variables:</para>
+    controlling terminal yet.  Now set up the controlling terminal and
+    some environment variables:</para>
 
 <screen><userinput>exec setsid -c /usr/bin/env -i  \
     HOME=/root                  \
@@ -50,7 +50,7 @@ bash: no job control in this shell</computeroutput></screen>
     TESTSUITEFLAGS="-j<replaceable>$(nproc)</replaceable>" \
     /bin/bash --login</userinput></screen>
 
-    <para>The command replace the current shell process with a new shell
+    <para>The command replaces the current shell process with a new shell
     process, with controlling terminal set up.</para>
 
   <para>
