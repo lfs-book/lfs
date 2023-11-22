@@ -224,7 +224,7 @@ EOF</userinput></screen>
       Never pass a <parameter>-j</parameter> option without a number to
       <command>make</command> or set such an option in
       <envar>MAKEFLAGS</envar>.  Doing so will allow <command>make</command>
-      to spawn infinite build jobs and cause system stability issue.
+      to spawn infinite build jobs and cause system stability problems.
     </para>
   </important>
 
