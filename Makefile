@@ -70,7 +70,6 @@ book: validate profile-html
          true;                                        \
          /bin/bash obfuscate.sh $$filename;           \
          sed -e "s@text/html@application/xhtml+xml@g" \
-             -e "s/\xa9/\&copy;/ "                    \
              -i $$filename;                           \
    done;
 
