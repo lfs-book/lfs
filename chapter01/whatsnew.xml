@@ -153,7 +153,7 @@
       <para>Libcap-&libcap-version;</para>
     </listitem>-->
     <listitem>
-      <para>Libelf-&elfutils-version; (from elfutils)</para>
+      <para>Libelf from Elfutils-&elfutils-version;</para>
     </listitem>
     <!--<listitem>
       <para>Libffi-&libffi-version;</para>
@@ -252,7 +252,7 @@
       <para>Tzdata-&tzdata-version;</para>
     </listitem>-->
     <!--<listitem revision="sysv">
-       <para>Udev-&systemd-version; (from systemd)</para>
+      <para>Udev from Systemd-&systemd-version;</para>
     </listitem>-->
     <listitem>
       <para>Util-linux-&util-linux-version;</para>
