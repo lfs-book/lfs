@@ -739,8 +739,8 @@
 <!-- <!ENTITY vim-majmin "90"> -->
 <!ENTITY vim-docdir "vim/vim90">
 <!ENTITY vim-size "16,989 KB">
-<!--<!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">-->
-<!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.gz">
+<!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">
+<!--<!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.gz">-->
 <!ENTITY vim-md5 "8dcf113cb690bcdd13d75a4e7c2e3a62">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "229 MB">
