@@ -30,10 +30,7 @@
   in addition to those on the first list, need to be available in order to run
   the test suites. The fourth list of dependencies are packages that require
   this package to be built and installed in its final location before they are
-  built and installed. In most cases, this is because these packages will hard
-  code paths to binaries within their scripts. If not built in a certain order,
-  this could result in paths of /tools/bin/[binary] being placed inside scripts
-  installed to the final system. This is obviously not desirable.</para>
+  built and installed.</para>
 
   <para>The last list of dependencies are optional packages that are not
   addressed in LFS, but could be useful to the user. These packages may have
