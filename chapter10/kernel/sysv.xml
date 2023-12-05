@@ -30,6 +30,6 @@
                                                            ...  [DEVTMPFS_MOUNT]
   <emphasis role='blue'>G</emphasis>raphics support ---&gt;
     <emphasis role='blue'>F</emphasis>rame buffer Devices ---&gt;
-      &lt;*&gt; <emphasis role='blue'>S</emphasis>upport for frame buffer devices ---&gt;                             [FB]
+      &lt;*&gt; <emphasis role='blue'>S</emphasis>upport for frame buffer device drivers ---&gt;                      [FB]
     <emphasis role='blue'>C</emphasis>onsole display driver support ---&gt;
       [*] <emphasis role='blue'>F</emphasis>ramebuffer Console support                      [FRAMEBUFFER_CONSOLE]</screen>
