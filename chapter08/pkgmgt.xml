@@ -69,6 +69,17 @@
         it.  </para>
       </listitem>
 
+      <listitem>
+        <para>Reinstalling the same version of Glibc (&glibc-version; for
+        this release of LFS) with patches should be safe when these patches
+        do not change ABI and API.  When a security vulnerability is found
+        in Glibc, we often need to apply such a patch to fix the
+        vulnerability and reinstall Glibc.  Consult
+        <ulink url='&lfs-root;lfs/advisories/'>LFS security
+        advisories</ulink> if you are alerted for a published Glibc security
+        vulnerability but unsure about the action to take.</para>
+      </listitem>
+
       <listitem> <para>If a package containing a shared library is updated, and
       if the name of the library changes, then any packages dynamically
       linked to the library must be recompiled, to link against the
@@ -152,7 +163,7 @@
         provided by <application>coreutils</application> has already
         implemented this, and most packages use that command to install binary files and
         libraries.  This means that you won't be troubled by this issue most of the time.
-        However, the install process of some packages (notably Mozilla JS
+        However, the install process of some packages (notably SpiderMonkey
         in BLFS) just overwrites the file if it exists; this causes a crash. So
         it's safer to save your work and close unneeded running processes
         before updating a package.</para> <!-- binary is an adjective, not a noun. -->
@@ -185,19 +196,29 @@
       <para>This is a simplistic package management technique that does not need a
       special program to manage the packages. Each package is installed in a
       separate directory. For example, package foo-1.1 is installed in
-      <filename class='directory'>/usr/pkg/foo-1.1</filename>
-      and a symlink is made from <filename>/usr/pkg/foo</filename> to
-      <filename class='directory'>/usr/pkg/foo-1.1</filename>. When
+      <filename class='directory'>/opt/foo-1.1</filename>
+      and a symlink is made from <filename>/opt/foo</filename> to
+      <filename class='directory'>/opt/foo-1.1</filename>. When
       a new version foo-1.2 comes along, it is installed in
-      <filename class='directory'>/usr/pkg/foo-1.2</filename> and the previous
+      <filename class='directory'>/opt/foo-1.2</filename> and the previous
       symlink is replaced by a symlink to the new version.</para>
 
       <para>Environment variables such as <envar>PATH</envar>,
-      <envar>LD_LIBRARY_PATH</envar>, <envar>MANPATH</envar>,
-      <envar>INFOPATH</envar> and <envar>CPPFLAGS</envar> need to be expanded to
-      include <filename>/usr/pkg/foo</filename>. If you install more than a few packages,
-      this scheme becomes unmanageable.</para>
+      <envar>MANPATH</envar>, <envar>INFOPATH</envar>,
+      <envar>PKG_CONFIG_PATH</envar>, <envar>CPPFLAGS</envar>,
+      <envar>LDFLAGS</envar>, and the configuration file
+      <filename>/etc/ld.so.conf</filename> may need to be expanded to
+      include the corresponding subdirectories in
+      <filename class='directory'>/opt/foo-x.y</filename>.</para>
 
+      <para>
+        This scheme is used by the BLFS book to install some very large
+        packages to make it easier to upgrade them.  If you install more
+        than a few packages, this scheme becomes unmanageable.  And some
+        packages (for example Linux API headers and Glibc) may not work well
+        with this scheme.
+        <emphasis role='bold'>Never use this scheme system-wide.</emphasis>
+      </para>
     </sect3>
 
     <sect3>

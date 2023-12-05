@@ -6,6 +6,7 @@
   <!-- Convenient entity for "Systemd" or "Udev" -->
   <!ENTITY systemd-udev "<phrase revision='systemd'>Systemd</phrase>
                          <phrase revision='sysv'>Udev</phrase>">
+  <!ENTITY bdb "<ulink url='https://www.oracle.com/database/technologies/related/berkeleydb.html'>Berkeley DB</ulink>">
 ]>
 
 <appendix id="appendixc" xreflabel="Appendix C">
@@ -29,10 +30,7 @@
   in addition to those on the first list, need to be available in order to run
   the test suites. The fourth list of dependencies are packages that require
   this package to be built and installed in its final location before they are
-  built and installed. In most cases, this is because these packages will hard
-  code paths to binaries within their scripts. If not built in a certain order,
-  this could result in paths of /tools/bin/[binary] being placed inside scripts
-  installed to the final system. This is obviously not desirable.</para>
+  built and installed.</para>
 
   <para>The last list of dependencies are optional packages that are not
   addressed in LFS, but could be useful to the user. These packages may have
@@ -294,7 +292,7 @@
       <segmentedlist id="binutils-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
-          <seg>Glibc and Zlib</seg>
+          <seg>Glibc, Zlib, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1486,7 +1484,7 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-            <ulink url="&blfs-book;server/db.html">Berkeley DB</ulink>,
+            &bdb;,
             <ulink url="&blfs-book;postlfs/iptables.html">iptables</ulink>,
             <ulink url="&github;/libbpf/libbpf">libbpf</ulink>,
             <ulink url="&blfs-book;basicnet/libmnl.html">libmnl</ulink>, and
@@ -1496,37 +1494,37 @@
       </segmentedlist>
 
 <!-- Begin Jinja2 dependency info -->
-  <bridgehead revision='systemd' renderas="sect2" id="jinja2-dep">Jinja2</bridgehead>
+  <bridgehead renderas="sect2" id="jinja2-dep">Jinja2</bridgehead>
 
-      <segmentedlist id="jinja2-depends" revision='systemd'>
+      <segmentedlist id="jinja2-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>MarkupSafe and Python</seg>
+          <seg>MarkupSafe, Python, Setuptools, and Wheel</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="jinja2-rundeps" revision='systemd'>
+      <segmentedlist id="jinja2-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
           <seg>MarkupSafe and Python</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="jinja2-testdeps" revision='systemd'>
+      <segmentedlist id="jinja2-testdeps">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
           <seg>No test suite available</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="jinja2-before" revision='systemd'>
+      <segmentedlist id="jinja2-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
           <seg>&systemd-udev;</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="jinja2-optdeps" revision='systemd'>
+      <segmentedlist id="jinja2-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>None</seg>
@@ -2136,37 +2134,37 @@
       </segmentedlist>
 
 <!-- Begin MarkupSafe dependency info -->
-  <bridgehead renderas="sect2" id="markupsafe-dep" revision='systemd'>MarkupSafe</bridgehead>
+  <bridgehead renderas="sect2" id="markupsafe-dep">MarkupSafe</bridgehead>
 
-      <segmentedlist id="markupsafe-depends" revision='systemd'>
+      <segmentedlist id="markupsafe-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Python</seg>
+          <seg>Python, Setuptools, and Wheel</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="markupsafe-rundeps" revision='systemd'>
+      <segmentedlist id="markupsafe-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
           <seg>Python</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="markupsafe-testdeps" revision='systemd'>
+      <segmentedlist id="markupsafe-testdeps">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
           <seg>No test suite available</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="markupsafe-before" revision='systemd'>
+      <segmentedlist id="markupsafe-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
           <seg>Jinja2</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="markupsafe-optdeps" revision='systemd'>
+      <segmentedlist id="markupsafe-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>None</seg>
@@ -2179,7 +2177,7 @@
       <segmentedlist id="meson-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Ninja and Python</seg>
+          <seg>Ninja, Python, Setuptools, and Wheel</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2486,7 +2484,7 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-            <ulink url="&blfs-book;server/db.html">Berkeley DB</ulink>
+            &bdb;
           </seg>
         </seglistitem>
       </segmentedlist>
@@ -2655,7 +2653,7 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-            <ulink url="&blfs-book;server/db.html">Berkeley DB</ulink>,
+            &bdb;,
             <ulink url="&blfs-book;basicnet/libnsl.html">libnsl</ulink>,
             <ulink url="&blfs-book;server/sqlite.html">SQLite</ulink>, and
             <ulink url="&blfs-book;general/tk.html">Tk</ulink>
@@ -2735,6 +2733,44 @@
       </segmentedlist>
 
       <segmentedlist id="sed-optdeps">
+        <segtitle>&external;</segtitle>
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+<!-- Begin Setuptools dependency info -->
+  <bridgehead renderas="sect2" id="setuptools-dep">Setuptools</bridgehead>
+
+      <segmentedlist id="setuptools-depends">
+        <segtitle>&dependencies;</segtitle>
+        <seglistitem>
+          <seg>Python and Wheel</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="setuptools-rundeps">
+        <segtitle>&runtime;</segtitle>
+        <seglistitem>
+          <seg>Python</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="setuptools-testdeps">
+        <segtitle>&testsuites;</segtitle>
+        <seglistitem>
+          <seg>No test suite available</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="setuptools-before">
+        <segtitle>&before;</segtitle>
+        <seglistitem>
+          <seg>Jinja2, MarkupSafe, and Meson</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="setuptools-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>None</seg>
@@ -3216,7 +3252,7 @@
       </segmentedlist>
 
 <!-- Begin Wheel dependency info -->
-  <bridgehead renderas="sect2" id="wheel-dep">wheel</bridgehead>
+  <bridgehead renderas="sect2" id="wheel-dep">Wheel</bridgehead>
 
       <segmentedlist id="wheel-depends">
         <segtitle>&dependencies;</segtitle>
@@ -3243,8 +3279,7 @@
         <segtitle>&before;</segtitle>
         <seglistitem>
           <seg>
-            <phrase revision='sysv'>None</phrase>
-            <phrase revision='systemd'>Jinja2</phrase>
+            Jinja2, MarkupSafe, Meson, and Setuptools
           </seg>
         </seglistitem>
       </segmentedlist>

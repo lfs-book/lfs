@@ -23,7 +23,19 @@
     TERM="$TERM"                \
     PS1='(lfs chroot) \u:\w\$ ' \
     PATH=/usr/bin:/usr/sbin     \
+    MAKEFLAGS="-j<replaceable>$(nproc)</replaceable>"      \
+    TESTSUITEFLAGS="-j<replaceable>$(nproc)</replaceable>" \
     /bin/bash --login</userinput></screen>
+
+  <para>
+    If you don't want to use all available logical cores, replace
+    <replaceable>$(nproc)</replaceable> with the number of logical cores you
+    want to use for building packages in this chapter and the following
+    chapters.  The test suites of some packages (notably Autoconf, Libtool,
+    and Tar) in &ch-final; are not affected by <envar>MAKEFLAGS</envar>, they
+    use a <envar>TESTSUITEFLAGS</envar> environment variable instead. We
+    set that here as well for running these test suites with multiple cores.
+  </para>
 
   <para>The <parameter>-i</parameter> option given to the <command>env</command>
   command will clear all the variables in the chroot environment. After that, only
@@ -47,7 +59,7 @@
   in the <envar>PATH</envar>. This means that the cross toolchain will no longer be
   used.</para>
 
-  <para>Note that the <command>bash</command> prompt will say
+  <para>Also note that the <command>bash</command> prompt will say
   <computeroutput>I have no name!</computeroutput> This is normal because the
   <filename>/etc/passwd</filename> file has not been created yet.</para>
 

@@ -76,15 +76,7 @@ export BUILD_BZIP2=0</userinput></screen>
              -Dusethreads</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
-
-      <varlistentry>
-        <term><parameter>-Dvendorprefix=/usr</parameter></term>
-        <listitem>
-          <para>This ensures <command>perl</command> knows how to
-          tell packages where they should install their Perl modules.</para>
-        </listitem>
-      </varlistentry>
+      <title>The meaning of the new Configure options:</title>
 
       <varlistentry>
         <term><parameter>-Dpager="/usr/bin/less -isR"</parameter></term>
@@ -105,28 +97,9 @@ export BUILD_BZIP2=0</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>-Duseshrplib</parameter></term>
-        <listitem>
-          <para>Build a shared libperl needed by some Perl modules.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
         <term><parameter>-Dusethreads</parameter></term>
         <listitem>
           <para>Build Perl with support for threads.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>-Dprivlib,-Darchlib,-Dsitelib,...</parameter></term>
-        <listitem>
-          <para>These settings define where Perl looks for installed
-          modules. The LFS editors chose to put them in a directory structure
-          based on the MAJOR.MINOR version of Perl (&perl-version-min;) which
-          allows upgrading Perl to newer patch levels (the patch level is
-          the last dot separated part in the full version string like
-          &perl-version;) without reinstalling all of the modules.</para>
         </listitem>
       </varlistentry>
 
@@ -138,7 +111,7 @@ export BUILD_BZIP2=0</userinput></screen>
 
     <para>To test the results (approximately 11 SBU), issue:</para>
 
-<screen><userinput remap="test">make test</userinput></screen>
+<screen><userinput remap="test">TEST_JOBS=$(nproc) make test_harness</userinput></screen>
 
     <para>Install the package and clean up:</para>
 

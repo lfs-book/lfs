@@ -48,7 +48,6 @@
 <screen><userinput remap="configure">./configure --prefix=/usr        \
             --enable-shared      \
             --with-system-expat  \
-            --with-system-ffi    \
             --enable-optimizations</userinput></screen>
 
     <variablelist>
@@ -61,14 +60,6 @@
         <application>Expat</application>.</para>
        </listitem>
      </varlistentry>
-
-    <varlistentry>
-      <term><parameter>--with-system-ffi</parameter></term>
-      <listitem>
-        <para>This switch enables linking against the system version of
-        <filename class='libraryfile'>libffi.so</filename>.</para>
-      </listitem>
-    </varlistentry>
 
     <varlistentry>
       <term><parameter>--enable-optimizations</parameter></term>
@@ -164,21 +155,21 @@ EOF
 
 <screen><userinput remap="install">install -v -dm755 /usr/share/doc/python-&python-version;/html
 
-tar --strip-components=1  \
-    --no-same-owner       \
-    --no-same-permissions \
-    -C /usr/share/doc/python-&python-version;/html \
-    -xvf ../python-&python-version;-docs-html.tar.bz2</userinput></screen>
+tar --no-same-owner \
+    -xvf ../python-&python-version;-docs-html.tar.bz2
+cp -R --no-preserve=mode python-&python-version;-docs-html/* \
+    /usr/share/doc/python-&python-version;/html</userinput></screen>
 
     <variablelist>
       <title>The meaning of the documentation install commands:</title>
 
     <varlistentry>
-      <term><option>--no-same-owner</option> and <option>--no-same-permissions</option></term>
+      <term><option>--no-same-owner</option> (tar) and <option>--no-preserve=mode</option> (cp)</term>
       <listitem>
         <para>Ensure the installed files have the correct ownership and
         permissions.  Without these options, <application>tar</application>
-        will install the package files with the upstream creator's values.
+        will install the package files with the upstream creator's values
+        and files would have restrictive permissions.
         </para>
       </listitem>
     </varlistentry>
@@ -191,9 +182,9 @@ tar --strip-components=1  \
     <title>Contents of Python 3</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installed programs</segtitle>
+      <segtitle>Installed library</segtitle>
+      <segtitle>Installed directories</segtitle>
 
       <seglistitem>
         <seg>
