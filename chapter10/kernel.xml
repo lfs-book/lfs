@@ -305,16 +305,18 @@
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>Framebuffer Console support</parameter></term>
+        <term>
+          <parameter>
+            Enable legacy fbdev support for your modesetting driver
+          </parameter> and
+          <parameter>Framebuffer Console support</parameter>
+        </term>
         <listitem>
-          <para>This is needed to display the Linux console on a frame
-          buffer device.  To allow the kernel to print debug messages at an
-          early boot stage, it shouldn't be built as a kernel module
-          unless an initramfs will be used. And, if
-          <option>CONFIG_DRM</option> (Direct Rendering Manager) is enabled,
-          it's likely <option>CONFIG_DRM_FBDEV_EMULATION</option> (Enable
-          legacy fbdev support for your modesetting driver) should be
-          enabled as well.</para>
+          <para>These are needed to display the Linux console on a
+          GPU driven by a DRI (Direct Rendering Infrastructure) driver.
+          If <option>CONFIG_DRM</option> (Direct Rendering Manager) is
+          enabled, you should enable these two options as well or you'll see
+          a blank screen once the DRI driver is loaded.</para>
         </listitem>
       </varlistentry>
 
