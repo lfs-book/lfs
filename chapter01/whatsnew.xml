@@ -153,7 +153,7 @@
       <para>Libcap-&libcap-version;</para>
     </listitem>-->
     <listitem>
-      <para>Libelf-&elfutils-version; (from elfutils)</para>
+      <para>Libelf from Elfutils-&elfutils-version;</para>
     </listitem>
     <!--<listitem>
       <para>Libffi-&libffi-version;</para>
@@ -204,11 +204,11 @@
       <para>Patch-&patch-version;</para>
     </listitem>-->
     <listitem>
+      <para>Perl-&perl-version;</para>
+    </listitem>
+    <listitem>
       <para>Pkgconf-&pkgconf-version;</para>
     </listitem>
-    <!--<listitem>
-      <para>Perl-&perl-version;</para>
-    </listitem>-->
     <listitem>
       <para>Procps-ng-&procps-ng-version;</para>
     </listitem>
@@ -252,7 +252,7 @@
       <para>Tzdata-&tzdata-version;</para>
     </listitem>-->
     <!--<listitem revision="sysv">
-       <para>Udev-&systemd-version; (from systemd)</para>
+      <para>Udev from Systemd-&systemd-version;</para>
     </listitem>-->
     <listitem>
       <para>Util-linux-&util-linux-version;</para>
@@ -298,6 +298,10 @@
       <para>&glibc-upstream-fixes-patch;</para>
     </listitem>
 
+    <listitem>
+      <para>&readline-fixes-patch;</para>
+    </listitem>
+
   </itemizedlist>
 
   <itemizedlist>
@@ -310,6 +314,10 @@
 
     <listitem>
       <para>glibc-2.38-memalign_fix-1.patch</para>
+    </listitem>
+
+    <listitem>
+      <para>readline-8.2-upstream_fix-1.patch</para>
     </listitem>
 
   </itemizedlist>

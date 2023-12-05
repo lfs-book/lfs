@@ -34,7 +34,7 @@
     chapters.  The test suites of some packages (notably Autoconf, Libtool,
     and Tar) in &ch-final; are not affected by <envar>MAKEFLAGS</envar>, they
     use a <envar>TESTSUITEFLAGS</envar> environment variable instead. We
-    set set that here as well for running these test suites with multiple cores.
+    set that here as well for running these test suites with multiple cores.
   </para>
 
   <para>The <parameter>-i</parameter> option given to the <command>env</command>

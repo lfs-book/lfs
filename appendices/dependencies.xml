@@ -6,6 +6,7 @@
   <!-- Convenient entity for "Systemd" or "Udev" -->
   <!ENTITY systemd-udev "<phrase revision='systemd'>Systemd</phrase>
                          <phrase revision='sysv'>Udev</phrase>">
+  <!ENTITY bdb "<ulink url='https://www.oracle.com/database/technologies/related/berkeleydb.html'>Berkeley DB</ulink>">
 ]>
 
 <appendix id="appendixc" xreflabel="Appendix C">
@@ -29,10 +30,7 @@
   in addition to those on the first list, need to be available in order to run
   the test suites. The fourth list of dependencies are packages that require
   this package to be built and installed in its final location before they are
-  built and installed. In most cases, this is because these packages will hard
-  code paths to binaries within their scripts. If not built in a certain order,
-  this could result in paths of /tools/bin/[binary] being placed inside scripts
-  installed to the final system. This is obviously not desirable.</para>
+  built and installed.</para>
 
   <para>The last list of dependencies are optional packages that are not
   addressed in LFS, but could be useful to the user. These packages may have
@@ -1486,7 +1484,7 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-            <ulink url="&blfs-book;server/db.html">Berkeley DB</ulink>,
+            &bdb;,
             <ulink url="&blfs-book;postlfs/iptables.html">iptables</ulink>,
             <ulink url="&github;/libbpf/libbpf">libbpf</ulink>,
             <ulink url="&blfs-book;basicnet/libmnl.html">libmnl</ulink>, and
@@ -2486,7 +2484,7 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-            <ulink url="&blfs-book;server/db.html">Berkeley DB</ulink>
+            &bdb;
           </seg>
         </seglistitem>
       </segmentedlist>
@@ -2655,7 +2653,7 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-            <ulink url="&blfs-book;server/db.html">Berkeley DB</ulink>,
+            &bdb;,
             <ulink url="&blfs-book;basicnet/libnsl.html">libnsl</ulink>,
             <ulink url="&blfs-book;server/sqlite.html">SQLite</ulink>, and
             <ulink url="&blfs-book;general/tk.html">Tk</ulink>
