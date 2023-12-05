@@ -65,7 +65,8 @@ mv -v mpc-&mpc-version; mpc</userinput></screen>
     <para>Set the default directory name for
     64-bit libraries to <quote>lib</quote>:</para>
 
-<screen><userinput remap="pre">sed 's/lib64/lib/' -i.orig gcc/config/loongarch/{t-linux,linux.h}</userinput></screen>
+<screen><userinput remap="pre">sed -e 's/lib64/lib/' \
+    -i.orig gcc/config/loongarch/{t-linux,linux.h}</userinput></screen>
 
     <para>The GCC documentation recommends building GCC
     in a dedicated build directory:</para>
