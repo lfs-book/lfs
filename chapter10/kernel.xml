@@ -294,14 +294,6 @@
     configuration menus and create the kernel configuration from
     scratch.</para>
 
-    <para>Fix an issue causing all kernel modules built with Binutils-2.41
-    or later not loadable:</para>
-
-<screen><userinput remap="pre">cat &gt;&gt; arch/loongarch/Makefile &lt;&lt; EOF
-<literal>KBUILD_AFLAGS_MODULE += -Wa,-mno-relax
-KBUILD_CFLAGS_MODULE += -Wa,-mno-relax</literal>
-EOF</userinput></screen>
-
     <para>Compile the kernel image and modules:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
