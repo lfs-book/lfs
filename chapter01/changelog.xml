@@ -40,6 +40,15 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
 
+    <listitem revision='sysv'>
+      <para>2023-12-14</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Reformat util-linux configure parameters.  Fixes
+          <ulink url='&lfs-ticket-root;5395'>#5395</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
     <listitem>
       <para>2023-12-04</para>
       <itemizedlist>
