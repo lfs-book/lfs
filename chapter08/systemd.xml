@@ -62,13 +62,14 @@ meson setup \
       -Dldconfig=false              \
       -Dsysusers=false              \
       -Drpmmacrosdir=no             \
-      -Dhomed=false                 \
+      -Dhomed=disabled              \
       -Duserdb=false                \
       -Dman=false                   \
       -Dmode=release                \
       -Dpamconfdir=no               \
       -Ddev-kvm-mode=0660           \
       -Dnobody-group=nogroup        \
+      -Dukify=disabled              \
       -Ddocdir=/usr/share/doc/systemd-&systemd-version; \
       ..</userinput></screen>
 
@@ -139,7 +140,8 @@ meson setup \
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>-D{userdb,homed}=false</parameter></term>
+        <term><parameter>-Dhomed=disabled</parameter> and
+        <parameter>-Duserdb=false</parameter></term>
         <listitem>
           <para>Remove two daemons with dependencies that do not fit
           within the scope of LFS.</para>
@@ -187,6 +189,17 @@ meson setup \
           <systemitem class='groupname'>nogroup</systemitem>.</para>
         </listitem>
       </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-Dukify=disabled</parameter></term>
+        <listitem>
+          <para>Do not install the <command>systemd-ukify</command> script.
+          At runtime this script requires the
+          <application>pefile</application> Python module that neither LFS
+          nor BLFS provides.</para>
+        </listitem>
+      </varlistentry>
+
     </variablelist>
 
     <para>Compile the package:</para>
