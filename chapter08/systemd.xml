@@ -69,6 +69,7 @@ meson setup \
       -Dpamconfdir=no               \
       -Ddev-kvm-mode=0660           \
       -Dnobody-group=nogroup        \
+      -Dsysupdate=disabled          \
       -Dukify=disabled              \
       -Ddocdir=/usr/share/doc/systemd-&systemd-version; \
       ..</userinput></screen>
@@ -191,6 +192,17 @@ meson setup \
       </varlistentry>
 
       <varlistentry>
+        <term><parameter>-Dsysupdate=disabled</parameter></term>
+        <listitem>
+          <para>Do not install the <command>systemd-sysupdate</command>
+          tool.  It's designed for automatically upgrading binary distros,
+          so it's useless for a basic Linux system built from source.
+          And it will report errors on boot if it's enabled but not properly
+          configured.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
         <term><parameter>-Dukify=disabled</parameter></term>
         <listitem>
           <para>Do not install the <command>systemd-ukify</command> script.
@@ -226,12 +238,6 @@ meson setup \
     <para>Set up the basic target structure:</para>
 
 <screen><userinput remap="adjust">systemctl preset-all</userinput></screen>
-
-    <para>Disable two services for upgrading binary distros.  They are useless for
-    a basic Linux system built from source, and each one will report an error if
-    it's enabled but not configured:</para>
-
-<screen><userinput remap="adjust">systemctl disable systemd-sysupdate{,-reboot}</userinput></screen>
 
 <!-- dev: 50-pid-max.conf is not removed in BLFS, so I commented the following out.
           If it causes any trouble, we can add this back and also copy it into BLFS -->
