@@ -114,7 +114,7 @@
 
       <para>Even if the custom udev rule file is created, udev may still
       assign one or more alternative names for a NIC based on physical
-      characteristics.  If a custom udev rule would rename another NIC using
+      characteristics.  If a custom udev rule would rename some NIC using
       a name already assigned as an alternative name of another NIC, this
       udev rule will fail.  If this issue happens, you may create the
       <filename>/etc/udev/network/99-default.link</filename> configuration
