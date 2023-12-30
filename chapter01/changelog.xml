@@ -44,6 +44,10 @@
       <para>2023-12-31</para>
       <itemizedlist>
         <listitem>
+          <para>[xry111] - Fix CVE-2023-7008 for systemd-255.  Fixes
+          <ulink url='&lfs-ticket-root;5405'>#5405</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[xry111] - Update to iana-etc-20231205.  Addresses
           <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
         </listitem>
