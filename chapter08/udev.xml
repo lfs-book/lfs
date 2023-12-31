@@ -125,11 +125,18 @@ meson setup \
       </varlistentry>
     </variablelist>
 
+    <para>Get the list of the shipped udev helpers and save it into an
+    environment variable:</para>
+
+    <screen><userinput remap="make">udev_helpers=$(grep "'name' :" ../src/udev/meson.build | \
+               awk '{print $3}' | tr -d ",'" | grep -v 'udevadm')</userinput></screen>
+
     <para>Only build the components needed for udev:</para>
 
     <screen><userinput remap="make">ninja udevadm systemd-hwdb                                           \
       $(ninja -n | grep -Eo '(src/(lib)?udev|rules.d|hwdb.d)/[^ ]*') \
-      $(realpath libudev.so --relative-to .)</userinput></screen>
+      $(realpath libudev.so --relative-to .)                         \
+      $udev_helpers udevadm</userinput></screen>
 
     <para>Install the package:</para>
 
@@ -147,8 +154,7 @@ install -vm644 rules.d/* ../rules.d/README         /usr/lib/udev/rules.d/
 install -vm644 $(find ../rules.d/*.rules \
                       -not -name '*power-switch*') /usr/lib/udev/rules.d/
 install -vm644 hwdb.d/*  ../hwdb.d/{*.hwdb,README} /usr/lib/udev/hwdb.d/
-install -vm755 $(find src/udev \
-                      -type f -not -name '*.*')    /usr/lib/udev
+install -vm755 $udev_helpers                       /usr/lib/udev
 install -vm644 ../network/99-default.link          /usr/lib/udev/network</userinput></screen>
 
     <para>Install some custom rules and support files useful in an LFS

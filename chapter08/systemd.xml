@@ -48,6 +48,13 @@
  <screen><userinput remap="pre">sed -i -e 's/GROUP="render"/GROUP="video"/' \
        -e 's/GROUP="sgx", //' rules.d/50-udev-default.rules.in</userinput></screen>
 
+    <!-- https://github.com/systemd/systemd/pull/30549 -->
+    <para>Now fix a security vulnerability in the DNSSEC verification of
+    <command>systemd-resolved</command>:</para>
+
+<screen><userinput remap='pre'>sed -e '/return FLAGS_SET.*AUTHENTICATED/s/(t/(dt/' \
+    -i src/resolve/resolved-dns-transaction.c</userinput></screen>
+
     <para>Prepare systemd for compilation:</para>
 
 <screen><userinput remap="configure">mkdir -p build
@@ -62,13 +69,15 @@ meson setup \
       -Dldconfig=false              \
       -Dsysusers=false              \
       -Drpmmacrosdir=no             \
-      -Dhomed=false                 \
+      -Dhomed=disabled              \
       -Duserdb=false                \
       -Dman=false                   \
       -Dmode=release                \
       -Dpamconfdir=no               \
       -Ddev-kvm-mode=0660           \
       -Dnobody-group=nogroup        \
+      -Dsysupdate=disabled          \
+      -Dukify=disabled              \
       -Ddocdir=/usr/share/doc/systemd-&systemd-version; \
       ..</userinput></screen>
 
@@ -139,7 +148,8 @@ meson setup \
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>-D{userdb,homed}=false</parameter></term>
+        <term><parameter>-Dhomed=disabled</parameter> and
+        <parameter>-Duserdb=false</parameter></term>
         <listitem>
           <para>Remove two daemons with dependencies that do not fit
           within the scope of LFS.</para>
@@ -187,6 +197,28 @@ meson setup \
           <systemitem class='groupname'>nogroup</systemitem>.</para>
         </listitem>
       </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-Dsysupdate=disabled</parameter></term>
+        <listitem>
+          <para>Do not install the <command>systemd-sysupdate</command>
+          tool.  It's designed for automatically upgrading binary distros,
+          so it's useless for a basic Linux system built from source.
+          And it will report errors on boot if it's enabled but not properly
+          configured.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>-Dukify=disabled</parameter></term>
+        <listitem>
+          <para>Do not install the <command>systemd-ukify</command> script.
+          At runtime this script requires the
+          <application>pefile</application> Python module that neither LFS
+          nor BLFS provides.</para>
+        </listitem>
+      </varlistentry>
+
     </variablelist>
 
     <para>Compile the package:</para>
@@ -213,12 +245,6 @@ meson setup \
     <para>Set up the basic target structure:</para>
 
 <screen><userinput remap="adjust">systemctl preset-all</userinput></screen>
-
-    <para>Disable two services for upgrading binary distros.  They are useless for
-    a basic Linux system built from source, and each one will report an error if
-    it's enabled but not configured:</para>
-
-<screen><userinput remap="adjust">systemctl disable systemd-sysupdate{,-reboot}</userinput></screen>
 
 <!-- dev: 50-pid-max.conf is not removed in BLFS, so I commented the following out.
           If it causes any trouble, we can add this back and also copy it into BLFS -->
