@@ -75,13 +75,15 @@ cd       build</userinput></screen>
              --target=$LFS_TGT   \
              --disable-nls       \
              --enable-gprofng=no \
-             --disable-werror</userinput></screen>
+             --disable-werror    \
+             --enable-default-hash-style=gnu</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">../configure --prefix=$LFS/tools       \
              --with-sysroot=$LFS \
              --target=$LFS_TGT   \
              --disable-nls       \
              --enable-gprofng=no \
              --disable-werror    \
+             --enable-default-hash-style=gnu \
              --enable-multilib</userinput></screen>
 
     <variablelist>
@@ -136,6 +138,22 @@ cd       build</userinput></screen>
         <listitem>
           <para>This prevents the build from stopping in the event that there
           are warnings from the host's compiler.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-default-hash-style=gnu</parameter></term>
+        <listitem>
+          <para>By default, the linker would generate both the GNU-style
+          hash table and the classic ELF hash table for shared libraries and
+          dynamically linked executables.  The hash tables are only intended
+          for a dynamic linker to perform symbol lookup.  On LFS the dynamic
+          linker (provided by the Glibc package) will always use the
+          GNU-style hash table which is faster to query.  So the classic
+          ELF hash table is completely useless.  This makes the the linker
+          only generate the GNU-style hash table by default, so we can avoid
+          wasting time to generate the classic ELF hash table when we build
+          the packages, or wasting disk space to store it.</para>
         </listitem>
       </varlistentry>
 
