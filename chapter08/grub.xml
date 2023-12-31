@@ -72,6 +72,12 @@
       aggressive optimization.</para>
     </warning>
 
+    <para>
+      Add a file missing from the release tarball:
+    </para>
+
+<screen><userinput remap='pre'>echo <literal>depends bli part_gpt</literal> &gt; grub-core/extra_deps.lst</userinput></screen>
+
     <para>Prepare GRUB for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr          \

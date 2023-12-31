@@ -29,10 +29,10 @@
 <!ENTITY attr-fin-du "4.1 MB">
 <!ENTITY attr-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY autoconf-version "2.71">
-<!ENTITY autoconf-size "1,263 KB">
+<!ENTITY autoconf-version "2.72">
+<!ENTITY autoconf-size "1,360 KB">
 <!ENTITY autoconf-url "&gnu;autoconf/autoconf-&autoconf-version;.tar.xz">
-<!ENTITY autoconf-md5 "12cfa1687ffa2606337efe1a64416106">
+<!ENTITY autoconf-md5 "1be79f7106ab6767f18391c5e22be701">
 <!ENTITY autoconf-home "&gnu-software;autoconf/">
 <!ENTITY autoconf-fin-du "24 MB">
 <!ENTITY autoconf-fin-sbu-tests "6.0">
@@ -57,10 +57,10 @@
 <!ENTITY bash-fin-du "52 MB">
 <!ENTITY bash-fin-sbu "1.1 SBU">
 
-<!ENTITY bc-version "6.7.3">
+<!ENTITY bc-version "6.7.4">
 <!ENTITY bc-size "456 KB">
 <!ENTITY bc-url "https://github.com/gavinhoward/bc/releases/download/&bc-version;/bc-&bc-version;.tar.xz">
-<!ENTITY bc-md5 "a2e39a5be32330bc2166b0e501668178">
+<!ENTITY bc-md5 "7826138b08c72f4618d6e48860101196">
 <!ENTITY bc-home "https://git.gavinhoward.com/gavin/bc">
 <!ENTITY bc-fin-du "7.7 MB">
 <!ENTITY bc-fin-sbu "less than 0.1 SBU">
@@ -299,10 +299,10 @@
 <!ENTITY groff-fin-du "107 MB">
 <!ENTITY groff-fin-sbu "0.2 SBU">
 
-<!ENTITY grub-version "2.12~rc1">
-<!ENTITY grub-size "6,436 KB">
-<!ENTITY grub-url "&alpha-gnu;grub/grub-&grub-version;.tar.xz">
-<!ENTITY grub-md5 "b02415b4dcfd3d31482b33d3f6b79114">
+<!ENTITY grub-version "2.12">
+<!ENTITY grub-size "6,524 KB">
+<!ENTITY grub-url "https://ftp.gnu.org/gnu/grub/grub-&grub-version;.tar.xz">
+<!ENTITY grub-md5 "60c564b1bdc39d8e43b3aab4bc0fb140">
 <!ENTITY grub-home "&gnu-software;grub/">
 <!ENTITY grub-fin-du "161 MB">
 <!ENTITY grub-fin-sbu "0.3 SBU">
@@ -317,18 +317,18 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.3 SBU">
 
-<!ENTITY iana-etc-version "20231117">
-<!ENTITY iana-etc-size "588 KB">
+<!ENTITY iana-etc-version "20231205">
+<!ENTITY iana-etc-size "592 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "f26b37a03a211ddd4e9c7189191e2772">
+<!ENTITY iana-etc-md5 "7904f5aefaccd74e24af738da0e8bdaf">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY inetutils-version "2.4">
-<!ENTITY inetutils-size "1,522 KB">
+<!ENTITY inetutils-version "2.5">
+<!ENTITY inetutils-size "1,632 KB">
 <!ENTITY inetutils-url "&gnu;inetutils/inetutils-&inetutils-version;.tar.xz">
-<!ENTITY inetutils-md5 "319d65bb5a6f1847c4810651f3b4ba74">
+<!ENTITY inetutils-md5 "9e5a6dfd2d794dc056a770e8ad4a9263">
 <!ENTITY inetutils-home "&gnu-software;inetutils/">
 <!ENTITY inetutils-fin-du "31 MB">
 <!ENTITY inetutils-fin-sbu "0.2 SBU">
@@ -357,10 +357,10 @@
 <!ENTITY jinja2-fin-du "3.4 MB">
 <!ENTITY jinja2-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY kbd-version "2.6.3">
-<!ENTITY kbd-size "1,468 KB">
+<!ENTITY kbd-version "2.6.4">
+<!ENTITY kbd-size "1,470 KB">
 <!ENTITY kbd-url "https://www.kernel.org/pub/linux/utils/kbd/kbd-&kbd-version;.tar.xz">
-<!ENTITY kbd-md5 "4764775cac0415f1d35a0cd311249941">
+<!ENTITY kbd-md5 "e2fd7adccf6b1e98eb1ae8d5a1ce5762">
 <!ENTITY kbd-home "https://kbd-project.org/">
 <!ENTITY kbd-fin-du "35 MB">
 <!ENTITY kbd-fin-sbu "0.1 SBU">
@@ -431,12 +431,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "6">
-<!ENTITY linux-patch-version "3">
+<!ENTITY linux-patch-version "8">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "136,763 KB">
+<!ENTITY linux-size "136,800 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "3a760f5ac7d37b62dda9a4ca89f5fd96">
+<!ENTITY linux-md5 "a3deb764c4f8a77ff49735d6b3057409">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.5.3 / gcc-13.2.0 on x86_64 with -j4 : minimum is
  allnoconfig + some configs we recommend for the users, rounded down to
@@ -494,10 +494,10 @@
 <!ENTITY markupsafe-fin-du "548 KB">
 <!ENTITY markupsafe-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY meson-version "1.3.0">
-<!ENTITY meson-size "2,171 KB">
+<!ENTITY meson-version "1.3.1">
+<!ENTITY meson-size "2,172 KB">
 <!ENTITY meson-url "&github;/mesonbuild/meson/releases/download/&meson-version;/meson-&meson-version;.tar.gz">
-<!ENTITY meson-md5 "35dc15e4f94ca5fd30dbe2d88a672254">
+<!ENTITY meson-md5 "dd404b8c0f8b79f80181b4a58bb81768">
 <!ENTITY meson-home "https://mesonbuild.com">
 <!ENTITY meson-fin-du "42 MB">
 <!ENTITY meson-fin-sbu "less than 0.1 SBU">
@@ -595,19 +595,19 @@
 <!-- If python minor version changes, updates in python and
      meson pages will be needed: python3.6 and python3.6m -->
 
-<!ENTITY python-version "3.12.0">
+<!ENTITY python-version "3.12.1">
 <!ENTITY python-minor "3.12">
-<!ENTITY python-size "20,093 KB">
+<!ENTITY python-size "20,102 KB">
 <!ENTITY python-url "https://www.python.org/ftp/python/&python-version;/Python-&python-version;.tar.xz">
-<!ENTITY python-md5 "f6f4616584b23254d165f4db90c247d6">
+<!ENTITY python-md5 "50f827c800483776c8ef86e6a53831fa">
 <!ENTITY python-home "https://www.python.org/">
 <!ENTITY python-tmp-du "533 MB">
 <!ENTITY python-tmp-sbu "0.4 SBU">
 <!ENTITY python-fin-du "370 MB">
 <!ENTITY python-fin-sbu "1.9 SBU">
 <!ENTITY python-docs-url "https://www.python.org/ftp/python/doc/&python-version;/python-&python-version;-docs-html.tar.bz2">
-<!ENTITY python-docs-md5 "ae9d19bb613ae8ef2457496bd2893915">
-<!ENTITY python-docs-size "8,009 KB">
+<!ENTITY python-docs-md5 "d5c21b804c219b06256495eae30fd153">
+<!ENTITY python-docs-size "7,998 KB">
 
 <!ENTITY readline-version "8.2">
 <!ENTITY readline-soversion "8.2"><!-- used for stripping -->
@@ -628,10 +628,10 @@
 <!ENTITY sed-fin-du "30 MB">
 <!ENTITY sed-fin-sbu "0.3 SBU">
 
-<!ENTITY setuptools-version "69.0.2">
+<!ENTITY setuptools-version "69.0.3">
 <!ENTITY setuptools-size "2,168 KB">
 <!ENTITY setuptools-url "&pypi-src;/s/setuptools/setuptools-&setuptools-version;.tar.gz">
-<!ENTITY setuptools-md5 "32bcc14eb830a13fbf33e053286f1081">
+<!ENTITY setuptools-md5 "b82de45aaa6b9bb911226660212ebb83">
 <!ENTITY setuptools-home "&pypi-home;/setuptools/">
 <!ENTITY setuptools-fin-du "30 MB">
 <!ENTITY setuptools-fin-sbu "0.1 SBU">
@@ -652,20 +652,20 @@
 <!ENTITY sysklogd-fin-du "680 KB">
 <!ENTITY sysklogd-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY systemd-version  "254">
+<!ENTITY systemd-version  "255">
 <!--<!ENTITY systemd-stable   "6b4878d">-->
 <!-- The above entity is used whenever we move to a stable backport branch. In the event of a critical problem or kernel
      change that is incompatible, we will switch to the backport branch until the next stable release. -->
-<!ENTITY systemd-size     "13,985 KB">
+<!ENTITY systemd-size     "14,516 KB">
 <!ENTITY systemd-url      "&github;/systemd/systemd/archive/v&systemd-version;/systemd-&systemd-version;.tar.gz">
 <!--<!ENTITY systemd-url      "&anduin-sources;/systemd-&systemd-version;-&systemd-stable;.tar.xz">-->
-<!ENTITY systemd-md5      "0d266e5361dc72097b6c18cfde1c0001">
+<!ENTITY systemd-md5      "521cda27409a9edf0370c128fae3e690">
 <!ENTITY systemd-home     "https://www.freedesktop.org/wiki/Software/systemd/">
-<!ENTITY systemd-man-version "254">
-<!ENTITY systemd-man-size "626 KB">
+<!ENTITY systemd-man-version "255">
+<!ENTITY systemd-man-size "652 KB">
 <!--<!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-version;-&systemd-stable;.tar.xz">-->
 <!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-man-version;.tar.xz">
-<!ENTITY systemd-man-md5  "fc32faeac581e1890ca27fcea3858410">
+<!ENTITY systemd-man-md5  "1ebe54d7a80f9abf8f2d14ddfeb2432d">
 <!ENTITY systemd-fin-du   "238 MB">
 <!ENTITY systemd-fin-sbu  "0.7 SBU">
 
@@ -709,10 +709,10 @@
 <!ENTITY texinfo-fin-du "128 MB">
 <!ENTITY texinfo-fin-sbu "0.3 SBU">
 
-<!ENTITY tzdata-version "2023c">
-<!ENTITY tzdata-size "436 KB">
+<!ENTITY tzdata-version "2023d">
+<!ENTITY tzdata-size "440 KB">
 <!ENTITY tzdata-url "https://www.iana.org/time-zones/repository/releases/tzdata&tzdata-version;.tar.gz">
-<!ENTITY tzdata-md5 "5aa672bf129b44dd915f8232de38e49a">
+<!ENTITY tzdata-md5 "08b9d559939670725ec298fdbb029649">
 <!ENTITY tzdata-home "https://www.iana.org/time-zones">
 
 <!ENTITY udev-fin-du "138 MB">
@@ -725,23 +725,23 @@
 <!ENTITY udev-lfs-home    " ">
 
 <!ENTITY util-linux-minor "2.39">
-<!ENTITY util-linux-version "2.39.2"> <!-- 2.33.x -->
-<!ENTITY util-linux-size "8,167 KB">
+<!ENTITY util-linux-version "2.39.3"> <!-- 2.33.x -->
+<!ENTITY util-linux-size "8,327 KB">
 <!ENTITY util-linux-url "&kernel;linux/utils/util-linux/v&util-linux-minor;/util-linux-&util-linux-version;.tar.xz">
-<!ENTITY util-linux-md5 "2feb3e7c306f336a3d22a182dfffc942">
+<!ENTITY util-linux-md5 "f3591e6970c017bb4bcd24ae762a98f5">
 <!ENTITY util-linux-home "https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/">
 <!ENTITY util-linux-tmp-du "169 MB">
 <!ENTITY util-linux-tmp-sbu "0.2 SBU">
 <!ENTITY util-linux-fin-du "310 MB">
 <!ENTITY util-linux-fin-sbu "0.5 SBU">
 
-<!ENTITY vim-version "9.0.2136">
+<!ENTITY vim-version "9.0.2189">
 <!-- <!ENTITY vim-majmin "90"> -->
 <!ENTITY vim-docdir "vim/vim90">
-<!ENTITY vim-size "16,989 KB">
+<!ENTITY vim-size "17,196 KB">
 <!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">
 <!--<!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.gz">-->
-<!ENTITY vim-md5 "8dcf113cb690bcdd13d75a4e7c2e3a62">
+<!ENTITY vim-md5 "0a750075a7da900b96691bf6fcc919c6">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "229 MB">
 <!ENTITY vim-fin-sbu "2.3 SBU">
@@ -754,10 +754,10 @@
 <!ENTITY wheel-fin-du "1.5 MB">
 <!ENTITY wheel-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY xml-parser-version "2.46">
-<!ENTITY xml-parser-size "249 KB">
+<!ENTITY xml-parser-version "2.47">
+<!ENTITY xml-parser-size "276 KB">
 <!ENTITY xml-parser-url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-&xml-parser-version;.tar.gz">
-<!ENTITY xml-parser-md5 "80bb18a8e6240fcf7ec2f7b57601c170">
+<!ENTITY xml-parser-md5 "89a8e82cfd2ad948b349c0a69c494463">
 <!ENTITY xml-parser-home "&github;/chorny/XML-Parser">
 <!ENTITY xml-parser-fin-du "2.3 MB">
 <!ENTITY xml-parser-fin-sbu "less than 0.1 SBU">
