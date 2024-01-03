@@ -85,6 +85,7 @@ cd       build</userinput></screen>
     --target=$LFS_TGT                              \
     LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc      \
     --prefix=/usr                                  \
+    --with-arch=mips64r2                           \
     --with-build-sysroot=$LFS                      \
     --enable-default-pie                           \
     --enable-default-ssp                           \
@@ -96,7 +97,8 @@ cd       build</userinput></screen>
     --disable-libsanitizer                         \
     --disable-libssp                               \
     --disable-libvtv                               \
-    --enable-languages=c,c++</userinput></screen>
+    --enable-languages=c,c++                       \
+    $($LFS_TGT-gcc -v 2>&amp;1 | grep -o ..with-nan=2008)</userinput></screen>
 
     <variablelist>
       <title>The meaning of the new configure options:</title><!-- WIP -->

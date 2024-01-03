@@ -74,11 +74,28 @@ mv -v mpc-&mpc-version; mpc</userinput></screen>
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
 
+    <para>Probe the NaN encoding of the CPU:</para>
+
+<screen><userinput remap="pre">cat > nan2008.c &lt;&lt; \EOF
+<literal>#include &lt;stdio.h&gt;
+int main()
+{
+  int x;
+  asm("cfc1\t%0,$31":"=r"(x));
+  return !(x &amp; 1 &lt;&lt; 18);
+}</literal>
+EOF
+gcc nan2008.c -o nan2008
+if ./nan2008; then
+  NAN_SWITCH=--with-nan=2008
+fi</userinput></screen>
+
     <para>Prepare GCC for compilation:</para>
 
 <screen><userinput remap="configure">../configure                  \
     --target=$LFS_TGT         \
     --prefix=$LFS/tools       \
+    --with-arch=mips64r2      \
     --with-glibc-version=&glibc-version; \
     --with-sysroot=$LFS       \
     --with-newlib             \
@@ -95,9 +112,23 @@ cd       build</userinput></screen>
     --disable-libssp          \
     --disable-libvtv          \
     --disable-libstdcxx       \
-    --enable-languages=c,c++</userinput></screen>
+    --enable-languages=c,c++  \
+    $NAN_SWITCH</userinput></screen>
     <variablelist>
       <title>The meaning of the configure options:</title>
+
+      <varlistentry>
+        <term><parameter>--with-arch=mips64r2</parameter></term>
+        <listitem>
+          <para>Set the default value of <option>-march=</option> to
+          mips64r2.  Most distros use it as the baseline for the MIPS port,
+          so we are doing the same.  You may change it if your CPU is not
+          compatible with mips64r2 (for example, mips3 or mips64r6), or
+          your CPU is stronger than mips64r2 and you don't care about the
+          compatibility with mips64r2, but we've not tested any setting
+          other than mips64r2.</para>
+        </listitem>
+      </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-glibc-version=&glibc-version;</parameter></term>
@@ -178,6 +209,19 @@ cd       build</userinput></screen>
         <listitem>
           <para>This option ensures that only the C and C++ compilers are built.
           These are the only languages needed now.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>$NAN_SWITCH</parameter></term>
+        <listitem>
+          <para>If the CPU encodes NaN (Not a Number) values following
+          IEEE 754-2008 (indicated by the 16th bit of FCSR), this variable
+          will be set to <option>--with-nan=2008</option> so GCC will be
+          configured to use the IEEE 754-2008 encoding for NaN values as
+		  the default.  If this option is not properly set to match the CPU,
+		  many Glibc and Python tests will fail because of the wrong NaN
+		  encoding.</para>
         </listitem>
       </varlistentry>
 

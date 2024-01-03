@@ -75,7 +75,9 @@ cd       build</userinput></screen>
              --disable-multilib       \
              --disable-bootstrap      \
              --disable-fixincludes    \
-             --with-system-zlib</userinput></screen>
+             --with-arch=mips64r2     \
+             --with-system-zlib       \
+             $(cc -v 2>&amp;1 | grep -o .-with-nan=2008)</userinput></screen>
 
     <para>GCC supports seven different computer languages, but the
     prerequisites for most of them have not yet been installed. See the
