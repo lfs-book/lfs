@@ -54,15 +54,11 @@
 
     <screen><userinput remap="pre">patch -Np1 -i ../&gcc-upstream-fixes-patch;</userinput></screen>
 -->
-    <para>If building on x86_64, change the default directory name for 64-bit
-    libraries to <quote>lib</quote>:</para>
+    <para>For building on 64-bit MIPS, change the default directory name for
+    64-bit libraries to <quote>lib</quote>:</para>
 
-<screen><userinput remap="pre">case $(uname -m) in
-  x86_64)
-    sed -e '/m64=/s/lib64/lib/' \
-        -i.orig gcc/config/i386/t-linux64
-  ;;
-esac</userinput></screen>
+<screen><userinput remap="pre">sed -e 's/lib64/lib/' \
+    -i.orig gcc/config/mips/{mips.h,t-linux64}</userinput></screen>
 
     <para>The GCC documentation recommends building GCC in a dedicated build directory:</para>
 

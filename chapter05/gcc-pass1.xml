@@ -62,15 +62,11 @@ mv -v gmp-&gmp-version; gmp
 tar -xf ../mpc-&mpc-version;.tar.gz
 mv -v mpc-&mpc-version; mpc</userinput></screen>
 
-    <para>On x86_64 hosts, set the default directory name for
+    <para>On 64-bit MIPS hosts, set the default directory name for
     64-bit libraries to <quote>lib</quote>:</para>
 
-<screen><userinput remap="pre">case $(uname -m) in
-  x86_64)
-    sed -e '/m64=/s/lib64/lib/' \
-        -i.orig gcc/config/i386/t-linux64
- ;;
-esac</userinput></screen>
+<screen><userinput remap="pre">sed -e 's/lib64/lib/' \
+    -i.orig gcc/config/mips/{mips.h,t-linux64}</userinput></screen>
 
     <para>The GCC documentation recommends building GCC
     in a dedicated build directory:</para>
@@ -159,8 +155,7 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>--disable-multilib</parameter></term>
         <listitem>
-          <para>On x86_64, LFS does not support a multilib configuration.
-          This switch is harmless for x86.</para>
+          <para>On 64-bit MIPS, LFS does not support a multilib configuration.</para>
         </listitem>
       </varlistentry>
 
