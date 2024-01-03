@@ -49,11 +49,16 @@
  <screen><userinput remap="pre">sed -e '/bn_reduce.*m1/i\    factor_size /= sizeof(BN_ULONG) * 8;' \
     -i crypto/bn/rsaz_exp_x2.c</userinput></screen>
 -->
+    <para>Remove an outdated compiler option causing build failure:</para>
+
+<screen><userinput remap="pre">sed 's/-mips3//' -i Configure</userinput></screen>
+
     <para>Prepare OpenSSL for compilation:</para>
 
 <screen><userinput remap="configure">./config --prefix=/usr         \
          --openssldir=/etc/ssl \
          --libdir=lib          \
+         linux64-mips64        \
          shared                \
          zlib-dynamic</userinput></screen>
 
