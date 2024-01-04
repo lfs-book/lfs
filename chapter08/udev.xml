@@ -126,9 +126,10 @@ meson setup \
     </variablelist>
 
     <para>Get the list of the shipped udev helpers and save it into an
-    environment variable:</para>
+    environment variable (exporting it is not strictly necessary, but it makes
+    building as a regular user or using a package manager easier):</para>
 
-    <screen><userinput remap="make">udev_helpers=$(grep "'name' :" ../src/udev/meson.build | \
+    <screen><userinput remap="make">export udev_helpers=$(grep "'name' :" ../src/udev/meson.build | \
                awk '{print $3}' | tr -d ",'" | grep -v 'udevadm')</userinput></screen>
 
     <para>Only build the components needed for udev:</para>
@@ -185,6 +186,12 @@ sed 's|lib.*udevd|sbin/udevd|'                                        \
   > /usr/share/man/man8/udevd.8
 
 rm /usr/share/man/man*/systemd*</userinput></screen>
+
+    <para>Finally, unset the <envar>udev_helpers</envar> variable:</para>
+
+    <!-- remap="make" seems confusing but we don't have sth. like
+         remap="clean".  -->
+    <screen><userinput remap="make">unset udev_helpers</userinput></screen>
 
   </sect2>
 
