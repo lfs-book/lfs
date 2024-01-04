@@ -186,6 +186,26 @@ esac</userinput></screen>
       </listitem>
 
       <listitem>
+        <para>On MIPS, six elf audit tests, the test named
+        <emphasis>elf/tst-ro-dynamic</emphasis>, and the test named
+        <emphasis>elf/tst-sprof-basic</emphasis> are known to fail.</para>
+      </listitem>
+
+      <!-- https://sourceware.org/pipermail/libc-alpha/2024-January/154221.html
+           https://sourceware.org/glibc/wiki/Testing/Tests/stdlib/tst-arc4random-thread -->
+      <listitem>
+        <para>The <emphasis>stdlib/tst-arc4random-thread</emphasis>
+        test is known to fail with some host kernel versions due to a
+        kernel bug on MIPS.</para>
+      </listitem>
+
+      <!-- https://sourceware.org/pipermail/libc-alpha/2024-February/154915.html -->
+      <listitem>
+        <para>Six <emphasis>math</emphasis> tests are known to fail due
+        to outdated test data.</para>
+      </listitem>
+
+      <listitem>
         <para>Additionally, some tests may fail with a relatively old CPU
         model (for example
         <emphasis>elf/tst-cpu-features-cpuinfo</emphasis>) or host kernel
