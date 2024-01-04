@@ -187,6 +187,12 @@ sed 's|lib.*udevd|sbin/udevd|'                                        \
 
 rm /usr/share/man/man*/systemd*</userinput></screen>
 
+    <para>Finally, unset the <envar>udev_helpers</envar> variable:</para>
+
+    <!-- remap="make" seems confusing but we don't have sth. like
+         remap="clean".  -->
+    <screen><userinput remap="make">unset udev_helpers</userinput></screen>
+
   </sect2>
 
   <sect2 id="conf-udev" role="configuration">
