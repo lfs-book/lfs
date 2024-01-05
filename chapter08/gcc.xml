@@ -357,10 +357,10 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         and lto-dump</seg>
 
         <seg>libasan.{a,so}, libatomic.{a,so}, libcc1.so, libgcc.a, libgcc_eh.a,
-        libgcc_s.so, libgcov.a, libgomp.{a,so}, libhwasan.{a,so}, libitm.{a,so},
-        liblsan.{a,so}, liblto_plugin.so,
+        libgcc_s.so, libgcov.a, libgomp.{a,so},
+        liblto_plugin.so,
         libquadmath.{a,so}, libssp.{a,so}, libssp_nonshared.a,
-        libstdc++.{a,so}, libstdc++exp.a, libstdc++fs.a, libsupc++.a, libtsan.{a,so},
+        libstdc++.{a,so}, libstdc++exp.a, libstdc++fs.a, libsupc++.a,
         and libubsan.{a,so}</seg>
 
         <seg>/usr/include/c++, /usr/lib/gcc, /usr/libexec/gcc, and
@@ -567,36 +567,6 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libhwasan">
-        <term><filename class="libraryfile">libhwasan</filename></term>
-        <listitem>
-          <para>The Hardware-assisted Address Sanitizer runtime library</para>
-          <indexterm zone="ch-system-gcc libhwasan">
-            <primary sortas="c-libhwasan">libhwasan</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libitm">
-        <term><filename class="libraryfile">libitm</filename></term>
-        <listitem>
-          <para>The GNU transactional memory library</para>
-          <indexterm zone="ch-system-gcc libitm">
-            <primary sortas="c-libitm">libitm</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="liblsan">
-        <term><filename class="libraryfile">liblsan</filename></term>
-        <listitem>
-          <para>The Leak Sanitizer runtime library</para>
-          <indexterm zone="ch-system-gcc liblsan">
-            <primary sortas="c-liblsan">liblsan</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
       <varlistentry id="liblto_plugin">
         <term><filename class="libraryfile">liblto_plugin</filename></term>
         <listitem>
@@ -667,16 +637,6 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
           language</para>
           <indexterm zone="ch-system-gcc libsupc">
             <primary sortas="c-libsupc++">libsupc++</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libtsan">
-        <term><filename class="libraryfile">libtsan</filename></term>
-        <listitem>
-          <para>The Thread Sanitizer runtime library</para>
-          <indexterm zone="ch-system-gcc libtsan">
-            <primary sortas="c-libtsan">libtsan</primary>
           </indexterm>
         </listitem>
       </varlistentry>
