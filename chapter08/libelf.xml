@@ -58,6 +58,9 @@
 
 <screen><userinput remap="test">make check</userinput></screen>
 
+    <para>Eight tests are known to fail due to incomplete MIPS
+    support.</para>
+
     <para>Install only Libelf:</para>
 
 <screen><userinput remap="install">make -C libelf install
