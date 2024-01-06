@@ -115,6 +115,10 @@ su tester -c "make -k check"</userinput></screen>
     two sub-tests from misc: mbsencode and one sub-test from script: replay are 
     known to fail.</para>
 
+    <para>Two tests named <filename>fadvise/drop</filename> and
+    <filename>fincore/count</filename> are known to fail if the page
+    size of the host kernel is not 4 KB.</para>
+
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
