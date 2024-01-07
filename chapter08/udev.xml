@@ -191,7 +191,7 @@ rm /usr/share/man/man*/systemd*</userinput></screen>
 
     <!-- remap="make" seems confusing but we don't have sth. like
          remap="clean".  -->
-    <screen><userinput remap="make">unset udev_helpers</userinput></screen>
+    <screen><userinput remap="install">unset udev_helpers</userinput></screen>
 
   </sect2>
 
