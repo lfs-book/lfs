@@ -56,7 +56,7 @@ EOF</userinput></screen>
   class="partition">sda2</filename>, <filename
   class="partition">sda5</filename>, and <systemitem
   class="filesystem">ext4</systemitem>. For details on the six
-  fields in this file, see <command>man 5 fstab</command>.</para>
+  fields in this file, see <filename>fstab(5)</filename>.</para>
 
   <para>Filesystems with MS-DOS or Windows origin (i.e. vfat, ntfs, smbfs,
   cifs, iso9660, udf) need a special option, utf8, in order for non-ASCII

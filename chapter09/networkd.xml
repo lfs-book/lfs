@@ -113,14 +113,14 @@ Name=ether0</literal>
 EOF</userinput></screen>
 
           <para>
-             See the man page systemd.link(5) for more information.
+            See <filename>systemd.link(5)</filename> for more information.
           </para>
         </listitem>
 
         <listitem>
           <para>
-            In /boot/grub/grub.cfg, pass the option net.ifnames=0 on the
-            kernel command line.
+            In /boot/grub/grub.cfg, pass the option
+            <option>net.ifnames=0</option> on the kernel command line.
           </para>
         </listitem>
       </itemizedlist>
