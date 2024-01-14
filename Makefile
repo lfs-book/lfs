@@ -1,3 +1,4 @@
+# vim:ts=3
 #BASEDIR = ~/lfs-book
 #SYSDDIR = ~/lfs-systemd
 #DUMPDIR = ~/lfs-commands
@@ -23,12 +24,12 @@ ifneq ($(REV), sysv)
 endif
 
 ifeq ($(REV), sysv)
-  BASEDIR         ?= ~/lfs-book
+  BASEDIR         ?= ~/public_html/lfs-book
   PDF_OUTPUT      ?= LFS-BOOK.pdf
   NOCHUNKS_OUTPUT ?= LFS-BOOK.html
   DUMPDIR         ?= ~/lfs-commands
 else
-  BASEDIR         ?= ~/lfs-systemd
+  BASEDIR         ?= ~/public_html/lfs-systemd
   PDF_OUTPUT      ?= LFS-SYSD-BOOK.pdf
   NOCHUNKS_OUTPUT ?= LFS-SYSD-BOOK.html
   DUMPDIR         ?= ~/lfs-sysd-commands
@@ -60,6 +61,7 @@ book: validate profile-html
 	$(Q)mkdir -p $(BASEDIR)/stylesheets
 	$(Q)cp stylesheets/lfs-xsl/*.css $(BASEDIR)/stylesheets
 	$(Q)sed -i 's|../stylesheet|stylesheet|' $(BASEDIR)/index.html
+	$(Q)sed -i 's/xmlns:xlink.*xlink"//' $(BASEDIR)/longindex.html
 
 	$(Q)mkdir -p $(BASEDIR)/images
 	$(Q)cp images/*.png $(BASEDIR)/images
@@ -112,6 +114,7 @@ nochunks: validate profile-html
                 $(RENDERTMP)/lfs-html.xml
 #                $(RENDERTMP)/lfs-html2.xml
 
+	$(Q)sed 's/xmlns:xlink.*xlink"//' -i $(BASEDIR)/$(NOCHUNKS_OUTPUT)
 	@echo "Running Tidy..."
 	$(Q)tidy -config tidy.conf $(BASEDIR)/$(NOCHUNKS_OUTPUT) || true
 
@@ -120,7 +123,6 @@ nochunks: validate profile-html
 	$(Q)sed -i -e "s@text/html@application/xhtml+xml@g"  $(BASEDIR)/$(NOCHUNKS_OUTPUT)
 	$(Q)sed -i -e "s@../wget-list@wget-list@"            $(BASEDIR)/$(NOCHUNKS_OUTPUT)
 	$(Q)sed -i -e "s@../md5sums@md5sums@"                $(BASEDIR)/$(NOCHUNKS_OUTPUT)
-	$(Q)sed -i -e "s@\xa9@\&copy;@"                      $(BASEDIR)/$(NOCHUNKS_OUTPUT)
 
 	@echo "Output at $(BASEDIR)/$(NOCHUNKS_OUTPUT)"
 
