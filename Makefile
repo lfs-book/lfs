@@ -1,3 +1,4 @@
+# vim:ts=3
 #BASEDIR = ~/lfs-book
 #SYSDDIR = ~/lfs-systemd
 #DUMPDIR = ~/lfs-commands
