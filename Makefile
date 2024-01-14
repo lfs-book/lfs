@@ -101,6 +101,7 @@ nochunks: validate profile-html
                 $(RENDERTMP)/lfs-html.xml
 #                $(RENDERTMP)/lfs-html2.xml
 
+	$(Q)sed 's/xmlns:xlink.*xlink"//' -i $(BASEDIR)/$(NOCHUNKS_OUTPUT)
 	@echo "Running Tidy..."
 	$(Q)tidy -config tidy.conf $(BASEDIR)/$(NOCHUNKS_OUTPUT) || true
 
@@ -109,7 +110,6 @@ nochunks: validate profile-html
 	$(Q)sed -i -e "s@text/html@application/xhtml+xml@g"  $(BASEDIR)/$(NOCHUNKS_OUTPUT)
 	$(Q)sed -i -e "s@../wget-list@wget-list@"            $(BASEDIR)/$(NOCHUNKS_OUTPUT)
 	$(Q)sed -i -e "s@../md5sums@md5sums@"                $(BASEDIR)/$(NOCHUNKS_OUTPUT)
-	$(Q)sed -i -e "s@\xa9@\&copy;@"                      $(BASEDIR)/$(NOCHUNKS_OUTPUT)
 
 	@echo "Output at $(BASEDIR)/$(NOCHUNKS_OUTPUT)"
 

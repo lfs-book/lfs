@@ -10,9 +10,6 @@
   <!-- Upstream XHTML templates -->
   <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/xhtml/docbook.xsl"/>
 
-  <!-- Fix encoding issues with default UTF-8 output of the xhtml stylesheet -->
-  <xsl:output method="html" encoding="ISO-8859-1" indent="no" />
-
   <!-- Include our customized templates -->
   <xsl:include href="common.xsl"/>
   <xsl:include href="xhtml/lfs-index.xsl"/>
