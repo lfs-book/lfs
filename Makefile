@@ -24,12 +24,12 @@ ifneq ($(REV), sysv)
 endif
 
 ifeq ($(REV), sysv)
-  BASEDIR         ?= ~/lfs-book
+  BASEDIR         ?= ~/public_html/lfs-book
   PDF_OUTPUT      ?= LFS-BOOK.pdf
   NOCHUNKS_OUTPUT ?= LFS-BOOK.html
   DUMPDIR         ?= ~/lfs-commands
 else
-  BASEDIR         ?= ~/lfs-systemd
+  BASEDIR         ?= ~/public_html/lfs-systemd
   PDF_OUTPUT      ?= LFS-SYSD-BOOK.pdf
   NOCHUNKS_OUTPUT ?= LFS-SYSD-BOOK.html
   DUMPDIR         ?= ~/lfs-sysd-commands
