@@ -137,7 +137,7 @@ meson setup \
     <screen><userinput remap="make">ninja udevadm systemd-hwdb                                           \
       $(ninja -n | grep -Eo '(src/(lib)?udev|rules.d|hwdb.d)/[^ ]*') \
       $(realpath libudev.so --relative-to .)                         \
-      $udev_helpers udevadm</userinput></screen>
+      $udev_helpers</userinput></screen>
 
     <para>Install the package:</para>
 
