@@ -157,7 +157,7 @@ meson setup \
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>-Dman=false</parameter></term>
+        <term><parameter>-Dman=disabled</parameter></term>
         <listitem>
           <para>Prevent the generation of man pages to avoid extra
           dependencies.  We will install pre-generated man pages for systemd
