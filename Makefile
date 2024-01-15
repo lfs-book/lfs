@@ -35,6 +35,9 @@ else
   DUMPDIR         ?= ~/lfs-sysd-commands
 endif
 
+# https://github.com/docbook/xslt10-stylesheets/issues/239
+SED_XMLNS_XLINK = sed -i 's/xmlns:xlink.*xlink"//'
+
 book: validate profile-html
 	@echo "Generating chunked XHTML files at $(BASEDIR)/ ..."
 	$(Q)xsltproc --nonet                          \
@@ -48,7 +51,7 @@ book: validate profile-html
 	$(Q)mkdir -p $(BASEDIR)/stylesheets
 	$(Q)cp stylesheets/lfs-xsl/*.css $(BASEDIR)/stylesheets
 	$(Q)sed -i 's|../stylesheet|stylesheet|' $(BASEDIR)/index.html
-	$(Q)sed -i 's/xmlns:xlink.*xlink"//' $(BASEDIR)/longindex.html
+	$(Q)$(SED_XMLNS_XLINK) $(BASEDIR)/longindex.html
 
 	$(Q)mkdir -p $(BASEDIR)/images
 	$(Q)cp images/*.png $(BASEDIR)/images
@@ -101,7 +104,7 @@ nochunks: validate profile-html
                 $(RENDERTMP)/lfs-html.xml
 #                $(RENDERTMP)/lfs-html2.xml
 
-	$(Q)sed 's/xmlns:xlink.*xlink"//' -i $(BASEDIR)/$(NOCHUNKS_OUTPUT)
+	$(Q)$(SED_XMLNS_XLINK) $(BASEDIR)/$(NOCHUNKS_OUTPUT)
 	@echo "Running Tidy..."
 	$(Q)tidy -config tidy.conf $(BASEDIR)/$(NOCHUNKS_OUTPUT) || true
 
