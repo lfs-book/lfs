@@ -25,8 +25,10 @@
   </xsl:template>
 
   <!-- The original template in {docbook-xsl}/xhtml/autoidx.xsl has
-  a bug that generates a <div> with a wrong xmlns:xlink attribute,
-  so copy it here (and simplify it a lot)-->
+  a bug (https://github.com/docbook/xslt10-stylesheets/issues/239)
+  that generates a <div> with a wrong xmlns:xlink attribute. So copy it
+  here where the bug does not occur, (and simplify it a lot).-->
+
   <xsl:template name="generate-basic-index">
     <xsl:param name="scope" select="NOTANODE"/>
 
