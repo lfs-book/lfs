@@ -24,6 +24,28 @@
     <xsl:text>longindex.html</xsl:text>
   </xsl:template>
 
+  <!-- The original template in {docbook-xsl}/xhtml/autoidx.xsl has
+  a bug that generates a <div> with a wrong xmlns:xlink attribute,
+  so copy it here (and simplify it a lot)-->
+  <xsl:template name="generate-basic-index">
+    <xsl:param name="scope" select="NOTANODE"/>
+
+    <xsl:variable name="terms" select="//indexterm
+      [count(.|key('letter',
+                   translate(substring(&primary;, 1, 1),
+                             &lowercase;,
+                             &uppercase;
+                            )
+                  ) [&scope;][1]) = 1]"/>
+    <div class="index">
+      <xsl:apply-templates select="$terms" mode="index-div-basic">
+        <xsl:with-param name="position" select="position()"/>
+        <xsl:with-param name="scope" select="$scope"/>
+        <xsl:sort select="translate(&primary;, &lowercase;, &uppercase;)"/>
+      </xsl:apply-templates>
+    </div>
+  </xsl:template>
+
   <!-- Divisions:
        Override the default division titles, translating them from the default
        'A', 'B', etc. to 'Packages', 'Programs', etc.
