@@ -107,7 +107,7 @@
       <segmentedlist id="attr-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>Acl and Libcap</seg>
+          <seg>Acl, Libcap, and Patch</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2414,14 +2414,15 @@
       <segmentedlist id="patch-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, Coreutils, GCC, Glibc, Grep, Make, and Sed</seg>
+          <seg>Attr, Bash, Binutils, Coreutils, GCC, Glibc, Grep, Make, and
+          Sed</seg>
         </seglistitem>
       </segmentedlist>
 
       <segmentedlist id="patch-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
-          <seg>Glibc</seg>
+          <seg>Attr and Glibc</seg>
         </seglistitem>
       </segmentedlist>
 
