@@ -56,11 +56,9 @@ rev=$(echo "$sha" | sed 's/-g[^-]*$//')
 version="$rev"
 versiond="$rev-systemd"
 
-if false; then
 if [ "$(git diff HEAD | wc -l)" != "0" ]; then
     version="$version+"
     versiond="$versiond+"
-fi
 fi
 
 echo "<![ %sysv; ["                                        >  version.ent
