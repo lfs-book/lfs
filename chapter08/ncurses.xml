@@ -131,11 +131,16 @@
     in-place.  It may crash the shell process which is using code and data
     from the library file.  Install the package with
     <literal>DESTDIR</literal>, and replace the library file correctly using
-    <command>install</command> command:</para>
+    <command>install</command> command (the header
+    <filename>curses.h</filename> is also edited to ensure the
+    wide-character ABI to be used as what we've done in
+    <xref linkend='ch-tools-ncurses'/>):</para>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/dest install
 install -vm755 dest/usr/lib/libncursesw.so.&ncurses-version; /usr/lib
 rm -v  dest/usr/lib/libncursesw.so.&ncurses-version;
+sed -e 's/^#if.*XOPEN.*$/#if 1/' \
+    -i dest/usr/include/curses.h
 cp -av dest/* /</userinput></screen>
 
     <para>Many applications still expect the linker to be able to find
