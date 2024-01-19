@@ -156,7 +156,7 @@ popd</userinput></screen>
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$LFS TIC_PATH=$(pwd)/build/progs/tic install
-echo "INPUT(-lncursesw)" > $LFS/usr/lib/libncurses.so
+ln -sv libncursesw.so $LFS/usr/lib/libncurses.so
 sed -e 's/^#if.*XOPEN.*$/#if 1/' \
     -i $LFS/usr/include/curses.h</userinput></screen>
 <!--
@@ -178,12 +178,11 @@ sed -e 's/^#if.*XOPEN.*$/#if 1/' \
       </varlistentry>
 
       <varlistentry>
-        <term><command>echo "INPUT(-lncursesw)" > $LFS/usr/lib/libncurses.so</command></term>
+        <term><command>ln -sv libncursesw.so $LFS/usr/lib/libncurses.so</command></term>
         <listitem>
           <para>The <filename>libncurses.so</filename> library is needed by
-          a few packages we will build soon. We create this small linker
-          script, as this is what is done in <xref
-          linkend="chapter-building-system"/>.</para>
+          a few packages we will build soon. We create this symlink to use
+          <filename>libncursesw.so</filename> as a replacement.</para>
         </listitem>
       </varlistentry>
 

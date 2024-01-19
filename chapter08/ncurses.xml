@@ -144,22 +144,22 @@ sed -e 's/^#if.*XOPEN.*$/#if 1/' \
 cp -av dest/* /</userinput></screen>
 
     <para>Many applications still expect the linker to be able to find
-    non-wide-character Ncurses libraries. Trick such applications into linking with
-    wide-character libraries by means of symlinks and linker scripts:</para>
+    non-wide-character Ncurses libraries. Trick such applications into
+    linking with wide-character libraries by means of symlinks
+    (note that the <filename class='extension'>.so</filename> links are
+    only safe with <filename>curses.h</filename> edited to always use the
+    wide-character ABI):</para>
 
 <screen><userinput remap="install">for lib in ncurses form panel menu ; do
-    rm -vf                    /usr/lib/lib${lib}.so
-    echo "INPUT(-l${lib}w)" &gt; /usr/lib/lib${lib}.so
-    ln -sfv ${lib}w.pc        /usr/lib/pkgconfig/${lib}.pc
+    ln -sfv lib${lib}w.so /usr/lib/lib${lib}.so
+    ln -sfv ${lib}w.pc    /usr/lib/pkgconfig/${lib}.pc
 done</userinput></screen>
 
     <para>Finally, make sure that old applications that look for
     <filename class="libraryfile">-lcurses</filename> at build time are still
     buildable:</para>
 
-<screen><userinput remap="install">rm -vf                     /usr/lib/libcursesw.so
-echo "INPUT(-lncursesw)" &gt; /usr/lib/libcursesw.so
-ln -sfv libncurses.so      /usr/lib/libcurses.so</userinput></screen>
+<screen><userinput remap="install">ln -sfv libncursesw.so /usr/lib/libcurses.so</userinput></screen>
 
     <para>If desired, install the Ncurses documentation:</para>
 
@@ -211,13 +211,17 @@ cp -av lib/lib*.so.5* /usr/lib</userinput></screen>
            tset
         </seg>
         <seg>
-           libcursesw.so (symlink and linker script to libncursesw.so),
+           libcurses.so (symlink),
+           libform.so (symlink),
            libformw.so,
+           libmenu.so (symlink),
            libmenuw.so,
+           libncurses.so (symlink),
            libncursesw.so,
            libncurses++w.so,
-           libpanelw.so, and their non-wide-character counterparts without "w"
-              in the library names.</seg>
+           libpanel.so (symlink),
+           and libpanelw.so,
+        </seg>
         <seg>
            /usr/share/tabset,
            /usr/share/terminfo, and
