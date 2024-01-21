@@ -44,6 +44,10 @@
       <para>2024-01-21</para>
       <itemizedlist>
         <listitem>
+          <para>[xry111] - Apply upstream fix for pkgconf-2.1.0 regression.
+          Fixes <ulink url='&lfs-ticket-root;5414'>#5414</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[xry111] - Update to jinja2-3.1.3 (security fix).  Fixes
           <ulink url='&lfs-ticket-root;5411'>#5411</ulink>.</para>
         </listitem>
