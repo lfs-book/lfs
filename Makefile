@@ -150,9 +150,11 @@ profile-html:
                 stylesheets/lfs-xsl/profile.xsl      \
                 $(RENDERTMP)/lfs-full.xml
 
+DOWNLOADS_DEP = chapter03/packages.xml chapter03/patches.xml \
+                packages.ent patches.ent general.ent
+
 wget-list: $(BASEDIR)/wget-list $(BASEDIR)/wget-list-$(REV)
-$(BASEDIR)/wget-list: stylesheets/wget-list.xsl chapter03/chapter03.xml \
-                      packages.ent patches.ent general.ent
+$(BASEDIR)/wget-list: stylesheets/wget-list.xsl $(DOWNLOADS_DEP)
 	@echo "Generating consolidated wget list at $(BASEDIR)/wget-list ..."
 	$(Q)mkdir -p $(BASEDIR)
 	$(Q)xsltproc --xinclude --nonet            \
@@ -160,9 +162,7 @@ $(BASEDIR)/wget-list: stylesheets/wget-list.xsl chapter03/chapter03.xml \
                 stylesheets/wget-list.xsl     \
                 chapter03/chapter03.xml
 
-$(BASEDIR)/wget-list-$(REV): stylesheets/wget-list.xsl \
-                             chapter03/chapter03.xml \
-                             packages.ent patches.ent general.ent
+$(BASEDIR)/wget-list-$(REV): stylesheets/wget-list.xsl $(DOWNLOADS_DEP)
 	$(Q)xsltproc --nonet --xinclude                   \
                 --stringparam profile.revision $(REV) \
                 --output $(RENDERTMP)/wget-list.xml   \
@@ -174,8 +174,7 @@ $(BASEDIR)/wget-list-$(REV): stylesheets/wget-list.xsl \
                 $(RENDERTMP)/wget-list.xml
 
 md5sums: $(BASEDIR)/md5sums
-$(BASEDIR)/md5sums: stylesheets/wget-list.xsl chapter03/chapter03.xml \
-                    packages.ent patches.ent
+$(BASEDIR)/md5sums: stylesheets/wget-list.xsl $(DOWNLOADS_DEP)
 	@echo "Generating consolidated md5sum file at $(BASEDIR)/md5sums ..."
 	$(Q)mkdir -p $(BASEDIR)
 
