@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>2024-01-21</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Fix CVE-2024-0684 for coreutils-9.4.  Fixes
+          <ulink url="&lfs-ticket-root;5417">#5417</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2024-01-18</para>
       <itemizedlist>
         <listitem>
