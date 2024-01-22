@@ -60,7 +60,6 @@
 <screen><userinput remap="configure">./config --prefix=/usr         \
          --openssldir=/etc/ssl \
          --libdir=lib          \
-         linux64-loongarch64   \
          shared                \
          zlib-dynamic</userinput></screen>
 
