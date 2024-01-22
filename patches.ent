@@ -26,6 +26,10 @@
 <!ENTITY pkgconf-upstream-fix-patch-md5 "77d5bb10840724a0e3dc08efee548363">
 <!ENTITY pkgconf-upstream-fix-patch-size "4 KB">
 
+<!ENTITY openssl-loongarch-patch "openssl-&openssl-version;-loongarch_fixes-1.patch">
+<!ENTITY openssl-loongarch-patch-md5 "4c46bd65ba78a2ab479ded11fdb7ed49">
+<!ENTITY openssl-loongarch-patch-size "20 KB">
+
 <!ENTITY readline-fixes-patch "readline-&readline-version;-upstream_fixes-2.patch">
 <!ENTITY readline-fixes-patch-md5 "d2477ebe908cc99763d90dde7fd9549a">
 <!ENTITY readline-fixes-patch-size "5.7 KB">
