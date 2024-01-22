@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -107,7 +107,7 @@
       <segmentedlist id="attr-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>Acl and Libcap</seg>
+          <seg>Acl, Libcap, and Patch</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1239,7 +1239,7 @@
       <segmentedlist id="groff-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>Man-DB and Perl</seg>
+          <seg>Man-DB</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2414,14 +2414,15 @@
       <segmentedlist id="patch-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, Coreutils, GCC, Glibc, Grep, Make, and Sed</seg>
+          <seg>Attr, Bash, Binutils, Coreutils, GCC, Glibc, Grep, Make, and
+          Sed</seg>
         </seglistitem>
       </segmentedlist>
 
       <segmentedlist id="patch-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
-          <seg>Glibc</seg>
+          <seg>Attr and Glibc</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2454,7 +2455,7 @@
       <segmentedlist id="perl-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, Coreutils, Gawk, GCC, GDBM, Glibc, Grep, Groff,
+          <seg>Bash, Binutils, Coreutils, Gawk, GCC, GDBM, Glibc, Grep,
           Libxcrypt, Make, Sed, and Zlib</seg>
         </seglistitem>
       </segmentedlist>

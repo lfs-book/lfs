@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -54,7 +54,7 @@ install -dv -m 1777 /tmp /var/tmp</userinput></screen>
   <filename class="directory">/tmp</filename> and <filename
   class="directory">/var/tmp</filename> directories, but cannot remove
   another user's files from them. The latter is prohibited by the so-called
-  <quote>sticky bit,</quote> the highest bit (1) in the 1777 bit mask.</para>
+  <quote>sticky bit</quote>, the highest bit (1) in the 1777 bit mask.</para>
 
   <sect2>
     <title>FHS Compliance Note</title>
