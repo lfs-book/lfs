@@ -351,16 +351,6 @@ cp -av lib/lib*.so.5* /usr/lib</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libcursesw">
-        <term><filename class="libraryfile">libcursesw</filename></term>
-        <listitem>
-          <para>A link to <filename>libncursesw</filename></para>
-          <indexterm zone="ch-system-ncurses libcursesw">
-            <primary sortas="c-libcursesw">libcursesw</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
       <varlistentry id="libncursesw">
         <term><filename class="libraryfile">libncursesw</filename></term>
         <listitem>
