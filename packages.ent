@@ -353,7 +353,7 @@
 <!ENTITY jinja2-size "264 KB">
 <!ENTITY jinja2-url "&pypi-src;/J/Jinja2/Jinja2-&jinja2-version;.tar.gz">
 <!ENTITY jinja2-md5 "caf5418c851eac59e70a78d9730d4cea">
-<!ENTITY jinja2-home "https://jinja.palletsprojects.com/en/3.0.x/">
+<!ENTITY jinja2-home "https://jinja.palletsprojects.com/en/3.1.x/">
 <!ENTITY jinja2-fin-du "3.4 MB">
 <!ENTITY jinja2-fin-sbu "less than 0.1 SBU">
 
