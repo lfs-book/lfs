@@ -1239,7 +1239,7 @@
       <segmentedlist id="groff-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>Man-DB and Perl</seg>
+          <seg>Man-DB</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2455,7 +2455,7 @@
       <segmentedlist id="perl-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, Coreutils, Gawk, GCC, GDBM, Glibc, Grep, Groff,
+          <seg>Bash, Binutils, Coreutils, Gawk, GCC, GDBM, Glibc, Grep,
           Libxcrypt, Make, Sed, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
