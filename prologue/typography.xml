@@ -74,14 +74,15 @@ EOF</userinput></screen>
 
   <para>This format is used to encapsulate text that is optional.</para>
 
-  <para><filename>passwd(5)</filename></para>
+  <para><ulink role='man' url='&man;passwd.5'>passwd(5)</ulink></para>
 
   <para>This format is used to refer to a specific manual (man) page. The number inside parentheses
   indicates a specific section inside the manuals. For example,
   <command>passwd</command> has two man pages. Per LFS installation instructions,
   those two man pages will be located at
   <filename>/usr/share/man/man1/passwd.1</filename> and
-  <filename>/usr/share/man/man5/passwd.5</filename>. When the book uses <filename>passwd(5)</filename> it is
+  <filename>/usr/share/man/man5/passwd.5</filename>. When the book uses
+  <ulink role='man' url='&man;/passwd.5'>passwd(5)</ulink> it is
   specifically referring to <filename>/usr/share/man/man5/passwd.5</filename>.
   <command>man passwd</command> will print the first man page it finds that
   matches <quote>passwd</quote>, which will be
@@ -89,7 +90,11 @@ EOF</userinput></screen>
   need to run <command>man 5 passwd</command> in order to read the page
   being specified. Note that most man pages do not have duplicate
   page names in different sections. Therefore, <command>man <replaceable>&lt;program
-  name&gt;</replaceable></command> is generally sufficient.</para>
+  name&gt;</replaceable></command> is generally sufficient.  In the LFS
+  book these references to man pages are also hyperlinks, so clicking on
+  such a reference will open the man page rendered in HTML from
+  <ulink url='https://man.archlinux.org/'>Arch Linux manual
+  pages</ulink>.</para>
 
 </sect1>
 
