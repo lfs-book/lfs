@@ -78,12 +78,6 @@
 
 <screen><userinput remap='pre'>echo <literal>depends bli part_gpt</literal> &gt; grub-core/extra_deps.lst</userinput></screen>
 
-    <!--https://git.savannah.gnu.org/cgit/grub.git/commit/?id=69edb312 -->
-    <para>Apply an upstream change so GRUB will be capable to load
-    compressed kernel image on an ARM64 system:</para>
-
-<screen><userinput remap='pre'>sed '/ARMXX_MAGIC/,+2d' -i grub-core/loader/arm64/linux.c</userinput></screen>
-
     <para>Prepare GRUB for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr          \
