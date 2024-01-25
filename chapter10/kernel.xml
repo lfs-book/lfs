@@ -356,7 +356,8 @@
     located in <xref linkend="ch-config-udev"/> and in the kernel
     documentation in the <filename
     class="directory">linux-&linux-version;/Documentation</filename> directory.
-    Also, <filename>modprobe.d(5)</filename> may be of interest.</para>
+    Also, <ulink role='man' url='&man;modprobe.d.5'>modprobe.d(5)</ulink>
+    may be of interest.</para>
 
     <para>Unless module support has been disabled in the kernel configuration,
     install the modules with:</para>

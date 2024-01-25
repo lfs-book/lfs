@@ -225,8 +225,9 @@
       <para>Note that the <quote>softdep</quote> command also allows
       <literal>pre:</literal> dependencies, or a mixture of both
       <literal>pre:</literal> and <literal>post:</literal> dependencies.  See
-      the <filename>modprobe.d(5)</filename> manual page for more information
-      on <quote>softdep</quote> syntax and capabilities.</para>
+      the <ulink role='man' url='&man;modprobe.d.5'>modprobe.d(5)</ulink>
+      manual page for more information on <quote>softdep</quote> syntax and
+      capabilities.</para>
 
       <para revision="sysv">If the module in question is not a wrapper and is
       useful by itself, configure the <command>modules</command> bootscript to

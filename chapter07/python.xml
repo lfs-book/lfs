@@ -83,9 +83,9 @@
     <note>
       <para>
         Some Python 3 modules can't be built now because the dependencies
-        are not installed yet. The building system still attempts to build
-        them however, so the compilation of some files will fail and the
-        compiler message may seem to indicate <quote>fatal error</quote>.
+        are not installed yet. For the <filename>ssl</filename> module,
+        a message <quote><computeroutput>Python requires a OpenSSL 1.1.1 or
+        newer</computeroutput></quote> is outputted.
         The message should be ignored.  Just make sure the toplevel
         <command>make</command> command has not failed.  The optional
         modules are not needed now and they will be built in
