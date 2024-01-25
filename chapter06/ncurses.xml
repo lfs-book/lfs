@@ -156,7 +156,9 @@ popd</userinput></screen>
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$LFS TIC_PATH=$(pwd)/build/progs/tic install
-echo "INPUT(-lncursesw)" > $LFS/usr/lib/libncurses.so</userinput></screen>
+ln -sv libncursesw.so $LFS/usr/lib/libncurses.so
+sed -e 's/^#if.*XOPEN.*$/#if 1/' \
+    -i $LFS/usr/include/curses.h</userinput></screen>
 <!--
     <para>Remove an unneeded static library not handled by
     <command>configure</command>:</para>
@@ -176,12 +178,28 @@ echo "INPUT(-lncursesw)" > $LFS/usr/lib/libncurses.so</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-        <term><command>echo "INPUT(-lncursesw)" > $LFS/usr/lib/libncurses.so</command></term>
+        <term><command>ln -sv libncursesw.so $LFS/usr/lib/libncurses.so</command></term>
         <listitem>
           <para>The <filename>libncurses.so</filename> library is needed by
-          a few packages we will build soon. We create this small linker
-          script, as this is what is done in <xref
-          linkend="chapter-building-system"/>.</para>
+          a few packages we will build soon. We create this symlink to use
+          <filename>libncursesw.so</filename> as a replacement.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><command>sed -e 's/^#if.*XOPEN.*$/#if 1/' ...</command></term>
+        <listitem>
+          <para>The header file <filename>curses.h</filename> contains
+          the definition of various Ncurses data structures.  With different
+          preprocessor macro definitions two different sets of the data
+          structure definition may be used: the 8-bit definition is
+          compatible with <filename>libncurses.so</filename> and the
+          wide-character definition is compatible with
+          <filename>libncursesw.so</filename>.  Since we are using
+          <filename>libncursesw.so</filename> as a replacement of
+          <filename>libncurses.so</filename>, edit the header file so it
+          will always use the wide-character data structure definition
+          compatible with <filename>libncursesw.so</filename>.</para>
         </listitem>
       </varlistentry>
 

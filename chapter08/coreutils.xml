@@ -53,13 +53,13 @@
       those bugs are reproducible without this patch.</para>
     </note>
 
-    <!-- https://bugs.gnu.org/62403 -->
-<!--
-    <para>Fix a bug in checksum utilities causing failed checks not
-    reported correctly:</para>
+    <!-- https://seclists.org/oss-sec/2024/q1/30 -->
+    <para>Fix a security vulnerability in the <command>split</command>
+    utility:</para>
 
-<screen><userinput remap="pre">sed '/if ( ! match/s/ed_checksums//' -i src/digest.c</userinput></screen>
--->
+<screen><userinput remap="pre">sed -e '/n_out += n_hold/,+4 s|.*bufsize.*|//&amp;|' \
+    -i src/split.c</userinput></screen>
+
     <para>Now prepare Coreutils for compilation:</para>
 
 <screen><userinput remap="configure">autoreconf -fiv
