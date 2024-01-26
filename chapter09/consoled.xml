@@ -30,7 +30,7 @@
   directory for valid screen fonts.</para>
 
   <para>The <filename>/etc/vconsole.conf</filename> file should contain lines
-  of the form: VARIABLE="value". The following variables are recognized:</para>
+  of the form: <envar>VARIABLE=value</envar>. The following variables are recognized:</para>
 
   <variablelist>
 

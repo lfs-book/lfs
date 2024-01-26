@@ -75,10 +75,10 @@
 <screen role="nodump"><userinput>locale -a</userinput></screen>
 
   <para>Charmaps can have a number of aliases, e.g., <quote>ISO-8859-1</quote>
-  is also referred to as <quote>iso8859-1</quote> and <quote>iso88591</quote>.
+  is also referred to as <quote>iso8859-1</quote> and <quote>iso88591.</quote>
   Some applications cannot handle the various synonyms correctly (e.g., require
-  that <quote>UTF-8</quote> is written as <quote>UTF-8</quote>, not
-  <quote>utf8</quote>), so it is safest in most
+  that <quote>UTF-8</quote> is written as <literal>UTF-8</literal>, not
+  <literal>utf8</literal>), so it is safest in most
   cases to choose the canonical name for a particular locale. To determine
   the canonical name, run the following command, where <replaceable>&lt;locale
   name&gt;</replaceable> is the output given by <command>locale -a</command> for
@@ -91,7 +91,7 @@
 
 <screen><computeroutput>ISO-8859-1</computeroutput></screen>
 
-  <para>This results in a final locale setting of <quote>en_GB.ISO-8859-1</quote>.
+  <para>This results in a final locale setting of <literal>en_GB.ISO-8859-1</literal>.
   It is important that the locale found using the heuristic above is tested before
   it is added to the Bash startup files:</para>
 
@@ -114,22 +114,6 @@ LC_ALL=&lt;locale name&gt; locale int_prefix</userinput></screen>
   Further instructions assume that there are no such error messages from
   Glibc.</para>
 
-  <!-- FIXME: the xlib example will became obsolete real soon -->
-  <!--<para>Some packages beyond LFS may also lack support for your chosen locale. One
-  example is the X library (part of the X Window System), which outputs the
-  following error message if the locale does not exactly match one of the character
-  map names in its internal files:</para>
-
-<screen><computeroutput>Warning: locale not supported by Xlib, locale set to C</computeroutput></screen>
-
-  <para>In several cases Xlib expects that the character map will be listed in
-  uppercase notation with canonical dashes. For instance, "ISO-8859-1" rather
-  than "iso88591". It is also  possible to find an appropriate specification by
-  removing the charmap part of the locale specification.  This can be checked
-  by running the <command>locale charmap</command> command in both locales.
-  For example, one would have to change "de_DE.ISO-8859-15@euro" to
-  "de_DE@euro" in order to get this locale recognized by Xlib.</para>
--->
   <para>Other packages may also function incorrectly (but will not necessarily
   display any error messages) if the locale name does not meet their expectations.
   In such cases, investigating how other Linux distributions support your locale

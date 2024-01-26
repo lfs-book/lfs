@@ -85,7 +85,7 @@ EOF</userinput></screen>
   <ulink role='man' url='&man;/passwd.5'>passwd(5)</ulink> it is
   specifically referring to <filename>/usr/share/man/man5/passwd.5</filename>.
   <command>man passwd</command> will print the first man page it finds that
-  matches <quote>passwd</quote>, which will be
+  matches <quote>passwd,</quote> which will be
   <filename>/usr/share/man/man1/passwd.1</filename>. For this example, you will
   need to run <command>man 5 passwd</command> in order to read the page
   being specified. Note that most man pages do not have duplicate
