@@ -1261,7 +1261,7 @@ sed -i 's/"1"/"8"/' /usr/share/man/man8/chroot.8</userinput></screen>
       <varlistentry id="yes">
         <term><command>yes</command></term>
         <listitem>
-          <para>Repeatedly outputs <quote>y</quote>, or a given string, until
+          <para>Repeatedly outputs <quote>y,</quote> or a given string, until
           killed</para>
           <indexterm zone="ch-system-coreutils yes">
             <primary sortas="b-yes">yes</primary>

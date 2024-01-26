@@ -45,7 +45,7 @@
 
     <note>
       <para>There are two package files whose name starts with
-      <quote>python</quote>. The one to extract from is
+      <quote>python.</quote> The one to extract from is
       <filename>Python-&python-version;.tar.xz</filename> (notice the
       uppercase first letter).</para>
     </note>

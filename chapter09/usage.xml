@@ -48,11 +48,11 @@
 
     <note>
        <para>
-          Classically, run level 2 above was defined as
-          "multi-user mode without networking", but this was only the case
-          many years ago when multiple users could connect to a system via
-          serial ports.  In today's environment it makes no sense, and
-          we now say it is "reserved".
+         Classically, run level 2 above was defined as <quote>multi-user
+         mode without networking,</quote> but this was only the case
+         many years ago when multiple users could connect to a system via
+         serial ports.  In today's environment it makes no sense, and
+         we now say it is <quote>reserved.</quote>
        </para>
     </note>
 
@@ -348,7 +348,7 @@ EOF</userinput></screen>
   correct arguments for these programs.</para>
 
   <para>The <filename>/etc/sysconfig/console</filename> file should contain lines
-  of the form: VARIABLE="value". The following variables are recognized:</para>
+  of the form: <envar>VARIABLE=value</envar>. The following variables are recognized:</para>
   <variablelist>
 
     <varlistentry>
@@ -356,7 +356,7 @@ EOF</userinput></screen>
       <listitem>
         <para>This variable specifies the log level for kernel messages sent
         to the console as set by <command>dmesg -n</command>. Valid levels are
-        from "1" (no messages) to "8". The default level is "7".</para>
+        from <literal>1</literal> (no messages) to <literal>8</literal>. The default level is <literal>7</literal>, which is quite verbose.</para>
       </listitem>
     </varlistentry>
 
@@ -365,7 +365,7 @@ EOF</userinput></screen>
       <listitem>
         <para>This variable specifies the arguments for the
         <command>loadkeys</command> program, typically, the name of the keymap
-        to load, e.g., <quote>it</quote>. If this variable is not set, the
+        to load, e.g., <literal>it</literal>. If this variable is not set, the
         bootscript will not run the <command>loadkeys</command> program,
         and the default kernel keymap will be used.  Note that a few keymaps
         have multiple versions with the same name (cz and its variants in
@@ -384,7 +384,7 @@ EOF</userinput></screen>
         <command>loadkeys</command> program. This is useful if the stock keymap
         is not completely satisfactory and a small adjustment has to be made. E.g.,
         to include the Euro sign into a keymap that normally doesn't have it,
-        set this variable to <quote>euro2</quote>.</para>
+        set this variable to <literal>euro2</literal>.</para>
       </listitem>
     </varlistentry>
 
@@ -393,12 +393,12 @@ EOF</userinput></screen>
       <listitem>
         <para>This variable specifies the arguments for the
         <command>setfont</command> program. Typically, this includes the font
-        name, <quote>-m</quote>, and the name of the application character
+        name, <literal>-m</literal>, and the name of the application character
         map to load. E.g., in order to load the <quote>lat1-16</quote> font
         together with the <quote>8859-1</quote> application character map
         (appropriate in the USA),
         <!-- because of the copyright sign -->
-        set this variable to <quote>lat1-16 -m 8859-1</quote>.
+        set this variable to <literal>lat1-16 -m 8859-1</literal>.
         In UTF-8 mode, the kernel uses the application character map to
         convert 8-bit key codes to UTF-8. Therefore
         the argument of the "-m" parameter should be set to the encoding of the
@@ -410,8 +410,8 @@ EOF</userinput></screen>
     <varlistentry>
       <term>UNICODE</term>
       <listitem>
-        <para>Set this variable to <quote>1</quote>, <quote>yes</quote>, or
-        <quote>true</quote> in order to put the
+        <para>Set this variable to <literal>1</literal>, <literal>yes</literal>, or
+        <literal>true</literal> in order to put the
         console into UTF-8 mode. This is useful in UTF-8 based locales and
         harmful otherwise.</para>
       </listitem>
@@ -526,7 +526,7 @@ EOF</userinput></screen>
       languages, because there accents are added to unaccented ASCII
       characters, or two ASCII characters are composed together. However, in
       UTF-8 mode it is a problem; e.g., for the Greek language, where one
-      sometimes needs to put an accent on the letter <quote>alpha</quote>.
+      sometimes needs to put an accent on the letter <quote>alpha.</quote>
       The solution is either to avoid the use of UTF-8, or to install the
       X window system, which doesn't have this limitation, in its input
       handling.</para>

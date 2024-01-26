@@ -49,7 +49,7 @@
     </itemizedlist>
 
     <para>While it is possible to create a complete system that will pass the LSB
-    certification tests "from scratch", this can't be done without many additional packages
+    certification tests <quote>from scratch,</quote> this can't be done without many additional packages
     that are beyond the scope of the LFS book.  Installation instructions for these
     additional packages can be found in BLFS. </para>
 

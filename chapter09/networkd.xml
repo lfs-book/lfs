@@ -98,11 +98,12 @@
 
         <listitem>
           <para>
-             Create a manual naming scheme, for example by naming the
-             interfaces something like "internet0", "dmz0", or "lan0".
-             To do that, create .link files in /etc/systemd/network/ that
-             select an explicit name or a better naming scheme for your
-             network interfaces. For example:
+            Create a manual naming scheme, for example by naming the
+            interfaces something like <literal>internet0</literal>,
+            <literal>dmz0</literal>, or <literal>lan0</literal>.
+            To do that, create .link files in /etc/systemd/network/ that
+            select an explicit name or a better naming scheme for your
+            network interfaces. For example:
           </para>
 
 <screen role="nodump"><userinput>cat &gt; /etc/systemd/network/10-ether0.link &lt;&lt; "EOF"
