@@ -53,7 +53,6 @@ book: validate profile-html
 	@echo "Running Tidy and obfuscate.sh..."
 	$(Q)for filename in `find $(BASEDIR) -name "*.html"`; do \
          tidy -config tidy.conf $$filename;           \
-         true;                                        \
          /bin/bash obfuscate.sh $$filename;           \
          sed -e "s|text/html|application/xhtml+xml|g" \
              -i $$filename;                           \
@@ -98,7 +97,7 @@ nochunks: validate profile-html
                 $(RENDERTMP)/lfs-html.xml
 
 	@echo "Running Tidy..."
-	$(Q)tidy -config tidy.conf $(BASEDIR)/$(NOCHUNKS_OUTPUT) || true
+	$(Q)tidy -config tidy.conf $(BASEDIR)/$(NOCHUNKS_OUTPUT) || test $$? -le 1
 
 	@echo "Running obfuscate.sh..."
 	$(Q)bash obfuscate.sh      $(BASEDIR)/$(NOCHUNKS_OUTPUT)
