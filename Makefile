@@ -44,7 +44,8 @@ book: validate profile-html
 	@echo "Copying CSS code and images..."
 	$(Q)mkdir -p $(BASEDIR)/stylesheets
 	$(Q)cp stylesheets/lfs-xsl/*.css $(BASEDIR)/stylesheets
-	$(Q)sed -i 's|../stylesheet|stylesheet|' $(BASEDIR)/index.html
+	$(Q)sed -e 's|../stylesheet|stylesheet|' \
+           -i $(BASEDIR)/index.html
 
 	$(Q)mkdir -p $(BASEDIR)/images
 	$(Q)cp images/*.png $(BASEDIR)/images
@@ -54,9 +55,9 @@ book: validate profile-html
          tidy -config tidy.conf $$filename;           \
          true;                                        \
          /bin/bash obfuscate.sh $$filename;           \
-         sed -e "s@text/html@application/xhtml+xml@g" \
+         sed -e "s|text/html|application/xhtml+xml|g" \
              -i $$filename;                           \
-   done;
+       done
 
 	$(Q)$(MAKE) --no-print-directory wget-list md5sums
 
@@ -95,16 +96,16 @@ nochunks: validate profile-html
                 --output $(BASEDIR)/$(NOCHUNKS_OUTPUT) \
                 stylesheets/lfs-nochunks.xsl           \
                 $(RENDERTMP)/lfs-html.xml
-#                $(RENDERTMP)/lfs-html2.xml
 
 	@echo "Running Tidy..."
 	$(Q)tidy -config tidy.conf $(BASEDIR)/$(NOCHUNKS_OUTPUT) || true
 
 	@echo "Running obfuscate.sh..."
-	$(Q)bash obfuscate.sh                                $(BASEDIR)/$(NOCHUNKS_OUTPUT)
-	$(Q)sed -i -e "s@text/html@application/xhtml+xml@g"  $(BASEDIR)/$(NOCHUNKS_OUTPUT)
-	$(Q)sed -i -e "s@../wget-list@wget-list@"            $(BASEDIR)/$(NOCHUNKS_OUTPUT)
-	$(Q)sed -i -e "s@../md5sums@md5sums@"                $(BASEDIR)/$(NOCHUNKS_OUTPUT)
+	$(Q)bash obfuscate.sh      $(BASEDIR)/$(NOCHUNKS_OUTPUT)
+	$(Q)sed -e "s|text/html|application/xhtml+xml|g" \
+           -e "s|../wget-list|wget-list|"           \
+           -e "s|../md5sums|md5sums|"               \
+           -i $(BASEDIR)/$(NOCHUNKS_OUTPUT)
 
 	@echo "Output at $(BASEDIR)/$(NOCHUNKS_OUTPUT)"
 
