@@ -1,7 +1,4 @@
 # vim:ts=3
-#BASEDIR = ~/lfs-book
-#SYSDDIR = ~/lfs-systemd
-#DUMPDIR = ~/lfs-commands
 RENDERTMP = $(HOME)/tmp
 CHUNK_QUIET = 1
 ROOT_ID =
@@ -24,15 +21,15 @@ ifneq ($(REV), sysv)
 endif
 
 ifeq ($(REV), sysv)
-  BASEDIR         ?= ~/public_html/lfs-book
+  BASEDIR         ?= $(HOME)/public_html/lfs-book
   PDF_OUTPUT      ?= LFS-BOOK.pdf
   NOCHUNKS_OUTPUT ?= LFS-BOOK.html
-  DUMPDIR         ?= ~/lfs-commands
+  DUMPDIR         ?= $(HOME)/lfs-commands
 else
-  BASEDIR         ?= ~/public_html/lfs-systemd
+  BASEDIR         ?= $(HOME)/public_html/lfs-systemd
   PDF_OUTPUT      ?= LFS-SYSD-BOOK.pdf
   NOCHUNKS_OUTPUT ?= LFS-SYSD-BOOK.html
-  DUMPDIR         ?= ~/lfs-sysd-commands
+  DUMPDIR         ?= $(HOME)/lfs-sysd-commands
 endif
 
 book: validate profile-html
