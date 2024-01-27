@@ -123,16 +123,16 @@ validate: tmpdir version
 	@echo "Adjusting for revision $(REV)..."
 	$(Q)xsltproc --nonet                               \
                 --xinclude                            \
-                --output $(RENDERTMP)/lfs-html2.xml   \
                 --stringparam profile.revision $(REV) \
+                --output $(RENDERTMP)/lfs-html2.xml   \
                 stylesheets/lfs-xsl/profile.xsl       \
                 index.xml
 
 	@echo "Validating the book..."
-	$(Q)xmllint --nonet                      \
-               --noent                      \
-               --postvalid                  \
-               -o $(RENDERTMP)/lfs-full.xml \
+	$(Q)xmllint --nonet                            \
+               --encode UTF-8                     \
+               --postvalid                        \
+               --output $(RENDERTMP)/lfs-full.xml \
                $(RENDERTMP)/lfs-html2.xml
 
 	$(Q)rm -f appendices/*.script
@@ -154,18 +154,21 @@ wget-list: $(BASEDIR)/wget-list $(BASEDIR)/wget-list-$(REV)
 $(BASEDIR)/wget-list: stylesheets/wget-list.xsl $(DOWNLOADS_DEP)
 	@echo "Generating consolidated wget list at $(BASEDIR)/wget-list ..."
 	$(Q)mkdir -p $(BASEDIR)
-	$(Q)xsltproc --xinclude --nonet            \
+	$(Q)xsltproc --nonet                       \
+                --xinclude                    \
                 --output $(BASEDIR)/wget-list \
                 stylesheets/wget-list.xsl     \
                 chapter03/chapter03.xml
 
 $(BASEDIR)/wget-list-$(REV): stylesheets/wget-list.xsl $(DOWNLOADS_DEP)
-	$(Q)xsltproc --nonet --xinclude                   \
+	$(Q)xsltproc --nonet                               \
+                --xinclude                            \
                 --stringparam profile.revision $(REV) \
                 --output $(RENDERTMP)/wget-list.xml   \
                 stylesheets/lfs-xsl/profile.xsl       \
                 chapter03/chapter03.xml
-	$(Q)xsltproc --xinclude --nonet                  \
+
+	$(Q)xsltproc --nonet                              \
                 --output $(BASEDIR)/wget-list-$(REV) \
                 stylesheets/wget-list.xsl            \
                 $(RENDERTMP)/wget-list.xml
@@ -175,13 +178,14 @@ $(BASEDIR)/md5sums: stylesheets/wget-list.xsl $(DOWNLOADS_DEP)
 	@echo "Generating consolidated md5sum file at $(BASEDIR)/md5sums ..."
 	$(Q)mkdir -p $(BASEDIR)
 
-	$(Q)xsltproc --nonet --xinclude                   \
+	$(Q)xsltproc --nonet                               \
+                --xinclude                            \
                 --stringparam profile.revision $(REV) \
                 --output $(RENDERTMP)/md5sum.xml      \
                 stylesheets/lfs-xsl/profile.xsl       \
                 chapter03/chapter03.xml
 
-	$(Q)xsltproc --xinclude --nonet         \
+	$(Q)xsltproc --nonet                     \
                 --output $(BASEDIR)/md5sums \
                 stylesheets/md5sum.xsl      \
                 $(RENDERTMP)/md5sum.xml
