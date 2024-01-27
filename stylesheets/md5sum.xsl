@@ -31,8 +31,7 @@
       </xsl:call-template>
 
       <!-- Add a newline -->
-      <xsl:text>
-</xsl:text>
+      <xsl:text>&#xA;</xsl:text>
 
     </xsl:if>
   </xsl:template>

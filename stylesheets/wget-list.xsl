@@ -28,8 +28,7 @@
           <xsl:value-of select="@url"/>
         </xsl:otherwise>
       </xsl:choose>
-      <xsl:text>
-</xsl:text>
+      <xsl:text>&#xA;</xsl:text>
     </xsl:if>
   </xsl:template>
 
