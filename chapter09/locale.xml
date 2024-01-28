@@ -50,19 +50,21 @@
 
 <screen role="nodump"><userinput>locale -a</userinput></screen>
 
-  <para>Charmaps can have a number of aliases, e.g., <quote>ISO-8859-1</quote>
-  is also referred to as <quote>iso8859-1</quote> and <quote>iso88591.</quote>
+  <para>Charmaps can have a number of aliases, e.g.,
+  <literal>ISO-8859-1</literal> is also referred to as
+  <literal>iso8859-1</literal> and <literal>iso88591</literal>.
   Some applications cannot handle the various synonyms correctly (e.g., require
-  that <quote>UTF-8</quote> is written as <literal>UTF-8,</literal> not
+  that <literal>UTF-8</literal> is written as <literal>UTF-8</literal>, not
   <literal>utf8</literal>), so it is the safest in most
   cases to choose the canonical name for a particular locale. To determine
   the canonical name, run the following command, where <replaceable>&lt;locale
   name&gt;</replaceable> is the output given by <command>locale -a</command> for
-  your preferred locale (<quote>en_GB.iso88591</quote> in our example).</para>
+  your preferred locale (<literal>en_GB.iso88591</literal> in our
+  example).</para>
 
 <screen role="nodump"><userinput>LC_ALL=<replaceable>&lt;locale name&gt;</replaceable> locale charmap</userinput></screen>
 
-  <para>For the <quote>en_GB.iso88591</quote> locale, the above command
+  <para>For the <literal>en_GB.iso88591</literal> locale, the above command
   will print:</para>
 
 <screen><computeroutput>ISO-8859-1</computeroutput></screen>
@@ -120,14 +122,16 @@ EOF</userinput></screen>
   doesn't work in the chroot environment.  It can only
   be used after the LFS system is booted with systemd.</para></note>
 
-  <para>The <quote>C</quote> (default) and <quote>en_US</quote> (the recommended
-  one for United States English users) locales are different. <quote>C</quote>
+  <para>The <literal>C</literal> (default) and <literal>en_US</literal>
+  (the recommended one for United States English users) locales are
+  different. <literal>C</literal>
   uses the US-ASCII 7-bit character set, and treats bytes with the high bit set
   as invalid characters. That's why, e.g., the <command>ls</command> command
   substitutes them with question marks in that locale. Also, an attempt to send
   mail with such characters from Mutt or Pine results in non-RFC-conforming
-  messages being sent (the charset in the outgoing mail is indicated as <quote>unknown
-  8-bit</quote>). It's suggested that you use the <quote>C</quote> locale only
+  messages being sent (the charset in the outgoing mail is indicated as
+  <computeroutput>unknown 8-bit</computeroutput>). It's suggested that you
+  use the <literal>C</literal> locale only
   if you are certain that you will never need 8-bit characters.</para>
 
 <!--
