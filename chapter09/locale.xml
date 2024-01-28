@@ -166,10 +166,6 @@ for i in $(locale); do
 done
 
 if [[ "$TERM" = linux ]]; then
-  for i in $(locale); do
-    unset ${i%=*}
-  done
-
   export LANG=C
 else
   export LANG=<replaceable>&lt;ll&gt;_&lt;CC&gt;.&lt;charmap&gt;&lt;@modifiers&gt;</replaceable>
