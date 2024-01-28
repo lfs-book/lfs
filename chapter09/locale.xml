@@ -131,7 +131,7 @@ EOF</userinput></screen>
   determined to set the desired locale</phrase><phrase
   revision='systemd'>to read the locale settings from
   <filename>/etc/locale.conf</filename> and export them</phrase>,
-  but set the <literal>C</literal> locale instead if running in the Linux
+  but set the <literal>C.UTF-8</literal> locale instead if running in the Linux
   console (to prevent programs from outputting characters that the Linux
   console is unable to render):</para>
 
@@ -143,7 +143,7 @@ for i in $(locale); do
 done
 
 if [[ "$TERM" = linux ]]; then
-  export LANG=C
+  export LANG=C.UTF-8
 else
   source /etc/locale.conf
 
@@ -166,7 +166,7 @@ for i in $(locale); do
 done
 
 if [[ "$TERM" = linux ]]; then
-  export LANG=C
+  export LANG=C.UTF-8
 else
   export LANG=<replaceable>&lt;ll&gt;_&lt;CC&gt;.&lt;charmap&gt;&lt;@modifiers&gt;</replaceable>
 fi

@@ -432,6 +432,35 @@ EOF</userinput></screen>
   <para>Some examples:</para>
 
   <itemizedlist>
+    <listitem>
+      <para>
+        We'll use <literal>C.UTF-8</literal> as the locale for interactive
+        sessions in the Linux console in <xref role=','
+        linkend='ch-config-locale'/> so we should set
+        <literal>UNICODE</literal> to <literal>1</literal>.  And the only
+        console font shipped by the <application>Kbd</application> package
+        containing the glyphs for all characters from the program messages
+        in the <literal>C.UTF-8</literal> locale is
+        <filename>Lat2-Terminus16</filename> (the other shipped console
+        fonts lack glyphs of some characters like the Unicode left/right
+        quotation marks and the Unicode English dash). So set
+        <filename>Lat2-Terminus16</filename> as the default console
+        font:
+      </para>
+
+      <!-- We are using 'nodump' for the generic setting, but not for an
+           example (see below).  This is deliberate to keep the
+           compatibility with jhalfs.  -->
+<screen role='nodump'><userinput>cat &gt; /etc/sysconfig/console &lt;&lt; "EOF"
+<literal># Begin /etc/sysconfig/console
+
+UNICODE="1"
+FONT="Lat2-Terminus16"
+
+# End /etc/sysconfig/console</literal>
+EOF</userinput></screen>
+
+    </listitem>
 
     <listitem>
       <para>For a non-Unicode setup, only the KEYMAP and FONT variables are

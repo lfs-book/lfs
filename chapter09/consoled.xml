@@ -74,6 +74,20 @@
 
   </variablelist>
 
+  <para>We'll use <literal>C.UTF-8</literal> as the locale for interactive
+  sessions in the Linux console in <xref role='.'
+  linkend='ch-config-locale'/>  The only console font shipped by
+  the <application>Kbd</application> package containing the glyphs for
+  all characters from the program messages in the <literal>C.UTF-8</literal>
+  locale is <filename>Lat2-Terminus16</filename> (the other shipped console
+  fonts lack glyphs of some characters like the Unicode left/right
+  quotation marks and the Unicode English dash). So set
+  <filename>Lat2-Terminus16</filename> as the default console font:</para>
+
+  <!-- We are using "nodump" for general settings, but not examples.  This
+       is ironic, but needed for the compatibility with jhalfs!  -->
+<screen role='nodump'><userinput>echo <literal>FONT=Lat2-Terminus16</literal> &gt; /etc/vconsole.conf</userinput></screen>
+
   <para>An example for a German keyboard and console is given below:</para>
 <!-- This is what is used by jhalfs for creating the vconsole.conf file.
      Whenever you want to change the following, please inform the jhalfs
