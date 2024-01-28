@@ -91,7 +91,8 @@
       <itemizedlist>
         <listitem>
           <para>
-            Mask udev's .link file for the default policy:
+            Mask udev's <filename class='extension'>.link</filename> file
+            for the default policy:
 <screen role="nodump"><userinput>ln -s /dev/null /etc/systemd/network/99-default.link</userinput></screen>
           </para>
         </listitem>
@@ -101,9 +102,9 @@
             Create a manual naming scheme, for example by naming the
             interfaces something like <literal>internet0</literal>,
             <literal>dmz0</literal>, or <literal>lan0</literal>.
-            To do that, create .link files in /etc/systemd/network/ that
-            select an explicit name or a better naming scheme for your
-            network interfaces. For example:
+            To do that, create <filename class='extension'>.link</filename>
+            files in /etc/systemd/network/ that select an explicit name or a
+            better naming scheme for your network interfaces. For example:
           </para>
 
 <screen role="nodump"><userinput>cat &gt; /etc/systemd/network/10-ether0.link &lt;&lt; "EOF"
