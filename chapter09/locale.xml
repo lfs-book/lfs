@@ -18,10 +18,6 @@
     <primary sortas="e-/etc/profile">/etc/locale.conf</primary>
   </indexterm>
 
-  <para revision='systemd'>The <filename>/etc/locale.conf</filename> file
-  below sets some environment variables necessary for native language
-  support. Setting them properly results in:</para>
-
   <para>Some environment variables are necessary for native language
   support. Setting them properly results in:</para>
 
