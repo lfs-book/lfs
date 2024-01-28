@@ -44,8 +44,8 @@
     <title>Installation of Python</title>
 
     <note>
-      <para>There are two package files whose name starts with
-      <quote>python.</quote> The one to extract from is
+      <para>There are two package files whose name starts with the
+      <quote>python</quote> prefix. The one to extract from is
       <filename>Python-&python-version;.tar.xz</filename> (notice the
       uppercase first letter).</para>
     </note>
