@@ -437,14 +437,19 @@ EOF</userinput></screen>
         We'll use <literal>C.UTF-8</literal> as the locale for interactive
         sessions in the Linux console in <xref role=','
         linkend='ch-config-locale'/> so we should set
-        <literal>UNICODE</literal> to <literal>1</literal>.  And the only
-        console font shipped by the <application>Kbd</application> package
+        <literal>UNICODE</literal> to <literal>1</literal>.  And the console
+        fonts shipped by the <application>Kbd</application> package
         containing the glyphs for all characters from the program messages
-        in the <literal>C.UTF-8</literal> locale is
-        <filename>Lat2-Terminus16</filename> (the other shipped console
-        fonts lack glyphs of some characters like the Unicode left/right
-        quotation marks and the Unicode English dash). So set
-        <filename>Lat2-Terminus16</filename> as the default console
+        in the <literal>C.UTF-8</literal> locale are
+        <filename>LatArCyrHeb*.psfu.gz</filename>,
+        <filename>LatGrkCyr*.psfu.gz</filename>,
+        <filename>Lat2-Terminus16.psfu.gz</filename>, and
+        <filename>pancyrillic.f16.psfu.gz</filename> in
+        <filename class='directory'>/usr/share/consolefonts</filename> (the
+        other shipped console fonts lack glyphs of some characters like the
+        Unicode left/right quotation marks and the Unicode English dash).
+        So set one of them, for example
+        <filename>Lat2-Terminus16.psfu.gz</filename> as the default console
         font:
       </para>
 
