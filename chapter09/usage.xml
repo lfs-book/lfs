@@ -432,6 +432,40 @@ EOF</userinput></screen>
   <para>Some examples:</para>
 
   <itemizedlist>
+    <listitem>
+      <para>
+        We'll use <literal>C.UTF-8</literal> as the locale for interactive
+        sessions in the Linux console in <xref role=','
+        linkend='ch-config-locale'/> so we should set
+        <literal>UNICODE</literal> to <literal>1</literal>.  And the console
+        fonts shipped by the <application>Kbd</application> package
+        containing the glyphs for all characters from the program messages
+        in the <literal>C.UTF-8</literal> locale are
+        <filename>LatArCyrHeb*.psfu.gz</filename>,
+        <filename>LatGrkCyr*.psfu.gz</filename>,
+        <filename>Lat2-Terminus16.psfu.gz</filename>, and
+        <filename>pancyrillic.f16.psfu.gz</filename> in
+        <filename class='directory'>/usr/share/consolefonts</filename> (the
+        other shipped console fonts lack glyphs of some characters like the
+        Unicode left/right quotation marks and the Unicode English dash).
+        So set one of them, for example
+        <filename>Lat2-Terminus16.psfu.gz</filename> as the default console
+        font:
+      </para>
+
+      <!-- We are using 'nodump' for the generic setting, but not for an
+           example (see below).  This is deliberate to keep the
+           compatibility with jhalfs.  -->
+<screen role='nodump'><userinput>cat &gt; /etc/sysconfig/console &lt;&lt; "EOF"
+<literal># Begin /etc/sysconfig/console
+
+UNICODE="1"
+FONT="Lat2-Terminus16"
+
+# End /etc/sysconfig/console</literal>
+EOF</userinput></screen>
+
+    </listitem>
 
     <listitem>
       <para>For a non-Unicode setup, only the KEYMAP and FONT variables are
@@ -526,7 +560,7 @@ EOF</userinput></screen>
       languages, because there accents are added to unaccented ASCII
       characters, or two ASCII characters are composed together. However, in
       UTF-8 mode it is a problem; e.g., for the Greek language, where one
-      sometimes needs to put an accent on the letter <quote>alpha.</quote>
+      sometimes needs to put an accent on the letter α.
       The solution is either to avoid the use of UTF-8, or to install the
       X window system, which doesn't have this limitation, in its input
       handling.</para>
