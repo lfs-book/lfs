@@ -102,15 +102,10 @@ cd       build</userinput></screen>
         <listitem>
           <para>This option increases system security by adding
           extra code to check for buffer overflows, such as stack
-          smashing attacks.</para>
-        </listitem>
-      </varlistentry>
-<!-- do we need this one? -->
-      <varlistentry>
-        <term><parameter>--with-headers=/usr/include</parameter></term>
-        <listitem>
-          <para>This option tells the build system where to find the
-          kernel API headers.</para>
+          smashing attacks.  Note that Glibc always explicitly overrides
+          the default of GCC, so this option is still needed even though
+          we've already specified <option>--enable-default-ssp</option> for
+          GCC.</para>
         </listitem>
       </varlistentry>
 
