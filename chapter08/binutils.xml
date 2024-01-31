@@ -139,7 +139,7 @@ cd       build</userinput></screen>
     <option>--enable-default-pie</option> and
     <option>--enable-default-ssp</option> options are passed to GCC.</para>
 
-    <para>Three tests in the gprofng suite are also known to fail.</para>
+ <!--    <para>Three tests in the gprofng suite are also known to fail.</para>-->
 
     <para>Install the package:</para>
 
