@@ -129,13 +129,13 @@
       program and are usually related to the bus-specific identifiers of devices
       supported by a module. For example, the <emphasis>snd-fm801</emphasis>
       driver supports PCI devices with vendor ID 0x1319 and device ID 0x0801,
-      and has an alias of <quote>pci:v00001319d00000801sv*sd*bc04sc01i*</quote>.
+      and has an alias of <literal>pci:v00001319d00000801sv*sd*bc04sc01i*</literal>.
       For most devices, the bus driver exports the alias of the driver that
       would handle the device via <systemitem
       class="filesystem">sysfs</systemitem>. E.g., the
       <filename>/sys/bus/pci/devices/0000:00:0d.0/modalias</filename> file
       might contain the string
-      <quote>pci:v00001319d00000801sv00001319sd00001319bc04sc01i00</quote>.
+      <literal>pci:v00001319d00000801sv00001319sd00001319bc04sc01i00</literal>.
       The default rules provided with udev will cause <command>udevd</command>
       to call out to <command>/sbin/modprobe</command> with the contents of the
       <envar>MODALIAS</envar> uevent environment variable (which should be the
@@ -225,8 +225,9 @@
       <para>Note that the <quote>softdep</quote> command also allows
       <literal>pre:</literal> dependencies, or a mixture of both
       <literal>pre:</literal> and <literal>post:</literal> dependencies.  See
-      the <filename>modprobe.d(5)</filename> manual page for more information
-      on <quote>softdep</quote> syntax and capabilities.</para>
+      the <ulink role='man' url='&man;modprobe.d.5'>modprobe.d(5)</ulink>
+      manual page for more information on <quote>softdep</quote> syntax and
+      capabilities.</para>
 
       <para revision="sysv">If the module in question is not a wrapper and is
       useful by itself, configure the <command>modules</command> bootscript to
@@ -300,7 +301,7 @@
 
       <para>This is due to the fact that udev, by design, handles uevents and
       loads modules in parallel, and thus in an unpredictable order. This will
-      never be <quote>fixed</quote>. You should not rely upon the kernel device
+      never be <quote>fixed.</quote> You should not rely upon the kernel device
       names being stable. Instead, create your own rules that make symlinks with
       stable names based on some stable attributes of the device, such as a
       serial number or the output of various *_id utilities installed by udev.

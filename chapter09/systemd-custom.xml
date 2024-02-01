@@ -21,8 +21,9 @@
     of options to control basic systemd operations. The default file has all
     entries commented out with the default settings indicated. This file is
     where the log level may be changed as well as some basic logging settings.
-    See the <filename>systemd-system.conf(5)</filename> manual page for details
-    on each configuration option.</para>
+    See the <ulink role='man'
+    url='&man;systemd-system.conf.5'>systemd-system.conf(5)</ulink> manual
+    page for details on each configuration option.</para>
 
   </sect2>
 
@@ -89,8 +90,8 @@ EOF</userinput></screen>
     <filename class="directory">/etc/tmpfiles.d</filename> override
     files with the same name in
     <filename class="directory">/usr/lib/tmpfiles.d</filename>. See
-    <filename>tmpfiles.d(5)</filename> manual page for file format
-    details.</para>
+    <ulink role='man' url='&man;tmpfiles.d.5'>tmpfiles.d(5)</ulink> manual
+    page for file format details.</para>
 
     <para>
       Note that the syntax for the
@@ -135,7 +136,8 @@ Restart=always
 RestartSec=30</literal>
 EOF</userinput></screen>
 
-     <para>See <filename>systemd.unit(5)</filename> manual page for more
+     <para>See <ulink role='man'
+     url='&man;systemd.unit.5'>systemd.unit(5)</ulink> manual page for more
      information. After creating the configuration file, run
      <userinput>systemctl daemon-reload</userinput> and <userinput>systemctl
      restart foobar</userinput> to activate the changes to a service.</para>
@@ -251,10 +253,11 @@ cat &gt; /etc/systemd/coredump.conf.d/maxuse.conf &lt;&lt; EOF
 MaxUse=5G</literal>
 EOF</userinput></screen>
 
-    <para>See the <filename>systemd-coredump(8)</filename>,
-    <filename>coredumpctl(1)</filename>, and
-    <filename>coredump.conf.d(5)</filename> manual pages for more
-    information.</para>
+    <para>See the <ulink role='man' url='&man;systemd-coredump.8'>systemd-coredump(8)</ulink>,
+    <ulink role='man' url='&man;coredumpctl.1'>coredumpctl(1)</ulink>, and
+    <ulink role='man'
+    url='&man;coredump.conf.d.5'>coredump.conf.d(5)</ulink> manual pages for
+    more information.</para>
   </sect2>
 
   <sect2>
