@@ -49,12 +49,6 @@
  <screen><userinput remap="pre">sed -e '/bn_reduce.*m1/i\    factor_size /= sizeof(BN_ULONG) * 8;' \
     -i crypto/bn/rsaz_exp_x2.c</userinput></screen>
 -->
-
-    <para>First apply a patch to fix various runtime issues on
-    LoongArch:</para>
-
-<screen><userinput remap="pre">patch -Np1 -i ../&openssl-loongarch-patch;</userinput></screen>
-
     <para>Prepare OpenSSL for compilation:</para>
 
 <screen><userinput remap="configure">./config --prefix=/usr         \

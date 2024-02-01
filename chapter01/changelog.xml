@@ -41,16 +41,6 @@
     -->
 
     <listitem>
-      <para>2024-01-22</para>
-      <itemizedlist>
-        <listitem>
-          <para>[xry111] - Patch OpenSSL-3.2.0 to fix various runtime issues
-          on LoongArch.</para>
-        </listitem>
-      </itemizedlist>
-    </listitem>
-
-    <listitem>
       <para>2024-01-21</para>
       <itemizedlist>
         <listitem>
