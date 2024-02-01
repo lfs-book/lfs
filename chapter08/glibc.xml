@@ -267,7 +267,7 @@ esac</userinput></screen>
             Upgrade the kernel and reboot if it's older than &min-kernel;
             (check the current version with <command>uname -r</command>)
             or if you want to upgrade it anyway, following
-            following <xref linkend='ch-bootable-kernel' role='.'/>
+            <xref linkend='ch-bootable-kernel' role='.'/>
           </para>
         </listitem>
 
