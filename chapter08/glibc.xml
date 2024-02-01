@@ -205,7 +205,7 @@ esac</userinput></screen>
       <para>
         If upgrading Glibc to a new minor version (for example, from
         Glibc-2.36 to Glibc-&glibc-version;) on a running LFS system, you
-        need to take some extra caution to avoid breaking the system:
+        need to take some extra precautions to avoid breaking the system:
       </para>
 
       <itemizedlist>
@@ -254,8 +254,9 @@ esac</userinput></screen>
           <screen role='nodump'><userinput>rm -f /usr/sbin/nscd</userinput></screen>
 
           <para>
-            If such a LFS system is based on Systemd, disable and stop
-            the <command>nscd</command> service now:
+            If this system (prior to LFS 12.1, exclusive) is based on
+            Systemd, it's also needed to disable and stop the
+            <command>nscd</command> service now:
           </para>
 
           <screen revision='systemd' role='nodump'><userinput>systemctl disable --now nscd</userinput></screen>
@@ -265,7 +266,7 @@ esac</userinput></screen>
           <para>
             Upgrade the kernel and reboot if it's older than &min-kernel;
             (check the current version with <command>uname -r</command>)
-            or you want to upgrade it anyway, following
+            or if you want to upgrade it anyway, following
             following <xref linkend='ch-bootable-kernel' role='.'/>
           </para>
         </listitem>
@@ -275,7 +276,7 @@ esac</userinput></screen>
             Upgrade the kernel API headers if it's older than &min-kernel;
             (check the current version with
             <command>cat /usr/include/linux/version.h</command>)
-            or you want to upgrade it anyway, following
+            or if you want to upgrade it anyway, following
             <xref linkend='ch-tools-linux-headers'/> (but removing
             <envar>$LFS</envar> from the <command>cp</command> command).
           </para>
@@ -303,8 +304,8 @@ install -vm755 dest/usr/lib/*.so.* /usr/lib</userinput></screen>
       <para>
         It's imperative to strictly follow these steps above unless you
         completely understand what you are doing.
-        <emphasis role='bold'>Any unproved deviation may render the system
-        completely unusable.  YOU ARE WARNED.</emphasis>
+        <emphasis role='bold'>Any unexpected deviation may render the
+        system completely unusable.  YOU ARE WARNED.</emphasis>
       </para>
 
       <para>
