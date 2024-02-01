@@ -241,15 +241,24 @@ esac</userinput></screen>
           </para>
         </listitem>
 
-        <!-- Otherwise messages complaining "nscd disabled building Glibc"
-             will show up running things like sudo.  -->
-        <listitem revision='systemd'>
+        <!-- Otherwise on lfs-systemd nscd will fail to start on boot,
+             and on both lfs-sysv and lfs-systemd useradd etc. will try
+             to start nscd, then nscd will fail to start as well and
+             produce some spurious error message.  -->
+        <listitem>
           <para>
-            If upgrading on a LFS system based on Systemd prior to 12.1
-            (exclusive), disable and stop <command>nscd</command>:
+            If upgrading on a LFS system prior to 12.1 (exclusive),
+            remove the <command>nscd</command> program:
           </para>
 
-          <screen role='nodump'><userinput>systemctl disable --now nscd</userinput></screen>
+          <screen role='nodump'><userinput>rm -f /usr/sbin/nscd</userinput></screen>
+
+          <para>
+            If such a LFS system is based on Systemd, disable and stop
+            the <command>nscd</command> service now:
+          </para>
+
+          <screen revision='systemd' role='nodump'><userinput>systemctl disable --now nscd</userinput></screen>
         </listitem>
 
         <listitem>
