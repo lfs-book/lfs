@@ -41,10 +41,6 @@
   <sect2 role="installation">
     <title>Installation of Attr</title>
 
-    &update-config-text;
-
-<screen><userinput remap="pre">tar -C build-aux &update-config-arg;</userinput></screen>
-
     <para>Prepare Attr for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr     \
