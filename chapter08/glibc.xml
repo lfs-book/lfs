@@ -204,8 +204,8 @@ esac</userinput></screen>
     <important>
       <para>
         If upgrading Glibc to a new minor version (for example, from
-        Glibc-2.36 to Glibc-&glibc-version;), you need to take some extra
-        caution to avoid breaking the system:
+        Glibc-2.36 to Glibc-&glibc-version;) on a running LFS system, you
+        need to take some extra caution to avoid breaking the system:
       </para>
 
       <itemizedlist>
