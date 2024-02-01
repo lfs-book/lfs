@@ -252,6 +252,26 @@ esac</userinput></screen>
           <screen role='nodump'><userinput>systemctl disable --now nscd</userinput></screen>
         </listitem>
 
+        <listitem>
+          <para>
+            Upgrade the kernel and reboot if it's older than &min-kernel;
+            (check the current version with <command>uname -r</command>)
+            or you want to upgrade it anyway, following
+            following <xref linkend='ch-bootable-kernel' role='.'/>
+          </para>
+        </listitem>
+
+        <listitem>
+          <para>
+            Upgrade the kernel API headers if it's older than &min-kernel;
+            (check the current version with
+            <command>cat /usr/include/linux/version.h</command>)
+            or you want to upgrade it anyway, following
+            <xref linkend='ch-tools-linux-headers'/> (but removing
+            <envar>$LFS</envar> from the <command>cp</command> command).
+          </para>
+        </listitem>
+
         <!-- This is to ensure we don't start a process at the time point
              where some Glibc shared libraries are updated but the others
              are not.  Such mismatches can cause programs crash on startup,
