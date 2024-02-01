@@ -303,10 +303,6 @@
     </listitem>
 
     <listitem>
-      <para>&openssl-loongarch-patch;</para>
-    </listitem>
-
-    <listitem>
       <para>&pkgconf-upstream-fix-patch;</para>
     </listitem>
 
