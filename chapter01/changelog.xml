@@ -44,6 +44,10 @@
       <para>2024-02-02</para>
       <itemizedlist>
         <listitem>
+          <para>[xry111] - Update to tzdata-2024a.  Fixes
+          <ulink url='&lfs-ticket-root;5428'>#5428</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[xry111] - Update to glibc-2.39 (security fix).  Fixes
           <ulink url='&lfs-ticket-root;5426'>#5426</ulink>.</para>
         </listitem>

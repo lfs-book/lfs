@@ -712,10 +712,10 @@
 <!ENTITY texinfo-fin-du "128 MB">
 <!ENTITY texinfo-fin-sbu "0.3 SBU">
 
-<!ENTITY tzdata-version "2023d">
-<!ENTITY tzdata-size "440 KB">
+<!ENTITY tzdata-version "2024a">
+<!ENTITY tzdata-size "444 KB">
 <!ENTITY tzdata-url "https://www.iana.org/time-zones/repository/releases/tzdata&tzdata-version;.tar.gz">
-<!ENTITY tzdata-md5 "08b9d559939670725ec298fdbb029649">
+<!ENTITY tzdata-md5 "2349edd8335245525cc082f2755d5bf4">
 <!ENTITY tzdata-home "https://www.iana.org/time-zones">
 
 <!ENTITY udev-fin-du "138 MB">
