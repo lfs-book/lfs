@@ -75,7 +75,7 @@
 
     <para>To prepare the tests, ensure that the <systemitem class="username">tester</systemitem> user can write to the sources tree:</para>
 
-<screen><userinput remap="test">chown -Rv tester .</userinput></screen>
+<screen><userinput remap="test">chown -R tester .</userinput></screen>
 
     <para>The test suite of this package is designed to be run as a non-&root;
     user who owns the terminal connected to standard input.  To satisfy the
