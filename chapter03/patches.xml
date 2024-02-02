@@ -76,7 +76,7 @@
         <para>MD5 sum: <literal>&gcc-upstream-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
--->
+
     <varlistentry>
       <term>Glibc Upstream Fixes Patch - <token>&glibc-upstream-fixes-patch-size;</token>:</term>
       <listitem>
@@ -84,7 +84,7 @@
         <para>MD5 sum: <literal>&glibc-upstream-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+-->
     <varlistentry>
       <term>Glibc FHS Patch - <token>&glibc-fhs-patch-size;</token>:</term>
       <listitem>
