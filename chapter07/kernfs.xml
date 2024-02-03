@@ -97,7 +97,8 @@ mount -vt tmpfs tmpfs $LFS/run</userinput></screen>
     </variablelist>
 -->
       <para>In some host systems, <filename>/dev/shm</filename> is a
-      symbolic link to <filename class="directory">/run/shm</filename>.
+      symbolic link to a directory, typically
+      <filename class="directory">/run/shm</filename>.
       The /run tmpfs was mounted above so in this case only a
       directory needs to be created.</para>
 
@@ -107,7 +108,7 @@ mount -vt tmpfs tmpfs $LFS/run</userinput></screen>
       we must explicitly mount a tmpfs:</para>
 
 <screen><userinput>if [ -h $LFS/dev/shm ]; then
-  (cd $LFS/dev; mkdir $(readlink shm))
+  mkdir -pv $LFS$(realpath /dev/shm)
 else
   mount -vt tmpfs -o nosuid,nodev tmpfs $LFS/dev/shm
 fi</userinput></screen>
