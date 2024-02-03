@@ -128,6 +128,12 @@ cd       build</userinput></screen>
 
  <!--    <para>Three tests in the gprofng suite are also known to fail.</para>-->
 
+    <para>In the ld test suite 84 tests are known to fail because they
+    are not designed compatible with either the n64 ABI or the
+    <option>--enable-default-hash-style=gnu</option> option.  In the
+    binutils test suite one test named <literal>readelf -S bintest</literal>
+    is known to fail as well.</para>
+
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make tooldir=/usr install</userinput></screen>
