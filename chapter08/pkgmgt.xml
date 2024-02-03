@@ -376,8 +376,8 @@ make DESTDIR=/usr/pkg/libfoo/1.1 install</userinput></screen>
     versions of some processors may provide instructions that are unavailable with
     earlier versions.</para></note>
 
-    <para>Finally, the new system has to be made bootable via <xref
-    linkend="ch-bootable-grub"/>.</para>
+    <para>Finally, the new system has to be made bootable by configuring
+    a bootloader correctly.</para>
 
   </sect2>
 

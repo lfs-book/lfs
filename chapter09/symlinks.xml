@@ -37,9 +37,7 @@
       kernel command line.  This is most appropriate for systems
       that have just one ethernet device of a particular type.  Laptops
       often have two ethernet connections named eth0 and
-      wlan0; such laptops can also use this method.  The command line
-      is in the GRUB configuration file.
-      See <xref linkend="grub-cfg"/>.</para>
+      wlan0; such laptops can also use this method.</para>
     </sect3>
 
     <sect3>

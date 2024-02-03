@@ -375,6 +375,14 @@
 
 <screen><userinput remap="install">cp -iv .config /boot/config-&linux-version;</userinput></screen>
 
+    <important>
+      <para>At this point, you should install and/or configure your
+      bootloader to boot the LFS system with the kernel just installed.
+      The firmware interface of MIPS systems is not standardized so the
+      detailed process will be board-specific.  You can reuse the bootloader
+      from your host distro if possible.</para>
+    </important>
+
     <para>Install the documentation for the Linux kernel:</para>
 
 <screen><userinput remap="install">cp -r Documentation -T /usr/share/doc/linux-&linux-version;</userinput></screen>
