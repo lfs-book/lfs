@@ -49,11 +49,10 @@
   (The related entry in <xref linkend="pkgmgmt-upgrade-issues"/> gives the
   rationale for using the <command>install</command> command here.)</para>
 
-  <note><para>The ELF loader's name is ld-linux-x86-64.so.2 on 64-bit systems
-  and ld-linux.so.2 on 32-bit systems.  The construct below selects the
-  correct name for the current architecture, excluding anything ending
-  with <literal>g</literal>, in case the commands below have already been
-  run.</para></note>
+  <note><para>The ELF loader's name may be platform specific.
+  The contruct below selects the correct name for the current architecture,
+  excluding anything ending with <literal>g</literal>, in case the commands
+  below have already been run.</para></note>
 
   <important>
     <para>
@@ -70,7 +69,7 @@
 <!-- also of interest are libgfortan, libgo, libgomp, and libobjc from GCC -->
 
 <!--<screen><userinput>save_lib="ld-2.25.so libc-2.25.so libpthread-2.25.so libthread_db-1.0.so"-->
-<screen><userinput>save_usrlib="$(cd /usr/lib; ls ld-linux*[^g])
+<screen><userinput>save_usrlib="$(cd /usr/lib; ls ld*.so.*[^g])
              libc.so.6
              libthread_db.so.1
              libquadmath.so.&libquadmath-version;
