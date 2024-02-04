@@ -100,7 +100,7 @@ mount -vt tmpfs tmpfs $LFS/run</userinput></screen>
       symbolic link to a directory, typically
       <filename class="directory">/run/shm</filename>.
       The /run tmpfs was mounted above so in this case only a
-      directory needs to be created with a correct mode.</para>
+      directory needs to be created with the correct permissions.</para>
 
       <para>In other host systems <filename>/dev/shm</filename> is a mount point 
       for a tmpfs. In that case the mount of /dev above will only create
