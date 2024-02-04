@@ -100,7 +100,7 @@ mount -vt tmpfs tmpfs $LFS/run</userinput></screen>
       symbolic link to a directory, typically
       <filename class="directory">/run/shm</filename>.
       The /run tmpfs was mounted above so in this case only a
-      directory needs to be created.</para>
+      directory needs to be created with the correct permissions.</para>
 
       <para>In other host systems <filename>/dev/shm</filename> is a mount point 
       for a tmpfs. In that case the mount of /dev above will only create
@@ -108,7 +108,7 @@ mount -vt tmpfs tmpfs $LFS/run</userinput></screen>
       we must explicitly mount a tmpfs:</para>
 
 <screen><userinput>if [ -h $LFS/dev/shm ]; then
-  mkdir -pv $LFS$(realpath /dev/shm)
+  install -v -d -m 1777 $LFS$(realpath /dev/shm)
 else
   mount -vt tmpfs -o nosuid,nodev tmpfs $LFS/dev/shm
 fi</userinput></screen>
