@@ -48,6 +48,25 @@
   <sect2 role="installation">
     <title>Installation of Expect</title>
 
+    <para>Expect needs PTYs to work.  Verify that the PTYs are working
+    properly inside the chroot environment by performing a simple
+    test:</para>
+
+<screen><userinput remap="test">python3 -c 'from pty import spawn; spawn(["echo", "ok"])'</userinput></screen>
+
+    <para>This command should output <computeroutput>ok</computeroutput>.
+    If, instead, the output includes <computeroutput>OSError: out of pty
+    devices</computeroutput>, then the environment is not set up for proper
+    PTY operation.  You need to exit from the chroot environment, read
+    <xref linkend='ch-tools-kernfs'/> again, and ensure the
+    <systemitem class="filesystem">devpts</systemitem> file system (and
+    other virtual kernel file systems) mounted correctly.  Then reenter
+    the chroot environment following <xref linkend='ch-tools-chroot'/>.
+    This issue needs to be resolved before continuing, or the test suites
+    requring Expect (for example the test suites of Bash, Binutils, GCC,
+    GDBM, and of course Expect itself) will fail catastrophically, and other
+    subtle breakages may also happen.</para>
+
     <para>Prepare Expect for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr           \
@@ -82,26 +101,9 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <important>
-      <para>The test suite for Expect is considered critical.
-      Do not skip it under any circumstances.</para>
-    </important>
-
     <para>To test the results, issue:</para>
 
 <screen><userinput remap="test">make test</userinput></screen>
-
-    <para>If any test fails with the message
-    <computeroutput>The system has no more ptys. Ask your system
-    administrator to create more</computeroutput>, it indicates
-    you've not mounted the
-    <systemitem class="filesystem">devpts</systemitem> file system
-    correctly.  You need to exit from the chroot environment, read
-    <xref linkend='ch-tools-kernfs'/> again, and ensure the
-    <systemitem class="filesystem">devpts</systemitem> file system (and
-    other virtual kernel file systems) mounted correctly.  Then reenter
-    the chroot environment following <xref linkend='ch-tools-chroot'/>.
-    This issue needs to be resolved before continuing.</para>
 
     <para>Install the package:</para>
 

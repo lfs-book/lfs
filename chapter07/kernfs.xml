@@ -63,11 +63,14 @@
 
       <para>Now mount the remaining virtual kernel file systems:</para>
 
-<screen><userinput>mount -v --bind /dev/pts $LFS/dev/pts
+      <!-- Do not put any option after $LFS/${mountpoint} or jhalfs cannot
+           handle it! -->
+
+<screen><userinput>mount -vt devpts devpts -o gid=5,mode=0620 $LFS/dev/pts
 mount -vt proc proc $LFS/proc
 mount -vt sysfs sysfs $LFS/sys
 mount -vt tmpfs tmpfs $LFS/run</userinput></screen>
-<!--
+
     <variablelist>
       <title>The meaning of the mount options for devpts:</title>
 
@@ -95,7 +98,7 @@ mount -vt tmpfs tmpfs $LFS/run</userinput></screen>
       </varlistentry>
 
     </variablelist>
--->
+
       <para>In some host systems, <filename>/dev/shm</filename> is a
       symbolic link to a directory, typically
       <filename class="directory">/run/shm</filename>.
