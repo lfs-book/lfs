@@ -83,7 +83,7 @@
     <application>Expect</application> and run the tests as the <systemitem
     class="username">tester</systemitem> user:</para>
 
-<screen><userinput remap="test">su -s /usr/bin/expect tester &lt;&lt; EOF
+<screen><userinput remap="test">su -s /usr/bin/expect tester &lt;&lt; "EOF"
 set timeout -1
 spawn make tests
 expect eof
