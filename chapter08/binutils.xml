@@ -41,6 +41,17 @@
   <sect2 role="installation">
     <title>Installation of Binutils</title>
 
+    <!-- https://sourceware.org/git/?p=binutils-gdb.git;a=commit;h=029e52bac7f3a6dd8b39f7f3d298b73174da806b -->
+    <para>First, fix an issue causing some packages fail to build with
+    Link Time Optimization (LTO).  Note that some BLFS packages will be
+    built with LTO enabled by default even if you don't enable it
+    explicitly:</para>
+
+<screen><userinput remap="pre">for i in LO12 HI20 ADD; do
+  sed -e '/DESC64_HI12/a\    case BFD_RELOC_LARCH_TLS_LE_'${i}'_R:' \
+      -i gas/config/tc-loongarch.c
+done</userinput></screen>
+
     <para>The Binutils documentation recommends building Binutils
     in a dedicated build directory:</para>
 
