@@ -54,6 +54,15 @@
 
     <screen><userinput remap="pre">patch -Np1 -i ../&gcc-upstream-fixes-patch;</userinput></screen>
 -->
+
+    <!-- https://gcc.gnu.org/r14-4674 -->
+    <para>Again, fix an issue producing illegal instructions in linked
+    executables and shared libraries with GCC &gcc-version; and
+    Binutils-2.42:</para>
+
+    <screen><userinput remap='pre'>sed -e '/ASM_OUTPUT_ALIGN_WITH_NOP/,+1d' \
+    -i gcc/config/loongarch/loongarch.h</userinput></screen>
+
     <para>Set the default directory name for
     64-bit libraries to <quote>lib</quote>:</para>
 
