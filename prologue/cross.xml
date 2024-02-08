@@ -47,7 +47,7 @@
     the temporary packages before entering the chroot environment.  The main
     purpose of this approach was to fix multiple issues found by Iterative
     Comparision Analysis.  With Pierre's work, the only change needed by
-    this edition is basically <quote>to reboot instead of chroot</quote>.
+    this edition is basically <quote>to reboot instead of chroot.</quote>
     However, some additional steps is needed to make the system bootable
     at the end of Chapter 6, and setting up an environment suitable for
     building and test packages at the start of Chapter 7.  Then this Cross
@@ -58,8 +58,9 @@
     temporary system to boot on the target machine.  The temporary system
     is booted with a shell running as PID 1, and some necessary jobs of a
     normal <command>init</command> process are manually done with commands.
-    This minimizes the difference from the main LFS book, and also helpful
-    to learn the initialization steps booting a Linux system.</para>
+    This minimizes the difference from the main LFS book, and it's also
+    helpful for learning the initialization steps booting a Linux
+    system.</para>
   </sect2>
 
 </sect1>
