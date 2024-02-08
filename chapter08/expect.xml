@@ -57,11 +57,10 @@
     <para>This command should output <computeroutput>ok</computeroutput>.
     If, instead, the output includes <computeroutput>OSError: out of pty
     devices</computeroutput>, then the environment is not set up for proper
-    PTY operation.  You need to exit from the chroot environment, read
+    PTY operation.  You need to read
     <xref linkend='ch-tools-kernfs'/> again, and ensure the
     <systemitem class="filesystem">devpts</systemitem> file system (and
-    other virtual kernel file systems) mounted correctly.  Then reenter
-    the chroot environment following <xref linkend='ch-tools-chroot'/>.
+    other virtual kernel file systems) mounted correctly.
     This issue needs to be resolved before continuing, or the test suites
     requring Expect (for example the test suites of Bash, Binutils, GCC,
     GDBM, and of course Expect itself) will fail catastrophically, and other
