@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -49,12 +49,12 @@
     store their runtime data in the FHS-compliant locations:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
-
+<!--
     <para>Now fix two security vulnerabilities and a regression causing the
     posix_memalign() function very slow in some conditions:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-fixes-patch;</userinput></screen>
-
+-->
     <para>The Glibc documentation recommends building Glibc
     in a dedicated build directory:</para>
 
@@ -73,7 +73,6 @@ cd       build</userinput></screen>
              --disable-werror                         \
              --enable-kernel=&linux-major-version;.&linux-minor-version;                      \
              --enable-stack-protector=strong          \
-             --with-headers=/usr/include              \
              --disable-nscd                           \
              libc_cv_slibdir=/usr/lib</userinput></screen>
 
@@ -104,15 +103,10 @@ cd       build</userinput></screen>
         <listitem>
           <para>This option increases system security by adding
           extra code to check for buffer overflows, such as stack
-          smashing attacks.</para>
-        </listitem>
-      </varlistentry>
-<!-- do we need this one? -->
-      <varlistentry>
-        <term><parameter>--with-headers=/usr/include</parameter></term>
-        <listitem>
-          <para>This option tells the build system where to find the
-          kernel API headers.</para>
+          smashing attacks.  Note that Glibc always explicitly overrides
+          the default of GCC, so this option is still needed even though
+          we've already specified <option>--enable-default-ssp</option> for
+          GCC.</para>
         </listitem>
       </varlistentry>
 
@@ -208,6 +202,122 @@ esac</userinput></screen>
 
 <screen><userinput remap="install">sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile</userinput></screen>
 
+    <important>
+      <para>
+        If upgrading Glibc to a new minor version (for example, from
+        Glibc-2.36 to Glibc-&glibc-version;) on a running LFS system, you
+        need to take some extra precautions to avoid breaking the system:
+      </para>
+
+      <itemizedlist>
+        <listitem>
+          <!-- There are two reasons we don't support this:
+               1. Upgrading on a system with separate /lib and /usr/lib is
+                  tricky.
+               2. With Glibc prior to 2.34 libc.so.6 etc. are symlinks to
+                  libc-2.33.so etc., again causing the upgradation tricky.
+                  The Glibc NEWS file explicit states they no longer use
+                  symlinks for the ABI names to avoid upgradation
+                  issues.  -->
+          <para>
+            Upgrading Glibc on a LFS system prior to 11.0 (exclusive) is
+            not supported.  Rebuild LFS if you are running such an old LFS
+            system but you need a newer Glibc.
+          </para>
+        </listitem>
+
+        <!-- https://sourceware.org/pipermail/libc-alpha/2024-January/154095.html -->
+        <listitem>
+          <para>
+            If upgrading on a LFS system prior to 12.0 (exclusive), install
+            <application>Libxcrypt</application> following
+            <xref role='.' linkend='ch-system-libxcrypt'/>  In addition to
+            a normal <application>Libxcrypt</application> installation,
+            <emphasis role='bold'>you MUST follow the note in Libxcrypt
+            section to install
+            <filename class='libraryfile'>libcrypt.so.1*</filename>
+            (overwritting
+            <filename class='libraryfile'>libcrypt.so.1</filename> from the
+            prior Glibc installation)</emphasis>.
+          </para>
+        </listitem>
+
+        <!-- Otherwise on lfs-systemd nscd will fail to start on boot,
+             and on both lfs-sysv and lfs-systemd useradd etc. will try
+             to start nscd, then nscd will fail to start as well and
+             produce some spurious error message.  -->
+        <listitem>
+          <para>
+            If upgrading on a LFS system prior to 12.1 (exclusive),
+            remove the <command>nscd</command> program:
+          </para>
+
+          <screen role='nodump'><userinput>rm -f /usr/sbin/nscd</userinput></screen>
+
+          <para>
+            If this system (prior to LFS 12.1, exclusive) is based on
+            Systemd, it's also needed to disable and stop the
+            <command>nscd</command> service now:
+          </para>
+
+          <screen revision='systemd' role='nodump'><userinput>systemctl disable --now nscd</userinput></screen>
+        </listitem>
+
+        <listitem>
+          <para>
+            Upgrade the kernel and reboot if it's older than &min-kernel;
+            (check the current version with <command>uname -r</command>)
+            or if you want to upgrade it anyway, following
+            <xref linkend='ch-bootable-kernel' role='.'/>
+          </para>
+        </listitem>
+
+        <listitem>
+          <para>
+            Upgrade the kernel API headers if it's older than &min-kernel;
+            (check the current version with
+            <command>cat /usr/include/linux/version.h</command>)
+            or if you want to upgrade it anyway, following
+            <xref linkend='ch-tools-linux-headers'/> (but removing
+            <envar>$LFS</envar> from the <command>cp</command> command).
+          </para>
+        </listitem>
+
+        <!-- This is to ensure we don't start a process at the time point
+             where some Glibc shared libraries are updated but the others
+             are not.  Such mismatches can cause programs crash on startup,
+             esp. a mismatch between ld-linux-x86-64.so.2 and
+             libc.so.6.  Note that a crash in the installation process
+             will leave the system in a state with the mismatch forever,
+             unrecoverable without the help of another distro.  -->
+        <listitem>
+          <para>
+            Perform a <envar>DESTDIR</envar> installation and upgrade
+            the Glibc shared libraries on the system using one single
+            <command>install</command> command:
+          </para>
+
+          <screen role='nodump'><userinput>make DESTDIR=$PWD/dest install
+install -vm755 dest/usr/lib/*.so.* /usr/lib</userinput></screen>
+        </listitem>
+      </itemizedlist>
+
+      <para>
+        It's imperative to strictly follow these steps above unless you
+        completely understand what you are doing.
+        <emphasis role='bold'>Any unexpected deviation may render the
+        system completely unusable.  YOU ARE WARNED.</emphasis>
+      </para>
+
+      <para>
+        Then continue to run the <command>make install</command> command,
+        the <command>sed</command> command against
+        <filename>/usr/bin/ldd</filename>, and the commands to install
+        the locales.  Once they are finished, reboot the system
+        immediately.
+      </para>
+    </important>
+
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
@@ -246,7 +356,7 @@ install -v -Dm644 ../nscd/nscd.service /usr/lib/systemd/system/nscd.service</use
     locales necessary for the optimal coverage of tests:</para>
 
 <screen role="nodump"><userinput remap="locale-test">mkdir -pv /usr/lib/locale
-localedef -i POSIX -f UTF-8 C.UTF-8 2> /dev/null || true
+localedef -i C -f UTF-8 C.UTF-8
 localedef -i cs_CZ -f UTF-8 cs_CZ.UTF-8
 localedef -i de_DE -f ISO-8859-1 de_DE
 localedef -i de_DE@euro -f ISO-8859-15 de_DE@euro
@@ -298,7 +408,7 @@ localedef -i zh_TW -f UTF-8 zh_TW.UTF-8</userinput></screen>
     when you need them. For instance, the following two locales are
     needed for some tests later in this chapter:</para>
 
-<screen role="nodump"><userinput remap="locale-full">localedef -i POSIX -f UTF-8 C.UTF-8 2> /dev/null || true
+<screen role="nodump"><userinput remap="locale-full">localedef -i C -f UTF-8 C.UTF-8
 localedef -i ja_JP -f SHIFT_JIS ja_JP.SJIS 2> /dev/null || true</userinput></screen>
 
     <note><para>Glibc now uses libidn2 when resolving internationalized

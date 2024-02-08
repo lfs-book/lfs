@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -57,9 +57,11 @@ cd       build</userinput></screen>
              --enable-shared     \
              --disable-werror    \
              --enable-64-bit-bfd \
-             --with-system-zlib</userinput></screen>
+             --with-system-zlib  \
+             --enable-default-hash-style=gnu</userinput></screen>
+
     <variablelist>
-      <title>The meaning of the configure parameters:</title>
+      <title>The meaning of the new configure parameters:</title>
 
       <varlistentry>
         <term><parameter>--enable-gold</parameter></term>
@@ -81,14 +83,6 @@ cd       build</userinput></screen>
         <term><parameter>--enable-plugins</parameter></term>
         <listitem>
           <para>Enables plugin support for the linker.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--enable-64-bit-bfd</parameter></term>
-        <listitem>
-           <para>Enables 64-bit support (on hosts with narrower word sizes).
-           May not be needed on 64-bit systems, but does no harm.</para>
         </listitem>
       </varlistentry>
 
@@ -145,7 +139,7 @@ cd       build</userinput></screen>
     <option>--enable-default-pie</option> and
     <option>--enable-default-ssp</option> options are passed to GCC.</para>
 
-    <para>Three tests in the gprofng suite are also known to fail.</para>
+ <!--    <para>Three tests in the gprofng suite are also known to fail.</para>-->
 
     <para>Install the package:</para>
 

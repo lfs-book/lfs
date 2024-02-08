@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -40,7 +40,8 @@
   <filename class="devicefile">/dev/sda</filename> for the primary
   disk drive. Create a Linux native partition and a
   <systemitem class="filesystem">swap</systemitem> partition, if needed. Please
-  refer to <filename>cfdisk(8)</filename> or <filename>fdisk(8)</filename> if
+  refer to <ulink role='man' url='&man;cfdisk.8'>cfdisk(8)</ulink> or
+  <ulink role='man' url='&man;fdisk.8'>fdisk(8)</ulink> if
   you do not yet know how to use the programs.</para>
 
   <note><para>For experienced users, other partitioning schemes are possible.

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -62,9 +62,9 @@ EOF</userinput></screen>
     <para>The values in italics must be changed in each file, to set
     the interfaces up correctly.</para>
 
-    <para>If the <envar>ONBOOT</envar> variable is set to <quote>yes</quote> the
+    <para>If the <envar>ONBOOT</envar> variable is set to <literal>yes</literal> the
     System V network script will bring up the Network Interface Card (NIC) during
-    the system boot process. If set to anything besides <quote>yes</quote>, the NIC
+    the system boot process. If set to anything besides <literal>yes</literal>, the NIC
     will be ignored by the network script and will not be started automatically.
     Interfaces can be manually started or stopped with the
     <command>ifup</command> and <command>ifdown</command> commands.</para>

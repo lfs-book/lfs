@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -52,7 +52,7 @@ EOF</userinput></screen>
 
   <para>Replace <replaceable>sda</replaceable> to the name of the device
   node for your disk where LFS is being built.  For details on the six
-  fields in this file, see <command>man 5 fstab</command>.</para>
+  fields in this file, see <ulink role='man' url='&man;fstab.5'>fstab(5)</ulink>.</para>
 
   <para>Filesystems with MS-DOS or Windows origin (i.e. vfat, ntfs, smbfs,
   cifs, iso9660, udf) need a special option, utf8, in order for non-ASCII

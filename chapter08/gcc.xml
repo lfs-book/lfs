@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -157,7 +157,7 @@ cd       build</userinput></screen>
 
     <para>Test the results as a non-privileged user, but do not stop at errors:</para>
 
-<screen><userinput remap="test">chown -Rv tester .
+<screen><userinput remap="test">chown -R tester .
 su tester -c "PATH=$PATH make -k check"</userinput></screen>
 
     <para>To extract a summary of the test suite results, run:</para>
@@ -533,7 +533,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib</userinput></screen>
       <varlistentry id="libcc1">
         <term><filename class="libraryfile">libcc1</filename></term>
         <listitem>
-          <para>The C preprocessing library</para>
+          <para>A library that allows GDB to make use of GCC</para>
           <indexterm zone="ch-system-gcc libcc1">
             <primary sortas="b-libcc1">libcc1</primary>
           </indexterm>

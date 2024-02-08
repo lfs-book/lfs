@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -32,8 +32,11 @@
     <systemitem class="filesystem">devtmpfs</systemitem>.
     Mount the remaining virtual kernel file systems:</para>
 
+      <!-- Do not put any option after $LFS/${mountpoint} or jhalfs cannot
+           handle it! -->
+
 <screen><userinput>mkdir -pv /dev/{pts,shm}
-mount -vt devpts /dev/pts /dev/pts -o gid=5,mode=620
+mount -vt devpts devpts -o gid=5,mode=0620 /dev/pts
 mount -vt proc  proc  /proc
 mount -vt sysfs sysfs /sys
 mount -vt tmpfs tmpfs /run

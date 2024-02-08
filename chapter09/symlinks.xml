@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -112,6 +112,19 @@
       proceeding, and be sure to use that <literal>NAME</literal> value when
       creating your network configuration files.</para>
 
+      <para>Even if the custom udev rule file is created, udev may still
+      assign one or more alternative names for a NIC based on physical
+      characteristics.  If a custom udev rule would rename some NIC using
+      a name already assigned as an alternative name of another NIC, this
+      udev rule will fail.  If this issue happens, you may create the
+      <filename>/etc/udev/network/99-default.link</filename> configuration
+      file with an empty alternative assignment policy, overriding the
+      default configuration file
+      <filename>/usr/lib/udev/network/99-default.link</filename>:</para>
+
+<screen role="nodump"><userinput>sed -e '/^AlternativeNamesPolicy/s/=.*$/=/'  \
+    -i /usr/lib/udev/network/99-default.link \
+     > /etc/udev/network/99-default.link</userinput></screen>
     </sect3>
 
   </sect2>

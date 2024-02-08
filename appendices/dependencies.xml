@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -6,6 +6,7 @@
   <!-- Convenient entity for "Systemd" or "Udev" -->
   <!ENTITY systemd-udev "<phrase revision='systemd'>Systemd</phrase>
                          <phrase revision='sysv'>Udev</phrase>">
+  <!ENTITY bdb "<ulink url='https://www.oracle.com/database/technologies/related/berkeleydb.html'>Berkeley DB</ulink>">
 ]>
 
 <appendix id="appendixc" xreflabel="Appendix C">
@@ -29,10 +30,7 @@
   in addition to those on the first list, need to be available in order to run
   the test suites. The fourth list of dependencies are packages that require
   this package to be built and installed in its final location before they are
-  built and installed. In most cases, this is because these packages will hard
-  code paths to binaries within their scripts. If not built in a certain order,
-  this could result in paths of /tools/bin/[binary] being placed inside scripts
-  installed to the final system. This is obviously not desirable.</para>
+  built and installed.</para>
 
   <para>The last list of dependencies are optional packages that are not
   addressed in LFS, but could be useful to the user. These packages may have
@@ -109,7 +107,7 @@
       <segmentedlist id="attr-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>Acl and Libcap</seg>
+          <seg>Acl, Libcap, and Patch</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1049,7 +1047,7 @@
       <segmentedlist id="gettext-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg><ulink url='&blfs-book;general/libxml2.html'>libxml2</ulink></seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1241,7 +1239,7 @@
       <segmentedlist id="groff-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>Man-DB and Perl</seg>
+          <seg>Man-DB</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1486,7 +1484,7 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-            <ulink url="&blfs-book;server/db.html">Berkeley DB</ulink>,
+            &bdb;,
             <ulink url="&blfs-book;postlfs/iptables.html">iptables</ulink>,
             <ulink url="&github;/libbpf/libbpf">libbpf</ulink>,
             <ulink url="&blfs-book;basicnet/libmnl.html">libmnl</ulink>, and
@@ -2416,14 +2414,15 @@
       <segmentedlist id="patch-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, Coreutils, GCC, Glibc, Grep, Make, and Sed</seg>
+          <seg>Attr, Bash, Binutils, Coreutils, GCC, Glibc, Grep, Make, and
+          Sed</seg>
         </seglistitem>
       </segmentedlist>
 
       <segmentedlist id="patch-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
-          <seg>Glibc</seg>
+          <seg>Attr and Glibc</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2456,7 +2455,7 @@
       <segmentedlist id="perl-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, Coreutils, Gawk, GCC, GDBM, Glibc, Grep, Groff,
+          <seg>Bash, Binutils, Coreutils, Gawk, GCC, GDBM, Glibc, Grep,
           Libxcrypt, Make, Sed, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
@@ -2486,7 +2485,7 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-            <ulink url="&blfs-book;server/db.html">Berkeley DB</ulink>
+            &bdb;
           </seg>
         </seglistitem>
       </segmentedlist>
@@ -2655,7 +2654,7 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-            <ulink url="&blfs-book;server/db.html">Berkeley DB</ulink>,
+            &bdb;,
             <ulink url="&blfs-book;basicnet/libnsl.html">libnsl</ulink>,
             <ulink url="&blfs-book;server/sqlite.html">SQLite</ulink>, and
             <ulink url="&blfs-book;general/tk.html">Tk</ulink>
@@ -2937,6 +2936,7 @@
             <ulink url="&blfs-book;postlfs/make-ca.html">make-ca</ulink>,
             <ulink url="&blfs-book;postlfs/p11-kit.html">p11-kit</ulink>,
             <ulink url="&blfs-book;general/pcre2.html">PCRE2</ulink>,
+            <ulink url="&pypi-home;pefile">pefile</ulink>,
             <ulink url="&blfs-book;postlfs/polkit.html">Polkit</ulink>,
             <ulink url='&pypi-home;/pyelftools'>pyelftools</ulink>,
             <ulink url="&blfs-book;postlfs/qemu.html">qemu</ulink>,
@@ -3194,6 +3194,7 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
+            <ulink url="&blfs-book;general/asciidoctor.html">Asciidoctor</ulink>,
             <ulink
               url="https://people.redhat.com/sgrubb/libcap-ng/">Libcap-NG</ulink>,
             <ulink url="&github;/openSUSE/libeconf">libeconf</ulink>,
@@ -3202,7 +3203,8 @@
             <ulink
               url="&blfs-book;postlfs/linux-pam.html">Linux-PAM</ulink>,
             <ulink
-              url="&blfs-book;postlfs/smartmontools.html">smartmontools</ulink>, and
+              url="&blfs-book;postlfs/smartmontools.html">smartmontools</ulink>,
+            <ulink url="https://po4a.org/index.php.en">po4a</ulink>, and
             <ulink url="&blfs-book;general/slang.html">slang</ulink>
           </seg>
         </seglistitem>

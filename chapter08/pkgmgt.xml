@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -56,28 +56,16 @@
         5.10.17 to 5.10.18 or 5.11.1), nothing else needs to be rebuilt.
         The system will keep working fine thanks to the well-defined interface
         between the kernel and userspace.  Specifically, Linux API headers
-        need not be (and should not be, see the next item) upgraded
+        need not be upgraded
         along with the kernel.  You will merely need to reboot your system to use the
         upgraded kernel.</para>
       </listitem>
 
       <listitem>
-        <para>If the Linux API headers or Glibc need to be upgraded to a newer
-        version, (e.g.,  from Glibc-2.31 to Glibc-2.32), it is safer to
-        rebuild LFS.  Though you <emphasis>may</emphasis> be able to rebuild
-        all the packages in their dependency order, we do not recommend
-        it.  </para>
-      </listitem>
-
-      <listitem>
-        <para>Reinstalling the same version of Glibc (&glibc-version; for
-        this release of LFS) with patches should be safe when these patches
-        do not change ABI and API.  When a security vulnerability is found
-        in Glibc, we often need to apply such a patch to fix the
-        vulnerability and reinstall Glibc.  Consult
-        <ulink url='&lfs-root;lfs/advisories/'>LFS security
-        advisories</ulink> if you are alerted for a published Glibc security
-        vulnerability but unsure about the action to take.</para>
+        <para>If Glibc needs to be upgraded to a newer
+        version, (e.g.,  from Glibc-2.36 to Glibc-&glibc-version;),
+        some extra steps are needed to avoid breaking the system.
+        Read <xref linkend='ch-system-glibc'/> for details.</para>
       </listitem>
 
       <listitem> <para>If a package containing a shared library is updated, and

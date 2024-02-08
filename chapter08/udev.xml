@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -54,6 +54,11 @@
     <para>Remove one udev rule requiring a full Systemd installation:</para>
 
  <screen><userinput remap="pre">sed '/systemd-sysctl/s/^/#/' -i rules.d/99-systemd.rules.in</userinput></screen>
+
+    <para>Adjust the hardcoded paths to network configuration files for the
+    standalone udev installation:</para>
+
+ <screen><userinput remap="pre">sed '/NETWORK_DIRS/s/systemd/udev/' -i src/basic/path-lookup.h</userinput></screen>
 
     <para>Prepare Udev for compilation:</para>
 
@@ -120,15 +125,23 @@ meson setup \
       </varlistentry>
     </variablelist>
 
+    <para>Get the list of the shipped udev helpers and save it into an
+    environment variable (exporting it is not strictly necessary, but it makes
+    building as a regular user or using a package manager easier):</para>
+
+    <screen><userinput remap="make">export udev_helpers=$(grep "'name' :" ../src/udev/meson.build | \
+                      awk '{print $3}' | tr -d ",'" | grep -v 'udevadm')</userinput></screen>
+
     <para>Only build the components needed for udev:</para>
 
     <screen><userinput remap="make">ninja udevadm systemd-hwdb                                           \
       $(ninja -n | grep -Eo '(src/(lib)?udev|rules.d|hwdb.d)/[^ ]*') \
-      $(realpath libudev.so --relative-to .)</userinput></screen>
+      $(realpath libudev.so --relative-to .)                         \
+      $udev_helpers</userinput></screen>
 
     <para>Install the package:</para>
 
-    <screen><userinput remap="install">install -vm755 -d {/usr/lib,/etc}/udev/{hwdb,rules}.d
+    <screen><userinput remap="install">install -vm755 -d {/usr/lib,/etc}/udev/{hwdb.d,rules.d,network}
 install -vm755 -d /usr/{lib,share}/pkgconfig
 install -vm755 udevadm                             /usr/bin/
 install -vm755 systemd-hwdb                        /usr/bin/udev-hwdb
@@ -142,8 +155,8 @@ install -vm644 rules.d/* ../rules.d/README         /usr/lib/udev/rules.d/
 install -vm644 $(find ../rules.d/*.rules \
                       -not -name '*power-switch*') /usr/lib/udev/rules.d/
 install -vm644 hwdb.d/*  ../hwdb.d/{*.hwdb,README} /usr/lib/udev/hwdb.d/
-install -vm755 $(find src/udev \
-                      -type f -not -name '*.*')    /usr/lib/udev</userinput></screen>
+install -vm755 $udev_helpers                       /usr/lib/udev
+install -vm644 ../network/99-default.link          /usr/lib/udev/network</userinput></screen>
 
     <para>Install some custom rules and support files useful in an LFS
     environment:</para>
@@ -158,13 +171,27 @@ make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
 <screen><userinput remap="install">tar -xf ../../systemd-man-pages-&systemd-man-version;.tar.xz                            \
     --no-same-owner --strip-components=1                              \
     -C /usr/share/man --wildcards '*/udev*' '*/libudev*'              \
+                                  '*/systemd.link.5'                  \
                                   '*/systemd-'{hwdb,udevd.service}.8
+
+sed 's|systemd/network|udev/network|'                                 \
+    /usr/share/man/man5/systemd.link.5                                \
+  > /usr/share/man/man5/udev.link.5
+
 sed 's/systemd\(\\\?-\)/udev\1/' /usr/share/man/man8/systemd-hwdb.8   \
                                > /usr/share/man/man8/udev-hwdb.8
+
 sed 's|lib.*udevd|sbin/udevd|'                                        \
     /usr/share/man/man8/systemd-udevd.service.8                       \
   > /usr/share/man/man8/udevd.8
-rm  /usr/share/man/man8/systemd-*.8</userinput></screen>
+
+rm /usr/share/man/man*/systemd*</userinput></screen>
+
+    <para>Finally, unset the <envar>udev_helpers</envar> variable:</para>
+
+    <!-- remap="make" seems confusing but we don't have sth. like
+         remap="clean".  -->
+    <screen><userinput remap="install">unset udev_helpers</userinput></screen>
 
   </sect2>
 

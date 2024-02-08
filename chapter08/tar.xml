@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -71,13 +71,6 @@
     <para>To test the results, issue:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
-
-    <!-- On one system the -j4 improvement is 167s - 46s = 121s (72.46%) -->
-    <note><para>The test time for Tar can be reduced significantly on a
-    system with multiple cores.  To do this, append
-    <command>TESTSUITEFLAGS=-j&lt;N&gt;</command> to the line above.  For
-    instance, using -j4 can reduce the test time by over 70
-    percent.</para></note>
 
     <para>One test, capabilities: binary store/restore, is known to fail if it is
     run because LFS lacks selinux, but will be skipped if the host kernel does

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -50,9 +50,11 @@
     <filename class="extension">.netdev</filename> and
     <filename class="extension">.network</filename> files. For detailed
     descriptions and example contents of these configuration files, consult
-    the <filename>systemd-link(5)</filename>,
-    <filename>systemd-netdev(5)</filename> and
-    <filename>systemd-network(5)</filename> manual pages.</para>
+    the <ulink role='man' url='&man;systemd-link.5'>systemd-link(5)</ulink>,
+    <ulink role='man' url='&man;systemd-netdev.5'>systemd-netdev(5)</ulink>,
+    and <ulink role='man'
+    url='&man;systemd-network.5'>systemd-network(5)</ulink> manual
+    pages.</para>
 
     <sect3 id="systemd-network-devices">
       <title>Network Device Naming</title>
@@ -89,18 +91,20 @@
       <itemizedlist>
         <listitem>
           <para>
-            Mask udev's .link file for the default policy:
+            Mask udev's <filename class='extension'>.link</filename> file
+            for the default policy:
 <screen role="nodump"><userinput>ln -s /dev/null /etc/systemd/network/99-default.link</userinput></screen>
           </para>
         </listitem>
 
         <listitem>
           <para>
-             Create a manual naming scheme, for example by naming the
-             interfaces something like "internet0", "dmz0", or "lan0".
-             To do that, create .link files in /etc/systemd/network/ that
-             select an explicit name or a better naming scheme for your
-             network interfaces. For example:
+            Create a manual naming scheme, for example by naming the
+            interfaces something like <literal>internet0</literal>,
+            <literal>dmz0</literal>, or <literal>lan0</literal>.
+            To do that, create <filename class='extension'>.link</filename>
+            files in /etc/systemd/network/ that select an explicit name or a
+            better naming scheme for your network interfaces. For example:
           </para>
 
 <screen role="nodump"><userinput>cat &gt; /etc/systemd/network/10-ether0.link &lt;&lt; "EOF"
@@ -113,14 +117,14 @@ Name=ether0</literal>
 EOF</userinput></screen>
 
           <para>
-             See the man page systemd.link(5) for more information.
+            See <ulink role='man' url='&man;systemd.link.5'>systemd.link(5)</ulink> for more information.
           </para>
         </listitem>
 
         <listitem>
           <para>
-            In /boot/grub/grub.cfg, pass the option net.ifnames=0 on the
-            kernel command line.
+            In /boot/grub/grub.cfg, pass the option
+            <option>net.ifnames=0</option> on the kernel command line.
           </para>
         </listitem>
       </itemizedlist>
@@ -357,7 +361,9 @@ EOF</userinput></screen>
      <literal>localhost.localdomain</literal>, or the hostname (without a
      domain) because they are handled by the
      <systemitem class='library'>myhostname</systemitem> NSS module, read
-     the man page <filename>nss-myhostname(8)</filename> for details.</para>
+     the man page <ulink role='man'
+     url='&man;nss-myhostname.8'>nss-myhostname(8)</ulink> for
+     details.</para>
 
      <para>The ::1 entry is the IPv6 counterpart of 127.0.0.1 and represents
      the IPv6 loopback interface.</para>

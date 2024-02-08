@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -96,6 +96,7 @@ useradd -s /bin/bash -g lfs -m -k /dev/null lfs</userinput></screen>
   <para>The <quote><parameter>-</parameter></quote> instructs
   <command>su</command> to start a login shell as opposed to a non-login shell.
   The difference between these two types of shells is described in detail in
-  <filename>bash(1)</filename> and <command>info bash</command>.</para>
+  <ulink role='man' url='&man;bash.1'>bash(1)</ulink> and <command>info
+  bash</command>.</para>
 
 </sect1>

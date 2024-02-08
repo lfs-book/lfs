@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -41,12 +41,6 @@
   <sect2 role="installation">
     <title>Installation of Autoconf</title>
 
-    <para>First, fix several problems with the tests caused by bash-5.2 and later:</para>
-
-    <screen><userinput remap="pre">sed -e 's/SECONDS|/&amp;SHLVL|/'               \
-    -e '/BASH_ARGV=/a\        /^SHLVL=/ d' \
-    -i.orig tests/local.at</userinput></screen>
-
     <para>Prepare Autoconf for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
@@ -61,17 +55,6 @@
     To run the tests anyway, issue:</para>
  -->
 <screen><userinput remap="test">make check</userinput></screen>
-<!--
-    <para>This takes a long time, about &autoconf-fin-sbu-tests; SBUs. In addition,
-    several tests are skipped that use Automake. For full test coverage,
-    Autoconf can be re-tested after Automake has been installed.  In addition,
-    two tests fail due to changes in libtool-2.4.3 and later.</para>
--->
-    <note><para>The test time for autoconf can be reduced significantly on a
-    system with multiple cores.  To do this, append
-    <command>TESTSUITEFLAGS=-j&lt;N&gt;</command> to the line above.  For
-    instance, using -j4 can reduce the test time by over 60
-    percent.</para></note>
 
     <para>Install the package:</para>
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -52,7 +52,7 @@
   <note><para>The ELF loader's name is ld-linux-x86-64.so.2 on 64-bit systems
   and ld-linux.so.2 on 32-bit systems.  The construct below selects the
   correct name for the current architecture, excluding anything ending
-  with <quote>g</quote>, in case the commands below have already been
+  with <literal>g</literal>, in case the commands below have already been
   run.</para></note>
 
   <important>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -105,17 +105,6 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
       command above.</para>
     </note>
 
-<!-- This does not seem to be true any more
-    <note><para><application>grub-install</application> is a script and calls another
-    program, grub-probe, that may fail with a message "cannot stat `/dev/root'".
-    If so, create a temporary symbolic link from your root partition to /dev/root:</para>
-
-<screen role="nodump"><userinput>ln -sv /dev/sda2 /dev/root</userinput></screen>
-
-    <para>The symbolic link will only be present until the system is rebooted.
-    The link is only needed for the installation procedure.
-    </para></note>
--->
   </sect2>
 
   <sect2 id="grub-cfg">

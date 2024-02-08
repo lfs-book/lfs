@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
@@ -32,7 +32,8 @@
     <para>SysVinit (which will be referred to as <quote>init</quote> from now on)
     uses a run levels scheme. There are seven run levels, numbered 0 to 6.
     (Actually, there are more run levels, but the others are for special cases and are
-    generally not used. See <filename>init(8)</filename> for more details.)
+    generally not used. See <ulink role='man'
+    url='&man;init.8'>init(8)</ulink> for more details.)
     Each one of the seven corresponds to actions the computer is supposed to
     perform when it starts up or shuts down. The default run level is 3. Here are the
     descriptions of the different run levels as they are implemented in LFS:</para>
@@ -47,11 +48,11 @@
 
     <note>
        <para>
-          Classically, run level 2 above was defined as
-          "multi-user mode without networking", but this was only the case
-          many years ago when multiple users could connect to a system via
-          serial ports.  In today's environment it makes no sense, and
-          we now say it is "reserved".
+         Classically, run level 2 above was defined as <quote>multi-user
+         mode without networking,</quote> but this was only the case
+         many years ago when multiple users could connect to a system via
+         serial ports.  In today's environment it makes no sense, and
+         we now say it is <quote>reserved.</quote>
        </para>
     </note>
 
@@ -341,12 +342,13 @@ EOF</userinput></screen>
   url="https://tldp.org/HOWTO/HOWTO-INDEX/other-lang.html"/>. If still in
   doubt, look in the <filename class="directory">/usr/share/keymaps</filename>
   and <filename class="directory">/usr/share/consolefonts</filename> directories
-  for valid keymaps and screen fonts. Read the <filename>loadkeys(1)</filename> and
-  <filename>setfont(8)</filename> manual pages to determine the correct
-  arguments for these programs.</para>
+  for valid keymaps and screen fonts. Read the <ulink role='man'
+  url='&man;loadkeys.1'>loadkeys(1)</ulink> and <ulink role='man'
+  url='&man;setfont.8'>setfont(8)</ulink> manual pages to determine the
+  correct arguments for these programs.</para>
 
   <para>The <filename>/etc/sysconfig/console</filename> file should contain lines
-  of the form: VARIABLE="value". The following variables are recognized:</para>
+  of the form: <envar>VARIABLE=value</envar>. The following variables are recognized:</para>
   <variablelist>
 
     <varlistentry>
@@ -354,7 +356,7 @@ EOF</userinput></screen>
       <listitem>
         <para>This variable specifies the log level for kernel messages sent
         to the console as set by <command>dmesg -n</command>. Valid levels are
-        from "1" (no messages) to "8". The default level is "7".</para>
+        from <literal>1</literal> (no messages) to <literal>8</literal>. The default level is <literal>7</literal>, which is quite verbose.</para>
       </listitem>
     </varlistentry>
 
@@ -363,7 +365,7 @@ EOF</userinput></screen>
       <listitem>
         <para>This variable specifies the arguments for the
         <command>loadkeys</command> program, typically, the name of the keymap
-        to load, e.g., <quote>it</quote>. If this variable is not set, the
+        to load, e.g., <literal>it</literal>. If this variable is not set, the
         bootscript will not run the <command>loadkeys</command> program,
         and the default kernel keymap will be used.  Note that a few keymaps
         have multiple versions with the same name (cz and its variants in
@@ -382,7 +384,7 @@ EOF</userinput></screen>
         <command>loadkeys</command> program. This is useful if the stock keymap
         is not completely satisfactory and a small adjustment has to be made. E.g.,
         to include the Euro sign into a keymap that normally doesn't have it,
-        set this variable to <quote>euro2</quote>.</para>
+        set this variable to <literal>euro2</literal>.</para>
       </listitem>
     </varlistentry>
 
@@ -391,12 +393,12 @@ EOF</userinput></screen>
       <listitem>
         <para>This variable specifies the arguments for the
         <command>setfont</command> program. Typically, this includes the font
-        name, <quote>-m</quote>, and the name of the application character
+        name, <literal>-m</literal>, and the name of the application character
         map to load. E.g., in order to load the <quote>lat1-16</quote> font
         together with the <quote>8859-1</quote> application character map
         (appropriate in the USA),
         <!-- because of the copyright sign -->
-        set this variable to <quote>lat1-16 -m 8859-1</quote>.
+        set this variable to <literal>lat1-16 -m 8859-1</literal>.
         In UTF-8 mode, the kernel uses the application character map to
         convert 8-bit key codes to UTF-8. Therefore
         the argument of the "-m" parameter should be set to the encoding of the
@@ -408,8 +410,8 @@ EOF</userinput></screen>
     <varlistentry>
       <term>UNICODE</term>
       <listitem>
-        <para>Set this variable to <quote>1</quote>, <quote>yes</quote>, or
-        <quote>true</quote> in order to put the
+        <para>Set this variable to <literal>1</literal>, <literal>yes</literal>, or
+        <literal>true</literal> in order to put the
         console into UTF-8 mode. This is useful in UTF-8 based locales and
         harmful otherwise.</para>
       </listitem>
@@ -430,6 +432,40 @@ EOF</userinput></screen>
   <para>Some examples:</para>
 
   <itemizedlist>
+    <listitem>
+      <para>
+        We'll use <literal>C.UTF-8</literal> as the locale for interactive
+        sessions in the Linux console in <xref role=','
+        linkend='ch-config-locale'/> so we should set
+        <literal>UNICODE</literal> to <literal>1</literal>.  And the console
+        fonts shipped by the <application>Kbd</application> package
+        containing the glyphs for all characters from the program messages
+        in the <literal>C.UTF-8</literal> locale are
+        <filename>LatArCyrHeb*.psfu.gz</filename>,
+        <filename>LatGrkCyr*.psfu.gz</filename>,
+        <filename>Lat2-Terminus16.psfu.gz</filename>, and
+        <filename>pancyrillic.f16.psfu.gz</filename> in
+        <filename class='directory'>/usr/share/consolefonts</filename> (the
+        other shipped console fonts lack glyphs of some characters like the
+        Unicode left/right quotation marks and the Unicode English dash).
+        So set one of them, for example
+        <filename>Lat2-Terminus16.psfu.gz</filename> as the default console
+        font:
+      </para>
+
+      <!-- We are using 'nodump' for the generic setting, but not for an
+           example (see below).  This is deliberate to keep the
+           compatibility with jhalfs.  -->
+<screen role='nodump'><userinput>cat &gt; /etc/sysconfig/console &lt;&lt; "EOF"
+<literal># Begin /etc/sysconfig/console
+
+UNICODE="1"
+FONT="Lat2-Terminus16"
+
+# End /etc/sysconfig/console</literal>
+EOF</userinput></screen>
+
+    </listitem>
 
     <listitem>
       <para>For a non-Unicode setup, only the KEYMAP and FONT variables are
@@ -524,7 +560,7 @@ EOF</userinput></screen>
       languages, because there accents are added to unaccented ASCII
       characters, or two ASCII characters are composed together. However, in
       UTF-8 mode it is a problem; e.g., for the Greek language, where one
-      sometimes needs to put an accent on the letter <quote>alpha</quote>.
+      sometimes needs to put an accent on the letter α.
       The solution is either to avoid the use of UTF-8, or to install the
       X window system, which doesn't have this limitation, in its input
       handling.</para>
