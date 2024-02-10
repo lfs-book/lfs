@@ -295,15 +295,19 @@
     </listitem>
 
     <listitem>
-      <para>setuptools-&setuptools-version;</para>
-    </listitem>
-
-    <listitem>
       <para>&pkgconf-upstream-fix-patch;</para>
     </listitem>
 
     <listitem>
       <para>&readline-fixes-patch;</para>
+    </listitem>
+
+    <listitem>
+      <para>setuptools-&setuptools-version;</para>
+    </listitem>
+
+    <listitem>
+      <para>&systemd-upstream-patch;</para>
     </listitem>
 
   </itemizedlist>
