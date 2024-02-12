@@ -156,10 +156,10 @@
 <!ENTITY elfutils-fin-du "122 MB">
 <!ENTITY elfutils-fin-sbu "0.3 SBU">
 
-<!ENTITY expat-version "2.5.0">
-<!ENTITY expat-size "450 KB">
+<!ENTITY expat-version "2.6.0">
+<!ENTITY expat-size "473 KB">
 <!ENTITY expat-url "&sourceforge;expat/expat-&expat-version;.tar.xz">
-<!ENTITY expat-md5 "ac6677b6d1b95d209ab697ce8b688704">
+<!ENTITY expat-md5 "bd169cb11f4b9bdfddadf9e88a5c4d4b">
 <!ENTITY expat-home "https://libexpat.github.io/">
 <!ENTITY expat-fin-du "12 MB">
 <!ENTITY expat-fin-sbu "0.1 SBU">
@@ -440,12 +440,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "7">
-<!ENTITY linux-patch-version "3">
+<!ENTITY linux-patch-version "4">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "138,128 KB">
+<!ENTITY linux-size "138,130 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "a542a2aea4db4cf09e932fff02c8d1d1">
+<!ENTITY linux-md5 "370e1b6155ae63133380e421146619e0">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.5.3 / gcc-13.2.0 on x86_64 with -j4 : minimum is
  allnoconfig + some configs we recommend for the users, rounded down to
@@ -487,18 +487,18 @@
 <!ENTITY man-db-fin-du "40 MB">
 <!ENTITY man-db-fin-sbu "0.2 SBU">
 
-<!ENTITY man-pages-version "6.05.01">
-<!ENTITY man-pages-size "2,144 KB">
+<!ENTITY man-pages-version "6.06">
+<!ENTITY man-pages-size "2,116 KB">
 <!ENTITY man-pages-url "&kernel;linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "de4563b797cf9b1e0b0d73628b35e442">
+<!ENTITY man-pages-md5 "26b39e38248144156d437e1e10cb20bf">
 <!ENTITY man-pages-home "https://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-fin-du "33 MB">
 <!ENTITY man-pages-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY markupsafe-version "2.1.4">
-<!ENTITY markupsafe-size "20 KB">
+<!ENTITY markupsafe-version "2.1.5">
+<!ENTITY markupsafe-size "19 KB">
 <!ENTITY markupsafe-url "&pypi-src;/M/MarkupSafe/MarkupSafe-&markupsafe-version;.tar.gz">
-<!ENTITY markupsafe-md5 "8138329a11cf4bd0f9db780b2af26c66">
+<!ENTITY markupsafe-md5 "8fe7227653f2fb9b1ffe7f9f2058998a">
 <!ENTITY markupsafe-home "https://palletsprojects.com/p/markupsafe/">
 <!ENTITY markupsafe-fin-du "548 KB">
 <!ENTITY markupsafe-fin-sbu "less than 0.1 SBU">
@@ -580,10 +580,10 @@
 <!ENTITY perl-fin-du "239 MB">
 <!ENTITY perl-fin-sbu "7.1 SBU">
 
-<!ENTITY pkgconf-version "2.1.0">
+<!ENTITY pkgconf-version "2.1.1">
 <!ENTITY pkgconf-size "305 KB">
 <!ENTITY pkgconf-url "https://distfiles.ariadne.space/pkgconf/pkgconf-&pkgconf-version;.tar.xz">
-<!ENTITY pkgconf-md5 "0f2eadbb9dea5aed95147272ae1592cc">
+<!ENTITY pkgconf-md5 "bc29d74c2483197deb9f1f3b414b7918">
 <!ENTITY pkgconf-home "http://pkgconf.org/">
 <!ENTITY pkgconf-fin-du "4.6 MB">
 <!ENTITY pkgconf-fin-sbu "less than 0.1 SBU">
@@ -607,19 +607,19 @@
 <!-- If python minor version changes, updates in python and
      meson pages will be needed: python3.6 and python3.6m -->
 
-<!ENTITY python-version "3.12.1">
+<!ENTITY python-version "3.12.2">
 <!ENTITY python-minor "3.12">
-<!ENTITY python-size "20,102 KB">
+<!ENTITY python-size "20,109 KB">
 <!ENTITY python-url "https://www.python.org/ftp/python/&python-version;/Python-&python-version;.tar.xz">
-<!ENTITY python-md5 "50f827c800483776c8ef86e6a53831fa">
+<!ENTITY python-md5 "e7c178b97bf8f7ccd677b94d614f7b3c">
 <!ENTITY python-home "https://www.python.org/">
 <!ENTITY python-tmp-du "533 MB">
 <!ENTITY python-tmp-sbu "0.4 SBU">
 <!ENTITY python-fin-du "370 MB">
 <!ENTITY python-fin-sbu "1.9 SBU">
 <!ENTITY python-docs-url "https://www.python.org/ftp/python/doc/&python-version;/python-&python-version;-docs-html.tar.bz2">
-<!ENTITY python-docs-md5 "d5c21b804c219b06256495eae30fd153">
-<!ENTITY python-docs-size "7,998 KB">
+<!ENTITY python-docs-md5 "8a6310f6288e7f60c3565277ec3b5279">
+<!ENTITY python-docs-size "8,065 KB">
 
 <!ENTITY readline-version "8.2">
 <!ENTITY readline-soversion "8.2"><!-- used for stripping -->
@@ -640,18 +640,18 @@
 <!ENTITY sed-fin-du "30 MB">
 <!ENTITY sed-fin-sbu "0.3 SBU">
 
-<!ENTITY setuptools-version "69.0.3">
+<!ENTITY setuptools-version "69.1.0">
 <!ENTITY setuptools-size "2,168 KB">
 <!ENTITY setuptools-url "&pypi-src;/s/setuptools/setuptools-&setuptools-version;.tar.gz">
-<!ENTITY setuptools-md5 "b82de45aaa6b9bb911226660212ebb83">
+<!ENTITY setuptools-md5 "6f6eb780ce12c90d81ce243747ed7ab0">
 <!ENTITY setuptools-home "&pypi-home;/setuptools/">
 <!ENTITY setuptools-fin-du "30 MB">
 <!ENTITY setuptools-fin-sbu "0.1 SBU">
 
-<!ENTITY shadow-version "4.14.3">
-<!ENTITY shadow-size "1,760 KB">
+<!ENTITY shadow-version "4.14.4">
+<!ENTITY shadow-size "1,764 KB">
 <!ENTITY shadow-url "&github;/shadow-maint/shadow/releases/download/&shadow-version;/shadow-&shadow-version;.tar.xz">
-<!ENTITY shadow-md5 "b9a7f56d0c63297c0d11d742be2f8ffd">
+<!ENTITY shadow-md5 "2189c4552a78c71010dd4ff2bc4ba1e4">
 <!ENTITY shadow-home "&github;/shadow-maint/shadow/">
 <!ENTITY shadow-fin-du "46 MB">
 <!ENTITY shadow-fin-sbu "0.1 SBU">

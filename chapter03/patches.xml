@@ -117,7 +117,7 @@
       </listitem>
     </varlistentry>
 -->
-
+<!--
     <varlistentry>
       <term>Pkgconf Upstream Fix Patch - <token>&pkgconf-upstream-fix-patch-size;</token>:</term>
       <listitem>
@@ -125,7 +125,7 @@
         <para>MD5 sum: <literal>&pkgconf-upstream-fix-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+-->
     <varlistentry>
       <term>Readline Upstream Fix Patch - <token>&readline-fixes-patch-size;</token>:</term>
       <listitem>
