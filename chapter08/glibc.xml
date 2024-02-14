@@ -170,6 +170,11 @@ esac</userinput></screen>
         is known to fail in the LFS chroot environment.</para>
       </listitem>
 
+      <listitem>
+        <para>Three <emphasis>nptl/tst-thread-affinity*</emphasis>
+        tests are known to fail.</para>
+      </listitem>
+
 <!-- Did not fail with glibc-2.38
       <listitem>
         <para><emphasis>misc/tst-ttyname</emphasis>
