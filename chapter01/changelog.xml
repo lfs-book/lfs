@@ -41,10 +41,20 @@
     -->
 
     <listitem>
+      <para>2024-02-14</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to meson-1.3.2.  Fixes
+          <ulink url='&lfs-ticket-root;5442'>#5442</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2024-02-12</para>
       <itemizedlist>
         <listitem>
-          <para>[bdubbs] - Update to shadow-4.14.4.  Fixes
+          <para>[bdubbs] - Update to shadow-4.14.5.  Fixes
           <ulink url='&lfs-ticket-root;5437'>#5437</ulink>.</para>
         </listitem>
         <listitem>
