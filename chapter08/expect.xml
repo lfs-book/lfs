@@ -62,7 +62,7 @@
     <systemitem class="filesystem">devpts</systemitem> file system (and
     other virtual kernel file systems) mounted correctly.
     This issue needs to be resolved before continuing, or the test suites
-    requring Expect (for example the test suites of Bash, Binutils, GCC,
+    requiring Expect (for example the test suites of Bash, Binutils, GCC,
     GDBM, and of course Expect itself) will fail catastrophically, and other
     subtle breakages may also happen.</para>
 

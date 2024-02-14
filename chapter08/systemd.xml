@@ -50,10 +50,11 @@
 
     <!-- https://github.com/systemd/systemd/pull/30549 -->
     <para>Now fix a security vulnerability in the DNSSEC verification of
-    <command>systemd-resolved</command>:</para>
+    <command>systemd-resolved</command> and a bug breaking running
+    <command>systemd-analyze verify</command> on an instantiated systemd
+    unit:</para>
 
-<screen><userinput remap='pre'>sed -e '/return FLAGS_SET.*AUTHENTICATED/s/(t/(dt/' \
-    -i src/resolve/resolved-dns-transaction.c</userinput></screen>
+<screen><userinput remap='pre'>patch -Np1 -i ../&systemd-upstream-patch;</userinput></screen>
 
     <para>Prepare systemd for compilation:</para>
 
