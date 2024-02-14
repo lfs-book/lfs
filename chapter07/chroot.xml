@@ -14,7 +14,7 @@
     so exiting from it will cause kernel panic.  Prevent exiting from the
     shell accidentally:</para>
 
-<screen role="nodump"><userinput>enable -n exit
+<screen role="nodump"><userinput>enable -n exit exec
 readonly IGNOREEOF=1000</userinput></screen>
 
     <para>The standard I/O streams of the initial shell process is connected
