@@ -669,7 +669,7 @@
 <!--<!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-version;-&systemd-stable;.tar.xz">-->
 <!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-man-version;.tar.xz">
 <!ENTITY systemd-man-md5  "1ebe54d7a80f9abf8f2d14ddfeb2432d">
-<!ENTITY systemd-fin-du   "238 MB">
+<!ENTITY systemd-fin-du   "247 MB">
 <!ENTITY systemd-fin-sbu  "0.7 SBU">
 
 <!ENTITY sysvinit-version "3.08">
