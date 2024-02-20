@@ -74,6 +74,8 @@
 
 <screen><userinput remap="test">make check</userinput></screen>
 
+    <para>One test in the "ps" tests is known to fail.</para>
+
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
