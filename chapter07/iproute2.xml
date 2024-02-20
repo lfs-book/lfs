@@ -44,18 +44,13 @@
   <sect2 role="installation">
     <title>Use IPRoute2 to Set Up Loopback Network Interface</title>
 
-    <para>IPRoute2 package has several dependencies not installed yet, but
-    we only need <command>ip</command> utility from the package now.
-    Disable the build of other utilities:</para>
-
-<screen><userinput remap="pre">sed '/SUBDIRS/s/=.*/=lib ip/' -i Makefile</userinput></screen>
-
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">PKG_CONFIG=false make</userinput></screen>
+<screen><userinput remap="make">PKG_CONFIG=false make SUBDIRS='lib ip'</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the environment variable:</title>
+      <title>The meaning of the environment and overriden make
+      variables:</title>
 
       <varlistentry>
         <term><parameter>PKG_CONFIG=false</parameter></term>
@@ -64,6 +59,16 @@
           <command>pkg-config</command>, which is not installed yet.
           We can override it since <command>ip</command> utility does not
           need these dependencies.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>SUBDIRS='lib ip'</parameter></term>
+        <listitem>
+          <para>Only build the <command>ip</command> utility from the
+          package and disable the build of other utilities.  This is needed
+          to prevent a build failure due to the lack of some
+          dependencies.</para>
         </listitem>
       </varlistentry>
     </variablelist>
