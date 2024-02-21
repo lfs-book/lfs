@@ -160,11 +160,6 @@ esac</userinput></screen>
     <itemizedlist>
 
       <listitem>
-        <para><emphasis>io/tst-lchmod</emphasis>
-        is known to fail in the LFS chroot environment.</para>
-      </listitem>
-
-      <listitem>
         <para>Some tests, for example
         <emphasis>nss/tst-nss-files-hosts-multi</emphasis> and
         <emphasis>nptl/tst-thread-affinity*</emphasis>
