@@ -99,10 +99,10 @@ EOF</userinput></screen>
     there is a message saying the difference can be ignored.
     <!-- Some host distros set core file size hard limit < 1000, then the
          test "ulimit -c -S 1000" attempts to set soft limit > hard limit
-         and fail.  -->
+         and fail.  [Cannot affect cross build.]
     One test named <filename>run-builtins</filename> is known to fail on
     some host distros with a difference on the first line of the
-    output.</para>
+    output. --></para>
 
     <para>Install the package:</para>
 
