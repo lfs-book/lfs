@@ -1566,7 +1566,9 @@
       <segmentedlist id="kbd-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg>
+            <ulink url="&blfs-book;postlfs/linux-pam.html">Linux-PAM</ulink>
+          </seg>
         </seglistitem>
       </segmentedlist>
 
