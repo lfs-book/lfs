@@ -397,10 +397,10 @@
 <!ENTITY libcap-fin-du "2.9 MB">
 <!ENTITY libcap-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY libffi-version "3.4.4">
-<!ENTITY libffi-size "1,331 KB">
+<!ENTITY libffi-version "3.4.6">
+<!ENTITY libffi-size "1,360 KB">
 <!ENTITY libffi-url "https://github.com/libffi/libffi/releases/download/v&libffi-version;/libffi-&libffi-version;.tar.gz">
-<!ENTITY libffi-md5 "0da1a5ed7786ac12dcbaf0d499d8a049">
+<!ENTITY libffi-md5 "b9cac6c5997dca2b3787a59ede34e0eb">
 <!ENTITY libffi-home "https://sourceware.org/libffi/">
 <!ENTITY libffi-fin-du "11 MB">
 <!ENTITY libffi-fin-sbu "1.8 SBU">

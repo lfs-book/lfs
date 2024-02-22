@@ -41,6 +41,17 @@
     -->
 
     <listitem>
+      <para>2024-02-22</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Update to libffi-3.4.6.  Emergency fix for
+          mips64el.  Fixes
+          <ulink url='&lfs-ticket-root;5443'>#5443</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2024-02-14</para>
       <itemizedlist>
         <listitem>
