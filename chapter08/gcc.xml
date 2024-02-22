@@ -189,6 +189,15 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <filename class='directory'>vect</filename> directory are known to fail
     if the hardware does not support AVX.</para>
 
+    <para>Hundreds of gcc and g++ tests can fail on MIPS systems, as MIPS
+    is not a primary platform of GCC and many MIPS tests are not written
+    with <option>--enable-default-pie</option> or
+    <option>--enable-default-ssp</option> in mind.</para>
+
+    <para>In libstdc++ tests, the tests named
+    <filename>abi_check</filename> and
+    <filename>compare_exchange_padding.cc</filename> are known to fail.</para>
+
     <para>A few unexpected failures cannot always be avoided. The GCC developers
     are usually aware of these issues, but have not resolved them yet.
     Unless the test results are vastly different from those at the above URL,
