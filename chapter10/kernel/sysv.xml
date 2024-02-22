@@ -14,9 +14,9 @@
     [*] M<emphasis role='blue'>e</emphasis>mory controller                                                [MEMCG]
   [ ] <emphasis role='blue'>C</emphasis>onfigure standard kernel features (expert users) ---&gt;            [EXPERT]
 
-<emphasis role='blue'>P</emphasis>rocessor type and features ---&gt;
-  [*] <emphasis role='blue'>B</emphasis>uild a relocatable kernel                                   [RELOCATABLE]
-  [*]   <emphasis role='blue'>R</emphasis>andomize the address of the kernel image (KASLR)       [RANDOMIZE_BASE]
+<emphasis role='blue'>K</emphasis>ernel type ---&gt;
+  [*] <emphasis role='blue'>R</emphasis>elocatable kernel                                           [RELOCATABLE]
+  [*]   <emphasis role='blue'>R</emphasis>andomize the address of the kernel image               [RANDOMIZE_BASE]
 
 <emphasis role='blue'>G</emphasis>eneral architecture-dependent options ---&gt;
   [*] <emphasis role='blue'>S</emphasis>tack Protector buffer overflow detection                 [STACKPROTECTOR]

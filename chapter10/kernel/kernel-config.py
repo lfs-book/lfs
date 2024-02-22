@@ -23,7 +23,7 @@ menu_id = 1
 stack = []
 if_stack = []
 
-expand_var_mp = { 'SRCARCH': 'x86' }
+expand_var_mp = { 'SRCARCH': 'mips' }
 main_dep = {}
 
 def expand_var(s):

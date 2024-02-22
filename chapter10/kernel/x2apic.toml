@@ -1,5 +1,0 @@
-X86_X2APIC='*'
-PCI='*'
-PCI_MSI='*'
-IOMMU_SUPPORT='*'
-IRQ_REMAP='*'

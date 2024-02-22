@@ -141,23 +141,6 @@
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
         href="kernel/systemd.xml"/>
    
-      <para>Enable some additional features if you are building a 64-bit
-      system.  If you are using menuconfig, enable them in the order of
-      <parameter>CONFIG_PCI_MSI</parameter> first, then
-      <parameter>CONFIG_IRQ_REMAP</parameter>, at last
-      <parameter>CONFIG_X86_X2APIC</parameter> because an option only
-      shows up after its dependencies are selected.</para>
-
-      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-        href="kernel/x2apic.xml"/>
-
-      <para>If you are building a 32-bit system running on a hardware
-      with RAM more than 4GB, adjust the configuration so the kernel will
-      be able to use up to 64GB physical RAM:</para>
-
-      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-        href="kernel/highmem.xml"/>
-
       <para>If the partition for the LFS system is in a NVME SSD (i. e. the
       device node for the partition is <filename>/dev/nvme*</filename>
       instead of <filename>/dev/sd*</filename>), enable NVME support or
@@ -285,18 +268,6 @@
           If <option>CONFIG_DRM</option> (Direct Rendering Manager) is
           enabled, you should enable these two options as well or you'll see
           a blank screen once the DRI driver is loaded.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>Support x2apic</parameter></term>
-        <listitem>
-          <para>Support running the interrupt controller of 64-bit x86
-          processors in x2APIC mode.  x2APIC may be enabled by firmware on
-          64-bit x86 systems, and a kernel without this option enabled will
-          panic on boot if x2APIC is enabled by firmware.  This option 
-          has no effect, but also does no harm if x2APIC is disabled by the
-          firmware.</para>
         </listitem>
       </varlistentry>
 
