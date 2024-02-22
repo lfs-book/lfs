@@ -76,8 +76,8 @@
           will be copied from the native system to a less capable
           system, use the less capable system as a parameter. For details
           about alternative system types, see <ulink
-          url='https://gcc.gnu.org/onlinedocs/gcc-&gcc-version;/gcc/x86-Options.html'>
-          the x86 options in the GCC manual</ulink>.</para>
+          url='https://gcc.gnu.org/onlinedocs/gcc-&gcc-version;/gcc/MIPS-Options.html'>
+          the MIPS options in the GCC manual</ulink>.</para>
         </listitem>
       </varlistentry>
     </variablelist>
