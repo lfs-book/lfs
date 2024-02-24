@@ -258,7 +258,7 @@ esac</userinput></screen>
 
           <screen role='nodump'><userinput>rm -f /usr/sbin/nscd</userinput></screen>
 
-          <para>
+          <para revision='systemd'>
             If this system (prior to LFS 12.1, exclusive) is based on
             Systemd, it's also needed to disable and stop the
             <command>nscd</command> service now:
