@@ -240,7 +240,7 @@ esac</userinput></screen>
             <emphasis role='bold'>you MUST follow the note in Libxcrypt
             section to install
             <filename class='libraryfile'>libcrypt.so.1*</filename>
-            (overwritting
+            (replacing
             <filename class='libraryfile'>libcrypt.so.1</filename> from the
             prior Glibc installation)</emphasis>.
           </para>
