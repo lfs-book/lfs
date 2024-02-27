@@ -1047,7 +1047,15 @@
       <segmentedlist id="gettext-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
-          <seg><ulink url='&blfs-book;general/libxml2.html'>libxml2</ulink></seg>
+          <seg>
+            <ulink url='&blfs-book;general/libunistring.html'>
+              libunistring
+            </ulink>
+            and
+            <ulink url='&blfs-book;general/libxml2.html'>
+              libxml2
+            </ulink>
+          </seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1566,7 +1574,9 @@
       <segmentedlist id="kbd-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg>
+            <ulink url="&blfs-book;postlfs/linux-pam.html">Linux-PAM</ulink>
+          </seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2470,7 +2480,7 @@
       <segmentedlist id="perl-testdeps">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
-          <seg>Iana-Etc, Less. and Procps-ng</seg>
+          <seg>Iana-Etc, Less, and Procps-ng</seg>
         </seglistitem>
       </segmentedlist>
 

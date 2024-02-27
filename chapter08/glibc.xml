@@ -163,29 +163,34 @@ esac</userinput></screen>
         is known to fail in the LFS chroot environment.</para>
       </listitem>
 
-<!-- Did not fail with glibc-2.38
-      <listitem>
-        <para><emphasis>misc/tst-ttyname</emphasis>
-        is known to fail in the LFS chroot environment.</para>
-      </listitem>
--->
-
-      <!-- https://sourceware.org/pipermail/libc-alpha/2022-August/141567.html -->
-      <listitem>
-        <para>The <emphasis>stdlib/tst-arc4random-thread</emphasis>
-        test is known to fail if the host kernel is relatively old.</para>
-      </listitem>
-
       <listitem>
         <para>Some tests, for example
-        <emphasis>nss/tst-nss-files-hosts-multi</emphasis>,
-        are known to fail on relatively slow systems due to an internal
-        timeout.</para>
+        <emphasis>nss/tst-nss-files-hosts-multi</emphasis> and
+        <emphasis>nptl/tst-thread-affinity*</emphasis>
+        are known to fail due to a timeout (especially when the system is
+        relatively slow and/or running the test suite with multiple
+        parallel make jobs).  These tests can be identified with:</para>
+
+        <!-- TODO: Using nodump for freeze.  Change it to role="test" after
+             12.1 release so jhalfs can list these in the log.  -->
+        <screen role="nodump"><userinput>grep "Timed out" -l $(find -name \*.out)</userinput></screen>
+
+        <para>It's possible to re-run a single test with enlarged timeout
+        with
+        <command>TIMEOUTFACTOR=<replaceable>&lt;factor&gt;</replaceable>
+        make test t=<replaceable>&lt;test name&gt;</replaceable></command>.
+        For example, <command>TIMEOUTFACTOR=10 make test
+        t=nss/tst-nss-files-hosts-multi</command> will re-run
+        <emphasis>nss/tst-nss-files-hosts-multi</emphasis> with ten times
+        the original timeout.</para>
       </listitem>
 
       <listitem>
         <para>Additionally, some tests may fail with a relatively old CPU
-        model or host kernel version.</para>
+        model (for example
+        <emphasis>elf/tst-cpu-features-cpuinfo</emphasis>) or host kernel
+        version (for example
+        <emphasis>stdlib/tst-arc4random-thread</emphasis>).</para>
       </listitem>
     </itemizedlist>
 
@@ -235,7 +240,7 @@ esac</userinput></screen>
             <emphasis role='bold'>you MUST follow the note in Libxcrypt
             section to install
             <filename class='libraryfile'>libcrypt.so.1*</filename>
-            (overwritting
+            (replacing
             <filename class='libraryfile'>libcrypt.so.1</filename> from the
             prior Glibc installation)</emphasis>.
           </para>
@@ -253,7 +258,7 @@ esac</userinput></screen>
 
           <screen role='nodump'><userinput>rm -f /usr/sbin/nscd</userinput></screen>
 
-          <para>
+          <para revision='systemd'>
             If this system (prior to LFS 12.1, exclusive) is based on
             Systemd, it's also needed to disable and stop the
             <command>nscd</command> service now:
@@ -530,7 +535,7 @@ unset ZONEINFO</userinput></screen>
         <term><parameter>zic ... -p ...</parameter></term>
         <listitem>
           <para>This creates the <filename>posixrules</filename> file. We use
-          New York because POSIX requires the daylight savings time rules
+          New York because POSIX requires the daylight saving time rules
           to be in accordance with US rules.</para>
         </listitem>
       </varlistentry>

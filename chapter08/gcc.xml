@@ -188,29 +188,19 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     are known to fail.</para>
 
     <para>
-      With Glibc-2.38, the analyzer tests named
-      <filename>data-model-4.c</filename> and
-      <filename>conftest-1.c</filename> 
-        are known to fail.
-      In the asan tests, several tests in <filename>asan_test.C</filename> 
-        are known to fail.
-      The test named <filename>interception-malloc-test-1.C</filename> 
-        is known to fail.
+    Seven tests in the <filename class='directory'>analyzer</filename>
+    directory are known to fail.
+
+    For g++, 21 tests (out of approximately 250,000): 14
+    <quote>AddressSanitizer*</quote>
+    tests and 7 <filename>interception-malloc-test-1.C</filename> tests, are
+    known to fail.
     </para>
 
     <para>A few unexpected failures cannot always be avoided. The GCC developers
     are usually aware of these issues, but have not resolved them yet.
     Unless the test results are vastly different from those at the above URL,
     it is safe to continue.</para>
-
-    <!--note><para>
-      On some combinations of kernel configuration and AMD processors
-      there may be more than 1100 failures in the gcc.target/i386/mpx
-      tests (which are designed to test the MPX option on recent
-      Intel processors). These can safely be ignored on AMD
-      processors. These tests will also fail on Intel processors if MPX support
-      is not enabled in the kernel even though it is present on the CPU.
-    </para></note-->
 
     <para>Install the package:</para>
 
