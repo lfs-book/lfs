@@ -50,11 +50,11 @@
     <filename class="extension">.netdev</filename> and
     <filename class="extension">.network</filename> files. For detailed
     descriptions and example contents of these configuration files, consult
-    the <ulink role='man' url='&man;systemd-link.5'>systemd-link(5)</ulink>,
-    <ulink role='man' url='&man;systemd-netdev.5'>systemd-netdev(5)</ulink>,
-    and <ulink role='man'
-    url='&man;systemd-network.5'>systemd-network(5)</ulink> manual
-    pages.</para>
+    the 
+    <ulink role='man' url='&man;systemd.link.5'>systemd.link(5)</ulink>,
+    <ulink role='man' url='&man;systemd.netdev.5'>systemd.netdev(5)</ulink>, and
+    <ulink role='man' url='&man;systemd.network.5'>systemd.network(5)</ulink> 
+    manual pages.</para>
 
     <sect3 id="systemd-network-devices">
       <title>Network Device Naming</title>
