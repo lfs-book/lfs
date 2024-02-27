@@ -72,12 +72,20 @@
 
     <para> To run the test suite, run:</para>
 
-<screen><userinput remap="test">make check</userinput></screen>
+<screen><userinput remap="test">make -k check</userinput></screen>
 
     <para>One test named
     <literal>ps with output flag bsdtime,cputime,etime,etimes</literal>
     is known to fail if the host kernel is not built with
-    <literal>CONFIG_BSD_PROCESS_ACCT</literal> enabled.</para>
+    <literal>CONFIG_BSD_PROCESS_ACCT</literal> enabled.
+    <!-- These two tests just do not work as root but they seem to pass
+         in most time due to some internal hazards of Tcl/Expect/DejaGNU
+         framework.  However the failures have been really observed.
+         TODO: run the test suite as tester after the freeze ends.  -->
+    Two tests named
+    <literal>pmap X with unreachable process</literal> and
+    <literal>pmap XX with unreachable process</literal> are known to
+    fail occasionally.</para>
 
     <para>Install the package:</para>
 
