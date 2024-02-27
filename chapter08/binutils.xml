@@ -135,7 +135,7 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="test">grep '^FAIL:' $(find -name '*.log')</userinput></screen>
 
-    <para>Three tests in the gprofng suite are known to fail.</para>
+ <!--    <para>Three tests in the gprofng suite are also known to fail.</para>-->
 
     <para>Install the package:</para>
 

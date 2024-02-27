@@ -63,11 +63,14 @@
 
       <para>Now mount the remaining virtual kernel file systems:</para>
 
-<screen><userinput>mount -v --bind /dev/pts $LFS/dev/pts
+      <!-- Do not put any option after $LFS/${mountpoint} or jhalfs cannot
+           handle it! -->
+
+<screen><userinput>mount -vt devpts devpts -o gid=5,mode=0620 $LFS/dev/pts
 mount -vt proc proc $LFS/proc
 mount -vt sysfs sysfs $LFS/sys
 mount -vt tmpfs tmpfs $LFS/run</userinput></screen>
-<!--
+
     <variablelist>
       <title>The meaning of the mount options for devpts:</title>
 
@@ -95,11 +98,12 @@ mount -vt tmpfs tmpfs $LFS/run</userinput></screen>
       </varlistentry>
 
     </variablelist>
--->
+
       <para>In some host systems, <filename>/dev/shm</filename> is a
-      symbolic link to <filename class="directory">/run/shm</filename>.
+      symbolic link to a directory, typically
+      <filename class="directory">/run/shm</filename>.
       The /run tmpfs was mounted above so in this case only a
-      directory needs to be created.</para>
+      directory needs to be created with the correct permissions.</para>
 
       <para>In other host systems <filename>/dev/shm</filename> is a mount point 
       for a tmpfs. In that case the mount of /dev above will only create
@@ -107,7 +111,7 @@ mount -vt tmpfs tmpfs $LFS/run</userinput></screen>
       we must explicitly mount a tmpfs:</para>
 
 <screen><userinput>if [ -h $LFS/dev/shm ]; then
-  (cd $LFS/dev; mkdir $(readlink shm))
+  install -v -d -m 1777 $LFS$(realpath /dev/shm)
 else
   mount -vt tmpfs -o nosuid,nodev tmpfs $LFS/dev/shm
 fi</userinput></screen>

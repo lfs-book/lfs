@@ -87,7 +87,7 @@
     un-tarring.</para>
 
     <para>There are several ways to configure the kernel options. Usually,
-    This is done through a menu-driven interface, for example:</para>
+    this is done through a menu-driven interface, for example:</para>
 
 <screen role="nodump"><userinput>make menuconfig</userinput></screen>
 
@@ -304,7 +304,8 @@
     located in <xref linkend="ch-config-udev"/> and in the kernel
     documentation in the <filename
     class="directory">linux-&linux-version;/Documentation</filename> directory.
-    Also, <filename>modprobe.d(5)</filename> may be of interest.</para>
+    Also, <ulink role='man' url='&man;modprobe.d.5'>modprobe.d(5)</ulink>
+    may be of interest.</para>
 
     <para>Unless module support has been disabled in the kernel configuration,
     install the modules with:</para>

@@ -56,7 +56,7 @@
     <variablelist>
       <varlistentry><term>The build</term><listitem>
         <para>is the machine where we build programs. Note that this machine
-        is also referred to as the <quote>host</quote>.</para></listitem>
+        is also referred to as the <quote>host.</quote></para></listitem>
       </varlistentry>
 
       <varlistentry><term>The host</term><listitem>

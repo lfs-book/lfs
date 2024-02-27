@@ -121,7 +121,7 @@ FORCE_UNSAFE_CONFIGURE=1 ./configure \
     <para>Fix some of the permissions so that the non-&root; user can
     compile and run the tests:</para>
 
-<screen><userinput remap="test">chown -Rv tester . </userinput></screen>
+<screen><userinput remap="test">chown -R tester . </userinput></screen>
 
     <para>Now run the tests:</para>
 
@@ -129,8 +129,14 @@ FORCE_UNSAFE_CONFIGURE=1 ./configure \
 
 <!-- Sometimes skipped, but if not it may fail.
      Please DO NOT remove or comment out this unless we can fully
-     understand it!  -->
+     understand it!
     <para>The test-getlogin test may fail in the LFS chroot environment.</para>
+    20240226: Commented out as it seems the upstream has root-caused and
+    fixed the issue.  I've checked the fix is in Coreutils 9.4 release
+    tarball:
+
+    https://lists.gnu.org/archive/html/bug-gnulib/2022-06/msg00079.html
+-->
 
     <para>Remove the temporary group:</para>
 
@@ -1261,8 +1267,8 @@ sed -i 's/"1"/"8"/' /usr/share/man/man8/chroot.8</userinput></screen>
       <varlistentry id="yes">
         <term><command>yes</command></term>
         <listitem>
-          <para>Repeatedly outputs <quote>y</quote>, or a given string, until
-          killed</para>
+          <para>Repeatedly outputs <literal>y</literal> or a given string,
+          until killed</para>
           <indexterm zone="ch-system-coreutils yes">
             <primary sortas="b-yes">yes</primary>
           </indexterm>

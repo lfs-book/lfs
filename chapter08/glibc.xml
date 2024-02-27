@@ -49,12 +49,12 @@
     store their runtime data in the FHS-compliant locations:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
-
+<!--
     <para>Now fix two security vulnerabilities and a regression causing the
     posix_memalign() function very slow in some conditions:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-fixes-patch;</userinput></screen>
-
+-->
     <para>The Glibc documentation recommends building Glibc
     in a dedicated build directory:</para>
 
@@ -73,7 +73,6 @@ cd       build</userinput></screen>
              --disable-werror                         \
              --enable-kernel=&min-kernel;                     \
              --enable-stack-protector=strong          \
-             --with-headers=/usr/include              \
              --disable-nscd                           \
              libc_cv_slibdir=/usr/lib</userinput></screen>
 
@@ -103,15 +102,10 @@ cd       build</userinput></screen>
         <listitem>
           <para>This option increases system security by adding
           extra code to check for buffer overflows, such as stack
-          smashing attacks.</para>
-        </listitem>
-      </varlistentry>
-<!-- do we need this one? -->
-      <varlistentry>
-        <term><parameter>--with-headers=/usr/include</parameter></term>
-        <listitem>
-          <para>This option tells the build system where to find the
-          kernel API headers.</para>
+          smashing attacks.  Note that Glibc always explicitly overrides
+          the default of GCC, so this option is still needed even though
+          we've already specified <option>--enable-default-ssp</option> for
+          GCC.</para>
         </listitem>
       </varlistentry>
 
@@ -169,29 +163,34 @@ esac</userinput></screen>
         is known to fail in the LFS chroot environment.</para>
       </listitem>
 
-<!-- Did not fail with glibc-2.38
-      <listitem>
-        <para><emphasis>misc/tst-ttyname</emphasis>
-        is known to fail in the LFS chroot environment.</para>
-      </listitem>
--->
-
-      <!-- https://sourceware.org/pipermail/libc-alpha/2022-August/141567.html -->
-      <listitem>
-        <para>The <emphasis>stdlib/tst-arc4random-thread</emphasis>
-        test is known to fail if the host kernel is relatively old.</para>
-      </listitem>
-
       <listitem>
         <para>Some tests, for example
-        <emphasis>nss/tst-nss-files-hosts-multi</emphasis>,
-        are known to fail on relatively slow systems due to an internal
-        timeout.</para>
+        <emphasis>nss/tst-nss-files-hosts-multi</emphasis> and
+        <emphasis>nptl/tst-thread-affinity*</emphasis>
+        are known to fail due to a timeout (especially when the system is
+        relatively slow and/or running the test suite with multiple
+        parallel make jobs).  These tests can be identified with:</para>
+
+        <!-- TODO: Using nodump for freeze.  Change it to role="test" after
+             12.1 release so jhalfs can list these in the log.  -->
+        <screen role="nodump"><userinput>grep "Timed out" -l $(find -name \*.out)</userinput></screen>
+
+        <para>It's possible to re-run a single test with enlarged timeout
+        with
+        <command>TIMEOUTFACTOR=<replaceable>&lt;factor&gt;</replaceable>
+        make test t=<replaceable>&lt;test name&gt;</replaceable></command>.
+        For example, <command>TIMEOUTFACTOR=10 make test
+        t=nss/tst-nss-files-hosts-multi</command> will re-run
+        <emphasis>nss/tst-nss-files-hosts-multi</emphasis> with ten times
+        the original timeout.</para>
       </listitem>
 
       <listitem>
         <para>Additionally, some tests may fail with a relatively old CPU
-        model or host kernel version.</para>
+        model (for example
+        <emphasis>elf/tst-cpu-features-cpuinfo</emphasis>) or host kernel
+        version (for example
+        <emphasis>stdlib/tst-arc4random-thread</emphasis>).</para>
       </listitem>
     </itemizedlist>
 
@@ -206,6 +205,122 @@ esac</userinput></screen>
     that fails with a modern Glibc configuration:</para>
 
 <screen><userinput remap="install">sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile</userinput></screen>
+
+    <important>
+      <para>
+        If upgrading Glibc to a new minor version (for example, from
+        Glibc-2.36 to Glibc-&glibc-version;) on a running LFS system, you
+        need to take some extra precautions to avoid breaking the system:
+      </para>
+
+      <itemizedlist>
+        <listitem>
+          <!-- There are two reasons we don't support this:
+               1. Upgrading on a system with separate /lib and /usr/lib is
+                  tricky.
+               2. With Glibc prior to 2.34 libc.so.6 etc. are symlinks to
+                  libc-2.33.so etc., again causing the upgradation tricky.
+                  The Glibc NEWS file explicit states they no longer use
+                  symlinks for the ABI names to avoid upgradation
+                  issues.  -->
+          <para>
+            Upgrading Glibc on a LFS system prior to 11.0 (exclusive) is
+            not supported.  Rebuild LFS if you are running such an old LFS
+            system but you need a newer Glibc.
+          </para>
+        </listitem>
+
+        <!-- https://sourceware.org/pipermail/libc-alpha/2024-January/154095.html -->
+        <listitem>
+          <para>
+            If upgrading on a LFS system prior to 12.0 (exclusive), install
+            <application>Libxcrypt</application> following
+            <xref role='.' linkend='ch-system-libxcrypt'/>  In addition to
+            a normal <application>Libxcrypt</application> installation,
+            <emphasis role='bold'>you MUST follow the note in Libxcrypt
+            section to install
+            <filename class='libraryfile'>libcrypt.so.1*</filename>
+            (replacing
+            <filename class='libraryfile'>libcrypt.so.1</filename> from the
+            prior Glibc installation)</emphasis>.
+          </para>
+        </listitem>
+
+        <!-- Otherwise on lfs-systemd nscd will fail to start on boot,
+             and on both lfs-sysv and lfs-systemd useradd etc. will try
+             to start nscd, then nscd will fail to start as well and
+             produce some spurious error message.  -->
+        <listitem>
+          <para>
+            If upgrading on a LFS system prior to 12.1 (exclusive),
+            remove the <command>nscd</command> program:
+          </para>
+
+          <screen role='nodump'><userinput>rm -f /usr/sbin/nscd</userinput></screen>
+
+          <para revision='systemd'>
+            If this system (prior to LFS 12.1, exclusive) is based on
+            Systemd, it's also needed to disable and stop the
+            <command>nscd</command> service now:
+          </para>
+
+          <screen revision='systemd' role='nodump'><userinput>systemctl disable --now nscd</userinput></screen>
+        </listitem>
+
+        <listitem>
+          <para>
+            Upgrade the kernel and reboot if it's older than &min-kernel;
+            (check the current version with <command>uname -r</command>)
+            or if you want to upgrade it anyway, following
+            <xref linkend='ch-bootable-kernel' role='.'/>
+          </para>
+        </listitem>
+
+        <listitem>
+          <para>
+            Upgrade the kernel API headers if it's older than &min-kernel;
+            (check the current version with
+            <command>cat /usr/include/linux/version.h</command>)
+            or if you want to upgrade it anyway, following
+            <xref linkend='ch-tools-linux-headers'/> (but removing
+            <envar>$LFS</envar> from the <command>cp</command> command).
+          </para>
+        </listitem>
+
+        <!-- This is to ensure we don't start a process at the time point
+             where some Glibc shared libraries are updated but the others
+             are not.  Such mismatches can cause programs crash on startup,
+             esp. a mismatch between ld-linux-x86-64.so.2 and
+             libc.so.6.  Note that a crash in the installation process
+             will leave the system in a state with the mismatch forever,
+             unrecoverable without the help of another distro.  -->
+        <listitem>
+          <para>
+            Perform a <envar>DESTDIR</envar> installation and upgrade
+            the Glibc shared libraries on the system using one single
+            <command>install</command> command:
+          </para>
+
+          <screen role='nodump'><userinput>make DESTDIR=$PWD/dest install
+install -vm755 dest/usr/lib/*.so.* /usr/lib</userinput></screen>
+        </listitem>
+      </itemizedlist>
+
+      <para>
+        It's imperative to strictly follow these steps above unless you
+        completely understand what you are doing.
+        <emphasis role='bold'>Any unexpected deviation may render the
+        system completely unusable.  YOU ARE WARNED.</emphasis>
+      </para>
+
+      <para>
+        Then continue to run the <command>make install</command> command,
+        the <command>sed</command> command against
+        <filename>/usr/bin/ldd</filename>, and the commands to install
+        the locales.  Once they are finished, reboot the system
+        immediately.
+      </para>
+    </important>
 
     <para>Install the package:</para>
 
@@ -420,7 +535,7 @@ unset ZONEINFO</userinput></screen>
         <term><parameter>zic ... -p ...</parameter></term>
         <listitem>
           <para>This creates the <filename>posixrules</filename> file. We use
-          New York because POSIX requires the daylight savings time rules
+          New York because POSIX requires the daylight saving time rules
           to be in accordance with US rules.</para>
         </listitem>
       </varlistentry>

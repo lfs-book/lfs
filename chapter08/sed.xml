@@ -51,7 +51,7 @@ make html</userinput></screen>
 
     <para>To test the results, issue:</para>
 
-<screen><userinput remap="test">chown -Rv tester .
+<screen><userinput remap="test">chown -R tester .
 su tester -c "PATH=$PATH make check"</userinput></screen>
 
     <para>Install the package and its documentation:</para>

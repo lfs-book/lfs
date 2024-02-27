@@ -53,7 +53,7 @@
   little-endian systems and ld-linux-aarch64_be.so.1 on big-endian systems.
   The construct below selects the
   correct name for the current architecture, excluding anything ending
-  with <quote>g</quote>, in case the commands below have already been
+  with <literal>g</literal>, in case the commands below have already been
   run.</para></note>
 
   <important>

@@ -137,8 +137,8 @@ cd       build</userinput></screen>
     Gettext package, which the host distribution should provide.</para>
 
     <note><para>There have been reports that this package may fail when
-    building as a "parallel make".  If that occurs, rerun the make command
-    with the "-j1" option.</para></note>
+    building as a <quote>parallel make.</quote>  If that occurs, rerun the make command
+    with the <option>-j1</option> option.</para></note>
 
     <para>Compile the package:</para>
 
