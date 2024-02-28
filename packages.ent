@@ -112,7 +112,7 @@
 <!ENTITY coreutils-tmp-du "173 MB">
 <!ENTITY coreutils-tmp-sbu "0.3 SBU">
 <!ENTITY coreutils-fin-du "175 MB">
-<!ENTITY coreutils-fin-sbu "1/0 SBU">
+<!ENTITY coreutils-fin-sbu "1.0 SBU">
 
 <!ENTITY dbus-version "1.14.10">
 <!ENTITY dbus-size "1,344 KB">
