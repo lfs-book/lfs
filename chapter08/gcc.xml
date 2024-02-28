@@ -169,30 +169,27 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
     <para>
-    <!-- https://gcc.gnu.org/PR107915 and https://gcc.gnu.org/PR109353 -->
-    One test named <filename>contracts-tmpl-spec2.C</filename> is known to fail.
-    <!-- https://gcc.gnu.org/PR111224 -->
-    Some C++ module tests named <filename>xtreme-*</filename> are known to
-    fail.
-    </para>
-
-    <!-- Need further investigation -->
-    <para>Many gcc and g++ tests related to hwasan are known to fail.</para>
-
-    <para>
-    Eight gcc tests (out of over 185,000):
-    <!-- https://gcc.gnu.org/PR106375 --><filename>pr56837.c</filename>
-    and seven tests in the <filename class='directory'>analyzer</filename>
+    In gcc tests (out of over 185,000),
+    seven tests in the <filename class='directory'>analyzer</filename>
     directory are known to fail.
 
     <!-- https://gcc.gnu.org/PR109353 -->
     One libstdc++ test (out of over 15000), <filename>copy.cc</filename>, is
     known to fail.
 
-    For g++, 21 tests (out of approximately 250,000): 14
+    For g++, 22 tests (out of approximately 250,000): 14
     <quote>AddressSanitizer*</quote>
-    tests and 7 <filename>interception-malloc-test-1.C</filename> tests, are
+    tests, 7 <filename>interception-malloc-test-1.C</filename> tests,
+    and one test named <filename>contracts-tmpl-spec2.C</filename> are
     known to fail.
+
+    On ARM64, many tests in the
+    <filename class='directory'>c-c++-common/hwasan</filename>
+    directory are known to fail in both gcc and g++ tests<!-- why? -->,
+    and many tests in the
+    <!-- https://gcc.gnu.org/PR111124 -->
+    <filename class='directory'>g++.dg/modules</filename>
+    directory are known to fail in g++ tests.
     </para>
 
     <para>A few unexpected failures cannot always be avoided. The GCC developers
