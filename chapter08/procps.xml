@@ -75,7 +75,8 @@
          internal hazards with some "luck" though.  -->
     <para>To run the test suite, run:</para>
 
-<screen><userinput remap="test">su tester -c "PATH=$PATH make check"</userinput></screen>
+<screen><userinput remap="test">chown -R tester .
+su tester -c "PATH=$PATH make check"</userinput></screen>
 
     <para>One test named
     <literal>ps with output flag bsdtime,cputime,etime,etimes</literal>
