@@ -76,7 +76,7 @@
 
     <para>The test suite outputs a lot of binary data to the screen.  This can
     cause issues with the settings of the current terminal (especially while
-    we are overriding the <envar>TERM</envar> variable to satisify some
+    we are overriding the <envar>TERM</envar> variable to satisfy some
     assumptions of the test suite).  The problem can be
     avoided by redirecting the output to a log file as shown above.  A
     successful test will result in the words <computeroutput>ALL
