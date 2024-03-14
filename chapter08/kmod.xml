@@ -89,7 +89,7 @@
     Linux kernel modules) in
     <filename class='directory'>/usr/sbin</filename> instead of
     <filename class='directory'>/usr/bin</filename> (where the building
-    system will create these symlinks):</para>
+    system will create these symlinks but we don't want them there):</para>
 
 <screen><userinput remap="install">make install
 
