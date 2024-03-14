@@ -86,10 +86,10 @@
 
     <para>Install the package and recreate some symlinks for
     compatibility with Module-Init-Tools (the package that previously handled
-    Linux kernel modules) in
-    <filename class='directory'>/usr/sbin</filename> instead of
-    <filename class='directory'>/usr/bin</filename> (where the building
-    system will create these symlinks but we don't want them there):</para>
+    Linux kernel modules).  The building system will create all these
+    symlinks in <filename class='directory'>/usr/bin</filename>, but we
+    only want <command>lsmod</command> there and all other symlinks in
+    <filename class='directory'>/usr/sbin</filename> instead:</para>
 
 <screen><userinput remap="install">make install
 
