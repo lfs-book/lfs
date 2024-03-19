@@ -455,8 +455,8 @@
 <!ENTITY lz4-url "&github;/lz4/lz4/releases/download/v&lz4-version;/lz4-&lz4-version;.tar.gz">
 <!ENTITY lz4-md5 "e9286adb64040071c5e23498bf753261">
 <!ENTITY lz4-home "https://lz4.org/">
-<!ENTITY lz4-fin-du "">
-<!ENTITY lz4-fin-sbu "">
+<!ENTITY lz4-fin-du "83 MB">
+<!ENTITY lz4-fin-sbu "0.1 SBU">
 
 <!ENTITY m4-version "1.4.19">
 <!ENTITY m4-size "1,617 KB">
