@@ -486,10 +486,10 @@
 <!ENTITY man-db-fin-du "41 MB">
 <!ENTITY man-db-fin-sbu "0.2 SBU">
 
-<!ENTITY man-pages-version "6.06">
-<!ENTITY man-pages-size "2,116 KB">
+<!ENTITY man-pages-version "6.7">
+<!ENTITY man-pages-size "2,132 KB">
 <!ENTITY man-pages-url "&kernel;linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "26b39e38248144156d437e1e10cb20bf">
+<!ENTITY man-pages-md5 "1bd39d60e741f37b550d27f9d4fb1656">
 <!ENTITY man-pages-home "https://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-fin-du "33 MB">
 <!ENTITY man-pages-fin-sbu "less than 0.1 SBU">
