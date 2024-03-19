@@ -1980,6 +1980,44 @@
         </seglistitem>
       </segmentedlist>
 
+<!-- Begin LZ4 dependency info -->
+  <bridgehead renderas="sect2" id="lz4-dep">Lz4</bridgehead>
+
+      <segmentedlist id="lz4-depends">
+        <segtitle>&dependencies;</segtitle>
+        <seglistitem>
+          <seg>Bash, Binutils, Coreutils, GCC, Glibc, and Make</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="lz4-rundeps">
+        <segtitle>&runtime;</segtitle>
+        <seglistitem>
+          <seg>Glibc</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="lz4-testdeps">
+        <segtitle>&testsuites;</segtitle>
+        <seglistitem>
+          <seg>Python</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="lz4-before">
+        <segtitle>&before;</segtitle>
+        <seglistitem>
+          <seg>Zstd <phrase revision="systemd">and Systemd</phrase></seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="lz4-optdeps">
+        <segtitle>&external;</segtitle>
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
 <!-- Begin M4 dependency info -->
   <bridgehead renderas="sect2" id="m4-dep">M4</bridgehead>
 
@@ -2876,7 +2914,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
          <seg>Acl, Bash, Binutils, Coreutils, Diffutils, Gawk,
-         GCC, Glibc, Gperf, Grep, Jinja2, Libcap, Libxcrypt, Meson,
+         GCC, Glibc, Gperf, Grep, Jinja2, Libcap, Libxcrypt, Lz4, Meson,
          OpenSSL, Pkgconf, Sed, Util-linux, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
@@ -2942,7 +2980,6 @@
             <ulink url="&blfs-book;postlfs/linux-pam.html">Linux-PAM</ulink>,
             <ulink
               url="&blfs-book;general/python-modules.html#lxml">lxml</ulink>,
-            <ulink url="https://lz4.github.io/lz4/">LZ4</ulink>,
             <ulink url="&blfs-book;postlfs/make-ca.html">make-ca</ulink>,
             <ulink url="&blfs-book;postlfs/p11-kit.html">p11-kit</ulink>,
             <ulink url="&blfs-book;general/pcre2.html">PCRE2</ulink>,
@@ -3426,7 +3463,7 @@
       <segmentedlist id="zstd-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Binutils, Coreutils, GCC, Glibc, Gzip, Make, Xz, and Zlib</seg>
+          <seg>Binutils, Coreutils, GCC, Glibc, Gzip, Lz4, Make, Xz, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -3455,7 +3492,7 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-            <ulink url="https://lz4.github.io/lz4/">LZ4</ulink>
+            None
           </seg>
         </seglistitem>
       </segmentedlist>
