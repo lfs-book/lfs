@@ -831,8 +831,7 @@
         <note>
           <para>
             The version of vim changes daily. To get the latest version, go to
-            <ulink url="https://github.com/vim/vim/releases">
-            https://github.com/vim/vim/tags</ulink>.
+            <ulink url="https://github.com/vim/vim/tags"/>.
           </para>
         </note>
       </listitem>
