@@ -690,12 +690,12 @@
 <!ENTITY systemd-fin-du   "247 MB">
 <!ENTITY systemd-fin-sbu  "0.7 SBU">
 
-<!ENTITY sysvinit-version "3.08">
-<!ENTITY sysvinit-size "263 KB">
+<!ENTITY sysvinit-version "3.09">
+<!ENTITY sysvinit-size "234 KB">
 <!ENTITY sysvinit-url "&github;/slicer69/sysvinit/releases/download/&sysvinit-version;/sysvinit-&sysvinit-version;.tar.xz">
-<!ENTITY sysvinit-md5 "81a05f28d7b67533cfc778fcadea168c">
+<!ENTITY sysvinit-md5 "688074f8642c955469a0b1ecae5c488b">
 <!ENTITY sysvinit-home "&savannah-nongnu;/projects/sysvinit">
-<!ENTITY sysvinit-fin-du "3.5 MB">
+<!ENTITY sysvinit-fin-du "2.5 MB">
 <!ENTITY sysvinit-fin-sbu "less than 0.1 SBU">
 
 <!ENTITY tar-version "1.35">
