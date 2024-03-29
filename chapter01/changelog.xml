@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>2024-03-29</para>
+      <itemizedlist>
+        <listitem>
+           <para>[bdubbs] - Revert to xz-5.4.6 due to uptream 
+           compromise.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2024-04-25</para>
       <itemizedlist>
         <listitem>
@@ -49,7 +59,6 @@
         </listitem>
       </itemizedlist>
     </listitem>
-
 
     <listitem>
       <para>2024-03-19</para>
