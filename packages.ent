@@ -775,7 +775,7 @@
 
 <!ENTITY xz-version "5.4.6">
 <!ENTITY xz-size "1,648 KB">
-<!ENTITY xz-url "https://github.com/tukaani-project/xz/releases/download/v&xz-version;/xz-&xz-version;.tar.xz">
+<!ENTITY xz-url "&anduin-sources;/xz-&xz-version;.tar.xz">
 <!ENTITY xz-md5 "7ade7bd1181a731328f875bec62a9377">
 <!ENTITY xz-home "https://tukaani.org/xz">
 <!ENTITY xz-tmp-du "22 MB">
