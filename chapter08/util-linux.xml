@@ -152,6 +152,8 @@ su tester -c "make -k check"</userinput></screen>
 ./configure ADJTIME_PATH=/var/lib/hwclock/adjtime   \
             --host=i686-pc-linux-gnu \
             --libdir=/usr/lib32      \
+            --runstatedir=/run       \
+            --sbindir=/usr/sbin      \
             --docdir=/usr/share/doc/util-linux-&util-linux-version; \
             --disable-chfn-chsh      \
             --disable-login          \
@@ -160,6 +162,7 @@ su tester -c "make -k check"</userinput></screen>
             --disable-setpriv        \
             --disable-runuser        \
             --disable-pylibmount     \
+            --disable-liblastlog2    \
             --disable-static         \
             --without-python         \
             --without-systemd        \
@@ -169,6 +172,8 @@ su tester -c "make -k check"</userinput></screen>
 ./configure ADJTIME_PATH=/var/lib/hwclock/adjtime   \
             --host=i686-pc-linux-gnu \
             --libdir=/usr/lib32      \
+            --runstatedir=/run       \
+            --sbindir=/usr/sbin      \
             --docdir=/usr/share/doc/util-linux-&util-linux-version; \
             --disable-chfn-chsh      \
             --disable-login          \
@@ -177,6 +182,7 @@ su tester -c "make -k check"</userinput></screen>
             --disable-setpriv        \
             --disable-runuser        \
             --disable-pylibmount     \
+            --disable-liblastlog2    \
             --disable-static         \
             --without-python</userinput></screen>
 
@@ -217,33 +223,39 @@ rm -rf DESTDIR</userinput></screen>
 <screen revision="sysv"><userinput remap="configure">CC="gcc -mx32" \
 ./configure ADJTIME_PATH=/var/lib/hwclock/adjtime   \
             --host=x86_64-pc-linux-gnux32 \
-            --libdir=/usr/libx32 \
+            --libdir=/usr/libx32  \
+            --runstatedir=/run    \
+            --sbindir=/usr/sbin   \
             --docdir=/usr/share/doc/util-linux-&util-linux-version; \
-            --disable-chfn-chsh  \
-            --disable-login      \
-            --disable-nologin    \
-            --disable-su         \
-            --disable-setpriv    \
-            --disable-runuser    \
-            --disable-pylibmount \
-            --disable-static     \
-            --without-python     \
-            --without-systemd    \
+            --disable-chfn-chsh   \
+            --disable-login       \
+            --disable-nologin     \
+            --disable-su          \
+            --disable-setpriv     \
+            --disable-runuser     \
+            --disable-pylibmount  \
+            --disable-liblastlog2 \
+            --disable-static      \
+            --without-python      \
+            --without-systemd     \
             --without-systemdsystemunitdir</userinput></screen>
 
 <screen revision="systemd"><userinput remap="configure">CC="gcc -mx32" \
 ./configure ADJTIME_PATH=/var/lib/hwclock/adjtime   \
             --host=x86_64-pc-linux-gnux32 \
-            --libdir=/usr/libx32 \
+            --libdir=/usr/libx32  \
+            --runstatedir=/run    \
+            --sbindir=/usr/sbin   \
             --docdir=/usr/share/doc/util-linux-&util-linux-version; \
-            --disable-chfn-chsh  \
-            --disable-login      \
-            --disable-nologin    \
-            --disable-su         \
-            --disable-setpriv    \
-            --disable-runuser    \
-            --disable-pylibmount \
-            --disable-static     \
+            --disable-chfn-chsh   \
+            --disable-login       \
+            --disable-nologin     \
+            --disable-su          \
+            --disable-setpriv     \
+            --disable-runuser     \
+            --disable-pylibmount  \
+            --disable-liblastlog2 \
+            --disable-static      \
             --without-python</userinput></screen>
 
     <para>Restore the tool previously moved away:</para>
