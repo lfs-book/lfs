@@ -113,9 +113,8 @@ su tester -c "make -k check"</userinput></screen>
        The <emphasis>hardlink</emphasis> tests will fail if the host's kernel
        does not have the option <option>CONFIG_CRYPTO_USER_API_HASH</option>
        enabled or does not have any options providing a SHA256 implementation
-       (for example, <option>CONFIG_CRYPTO_SHA256</option>, or
-       <option>CONFIG_CRYPTO_SHA256_SSSE3</option> if the CPU supports
-       Supplemental SSE3) enabled. In addition, the lsfd: inotify test will
+       (for example, <option>CONFIG_CRYPTO_SHA256</option>)
+       enabled. In addition, the lsfd: inotify test will
        fail if the kernel option <option>CONFIG_NETLINK_DIAG</option> is not
        enabled.
     </para>
