@@ -294,13 +294,6 @@
     configuration menus and create the kernel configuration from
     scratch.</para>
 
-    <!-- https://git.kernel.org/torvalds/c/2772ae4d66d1 (simplified) -->
-    <para>Now fix an issue causing the kernel fail to build with Binutils
-    2.42 on LoongArch:</para>
-
-<screen><userinput remap="pre">sed -e '/case EM_LOONG/aif (r_type == 100 || r_type == 102) continue;' \
-    -i scripts/mod/modpost.c</userinput></screen>
-
     <para>Compile the kernel image and modules:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
