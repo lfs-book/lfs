@@ -2395,7 +2395,7 @@
       <segmentedlist id="ninja-testdeps">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg><ulink url="&blfs-book;general/cmake.html">cmake</ulink></seg>
         </seglistitem>
       </segmentedlist>
 
