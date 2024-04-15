@@ -114,7 +114,7 @@
             <para>Do not use any method except the <command>tar</command> command
               to extract the source code. Notably, using the <command>cp -R</command>
               command to copy the
-              source code tree somewhere else can destroy links and
+              source code tree somewhere else can destroy
               timestamps in the source tree, and cause the build to fail.</para>
             </listitem>
             <listitem>
