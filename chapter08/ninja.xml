@@ -83,7 +83,7 @@
     </variablelist>
 
     <para>The package tests cannot run in the chroot environment. They require 
-    require <ulink url="&blfs-book;general/cmake.html">cmake</ulink>.</para>
+    <ulink url="&blfs-book;general/cmake.html">cmake</ulink>.</para>
 <!--
     <para>To test the results, issue:</para>
 
