@@ -69,8 +69,7 @@ popd</userinput></screen>
             --with-cxx-shared            \
             --without-debug              \
             --without-ada                \
-            --disable-stripping          \
-            --enable-widec</userinput></screen>
+            --disable-stripping</userinput></screen>
 
     <variablelist>
       <title>The meaning of the new configure options:</title>
@@ -132,9 +131,9 @@ popd</userinput></screen>
           Using host tools on cross-compiled programs can cause failure.</para>
         </listitem>
       </varlistentry>
-
+<!-- this is the default >= 6.5
       <varlistentry>
-        <term><parameter>--enable-widec</parameter></term>
+        <term><parameter>- -enable-widec</parameter></term>
         <listitem>
           <para>This switch causes wide-character libraries (e.g., <filename
           class="libraryfile">libncursesw.so.&ncurses-version;</filename>)
@@ -146,7 +145,7 @@ popd</userinput></screen>
           source-compatible, but not binary-compatible.</para>
         </listitem>
       </varlistentry>
-
+-->
     </variablelist>
 
     <para>Compile the package:</para>
