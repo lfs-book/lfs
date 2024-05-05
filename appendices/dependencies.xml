@@ -326,8 +326,8 @@
       <segmentedlist id="bison-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, Grep, M4, Make,
-          Perl, and Sed</seg>
+          <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Gettext, Glibc,
+          Grep, M4, Make, Perl, and Sed</seg>
         </seglistitem>
       </segmentedlist>
 
