@@ -49,12 +49,11 @@
     store their runtime data in the FHS-compliant locations:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
-<!--
-    <para>Now fix two security vulnerabilities and a regression causing the
-    posix_memalign() function very slow in some conditions:</para>
 
-<screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-fixes-patch;</userinput></screen>
--->
+    <para>Now fix a security vulnerability:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-patch;</userinput></screen>
+
     <para>The Glibc documentation recommends building Glibc
     in a dedicated build directory:</para>
 
@@ -171,9 +170,7 @@ esac</userinput></screen>
         relatively slow and/or running the test suite with multiple
         parallel make jobs).  These tests can be identified with:</para>
 
-        <!-- TODO: Using nodump for freeze.  Change it to role="test" after
-             12.1 release so jhalfs can list these in the log.  -->
-        <screen role="nodump"><userinput>grep "Timed out" -l $(find -name \*.out)</userinput></screen>
+        <screen><userinput remap="test">grep "Timed out" $(find -name \*.out)</userinput></screen>
 
         <para>It's possible to re-run a single test with enlarged timeout
         with
