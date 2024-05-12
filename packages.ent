@@ -752,7 +752,7 @@
 <!ENTITY vim-size "17,428 KB">
 <!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">
 <!--<!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.gz">-->
-<!ENTITY vim-md5 "88d5656c21668ae98a0cd1a13abb3d12">
+<!ENTITY vim-md5 "5379f5542310ee7ffbd6aea312407042">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "236 MB">
 <!ENTITY vim-fin-sbu "2.5 SBU">
