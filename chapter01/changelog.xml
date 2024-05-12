@@ -56,7 +56,7 @@
           <ulink url='&lfs-ticket-root;5484'>#5484</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to jinja2-3.1.4 (Python mpdule). Fixes
+          <para>[bdubbs] - Update to jinja2-3.1.4 (Python module). Fixes
           <ulink url='&lfs-ticket-root;5485'>#5485</ulink>.</para>
         </listitem>
         <listitem>
