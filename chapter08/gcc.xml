@@ -142,11 +142,7 @@ cd       build</userinput></screen>
 
     <para>Now remove/fix several known test failures:</para>
 
-<screen><userinput remap="test">sed -e '/cpython/d'               -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp
-sed -e 's/no-pic /&amp;-no-pie /'     -i ../gcc/testsuite/gcc.target/i386/pr113689-1.c
-sed -e 's/300000/(1|300000)/'     -i ../libgomp/testsuite/libgomp.c-c++-common/pr109062.c
-sed -e 's/{ target nonpic } //' \
-    -e '/GOTPCREL/d'              -i ../gcc/testsuite/gcc.target/i386/fentryname3.c</userinput></screen>
+<screen><userinput remap="test">sed -e '/cpython/d' -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp</userinput></screen>
 
     <para>Test the results as a non-privileged user, but do not stop at errors:</para>
 
@@ -184,13 +180,21 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     if the hardware does not support AVX.</para>
 -->
 
-    <para>On ARM64, many tests in the
-    <filename class='directory'>c-c++-common/hwasan</filename>
-    directory are known to fail in both gcc and g++ tests<!-- why? -->,
-    and many tests in the
-    <!-- https://gcc.gnu.org/PR111124 -->
+    <!-- https://gcc.gnu.org/PR111224 for modules.
+         https://gcc.gnu.org/PR112376 for ssa-dom-thread-7.
+         TODO: for others why?? -->
+    <para>On ARM64, many tests in
+    the <filename class='directory'>c-c++-common/hwasan</filename>,
+    the <filename class='directory'>gcc.target/aarch64/sve/acle</filename>
+    directory,
+    the <filename class='directory'>gcc.target/aarch64/sme</filename>
+    directory,
+    and the
     <filename class='directory'>g++.dg/modules</filename>
-    directory are known to fail in g++ tests.</para>
+    directory are known to fail.
+    The tests named <filename>memset-strict-align-1.c</filename>,
+    <filename>ssa-dom-thread-7.c</filename>, and
+    <filename>pr113618.c</filename> are also known to fail.</para>
 
     <para>A few unexpected failures cannot always be avoided. In some cases
     test failures depend on the specific hardware of the system.<!--The GCC developers
