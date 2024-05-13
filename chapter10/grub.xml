@@ -19,20 +19,7 @@
   <note>
     <para>
       This section assume your system has UEFI support and you wish to boot
-      LFS with UEFI and GRUB built following the instructions in Chapter 8.
-    </para>
-    <para>
-      If you've installed GRUB for UEFI with optional dependencies following
-      BLFS, you should skip the instructions in this page but still learn the
-      syntax of <filename>grub.cfg</filename> and the method to specify
-      a partition in the file from this page, and configure GRUB with UEFI
-      using the instructions provided in
-      <ulink url="&blfs-book;postlfs/grub-setup.html">the BLFS page</ulink>,
-      but replace <parameter>--target=x86_64-efi</parameter> with
-      <parameter>--target=loongarch64-efi</parameter> for the 64-bit
-      LoongArch system.
-    </para>
-    <para>
+      LFS with UEFI.
       If your system does not support UEFI or you don't want to use it,
       you'll need to figure out how to configure the booting process of
       the system on your own.
@@ -177,15 +164,10 @@ mount /boot/efi</userinput></screen>
         recorded in an EFI variable.  Then you need to create an EFI
         variable for the newly installed boot loader.  Install
         <ulink url="&blfs-book;postlfs/efibootmgr.html">efibootmgr</ulink>,
-        then run the following commands:
-
-<screen role="nodump"><userinput>mount -v -t efivarfs efivarfs /sys/firmware/efi/efivars
-efibootmgr -B -L LFS || true
-efibootmgr -c -L LFS -l '\EFI\BOOT\BOOTLOONGARCH64.EFI' -d /dev/sda
-umount /sys/firmware/efi/efivars</userinput></screen>
-
-        Replace <filename>/dev/sda</filename> with the device node of the
-        hard drive where you are installing GRUB into.
+        and follow
+        <ulink url="&blfs-book;postlfs/grub-setup.html">the BLFS
+        instruction</ulink> to run the <command>grub-install</command>
+        command without the <parameter>--removable</parameter> option then.
       </para>
     </note>
 
