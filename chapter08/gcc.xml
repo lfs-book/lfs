@@ -40,20 +40,7 @@
 
   <sect2 role="installation">
     <title>Installation of GCC</title>
-<!--
-    <para>At first, fix an issue breaking
-    <filename class="libraryfile">libasan.a</filename> building this package
-    with Glibc-2.34 or later:</para>
 
-<screen><userinput remap="pre">sed -e '/static.*SIGSTKSZ/d' \
-    -e 's/return kAltStackSize/return SIGSTKSZ * 4/' \
-    -i libsanitizer/sanitizer_common/sanitizer_posix_libcdep.cpp</userinput></screen>
--->
-<!--
-    <para>First fix a problem with the latest version of glibc:</para>
-
-    <screen><userinput remap="pre">patch -Np1 -i ../&gcc-upstream-fixes-patch;</userinput></screen>
--->
     <para>On ARM64 hosts, set the default directory name for
     64-bit libraries to <quote>lib</quote>:</para>
 
@@ -72,6 +59,7 @@ cd       build</userinput></screen>
              --enable-languages=c,c++ \
              --enable-default-pie     \
              --enable-default-ssp     \
+             --enable-host-pie        \
              --disable-multilib       \
              --disable-bootstrap      \
              --disable-fixincludes    \
@@ -143,14 +131,22 @@ cd       build</userinput></screen>
       <para>In this section, the test suite for GCC is considered
       important, but it takes a long time. First-time builders are
       encouraged to run the test suite.  The time to run the tests can be
-      reduced significantly by adding -jx to the <command>make -k check</command> command below,
-      where x is the number of CPU cores on your system.</para>
+      reduced significantly by adding -jx to the <command>make -k check</command> 
+      command below, where x is the number of CPU cores on your system.</para>
     </important>
 
    <para>One set of tests in the GCC test suite is known to exhaust the default
    stack, so increase the stack size prior to running the tests:</para>
 
 <screen><userinput remap="test">ulimit -s 32768</userinput></screen>
+
+    <para>Now remove/fix several known test failures:</para>
+
+<screen><userinput remap="test">sed -e '/cpython/d'               -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp
+sed -e 's/no-pic /&amp;-no-pie /'     -i ../gcc/testsuite/gcc.target/i386/pr113689-1.c
+sed -e 's/300000/(1|300000)/'     -i ../libgomp/testsuite/libgomp.c-c++-common/pr109062.c
+sed -e 's/{ target nonpic } //' \
+    -e '/GOTPCREL/d'              -i ../gcc/testsuite/gcc.target/i386/fentryname3.c</userinput></screen>
 
     <para>Test the results as a non-privileged user, but do not stop at errors:</para>
 
@@ -167,33 +163,38 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <para>Results can be compared with those located at <ulink
     url="&test-results;"/> and
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
-
+<!--
     <para>
-    In gcc tests (out of over 185,000),
-    seven tests in the <filename class='directory'>analyzer</filename>
+    Eight gcc tests (out of over 185,000):
+    <!- - https://gcc.gnu.org/PR106375 - -><filename>pr56837.c</filename>
+    and seven tests in the <filename class='directory'>analyzer</filename>
     directory are known to fail.
 
-    <!-- https://gcc.gnu.org/PR109353 -->
+    <!- - https://gcc.gnu.org/PR109353 - ->
     One libstdc++ test (out of over 15000), <filename>copy.cc</filename>, is
     known to fail.
 
-    For g++, 22 tests (out of approximately 250,000): 14
+    For g++, 21 tests (out of approximately 250,000): 14
     <quote>AddressSanitizer*</quote>
-    tests, 7 <filename>interception-malloc-test-1.C</filename> tests,
-    and one test named <filename>contracts-tmpl-spec2.C</filename> are
+    tests and 7 <filename>interception-malloc-test-1.C</filename> tests, are
     known to fail.
 
-    On ARM64, many tests in the
+    Additionally, several tests in the
+    <filename class='directory'>vect</filename> directory are known to fail
+    if the hardware does not support AVX.</para>
+-->
+
+    <para>On ARM64, many tests in the
     <filename class='directory'>c-c++-common/hwasan</filename>
     directory are known to fail in both gcc and g++ tests<!-- why? -->,
     and many tests in the
     <!-- https://gcc.gnu.org/PR111124 -->
     <filename class='directory'>g++.dg/modules</filename>
-    directory are known to fail in g++ tests.
-    </para>
+    directory are known to fail in g++ tests.</para>
 
-    <para>A few unexpected failures cannot always be avoided. The GCC developers
-    are usually aware of these issues, but have not resolved them yet.
+    <para>A few unexpected failures cannot always be avoided. In some cases
+    test failures depend on the specific hardware of the system.<!--The GCC developers
+    are usually aware of these issues, but have not resolved them yet.-->
     Unless the test results are vastly different from those at the above URL,
     it is safe to continue.</para>
 
