@@ -43,14 +43,6 @@
   <sect2 role="installation">
     <title>Installation of Cross GCC</title>
 
-    <!-- https://gcc.gnu.org/r14-4674 -->
-    <para>At first, fix an issue producing illegal instructions in linked
-    executables and shared libraries with GCC &gcc-version; and
-    Binutils-2.42:</para>
-
-    <screen><userinput remap='pre'>sed -e '/ASM_OUTPUT_ALIGN_WITH_NOP/,+1d' \
-    -i gcc/config/loongarch/loongarch.h</userinput></screen>
-
     <para>GCC requires the GMP, MPFR and MPC packages. As these packages may
     not be included in your host distribution, they will be built with
     GCC.  Unpack each package into the GCC source directory and rename the
