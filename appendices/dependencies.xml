@@ -326,8 +326,8 @@
       <segmentedlist id="bison-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, Grep, M4, Make,
-          Perl, and Sed</seg>
+          <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Gettext, Glibc,
+          Grep, M4, Make, Perl, and Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2395,7 +2395,7 @@
       <segmentedlist id="ninja-testdeps">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg><ulink url="&blfs-book;general/cmake.html">cmake</ulink></seg>
         </seglistitem>
       </segmentedlist>
 

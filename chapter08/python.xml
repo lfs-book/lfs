@@ -90,10 +90,6 @@
     automatically re-run failed tests.  If a test failed but then passed
     when re-run, it should be considered as passed.</para>
 
-    <para>Two tests named <filename>test_xml_etree</filename> and
-    <filename>test_xml_etree_c</filename> are known to fail with expat-2.6.0
-    or newer.</para>
-
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>

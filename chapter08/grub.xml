@@ -52,12 +52,13 @@
         content of this page and try to figure out how to boot your system.
       </para>
       <para>
-        If your system firmware supports UEFI and you want a fully
-        functional GRUB, you can skip the content of this page,
-        and install GRUB with UEFI support (and its dependencies) following
-        <ulink url="&blfs-book;postlfs/grub-efi.html">the BLFS page</ulink>
-        (with <parameter>--target=x86_64</parameter> removed) at the end of
-        this chapter.
+        If your system has UEFI support and you wish to boot LFS with UEFI,
+        you need to install GRUB with UEFI support (and its dependencies) by
+        following the instructions on
+        <ulink url="&blfs-book;postlfs/grub-efi.html">the BLFS page</ulink>.
+        You may skip this package, or install this package and the BLFS
+        GRUB for UEFI package without conflict (the BLFS page provides
+        instructions for both cases).
       </para>
     </note>
 
