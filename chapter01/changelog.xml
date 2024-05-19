@@ -41,6 +41,18 @@
     -->
 
     <listitem>
+      <para>2024-05-13</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Synchronize coreutils i18n patch from Fedora
+          to fix a build failure on 32-bit x86 and an alarming compiler
+          warning on both 32-bit x86 and x86_64 with GCC 14.1 or
+          later.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2024-05-11</para>
       <itemizedlist>
         <listitem>
@@ -66,6 +78,24 @@
         <listitem>
           <para>[bdubbs] - Update to gcc-14.1.0. Fixes
           <ulink url='&lfs-ticket-root;5486'>#5486</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2024-05-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Add security fix to glibc. Fixes
+          <ulink url='&lfs-ticket-root;5481'>#5481</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.8.8. Fixes
+          <ulink url='&lfs-ticket-root;5480'>#5480</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to ncurses-6.5. Fixes
+          <ulink url='&lfs-ticket-root;5483'>#5483</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
