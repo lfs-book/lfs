@@ -154,8 +154,8 @@ cd       build</userinput></screen>
           <para>We are cross-compiling GCC, so it's impossible to build
           target libraries (<filename class="libraryfile">libgcc</filename>
           and <filename class="libraryfile">libstdc++</filename>) with the
-          previously compiled GCC binaries&mdash;those binaries won't run on the
-          host.  The GCC build system will attempt to use the host's
+          GCC binaries compiled in this pass&mdash;those binaries won't run
+          on the host.  The GCC build system will attempt to use the host's
           C and C++ compilers as a workaround by default.
           Building the GCC target libraries with a different
           version of GCC is not supported, so using the host's compilers may cause
