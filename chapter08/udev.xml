@@ -55,7 +55,7 @@
 
  <screen><userinput remap="pre">sed '/systemd-sysctl/s/^/#/' -i rules.d/99-systemd.rules.in</userinput></screen>
 
- <para>Next, fix compatibility with linux-6.9 and later:</para>
+ <para>Next, fix compatibility with API headers from linux-6.9 and later:</para>
 
  <screen><userinput remap="pre">sed -i '/DEVMEM_MAGIC 0/{n;n;a \
 /* cb12fd8e0dabb9a1c8aef55a6a41e2c255fcdf4b (6.8) */ \
