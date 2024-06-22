@@ -254,7 +254,7 @@ EOF</userinput></screen>
       /sys/class/rtc.</para>
 
       <para>For information on kernel module loading and udev, see
-      <xref linkend="module-loading"/>.</para>
+      <xref linkend="module-loading" role='.'/></para>
   </sect2>
 
   <sect2 id="ch-config-clock">
