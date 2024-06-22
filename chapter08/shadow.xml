@@ -242,7 +242,8 @@ useradd -D --gid 999</userinput></screen>
           unknown GID 999</computeroutput>,
           even though the account has been created correctly. That is why we
           created the group <systemitem class="groupname">users</systemitem>
-          with this group ID in <xref linkend='ch-tools-createfiles'/>.</para>
+          with this group ID in
+          <xref linkend='ch-tools-createfiles' role='.'/></para>
 
         </listitem>
       </varlistentry>

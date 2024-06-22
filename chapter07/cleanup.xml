@@ -91,7 +91,8 @@ find /usr/lib{,x}32 -name \*.la -delete</userinput></screen>
         make sure you have set <envar>LFS</envar>.
      </para>
      <para>
-        This has been discussed in <xref linkend='ch-partitioning-aboutlfs'/>.
+       This has been discussed in
+       <xref linkend='ch-partitioning-aboutlfs' role='.'/>
       </para>
     </important>
 
