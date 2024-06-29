@@ -78,6 +78,7 @@ cd       build</userinput></screen>
              --disable-werror                         \
              --enable-kernel=&min-kernel;                      \
              --enable-stack-protector=strong          \
+             --disable-nscd                           \
              --with-headers=/usr/include              \
              --enable-multi-arch                      \
              libc_cv_slibdir=/usr/lib</userinput></screen>
