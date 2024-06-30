@@ -288,7 +288,7 @@ CXX="$LFS_TGT-g++ -m32" \
       --build=$(../scripts/config.guess) \
       --enable-kernel=&min-kernel;                \
       --with-headers=$LFS/usr/include    \
-      --enable-multi-arch                \
+      --disable-nscd                     \
       --libdir=/usr/lib32                \
       --libexecdir=/usr/lib32            \
       libc_cv_slibdir=/usr/lib32</userinput></screen>
@@ -360,7 +360,7 @@ CXX="$LFS_TGT-g++ -mx32" \
       --build=$(../scripts/config.guess) \
       --enable-kernel=&min-kernel;                \
       --with-headers=$LFS/usr/include    \
-      --enable-multi-arch                \
+      --disable-nscd                     \
       --libdir=/usr/libx32               \
       --libexecdir=/usr/libx32           \
       libc_cv_slibdir=/usr/libx32</userinput></screen>
