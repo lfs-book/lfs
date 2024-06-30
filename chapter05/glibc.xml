@@ -99,20 +99,20 @@ cd       build</userinput></screen>
       libc_cv_slibdir=/usr/lib</userinput></screen>
 <!--
 <screen arch="default"><userinput remap="configure">../configure                             \
-      --prefix=/usr                      \
-      --host=$LFS_TGT                    \
-      --build=$(../scripts/config.guess) \
-      --enable-kernel=&min-kernel;               \
-      --with-headers=$LFS/usr/include    \
-      --disable-nscd                     \
+      - -prefix=/usr                      \
+      - -host=$LFS_TGT                    \
+      - -build=$(../scripts/config.guess) \
+      - -enable-kernel=&min-kernel;               \
+      - -with-headers=$LFS/usr/include    \
+      - -disable-nscd                     \
       libc_cv_slibdir=/usr/lib</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">../configure                             \
-      --prefix=/usr                      \
-      --host=$LFS_TGT                    \
-      --build=$(../scripts/config.guess) \
-      --enable-kernel=&min-kernel;                \
-      --with-headers=$LFS/usr/include    \
-      --disable-nscd                     \
+      - -prefix=/usr                      \
+      - -host=$LFS_TGT                    \
+      - -build=$(../scripts/config.guess) \
+      - -enable-kernel=&min-kernel;                \
+      - -with-headers=$LFS/usr/include    \
+      - -disable-nscd                     \
       libc_cv_slibdir=/usr/lib</userinput></screen>
 -->
 

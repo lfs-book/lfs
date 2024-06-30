@@ -76,18 +76,18 @@ cd       build</userinput></screen>
              libc_cv_slibdir=/usr/lib</userinput></screen>
 <!--
 <screen arch="default"><userinput remap="configure">../configure --prefix=/usr                            \
-             --disable-werror                         \
-             --enable-kernel=&min-kernel;                     \
-             --enable-stack-protector=strong          \
-             --disable-nscd                           \
+             - -disable-werror                         \
+             - -enable-kernel=&min-kernel;                     \
+             - -enable-stack-protector=strong          \
+             - -disable-nscd                           \
              libc_cv_slibdir=/usr/lib</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">../configure --prefix=/usr                            \
-             --disable-werror                         \
-             --enable-kernel=&min-kernel;                      \
-             --enable-stack-protector=strong          \
-             --disable-nscd                           \
-             --with-headers=/usr/include              \
-             --enable-multi-arch                      \
+             - -disable-werror                         \
+             - -enable-kernel=&min-kernel;                      \
+             - -enable-stack-protector=strong          \
+             - -disable-nscd                           \
+             - -with-headers=/usr/include              \
+             - -enable-multi-arch                      \
              libc_cv_slibdir=/usr/lib</userinput></screen>
 -->
     <variablelist>
