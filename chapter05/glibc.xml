@@ -89,6 +89,15 @@ cd       build</userinput></screen>
 
     <para>Next, prepare Glibc for compilation:</para>
 
+<screen><userinput remap="configure">../configure                             \
+      --prefix=/usr                      \
+      --host=$LFS_TGT                    \
+      --build=$(../scripts/config.guess) \
+      --enable-kernel=&min-kernel;               \
+      --with-headers=$LFS/usr/include    \
+      --disable-nscd                     \
+      libc_cv_slibdir=/usr/lib</userinput></screen>
+<!--
 <screen arch="default"><userinput remap="configure">../configure                             \
       --prefix=/usr                      \
       --host=$LFS_TGT                    \
@@ -103,8 +112,9 @@ cd       build</userinput></screen>
       --build=$(../scripts/config.guess) \
       --enable-kernel=&min-kernel;                \
       --with-headers=$LFS/usr/include    \
-      --enable-multi-arch                \
+      --disable-nscd                     \
       libc_cv_slibdir=/usr/lib</userinput></screen>
+-->
 
     <variablelist>
       <title>The meaning of the configure options:</title>
