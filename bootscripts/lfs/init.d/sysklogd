@@ -60,7 +60,6 @@ case "${1}" in
 
    status)
       statusproc /sbin/syslogd
-      statusproc klogd
       ;;
 
    *)
