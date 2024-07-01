@@ -121,7 +121,7 @@
 mv -v /etc/bash_completion.d/grub /usr/share/bash-completion/completions</userinput></screen>
 
   <para>Making your LFS system bootable with GRUB will be discussed in
-  <xref linkend="ch-bootable-grub"/>.</para>
+  <xref linkend="ch-bootable-grub" role='.'/></para>
 
   </sect2>
 

@@ -48,14 +48,6 @@
  <screen><userinput remap="pre">sed -i -e 's/GROUP="render"/GROUP="video"/' \
        -e 's/GROUP="sgx", //' rules.d/50-udev-default.rules.in</userinput></screen>
 
-    <!-- https://github.com/systemd/systemd/pull/30549 -->
-    <para>Now fix a security vulnerability in the DNSSEC verification of
-    <command>systemd-resolved</command> and a bug breaking running
-    <command>systemd-analyze verify</command> on an instantiated systemd
-    unit:</para>
-
-<screen><userinput remap='pre'>patch -Np1 -i ../&systemd-upstream-patch;</userinput></screen>
-
     <para>Prepare systemd for compilation:</para>
 
 <screen><userinput remap="configure">mkdir -p build
@@ -232,10 +224,11 @@ meson setup \
 <screen><userinput remap="test">echo 'NAME="Linux From Scratch"' &gt; /etc/os-release
 ninja test</userinput></screen>
 
-    <!-- This test needs /run/systemd/inaccessible/sock, which only exists
+    <!-- test-namespace needs /run/systemd/inaccessible/sock, which only exists
          after initializing the system with systemd.  -->
-    <para>One test named <literal>systemd:core / test-namespace</literal>
-    is known to fail in the LFS chroot environment.  Some other tests may
+    <para>Three tests: <literal>systemd:core / test-namespace</literal>,
+    <literal>test-chase</literal>, and <literal>test-systemd-tmpfiles</literal>,
+    are known to fail in the LFS chroot environment.  Some other tests may
     fail because they depend on various kernel configuration options.</para>
 
     <para>Install the package:</para>
