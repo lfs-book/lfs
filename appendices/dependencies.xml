@@ -326,8 +326,8 @@
       <segmentedlist id="bison-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Glibc, Grep, M4, Make,
-          Perl, and Sed</seg>
+          <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Gettext, Glibc,
+          Grep, M4, Make, Perl, and Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -935,7 +935,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Diffutils, Findutils, Gawk, GCC,
-          Gettext, Glibc, GMP, Grep, Libxcrypt, M4, Make, MPC, MPFR, Patch,
+          Gettext, Glibc, GMP, Grep, M4, Make, MPC, MPFR, Patch,
           Perl, Sed, Tar, Texinfo, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
@@ -1047,7 +1047,15 @@
       <segmentedlist id="gettext-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
-          <seg><ulink url='&blfs-book;general/libxml2.html'>libxml2</ulink></seg>
+          <seg>
+            <ulink url='&blfs-book;general/libunistring.html'>
+              libunistring
+            </ulink>
+            and
+            <ulink url='&blfs-book;general/libxml2.html'>
+              libxml2
+            </ulink>
+          </seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1566,7 +1574,9 @@
       <segmentedlist id="kbd-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg>
+            <ulink url="&blfs-book;postlfs/linux-pam.html">Linux-PAM</ulink>
+          </seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1877,7 +1887,7 @@
       <segmentedlist id="libxcrypt-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>GCC, Perl, Python, Shadow, and &systemd-udev;</seg>
+          <seg>Perl, Python, Shadow, and &systemd-udev;</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1964,6 +1974,44 @@
       </segmentedlist>
 
       <segmentedlist id="linux-api-headers-optdeps">
+        <segtitle>&external;</segtitle>
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+<!-- Begin LZ4 dependency info -->
+  <bridgehead renderas="sect2" id="lz4-dep">Lz4</bridgehead>
+
+      <segmentedlist id="lz4-depends">
+        <segtitle>&dependencies;</segtitle>
+        <seglistitem>
+          <seg>Bash, Binutils, Coreutils, GCC, Glibc, and Make</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="lz4-rundeps">
+        <segtitle>&runtime;</segtitle>
+        <seglistitem>
+          <seg>Glibc</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="lz4-testdeps">
+        <segtitle>&testsuites;</segtitle>
+        <seglistitem>
+          <seg>Python</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="lz4-before">
+        <segtitle>&before;</segtitle>
+        <seglistitem>
+          <seg>Zstd <phrase revision="systemd">and Systemd</phrase></seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="lz4-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>None</seg>
@@ -2101,7 +2149,7 @@
       <segmentedlist id="man-pages-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-         <seg>Bash, Coreutils, and Make</seg>
+         <seg>Bash, Coreutils, Make, and Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2347,7 +2395,7 @@
       <segmentedlist id="ninja-testdeps">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg><ulink url="&blfs-book;general/cmake.html">cmake</ulink></seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2470,7 +2518,7 @@
       <segmentedlist id="perl-testdeps">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
-          <seg>Iana-Etc, Less. and Procps-ng</seg>
+          <seg>Iana-Etc, Less, and Procps-ng</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2866,7 +2914,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
          <seg>Acl, Bash, Binutils, Coreutils, Diffutils, Gawk,
-         GCC, Glibc, Gperf, Grep, Jinja2, Libcap, Libxcrypt, Meson,
+         GCC, Glibc, Gperf, Grep, Jinja2, Libcap, Libxcrypt, Lz4, Meson,
          OpenSSL, Pkgconf, Sed, Util-linux, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
@@ -2932,7 +2980,6 @@
             <ulink url="&blfs-book;postlfs/linux-pam.html">Linux-PAM</ulink>,
             <ulink
               url="&blfs-book;general/python-modules.html#lxml">lxml</ulink>,
-            <ulink url="https://lz4.github.io/lz4/">LZ4</ulink>,
             <ulink url="&blfs-book;postlfs/make-ca.html">make-ca</ulink>,
             <ulink url="&blfs-book;postlfs/p11-kit.html">p11-kit</ulink>,
             <ulink url="&blfs-book;general/pcre2.html">PCRE2</ulink>,
@@ -3416,7 +3463,7 @@
       <segmentedlist id="zstd-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Binutils, Coreutils, GCC, Glibc, Gzip, Make, Xz, and Zlib</seg>
+          <seg>Binutils, Coreutils, GCC, Glibc, Gzip, Lz4, Make, Xz, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -3445,7 +3492,7 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-            <ulink url="https://lz4.github.io/lz4/">LZ4</ulink>
+            None
           </seg>
         </seglistitem>
       </segmentedlist>

@@ -76,9 +76,8 @@
       <listitem>
         <para>The operations in <xref linkend="ch-tools-lo"/> must be done
         before starting or continuing from
-        <xref linkend="chapter-building-system"/>.</para>
+        <xref linkend="chapter-building-system" role='.'/></para>
       </listitem>
-
     </itemizedlist>
   </sect2>
 </sect1>

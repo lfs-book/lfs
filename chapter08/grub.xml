@@ -43,10 +43,12 @@
     <note>
       <para>
         If your system has UEFI support and you wish to boot LFS with UEFI,
-        you can skip this package in LFS,
-        and install GRUB with UEFI support (and its dependencies) by following
-        the instructions on
+        you need to install GRUB with UEFI support (and its dependencies) by
+        following the instructions on
         <ulink url="&blfs-book;postlfs/grub-efi.html">the BLFS page</ulink>.
+        You may skip this package, or install this package and the BLFS
+        GRUB for UEFI package without conflict (the BLFS page provides
+        instructions for both cases).
       </para>
     </note>
 
@@ -109,7 +111,7 @@
 mv -v /etc/bash_completion.d/grub /usr/share/bash-completion/completions</userinput></screen>
 
   <para>Making your LFS system bootable with GRUB will be discussed in
-  <xref linkend="ch-bootable-grub"/>.</para>
+  <xref linkend="ch-bootable-grub" role='.'/></para>
 
   </sect2>
 

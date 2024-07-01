@@ -70,11 +70,18 @@
 <screen revision='sysv'><userinput remap="make">make</userinput></screen>
 <screen revision='systemd'><userinput remap="make">make src_w_LDADD='$(LDADD) -lsystemd'</userinput></screen>
 
-    <para> To run the test suite, run:</para>
+    <!-- To editors: "pmap {X,XX} with unreachable process" tests don't work
+         as root.  They may seem to pass due to some Tcl/Expect/DejaGNU
+         internal hazards with some "luck" though.  -->
+    <para>To run the test suite, run:</para>
 
-<screen><userinput remap="test">make check</userinput></screen>
+<screen><userinput remap="test">chown -R tester .
+su tester -c "PATH=$PATH make check"</userinput></screen>
 
-    <para>One test in the "ps" tests is known to fail.</para>
+    <para>One test named
+    <literal>ps with output flag bsdtime,cputime,etime,etimes</literal>
+    is known to fail if the host kernel is not built with
+    <literal>CONFIG_BSD_PROCESS_ACCT</literal> enabled.</para>
 
     <para>Install the package:</para>
 

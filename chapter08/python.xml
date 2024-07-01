@@ -78,11 +78,17 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Running the tests at this point is not recommended.  The
-    tests are known to hang indefinitely in the partial LFS environment.
-    If desired, the tests can be rerun at the end of this chapter, or
-    when Python 3 is reinstalled in BLFS.  To run the tests anyway,
-    issue <command>make test</command>.</para>
+    <para>Some tests are known to occasionally hang indefinitely.  So to test the
+    results, run the test suite but set a 2-minute time limit for each
+    test case:</para>
+
+<screen><userinput remap="test">make test TESTOPTS="--timeout 120"</userinput></screen>
+
+    <para>For a relatively slow system you may need to increase the time
+    limit and 1 SBU (measured when building Binutils pass 1 with one CPU
+    core) should be enough.  Some tests are flaky, so the test suite will
+    automatically re-run failed tests.  If a test failed but then passed
+    when re-run, it should be considered as passed.</para>
 
     <para>Install the package:</para>
 
