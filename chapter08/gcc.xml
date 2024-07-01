@@ -42,9 +42,10 @@
     <title>Installation of GCC</title>
 
     <para>For x86_64 target, set the default directory name for
-    64-bit libraries to <quote>lib</quote>.  The command is unnecessary,
-    but harmless for 32-bit x86.  If you are building for another target,
-    you may need to adjust the command for your target.</para>
+    64-bit libraries to <filename class='directory'>lib</filename>.  The
+    command is unnecessary, but harmless for 32-bit x86.  If you are
+    building for another target, you may need to adjust the command for
+    your target:</para>
 
 <screen><userinput remap="pre">sed -e '/m64=/s/lib64/lib/' \
     -i.orig gcc/config/i386/t-linux64</userinput></screen>
