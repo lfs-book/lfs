@@ -679,11 +679,11 @@
 <!--<!ENTITY systemd-url      "&anduin-sources;/systemd-&systemd-version;-&systemd-stable;.tar.xz">-->
 <!ENTITY systemd-md5      "46c30853682f8017df979c3d26b9c9dc">
 <!ENTITY systemd-home     "https://www.freedesktop.org/wiki/Software/systemd/">
-<!ENTITY systemd-man-version "256">
-<!ENTITY systemd-man-size "675 KB">
+<!ENTITY systemd-man-version "256.1">
+<!ENTITY systemd-man-size "676 KB">
 <!--<!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-version;-&systemd-stable;.tar.xz">-->
 <!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-man-version;.tar.xz">
-<!ENTITY systemd-man-md5  "dc1b3a86479f50740f6591b4a1fb2c2a">
+<!ENTITY systemd-man-md5  "cc246238b9d1c9c850bae45d85ff0843">
 <!ENTITY systemd-fin-du   "247 MB">
 <!ENTITY systemd-fin-sbu  "0.7 SBU">
 
