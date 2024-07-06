@@ -44,6 +44,16 @@
       <para>2024-07-01</para>
       <itemizedlist>
         <listitem>
+          <para>[bdubbs] - Update lfs-bootscripts to only output
+          escape sequences to a terminal. </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2024-07-01</para>
+      <itemizedlist>
+        <listitem>
           <para>[bdubbs] - Update to iana-etc-20240612. Addresses
           <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
         </listitem>

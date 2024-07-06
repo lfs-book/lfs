@@ -1,3 +1,7 @@
+2024-07-06 Bruce Dubbs <bdubbs@linuxfromscratch.org>
+   * Add logic to init-functions to only print escape sequences
+	  if stdin and stdout are connected to a terminal.
+
 2024-04-16 Bruce Dubbs <bdubbs@linuxfromscratch.org>
    * Remove blank output line generated in ifup script when bringing
 	  up wireless interface.
