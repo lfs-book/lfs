@@ -12,7 +12,7 @@
 
   <para>Finally, clean up some extra files left over from running tests:</para>
 
-<screen><userinput>rm -rf /tmp/*</userinput></screen>
+  <screen><userinput>rm -rf /tmp/{*,.*}</userinput></screen>
 
   <para>There are also several files in the /usr/lib and /usr/libexec
   directories with a file name extension of .la. These are "libtool archive"
