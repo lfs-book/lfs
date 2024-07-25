@@ -135,7 +135,7 @@ if ( $package == "iana-etc"   ) $dirpath = github("Mic92/iana-etc");
 if ( $package == "intltool"   ) $dirpath = "https://launchpad.net/intltool/trunk";
 if ( $package == "libffi"     ) $dirpath = github("libffi/libffi");
 if ( $package == "libxcrypt"  ) $dirpath = github("besser82/libxcrypt");
-if ( $package == "lz"         ) $dirpath = github("lz4/lz4");
+if ( $package == "lz4"        ) $dirpath = github("lz4/lz4");
 if ( $package == "meson"      ) $dirpath = github("mesonbuild/meson");
 if ( $package == "mpc"        ) $dirpath = "https://ftp.gnu.org/gnu/mpc";
 if ( $package == "mpfr"       ) $dirpath = "https://mpfr.loria.fr/mpfr-current";
@@ -267,7 +267,7 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
   if ( $package == "jinja" )
      return find_max( $lines, "/Jinja/", "/^.*Jinja2 ([\d\.]+).*$/" );
 
-  if ( $package == "lz" )
+  if ( $package == "lz4" )
      return find_max( $lines, "/tag_name/", '/^.*v([\d\.]+).*$/' );
 
   if ( $package == "openssl" )
@@ -346,6 +346,11 @@ function get_current()
       else if ( preg_match( "/gmp/", $file ) )
       {
         $pattern = "/\D*(\d.*[a-z]*)\.tar\D*/";
+      }
+
+      else if ( preg_match( "/lz4/", $file ) )
+      {
+        $pkg_pattern= "/(\D*4).*/";
       }
 
       else if ( preg_match( "/systemd-man-pages/", $file ) ) continue;
