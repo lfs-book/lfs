@@ -141,6 +141,7 @@ if ( $package == "mpc"        ) $dirpath = "https://ftp.gnu.org/gnu/mpc";
 if ( $package == "mpfr"       ) $dirpath = "https://mpfr.loria.fr/mpfr-current";
 if ( $package == "ncurses"    ) $dirpath = "https://invisible-mirror.net/archives/ncurses";
 if ( $package == "ninja"      ) $dirpath = github("ninja-build/ninja");
+if ( $package == "openssl"    ) $dirpath = github("openssl/openssl");
 if ( $package == "procps-ng"  ) $dirpath = "https://gitlab.com/procps-ng/procps/-/tags";
 if ( $package == "psmisc"     ) $dirpath = "https://gitlab.com/psmisc/psmisc/-/tags";
 if ( $package == "Python"     ) $dirpath = "https://www.python.org/downloads/source/";
@@ -271,7 +272,7 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
      return find_max( $lines, "/tag_name/", '/^.*v([\d\.]+).*$/' );
 
   if ( $package == "openssl" )
-     return find_max( $lines, "/openssl/", "/^.*openssl-([\d\.p]*\d.?).tar.*$/" );
+     return find_max( $lines, "/name.:/", "/^.*OpenSSL ([\d\.]+\d).*$/" );
 
   if ( $package == "Python" )
      return find_max( $lines, "/Python 3/", "/^.*Python (3[\d\.]*\d) .*$/" );
