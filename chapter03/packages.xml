@@ -714,7 +714,7 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Systemd Man Pages(&systemd-version;) - <token>&systemd-man-size;</token>:</term>
+      <term>Systemd Man Pages (&systemd-version;) - <token>&systemd-man-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&systemd-home;"/></para>
         <para>Download: <ulink url="&systemd-man-url;"/></para>

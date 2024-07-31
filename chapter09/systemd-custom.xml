@@ -305,7 +305,7 @@ EOF</userinput></screen>
         <para>
           <emphasis>Disable at build-time</emphasis>: You can disable
           lingering by default while building systemd by adding the switch
-          <parameter>-Ddefault-kill-user-processes=false</parameter> to the
+          <parameter>-D default-kill-user-processes=false</parameter> to the
           <command>meson</command> command for systemd. This completely
           disables the ability of systemd to kill user processes at session
           end.

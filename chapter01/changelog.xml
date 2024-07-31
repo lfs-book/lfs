@@ -41,6 +41,96 @@
     -->
 
     <listitem>
+      <para>2024-07-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20240701. Addresses
+          <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to vim-9.1.0580. Addresses
+          <ulink url='&lfs-ticket-root;4500'>#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to automake-1.17. Fixes
+          <ulink url='&lfs-ticket-root;5520'>#5520</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gdbm-1.24. Fixes
+          <ulink url='&lfs-ticket-root;5515'>#5515</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.9.9. Fixes
+          <ulink url='&lfs-ticket-root;5517'>#5517</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to less-661. Fixes
+          <ulink url='&lfs-ticket-root;5513'>#5513</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to meson-1.5.0. Fixes
+          <ulink url='&lfs-ticket-root;5519'>#5519</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to setuptools-70.3.0. Fixes
+          <ulink url='&lfs-ticket-root;5514'>#5514</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to util-linux-2.40.2. Fixes
+          <ulink url='&lfs-ticket-root;5516'>#5516</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2024-07-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update lfs-bootscripts to only output
+          escape sequences to a terminal. </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2024-07-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20240612. Addresses
+          <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bc-6.7.6. Fixes
+          <ulink url='&lfs-ticket-root;5506'>#5506</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-6.9.1. Fixes
+          <ulink url='&lfs-ticket-root;5507'>#5507</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.9.7. Fixes
+          <ulink url='&lfs-ticket-root;5508'>#5508</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to sysklogd-2.5.2. Fixes
+          <ulink url='&lfs-ticket-root;5509'>#5509</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to shadow-4.16.0. Fixes
+          <ulink url='&lfs-ticket-root;5510'>#5510</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to systemd-256.1. Fixes
+          <ulink url='&lfs-ticket-root;5511'>#5511</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to setuptools-70.1.1. Fixes
+          <ulink url='&lfs-ticket-root;5512'>#5512</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2024-06-15</para>
       <itemizedlist>
         <listitem>
@@ -69,7 +159,7 @@
         </listitem>
         <listitem>
           <para>[bdubbs] - Update to linux-6.9.4. Fixes
-          <ulink url='&lfs-ticket-root;5491'>#5505</ulink>.</para>
+          <ulink url='&lfs-ticket-root;5505'>#5505</ulink>.</para>
         </listitem>
         <listitem>
           <para>[bdubbs] - Update to findutils-4.10.0. Fixes
