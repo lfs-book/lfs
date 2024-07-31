@@ -59,10 +59,10 @@
   </sect2>
 
   <sect2 id="conf-sysvinit" role="configuration">
-  <title>Configuring Sysvinit</title>
+  <title>Configuring SysVinit</title>
 
   <indexterm zone="conf-sysvinit">
-    <primary sortas="a-Sysvinit">Sysvinit</primary>
+    <primary sortas="a-SysVinit">SysVinit</primary>
     <secondary>configuring</secondary>
   </indexterm>
 
