@@ -240,7 +240,7 @@
       <para>Systemd-&systemd-version;</para>
     </listitem>
     <listitem revision="sysv">
-      <para>SysVinit-&sysvinit-version;</para>
+      <para>Sysvinit-&sysvinit-version;</para>
     </listitem>
     <!--<listitem>
       <para>Tar-&tar-version;</para>
