@@ -558,12 +558,12 @@
 
         <para>This package provides an <application>init</application> program
         and several additional boot and system control capabilities as an
-        alternative to Sysvinit.  It is used by many Linux distributions.
+        alternative to SysVinit.  It is used by many Linux distributions.
         </para>
       </listitem>
 
       <listitem revision="sysv">
-        <para>Sysvinit</para>
+        <para>SysVinit</para>
 
         <para>This package provides the <application>init</application>
         program, the parent of all the other processes on a running Linux

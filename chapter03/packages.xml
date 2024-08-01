@@ -730,7 +730,7 @@
 
 
     <varlistentry revision="sysv">
-      <term>Sysvinit (&sysvinit-version;) - <token>&sysvinit-size;</token>:</term>
+      <term>SysVinit (&sysvinit-version;) - <token>&sysvinit-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&sysvinit-home;"/></para>
         <para>Download: <ulink url="&sysvinit-url;"/></para>
