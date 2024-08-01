@@ -218,10 +218,10 @@
 <!ENTITY gawk-fin-du "42 MB">
 <!ENTITY gawk-fin-sbu "0.1 SBU">
 
-<!ENTITY gcc-version "14.1.0">
-<!ENTITY gcc-size "90,104 KB">
+<!ENTITY gcc-version "14.2.0">
+<!ENTITY gcc-size "90,144 KB">
 <!ENTITY gcc-url "&gnu;gcc/gcc-&gcc-version;/gcc-&gcc-version;.tar.xz">
-<!ENTITY gcc-md5 "24195dca80ded5e0551b533f46a4481d">
+<!ENTITY gcc-md5 "2268420ba02dc01821960e274711bde0">
 <!ENTITY gcc-home "https://gcc.gnu.org/">
 <!ENTITY gcc-tmpp1-du "4.1 GB">
 <!ENTITY gcc-tmpp1-sbu "3.8 SBU">
@@ -647,10 +647,10 @@
 <!ENTITY sed-fin-du "30 MB">
 <!ENTITY sed-fin-sbu "0.3 SBU">
 
-<!ENTITY setuptools-version "71.1.0">
-<!ENTITY setuptools-size "2,366 KB">
+<!ENTITY setuptools-version "72.1.0">
+<!ENTITY setuptools-size "2,363 KB">
 <!ENTITY setuptools-url "&pypi-src;/s/setuptools/setuptools-&setuptools-version;.tar.gz">
-<!ENTITY setuptools-md5 "2d7f698adca86005a771f8709686d5e4">
+<!ENTITY setuptools-md5 "13f87f8e33bd9583b6f7675c01b406c5">
 <!ENTITY setuptools-home "&pypi-home;/setuptools/">
 <!ENTITY setuptools-fin-du "20 MB">
 <!ENTITY setuptools-fin-sbu "less than 0.1 SBU">
