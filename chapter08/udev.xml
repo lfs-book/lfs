@@ -66,15 +66,14 @@
 cd       build
 
 CFLAGS+=" -Wno-format-overflow" \
-meson setup \
-      --prefix=/usr                 \
-      --buildtype=release           \
-      -Dmode=release                \
-      -Ddev-kvm-mode=0660           \
-      -Dlink-udev-shared=false      \
-      -Dlogind=false                \
-      -Dvconsole=false              \
-      ..</userinput></screen>
+meson setup ..                  \
+      --prefix=/usr             \
+      --buildtype=release       \
+      -D mode=release           \
+      -D dev-kvm-mode=0660      \
+      -D link-udev-shared=false \
+      -D logind=false           \
+      -D vconsole=false</userinput></screen>
 
     <variablelist>
       <title>The meaning of the meson options:</title>
@@ -89,7 +88,7 @@ meson setup \
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>-Dmode=release</parameter></term>
+        <term><parameter>-D mode=release</parameter></term>
         <listitem>
           <para>Disable some features considered experimental by upstream.
           </para>
@@ -97,7 +96,7 @@ meson setup \
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>-Ddev-kvm-mode=0660</parameter></term>
+        <term><parameter>-D dev-kvm-mode=0660</parameter></term>
         <listitem>
           <para>The default udev rule would allow all users to access
           <filename class='devicefile'>/dev/kvm</filename>.  The editors
@@ -106,7 +105,7 @@ meson setup \
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>-Dlink-udev-shared=false</parameter></term>
+        <term><parameter>-D link-udev-shared=false</parameter></term>
         <listitem>
           <para>This option prevents udev from linking to the internal
           systemd shared library,
@@ -117,7 +116,7 @@ meson setup \
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>-Dlogind=false -Dvconsole=false</parameter></term>
+        <term><parameter>-D logind=false -D vconsole=false</parameter></term>
         <listitem>
           <para>These options prevent the generation of several udev rule
           files belonging to the other Systemd components that we won't

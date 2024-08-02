@@ -935,7 +935,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Diffutils, Findutils, Gawk, GCC,
-          Gettext, Glibc, GMP, Grep, Libxcrypt, M4, Make, MPC, MPFR, Patch,
+          Gettext, Glibc, GMP, Grep, M4, Make, MPC, MPFR, Patch,
           Perl, Sed, Tar, Texinfo, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
@@ -1887,7 +1887,7 @@
       <segmentedlist id="libxcrypt-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>GCC, Perl, Python, Shadow, and &systemd-udev;</seg>
+          <seg>Perl, Python, Shadow, and &systemd-udev;</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1934,9 +1934,11 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-            <ulink url="&blfs-book;general/cpio.html">cpio</ulink> and
+            <ulink url="&blfs-book;general/cpio.html">cpio</ulink>,
             <ulink url="&blfs-book;general/llvm.html">LLVM</ulink>
-            (with Clang)
+            (with Clang), and
+	    <ulink
+  url="&blfs-book;general/rust-bindgen.html">Rust-bindgen</ulink>
           </seg>
         </seglistitem>
       </segmentedlist>
@@ -3008,8 +3010,8 @@
         </seglistitem>
       </segmentedlist>
 
-<!-- Begin Sysvinit dependency info -->
-  <bridgehead renderas="sect2" id="sysvinit-dep" revision='sysv'>Sysvinit</bridgehead>
+<!-- Begin SysVinit dependency info -->
+  <bridgehead renderas="sect2" id="sysvinit-dep" revision='sysv'>SysVinit</bridgehead>
 
       <segmentedlist id="sysvinit-depends" revision='sysv'>
         <segtitle>&dependencies;</segtitle>
