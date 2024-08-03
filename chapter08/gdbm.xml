@@ -48,10 +48,6 @@
 
 <screen><userinput remap="pre">sed -r -i '/^char.*parseopt_program_(doc|args)/d' src/parseopt.c</userinput></screen>
 -->
-    &update-config-text;
-
-<screen><userinput remap="pre">tar -C build-aux &update-config-arg;</userinput></screen>
-
     <para>Prepare GDBM for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr    \
