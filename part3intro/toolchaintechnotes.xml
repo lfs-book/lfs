@@ -192,9 +192,9 @@
       sure-fire way to determine the name of the dynamic linker is to inspect a
       random binary from the host system by running: <userinput>readelf -l
       &lt;name of binary&gt; | grep interpreter</userinput> and noting the
-      output. The authoritative reference covering all platforms is in the
-      <filename>shlib-versions</filename> file in the root of the glibc source
-      tree.</para>
+      output. The authoritative reference covering all platforms is in
+      <ulink url='https://sourceware.org/glibc/wiki/ABIList'>a Glibc wiki
+      page</ulink>.</para>
     </note>
 
     <para>In order to fake a cross-compilation in LFS, the name of the host triplet
