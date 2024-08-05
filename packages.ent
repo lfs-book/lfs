@@ -47,10 +47,10 @@
 <!ENTITY automake-fin-du "115 MB">
 <!ENTITY automake-fin-sbu "less than 0.1 SBU (about 1.6 SBU with tests)">
 
-<!ENTITY bash-version "5.2.21">
-<!ENTITY bash-size "10,696 KB">
+<!ENTITY bash-version "5.2.32">
+<!ENTITY bash-size "10,697 KB">
 <!ENTITY bash-url "&gnu;bash/bash-&bash-version;.tar.gz">
-<!ENTITY bash-md5 "ad5b38410e3bf0e9bcc20e2765f5e3f9">
+<!ENTITY bash-md5 "f204835b2e06c06e37b5ad776ff907f4">
 <!ENTITY bash-home "&gnu-software;bash/">
 <!ENTITY bash-tmp-du "67 MB">
 <!ENTITY bash-tmp-sbu "0.2 SBU">
@@ -65,10 +65,10 @@
 <!ENTITY bc-fin-du "7.8 MB">
 <!ENTITY bc-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY binutils-version "2.42">
-<!ENTITY binutils-size "26,922 KB">
+<!ENTITY binutils-version "2.43">
+<!ENTITY binutils-size "27,516 KB">
 <!ENTITY binutils-url "https://sourceware.org/pub/binutils/releases/binutils-&binutils-version;.tar.xz">
-<!ENTITY binutils-md5 "a075178a9646551379bfb64040487715">
+<!ENTITY binutils-md5 "a54bb52cd75555416f316fbbe885925a">
 <!ENTITY binutils-home "&gnu-software;binutils/">
 <!ENTITY binutils-tmpp1-du "663 MB">
 <!ENTITY binutils-tmpp1-sbu "1 SBU">
@@ -317,10 +317,10 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.3 SBU">
 
-<!ENTITY iana-etc-version "20240723">
+<!ENTITY iana-etc-version "20240801">
 <!ENTITY iana-etc-size "590 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "0592f2c2051a9eac7611d5067113ef3d">
+<!ENTITY iana-etc-md5 "ff9aeab0f9978975c6ee0b966d6988d6">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -431,12 +431,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "10">
-<!ENTITY linux-patch-version "2">
+<!ENTITY linux-patch-version "3">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "141,756 KB">
+<!ENTITY linux-size "141,734 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "519d1120e7715120ebbe042fddccf67f">
+<!ENTITY linux-md5 "669cfdae956b047b98d24b6582a3ca4b">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -618,11 +618,11 @@
 <!ENTITY python-docs-md5 "cca155c92f53882cf45a69364315640d">
 <!ENTITY python-docs-size "8,258 KB">
 
-<!ENTITY readline-version "8.2">
+<!ENTITY readline-version "8.2.13">
 <!ENTITY readline-soversion "8.2"><!-- used for stripping -->
-<!ENTITY readline-size "2,973 KB">
+<!ENTITY readline-size "2,974 KB">
 <!ENTITY readline-url "&gnu;readline/readline-&readline-version;.tar.gz">
-<!ENTITY readline-md5 "4aa1b31be779e6b84f9a96cb66bc50f6">
+<!ENTITY readline-md5 "05080bf3801e6874bb115cd6700b708f">
 <!ENTITY readline-home "https://tiswww.case.edu/php/chet/readline/rltop.html">
 <!ENTITY readline-fin-du "16 MB">
 <!ENTITY readline-fin-sbu "less than 0.1 SBU">
@@ -744,10 +744,10 @@
 <!ENTITY util-linux-fin-du "313 MB">
 <!ENTITY util-linux-fin-sbu "0.5 SBU">
 
-<!ENTITY vim-version "9.1.0580">
+<!ENTITY vim-version "9.1.0660">
 <!-- <!ENTITY vim-majmin "90"> -->
 <!ENTITY vim-docdir "vim/vim91">
-<!ENTITY vim-size "17,568 KB">
+<!ENTITY vim-size "17,629 KB">
 <!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">
 <!-- N.B. LFS 9.0 uses
      https://github.com/vim/vim/archive/v8.1.1846/vim-8.1.1846.tar.gz
@@ -761,15 +761,15 @@
      example, https://github.com/vim/vim/tags?after=v8.1.1847 will show
      us v8.1.1846. -->
 <!--<!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.gz">-->
-<!ENTITY vim-md5 "3e871c0773a6c2a491d3d730475b5698">
+<!ENTITY vim-md5 "c512a99b3704f193be1a181cc644b2b2">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "236 MB">
 <!ENTITY vim-fin-sbu "2.5 SBU">
 
-<!ENTITY wheel-version "0.43.0">
-<!ENTITY wheel-size "97 KB">
+<!ENTITY wheel-version "0.44.0">
+<!ENTITY wheel-size "99 KB">
 <!ENTITY wheel-url "&pypi-src;/w/wheel/wheel-&wheel-version;.tar.gz">
-<!ENTITY wheel-md5 "387af15d51367a19d834d6db413547d0">
+<!ENTITY wheel-md5 "440ff4fe51579b7ed16f02af8f8d9494">
 <!ENTITY wheel-home "&pypi-home;/wheel/">
 <!ENTITY wheel-fin-du "1.5 MB">
 <!ENTITY wheel-fin-sbu "less than 0.1 SBU">
