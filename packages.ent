@@ -581,7 +581,7 @@
 <!ENTITY pkgconf-size "305 KB">
 <!ENTITY pkgconf-url "https://distfiles.ariadne.space/pkgconf/pkgconf-&pkgconf-version;.tar.xz">
 <!ENTITY pkgconf-md5 "00e309a3bf0909030a4fc701389db2b9">
-<!ENTITY pkgconf-home "http://pkgconf.org/">
+<!ENTITY pkgconf-home "https://github.com/pkgconf/pkgconf">
 <!ENTITY pkgconf-fin-du "4.6 MB">
 <!ENTITY pkgconf-fin-sbu "less than 0.1 SBU">
 
