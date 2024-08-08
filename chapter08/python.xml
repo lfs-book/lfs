@@ -90,6 +90,13 @@
     automatically re-run failed tests.  If a test failed but then passed
     when re-run, it should be considered as passed.</para>
 
+    <!-- https://github.com/python/cpython/pull/120227
+         The typical page size of LoongArch Linux is 16 KiB so this issu
+         can be triggered.  -->
+    <para>One test named <literal>test.test_asyncio.test_sendfile</literal>
+    is known to fail depending on the version and configuration of the host
+    kernel.</para>
+
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
