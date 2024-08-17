@@ -65,10 +65,10 @@
 <!ENTITY bc-fin-du "7.8 MB">
 <!ENTITY bc-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY binutils-version "2.43">
-<!ENTITY binutils-size "27,516 KB">
+<!ENTITY binutils-version "2.43.1">
+<!ENTITY binutils-size "27,514 KB">
 <!ENTITY binutils-url "https://sourceware.org/pub/binutils/releases/binutils-&binutils-version;.tar.xz">
-<!ENTITY binutils-md5 "a54bb52cd75555416f316fbbe885925a">
+<!ENTITY binutils-md5 "9202d02925c30969d1917e4bad5a2320">
 <!ENTITY binutils-home "&gnu-software;binutils/">
 <!ENTITY binutils-tmpp1-du "677 MB">
 <!ENTITY binutils-tmpp1-sbu "1 SBU">
@@ -365,10 +365,10 @@
 <!ENTITY kbd-fin-du "34 MB">
 <!ENTITY kbd-fin-sbu "0.1 SBU">
 
-<!ENTITY kmod-version "32">
-<!ENTITY kmod-size "500 KB">
+<!ENTITY kmod-version "33">
+<!ENTITY kmod-size "503 KB">
 <!ENTITY kmod-url "&kernel;linux/utils/kernel/kmod/kmod-&kmod-version;.tar.xz">
-<!ENTITY kmod-md5 "1046fda48766fae905f83150d12eec78">
+<!ENTITY kmod-md5 "c451c4aa61521adbe8af147f498046f8">
 <!ENTITY kmod-home "https://github.com/kmod-project/kmod">
 <!ENTITY kmod-fin-du "11 MB">
 <!ENTITY kmod-fin-sbu "less than 0.1 SBU">
@@ -431,12 +431,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "10">
-<!ENTITY linux-patch-version "4">
+<!ENTITY linux-patch-version "5">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "141,715 KB">
+<!ENTITY linux-size "141,739 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "c6188d7457b3c5e0443ba20e57654c97">
+<!ENTITY linux-md5 "276ef1f11ed3713ec5d6f506ff55ac12">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -637,10 +637,10 @@
 <!ENTITY sed-fin-du "30 MB">
 <!ENTITY sed-fin-sbu "0.3 SBU">
 
-<!ENTITY setuptools-version "72.1.0">
+<!ENTITY setuptools-version "72.2.0">
 <!ENTITY setuptools-size "2,363 KB">
 <!ENTITY setuptools-url "&pypi-src;/s/setuptools/setuptools-&setuptools-version;.tar.gz">
-<!ENTITY setuptools-md5 "13f87f8e33bd9583b6f7675c01b406c5">
+<!ENTITY setuptools-md5 "2e0ffd0f6fc632a11442b79d9b1c68bd">
 <!ENTITY setuptools-home "&pypi-home;/setuptools/">
 <!ENTITY setuptools-fin-du "35 MB">
 <!ENTITY setuptools-fin-sbu "less than 0.1 SBU">

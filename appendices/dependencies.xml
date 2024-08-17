@@ -1615,7 +1615,9 @@
       <segmentedlist id="kmod-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg>
+            <ulink url="https://git.sr.ht/~sircmpwn/scdoc/">scdoc</ulink> (for man pages)
+          </seg>
         </seglistitem>
       </segmentedlist>
 

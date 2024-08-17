@@ -43,12 +43,13 @@
 
     <para>Prepare Kmod for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr          \
-            --sysconfdir=/etc      \
-            --with-openssl         \
-            --with-xz              \
-            --with-zstd            \
-            --with-zlib</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr     \
+            --sysconfdir=/etc \
+            --with-openssl    \
+            --with-xz         \
+            --with-zstd       \
+            --with-zlib       \
+            --disable-manpages</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -71,6 +72,16 @@
         </term>
         <listitem>
           <para>These options enable Kmod to handle compressed kernel modules.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+          <parameter>--disable-manpages</parameter>
+        </term>
+        <listitem>
+          <para>This option disables generating the manpages which
+          requires an external program.</para>
         </listitem>
       </varlistentry>
 
