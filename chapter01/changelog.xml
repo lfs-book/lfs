@@ -41,6 +41,28 @@
     -->
 
     <listitem>
+      <para>2024-08-17</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to setuptools-72.2.0. Fixes
+          <ulink url='&lfs-ticket-root;5542'>#5542</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to kmod-33. Fixes
+          <ulink url='&lfs-ticket-root;5540'>#5540</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to binutils-2.43.1. Fixes
+          <ulink url='&lfs-ticket-root;5543'>#5543</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.10.5. Fixes
+          <ulink url='&lfs-ticket-root;5541'>#5541</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2024-08-15</para>
       <itemizedlist>
         <listitem>
