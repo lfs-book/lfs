@@ -26,7 +26,7 @@
       </listitem>
     </varlistentry>
 -->
-
+<!--
     <varlistentry>
       <term>Bash Upstream Fixes Patch - <token>&bash-upstream-fixes-patch-size;</token>:</term>
       <listitem>
@@ -34,7 +34,7 @@
         <para>MD5 sum: <literal>&bash-upstream-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+-->
 <!--
     <varlistentry>
       <term>Binutils LTO Fix Patch - <token>&binutils-lto-patch-size;</token>:</term>
@@ -127,6 +127,7 @@
       </listitem>
     </varlistentry>
 -->
+<!--
     <varlistentry>
       <term>Readline Upstream Fix Patch - <token>&readline-fixes-patch-size;</token>:</term>
       <listitem>
@@ -134,7 +135,7 @@
         <para>MD5 sum: <literal>&readline-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+-->
     <varlistentry revision="sysv">
       <term>SysVinit Consolidated Patch - <token>&sysvinit-consolidated-patch-size;</token>:</term>
       <listitem>

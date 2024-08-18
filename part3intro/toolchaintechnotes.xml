@@ -192,9 +192,9 @@
       sure-fire way to determine the name of the dynamic linker is to inspect a
       random binary from the host system by running: <userinput>readelf -l
       &lt;name of binary&gt; | grep interpreter</userinput> and noting the
-      output. The authoritative reference covering all platforms is in the
-      <filename>shlib-versions</filename> file in the root of the glibc source
-      tree.</para>
+      output. The authoritative reference covering all platforms is in
+      <ulink url='https://sourceware.org/glibc/wiki/ABIList'>a Glibc wiki
+      page</ulink>.</para>
     </note>
 
     <para>In order to fake a cross-compilation in LFS, the name of the host triplet
@@ -359,20 +359,17 @@ checking what linker to use... /mnt/lfs/tools/i686-lfs-linux-gnu/bin/ld</compute
 
     <para>Next comes glibc. The most important
     considerations for building glibc are the compiler, binary tools, and
-    kernel headers. The compiler is generally not an issue since glibc will
-    always use the compiler relating to the <parameter>--host</parameter>
+    kernel headers. The compiler and binary tools are generally not an issue
+    since glibc will always those relating to the <parameter>--host</parameter>
     parameter passed to its configure script; e.g., in our case, the compiler
-    will be <command>$LFS_TGT-gcc</command>. The binary tools and kernel
-    headers can be a bit more complicated. Therefore, we take no risks and use
-    the available configure switches to enforce the correct selections. After
+    will be <command>$LFS_TGT-gcc</command> and the <command>readelf</command>
+    tool will be <command>$LFS_TGT-readelf</command>. The kernel headers can
+    be a bit more complicated. Therefore, we take no risks and use
+    the available configure switch to enforce the correct selection. After
     the run of <command>configure</command>, check the contents of the
     <filename>config.make</filename> file in the <filename
     class="directory">build</filename> directory for all important details.
-    Note the use of <parameter>CC="$LFS_TGT-gcc"</parameter> (with
-    <envar>$LFS_TGT</envar> expanded) to control which binary tools are used
-    and the use of the <parameter>-nostdinc</parameter> and
-    <parameter>-isystem</parameter> flags to control the compiler's include
-    search path. These items highlight an important aspect of the glibc
+    These items highlight an important aspect of the glibc
     package&mdash;it is very self-sufficient in terms of its build machinery,
     and generally does not rely on toolchain defaults.</para>
 
