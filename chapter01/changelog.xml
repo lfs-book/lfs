@@ -44,6 +44,9 @@
       <para>2024-08-17</para>
       <itemizedlist>
         <listitem>
+          <para>[bdubbs] - LFS-12.2-rc1 released.</para>
+        </listitem>
+        <listitem>
           <para>[bdubbs] - Update to setuptools-72.2.0. Fixes
           <ulink url='&lfs-ticket-root;5542'>#5542</ulink>.</para>
         </listitem>
