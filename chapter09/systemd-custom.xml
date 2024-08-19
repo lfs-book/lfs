@@ -102,7 +102,7 @@ EOF</userinput></screen>
 
 <screen role="nodump">q /tmp 1777 root root 10d</screen>
 
-      The type field, q, discusses creating a subvolume with quotas which
+      The type field, q, indicates the creation of a subvolume with quotas which
       is really only applicable to btrfs filesystems.  It references type v
       which in turn references type d (directory). This then creates the
       specified directory if it is not present and adjusts the permissions
