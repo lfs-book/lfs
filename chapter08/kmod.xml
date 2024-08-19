@@ -80,7 +80,7 @@
           <parameter>--disable-manpages</parameter>
         </term>
         <listitem>
-          <para>This option disables generating the manpages which
+          <para>This option disables generating the man pages which
           requires an external program.</para>
         </listitem>
       </varlistentry>
