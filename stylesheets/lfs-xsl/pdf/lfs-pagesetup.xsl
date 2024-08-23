@@ -176,7 +176,7 @@
   </xsl:template>
 
     <!-- chapter title:
-           Small font size and left alignament. -->
+           Small font size and left alignment. -->
     <!-- The original template is in {docbook-xsl}/fo/titlepage.templates.xsl -->
   <xsl:template match="title" mode="chapter.titlepage.recto.auto.mode">
     <fo:block xsl:use-attribute-sets="chapter.titlepage.recto.style"

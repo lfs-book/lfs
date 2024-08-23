@@ -2,7 +2,7 @@
 
 <!-- Notes:
      For empty *-home entities use " " not ""
-     Packages sizes allways in KB
+     Packages sizes always in KB
      Allowed deviation in SBUs : 10%
      Allowed deviation in disk usage : 2%
 
