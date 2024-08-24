@@ -135,7 +135,7 @@ cd       build</userinput></screen>
         <listitem>
           <para>Those switches allow GCC to compile programs with
            some hardening security features (more information on those in
-           the <xref linkend="pie-ssp-info"/> in chapter 8) by default. The
+           the <xref linkend="pie-ssp-info"/> in chapter 8) by default. They
            are not strictly needed at this stage, since the compiler will
            only produce temporary executables. But it is cleaner to have the
            temporary packages be as close as possible to the final ones.
