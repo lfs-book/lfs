@@ -187,7 +187,8 @@ insmod part_gpt
 insmod ext2
 set root=(hd0,2)
 
-insmod all_video
+insmod efi_gop
+insmod efi_uga
 
 menuentry "GNU/Linux, Linux &linux-version;-lfs-&version;" {
         linux   /boot/vmlinuz-&linux-version;-lfs-&version; root=/dev/sda2 ro
