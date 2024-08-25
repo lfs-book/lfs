@@ -36,6 +36,32 @@
   to give an estimate of how long it might take to install a package, but the
   numbers can vary by as much as dozens of minutes in some cases.</para>
 
+  <para>Before measuring the build time of any package (no matter Binutils
+  pass 1 or a package of which the SBU is being measured), make sure a
+  system power profile suitable to make the system running with the
+  maximum performance (and the maximum power consumption) is selected.  Or
+  the measured SBU value may be severly inaccurate because the system may be
+  operated differently building Binutils pass 1 and the other package.
+  Be aware that a significant inaccuracy can still show up even if the same
+  profile (except one maximizing the performance) is used for both packages:
+  the system may respond slower for <quote>saving the power</quote> building
+  Binutils pass 1, because the system load seems only about 25% of the load
+  building the other package (with <parameter>-j4</parameter>).</para>
+
+  <para>On most distros the power profile can be managed with either
+  <command>power-profiles-daemon</command> or <command>tuned</command>.
+  If the distro runs <command>power-profiles-daemon</command>, issue the
+  <command>powerprofilesctl set performance</command> command to select
+  the <literal>performance</literal> profile.  If the distro runs
+  <command>tuned</command>, issue the <command>tuned-adm profile
+  throughput-performance</command> command to select the
+  <literal>throughput-performance</literal> profile.</para>
+
+  <para>Even if you are not measuring the SBU values, it's still better to
+  select the power profile for maximum performance before building LFS, as
+  doing so can (obviously) make the system faster to build LFS
+  packages.</para>
+
   <note>
     <para>When multiple processors are used in this way, the SBU units in the
     book will vary even more than they normally would.  In some cases, the make
@@ -47,7 +73,6 @@
     <para>The times presented here are based upon using four cores (-j4). The
     times in Chapter 8 also include the time to run the regression tests for
     the package unless specified otherwise.</para>
-
   </note>
 
 </sect1>
