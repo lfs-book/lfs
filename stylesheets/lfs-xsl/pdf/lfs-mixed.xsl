@@ -5,7 +5,7 @@
                 version="1.0">
 
   <!-- This stylesheet contains misc params, attribute sets and templates
-       for output formating.
+       for output formatting.
        This file is for that templates that don't fit in other files. -->
 
     <!-- What space do you want between normal paragraphs. -->
