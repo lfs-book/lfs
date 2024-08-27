@@ -39,7 +39,7 @@
   <para>On some newer systems, the motherboard is capable of contolling 
   the system clock speed. This can be controlled with a command such as
   <command>powerprofilesctl</command>. This is not available in LFS, but 
-  may be available on the host system. After LFS is complete, it can be 
+  may be available on the host distro. After LFS is complete, it can be
   added to a system with the procedures at the
   <ulink url='&blfs-book;sysutils/power-profiles-daemon.html'>
   BLFS power-profiles-daemon</ulink> page.
@@ -55,21 +55,16 @@
   Be aware that a significant inaccuracy can still show up even if the same
   profile is used for both packages because the system may respond slower if
   the system is idle when starting the build procedure. Setting the power
-  profile to "performance" will minimize this problem.</para>
+  profile to <quote>performance</quote> will minimize this problem.  And
+  obviously doing so will also make the system build LFS faster.</para>
 
-  <para>On most distros the power profile can be managed with either
-  <command>power-profiles-daemon</command> or <command>tuned</command>.
-  If the distro runs <command>power-profiles-daemon</command>, issue the
+  <para>If <command>powerprofilesctl</command> is available, issue the
   <command>powerprofilesctl set performance</command> command to select
-  the <literal>performance</literal> profile.  If the distro runs
-  <command>tuned</command>, issue the <command>tuned-adm profile
-  throughput-performance</command> command to select the
-  <literal>throughput-performance</literal> profile.</para>
-
-  <para>Even if you are not measuring the SBU values, it's still better to
-  select the power profile for maximum performance before building LFS, as
-  doing so can (obviously) make the system faster to build LFS
-  packages.</para>
+  the <literal>performance</literal> profile.  Some distros provides the
+  <command>tuned-adm</command> command for managing the profiles instead of
+  <command>powerprofilesctl</command>, on these distros issue the
+  <command>tuned-adm profile throughput-performance</command> command to
+  select the <literal>throughput-performance</literal> profile.</para>
 
   <note>
     <para>When multiple processors are used in this way, the SBU units in the
