@@ -135,10 +135,16 @@ cd       build</userinput></screen>
       command below, where x is the number of CPU cores on your system.</para>
     </important>
 
-   <para>One set of tests in the GCC test suite is known to exhaust the default
-   stack, so increase the stack size prior to running the tests:</para>
+    <para>GCC may need more stack space compiling some extremely complex
+    code patterns.  As a precaution for the host distros with a tight stack
+    limit, explicitly set the stack size hard limit to infinite.
+    On most host distros (and the final LFS system) the hard limit is
+    infinite by default, but there's no harm to set it explicitly anyway.
+    It's not needed to change the stack size soft limit because GCC will
+    automatically set it to an appropriate value, as long as the value does
+    not exceed the hard limit:</para>
 
-<screen><userinput remap="test">ulimit -s 32768</userinput></screen>
+<screen><userinput remap="test">ulimit -s -H unlimited</userinput></screen>
 
     <para>Now remove/fix several known test failures:</para>
 
