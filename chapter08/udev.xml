@@ -65,7 +65,6 @@
 <screen><userinput remap="configure">mkdir -p build
 cd       build
 
-CFLAGS+=" -Wno-format-overflow" \
 meson setup ..                  \
       --prefix=/usr             \
       --buildtype=release       \
