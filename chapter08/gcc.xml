@@ -137,7 +137,7 @@ cd       build</userinput></screen>
       reduced significantly by adding -jx to the <command>make -k check</command> 
       command below, where x is the number of CPU cores on your system.</para>
     </important>
-
+<!-- [cannot affect cross build]
     <para>GCC may need more stack space compiling some extremely complex
     code patterns.  As a precaution for the host distros with a tight stack
     limit, explicitly set the stack size hard limit to infinite.
@@ -148,7 +148,7 @@ cd       build</userinput></screen>
     not exceed the hard limit:</para>
 
 <screen><userinput remap="test">ulimit -s -H unlimited</userinput></screen>
-
+-->
     <para>Now remove/fix several known test failures:</para>
 
 <screen><userinput remap="test">sed -e '/cpython/d'               -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp
