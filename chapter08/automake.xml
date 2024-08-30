@@ -62,9 +62,6 @@
     <para>Replace <replaceable>$((...))</replaceable> with the number of
     logical cores you want to use if you don't want to use all.</para>
 
-    <para>Out of 2926 tests, 52 are known to fail due to incompatibilities in the 
-    test scripts with gcc-14.1 or later.</para>
-
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>

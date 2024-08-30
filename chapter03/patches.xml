@@ -26,7 +26,7 @@
       </listitem>
     </varlistentry>
 -->
-
+<!--
     <varlistentry>
       <term>Bash Upstream Fixes Patch - <token>&bash-upstream-fixes-patch-size;</token>:</term>
       <listitem>
@@ -34,7 +34,7 @@
         <para>MD5 sum: <literal>&bash-upstream-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+-->
 <!--
     <varlistentry>
       <term>Binutils LTO Fix Patch - <token>&binutils-lto-patch-size;</token>:</term>
@@ -77,6 +77,7 @@
       </listitem>
     </varlistentry>
 -->
+<!--
     <varlistentry>
       <term>Glibc Upstream Fix Patch - <token>&glibc-upstream-patch-size;</token>:</term>
       <listitem>
@@ -84,7 +85,7 @@
         <para>MD5 sum: <literal>&glibc-upstream-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+-->
     <varlistentry>
       <term>Glibc FHS Patch - <token>&glibc-fhs-patch-size;</token>:</term>
       <listitem>
@@ -126,6 +127,7 @@
       </listitem>
     </varlistentry>
 -->
+<!--
     <varlistentry>
       <term>Readline Upstream Fix Patch - <token>&readline-fixes-patch-size;</token>:</term>
       <listitem>
@@ -133,9 +135,9 @@
         <para>MD5 sum: <literal>&readline-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+-->
     <varlistentry revision="sysv">
-      <term>Sysvinit Consolidated Patch - <token>&sysvinit-consolidated-patch-size;</token>:</term>
+      <term>SysVinit Consolidated Patch - <token>&sysvinit-consolidated-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="&patches-root;&sysvinit-consolidated-patch;"/></para>
         <para>MD5 sum: <literal>&sysvinit-consolidated-patch-md5;</literal></para>

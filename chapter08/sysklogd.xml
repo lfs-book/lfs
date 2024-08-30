@@ -41,11 +41,12 @@
   <sect2 role="installation">
     <title>Installation of Sysklogd</title>
 
-    <para>First, fix a problem that causes a segmentation fault in klogd
-    under some conditions, and fix an obsolete program construct:</para>
+    <para>Prepare the package for compilation:</para>
 
-<screen><userinput remap="pre">sed -i '/Error loading kernel symbols/{n;n;d}' ksym_mod.c
-sed -i 's/union wait/int/' syslogd.c</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr      \
+            --sysconfdir=/etc  \
+            --runstatedir=/run \
+            --without-logger</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -85,6 +86,9 @@ mail.* -/var/log/mail.log
 user.* -/var/log/user.log
 *.emerg *
 
+# Do not open any internet ports.
+secure_mode 2
+
 # End /etc/syslog.conf</literal>
 EOF</userinput></screen>
 
@@ -94,10 +98,10 @@ EOF</userinput></screen>
     <title>Contents of Sysklogd</title>
 
     <segmentedlist>
-      <segtitle>Installed programs</segtitle>
+      <segtitle>Installed program</segtitle>
 
       <seglistitem>
-        <seg>klogd and syslogd</seg>
+        <seg>syslogd</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -105,16 +109,6 @@ EOF</userinput></screen>
       <bridgehead renderas="sect3">Short Descriptions</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
-
-      <varlistentry id="klogd">
-        <term><command>klogd</command></term>
-        <listitem>
-          <para>A system daemon for intercepting and logging kernel messages</para>
-          <indexterm zone="ch-system-sysklogd klogd">
-            <primary sortas="b-klogd">klogd</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
 
       <varlistentry id="syslogd">
         <term><command>syslogd</command></term>
