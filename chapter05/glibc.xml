@@ -47,11 +47,11 @@
     for x86_64, create a compatibility symbolic link required for proper
     operation of the dynamic library loader:</para>
 
-<screen arch="default"><userinput remap="pre">case $(uname -m) in
-    i?86)   ln -sfv ld-linux.so.2 $LFS/lib/ld-lsb.so.3
+<screen arch="default"><userinput remap="pre">case "$LFS_TGT" in
+    i?86-*)   ln -sfv ld-linux.so.2 $LFS/lib/ld-lsb.so.3
     ;;
-    x86_64) ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64
-            ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64/ld-lsb-x86-64.so.3
+    x86_64-*) ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64
+              ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64/ld-lsb-x86-64.so.3
     ;;
 esac</userinput></screen>
 <!-- no ld-linux.so.2 here as multilib is based on x86_64, not on i686 -->
