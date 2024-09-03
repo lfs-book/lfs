@@ -205,7 +205,7 @@ EOF</userinput></screen>
       The <command>grub-install</command> command has embedded some modules
       into the main <application>GRUB</application> image (installed into
       the MBR or the GRUB BIOS partition) to access the other modules
-      (in <filename class='directory'>/boot/grub/i386-pc</filename>) without
+      (in <filename class='directory'>/boot/grub/loongarch64-efi</filename>) without
       a chicken-or-egg issue, so with a typical configuration these two
       modules are already embedded and those two <command>insmod</command>
       commands will do nothing.  But they do no harm anyway, and they may
