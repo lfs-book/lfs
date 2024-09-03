@@ -26,15 +26,45 @@
   unit of time.</para>
 
   <para>For example, consider a package whose compilation time is 4.5
-  SBUs. This means that if your system took 10 minutes to compile and
+  SBUs. This means that if your system took 4 minutes to compile and
   install the first pass of binutils, it will take
-  <emphasis>approximately</emphasis> 45 minutes to build the example package.
+  <emphasis>approximately</emphasis> 18 minutes to build the example package.
   Fortunately, most build times are shorter than one SBU.</para>
 
   <para>SBUs are not entirely accurate because they depend on many
   factors, including the host system's version of GCC.  They are provided here
   to give an estimate of how long it might take to install a package, but the
   numbers can vary by as much as dozens of minutes in some cases.</para>
+
+  <para>On some newer systems, the motherboard is capable of controlling 
+  the system clock speed. This can be controlled with a command such as
+  <command>powerprofilesctl</command>. This is not available in LFS, but 
+  may be available on the host distro. After LFS is complete, it can be
+  added to a system with the procedures at the
+  <ulink url='&blfs-book;sysutils/power-profiles-daemon.html'>
+  BLFS power-profiles-daemon</ulink> page.
+
+  Before measuring the build time of any package it is advisable to use a
+  system power profile set for maximum performance (and maximum power 
+  consumption). 
+
+  Otherwise the measured SBU value may be inaccurate because the 
+  system may react differently when building <xref linkend='ch-tools-binutils-pass1'/>
+  or other packages.
+
+  Be aware that a significant inaccuracy can still show up even if the same
+  profile is used for both packages because the system may respond slower if
+  the system is idle when starting the build procedure. Setting the power
+  profile to <quote>performance</quote> will minimize this problem.  And
+  obviously doing so will also make the system build LFS faster.</para>
+
+  <para>If <command>powerprofilesctl</command> is available, issue the
+  <command>powerprofilesctl set performance</command> command to select
+  the <literal>performance</literal> profile.  Some distros provides the
+  <command>tuned-adm</command> command for managing the profiles instead of
+  <command>powerprofilesctl</command>, on these distros issue the
+  <command>tuned-adm profile throughput-performance</command> command to
+  select the <literal>throughput-performance</literal> profile.</para>
 
   <note>
     <para>When multiple processors are used in this way, the SBU units in the
@@ -44,10 +74,11 @@
     interleaved.  If you run into a problem with a build step, revert to a
     single processor build to properly analyze the error messages.</para>
 
-    <para>The times presented here are based upon using four cores (-j4). The
+    <para>The times presented here for all packages 
+    (except <xref linkend='ch-tools-binutils-pass1'/> which is based on one core)
+    are based upon using four cores (-j4). The
     times in Chapter 8 also include the time to run the regression tests for
     the package unless specified otherwise.</para>
-
   </note>
 
 </sect1>

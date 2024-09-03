@@ -15,7 +15,7 @@ $regex = array();
 $regex[ 'intltool' ] = "/^.*Latest version is (\d[\d\.]+\d).*$/";
 $regex[ 'less'     ] = "/^.*current released version is less-(\d+).*$/";
 $regex[ 'mpfr'     ] = "/^mpfr-([\d\.]+)\.tar.*$/";
-$regex[ 'Python'   ] = "/^.*Latest Python 3.*Python (3[\d\.]+\d).*$/";
+//$regex[ 'Python'   ] = "/^.*Latest Python 3.*Python (3[\d\.]+\d).*$/";
 //$regex[ 'sysvinit' ] = "/^.*sysvinit-([\d\.]+)dsf\.tar.*$/";
 $regex[ 'tzdata'   ] = "/^.*tzdata([\d]+[a-z]).*$/";
 $regex[ 'xz'       ] = "/^.*xz-([\d\.]*\d).*$/";
@@ -77,6 +77,7 @@ function http_get_file( $url )
   }
 
   if ( preg_match( "/sourceforge/", $url ) ||
+       preg_match( "/python/",      $url ) ||
        preg_match( "/psmisc/",      $url ) )
   {
     exec( "lynx -dump $url 2>/dev/null", $lines );
@@ -134,18 +135,21 @@ if ( $package == "iana-etc"   ) $dirpath = github("Mic92/iana-etc");
 if ( $package == "intltool"   ) $dirpath = "https://launchpad.net/intltool/trunk";
 if ( $package == "libffi"     ) $dirpath = github("libffi/libffi");
 if ( $package == "libxcrypt"  ) $dirpath = github("besser82/libxcrypt");
+if ( $package == "lz4"        ) $dirpath = github("lz4/lz4");
 if ( $package == "meson"      ) $dirpath = github("mesonbuild/meson");
 if ( $package == "mpc"        ) $dirpath = "https://ftp.gnu.org/gnu/mpc";
 if ( $package == "mpfr"       ) $dirpath = "https://mpfr.loria.fr/mpfr-current";
 if ( $package == "ncurses"    ) $dirpath = "https://invisible-mirror.net/archives/ncurses";
 if ( $package == "ninja"      ) $dirpath = github("ninja-build/ninja");
+if ( $package == "openssl"    ) $dirpath = github("openssl/openssl");
 if ( $package == "procps-ng"  ) $dirpath = "https://gitlab.com/procps-ng/procps/-/tags";
 if ( $package == "psmisc"     ) $dirpath = "https://gitlab.com/psmisc/psmisc/-/tags";
 if ( $package == "Python"     ) $dirpath = "https://www.python.org/downloads/source/";
 if ( $package == "shadow"     ) $dirpath = github("shadow-maint/shadow");
 if ( $package == "sysvinit"   ) $dirpath = github("slicer69/sysvinit");
 if ( $package == "MarkupSafe" ) $dirpath = "https://pypi.python.org/pypi/MarkupSafe/";
-if ( $package == "Jinja"      ) $dirpath = "https://pypi.python.org/pypi/Jinja2/";
+if ( $package == "jinja"      ) $dirpath = "https://pypi.python.org/pypi/Jinja2/";
+if ( $package == "sysklogd"   ) $dirpath = github("troglobit/sysklogd");
 if ( $package == "systemd"    ) $dirpath = github("systemd/systemd");
 //if ( $package == "tcl"        ) $dirpath = "https://sourceforge.net/projects/tcl/files";
 if ( $package == "tcl"        ) $dirpath = "https://www.tcl.tk/software/tcltk/download.html";
@@ -160,53 +164,6 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
   if ( preg_match( "/^ftp/", $dirpath ) )
   {
     echo "ftp should not occur\n";
-  /*
-    $dirpath  = substr( $dirpath, 6 );           // Remove ftp://
-    $dirpath  = rtrim ( $dirpath, "/" );         // Trim any trailing slash
-    $position = strpos( $dirpath, "/" );         // Divide at first slash
-    $server   = substr( $dirpath, 0, $position );
-    $path     = substr( $dirpath, $position );
-
-    $conn = ftp_connect( $server );
-    ftp_login( $conn, "anonymous", "" );
-
-    // See if we need special handling
-    if ( isset( $exceptions[ $package ] ) )
-    {
-       $specials = explode( ":", $exceptions[ $package ] );
-
-       foreach ( $specials as $i )
-       {
-          list( $op, $regexp ) = explode( "=", $i );
-
-          switch ($op)
-          {
-            case "UPDIR":
-              // Remove last dir from $path
-              $position = strrpos( $path, "/" );
-              $path = substr( $path, 0, $position );
-
-              // Get dir listing
-              $lines = ftp_rawlist ($conn, $path);
-              $max   = find_max( $lines, $regexp, $regexp );
-              break;
-
-            case "DOWNDIR":
-              // Append found directory
-              $path .= "/$max";
-              break;
-
-            default:
-              echo "Error in specials array for $package\n";
-              return -5;
-              break;
-          }
-       }
-    }
-
-    $lines = ftp_rawlist ($conn, $path);
-    ftp_close( $conn );
-*/
   }
   else // http(s)
   {
@@ -303,16 +260,22 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
      return find_max( $lines, "/v\d/", "/^.*v([\d\.]+)$/" );
 
   if ( $package == "psmisc" )
-     return find_max( $lines, "/v\d/", "/^.*v([\d\.]+).tar.*$/" );
+     return find_max( $lines, "/v\d/", "/^.*v([\d\.]+)$/" );
 
   if ( $package == "grub" )
      return find_max( $lines, "/grub/", "/^.*grub-([\d\.]+).tar.xz.*$/" );
 
-  if ( $package == "Jinja" )
+  if ( $package == "jinja" )
      return find_max( $lines, "/Jinja/", "/^.*Jinja2 ([\d\.]+).*$/" );
 
+  if ( $package == "lz4" )
+     return find_max( $lines, "/tag_name/", '/^.*v([\d\.]+).*$/' );
+
   if ( $package == "openssl" )
-     return find_max( $lines, "/openssl/", "/^.*openssl-([\d\.p]*\d.?).tar.*$/" );
+     return find_max( $lines, "/name.:/", "/^.*OpenSSL ([\d\.]+\d).*$/" );
+
+  if ( $package == "Python" )
+     return find_max( $lines, "/Python 3/", "/^.*Python (3[\d\.]*\d) .*$/" );
 
   if ( $package == "vim" )
      return find_max( $lines, "/v\d\./", "/^.*v([\d\.]+).*$/" );
@@ -332,7 +295,6 @@ function get_current()
 
    // Fetech from git and get wget-list
    $current = array();
-   #$lfssvn = "svn://svn.linuxfromscratch.org/LFS/trunk";
    $lfsgit = "https://git.linuxfromscratch.org/lfs.git";
 
    $tmpdir = exec( "mktemp -d /tmp/lfscheck.XXXXXX" );
@@ -360,11 +322,10 @@ function get_current()
       $file = basename( $line ) . "\n";
       if ( preg_match( "/patch$/", $file ) ) { continue; } // Skip patches
 
-      $file = preg_replace( "/bz2/", '', $file ); // The 2 confusses the regex
+      $file = preg_replace( "/bz2/", '', $file ); // The 2 confuses the regex
 
       $file        = rtrim( $file );
       $pkg_pattern = "/(\D*).*/";
-      //$pattern     = "/\D*(\d.*\d)\D*/";
       $pattern     = "/\D*(\d.*\d)\D*/";
 
       if ( preg_match( "/e2fsprogs/", $file ) )
@@ -386,6 +347,11 @@ function get_current()
       else if ( preg_match( "/gmp/", $file ) )
       {
         $pattern = "/\D*(\d.*[a-z]*)\.tar\D*/";
+      }
+
+      else if ( preg_match( "/lz4/", $file ) )
+      {
+        $pkg_pattern= "/(\D*4).*/";
       }
 
       else if ( preg_match( "/systemd-man-pages/", $file ) ) continue;

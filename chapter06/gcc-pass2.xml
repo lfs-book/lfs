@@ -122,8 +122,8 @@ cd       build</userinput></screen>
           <para>We are cross-compiling GCC, so it's impossible to build
           target libraries (<filename class="libraryfile">libgcc</filename>
           and <filename class="libraryfile">libstdc++</filename>) with the
-          previously compiled GCC binaries&mdash;those binaries won't run on the
-          host.  The GCC build system will attempt to use the host's
+          GCC binaries compiled in this pass&mdash;those binaries won't run
+          on the host.  The GCC build system will attempt to use the host's
           C and C++ compilers as a workaround by default.
           Building the GCC target libraries with a different
           version of GCC is not supported, so using the host's compilers may cause
@@ -136,10 +136,11 @@ cd       build</userinput></screen>
         <term><parameter>LDFLAGS_FOR_TARGET=...</parameter></term>
         <listitem>
           <para>Allow <filename class="libraryfile">libstdc++</filename> to
-          use the shared <filename class="libraryfile">libgcc</filename> being
-          built in this pass, instead of the static version that was built in GCC
-          pass 1. This is necessary to support C++ exception
-          handling.</para>
+          use the <filename class="libraryfile">libgcc</filename> being
+          built in this pass, instead of the previous version built in
+          <xref linkend='ch-tools-gcc-pass1'/>.  The previous version cannot
+          properly support C++ exception handling because it was built
+          without libc support.</para>
         </listitem>
       </varlistentry>
 
@@ -147,12 +148,10 @@ cd       build</userinput></screen>
         <term><parameter>--disable-libsanitizer</parameter></term>
         <listitem>
           <para>Disable GCC sanitizer runtime libraries.  They are not
-          needed for the temporary installation.  This switch is necessary
-          to build GCC without
-          <systemitem class='library'>libcrypt</systemitem> installed for
-          the target.  In <xref linkend='ch-tools-gcc-pass1'/> it was
-          implied by <parameter>--disable-libstdcxx</parameter>, but now we
-          have to explicitly pass it.</para>
+          needed for the temporary installation.  In
+          <xref linkend='ch-tools-gcc-pass1'/> it was implied by
+          <parameter>--disable-libstdcxx</parameter>, and now we can
+          explicitly pass it.</para>
         </listitem>
       </varlistentry>
 

@@ -41,6 +41,15 @@
   <sect2 role="installation">
     <title>Installation of Shadow</title>
 
+    <important>
+      <para>
+        If you've installed Linux-PAM, you should follow
+        <ulink url='&blfs-book;postlfs/shadow.xml'>the BLFS shadow
+        page</ulink> instead of this page to build (or, rebuild or upgrade)
+        shadow.
+      </para>
+    </important>
+
     <note>
       <para>If you would like to enforce the use of strong passwords, refer to
       <ulink url="&blfs-book;postlfs/cracklib.html"/> for installing
@@ -233,7 +242,8 @@ useradd -D --gid 999</userinput></screen>
           unknown GID 999</computeroutput>,
           even though the account has been created correctly. That is why we
           created the group <systemitem class="groupname">users</systemitem>
-          with this group ID in <xref linkend='ch-tools-createfiles'/>.</para>
+          with this group ID in
+          <xref linkend='ch-tools-createfiles' role='.'/></para>
 
         </listitem>
       </varlistentry>

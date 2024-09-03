@@ -49,9 +49,12 @@
 <screen><userinput remap="pre">sed -i '/MV.*old/d' Makefile.in
 sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
 
-    <para>Now fix a problem identified upstream:</para>
+    <para>Prevent hard coding library search paths (rpath) into
+    the shared libraries.  This package does not need rpath for an
+    installation into the standard location, and rpath may sometimes cause
+    unwanted effects or even security issues:</para>
 
-<screen><userinput remap="pre">patch -Np1 -i ../&readline-fixes-patch;</userinput></screen>
+<screen><userinput>sed -i 's/-Wl,-rpath,[^ ]*//' support/shobj-conf</userinput></screen>
 
     <para>Prepare Readline for compilation:</para>
 

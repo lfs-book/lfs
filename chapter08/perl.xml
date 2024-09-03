@@ -64,26 +64,26 @@ export BUILD_BZIP2=0</userinput></screen>
     this package is built. Alternatively, use the command exactly as shown below to
     use the defaults that Perl auto-detects:</para>
 
- <screen><userinput remap="configure">sh Configure -des                                         \
-             -Dprefix=/usr                                \
-             -Dvendorprefix=/usr                          \
-             -Dprivlib=/usr/lib/perl5/&perl-version-min;/core_perl      \
-             -Darchlib=/usr/lib/perl5/&perl-version-min;/core_perl      \
-             -Dsitelib=/usr/lib/perl5/&perl-version-min;/site_perl      \
-             -Dsitearch=/usr/lib/perl5/&perl-version-min;/site_perl     \
-             -Dvendorlib=/usr/lib/perl5/&perl-version-min;/vendor_perl  \
-             -Dvendorarch=/usr/lib/perl5/&perl-version-min;/vendor_perl \
-             -Dman1dir=/usr/share/man/man1                \
-             -Dman3dir=/usr/share/man/man3                \
-             -Dpager="/usr/bin/less -isR"                 \
-             -Duseshrplib                                 \
-             -Dusethreads</userinput></screen>
+ <screen><userinput remap="configure">sh Configure -des                                          \
+             -D prefix=/usr                                \
+             -D vendorprefix=/usr                          \
+             -D privlib=/usr/lib/perl5/&perl-version-min;/core_perl      \
+             -D archlib=/usr/lib/perl5/&perl-version-min;/core_perl      \
+             -D sitelib=/usr/lib/perl5/&perl-version-min;/site_perl      \
+             -D sitearch=/usr/lib/perl5/&perl-version-min;/site_perl     \
+             -D vendorlib=/usr/lib/perl5/&perl-version-min;/vendor_perl  \
+             -D vendorarch=/usr/lib/perl5/&perl-version-min;/vendor_perl \
+             -D man1dir=/usr/share/man/man1                \
+             -D man3dir=/usr/share/man/man3                \
+             -D pager="/usr/bin/less -isR"                 \
+             -D useshrplib                                 \
+             -D usethreads</userinput></screen>
 
     <variablelist>
       <title>The meaning of the new Configure options:</title>
 
       <varlistentry>
-        <term><parameter>-Dpager="/usr/bin/less -isR"</parameter></term>
+        <term><parameter>-D pager="/usr/bin/less -isR"</parameter></term>
         <listitem>
           <para>This ensures that <userinput>less</userinput> is used instead
           of <userinput>more</userinput>.</para>
@@ -91,8 +91,8 @@ export BUILD_BZIP2=0</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>-Dman1dir=/usr/share/man/man1
-        -Dman3dir=/usr/share/man/man3</parameter></term>
+        <term><parameter>-D man1dir=/usr/share/man/man1
+        -D man3dir=/usr/share/man/man3</parameter></term>
         <listitem>
           <para>Since Groff is not installed yet, <command>Configure</command>
           will not create man pages for Perl.  These
@@ -101,7 +101,7 @@ export BUILD_BZIP2=0</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>-Dusethreads</parameter></term>
+        <term><parameter>-D usethreads</parameter></term>
         <listitem>
           <para>Build Perl with support for threads.</para>
         </listitem>

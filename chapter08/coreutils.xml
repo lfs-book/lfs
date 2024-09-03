@@ -53,13 +53,6 @@
       those bugs are reproducible without this patch.</para>
     </note>
 
-    <!-- https://seclists.org/oss-sec/2024/q1/30 -->
-    <para>Fix a security vulnerability in the <command>split</command>
-    utility:</para>
-
-<screen><userinput remap="pre">sed -e '/n_out += n_hold/,+4 s|.*bufsize.*|//&amp;|' \
-    -i src/split.c</userinput></screen>
-
     <para>Now prepare Coreutils for compilation:</para>
 
 <screen><userinput remap="configure">autoreconf -fiv
@@ -123,24 +116,29 @@ FORCE_UNSAFE_CONFIGURE=1 ./configure \
 
 <screen><userinput remap="test">chown -R tester . </userinput></screen>
 
-    <para>Now run the tests:</para>
+    <!-- To editors: in jhalfs the standard input is always piped to "make"
+         so the test failures are not reproducible in jhalfs even if
+         running the build in a PTY.  Don't use jhalfs to test if we can
+         remove < /dev/null.  -->
+    <para>Now run the tests (using <filename>/dev/null</filename> for the
+    standard input, or two tests may be broken if building LFS in a
+    graphical terminal or a session in SSH or GNU Screen because the
+    standard input is connected to a PTY from host distro, and the device
+    node for such a PTY cannot be accessed from the LFS chroot
+    environment):</para>
 
-<screen><userinput remap="test">su tester -c "PATH=$PATH make RUN_EXPENSIVE_TESTS=yes check"</userinput></screen>
-
-<!-- Sometimes skipped, but if not it may fail.
-     Please DO NOT remove or comment out this unless we can fully
-     understand it!
-    <para>The test-getlogin test may fail in the LFS chroot environment.</para>
-    20240226: Commented out as it seems the upstream has root-caused and
-    fixed the issue.  I've checked the fix is in Coreutils 9.4 release
-    tarball:
-
-    https://lists.gnu.org/archive/html/bug-gnulib/2022-06/msg00079.html
--->
+<screen><userinput remap="test">su tester -c "PATH=$PATH make -k RUN_EXPENSIVE_TESTS=yes check" \
+   &lt; /dev/null</userinput></screen>
 
     <para>Remove the temporary group:</para>
 
 <screen><userinput remap="test">groupdel dummy</userinput></screen>
+
+    <para>
+       Two tests, <filename>tests/cp/preserve-mode.sh</filename> and
+       <filename>tests/mv/acl.sh</filename>, are known to
+       fail in the chroot environment, but pass in a complete system.
+    </para>
 
     <para>Install the package:</para>
 

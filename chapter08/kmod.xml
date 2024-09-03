@@ -43,12 +43,13 @@
 
     <para>Prepare Kmod for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr          \
-            --sysconfdir=/etc      \
-            --with-openssl         \
-            --with-xz              \
-            --with-zstd            \
-            --with-zlib</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr     \
+            --sysconfdir=/etc \
+            --with-openssl    \
+            --with-xz         \
+            --with-zstd       \
+            --with-zlib       \
+            --disable-manpages</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -74,6 +75,16 @@
         </listitem>
       </varlistentry>
 
+      <varlistentry>
+        <term>
+          <parameter>--disable-manpages</parameter>
+        </term>
+        <listitem>
+          <para>This option disables generating the man pages which
+          requires an external program.</para>
+        </listitem>
+      </varlistentry>
+
     </variablelist>
 
     <para>Compile the package:</para>
@@ -84,17 +95,19 @@
     (not the <quote>sanitized</quote> kernel headers installed earlier),
     which are beyond the scope of LFS.</para>
 
-    <para>Install the package and create symlinks for
+    <para>Install the package and recreate some symlinks for
     compatibility with Module-Init-Tools (the package that previously handled
-    Linux kernel modules):</para>
+    Linux kernel modules).  The building system will create all these
+    symlinks in <filename class='directory'>/usr/bin</filename>, but we
+    only want <command>lsmod</command> there and all other symlinks in
+    <filename class='directory'>/usr/sbin</filename> instead:</para>
 
 <screen><userinput remap="install">make install
 
 for target in depmod insmod modinfo modprobe rmmod; do
   ln -sfv ../bin/kmod /usr/sbin/$target
-done
-
-ln -sfv kmod /usr/bin/lsmod</userinput></screen>
+  rm -fv /usr/bin/$target
+done</userinput></screen>
 
   </sect2>
 

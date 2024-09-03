@@ -121,7 +121,7 @@
       <filename>/usr/lib/udev/network/99-default.link</filename>:</para>
 
 <screen role="nodump"><userinput>sed -e '/^AlternativeNamesPolicy/s/=.*$/=/'  \
-    -i /usr/lib/udev/network/99-default.link \
+       /usr/lib/udev/network/99-default.link \
      > /etc/udev/network/99-default.link</userinput></screen>
     </sect3>
 
@@ -217,8 +217,8 @@
 
     <title>Dealing with Duplicate Devices</title>
 
-    <para>As explained in <xref linkend="ch-config-udev"/>, the order in
-    which devices with the same function appear in
+    <para>As explained in <xref linkend="ch-config-udev" role=','/> the
+    order in which devices with the same function appear in
     <filename class="directory">/dev</filename> is essentially random.
     E.g., if you have a USB web camera and a TV tuner, sometimes
     <filename>/dev/video0</filename> refers to the camera and
@@ -227,8 +227,9 @@
     For all classes of hardware except sound cards and network cards, this is
     fixable by creating udev rules to create persistent symlinks.
     The case of network cards is covered separately in
-    <xref linkend="ch-config-network"/>, and sound card configuration can
-    be found in <ulink url="&blfs-book;postlfs/devices.html">BLFS</ulink>.</para>
+    <xref linkend="ch-config-network" role=','/> and sound card
+    configuration can be found in
+    <ulink url="&blfs-book;postlfs/devices.html">BLFS</ulink>.</para>
 
     <para>For each of your devices that is likely to have this problem
     (even if the problem doesn't exist in your current Linux distribution),

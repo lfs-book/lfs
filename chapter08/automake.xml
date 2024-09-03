@@ -62,8 +62,6 @@
     <para>Replace <replaceable>$((...))</replaceable> with the number of
     logical cores you want to use if you don't want to use all.</para>
 
-    <para>The test t/subobj.sh is known to fail.</para>
-
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>

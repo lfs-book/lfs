@@ -82,10 +82,14 @@
 
     </variablelist>
 
+    <para>The package tests cannot run in the chroot environment. They require 
+    <ulink url="&blfs-book;general/cmake.html">cmake</ulink>.</para>
+<!--
     <para>To test the results, issue:</para>
 
 <screen><userinput remap="test">./ninja ninja_test
-./ninja_test --gtest_filter=-SubprocessTest.SetWithLots</userinput></screen>
+./ninja_test - -gtest_filter=-SubprocessTest.SetWithLots</userinput></screen>
+-->
 
     <para>Install the package:</para>
 
