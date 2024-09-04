@@ -549,7 +549,7 @@
 <!ENTITY openssl-size "17,633 KB">
 <!ENTITY openssl-url "https://www.openssl.org/source/openssl-&openssl-version;.tar.gz">
 <!ENTITY openssl-md5 "8a4342b399c18f870ca6186299195984">
-<!ENTITY openssl-home "https://www.openssl.org/">
+<!ENTITY openssl-home "https://www.openssl-library.org/">
 <!ENTITY openssl-fin-du "883 MB">
 <!ENTITY openssl-fin-sbu "1.7 SBU">
 
