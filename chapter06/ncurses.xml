@@ -135,7 +135,7 @@ popd</userinput></screen>
           <para>This switch prevents the building system from using the
           <command>mawk</command> program from the host.
           Some<!-- FIXME vauge --> versions of <command>mawk</command> can
-          cause this package fail to build.  <!-- It seems happened in 2015,
+          cause this package to fail to build.  <!-- It seems happened in 2015,
           is there any updated into? --></para>
         </listitem>
       </varlistentry>
