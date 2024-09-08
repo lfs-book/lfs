@@ -276,24 +276,34 @@ EOF
 
 bash version-check.sh</userinput></screen>
 
-    <para arch="ml_32,ml_x32,ml_all">
-      Building multilib support requires the kernel of the host system
-      to have 32-bit emulation support included.
+    <para arch="ml_32,ml_all">
+      Building the m32 multilib support requires the kernel of the host
+      system to have the 32-bit emulation support included:
     </para>
-<screen arch="ml_32,ml_x32,ml_all">Binary Emulations  ---&gt;
-    [*] IA32 Emulation
-    &lt;M&gt;   IA32 a.out support
-    [*] x32 ABI for 64-bit mode
-</screen>
 
-    <para arch="ml_32,ml_x32,ml_all">The option 'IA32 a.out support' is
-      optional. In case your kernel does not have 'x32 ABI for 64-bit mode'
-      enabled but only 'IA32 Emulation', you can continue to build your
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../chapter10/kernel/multilib-32.xml"/>
+
+    <para arch="ml_x32,ml_all">
+      Building the mx32 multilib support requires the kernel of the host
+      system to have the x32 ABI support included:
+    </para>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../chapter10/kernel/multilib-x32.xml"/>
+
+    <para arch="ml_all">
+      In case your kernel does not have the x32 ABI support enabled but
+      only the 32-bit emulation support, you can continue to build your
       system but you have to leave out any sections showing instructions
-      for building x32 objects. If neither 'IA32 Emulation' nor 
-      'x32 ABI for 64-bit mode' is enabled, you will run in errors 
-      latest when building <application>glibc</application> in Chapter 6,
-      so an upgrade of your host system kernel is required.
+      for building x32 objects, vice versa.
+    </para>
+
+    <para arch="ml_32,ml_x32,ml_all">
+      If the kernel feature required by a multilib is not enabled,
+      building the multilib for a package in Chapter 8 may either fail
+      immediately, or cause hidden breakages because autoconf cannot
+      probe the system features properly.
     </para>
     
   </sect2>
