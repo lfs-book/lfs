@@ -547,7 +547,7 @@
 
 <!ENTITY openssl-version "3.3.2">
 <!ENTITY openssl-size "17,653 KB">
-<!ENTITY openssl-url "https://www.openssl.org/source/openssl-&openssl-version;.tar.gz">
+<!ENTITY openssl-url "&github;/openssl/openssl/releases/download/openssl-&openssl-version;/openssl-&openssl-version;.tar.gz">
 <!ENTITY openssl-md5 "015fca2692596560b6fe8a2d8fecd84b">
 <!ENTITY openssl-home "https://www.openssl-library.org/">
 <!ENTITY openssl-fin-du "883 MB">
