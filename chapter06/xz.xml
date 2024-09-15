@@ -49,7 +49,26 @@
             --host=$LFS_TGT                   \
             --build=$(build-aux/config.guess) \
             --disable-static                  \
+            ac_cv_prog_FILECMD=file           \
             --docdir=/usr/share/doc/xz-&xz-version;</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the new configure options:</title>
+
+      <!-- https://git.savannah.gnu.org/cgit/libtool.git/commit/?id=9a4a02615c9e -->
+      <varlistentry>
+        <term><parameter>ac_cv_prog_FILECMD=file</parameter></term>
+        <listitem>
+          <para>Works around an issue in the shipped libtool copy causing
+          the configure script fail to find the <command>file</command>
+          command of the host distro.  The issue is harmless for most
+          architectures, but it can make
+          <parameter>--disable-static</parameter> ineffective for
+          MIPS.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
 
    <para>Compile the package:</para>
 
