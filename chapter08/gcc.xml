@@ -150,11 +150,7 @@ cd       build</userinput></screen>
 
     <para>Now remove/fix several known test failures:</para>
 
-<screen><userinput remap="test">sed -e '/cpython/d'               -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp
-sed -e 's/no-pic /&amp;-no-pie /'     -i ../gcc/testsuite/gcc.target/i386/pr113689-1.c
-sed -e 's/300000/(1|300000)/'     -i ../libgomp/testsuite/libgomp.c-c++-common/pr109062.c
-sed -e 's/{ target nonpic } //' \
-    -e '/GOTPCREL/d'              -i ../gcc/testsuite/gcc.target/i386/fentryname3.c</userinput></screen>
+<screen><userinput remap="test">sed -e '/cpython/d'               -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp</userinput></screen>
 
     <para>Test the results as a non-privileged user, but do not stop at errors:</para>
 
@@ -177,9 +173,8 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     with <option>--enable-default-pie</option> or
     <option>--enable-default-ssp</option> in mind.</para>
 
-    <para>In libstdc++ tests, the tests named
-    <filename>abi_check</filename> and
-    <filename>compare_exchange_padding.cc</filename> are known to fail.</para>
+    <para>In libstdc++ tests, the test named
+    <filename>abi_check</filename> is known to fail.</para>
 
     <para>A few unexpected failures cannot always be avoided. In some cases
     test failures depend on the specific hardware of the system.<!--The GCC developers
