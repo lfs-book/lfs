@@ -219,9 +219,20 @@ fi</userinput></screen>
           IEEE 754-2008 (indicated by the 16th bit of FCSR), this variable
           will be set to <option>--with-nan=2008</option> so GCC will be
           configured to use the IEEE 754-2008 encoding for NaN values as
-		  the default.  If this option is not properly set to match the CPU,
-		  many Glibc and Python tests will fail because of the wrong NaN
-		  encoding.</para>
+          the default.  If this option is not properly set to match the CPU,
+          depending on the host kernel configuration, the programs compiled
+          by GCC may fail to start with
+          <computeroutput>Exec format error</computeroutput> (causing
+          <xref linkend='ch-tools-chroot'/> to fail), or produce bad results
+          (causing test failures building some packages, for example Glibc
+          and Python).</para>
+          <!-- TODO: If the kernel is booted with ieee754=emulated, we'll
+               be just using the default of the toolchain but that's not
+               always the best.  If the host toolchain already uses an NaN
+               encoding different from the hardware FPU, the FPU will be
+               disabled and all FP instructions are emulated by the kernel.
+               That's obviously very slow.  But I've not figured out a
+               method to probe.  -->
         </listitem>
       </varlistentry>
 
