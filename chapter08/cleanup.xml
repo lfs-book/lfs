@@ -31,7 +31,7 @@
    <xref linkend="chapter-chroot-temporary-tools"/> is still partially
    installed and not needed anymore. Remove it with:</para>
 
-<screen><userinput>find /usr -depth -name $(uname -m)-lfs-linux-gnu\* | xargs rm -rf</userinput></screen>
+<screen><userinput>find /usr -depth -name $(uname -m)\*-lfs-linux-gnu\* | xargs rm -rf</userinput></screen>
 
    <para>Finally, remove the temporary 'tester' user account created at the
    beginning of the previous chapter.</para>
