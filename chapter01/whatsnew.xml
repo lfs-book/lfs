@@ -41,9 +41,9 @@
     <!--<listitem>
       <para>Bash-&bash-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Bc-&bc-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Binutils-&binutils-version;</para>
     </listitem>-->
@@ -71,9 +71,9 @@
     <!--<listitem>
        <para>E2fsprogs-&e2fsprogs-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
        <para>Expat-&expat-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
        <para>Expect-&expect-version;</para>
     </listitem>-->
@@ -122,9 +122,9 @@
     <!--<listitem>
       <para>Gzip-&gzip-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Iana-Etc-&iana-etc-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Inetutils-&inetutils-version;</para>
     </listitem>-->
@@ -158,15 +158,15 @@
     <!--<listitem>
       <para>Libffi-&libffi-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Libpipeline-&libpipeline-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Libtool-&libtool-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Linux-&linux-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Lz4-&lz4-version;</para>
     </listitem>-->
@@ -176,9 +176,9 @@
     <!--<listitem>
       <para>Make-&make-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Man-DB-&man-db-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Man-pages-&man-pages-version;</para>
     </listitem>-->
@@ -200,9 +200,9 @@
     <!--<listitem>
       <para>Ninja-&ninja-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>OpenSSL-&openssl-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Patch-&patch-version;</para>
     </listitem>-->
@@ -218,27 +218,27 @@
     <!--<listitem>
       <para>Psmisc-&psmisc-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Python-&python-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Readline-&readline-version;</para>
     </listitem>-->
     <!--<listitem>
       <para>Sed-&sed-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Setuptools-&setuptools-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Shadow-&shadow-version;</para>
     </listitem>-->
     <!--<listitem revision="sysv">
       <para>Sysklogd-&sysklogd-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Systemd-&systemd-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem revision="sysv">
       <para>SysVinit-&sysvinit-version;</para>
     </listitem>-->
@@ -251,12 +251,12 @@
     <!--<listitem>
       <para>Texinfo-&texinfo-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Tzdata-&tzdata-version;</para>
-    </listitem>-->
-    <!--<listitem revision="sysv">
+    </listitem>
+    <listitem revision="sysv">
       <para>Udev from Systemd-&systemd-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Util-linux-&util-linux-version;</para>
     </listitem>-->
