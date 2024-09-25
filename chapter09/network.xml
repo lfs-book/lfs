@@ -198,7 +198,7 @@ EOF</userinput></screen>
      <para>x can be any number in the range 16-31. y can be any number in the
      range 0-255.</para>
 
-     <para>A valid private IP address could be 192.168.1.1.</para>
+     <para>A valid private IP address could be 192.168.1.2.</para>
 
      <para>If the computer is to be visible to the Internet, a valid FQDN
      can be the domain name itself, or a string resulted by concatenating a
@@ -218,7 +218,7 @@ EOF</userinput></screen>
 
 127.0.0.1 localhost.localdomain localhost
 127.0.1.1 <replaceable>&lt;FQDN&gt;</replaceable> <replaceable>&lt;HOSTNAME&gt;</replaceable>
-<replaceable>&lt;192.168.1.1&gt;</replaceable> <replaceable>&lt;FQDN&gt;</replaceable> <replaceable>&lt;HOSTNAME&gt;</replaceable> <replaceable>[alias1] [alias2 ...]</replaceable>
+<replaceable>&lt;192.168.1.2&gt;</replaceable> <replaceable>&lt;FQDN&gt;</replaceable> <replaceable>&lt;HOSTNAME&gt;</replaceable> <replaceable>[alias1] [alias2 ...]</replaceable>
 ::1       localhost ip6-localhost ip6-loopback
 ff02::1   ip6-allnodes
 ff02::2   ip6-allrouters
@@ -226,7 +226,7 @@ ff02::2   ip6-allrouters
 # End /etc/hosts</literal>
 EOF</userinput></screen>
 
-     <para>The <replaceable>&lt;192.168.1.1&gt;</replaceable>,
+     <para>The <replaceable>&lt;192.168.1.2&gt;</replaceable>,
      <replaceable>&lt;FQDN&gt;</replaceable>, and
      <replaceable>&lt;HOSTNAME&gt;</replaceable> values need to be
      changed for specific uses or requirements (if assigned an IP address by a
