@@ -34,9 +34,11 @@
         <para>The LSB has four separate specifications: Core, Desktop,
         Languages, and Imaging.  Some parts of Core and Desktop
         specifications are architecture specific.  There are also two trial
-        specifications: Gtk3 and Graphics.  LFS attempts to conform to the LSB
-        generic specifications.  The architecture specific part of LSB does
-        not exist for ARM64.</para>
+        specifications: Gtk3 and Graphics.  There's no architecture specific
+        parts for ARM64, and on ARM64 Glibc has intentionally left out
+        some symbol versions required by the architecture independant part of
+        LSB Core.  So we cannot satisfy the LSB architecture independant
+        parts, but we still use them as a reference.</para>
 
         <note><para>Many people do not agree with these requirements.
         The main purpose of the LSB is to ensure that proprietary software
@@ -161,15 +163,24 @@
         <listitem>
           <para>
             <command>install_initd</command>,
+            <filename class='libraryfile'>libc.so.6</filename>
+            (the file is provided by the LFS Glibc package but it lacks some
+            symbol versions required by LSB),
             <filename class='libraryfile'>libcrypt.so.1</filename>
             (can be provided with optional instructions for the LFS
             Libxcrypt package),
+            <filename class='libraryfile'>libpthread.so.2</filename>
+            (the file is provided by the LFS Glibc package but it lacks some
+            symbol versions required by LSB),
             <filename class='libraryfile'>libncurses.so.5</filename>
             (can be provided with optional instructions for the LFS
             Ncurses package),
             <filename class='libraryfile'>libncursesw.so.5</filename>
             (but <filename class='libraryfile'>libncursesw.so.6</filename>
-            is provided by the LFS Ncurses package)
+            is provided by the LFS Ncurses package),
+            <filename class='libraryfile'>librt.so.1</filename>
+            (the file is provided by the LFS Glibc package but it lacks some
+            symbol versions required by LSB)
           </para>
         </listitem>
       </varlistentry>
