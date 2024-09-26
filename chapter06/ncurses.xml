@@ -43,16 +43,12 @@
   <sect2 role="installation">
     <title>Installation of Ncurses</title>
 
-    <para>First, ensure that <command>gawk</command> is found first during configuration:</para>
-
-<screen><userinput remap="pre">sed -i s/mawk// configure</userinput></screen>
-
-    <para>Then, run the following commands to build the <quote>tic</quote>
+    <para>First, run the following commands to build the <quote>tic</quote>
     program on the build host:</para>
 
 <screen><userinput remap="pre">mkdir build
 pushd build
-  ../configure
+  ../configure AWK=gawk
   make -C include
   make -C progs tic
 popd</userinput></screen>
@@ -69,7 +65,8 @@ popd</userinput></screen>
             --with-cxx-shared            \
             --without-debug              \
             --without-ada                \
-            --disable-stripping</userinput></screen>
+            --disable-stripping          \
+            AWK=gawk</userinput></screen>
 
     <variablelist>
       <title>The meaning of the new configure options:</title>
@@ -131,21 +128,17 @@ popd</userinput></screen>
           Using host tools on cross-compiled programs can cause failure.</para>
         </listitem>
       </varlistentry>
-<!-- this is the default >= 6.5
+
       <varlistentry>
-        <term><parameter>- -enable-widec</parameter></term>
+        <term><parameter>AWK=gawk</parameter></term>
         <listitem>
-          <para>This switch causes wide-character libraries (e.g., <filename
-          class="libraryfile">libncursesw.so.&ncurses-version;</filename>)
-          to be built instead of normal ones (e.g., <filename
-          class="libraryfile">libncurses.so.&ncurses-version;</filename>).
-          These wide-character libraries are usable in both multibyte and
-          traditional 8-bit locales, while normal libraries work properly
-          only in 8-bit locales. Wide-character and normal libraries are
-          source-compatible, but not binary-compatible.</para>
+          <para>This switch prevents the building system from using the
+          <command>mawk</command> program from the host.
+          Some<!-- FIXME vauge --> versions of <command>mawk</command> can
+          cause this package to fail to build.  <!-- It seems happened in 2015,
+          is there any updated into? --></para>
         </listitem>
       </varlistentry>
--->
     </variablelist>
 
     <para>Compile the package:</para>
