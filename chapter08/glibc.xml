@@ -629,7 +629,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
         libnss_compat.so, libnss_dns.so, libnss_files.so, libnss_hesiod.so,
         libpcprofile.so, libpthread.{a,so.0},
         libresolv.{a,so}, librt.{a,so.1},
-        libthread_db.so, and libutil.{a,so.1}</seg>
+        libthread_db.so, and libutil.a</seg>
         <seg>/usr/include/arpa, /usr/include/bits, /usr/include/gnu,
         /usr/include/net, /usr/include/netash, /usr/include/netatalk,
         /usr/include/netax25, /usr/include/neteconet, /usr/include/netinet,
