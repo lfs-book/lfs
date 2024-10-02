@@ -163,7 +163,7 @@ EOF
 
 tar --no-same-owner \
     -xvf ../python-&python-version;-docs-html.tar.bz2
-cp -R --no-preserve=mode python-&python-version;-docs-html/* \
+cp -R --no-preserve=mode python-&python-minor;-docs-html/* \
     /usr/share/doc/python-&python-version;/html</userinput></screen>
 
     <variablelist>
