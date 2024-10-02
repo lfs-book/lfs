@@ -4,7 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../general.ent">
   %general-entities;
   <!ENTITY tdbc-ver          "1.1.9">
-  <!ENTITY itcl-ver          "4.3.0">
+  <!ENTITY itcl-ver          "4.3.1">
 ]>
 
 <sect1 id="ch-system-tcl" role="wrap">
@@ -75,7 +75,7 @@ cd unix
 
     <para>Build the package:</para>
 
-<screen><userinput remap="make">make
+<screen><userinput remap="make">make NATIVE_ZIP=$PWD/minizip
 
 sed -e "s|$SRCDIR/unix|/usr/lib|" \
     -e "s|$SRCDIR|/usr/include|"  \
@@ -103,6 +103,8 @@ unset SRCDIR</userinput></screen>
     <para>To test the results, issue:</para>
 
 <screen><userinput remap="test">make test</userinput></screen>
+
+    <para>Twelve tests are known to fail in the chroot environment.</para>
 
     <para>Install the package:</para>
 
