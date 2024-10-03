@@ -41,6 +41,15 @@
     -->
 
     <listitem>
+      <para>2024-10-03</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Revert back to tcl8.6.15.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2024-10-01</para>
       <itemizedlist>
         <listitem>

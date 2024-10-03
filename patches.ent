@@ -15,9 +15,9 @@
 <!ENTITY coreutils-i18n-patch-md5 "58961caf5bbdb02462591fa506c73b6d">
 <!ENTITY coreutils-i18n-patch-size "164 KB">
 
-<!ENTITY expect-gcc14-patch "expect-&expect-version;-gcc14-2.patch">
-<!ENTITY expect-gcc14-patch-md5 "143bfb39cf5647631e2272d6340ee280">
-<!ENTITY expect-gcc14-patch-size "48 KB">
+<!ENTITY expect-gcc14-patch "expect-&expect-version;-gcc14-1.patch">
+<!ENTITY expect-gcc14-patch-md5 "f75cca16a38da6caa7d52151f7136895">
+<!ENTITY expect-gcc14-patch-size "7.8 KB">
 
 <!ENTITY glibc-fhs-patch "glibc-&glibc-version;-fhs-1.patch">
 <!ENTITY glibc-fhs-patch-md5 "9a5997c3452909b1769918c759eff8a2">
