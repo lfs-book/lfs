@@ -697,15 +697,15 @@
 <!ENTITY tar-fin-du "43 MB">
 <!ENTITY tar-fin-sbu "0.7 SBU">
 
-<!ENTITY tcl-version "9.0.0">
-<!ENTITY tcl-major-version "9.0">
-<!ENTITY tcl-size "11,377 KB">
+<!ENTITY tcl-version "8.6.15">
+<!ENTITY tcl-major-version "8.6">
+<!ENTITY tcl-size "11,490 KB">
 <!ENTITY tcl-url "https://downloads.sourceforge.net/tcl/tcl&tcl-version;-src.tar.gz">
-<!ENTITY tcl-md5 "d7a0086033f6a50218ef69ecc0e088db">
+<!ENTITY tcl-md5 "c13a4d5425b5ae335258342b38ba34c2">
 <!ENTITY tcl-home "https://tcl.sourceforge.net/">
 <!ENTITY tcl-docs-url "https://downloads.sourceforge.net/tcl/tcl&tcl-version;-html.tar.gz">
-<!ENTITY tcl-docs-md5 "94d50af62ecd72e041da5b4b06f8d051">
-<!ENTITY tcl-docs-size "1,290 KB">
+<!ENTITY tcl-docs-md5 "146d6317a5318ad79d4c1421ba612fe9">
+<!ENTITY tcl-docs-size "1,169 KB">
 <!ENTITY tcl-tmp-du "91 MB">
 <!ENTITY tcl-tmp-sbu "3.2 SBU">
 
