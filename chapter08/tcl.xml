@@ -75,7 +75,7 @@ cd unix
 
     <para>Build the package:</para>
 
-<screen><userinput remap="make">make 
+<screen><userinput remap="make">make
 
 sed -e "s|$SRCDIR/unix|/usr/lib|" \
     -e "s|$SRCDIR|/usr/include|"  \
