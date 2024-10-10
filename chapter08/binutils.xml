@@ -41,6 +41,12 @@
   <sect2 role="installation">
     <title>Installation of Binutils</title>
 
+    <para>
+      At first, fix a bug which may cause some packages fail to build:
+    </para>
+
+    <screen><userinput remap="pre">patch -Np1 -i ../&binutils-loongarch-patch;</userinput></screen>
+
     <para>The Binutils documentation recommends building Binutils
     in a dedicated build directory:</para>
 
