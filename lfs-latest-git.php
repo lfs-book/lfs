@@ -256,6 +256,9 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
   if ( $package == "setuptools" )
      return find_max( $lines, "/setuptools /", "/^.*setuptools ([\d\.]+)$/" );
 
+  if ( $package == "MarkupSafe" )
+     return find_max( $lines, "/MarkupSafe /", "/^.*MarkupSafe ([\d\.]+)$/" );
+
   if ( $package == "procps-ng" )
      return find_max( $lines, "/v\d/", "/^.*v([\d\.]+)$/" );
 
