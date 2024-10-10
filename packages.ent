@@ -47,20 +47,20 @@
 <!ENTITY automake-fin-du "121 MB">
 <!ENTITY automake-fin-sbu "less than 0.1 SBU (about 1.1 SBU with tests)">
 
-<!ENTITY bash-version "5.2.32">
-<!ENTITY bash-size "10,697 KB">
+<!ENTITY bash-version "5.2.37">
+<!ENTITY bash-size "10,868 KB">
 <!ENTITY bash-url "&gnu;bash/bash-&bash-version;.tar.gz">
-<!ENTITY bash-md5 "f204835b2e06c06e37b5ad776ff907f4">
+<!ENTITY bash-md5 "9c28f21ff65de72ca329c1779684a972">
 <!ENTITY bash-home "&gnu-software;bash/">
 <!ENTITY bash-tmp-du "67 MB">
 <!ENTITY bash-tmp-sbu "0.2 SBU">
 <!ENTITY bash-fin-du "52 MB">
 <!ENTITY bash-fin-sbu "1.4 SBU">
 
-<!ENTITY bc-version "7.0.2">
+<!ENTITY bc-version "7.0.3">
 <!ENTITY bc-size "464 KB">
 <!ENTITY bc-url "https://github.com/gavinhoward/bc/releases/download/&bc-version;/bc-&bc-version;.tar.xz">
-<!ENTITY bc-md5 "7425c5fde4fcd86db544d376ff8fcfc8">
+<!ENTITY bc-md5 "ad4db5a0eb4fdbb3f6813be4b6b3da74">
 <!ENTITY bc-home "https://git.gavinhoward.com/gavin/bc">
 <!ENTITY bc-fin-du "7.8 MB">
 <!ENTITY bc-fin-sbu "less than 0.1 SBU">
@@ -341,10 +341,10 @@
 <!ENTITY intltool-fin-du "1.5 MB">
 <!ENTITY intltool-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY iproute2-version "6.10.0">
-<!ENTITY iproute2-size "900 KB">
+<!ENTITY iproute2-version "6.11.0">
+<!ENTITY iproute2-size "903 KB">
 <!ENTITY iproute2-url "&kernel;linux/utils/net/iproute2/iproute2-&iproute2-version;.tar.xz">
-<!ENTITY iproute2-md5 "6282e47de9c5b230e83537fba7181c9c">
+<!ENTITY iproute2-md5 "9d7927e8e5ca301bd14990f64ad44a8c">
 <!ENTITY iproute2-home "&kernel;linux/utils/net/iproute2/">
 <!ENTITY iproute2-fin-du "17 MB">
 <!ENTITY iproute2-fin-sbu "0.1 SBU">
@@ -413,10 +413,10 @@
 <!ENTITY libpipeline-fin-du "9.7 MB">
 <!ENTITY libpipeline-fin-sbu "0.1 SBU">
 
-<!ENTITY libtool-version "2.4.7">
-<!ENTITY libtool-size "996 KB">
+<!ENTITY libtool-version "2.5.3">
+<!ENTITY libtool-size "1,026 KB">
 <!ENTITY libtool-url "&gnu;libtool/libtool-&libtool-version;.tar.xz">
-<!ENTITY libtool-md5 "2fc0b6ddcd66a89ed6e45db28fa44232">
+<!ENTITY libtool-md5 "e42b7d9ab875f1d013bba3cdb8a59b58">
 <!ENTITY libtool-home "&gnu-software;libtool/">
 <!ENTITY libtool-fin-du "45 MB">
 <!ENTITY libtool-fin-sbu "0.8 SBU">
@@ -430,13 +430,13 @@
 <!ENTITY libxcrypt-fin-sbu "0.1 SBU">
 
 <!ENTITY linux-major-version "6">
-<!ENTITY linux-minor-version "10">
-<!ENTITY linux-patch-version "8">
+<!ENTITY linux-minor-version "11">
+<!ENTITY linux-patch-version "1">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "141,755 KB">
+<!ENTITY linux-size "143,488 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "e449666908b3ddf351c8faaa1d511be2">
+<!ENTITY linux-md5 "28d4c44c62414ef7f0c8aa1fd5667937">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -604,19 +604,19 @@
 <!-- If python minor version changes, updates in python and
      meson pages will be needed: python3.6 and python3.6m -->
 
-<!ENTITY python-version "3.12.6">
+<!ENTITY python-version "3.12.7">
 <!ENTITY python-minor "3.12">
-<!ENTITY python-size "19,956 KB">
+<!ENTITY python-size "19,965 KB">
 <!ENTITY python-url "https://www.python.org/ftp/python/&python-version;/Python-&python-version;.tar.xz">
-<!ENTITY python-md5 "cb669514937d3e894e74081627722aa5">
+<!ENTITY python-md5 "c6c933c1a0db52597cb45a7910490f93">
 <!ENTITY python-home "https://www.python.org/">
 <!ENTITY python-tmp-du "603 MB">
 <!ENTITY python-tmp-sbu "0.4 SBU">
 <!ENTITY python-fin-du "530 MB">
 <!ENTITY python-fin-sbu "2.2 SBU">
 <!ENTITY python-docs-url "https://www.python.org/ftp/python/doc/&python-version;/python-&python-version;-docs-html.tar.bz2">
-<!ENTITY python-docs-md5 "35e90037a10d51af0c396b05bd64659d">
-<!ENTITY python-docs-size "8,165 KB">
+<!ENTITY python-docs-md5 "dc8310645d00143661062779196e551e">
+<!ENTITY python-docs-size "8,194 KB">
 
 <!ENTITY readline-version "8.2.13">
 <!ENTITY readline-soversion "8.2"><!-- used for stripping -->
