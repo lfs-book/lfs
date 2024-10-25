@@ -14,6 +14,7 @@ $regex = array();
 //$regex[ 'bzip2'    ] = "/^.*current version is ([\d\.]+).*$/";
 $regex[ 'intltool' ] = "/^.*Latest version is (\d[\d\.]+\d).*$/";
 $regex[ 'less'     ] = "/^.*current released version is less-(\d+).*$/";
+$regex[ 'markupsafe' ] = "/^.*MarkupSafe ([\d\.]+).*$/";
 $regex[ 'mpfr'     ] = "/^mpfr-([\d\.]+)\.tar.*$/";
 //$regex[ 'Python'   ] = "/^.*Latest Python 3.*Python (3[\d\.]+\d).*$/";
 //$regex[ 'sysvinit' ] = "/^.*sysvinit-([\d\.]+)dsf\.tar.*$/";
@@ -147,7 +148,7 @@ if ( $package == "psmisc"     ) $dirpath = "https://gitlab.com/psmisc/psmisc/-/t
 if ( $package == "Python"     ) $dirpath = "https://www.python.org/downloads/source/";
 if ( $package == "shadow"     ) $dirpath = github("shadow-maint/shadow");
 if ( $package == "sysvinit"   ) $dirpath = github("slicer69/sysvinit");
-if ( $package == "MarkupSafe" ) $dirpath = "https://pypi.python.org/pypi/MarkupSafe/";
+if ( $package == "markupsafe" ) $dirpath = "https://pypi.python.org/pypi/MarkupSafe/";
 if ( $package == "jinja"      ) $dirpath = "https://pypi.python.org/pypi/Jinja2/";
 if ( $package == "sysklogd"   ) $dirpath = github("troglobit/sysklogd");
 if ( $package == "systemd"    ) $dirpath = github("systemd/systemd");

@@ -371,7 +371,7 @@
     <caution>
       <para>If you've decided to use a separate &boot-dir; partition for the
       LFS system (maybe sharing a &boot-dir; partition with the host
-      distro) , the files copied below should go there. The easiest way to
+      distro), the files copied below should go there. The easiest way to
       do that is to create the entry for &boot-dir; in &fstab; first (read
       the previous section for details), then issue the following command
       as the &root; user in the

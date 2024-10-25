@@ -143,18 +143,18 @@
     <!--<listitem>
       <para>Kmod-&kmod-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Less-&less-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>LFS-Bootscripts-&lfs-bootscripts-version;</para>
     </listitem>-->
     <!--<listitem>
       <para>Libcap-&libcap-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Libelf from Elfutils-&elfutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Libffi-&libffi-version;</para>
     </listitem>-->
@@ -182,9 +182,9 @@
     <!--<listitem>
       <para>Man-pages-&man-pages-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>MarkupSafe-&markupsafe-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Meson-&meson-version;</para>
     </listitem>
@@ -239,9 +239,9 @@
     <listitem>
       <para>Systemd-&systemd-version;</para>
     </listitem>
-    <!--<listitem revision="sysv">
+    <listitem revision="sysv">
       <para>SysVinit-&sysvinit-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Tar-&tar-version;</para>
     </listitem>-->
@@ -269,9 +269,9 @@
     <!--<listitem>
       <para>XML::Parser-&xml-parser-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Xz-&xz-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Zlib-&zlib-version;</para>
     </listitem>-->
