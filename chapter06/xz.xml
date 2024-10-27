@@ -49,7 +49,7 @@
             --host=$LFS_TGT                   \
             --build=$(build-aux/config.guess) \
             --disable-static                  \
-            FILECMD=file                      \
+            ac_cv_prog_FILECMD=file           \
             --docdir=/usr/share/doc/xz-&xz-version;</userinput></screen>
 
     <variablelist>
