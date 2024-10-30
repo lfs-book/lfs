@@ -275,6 +275,71 @@
       <varlistentry>
         <term>
           <parameter>
+            Display a user-friendly message when a kernel panic occurs
+          </parameter>
+        </term>
+        <listitem>
+          <para>This will make the kernel correctly display the message
+          in case a kernel panic happens and a running DRM driver
+          supports to do so.  Without this, it would be more
+          difficult to diagnose a panic: if no DRM driver is running,
+          we'd be on the VGA console which can only hold 24 lines and
+          the relevent kernel message is often flushed away; if a DRM
+          driver is running, the display is often completely messed up
+          on panic.  As of Linux-6.12, none of the dedicated drivers for
+          mainstream GPU models really supports this, but it's supported by
+          the <quote>Simple framebuffer driver</quote> which runs on the
+          VESA (or EFI) framebuffer before the dedicated GPU driver is
+          loaded.  If the dedicated GPU driver is built as a module
+          (instead of a part of the kernel image) and no initramfs is
+          used, this functionality will work just fine before the root
+          file system is mounted and it's already enough for providing
+          information about most LFS configuration errors causing a
+          panic (for example, an incorrect <parameter>root=</parameter>
+          setting in <xref linkend='ch-bootable-grub'/>).</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+          <parameter>
+            Panic screen formatter
+          </parameter>
+        </term>
+        <listitem>
+          <para>Set this <literal>kmsg</literal> to make sure the last
+          kernel messages lines are displayed when a kernel panic happens.
+          The default, <literal>user</literal>, would make the kernel show
+          only a <quote>user friendly</quote> panic message which is not
+          helpful on diagnostic.  The third choice,
+          <literal>qr_code</literal>, would make the kernel to compress
+          the last kernel message lines into a QR code and display it.
+          The QR code can hold more message lines than plain text and it
+          can be decoded with an external device (like a smart phone).
+          But it requires a Rust compiler that LFS does not provide.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+          <parameter>
+            Mark VGA/VBE/EFI FB as generic system framebuffer
+          </parameter> and
+          <parameter>Simple framebuffer driver</parameter>
+        </term>
+        <listitem>
+          <para>These allow to use the VESA framebuffer (or the EFI
+          framebuffer if booting the LFS system via UEFI) as a DRM device.
+          The VESA framebuffer will be set up by GRUB (or the EFI
+          framebuffer will be set up by the UEFI firmware), so the DRM panic
+          handler can function before the GPU-specific DRM driver is
+          loaded.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+          <parameter>
             Enable legacy fbdev support for your modesetting driver
           </parameter> and
           <parameter>Framebuffer Console support</parameter>
