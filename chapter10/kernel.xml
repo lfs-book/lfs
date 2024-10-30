@@ -275,6 +275,82 @@
       <varlistentry>
         <term>
           <parameter>
+            Display a user-friendly message when a kernel panic occurs
+          </parameter>
+        </term>
+        <listitem>
+          <para>This will make the kernel correctly display the message
+          in case a kernel panic happens.  Without this, it would be more
+          difficult to diagnose a panic: if <option>CONFIG_DRM</option>,
+          <option>CONFIG_DRM_SIMPLEDRM</option>, or etc. are not enabled,
+          the relevent message lines can be flushed alway because the VGA
+          console is too small; if <option>CONFIG_DRM</option> etc. are
+          enabled but this option is not, the display can be completely
+          disrupted when the kernel panics.</para>
+
+          <note>
+            <para>
+              The DRM panic handler requires some support from the DRM
+              driver to work correctly, so it may not work with some DRM
+              drivers.  To ensure it functional before the root file system
+              is successfully mounted (normally most kernel panic cases to
+              be diagnosed by a LFS user happen before or during mounting
+              the root file system, for example the panic caused by an
+              incorrect <option>root=</option> setting in the kernel command
+              line of <filename>grub.cfg</filename>), build the DRM driver
+              for your GPU (for example <option>CONFIG_DRM_AMDGPU</option>)
+              as a kernel module instead of a part of the kernel so it won't
+              be loaded before sucessfully mounting the root file system.
+              Doing so also avoids the necessity of embedding some
+              <ulink url='&blfs-book;postlfs/firmware.html#video-firmware'>firmware</ulink>
+              into an initramfs or the kernel image in case the DRM driver
+              requires the firmware to be available on initialization.
+            </para>
+          </note>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+          <parameter>
+            Panic screen formatter
+          </parameter>
+        </term>
+        <listitem>
+          <para>Set this to <literal>kmsg</literal> to make sure the last
+          kernel messages lines are displayed when a kernel panic happens.
+          The default, <literal>user</literal>, would make the kernel show
+          only a <quote>user friendly</quote> panic message which is not
+          helpful on diagnostic.  The third choice,
+          <literal>qr_code</literal>, would make the kernel to display a
+          QR code containing the last kernel message lines.  The QR code
+          can be decoded with an external device (for example a smart phone)
+          into much more message lines than how much
+          <literal>kmsg</literal> can display, but doing so requires a Rust
+          compiler that LFS does not provide.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+          <parameter>
+            Mark VGA/VBE/EFI FB as generic system framebuffer
+          </parameter> and
+          <parameter>Simple framebuffer driver</parameter>
+        </term>
+        <listitem>
+          <para>These allow to use the VESA framebuffer (or the EFI
+          framebuffer if booting the LFS system via UEFI) as a DRM device.
+          The VESA framebuffer will be set up by GRUB (or the EFI
+          framebuffer will be set up by the UEFI firmware), so the DRM panic
+          handler can function before the GPU-specific DRM driver is
+          loaded.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+          <parameter>
             Enable legacy fbdev support for your modesetting driver
           </parameter> and
           <parameter>Framebuffer Console support</parameter>
