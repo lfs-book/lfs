@@ -282,8 +282,8 @@
         <listitem>
           <para>These are needed to display the Linux console on a
           GPU driven by a DRI (Direct Rendering Infrastructure) driver.
-          If <option>CONFIG_DRM</option> (Direct Rendering Manager) is
-          enabled, you should enable these two options as well or you'll see
+          As <option>CONFIG_DRM</option> (Direct Rendering Manager) is
+          enabled, we should enable these two options as well or we'll see
           a blank screen once the DRI driver is loaded.</para>
         </listitem>
       </varlistentry>
