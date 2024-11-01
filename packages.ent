@@ -200,10 +200,10 @@
 <!ENTITY flex-fin-du "33 MB">
 <!ENTITY flex-fin-sbu "0.1 SBU">
 
-<!ENTITY flit-core-version "3.9.0">
-<!ENTITY flit-core-size "41 KB">
+<!ENTITY flit-core-version "3.10.0">
+<!ENTITY flit-core-size "32 KB">
 <!ENTITY flit-core-url "&pypi-src;/f/flit-core/flit_core-&flit-core-version;.tar.gz">
-<!ENTITY flit-core-md5 "3bc52f1952b9a78361114147da63c35b">
+<!ENTITY flit-core-md5 "38fd365dc980d99107dfccadc96d0c4f">
 <!ENTITY flit-core-home "&pypi-home;/flit-core/">
 <!ENTITY flit-core-fin-du "1.6 MB">
 <!ENTITY flit-core-fin-sbu "less than 0.1 SBU">
@@ -389,10 +389,10 @@
 <!ENTITY lfs-bootscripts-cfg-du "BOOTSCRIPTS-INSTALL-KB KB">
 <!ENTITY lfs-bootscripts-cfg-sbu "less than 0.1 SBU">
 
-<!ENTITY libcap-version "2.70">
-<!ENTITY libcap-size "187 KB">
+<!ENTITY libcap-version "2.71">
+<!ENTITY libcap-size "189 KB">
 <!ENTITY libcap-url "&kernel;linux/libs/security/linux-privs/libcap2/libcap-&libcap-version;.tar.xz">
-<!ENTITY libcap-md5 "df0e20c6eeca849347b87d5d6a8870c0">
+<!ENTITY libcap-md5 "4264623bbc34c176079056932314fe29">
 <!ENTITY libcap-home "https://sites.google.com/site/fullycapable/">
 <!ENTITY libcap-fin-du "2.9 MB">
 <!ENTITY libcap-fin-sbu "less than 0.1 SBU">
@@ -431,12 +431,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "11">
-<!ENTITY linux-patch-version "5">
+<!ENTITY linux-patch-version "6">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "143,531 KB">
+<!ENTITY linux-size "143,490 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "63bdafbd97203b639178e3fbd5456b54">
+<!ENTITY linux-md5 "8cf18009bfbae6965e63bb452367cf50">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -637,10 +637,10 @@
 <!ENTITY sed-fin-du "30 MB">
 <!ENTITY sed-fin-sbu "0.3 SBU">
 
-<!ENTITY setuptools-version "75.2.0">
-<!ENTITY setuptools-size "1,319 KB">
+<!ENTITY setuptools-version "75.3.0">
+<!ENTITY setuptools-size "1,320 KB">
 <!ENTITY setuptools-url "&pypi-src;/s/setuptools/setuptools-&setuptools-version;.tar.gz">
-<!ENTITY setuptools-md5 "4d69de91ce968f45825bf36d95f2a626">
+<!ENTITY setuptools-md5 "ca5ea2d5e9622d6a7b9f6c6664821853">
 <!ENTITY setuptools-home "&pypi-home;/setuptools/">
 <!ENTITY setuptools-fin-du "35 MB">
 <!ENTITY setuptools-fin-sbu "less than 0.1 SBU">
