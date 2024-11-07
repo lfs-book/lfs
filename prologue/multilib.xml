@@ -66,8 +66,8 @@
       approach of LFS which is to show you how to build a Linux system. 
       To achieve this, no support for additional architectures than 
       the default one for your system is required. If you haven't 
-      previously built by the standard LFS book, you are encouraged to 
-      do so before using this edition.</para>
+      previously built a system using the standard LFS book, you are
+      encouraged to do so before using this edition.</para>
 
   </sect2>
 
@@ -75,11 +75,12 @@
 
     <para>Building a multilib system is not that much different from 
       building a system by using the 'native' LFS book. Beside some 
-      tweaks here and there the most prominent difference is that 
-      multilib requires compiling some applications up to three times:
+      tweaks here and there the most prominent difference is that a
+      multilib system requires compiling some applications up to three
+      times:
       one for the primary 64-bit architecture,
       one for the 32-bit architecture (m32),
-      and once again for the 32-bit architecture with is 32-bit memory 
+      and once again for the 32-bit architecture with its 32-bit memory 
       access and 64 bit instruction set (mx32).</para>
 
     <para>Continue only if you and your system meets the following 
@@ -92,7 +93,7 @@
             you will need to have
             <parameter>CONFIG_IA32_EMULATION=y</parameter>
             set in order to build for <parameter>m32</parameter> and
-            <parameter>CONFIG_X86_X32=y</parameter> set in order to
+            <parameter>CONFIG_X86_X32_ABI=y</parameter> set in order to
             build for <parameter>mx32</parameter>. 
           </para>
           <para>

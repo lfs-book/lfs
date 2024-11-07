@@ -300,10 +300,10 @@ bash version-check.sh</userinput></screen>
     </para>
 
     <para arch="ml_32,ml_x32,ml_all">
-      If the kernel feature required by a multilib is not enabled,
-      building the multilib for a package in Chapter 8 may either fail
-      immediately, or cause hidden breakages because autoconf cannot
-      probe the system features properly.
+      If the kernel feature required for a multilib architecture is not
+      enabled, building the multilib architecture for a package in
+      Chapter 8 may either fail immediately, or cause hidden breakages
+      because autoconf cannot probe the system features properly.
     </para>
     
   </sect2>
