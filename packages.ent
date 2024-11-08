@@ -156,10 +156,10 @@
 <!ENTITY elfutils-fin-du "127 MB">
 <!ENTITY elfutils-fin-sbu "0.3 SBU">
 
-<!ENTITY expat-version "2.6.3">
-<!ENTITY expat-size "475 KB">
+<!ENTITY expat-version "2.6.4">
+<!ENTITY expat-size "476 KB">
 <!ENTITY expat-url "&sourceforge;expat/expat-&expat-version;.tar.xz">
-<!ENTITY expat-md5 "3812d9fe29a5a6d64de3fa6e6509fdad">
+<!ENTITY expat-md5 "101fe3e320a2800f36af8cf4045b45c7">
 <!ENTITY expat-home "https://libexpat.github.io/">
 <!ENTITY expat-fin-du "13 MB">
 <!ENTITY expat-fin-sbu "0.1 SBU">
@@ -200,10 +200,10 @@
 <!ENTITY flex-fin-du "33 MB">
 <!ENTITY flex-fin-sbu "0.1 SBU">
 
-<!ENTITY flit-core-version "3.10.0">
-<!ENTITY flit-core-size "32 KB">
+<!ENTITY flit-core-version "3.10.1">
+<!ENTITY flit-core-size "42 KB">
 <!ENTITY flit-core-url "&pypi-src;/f/flit-core/flit_core-&flit-core-version;.tar.gz">
-<!ENTITY flit-core-md5 "38fd365dc980d99107dfccadc96d0c4f">
+<!ENTITY flit-core-md5 "a3381dd58e23e9826c5199b1f70318b0">
 <!ENTITY flit-core-home "&pypi-home;/flit-core/">
 <!ENTITY flit-core-fin-du "1.6 MB">
 <!ENTITY flit-core-fin-sbu "less than 0.1 SBU">

@@ -41,6 +41,24 @@
     -->
 
     <listitem>
+      <para>2024-11-08</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Added binutils-2.43.1-upstream_fix-1.patch. Fixes
+          <ulink url='&lfs-ticket-root;5591'>#5591</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to flit_core-3.10.1. Fixes
+          <ulink url='&lfs-ticket-root;5589'>#5589</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to expat-2.6.4. Fixes
+          <ulink url='&lfs-ticket-root;5590'>#5590</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2024-10-25</para>
       <itemizedlist>
         <listitem>
