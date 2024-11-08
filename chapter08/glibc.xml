@@ -636,6 +636,10 @@ CXX="g++ -m32 -mstackrealign" \
       --libexecdir=/usr/lib32            \
       libc_cv_slibdir=/usr/lib32</userinput></screen>
 
+    <para>Adding the <literal>-mstackrealign</literal> flag helps to
+      overcome issues with old binaries which cannot be recompiled
+      on the actual OS.</para>
+
     <para>Compile the package:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
