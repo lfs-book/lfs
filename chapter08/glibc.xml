@@ -624,8 +624,7 @@ find .. -name "*.a" -delete</userinput></screen>
 
     <para>Configure Glibc for m32 with the following commands:</para>
 
-<screen><userinput remap="configure">CC="gcc -m32 -mstackrealign" \
-CXX="g++ -m32 -mstackrealign" \
+<screen><userinput remap="configure">CC="gcc -m32" CXX="g++ -m32" \
 ../configure                             \
       --prefix=/usr                      \
       --host=i686-pc-linux-gnu           \
@@ -635,40 +634,6 @@ CXX="g++ -m32 -mstackrealign" \
       --libdir=/usr/lib32                \
       --libexecdir=/usr/lib32            \
       libc_cv_slibdir=/usr/lib32</userinput></screen>
-
-    <para>Adding the <literal>-mstackrealign</literal> flag helps to
-      overcome issues with old binaries which cannot be recompiled
-      on the actual OS. Those issues were reported for 
-      <application>Steam</application>.</para>
-
-    <!-- Thanks to xry111 for explaining the technical background: -->
-    <para>Today the x86-32 SysV psABI (used by all Linux programs)
-      mandates a 16-byte alignment of the stack frame, so the routines
-      using SSE will save/load SSE vectors onto/from the stack using a
-      <literal>movaps</literal> instruction (which only works with
-      aligned addresses, but faster than its counterpart allowing
-      unaligned addresses, <literal>movups</literal>).</para>
-    <para>But some really old x86-32 Linux binaries (compiled about
-      15 years ago), and all Windows x86-32 binaries only aligns the
-      stack frame to 4-byte. Thus, when it calls a SSE routine in LFS
-      built without <literal>-mstackrealign</literal>, the
-      <literal>movdqa</literal> instruction fails with a General
-      Protection Error and the Linux kernel terminates the process
-      with a SIGSEGV.</para>
-    <para>It is not clear why this seems to be an issue with Glibc only.
-      <command>gcc -m32</command> does <emphasis>not</emphasis> turn off SSE (because
-      it means "building a 32-bit program for x86_64" instead of
-      "building a program for i686," and all x86_64 CPU have SSE), so
-      every library can use SSE. <application>Steam</application> has
-      an issue here, but <application>Wine</application> has not.
-      Maybe <application>Wine</application> evades the issue by building
-      most libraries as Windows DLLs using <application>mingw-gcc</application> (which enables
-      <literal>-mstackrealign</literal> by default) instead of relying
-      on the system library, but it still uses the system libc.</para>
-    <para>In theory, the <literal>-mstackrealign</literal> should be
-      applied for all m32 libraries but actually, the only issue
-      reported so far can be fixed by adding it to glibc in the above
-      command only.</para>
 
     <para>Compile the package:</para>
 
