@@ -80,6 +80,12 @@ esac</userinput></screen>
     -i.orig gcc/config/i386/t-linux64
 </userinput></screen>
 
+    <para arch="ml_32,ml_all">Make <literal>-mstackrealign</literal> a default for 32bit
+      objects:</para>
+
+<screen arch="ml_32,ml_all"><userinput remap="pre">sed '/STACK_REALIGN_DEFAULT/s/0/(!TARGET_64BIT \&amp;\&amp; TARGET_SSE)/' \
+      -i gcc/config/i386/i386.h</userinput></screen>
+
     <para>The GCC documentation recommends building GCC
     in a dedicated build directory:</para>
 
