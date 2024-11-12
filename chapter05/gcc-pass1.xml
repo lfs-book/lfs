@@ -80,11 +80,36 @@ esac</userinput></screen>
     -i.orig gcc/config/i386/t-linux64
 </userinput></screen>
 
-    <para arch="ml_32,ml_all">Make <literal>-mstackrealign</literal> a default for 32bit
-      objects:</para>
+    <para arch="ml_32,ml_all">Make <literal>-mstackrealign</literal>
+      a default for 32bit objects:</para>
 
 <screen arch="ml_32,ml_all"><userinput remap="pre">sed '/STACK_REALIGN_DEFAULT/s/0/(!TARGET_64BIT \&amp;\&amp; TARGET_SSE)/' \
       -i gcc/config/i386/i386.h</userinput></screen>
+
+    <note arch="ml_32,ml_all">
+      <para>Adding the <literal>-mstackrealign</literal> flag by default
+        helps to overcome issues with old binaries which cannot be
+        recompiled on the actual OS.</para>
+
+      <!-- Thanks to xry111 for explaining the technical background: -->
+
+      <para>Today the x86-32 SysV psABI (used by all Linux programs)
+        mandates a 16-byte alignment of the stack frame, so the routines
+        using SSE will save/load SSE vectors onto/from the stack using a
+        <literal>movaps</literal> instruction (which only works with
+        aligned addresses, but faster than its counterpart allowing
+        unaligned addresses, <literal>movups</literal>).</para>
+
+      <para>But some really old x86-32 Linux binaries (compiled about
+        15 years ago), and all Windows x86-32 binaries which might be
+        run via <application>Wine</application> or <application>Steam</application>
+        only aligns the
+        stack frame to 4-byte. Thus, when it calls a SSE routine in LFS
+        built without <literal>-mstackrealign</literal>, the
+        <literal>movdqa</literal> instruction fails with a General
+        Protection Error and the Linux kernel terminates the process
+        with a SIGSEGV.</para>
+    </note>
 
     <para>The GCC documentation recommends building GCC
     in a dedicated build directory:</para>
