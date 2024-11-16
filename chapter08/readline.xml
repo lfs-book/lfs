@@ -90,8 +90,8 @@ sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
         <listitem>
           <para>This option forces Readline to link against the
           <filename class="libraryfile">libncursesw</filename> library.
-          For details see the "Shared Libraries" section in the package's 
-          "README" file.</para>
+          For details see the <quote>Shared Libraries</quote> section in the
+          package's <filename>README</filename> file.</para>
         </listitem>
       </varlistentry>
 
