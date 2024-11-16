@@ -758,7 +758,7 @@
 <!ENTITY vim-version "9.1.0866">
 <!-- <!ENTITY vim-majmin "90"> -->
 <!ENTITY vim-docdir "vim/vim91">
-<!ENTITY vim-size "17,811 KB">
+<!ENTITY vim-size "17,862 KB">
 <!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">
 <!-- N.B. LFS 9.0 uses
      https://github.com/vim/vim/archive/v8.1.1846/vim-8.1.1846.tar.gz
@@ -772,7 +772,7 @@
      example, https://github.com/vim/vim/tags?after=v8.1.1847 will show
      us v8.1.1846. -->
 <!--<!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.gz">-->
-<!ENTITY vim-md5 "7cd31eb3ae6b808e5c555c63a2447ddb">
+<!ENTITY vim-md5 "389418fb5820c7bce4cd62e929daf541">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "245 MB">
 <!ENTITY vim-fin-sbu "2.9 SBU">
