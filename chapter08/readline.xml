@@ -101,7 +101,7 @@ sed -i '/{OLDSUFF}/c:' support/shlib-install</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make SHLIB_LIBS="-lncursesw" install</userinput></screen>
+<screen><userinput remap="install">make install</userinput></screen>
 
     <para>If desired, install the documentation:</para>
 
