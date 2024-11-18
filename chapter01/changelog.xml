@@ -41,10 +41,40 @@
     -->
 
     <listitem>
-      <para>2024-11-13</para>
+      <para>2024-11-18</para>
       <itemizedlist>
         <listitem>
           <para>[thomas] - Upgrade to isl-0.27.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2024-11-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to vim-9.1.0866. Addresses
+          <ulink url='&lfs-ticket-root;4500'>#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20241024. Addresses
+          <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to wheel-0.45.0 (Python Module). Fixes
+          <ulink url='&lfs-ticket-root;5593'>#5593</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to setuptools-75.5.0 (Python Module). Fixes
+          <ulink url='&lfs-ticket-root;5595'>#5595</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.11.8. Fixes
+          <ulink url='&lfs-ticket-root;5592'>#5582</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to libcap-2.72. Fixes
+          <ulink url='&lfs-ticket-root;5594'>#5594</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>

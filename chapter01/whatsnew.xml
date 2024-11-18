@@ -263,9 +263,9 @@
     <listitem>
       <para>Vim-&vim-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Wheel-&wheel-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>XML::Parser-&xml-parser-version;</para>
     </listitem>-->
