@@ -41,6 +41,15 @@
     -->
 
     <listitem>
+      <para>2024-11-13</para>
+      <itemizedlist>
+        <listitem>
+          <para>[thomas] - Upgrade to isl-0.27.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2024-11-08</para>
       <itemizedlist>
         <listitem>

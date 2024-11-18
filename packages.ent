@@ -349,12 +349,12 @@
 <!ENTITY iproute2-fin-du "17 MB">
 <!ENTITY iproute2-fin-sbu "0.1 SBU">
 
-<!ENTITY isl-version "0.26">
-<!ENTITY isl-size "1,988 KB">
+<!ENTITY isl-version "0.27">
+<!ENTITY isl-size "1,9 MB">
 <!-- ENTITY isl-url "http://isl.gforge.inria.fr/isl-&isl-version;.tar.xz" -->
 <!-- ENTITY isl-url "https://gcc.gnu.org/pub/gcc/infrastructure/isl-&isl-version;.tar.bz2" -->
 <!ENTITY isl-url "https://libisl.sourceforge.io/isl-&isl-version;.tar.xz">
-<!ENTITY isl-md5 "f2b56e8da688eba89838d414470da85f">
+<!ENTITY isl-md5 "11ee9d335b227ea2e8579c4ba6e56138">
 <!ENTITY isl-home "http://libisl.sourceforge.io/">
 <!ENTITY isl-fin-du "20 MB">
 <!ENTITY isl-fin-sbu "0.1 SBU">
