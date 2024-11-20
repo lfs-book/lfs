@@ -83,13 +83,13 @@ find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;</userinput></s
     since they are simply symlinks to their counterparts in
     <filename class="directory">/usr</filename>.</para>
 
-    <note>
-      <para>If you wish to include <filename class="directory">/bin</filename>
-      and/or <filename class="directory">/sbin</filename> in the <envar>PATH</envar>
-      for some reason, modify the
-      <envar>PATH</envar> in <filename>.bashrc</filename> after LFS has been
-      built.</para>
-    </note>
+    <warning>
+      <para>Including <filename class="directory">/bin</filename>
+      and/or <filename class="directory">/sbin</filename> in
+      the <envar>PATH</envar> variable may cause some BLFS packages fail to
+      build,<!-- known example: SPIRV-LLVM-Translator --> so don't do that
+      in the <filename>.bashrc</filename> file or anywhere else.</para>
+    </warning>
 
 <screen><userinput remap="pre">sed -e 's:#ENCRYPT_METHOD DES:ENCRYPT_METHOD YESCRYPT:' \
     -e 's:/var/spool/mail:/var/mail:'                   \
