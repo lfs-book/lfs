@@ -168,7 +168,7 @@ EOF</command></screen>
     </para>
 
 <screen><command>alias lfs='sudo /usr/sbin/chroot /mnt/lfs /usr/bin/env -i HOME=/root TERM="$TERM" PS1="\u:\w\\\\$ "
-PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash --login'</command></screen>
+PATH=/usr/bin:/usr/sbin /bin/bash --login'</command></screen>
 
      <para>
        This alias is a little tricky because of the quoting and levels of
