@@ -274,11 +274,11 @@ cp -v COPYING README* /usr/share/doc/iproute2-&iproute2-version;</userinput></sc
           <para>Traffic control for Quality of Service
           (QoS) and Class of Service (CoS) implementations</para>
 
-          <para><command>tc qdisc</command> allows users to set up the queuing
+          <para><command>tc qdisc</command> allows users to set up the queueing
           discipline</para>
 
           <para><command>tc class</command> allows users to set up classes based
-          on the queuing discipline scheduling</para>
+          on the queueing discipline scheduling</para>
 
           <para><command>tc filter</command> allows users to set up the QoS/CoS
           packet filtering</para>
