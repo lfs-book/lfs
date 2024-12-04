@@ -172,10 +172,10 @@
 <!ENTITY expect-tmp-du "3.9 MB">
 <!ENTITY expect-tmp-sbu "0.2 SBU">
 
-<!ENTITY file-version "5.45">
-<!ENTITY file-size "1,218 KB">
+<!ENTITY file-version "5.46">
+<!ENTITY file-size "1,283 KB">
 <!ENTITY file-url "https://astron.com/pub/file/file-&file-version;.tar.gz">
-<!ENTITY file-md5 "26b2a96d4e3a8938827a1e572afd527a">
+<!ENTITY file-md5 "459da2d4b534801e2e2861611d823864">
 <!ENTITY file-home "https://www.darwinsys.com/file/">
 <!ENTITY file-tmp-du "37 MB">
 <!ENTITY file-tmp-sbu "0.1 SBU">
@@ -317,10 +317,10 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.3 SBU">
 
-<!ENTITY iana-etc-version "20241024">
-<!ENTITY iana-etc-size "590 KB">
+<!ENTITY iana-etc-version "20241122">
+<!ENTITY iana-etc-size "591 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "831a1b8f20a53da822d9ae84e311daac">
+<!ENTITY iana-etc-md5 "38064a8e7c2233e23911ef9d39360584">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -341,10 +341,10 @@
 <!ENTITY intltool-fin-du "1.5 MB">
 <!ENTITY intltool-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY iproute2-version "6.11.0">
-<!ENTITY iproute2-size "903 KB">
+<!ENTITY iproute2-version "6.12.0">
+<!ENTITY iproute2-size "904 KB">
 <!ENTITY iproute2-url "&kernel;linux/utils/net/iproute2/iproute2-&iproute2-version;.tar.xz">
-<!ENTITY iproute2-md5 "9d7927e8e5ca301bd14990f64ad44a8c">
+<!ENTITY iproute2-md5 "bc789bd210bc5d1ca6c64ea1c87d6979">
 <!ENTITY iproute2-home "&kernel;linux/utils/net/iproute2/">
 <!ENTITY iproute2-fin-du "17 MB">
 <!ENTITY iproute2-fin-sbu "0.1 SBU">
@@ -423,10 +423,10 @@
 <!ENTITY libpipeline-fin-du "9.7 MB">
 <!ENTITY libpipeline-fin-sbu "0.1 SBU">
 
-<!ENTITY libtool-version "2.5.3">
-<!ENTITY libtool-size "1,026 KB">
+<!ENTITY libtool-version "2.5.4">
+<!ENTITY libtool-size "1,033 KB">
 <!ENTITY libtool-url "&gnu;libtool/libtool-&libtool-version;.tar.xz">
-<!ENTITY libtool-md5 "e42b7d9ab875f1d013bba3cdb8a59b58">
+<!ENTITY libtool-md5 "22e0a29df8af5fdde276ea3a7d351d30">
 <!ENTITY libtool-home "&gnu-software;libtool/">
 <!ENTITY libtool-fin-du "45 MB">
 <!ENTITY libtool-fin-sbu "0.8 SBU">
@@ -440,13 +440,13 @@
 <!ENTITY libxcrypt-fin-sbu "0.1 SBU">
 
 <!ENTITY linux-major-version "6">
-<!ENTITY linux-minor-version "11">
-<!ENTITY linux-patch-version "8">
+<!ENTITY linux-minor-version "12">
+<!ENTITY linux-patch-version "1">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "143,543 KB">
+<!ENTITY linux-size "144,446 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "17ecb0bd378614376a59b2cc8682ea4d">
+<!ENTITY linux-md5 "f541bbef36e51ba1e7165137fe1186db">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -647,10 +647,10 @@
 <!ENTITY sed-fin-du "30 MB">
 <!ENTITY sed-fin-sbu "0.3 SBU">
 
-<!ENTITY setuptools-version "75.5.0">
-<!ENTITY setuptools-size "1,305 KB">
+<!ENTITY setuptools-version "75.6.0">
+<!ENTITY setuptools-size "1,307 KB">
 <!ENTITY setuptools-url "&pypi-src;/s/setuptools/setuptools-&setuptools-version;.tar.gz">
-<!ENTITY setuptools-md5 "d0f75eec03606aadda1e8eb07ee9b0d7">
+<!ENTITY setuptools-md5 "94458e508bd8e9dc6e6d097fc8747cf0">
 <!ENTITY setuptools-home "&pypi-home;/setuptools/">
 <!ENTITY setuptools-fin-du "35 MB">
 <!ENTITY setuptools-fin-sbu "less than 0.1 SBU">
@@ -777,10 +777,10 @@
 <!ENTITY vim-fin-du "245 MB">
 <!ENTITY vim-fin-sbu "2.9 SBU">
 
-<!ENTITY wheel-version "0.45.0">
-<!ENTITY wheel-size "105 KB">
+<!ENTITY wheel-version "0.45.1">
+<!ENTITY wheel-size "106 KB">
 <!ENTITY wheel-url "&pypi-src;/w/wheel/wheel-&wheel-version;.tar.gz">
-<!ENTITY wheel-md5 "3d1f79ff04a1252fa709dec58aa7249b">
+<!ENTITY wheel-md5 "dddc505d0573d03576c7c6c5a4fe0641">
 <!ENTITY wheel-home "&pypi-home;/wheel/">
 <!ENTITY wheel-fin-du "1.5 MB">
 <!ENTITY wheel-fin-sbu "less than 0.1 SBU">
