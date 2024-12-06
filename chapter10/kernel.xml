@@ -316,7 +316,7 @@
           supports to do so.  Without this, it would be more
           difficult to diagnose a panic: if no DRM driver is running,
           we'd be on the VGA console which can only hold 24 lines and
-          the relevent kernel message is often flushed away; if a DRM
+          the relevant kernel message is often flushed away; if a DRM
           driver is running, the display is often completely messed up
           on panic.  As of Linux-6.12, none of the dedicated drivers for
           mainstream GPU models really supports this, but it's supported by
