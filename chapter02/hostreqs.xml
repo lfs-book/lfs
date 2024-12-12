@@ -100,7 +100,7 @@
       <xref linkend="chapter-building-system"/>, so the workarounds for
       older kernels are not enabled and the compiled
       <application>glibc</application> is slightly faster and smaller.
-      As at Feb 2024, &min-kernel; is the oldest kernel release still
+      As at Dec 2024, &min-kernel; is the oldest kernel release still
       supported by the kernel developers.  Some kernel releases older than
       &min-kernel; may be still supported by third-party teams, but they
       are not considered official upstream kernel releases; read
