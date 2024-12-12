@@ -92,9 +92,11 @@
 <!ENTITY test-results    "&lfs-root;lfs/build-logs/&generic-version;/">
 <!ENTITY secadv          "&lfs-root;lfs/advisories/">
 
-<!-- 4.19 EOL is Dec 2024
-     so for LFS 12.3 we may consider moving to 5.4 -->
-<!ENTITY min-kernel      "4.19">
+<!-- 5.4 EOL is Dec 2025
+     so for LFS 12.5 we may consider moving to 5.10.
+     Keep an extra whitespace here to align the trailing "\" in glibc
+     configure command if y < 10 in x.y.  -->
+<!ENTITY min-kernel      "5.4 ">
 
 <!--
 <!ENTITY patches-rootd   "&lfs-root;patches/lfs/&generic-versiond;/">
