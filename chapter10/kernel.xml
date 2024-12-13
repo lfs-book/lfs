@@ -498,6 +498,26 @@
       <command>chown -R 0:0</command> on the <filename
       class="directory">linux-&linux-version;</filename> directory to ensure
       all files are owned by user <emphasis>root</emphasis>.</para>
+
+      <para>If you are updating the configuration and rebuilding the kernel
+      from a retained kernel source tree, normally you should
+      <emphasis role='bold'>not</emphasis> run the
+      <command>make mrproper</command> command.  The command would purge
+      the <filename>.config</filename> file and all the
+      <filename class='extension'>.o</filename> files from the previous
+      build.  Despite it's easy to restore <filename>.config</filename> from
+      the copy in <filename class='directory'>/boot</filename>, purging all
+      the <filename class='extension'>.o</filename> files is still a waste:
+      for a simple configuration change, often only a few
+      <filename class='extension'>.o</filename> files need to be (re)built
+      and the kernel build system will correctly skip other
+      <filename class='extension'>.o</filename> files if they are not
+      purged.</para>
+
+      <para>On the other hand, if you've upgraded GCC, you should run
+      <command>make clean</command> to purge all the
+      <filename class='extension'>.o</filename> files from the previous
+      build, or the new build may fail.</para>
     </note>
 
     <warning>
@@ -507,17 +527,6 @@
       <emphasis>must not</emphasis> be created on an LFS system as it can cause
       problems for packages you may wish to build once your base LFS system is
       complete.</para>
-    </warning>
-
-    <warning>
-      <para>The headers in the system's <filename
-      class="directory">include</filename> directory (<filename
-      class="directory">/usr/include</filename>) should
-      <emphasis>always</emphasis> be the ones against which Glibc was compiled,
-      that is, the sanitised headers installed in <xref
-      linkend="ch-tools-linux-headers"/>.  Therefore, they should
-      <emphasis>never</emphasis> be replaced by either the raw kernel headers
-      or any other kernel sanitized headers.</para>
     </warning>
 
   </sect2>
