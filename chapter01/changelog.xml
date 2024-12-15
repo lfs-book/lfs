@@ -41,6 +41,44 @@
     -->
 
     <listitem>
+      <para>2024-12-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to vim-9.1.0927. Addresses
+          <ulink url='&lfs-ticket-root;4500'>#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20241206. Addresses
+          <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to systemd-257. Fixes
+          <ulink url='&lfs-ticket-root;5559'>#5559</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to Python-3.13.1. Fixes
+          <ulink url='&lfs-ticket-root;5605'>#5605</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to libcap-2.73. Fixes
+          <ulink url='&lfs-ticket-root;5504'>#5604</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.12.5. Fixes
+          <ulink url='&lfs-ticket-root;5607'>#5607</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to kbd-2.7. Fixes
+          <ulink url='&lfs-ticket-root;5608'>#5608</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gettext-0.23. Fixes
+          <ulink url='&lfs-ticket-root;5603'>#5603</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2024-12-01</para>
       <itemizedlist>
         <listitem>
