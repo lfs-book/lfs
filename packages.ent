@@ -245,10 +245,10 @@
 <!ENTITY gdbm-fin-du "13 MB">
 <!ENTITY gdbm-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY gettext-version "0.22.5">
-<!ENTITY gettext-size "10,031 KB">
+<!ENTITY gettext-version "0.23">
+<!ENTITY gettext-size "10,795 KB">
 <!ENTITY gettext-url "&gnu;gettext/gettext-&gettext-version;.tar.xz">
-<!ENTITY gettext-md5 "3ae5580599d84be93e6213930facb2db">
+<!ENTITY gettext-md5 "9f4f6040ac1022278ea26d28f37b1688">
 <!ENTITY gettext-home "&gnu-software;gettext/">
 <!ENTITY gettext-tmp-du "321 MB">
 <!ENTITY gettext-tmp-sbu "1.1 SBU">
@@ -317,10 +317,10 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.3 SBU">
 
-<!ENTITY iana-etc-version "20241122">
+<!ENTITY iana-etc-version "20241206">
 <!ENTITY iana-etc-size "591 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "38064a8e7c2233e23911ef9d39360584">
+<!ENTITY iana-etc-md5 "8ed4c07cada287f55207577976d6a37f">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -357,10 +357,10 @@
 <!ENTITY jinja2-fin-du "2.5 MB">
 <!ENTITY jinja2-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY kbd-version "2.6.4">
-<!ENTITY kbd-size "1,470 KB">
+<!ENTITY kbd-version "2.7">
+<!ENTITY kbd-size "1,437 KB">
 <!ENTITY kbd-url "https://www.kernel.org/pub/linux/utils/kbd/kbd-&kbd-version;.tar.xz">
-<!ENTITY kbd-md5 "e2fd7adccf6b1e98eb1ae8d5a1ce5762">
+<!ENTITY kbd-md5 "bf40be5bea1b62e691410f5c6e0bbd6b">
 <!ENTITY kbd-home "https://kbd-project.org/">
 <!ENTITY kbd-fin-du "34 MB">
 <!ENTITY kbd-fin-sbu "0.1 SBU">
@@ -389,10 +389,10 @@
 <!ENTITY lfs-bootscripts-cfg-du "BOOTSCRIPTS-INSTALL-KB KB">
 <!ENTITY lfs-bootscripts-cfg-sbu "less than 0.1 SBU">
 
-<!ENTITY libcap-version "2.72">
+<!ENTITY libcap-version "2.73">
 <!ENTITY libcap-size "191 KB">
 <!ENTITY libcap-url "&kernel;linux/libs/security/linux-privs/libcap2/libcap-&libcap-version;.tar.xz">
-<!ENTITY libcap-md5 "0d9dd20dbdc7a94942f0c43ae706e5ac">
+<!ENTITY libcap-md5 "0e186df9de9b1e925593a96684fe2e32">
 <!ENTITY libcap-home "https://sites.google.com/site/fullycapable/">
 <!ENTITY libcap-fin-du "2.9 MB">
 <!ENTITY libcap-fin-sbu "less than 0.1 SBU">
@@ -431,12 +431,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "12">
-<!ENTITY linux-patch-version "1">
+<!ENTITY linux-patch-version "5">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "144,446 KB">
+<!ENTITY linux-size "144,535 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "f541bbef36e51ba1e7165137fe1186db">
+<!ENTITY linux-md5 "33a827ff7dea6908e7615d0766f1018e">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -604,19 +604,19 @@
 <!-- If python minor version changes, updates in python and
      meson pages will be needed: python3.6 and python3.6m -->
 
-<!ENTITY python-version "3.13.0">
+<!ENTITY python-version "3.13.1">
 <!ENTITY python-minor "3.13">
-<!ENTITY python-size "22,005 KB">
+<!ENTITY python-size "22,061 KB">
 <!ENTITY python-url "https://www.python.org/ftp/python/&python-version;/Python-&python-version;.tar.xz">
-<!ENTITY python-md5 "726e5b829fcf352326874c1ae599abaa">
+<!ENTITY python-md5 "80c16badb94ffe235280d4d9a099b8bc">
 <!ENTITY python-home "https://www.python.org/">
 <!ENTITY python-tmp-du "603 MB">
 <!ENTITY python-tmp-sbu "0.4 SBU">
 <!ENTITY python-fin-du "530 MB">
 <!ENTITY python-fin-sbu "2.2 SBU">
 <!ENTITY python-docs-url "https://www.python.org/ftp/python/doc/&python-version;/python-&python-version;-docs-html.tar.bz2">
-<!ENTITY python-docs-md5 "afbf0a2319b7ac7561c52969bd0f5148">
-<!ENTITY python-docs-size "9,999 KB">
+<!ENTITY python-docs-md5 "2fbda851be0e4d4c4dad7bb8d1ff7e50">
+<!ENTITY python-docs-size "10,339 KB">
 
 <!ENTITY readline-version "8.2.13">
 <!ENTITY readline-soversion "8.2"><!-- used for stripping -->
@@ -661,15 +661,15 @@
 <!ENTITY sysklogd-fin-du "3.9 MB">
 <!ENTITY sysklogd-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY systemd-version  "256.5">
+<!ENTITY systemd-version  "257">
 <!--<!ENTITY systemd-stable   "6b4878d">-->
 <!-- The above entity is used whenever we move to a stable backport branch. 
      In the event of a critical problem or kernel change that is incompatible, 
      we will switch to the backport branch until the next stable release. -->
-<!ENTITY systemd-size     "15,298 KB">
+<!ENTITY systemd-size     "15,805 KB">
 <!ENTITY systemd-url      "&github;/systemd/systemd/archive/v&systemd-version;/systemd-&systemd-version;.tar.gz">
 <!--<!ENTITY systemd-url      "&anduin-sources;/systemd-&systemd-version;-&systemd-stable;.tar.xz">-->
-<!ENTITY systemd-md5      "846a8b47a235793d0f937dfc53cfb78f">
+<!ENTITY systemd-md5      "a51c7f9ab0d8b0a08dcf14bea2b6a5cb">
 <!ENTITY systemd-home     "https://www.freedesktop.org/wiki/Software/systemd/">
 <!ENTITY systemd-man-version "256.5">
 <!ENTITY systemd-man-size "717 KB">
@@ -745,7 +745,7 @@
 <!ENTITY util-linux-fin-du "315 MB">
 <!ENTITY util-linux-fin-sbu "0.5 SBU">
 
-<!ENTITY vim-version "9.1.0866">
+<!ENTITY vim-version "9.1.0927">
 <!-- <!ENTITY vim-majmin "90"> -->
 <!ENTITY vim-docdir "vim/vim91">
 <!ENTITY vim-size "17,862 KB">
