@@ -59,7 +59,7 @@
     <para>Adjust the hardcoded paths to network configuration files for the
     standalone udev installation:</para>
 
- <screen><userinput remap="pre">sed -e '/NETWORK_DIRS/s/systemd/udev/' 
+ <screen><userinput remap="pre">sed -e '/NETWORK_DIRS/s/systemd/udev/' \
     -i src/libsystemd/sd-network/network-util.h</userinput></screen>
 
     <para>Prepare Udev for compilation:</para>
