@@ -772,7 +772,7 @@
      example, https://github.com/vim/vim/tags?after=v8.1.1847 will show
      us v8.1.1846. -->
 <!--<!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.gz">-->
-<!ENTITY vim-md5 "389418fb5820c7bce4cd62e929daf541">
+<!ENTITY vim-md5 "912f5a4303b2b779ba608b0d06f28aa8">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "245 MB">
 <!ENTITY vim-fin-sbu "2.9 SBU">
