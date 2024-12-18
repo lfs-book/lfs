@@ -45,8 +45,9 @@
     <systemitem class="groupname">sgx</systemitem>, from the default udev
     rules:</para>
 
- <screen><userinput remap="pre">sed -i -e 's/GROUP="render"/GROUP="video"/' \
-       -e 's/GROUP="sgx", //' rules.d/50-udev-default.rules.in</userinput></screen>
+ <screen><userinput remap="pre">sed -e 's/GROUP="render"/GROUP="video"/' \
+    -e 's/GROUP="sgx", //'               \
+    -i rules.d/50-udev-default.rules.in</userinput></screen>
 
     <para>Prepare systemd for compilation:</para>
 
