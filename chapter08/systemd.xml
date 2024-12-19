@@ -225,14 +225,9 @@ meson setup ..                \
 ninja test</userinput></screen>
 
     <!-- test-namespace needs /run/systemd/inaccessible/sock, which only exists
-         after initializing the system with systemd.
-         This seems to pass now in chroot -->
-    <!-- test-fd-util, test-mount-util, and test-mountpoint-util seem to fail
-         due to being unable to remount the root directory as MS_SLAVE. -->
-    <para>Three tests named <literal>systemd:test / test-fd-util</literal>,
-    <literal>systemd:test / test-mount-util</literal>, and
-    <literal>systemd:test / test-mountpoint-util</literal>,
-    are known to fail in the LFS chroot environment. Some other tests may
+         after initializing the system with systemd.  -->
+    <para>One test named <literal>systemd:core / test-namespace</literal>
+    is known to fail in the LFS chroot environment.  Some other tests may
     fail because they depend on various kernel configuration options.</para>
 
     <para>Install the package:</para>
