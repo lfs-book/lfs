@@ -73,10 +73,29 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
   <sect2>
     <title>Setting Up the Configuration</title>
 
-    <para>GRUB works by writing data to the first physical track of the
-    hard disk.  This area is not part of any file system.  The programs
-    there access GRUB modules in the boot partition.  The default location
-    is /boot/grub/.</para>
+    <para>If booting the system via BIOS, GRUB works by writing a stub to
+    the first sector (named the Master Boot Record, or MBR) of the hard
+    disk.  This area is not part of any file system.  The BIOS loads and
+    execute the content of MBR, then the stub loads the main GRUB image from
+    the BIOS Boot Partition.  The GRUB image is stored as raw data instead
+    of a file (there must be no file system on the BIOS Boot Partition), so
+    the stub don't need to support any file system and it can be made small
+    enough to fit in the MBR.</para>
+
+    <para>If booting the system via UEFI, GRUB works by storing the main
+    GRUB image as a PE-COFF executable file at a standard location in the
+    EFI System Partition.  The EFI firmware loads the file at the standard
+    location and execute it.</para>
+
+    <para>Many GRUB functions (including booting a Linux kernel) are
+    not included in the main GRUB image.  They are stored in some file
+    system as GRUB modules.  This file system is usually mounted in a
+    way that the GRUB modules can be accessed at
+    <filename class='directory'>/boot/grub</filename> on most Linux
+    distros.  To avoid the chicken-and-egg problem,
+    <command>grub-install</command> embeds the modules necessary to
+    access this file system into the main GRUB image, so it can find
+    and load other modules.</para>
 
     <para>The location of the boot partition is a choice of the user that
     affects the configuration.  One recommendation is to have a separate small
@@ -100,25 +119,66 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
     (or separate boot) partition is <filename
     class="partition">sda2</filename>.</para>
 
-    <para>Install the GRUB files into <filename
+    <para>For booting via BIOS, first make sure the boot partition is mounted
+    (if using a separate one), and the BIOS Boot partition exists.
+    Then install the GRUB files into <filename
     class="directory">/boot/grub</filename> and set up the boot track:</para>
 
     <warning>
       <para>The following command will overwrite the current boot loader. Do not
       run the command if this is not desired, for example, if using a third party
-      boot manager to manage the Master Boot Record (MBR).</para>
+      boot manager to manage the MBR.</para>
     </warning>
 
-<screen role="nodump"><userinput>grub-install /dev/sda</userinput></screen>
+<screen role="nodump"><userinput>grub-install /dev/sda --target=i386-pc</userinput></screen>
 
-    <note>
-      <para>If the system has been booted using UEFI,
-      <command>grub-install</command> will try to install files for the
-      <emphasis>x86_64-efi</emphasis> target, but those files
-      have not been installed in <xref linkend="chapter-building-system"/>.
-      If this is the case, add <option>--target i386-pc</option> to the
-      command above.</para>
-    </note>
+    <para>For booting via UEFI, first make sure the boot partition is mounted
+    (if using a separate one) and the EFI System Partition is mounted at
+    <filename class='directory'>/boot/efi</filename>.  Then install the GRUB
+    files into <filename class="directory">/boot/grub</filename> and the
+    main GRUB image into
+    <filename>/boot/efi/EFI/BOOT/BOOTX64.EFI</filename>:</para>
+
+    <warning>
+      <para>The following command will overwrite the
+      <filename>/boot/efi/EFI/BOOT/BOOTX64.EFI</filename> file.
+      If it already exists, it's likely the entry of another boot loader
+      (for example the GRUB installation from the host distro, or the
+      Windows Boot Manager).  Backup the file so it can be restored later,
+      or loaded as a secondary boot loader by the new GRUB installation
+      from LFS.</para>
+    </warning>
+
+    <screen role="nodump"><userinput>grub-install --target=x86_64-efi --removable</userinput></screen>
+
+    <para>
+      The command above assumes 64-bit UEFI firmware.
+      If you want to make the system bootable on a 32-bit UEFI firmware,
+      run the command again with <literal>x86_64-efi</literal> replaced by
+      <literal>i386-efi</literal>.
+    </para>
+
+    <para>
+      The <parameter>--removable</parameter> option makes
+      <command>grub-install</command> use the standard location,
+      i.e. <filename>EFI/BOOT/BOOTX64.EFI</filename> (or
+      <filename>EFI/BOOT/BOOTIA32.EFI</filename> for
+      <literal>i386-efi</literal>), instead of the location GRUB prefers
+      (<filename>EFI/GRUB/GRUBX64.EFI</filename> or
+      <filename>EFI/GRUB/GRUBIA32.EFI</filename>).  Using a non-standard
+      location would need to record the location in a EFI variable, but
+      LFS lacks the utility for manipulating EFI varaibles.
+    </para>
+
+    <para>
+      The GRUB installation for BIOS, 64-bit UEFI, and 32-bit UEFI can
+      coexist and share the same configuration.  So you can create both
+      the BIOS Boot Partition and the EFI System Partition, and install
+      GRUB for all the supported firmware types (i.e. running three
+      <command>grub-install</command> commands) if you are unsure about
+      your firmware type, or you plan to move the hard drive to a different
+      computer.
+    </para>
 
   </sect2>
 
@@ -150,14 +210,11 @@ EOF</userinput></screen>
       <systemitem class='filesystem'>ext2</systemitem>,
       <systemitem class='filesystem'>ext3</systemitem>, and
       <systemitem class='filesystem'>ext4</systemitem> filesystems.
-      The <command>grub-install</command> command has embedded some modules
-      into the main <application>GRUB</application> image (installed into
-      the MBR or the GRUB BIOS partition) to access the other modules
-      (in <filename class='directory'>/boot/grub/i386-pc</filename>) without
-      a chicken-or-egg issue, so with a typical configuration these two
-      modules are already embedded and those two <command>insmod</command>
-      commands will do nothing.  But they do no harm anyway, and they may
-      be needed with some rare configurations.
+      As we've discussed, in a typical configuration these two
+      modules are already embedded in the main GRUB image by
+      <command>grub-install</command> and those two
+      <command>insmod</command> commands will do nothing.  But they do no
+      harm anyway, and they may be needed with some rare configurations.
     </para>
 
     <para>
@@ -165,7 +222,8 @@ EOF</userinput></screen>
       resolution and color depth of the VESA framebuffer to be passed to the
       kernel.  It's necessary for the kernel SimpleDRM driver to use the
       VESA framebuffer.  You can use a different resolution or color depth
-      value which better suits for your monitor.
+      value which better suits for your monitor.  This line does nothing
+      when the system is booted via UEFI, but it does no harm anyway.
     </para>
 
     <note><para>From <application>GRUB</application>'s perspective, the
