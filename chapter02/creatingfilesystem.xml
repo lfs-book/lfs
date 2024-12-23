@@ -66,12 +66,31 @@
 
   <para>If you are using an existing <systemitem class="filesystem">swap
   </systemitem> partition, there is no need to format it. If a new
-  <systemitem class="filesystem"> swap</systemitem> partition was created,
+  <systemitem class="filesystem">swap</systemitem> partition was created,
   it will need to be initialized with this command:</para>
 
 <screen role="nodump"><userinput>mkswap /dev/<replaceable>&lt;yyy&gt;</replaceable></userinput></screen>
 
   <para>Replace <replaceable>&lt;yyy&gt;</replaceable> with the name of the
   <systemitem class="filesystem">swap</systemitem> partition.</para>
+
+  <para>If you have created an EFI System Partition, you have a few options.
+  Motherboards when booting with UEFI look for EFI applications in partitions
+  formatted with a FAT variant (FAT12, FAT16, FAT32, VFAT, etc).  Usually,
+  FAT32 or VFAT are the recommended options.</para>
+
+  <para>If you have chosen <systemitem class="filesystem">FAT32</systemitem>,
+  format the ESP with the following command:</para>
+
+<screen role="nodump"><userinput>mkfs.fat -F 32 /dev/<replaceable>&lt;yyy&gt;</replaceable></userinput></screen>
+
+  <para>On the other hand, if you have chosen
+  <systemitem class="filesystem">VFAT</systemitem>, you can run the following
+  instead:</para>
+
+<screen role="nodump"><userinput>mkfs.vfat /dev/<replaceable>&lt;yyy&gt;</replaceable></userinput></screen>
+
+  <para>Replace <replaceable>&lt;yyy&gt;</replaceable> with the name of the
+  EFI System Partition.</para>
 
 </sect1>
