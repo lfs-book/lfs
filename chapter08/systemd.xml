@@ -273,10 +273,13 @@ ninja test</userinput></screen>
 
 <screen><userinput remap="pre">rm -rf *</userinput></screen>
 
-    <para>Create a symlink to work around missing xsltproc:</para>
+<!-- Remove the symlink to work around missing xsltproc
+     Man page generation will be properly supressed in meson options -->
+
+    <!-- para>Create a symlink to work around missing xsltproc:</para -->
 
 <!-- screen><userinput remap="pre">ln -sf /tools/bin/true /usr/bin/xsltproc</userinput></screen -->
-<screen><userinput remap="pre">ln -sf /bin/true /usr/bin/xsltproc</userinput></screen>
+<!-- screen><userinput remap="pre">ln -sf /bin/true /usr/bin/xsltproc</userinput></screen -->
 
 <!-- with cross-LFS we have util-linux in place:
     <para>Because we have not yet installed the final version of Util-Linux,
@@ -287,30 +290,33 @@ ninja test</userinput></screen>
 done</userinput></screen>
 -->
 
+<!-- Match config switch style (-Dxxx -> -D xxx) to initial build above
+     Properly supress man page generation (-D man=disabled)
+        (Removes need for xsltproc symlink)
+     Remove deprecated switches that are duplicates/not needed
+        (-Drootlibdir deprecated, covered by libdir= option)
+        (-Db_lto not found in meson-options.txt, lto handled by mode switch)
+        (-Dblkid deprecated) -->
     <para>Prepare systemd for compilation:</para>
 
     <screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
-CC="gcc -m32 -march=i686"              \
-CXX="g++ -m32 -march=i686"             \
-LANG=en_US.UTF-8                       \
-meson --prefix=/usr                    \
-      --sysconfdir=/etc                \
-      --localstatedir=/var             \
-      --libdir=/usr/lib32              \
-      -Drootlibdir=/usr/lib32          \
-      -Dblkid=true                  \
-      -Ddefault-dnssec=no           \
-      -Dfirstboot=false             \
-      -Dinstall-tests=false         \
-      -Dldconfig=false              \
-      -Dsysusers=false              \
-      -Db_lto=false                 \
-      -Drpmmacrosdir=no             \
-      -Dhomed=false                 \
-      -Duserdb=false                \
-      -Dman=false                   \
-      -Dmode=release                \
-      ..</userinput></screen>
+CC="gcc -m32"                        \
+CXX="g++ -m32"                       \
+LANG=en_US.UTF-8                     \
+meson setup ..                       \
+      --prefix=/usr                  \
+      --libdir=/usr/lib32            \
+      --buildtype=release            \
+      -D default-dnssec=no           \
+      -D firstboot=false             \
+      -D install-tests=false         \
+      -D ldconfig=false              \
+      -D sysusers=false              \
+      -D rpmmacrosdir=no             \
+      -D homed=disabled              \
+      -D userdb=false                \
+      -D man=disabled                \
+      -D mode=release </userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -318,10 +324,13 @@ meson --prefix=/usr                    \
 
     <para>Install the package:</para>
 
+<!-- Only install needed libs from lib32 as opposed to installing all libs
+     Needed libs: libudev.so*
+                  libsystemd.so*-->
 <screen><userinput remap="install">LANG=en_US.UTF-8 DESTDIR=$PWD/DESTDIR ninja install
-cp -Rv DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
-rm -f /usr/bin/xsltproc</userinput></screen>
+cp -v DESTDIR/usr/lib32/libsystemd.so* /usr/lib32/
+cp -v DESTDIR/usr/lib32/libudev.so* /usr/lib32/
+rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- m32 -->
 
@@ -336,9 +345,6 @@ rm -f /usr/bin/xsltproc</userinput></screen>
 
 <screen><userinput remap="pre">rm -rf *</userinput></screen>
 
-    <para>Create a symlink to work around missing xsltproc:</para>
-
-<screen><userinput remap="pre">ln -sf /bin/true /usr/bin/xsltproc</userinput></screen>
 <!--
     <para>Fix an issue on x32:</para>
 
@@ -347,30 +353,24 @@ sed '/long drift_freq;/s@long @int64_t @' -i src/timesync/timesyncd-manager.h</u
 -->
     <para>Prepare systemd for compilation:</para>
 
-<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
-CC="gcc -mx32"                          \
-CXX="g++ -mx32"                         \
-CFLAGS+=" -Wno-error=shift-overflow"    \
-CXXFLAGS+=" -Wno-error=shift-overflow"  \
-LANG=en_US.UTF-8                        \
-meson --prefix=/usr                     \
-      --sysconfdir=/etc                 \
-      --localstatedir=/var              \
-      --libdir=/usr/libx32              \
-      -Drootlibdir=/usr/libx32          \
-      -Dblkid=true                  \
-      -Ddefault-dnssec=no           \
-      -Dfirstboot=false             \
-      -Dinstall-tests=false         \
-      -Dldconfig=false              \
-      -Dsysusers=false              \
-      -Db_lto=false                 \
-      -Drpmmacrosdir=no             \
-      -Dhomed=false                 \
-      -Duserdb=false                \
-      -Dman=false                   \
-      -Dmode=release                \
-      ..</userinput></screen>
+    <screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
+CC="gcc -mx32"                       \
+CXX="g++ -mx32"                      \
+LANG=en_US.UTF-8                     \
+meson setup ..                       \
+      --prefix=/usr                  \
+      --libdir=/usr/libx32           \
+      --buildtype=release            \
+      -D default-dnssec=no           \
+      -D firstboot=false             \
+      -D install-tests=false         \
+      -D ldconfig=false              \
+      -D sysusers=false              \
+      -D rpmmacrosdir=no             \
+      -D homed=false                 \
+      -D userdb=false                \
+      -D man=disabled                \
+      -D mode=release </userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -379,9 +379,9 @@ meson --prefix=/usr                     \
     <para>Install the package:</para>
 
 <screen><userinput remap="install">LANG=en_US.UTF-8 DESTDIR=$PWD/DESTDIR ninja install
-cp -Rv DESTDIR/usr/libx32/* /usr/libx32
-rm -rf DESTDIR
-rm -f /usr/bin/xsltproc</userinput></screen>
+cp -v DESTDIR/usr/libx32/libsystemd.so* /usr/libx32/
+cp -v DESTDIR/usr/libx32/libudev.so* /usr/libx32/
+rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- mx32 -->
 

@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>2024-12-23</para>
+      <itemizedlist>
+        <listitem revision="systemd">
+          <para>[thomas] - Fix systemd instructions. Thanks to
+            Eric Clothier for preparing the patch.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2024-12-15</para>
       <itemizedlist>
         <listitem>
