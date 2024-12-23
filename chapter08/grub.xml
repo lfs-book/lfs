@@ -111,6 +111,49 @@
 <screen><userinput remap="install">make install
 mv -v /etc/bash_completion.d/grub /usr/share/bash-completion/completions</userinput></screen>
 
+    <para>Now build the package again for allow booting the system with
+    the GRUB installation on 64-bit UEFI.  You may skip the instructions
+    if you don't need the support.
+    Clean up the source tree and configure the package again:</para>
+
+<screen><userinput remap="configure">make clean
+./configure --prefix=/usr          \
+            --sysconfdir=/etc      \
+            --target=x86_64        \
+            --with-platform=efi    \
+            --disable-efiemu       \
+            --disable-werror</userinput></screen>
+
+    <para>Compile the package again:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the 64-bit UEFI support:</para>
+
+<screen><userinput remap="install">make -C grub-core install</userinput></screen>
+
+    <para>Now build the package again for allow booting the system with
+    the GRUB installation on 32-bit UEFI.  The hardware with 32-bit UEFI
+    is extremely rare and you may skip the instructions if you don't need
+    the support.  Clean up the source tree and configure the package
+    again:</para>
+
+<screen><userinput remap="configure">make clean
+./configure --prefix=/usr          \
+            --sysconfdir=/etc      \
+            --target=i386          \
+            --with-platform=efi    \
+            --disable-efiemu       \
+            --disable-werror</userinput></screen>
+
+    <para>Compile the package again:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install the 32-bit UEFI support:</para>
+
+<screen><userinput remap="install">make -C grub-core install</userinput></screen>
+
   <para>Making your LFS system bootable with GRUB will be discussed in
   <xref linkend="ch-bootable-grub" role='.'/></para>
 
