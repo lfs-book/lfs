@@ -98,6 +98,10 @@
 
 <screen><userinput remap="install">make install
 mv -v /etc/bash_completion.d/grub /usr/share/bash-completion/completions</userinput></screen>
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of GRUB for 64-bit UEFI</title>
 
     <para>Now build the package again for allow booting the system with
     the GRUB installation on 64-bit UEFI.  You may skip the instructions
@@ -119,6 +123,10 @@ mv -v /etc/bash_completion.d/grub /usr/share/bash-completion/completions</userin
     <para>Install the 64-bit UEFI support:</para>
 
 <screen><userinput remap="install">make -C grub-core install</userinput></screen>
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of GRUB for 64-bit UEFI</title>
 
     <para>Now build the package again for allow booting the system with
     the GRUB installation on 32-bit UEFI.  The hardware with 32-bit UEFI
