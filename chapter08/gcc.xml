@@ -64,6 +64,7 @@ cd       build</userinput></screen>
              --enable-default-pie     \
              --enable-default-ssp     \
              --enable-host-pie        \
+             --enable-targets=all     \
              --disable-multilib       \
              --disable-bootstrap      \
              --disable-fixincludes    \
@@ -102,6 +103,16 @@ cd       build</userinput></screen>
         <listitem>
           <para>This switch tells GCC to link to the system installed copy of
           the Zlib library, rather than its own internal copy.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-targets=all/</parameter></term>
+        <listitem>
+          <para>This switch tells GCC to enable 64-bit code generation
+          support even if we are building it for a 32-bit system.
+          It's needed to build GRUB for 64-bit UEFI.  This switch has no
+          effect if building a 64-bit LFS.</para>
         </listitem>
       </varlistentry>
     </variablelist>
