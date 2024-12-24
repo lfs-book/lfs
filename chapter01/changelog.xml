@@ -43,7 +43,7 @@
     <listitem>
       <para>2024-12-23</para>
       <itemizedlist>
-        <listitem revision="systemd">
+        <listitem>
           <para>[thomas] - Fix systemd instructions. Thanks to
             Eric Clothier for preparing the patch.</para>
         </listitem>
