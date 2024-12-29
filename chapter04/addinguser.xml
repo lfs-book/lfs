@@ -20,8 +20,8 @@
   the installation process. As <systemitem class="username">root</systemitem>,
   issue the following commands to add the new user:</para>
 
-<screen><userinput>groupadd &lfs-user;
-useradd -s /bin/bash -g &lfs-user; -m -k /dev/null &lfs-user;</userinput></screen>
+<screen><userinput>groupadd &lfs-groupname;
+useradd -s /bin/bash -g &lfs-groupname; -m -k /dev/null &lfs-username;</userinput></screen>
 
   <variablelist>
     <title>This is what the command line options mean:</title>
@@ -74,15 +74,15 @@ useradd -s /bin/bash -g &lfs-user; -m -k /dev/null &lfs-user;</userinput></scree
   have a password), you need to set a password for &lfs-user;.  Issue the
   following command as the &root; user to set the password:</para>
 
-<screen role="nodump"><userinput>passwd &lfs-user;</userinput></screen>
+<screen role="nodump"><userinput>passwd &lfs-username;</userinput></screen>
 
   <para>Grant <systemitem class="username">lfs</systemitem> full access to
   all the directories under <filename class="directory">$LFS</filename> by making
   <systemitem class="username">lfs</systemitem> the owner:</para>
 
-<screen><userinput>chown -v &lfs-user; $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
+<screen><userinput>chown -v &lfs-username; $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
 case $(uname -m) in
-  x86_64) chown -v &lfs-user; $LFS/lib64 ;;
+  x86_64) chown -v &lfs-username; $LFS/lib64 ;;
 esac</userinput></screen>
 
 <note><para>In some host systems, the following <command>su</command> command does not complete
@@ -94,7 +94,7 @@ esac</userinput></screen>
   logging in as &lfs-user; on a virtual console, or with the following
   substitute/switch user command:</para>
 
-<screen role="nodump"><userinput>su - &lfs-user;</userinput></screen>
+<screen role="nodump"><userinput>su - &lfs-username;</userinput></screen>
 
   <para>The <quote><parameter>-</parameter></quote> instructs
   <command>su</command> to start a login shell as opposed to a non-login shell.
