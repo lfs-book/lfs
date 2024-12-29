@@ -326,10 +326,12 @@ meson setup ..                       \
 
 <!-- Only install needed libs from lib32 as opposed to installing all libs
      Needed libs: libudev.so*
-                  libsystemd.so*-->
+                  libsystemd.so*
+     Also install pkgconfig files -->
 <screen><userinput remap="install">LANG=en_US.UTF-8 DESTDIR=$PWD/DESTDIR ninja install
 cp -v DESTDIR/usr/lib32/libsystemd.so* /usr/lib32/
 cp -v DESTDIR/usr/lib32/libudev.so* /usr/lib32/
+cp -v DESTDIR/usr/lib32/pkgconfig/* /usr/lib32/pkgconfig/
 rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- m32 -->
@@ -381,6 +383,7 @@ meson setup ..                       \
 <screen><userinput remap="install">LANG=en_US.UTF-8 DESTDIR=$PWD/DESTDIR ninja install
 cp -v DESTDIR/usr/libx32/libsystemd.so* /usr/libx32/
 cp -v DESTDIR/usr/libx32/libudev.so* /usr/libx32/
+cp -v DESTDIR/usr/libx32/pkgconfig/* /usr/libx32/pkgconfig/
 rm -rf DESTDIR</userinput></screen>
 
   </sect2><!-- mx32 -->
