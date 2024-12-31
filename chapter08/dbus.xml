@@ -51,8 +51,7 @@
 <screen><userinput remap="configure">mkdir build
 cd    build
 
-meson setup --prefix=/usr --buildtype=release --wrap-mode=nofallback ..
-ninja</userinput></screen>
+meson setup --prefix=/usr --buildtype=release --wrap-mode=nofallback ..</userinput></screen>
 
     <variablelist>
       <title>The meaning of the meson options:</title>
