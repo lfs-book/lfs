@@ -114,12 +114,12 @@
 <!ENTITY coreutils-fin-du "173 MB">
 <!ENTITY coreutils-fin-sbu "1.1 SBU">
 
-<!ENTITY dbus-version "1.14.10">
-<!ENTITY dbus-size "1,344 KB">
+<!ENTITY dbus-version "1.16.0">
+<!ENTITY dbus-size "1,092 KB">
 <!ENTITY dbus-url "https://dbus.freedesktop.org/releases/dbus/dbus-&dbus-version;.tar.xz">
-<!ENTITY dbus-md5 "46070a3487817ff690981f8cd2ba9376">
+<!ENTITY dbus-md5 "66bfcf1f42d4ebc634ca558d14335e92">
 <!ENTITY dbus-home "https://www.freedesktop.org/wiki/Software/dbus">
-<!ENTITY dbus-fin-du "19 MB">
+<!ENTITY dbus-fin-du "17 MB">
 <!ENTITY dbus-fin-sbu "0.1 SBU">
 
 <!ENTITY dejagnu-version "1.6.3">
@@ -421,10 +421,10 @@
 <!ENTITY libtool-fin-du "45 MB">
 <!ENTITY libtool-fin-sbu "0.8 SBU">
 
-<!ENTITY libxcrypt-version "4.4.36">
-<!ENTITY libxcrypt-size "610 KB">
+<!ENTITY libxcrypt-version "4.4.37">
+<!ENTITY libxcrypt-size "612 KB">
 <!ENTITY libxcrypt-url "&github;/besser82/libxcrypt/releases/download/v&libxcrypt-version;/libxcrypt-&libxcrypt-version;.tar.xz">
-<!ENTITY libxcrypt-md5 "b84cd4104e08c975063ec6c4d0372446">
+<!ENTITY libxcrypt-md5 "13b528d04c74dab3c1c5471430161a8f">
 <!ENTITY libxcrypt-home "&github;/besser82/libxcrypt/">
 <!ENTITY libxcrypt-fin-du "12 MB">
 <!ENTITY libxcrypt-fin-sbu "0.1 SBU">
