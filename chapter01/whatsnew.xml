@@ -134,9 +134,9 @@
     <listitem>
       <para>IPRoute2-&iproute2-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Jinja2-&jinja2-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Kbd-&kbd-version;</para>
     </listitem>
@@ -212,9 +212,9 @@
     <!--<listitem>
       <para>Pkgconf-&pkgconf-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Procps-ng-&procps-ng-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Psmisc-&psmisc-version;</para>
     </listitem>-->
@@ -230,9 +230,9 @@
     <listitem>
       <para>Setuptools-&setuptools-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Shadow-&shadow-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem revision="sysv">
       <para>Sysklogd-&sysklogd-version;</para>
     </listitem>

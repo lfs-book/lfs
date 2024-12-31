@@ -41,6 +41,48 @@
     -->
 
     <listitem>
+      <para>2025-01-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20241220. Addresses
+          <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to texinfo-7.2. Fixes
+          <ulink url='&lfs-ticket-root;5616'>#5616</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to sysvinit-3.12. Fixes
+          <ulink url='&lfs-ticket-root;5615'>#5615</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to shadow-4.17.0. Fixes
+          <ulink url='&lfs-ticket-root;5616'>#5617</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to procps-ng-4.0.5. Fixes
+          <ulink url='&lfs-ticket-root;5611'>#5611</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to meson-1.6.1. Fixes
+          <ulink url='&lfs-ticket-root;5510'>#5610</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.12.7. Fixes
+          <ulink url='&lfs-ticket-root;5613'>#5613</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to kbd-2.7.1. Fixes
+          <ulink url='&lfs-ticket-root;5608'>#5608</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to jinja2-3.1.5. Fixes
+          <ulink url='&lfs-ticket-root;5614'>#5614</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2024-12-15</para>
       <itemizedlist>
         <listitem>
