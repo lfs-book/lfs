@@ -84,7 +84,7 @@
           <ulink url='&lfs-ticket-root;5608'>#5608</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to jinja2-3.1.5. Fixes
+          <para>[bdubbs] - Update to jinja2-3.1.5 (Security Update). Fixes
           <ulink url='&lfs-ticket-root;5614'>#5614</ulink>.</para>
         </listitem>
       </itemizedlist>
