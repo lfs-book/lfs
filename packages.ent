@@ -645,10 +645,10 @@
 <!ENTITY setuptools-fin-du "35 MB">
 <!ENTITY setuptools-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY shadow-version "4.17.0">
-<!ENTITY shadow-size "2,164 KB">
+<!ENTITY shadow-version "4.17.1">
+<!ENTITY shadow-size "2,166 KB">
 <!ENTITY shadow-url "&github;/shadow-maint/shadow/releases/download/&shadow-version;/shadow-&shadow-version;.tar.xz">
-<!ENTITY shadow-md5 "63920a6fb28305401a4ebbde09e88376">
+<!ENTITY shadow-md5 "354d19d2182f8a9dd1097304ddb6cb85">
 <!ENTITY shadow-home "&github;/shadow-maint/shadow/">
 <!ENTITY shadow-fin-du "112 MB">
 <!ENTITY shadow-fin-sbu "0.1 SBU">
