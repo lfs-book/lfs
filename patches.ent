@@ -40,7 +40,7 @@
 <!ENTITY readline-fixes-patch-size "13 KB">
 -->
 <!ENTITY sysvinit-consolidated-patch "sysvinit-&sysvinit-version;-consolidated-1.patch">
-<!ENTITY sysvinit-consolidated-patch-md5 "17ffccbb8e18c39e8cedc32046f3a475">
+<!ENTITY sysvinit-consolidated-patch-md5 "3af8fd8e13cad481eeeaa48be4247445">
 <!ENTITY sysvinit-consolidated-patch-size "2.5 KB">
 <!--
 <!ENTITY systemd-upstream-patch "systemd-&systemd-version;-upstream_fixes-1.patch">
