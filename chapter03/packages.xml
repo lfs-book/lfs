@@ -476,25 +476,11 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Linux (&linux-version;) - <token>&linux-size;</token>:</term>
+      <term>Linux (&linux-base-version;) - <token>&linux-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&linux-home;"/></para>
         <para>Download: <ulink url="&linux-url;"/></para>
         <para>MD5 sum: <literal>&linux-md5;</literal></para>
-
-        <note>
-          <para>The Linux kernel is updated quite frequently, many times due to
-          discoveries of security vulnerabilities.  The latest available
-          <!--&linux-major-version;.&linux-minor-version;.x--> stable kernel
-          version <!--should--> may be
-          used, unless the errata page says otherwise.</para>
-
-          <para>For users with limited speed or expensive bandwidth who wish to
-          update the Linux kernel, a baseline version of the package and
-          patches can be downloaded separately.  This may save some time or
-          cost for a subsequent patch level upgrade within a minor release.
-          </para>
-        </note>
       </listitem>
     </varlistentry>
 

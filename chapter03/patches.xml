@@ -101,6 +101,23 @@
         <para>MD5 sum: <literal>&kbd-backspace-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
+
+    <varlistentry>
+      <term>Linux Patch (from &linux-base-version; to &linux-version;) - <token>&linux-patch-size;</token>:</term>
+      <listitem>
+        <para>Download: <ulink url="&linux-patch-url;"/></para>
+        <para>MD5 sum: <literal>&linux-patch-md5;</literal></para>
+
+        <note>
+          <para>The Linux kernel is updated quite frequently, many times due to
+          discoveries of security vulnerabilities.  The latest available
+          <!--&linux-major-version;.&linux-minor-version;.x--> stable kernel
+          version <!--should--> may be
+          used, unless the errata page says otherwise.</para>
+        </note>
+      </listitem>
+    </varlistentry>
+
 <!--
     <varlistentry>
       <term>Meson Upstream Fix Patch - <token>&meson-fix-patch-size;</token>:</term>

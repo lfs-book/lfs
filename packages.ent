@@ -439,14 +439,28 @@
 <!ENTITY libxcrypt-fin-du "12 MB">
 <!ENTITY libxcrypt-fin-sbu "0.1 SBU">
 
+<!--
+   Updates on linux versions usually happen in the 'patch' version
+   When updating the patch version, only the entities
+     * linux-patch-size
+     * linux-patch-md5
+   needs to be updated.
+   When a new minor version appears, the
+     * linux-major/minor-version is updated and the
+     * linux-patch-version is set to 1 as we do not use .0 versions
+     * linux-patch-size and linux-patch-md5 updated accordingly
+-->
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "12">
 <!ENTITY linux-patch-version "7">
-<!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
+<!ENTITY linux-base-version "&linux-major-version;.&linux-minor-version;">
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "144,501 KB">
-<!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "267a2cec0d794454a9f92a726280b56d">
+<!ENTITY linux-size "144,440 KB">
+<!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-base-version;.tar.xz">
+<!ENTITY linux-md5 "844fae6a58c7f43af44d8cea8484b4a1">
+<!ENTITY linux-patch-size "646 KB">
+<!ENTITY linux-patch-md5  "c98ed37cda9d715f89f9758476826a1f">
+<!ENTITY linux-patch-url "&kernel;linux/kernel/v&linux-major-version;.x/patch-&linux-version;.xz">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
