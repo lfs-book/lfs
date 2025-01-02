@@ -20,8 +20,8 @@
   the installation process. As <systemitem class="username">root</systemitem>,
   issue the following commands to add the new user:</para>
 
-<screen><userinput>groupadd lfs
-useradd -s /bin/bash -g lfs -m -k /dev/null lfs</userinput></screen>
+<screen><userinput>groupadd &lfs-groupname;
+useradd -s /bin/bash -g &lfs-groupname; -m -k /dev/null &lfs-username;</userinput></screen>
 
   <variablelist>
     <title>This is what the command line options mean:</title>
@@ -74,15 +74,15 @@ useradd -s /bin/bash -g lfs -m -k /dev/null lfs</userinput></screen>
   have a password), you need to set a password for &lfs-user;.  Issue the
   following command as the &root; user to set the password:</para>
 
-<screen role="nodump"><userinput>passwd lfs</userinput></screen>
+<screen role="nodump"><userinput>passwd &lfs-username;</userinput></screen>
 
   <para>Grant <systemitem class="username">lfs</systemitem> full access to
   all the directories under <filename class="directory">$LFS</filename> by making
   <systemitem class="username">lfs</systemitem> the owner:</para>
 
-<screen><userinput>chown -v lfs $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
+<screen><userinput>chown -v &lfs-username; $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
 case $(uname -m) in
-  x86_64) chown -v lfs $LFS/lib64 ;;
+  x86_64) chown -v &lfs-username; $LFS/lib64 ;;
 esac</userinput></screen>
 <screen arch="ml_32"  ><userinput>chown -v lfs $LFS/lib32</userinput></screen>
 <screen arch="ml_x32" ><userinput>chown -v lfs $LFS/libx32</userinput></screen>
@@ -97,7 +97,7 @@ esac</userinput></screen>
   logging in as &lfs-user; on a virtual console, or with the following
   substitute/switch user command:</para>
 
-<screen role="nodump"><userinput>su - lfs</userinput></screen>
+<screen role="nodump"><userinput>su - &lfs-username;</userinput></screen>
 
   <para>The <quote><parameter>-</parameter></quote> instructs
   <command>su</command> to start a login shell as opposed to a non-login shell.
