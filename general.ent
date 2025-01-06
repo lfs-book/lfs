@@ -34,6 +34,7 @@
                                              &patches-root;,
                                              &donwloads-root;, and
                                              &test-results; -->
+<!ENTITY os-release-type "development"> <!-- used by /etc/os-release -->
 ]]><!-- End %development -->
 
 <![ %release; [
@@ -52,6 +53,7 @@
                                           &test-results; -->
 <!ENTITY releasedate     "%reldate;">
 <!ENTITY copyrightdate   "%crdate;">
+<!ENTITY os-release-type "stable"> <!-- used by /etc/os-release -->
 ]]>
 
 <![ %rc; [
@@ -70,6 +72,7 @@
                                                     &test-results; -->
 <!ENTITY releasedate     "%reldate;">
 <!ENTITY copyrightdate   "%crdate;">
+<!ENTITY os-release-type "development"> <!-- used by /etc/os-release -->
 ]]>
 
 <![ %sysv; [

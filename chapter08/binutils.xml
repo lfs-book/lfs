@@ -41,8 +41,15 @@
   <sect2 role="installation">
     <title>Installation of Binutils</title>
 
+    <para>First, apply a patch to prevent a bug that causing
+    unnecessary relinking with packages that depend on cmake-3.31.0
+    or newer:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../&binutils-upstream-patch;</userinput></screen>
+
     <para>
-      At first, fix a bug which may cause some packages fail to build:
+      Then fix a bug which may cause some packages fail to build for
+      LoongArch:
     </para>
 
     <screen><userinput remap="pre">patch -Np1 -i ../&binutils-loongarch-patch;</userinput></screen>
