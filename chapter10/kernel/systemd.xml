@@ -18,6 +18,8 @@
   [ ] <emphasis role='blue'>C</emphasis>onfigure standard kernel features (expert users) ---&gt;            [EXPERT]
 
 <emphasis role='blue'>K</emphasis>ernel type and options ---&gt;
+  -*- <emphasis role='blue'>E</emphasis>FI runtime service support                                          [EFI]
+  [*]   <emphasis role='blue'>E</emphasis>FI boot stub support                                         [EFI_STUB]
   [*] <emphasis role='blue'>R</emphasis>elocatable kernel                                           [RELOCATABLE]
   [*]   <emphasis role='blue'>R</emphasis>andomize the address of the kernel (KASLR)             [RANDOMIZE_BASE]
 
@@ -43,6 +45,8 @@
   <emphasis role='blue'>F</emphasis>irmware Drivers ---&gt;
     [*] <emphasis role='blue'>E</emphasis>xport DMI identification via sysfs to userspace                 [DMIID]
     [*] M<emphasis role='blue'>a</emphasis>rk VGA/VBE/EFI FB as generic system framebuffer       [SYSFB_SIMPLEFB]
+    <emphasis role='blue'>E</emphasis>FI (Extensible Firmware Interface) Support ---&gt;
+      [*] <emphasis role='blue'>E</emphasis>nable the generic EFI decompressor                        [EFI_ZBOOT]
   <emphasis role='blue'>G</emphasis>raphics support ---&gt;
     &lt;*&gt; <emphasis role='blue'>D</emphasis>irect Rendering Manager (XFree86 4.1.0 and higher DRI support) ---&gt;
                                                                       ...  [DRM]

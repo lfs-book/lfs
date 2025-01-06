@@ -161,14 +161,6 @@
     url="&lfs-root;blfs/view/&short-version;/longindex.html#kernel-config-index">BLFS
     Index of Kernel Settings</ulink>.</para>
 
-    <note>
-      <para>If your host hardware is using UEFI and you wish to boot the
-      LFS system with it, you should adjust some kernel configuration
-      following <ulink url="&blfs-book;postlfs/grub-setup.html#uefi-kernel">
-      the BLFS page</ulink> <emphasis role='bold'>even if you'll use the
-      UEFI bootloader from the host distro</emphasis>.</para>
-    </note>
-
     <variablelist>
       <title>The rationale for the above configuration items:</title>
 

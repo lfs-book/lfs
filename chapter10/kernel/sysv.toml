@@ -20,6 +20,8 @@ DRM_FBDEV_EMULATION='*'
 DRM_SIMPLEDRM='*'
 FRAMEBUFFER_CONSOLE='*'
 
+EFI= { value='*', forced = true } # selected by LOONGARCH
+EFI_STUB='*'
 EFI_ZBOOT='*'
 
 revision='sysv'
