@@ -33,6 +33,9 @@ CGROUP_SCHED='* '
 
 revision='systemd'
 
+EFI='*'
+EFI_ZBOOT='*'
+
 [RT_GROUP_SCHED]
 value = ' '
 comment = 'This may cause some systemd features malfunction'

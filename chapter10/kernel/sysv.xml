@@ -18,6 +18,9 @@
   [*] <emphasis role='blue'>B</emphasis>uild a relocatable kernel image                             [RELOCATABLE]
   [*] <emphasis role='blue'>R</emphasis>andomize the address of the kernel image                 [RANDOMIZE_BASE]
 
+<emphasis role='blue'>B</emphasis>oot options ---&gt;
+  [*] <emphasis role='blue'>U</emphasis>EFI runtime support                                                 [EFI]
+
 <emphasis role='blue'>G</emphasis>eneral architecture-dependent options ---&gt;
   [*] <emphasis role='blue'>S</emphasis>tack Protector buffer overflow detection                 [STACKPROTECTOR]
   [*]   <emphasis role='blue'>S</emphasis>trong Stack Protector                           [STACKPROTECTOR_STRONG]
@@ -30,6 +33,8 @@
                                                            ...  [DEVTMPFS_MOUNT]
   <emphasis role='blue'>F</emphasis>irmware Drivers ---&gt;
     [*] M<emphasis role='blue'>a</emphasis>rk VGA/VBE/EFI FB as generic system framebuffer       [SYSFB_SIMPLEFB]
+    <emphasis role='blue'>E</emphasis>FI (Extensible Firmware Interface) Support ---&gt;
+      [*] <emphasis role='blue'>E</emphasis>nable the generic EFI decompressor                        [EFI_ZBOOT]
   <emphasis role='blue'>G</emphasis>raphics support ---&gt;
     &lt;*&gt; <emphasis role='blue'>D</emphasis>irect Rendering Manager (XFree86 4.1.0 and higher DRI support) ---&gt;
                                                                       ...  [DRM]
