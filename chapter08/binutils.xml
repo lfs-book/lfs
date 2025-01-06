@@ -48,7 +48,7 @@
 <screen><userinput remap="pre">patch -Np1 -i ../&binutils-upstream-patch;</userinput></screen>
 
     <para>
-      Then fix a bug which may cause some packages fail to build for
+      Then fix some bugs which may cause some packages fail to build for
       LoongArch:
     </para>
 

@@ -8,9 +8,9 @@
 <!ENTITY bash-upstream-fixes-patch-size "5.9 KB">
 -->
 
-<!ENTITY binutils-loongarch-patch "binutils-&binutils-version;-loongarch_fix-1.patch">
-<!ENTITY binutils-loongarch-patch-md5 "a04da0c03fef8ef3fae780eefd7aa6a7">
-<!ENTITY binutils-loongarch-patch-size "1.2 KB">
+<!ENTITY binutils-loongarch-patch "binutils-&binutils-version;-loongarch_fix-2.patch">
+<!ENTITY binutils-loongarch-patch-md5 "4ef7460841e5e7c2e397da5fd413b1dd">
+<!ENTITY binutils-loongarch-patch-size "8.0 KB">
 
 <!ENTITY binutils-upstream-patch "binutils-&binutils-version;-upstream_fix-1.patch">
 <!ENTITY binutils-upstream-patch-md5 "eddd9860af589ec328541a9ec5e5928e">
