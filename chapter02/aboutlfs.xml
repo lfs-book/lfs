@@ -8,7 +8,7 @@
 <sect1 id="ch-partitioning-aboutlfs">
   <?dbhtml filename="aboutlfs.html"?>
 
-  <title>Setting The $LFS Variable</title>
+  <title>Setting the $LFS Variable and the Umask</title>
 
   <para>Throughout this book, the environment variable <envar>LFS</envar> will
   be used several times. You should ensure that this variable is always defined
@@ -28,8 +28,14 @@
   <quote>/mnt/lfs</quote> (or whatever value the variable was set to) when it
   processes the command line.</para>
 
+  <para>Now setting the file mode creation mask (umask) to
+  <literal>022</literal> in case the host distro uses a different
+  default:</para>
+
+<screen role="nodump"><userinput>umask 022</userinput></screen>
   <caution>
-  <para>Do not forget to check that <envar>LFS</envar> is set whenever
+  <para>Do not forget to check that <envar>LFS</envar> is set and the
+  umask is set to <literal>022</literal> whenever
   you leave and reenter the current working environment (such as when doing a
   <command>su</command> to <systemitem class="username">root</systemitem> or
   another user). Check that the <envar>LFS</envar> variable is set up
@@ -39,10 +45,17 @@
 
   <para>Make sure the output shows the path to your LFS system's build
   location, which is <filename class="directory">/mnt/lfs</filename> if the
-  provided example was followed. If the output is incorrect, use the command
-  given earlier on this  page to set <envar>$LFS</envar> to the correct
-  directory name.</para>
-  </caution>
+  provided example was followed.</para>
+
+  <para>Check that the umask is set up properly with:</para>
+
+  <screen role="nodump"><userinput>umask</userinput></screen>
+
+  <para>The output should be <computeroutput>022</computeroutput>.</para>
+
+  <para>If any output of these two commands is incorrect, use the command
+  given earlier on this page to set <envar>$LFS</envar> to the correct
+  directory name and set umask to <literal>022</literal>.</para></caution>
 
   <note><para>One way to ensure that the <envar>LFS</envar> variable is always
   set is to edit the <filename>.bash_profile</filename> file in both your
