@@ -33,6 +33,16 @@
   default:</para>
 
 <screen role="nodump"><userinput>umask 022</userinput></screen>
+
+  <para>Setting the umask to 022 ensures that newly created files and
+  directories are only writable by their owner, but are readable and
+  searchable (only for directories) by anyone (assuming default modes are
+  used by the <ulink role='man' url='&man;open.2'>open(2)</ulink> system
+  call, new files will end up with permission mode 644 and directories with
+  mode 755).  An over-permissive default can leave security holes in the
+  LFS system, and an over-restrictive default can cause strange issues
+  building or using the LFS system.</para>
+
   <caution>
   <para>Do not forget to check that <envar>LFS</envar> is set and the
   umask is set to <literal>022</literal> whenever
