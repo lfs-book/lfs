@@ -28,7 +28,7 @@
   <quote>/mnt/lfs</quote> (or whatever value the variable was set to) when it
   processes the command line.</para>
 
-  <para>Now setting the file mode creation mask (umask) to
+  <para>Now set the file mode creation mask (umask) to
   <literal>022</literal> in case the host distro uses a different
   default:</para>
 
@@ -39,8 +39,8 @@
   searchable (only for directories) by anyone (assuming default modes are
   used by the <ulink role='man' url='&man;open.2'>open(2)</ulink> system
   call, new files will end up with permission mode 644 and directories with
-  mode 755).  An over-permissive default can leave security holes in the
-  LFS system, and an over-restrictive default can cause strange issues
+  mode 755).  An overly-permissive default can leave security holes in the
+  LFS system, and an overly-restrictive default can cause strange issues
   building or using the LFS system.</para>
 
   <caution>

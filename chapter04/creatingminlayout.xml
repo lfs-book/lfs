@@ -18,7 +18,7 @@
   location. We do this so those temporary programs will be overwritten when
   the final versions are built in <xref linkend="chapter-building-system"/>.</para>
 
-  <para>At first, set the owner and permission mode of the
+  <para>First, set the owner and permission mode of the
   <filename class='directory'>$LFS</filename> directory (i.e. the root
   directory in the newly created file system for the LFS system) to
   &root; and <literal>755</literal> in case the host distro has been
