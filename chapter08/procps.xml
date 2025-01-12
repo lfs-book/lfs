@@ -67,8 +67,7 @@
 
     <para>Compile the package:</para>
 
-<screen revision='sysv'><userinput remap="make">make</userinput></screen>
-<screen revision='systemd'><userinput remap="make">make src_w_LDADD='$(LDADD) -lsystemd'</userinput></screen>
+<screen><userinput remap="make">make</userinput></screen>
 
     <!-- To editors: "pmap {X,XX} with unreachable process" tests don't work
          as root.  They may seem to pass due to some Tcl/Expect/DejaGNU
