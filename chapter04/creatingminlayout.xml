@@ -18,15 +18,6 @@
   location. We do this so those temporary programs will be overwritten when
   the final versions are built in <xref linkend="chapter-building-system"/>.</para>
 
-  <para>First, set the owner and permission mode of the
-  <filename class='directory'>$LFS</filename> directory (i.e. the root
-  directory in the newly created file system for the LFS system) to
-  &root; and <literal>755</literal> in case the host distro has been
-  configured to use a different default for <command>mkfs</command>:</para>
-
-<screen><userinput>chown root:root $LFS
-chmod 755 $LFS</userinput></screen>
-
   <para>Create the required directory layout by issuing the following commands as
   <systemitem class="username">root</systemitem>:</para>
 
