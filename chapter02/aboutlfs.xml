@@ -28,11 +28,21 @@
   <quote>/mnt/lfs</quote> (or whatever value the variable was set to) when it
   processes the command line.</para>
 
-  <para>Now setting the file mode creation mask (umask) to
+  <para>Now set the file mode creation mask (umask) to
   <literal>022</literal> in case the host distro uses a different
   default:</para>
 
 <screen role="nodump"><userinput>umask 022</userinput></screen>
+
+  <para>Setting the umask to 022 ensures that newly created files and
+  directories are only writable by their owner, but are readable and
+  searchable (only for directories) by anyone (assuming default modes are
+  used by the <ulink role='man' url='&man;open.2'>open(2)</ulink> system
+  call, new files will end up with permission mode 644 and directories with
+  mode 755).  An overly-permissive default can leave security holes in the
+  LFS system, and an overly-restrictive default can cause strange issues
+  building or using the LFS system.</para>
+
   <caution>
   <para>Do not forget to check that <envar>LFS</envar> is set and the
   umask is set to <literal>022</literal> whenever
@@ -57,24 +67,26 @@
   given earlier on this page to set <envar>$LFS</envar> to the correct
   directory name and set umask to <literal>022</literal>.</para></caution>
 
-  <note><para>One way to ensure that the <envar>LFS</envar> variable is always
-  set is to edit the <filename>.bash_profile</filename> file in both your
-  personal home directory and in  <filename>/root/.bash_profile</filename> and
-  enter the export command above.  In addition, the shell specified in the
+  <note><para>One way to ensure that the <envar>LFS</envar> variable and the
+  umask are always set properly is to edit the
+  <filename>.bash_profile</filename> file in both your personal home
+  directory and in  <filename>/root/.bash_profile</filename> and
+  enter the <command>export</command> and <command>umask</command> commands
+  above.  In addition, the shell specified in the
   <filename>/etc/passwd</filename> file for all users that need the
   <envar>LFS</envar> variable must be bash to ensure that the
-  <filename>/root/.bash_profile</filename> file is incorporated as a part of
+  <filename>.bash_profile</filename> file is incorporated as a part of
   the login process.</para>
 
   <para>Another consideration is the method that is used to log into the
   host system.  If logging in through a graphical display manager, the
   user's <filename>.bash_profile</filename> is not normally used when
-  a virtual terminal is started.  In this case, add the export command to
+  a virtual terminal is started.  In this case, add the commands to
   the <filename>.bashrc</filename> file for the user and
   <systemitem class="username">root</systemitem>.  In addition,
   some distributions use an "if" test, and do not run the remaining <filename>.bashrc</filename>
   instructions for a non-interactive bash invocation.  Be sure to place the
-  export command ahead of the test for non-interactive use.</para>
+  commands ahead of the test for non-interactive use.</para>
 
   </note>
 
