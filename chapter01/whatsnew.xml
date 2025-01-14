@@ -260,9 +260,9 @@
     <listitem revision="sysv">
       <para>Udev from Systemd-&systemd-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Util-linux-&util-linux-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Vim-&vim-version;</para>
     </listitem>
