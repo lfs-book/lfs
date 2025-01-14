@@ -245,10 +245,10 @@
 <!ENTITY gdbm-fin-du "13 MB">
 <!ENTITY gdbm-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY gettext-version "0.23">
-<!ENTITY gettext-size "10,795 KB">
+<!ENTITY gettext-version "0.23.1">
+<!ENTITY gettext-size "10,780 KB">
 <!ENTITY gettext-url "&gnu;gettext/gettext-&gettext-version;.tar.xz">
-<!ENTITY gettext-md5 "9f4f6040ac1022278ea26d28f37b1688">
+<!ENTITY gettext-md5 "1a174902c396e95c7d9761033fe1360e">
 <!ENTITY gettext-home "&gnu-software;gettext/">
 <!ENTITY gettext-tmp-du "321 MB">
 <!ENTITY gettext-tmp-sbu "1.1 SBU">
@@ -317,10 +317,10 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.3 SBU">
 
-<!ENTITY iana-etc-version "20241220">
+<!ENTITY iana-etc-version "20250108">
 <!ENTITY iana-etc-size "591 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "81e5f37dcc239d9e7268113ba4f1970d">
+<!ENTITY iana-etc-md5 "8cf4ca88adeec73add07041b7057a051">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -441,12 +441,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "12">
-<!ENTITY linux-patch-version "7">
+<!ENTITY linux-patch-version "9">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "144,501 KB">
+<!ENTITY linux-size "144,520 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "267a2cec0d794454a9f92a726280b56d">
+<!ENTITY linux-md5 "699e6279c7b28c68c61db50fc5ad126c">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -647,26 +647,26 @@
 <!ENTITY sed-fin-du "30 MB">
 <!ENTITY sed-fin-sbu "0.3 SBU">
 
-<!ENTITY setuptools-version "75.6.0">
-<!ENTITY setuptools-size "1,307 KB">
+<!ENTITY setuptools-version "75.8.0">
+<!ENTITY setuptools-size "1,312 KB">
 <!ENTITY setuptools-url "&pypi-src;/s/setuptools/setuptools-&setuptools-version;.tar.gz">
-<!ENTITY setuptools-md5 "94458e508bd8e9dc6e6d097fc8747cf0">
+<!ENTITY setuptools-md5 "a42b075e3e18e724580f4caf7944354a">
 <!ENTITY setuptools-home "&pypi-home;/setuptools/">
 <!ENTITY setuptools-fin-du "35 MB">
 <!ENTITY setuptools-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY shadow-version "4.17.1">
-<!ENTITY shadow-size "2,166 KB">
+<!ENTITY shadow-version "4.17.2">
+<!ENTITY shadow-size "2,267 KB">
 <!ENTITY shadow-url "&github;/shadow-maint/shadow/releases/download/&shadow-version;/shadow-&shadow-version;.tar.xz">
-<!ENTITY shadow-md5 "354d19d2182f8a9dd1097304ddb6cb85">
+<!ENTITY shadow-md5 "d9b6b8028ebb5971857b7f6b10ffba0e">
 <!ENTITY shadow-home "&github;/shadow-maint/shadow/">
 <!ENTITY shadow-fin-du "112 MB">
 <!ENTITY shadow-fin-sbu "0.1 SBU">
 
-<!ENTITY sysklogd-version "2.6.2">
-<!ENTITY sysklogd-size "453 KB">
+<!ENTITY sysklogd-version "2.7.0">
+<!ENTITY sysklogd-size "465 KB">
 <!ENTITY sysklogd-url "https://github.com/troglobit/sysklogd/releases/download/v&sysklogd-version;/sysklogd-&sysklogd-version;.tar.gz">
-<!ENTITY sysklogd-md5 "9f64535a9a791f20504841b94d194391">
+<!ENTITY sysklogd-md5 "611c0fa5c138eb7a532f3c13bdf11ebc">
 <!ENTITY sysklogd-home "https://www.infodrom.org/projects/sysklogd/">
 <!ENTITY sysklogd-fin-du "3.9 MB">
 <!ENTITY sysklogd-fin-sbu "less than 0.1 SBU">
@@ -689,10 +689,10 @@
 <!ENTITY systemd-fin-du   "267 MB">
 <!ENTITY systemd-fin-sbu  "0.8 SBU">
 
-<!ENTITY sysvinit-version "3.12">
+<!ENTITY sysvinit-version "3.13">
 <!ENTITY sysvinit-size "236 KB">
 <!ENTITY sysvinit-url "&github;/slicer69/sysvinit/releases/download/&sysvinit-version;/sysvinit-&sysvinit-version;.tar.xz">
-<!ENTITY sysvinit-md5 "4ade3bb661b94dcc9c0198ff8c02df6a">
+<!ENTITY sysvinit-md5 "5916289cba8c67152df0b542fde78d22">
 <!ENTITY sysvinit-home "&savannah-nongnu;/projects/sysvinit">
 <!ENTITY sysvinit-fin-du "2.8 MB">
 <!ENTITY sysvinit-fin-sbu "less than 0.1 SBU">
@@ -745,20 +745,20 @@
 <!ENTITY udev-lfs-home    " ">
 
 <!ENTITY util-linux-minor "2.40">
-<!ENTITY util-linux-version "2.40.2"> <!-- 2.33.x -->
-<!ENTITY util-linux-size "8,648 KB">
+<!ENTITY util-linux-version "2.40.4"> <!-- 2.33.x -->
+<!ENTITY util-linux-size "8,641 KB">
 <!ENTITY util-linux-url "&kernel;linux/utils/util-linux/v&util-linux-minor;/util-linux-&util-linux-version;.tar.xz">
-<!ENTITY util-linux-md5 "88faefc8fefced097e58142077a3d14e">
+<!ENTITY util-linux-md5 "f9cbb1c8315d8ccbeb0ec36d10350304">
 <!ENTITY util-linux-home "https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/">
 <!ENTITY util-linux-tmp-du "180 MB">
 <!ENTITY util-linux-tmp-sbu "0.2 SBU">
 <!ENTITY util-linux-fin-du "315 MB">
 <!ENTITY util-linux-fin-sbu "0.5 SBU">
 
-<!ENTITY vim-version "9.1.0927">
+<!ENTITY vim-version "9.1.1016">
 <!-- <!ENTITY vim-majmin "90"> -->
 <!ENTITY vim-docdir "vim/vim91">
-<!ENTITY vim-size "17,906 KB">
+<!ENTITY vim-size "17,982 KB">
 <!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">
 <!-- N.B. LFS 9.0 uses
      https://github.com/vim/vim/archive/v8.1.1846/vim-8.1.1846.tar.gz
@@ -772,7 +772,7 @@
      example, https://github.com/vim/vim/tags?after=v8.1.1847 will show
      us v8.1.1846. -->
 <!--<!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.gz">-->
-<!ENTITY vim-md5 "912f5a4303b2b779ba608b0d06f28aa8">
+<!ENTITY vim-md5 "05a89c49f68b6b17c5b0b397de1cf8c0">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "245 MB">
 <!ENTITY vim-fin-sbu "2.9 SBU">
