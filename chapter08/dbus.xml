@@ -92,6 +92,68 @@ meson setup --prefix=/usr --buildtype=release --wrap-mode=nofallback ..</userinp
 
   </sect2>
 
+  <!-- - - - - - - - - - -->
+  <!-- Multilib - 32bit  -->
+  <!-- - - - - - - - - - -->
+
+  <sect2 arch="ml_32,ml_all" role="installation">
+    <title>Installation of dbus - 32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">rm -rf *</userinput></screen>
+
+    <para>Prepare dbus for compilation:</para>
+
+<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
+CC="gcc -m32 -march=i686"              \
+CXX="g++ -m32 -march=i686"             \
+meson setup --prefix=/usr --libdir=/usr/lib32 --buildtype=release --wrap-mode=nofallback ..</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">ninja</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">DESTDIR=$(pwd)/destdir ninja install
+mkdir -pv /usr/lib32/pkgconfig
+cp -av $(pwd)/destdir/usr/lib32/libdbus-1.so* /usr/lib32/
+cp -v  $(pwd)/destdir/usr/lib32/pkgconfig/dbus-1.pc /usr/lib32/pkgconfig/</userinput></screen>
+
+  </sect2><!-- m32 -->
+
+  <!-- - - - - - - - - - -->
+  <!-- Multilib - x32bit -->
+  <!-- - - - - - - - - - -->
+
+  <sect2 arch="ml_x32,ml_all" role="installation">
+    <title>Installation of dbus - x32-bit</title>
+
+    <para>Clean previous build:</para>
+
+<screen><userinput remap="pre">rm -rf *</userinput></screen>
+
+    <para>Prepare dbus for compilation:</para>
+
+<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
+CC="gcc -mx32"                          \
+CXX="g++ -mx32"                         \
+meson setup --prefix=/usr --libdir=/usr/libx32 --buildtype=release --wrap-mode=nofallback ..</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">ninja</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">DESTDIR=$(pwd)/destdir ninja install
+mkdir -pv /usr/libx32/pkgconfig
+cp -av $(pwd)/destdir/usr/libx32/libdbus-1.so* /usr/libx32/
+cp -v  $(pwd)/destdir/usr/libx32/pkgconfig/dbus-1.pc /usr/libx32/pkgconfig/</userinput></screen>
+
+  </sect2><!-- mx32 -->
+
   <sect2 id="contents-dbus" role="content">
     <title>Contents of D-Bus</title>
 
