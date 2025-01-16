@@ -65,7 +65,7 @@
         </listitem>
         <listitem>
           <para>[bdubbs] - Update to shadow-4.17.2. Fixes
-          <ulink url='&lfs-ticket-root;5525'>#5625</ulink>.</para>
+          <ulink url='&lfs-ticket-root;5625'>#5625</ulink>.</para>
         </listitem>
         <listitem>
           <para>[bdubbs] - Update to setuptools-75.8.0. Fixes
