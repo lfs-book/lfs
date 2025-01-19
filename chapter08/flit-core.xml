@@ -46,7 +46,7 @@
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">pip3 install --no-index --no-user --find-links dist flit_core</userinput></screen>
+<screen><userinput remap="install">pip3 install --no-index --find-links dist flit_core</userinput></screen>
 
     <variablelist>
       <title>The meaning of the pip3 configuration options and commands:</title>
