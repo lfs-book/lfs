@@ -61,7 +61,9 @@
 
   <screen role="nodump"><userinput>umask</userinput></screen>
 
-  <para>The output should be <computeroutput>022</computeroutput>.</para>
+  <para>The output may be <computeroutput>0022</computeroutput> or
+  <computeroutput>022</computeroutput> (the number of leading zeros depends
+  on the host distro).</para>
 
   <para>If any output of these two commands is incorrect, use the command
   given earlier on this page to set <envar>$LFS</envar> to the correct
