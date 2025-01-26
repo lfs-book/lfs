@@ -52,13 +52,7 @@
 
 <para>To test the results<!--(about 11.0 SBU)-->, issue:</para>
 
-<screen><userinput remap="test">make -k check</userinput></screen>
-
-    <para>Five tests are known to fail in the LFS build environment due
-    to a circular dependency, but these tests pass if rechecked after
-    automake has been installed.  Additionally, with grep-3.8 or newer,
-    two tests will trigger a warning for non-POSIX regular expressions and
-    fail.</para>
+<screen><userinput remap="test">make check</userinput></screen>
 
     <para>Install the package:</para>
 
