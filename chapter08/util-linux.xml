@@ -150,7 +150,7 @@ su tester -c "make -k check"</userinput></screen>
 <screen><userinput remap="pre">make distclean</userinput></screen>
 
     <para>Move a tool out of the way which is optionally used by
-    configure but will report invalid pathes for multilib builds.</para>
+    configure but will report invalid paths for multilib builds.</para>
 
 <screen><userinput remap="configure">mv /usr/bin/ncursesw6-config{,.tmp}</userinput></screen>
 
@@ -222,7 +222,7 @@ rm -rf DESTDIR</userinput></screen>
 <screen><userinput remap="pre">make distclean</userinput></screen>
 
     <para>Move a tool out of the way which is optionally used by
-    configure but will report invalid pathes for multilib builds.</para>
+    configure but will report invalid paths for multilib builds.</para>
 
 <screen><userinput remap="configure">mv /usr/bin/ncursesw6-config{,.tmp}</userinput></screen>
 
