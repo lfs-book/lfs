@@ -62,9 +62,9 @@
     <!--<listitem>
       <para>DejaGNU-&dejagnu-version;</para>
     </listitem>-->
-    <!--<listitem revision="systemd">
+    <listitem revision="systemd">
       <para>D-Bus-&dbus-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Diffutils-&diffutils-version;</para>
     </listitem>-->
@@ -134,9 +134,9 @@
     <listitem>
       <para>IPRoute2-&iproute2-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Jinja2-&jinja2-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Kbd-&kbd-version;</para>
     </listitem>
@@ -163,6 +163,9 @@
     </listitem>
     <listitem>
       <para>Libtool-&libtool-version;</para>
+    </listitem>
+    <listitem>
+      <para>Libxcrypt-&libxcrypt-version;</para>
     </listitem>
     <listitem>
       <para>Linux-&linux-version;</para>
@@ -212,9 +215,9 @@
     <!--<listitem>
       <para>Pkgconf-&pkgconf-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Procps-ng-&procps-ng-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Psmisc-&psmisc-version;</para>
     </listitem>-->
@@ -230,9 +233,9 @@
     <listitem>
       <para>Setuptools-&setuptools-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Shadow-&shadow-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem revision="sysv">
       <para>Sysklogd-&sysklogd-version;</para>
     </listitem>
@@ -257,9 +260,9 @@
     <listitem revision="sysv">
       <para>Udev from Systemd-&systemd-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Util-linux-&util-linux-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Vim-&vim-version;</para>
     </listitem>

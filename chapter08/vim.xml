@@ -64,9 +64,11 @@
 
     <para>To prepare the tests, ensure that user
     <systemitem class="username">tester</systemitem> can write
-    to the source tree:</para>
+    to the source tree and exclude one file containing tests requiring
+    <command>curl</command> or <command>wget</command>:</para>
 
-<screen><userinput remap="test">chown -R tester .</userinput></screen>
+<screen><userinput remap="test">chown -R tester .
+sed '/test_glvs/d' -i src/testdir/Make_all.mak</userinput></screen>
 
     <para>Now run the tests as user <systemitem
     class="username">tester</systemitem>:</para>

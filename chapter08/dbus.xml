@@ -48,41 +48,21 @@
 
     <para>Prepare D-Bus for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr                        \
-            --sysconfdir=/etc                    \
-            --localstatedir=/var                 \
-            --runstatedir=/run                   \
-            --enable-user-session                \
-            --disable-static                     \
-            --disable-doxygen-docs               \
-            --disable-xml-docs                   \
-            --docdir=/usr/share/doc/dbus-&dbus-version; \
-            --with-system-socket=/run/dbus/system_bus_socket</userinput></screen>
+<screen><userinput remap="configure">mkdir build
+cd    build
+
+meson setup --prefix=/usr --buildtype=release --wrap-mode=nofallback ..</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title>The meaning of the meson options:</title>
 
       <varlistentry>
         <term>
-          <parameter>--runstatedir=/run</parameter> and
-          <parameter>--with-system-socket=/run/dbus/system_bus_socket</parameter>
+          <parameter>--wrap-mode=nofallback</parameter>
         </term>
         <listitem>
-          <para>These cause the PID file and the system bus socket
-          to be in <filename class="directory">/run</filename>, instead of
-          the deprecated <filename class="directory">/var/run</filename>.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <parameter>--enable-user-session</parameter>
-        </term>
-        <listitem>
-          <para>This ensures the D-Bus per-user service and socket unit
-          files are installed for Systemd.  They are not useful (but
-          harmless) in a base LFS installation, however they can be used
-          once systemd is rebuilt with PAM support in BLFS.</para>
+          <para>This switch prevents meson from attempting to download a copy
+          of the Glib package for the tests.</para>
         </listitem>
       </varlistentry>
 
@@ -90,11 +70,11 @@
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
+<screen><userinput remap="make">ninja</userinput></screen>
 
     <para>To test the results, issue:</para>
 
-<screen><userinput remap="test">make check</userinput></screen>
+<screen><userinput remap="test">ninja test</userinput></screen>
 
     <para>Many tests are disabled because they require additional
     packages that are not included in LFS. Instructions for running the
@@ -103,7 +83,7 @@
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make install</userinput></screen>
+<screen><userinput remap="install">ninja install</userinput></screen>
 
     <para>Create a symlink so that D-Bus and systemd can use the same
     <filename>machine-id</filename> file:</para>
@@ -149,7 +129,7 @@
       <varlistentry id="dbus-daemon">
         <term><command>dbus-daemon</command></term>
         <listitem>
-          <para>Is the D-Bus message bus daemon</para>
+          <para>is the D-Bus message bus daemon</para>
           <indexterm zone="ch-system-dbus dbus-daemon">
             <primary sortas="b-dbus-daemon">dbus-daemon</primary>
           </indexterm>
@@ -159,7 +139,7 @@
       <varlistentry id="dbus-launch">
         <term><command>dbus-launch</command></term>
         <listitem>
-          <para>Starts <command>dbus-daemon</command> from a shell
+          <para>starts <command>dbus-daemon</command> from a shell
           script</para>
           <indexterm zone="ch-system-dbus dbus-launch">
             <primary sortas="b-dbus-launch">dbus-launch</primary>
@@ -170,7 +150,7 @@
       <varlistentry id="dbus-monitor">
         <term><command>dbus-monitor</command></term>
         <listitem>
-          <para>Monitors messages passing through a D-Bus message bus</para>
+          <para>monitors messages passing through a D-Bus message bus</para>
           <indexterm zone="ch-system-dbus dbus-monitor">
             <primary sortas="b-dbus-monitor">dbus-monitor</primary>
           </indexterm>
@@ -180,7 +160,7 @@
       <varlistentry id="dbus-run-session">
         <term><command>dbus-run-session</command></term>
         <listitem>
-          <para>Starts a session bus instance of <command>dbus-daemon</command>
+          <para>starts a session bus instance of <command>dbus-daemon</command>
           from a shell script and starts a specified program in that
           session</para>
           <indexterm zone="ch-system-dbus dbus-run-session">
@@ -192,7 +172,7 @@
       <varlistentry id="dbus-send">
         <term><command>dbus-send</command></term>
         <listitem>
-          <para>Sends a message to a D-Bus message bus</para>
+          <para>sends a message to a D-Bus message bus</para>
           <indexterm zone="ch-system-dbus dbus-send">
             <primary sortas="b-dbus-send">dbus-send</primary>
           </indexterm>
@@ -202,7 +182,7 @@
       <varlistentry id="dbus-test-tool">
         <term><command>dbus-test-tool</command></term>
         <listitem>
-          <para>Is a tool to help packages test
+          <para>is a tool to help packages test
           <application>D-Bus</application></para>
           <indexterm zone="ch-system-dbus dbus-test-tool">
             <primary sortas="b-dbus-test-tool">dbus-test-tool</primary>
@@ -214,7 +194,7 @@
       <varlistentry id="dbus-update-activation-environment">
         <term><command>dbus-update-activation-environment</command></term>
         <listitem>
-          <para>Updates environment variables that will be set for
+          <para>updates environment variables that will be set for
           <application>D-Bus</application> session services</para>
           <indexterm zone="ch-system-dbus dbus-update-activation-environment">
             <primary sortas="b-dbus-update-activation-environment">dbus-update-activation-environment</primary>
