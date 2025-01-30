@@ -621,7 +621,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
         locale, localedef, makedb, mtrace,
         pcprofiledump, pldd, sln, sotruss, sprof, tzselect, xtrace,
         zdump, and zic</seg>
-        <seg>ld-linux-x86-64.so.2, ld-linux.so.2,
+        <seg>ld-linux-loongarch64-lp64d.so.1,
         libBrokenLocale.{a,so}, libanl.{a,so},
         libc.{a,so}, libc_nonshared.a, libc_malloc_debug.so,
         libdl.{a,so.2}, libg.a, libm.{a,so},
@@ -865,7 +865,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
       </varlistentry>
 
       <varlistentry id="ld.so">
-        <term><filename class="libraryfile">ld-*.so</filename></term>
+        <term><filename class="libraryfile">ld-linux-loongarch-lp64d.so</filename></term>
         <listitem>
           <para>The helper program for shared library executables</para>
           <indexterm zone="ch-system-glibc ld.so">
