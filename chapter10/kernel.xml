@@ -279,7 +279,7 @@
           file system is mounted and it's already enough for providing
           information about most LFS configuration errors causing a
           panic (for example, an incorrect <parameter>root=</parameter>
-          setting in <xref linkend='ch-bootable-grub'/>).</para>
+          setting in the kernel command line).</para>
         </listitem>
       </varlistentry>
 
