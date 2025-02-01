@@ -86,7 +86,8 @@ int main()
 }</literal>
 EOF
 gcc nan2008.c -o nan2008
-if ./nan2008; then
+if ! grep -q nan_legacy /proc/cpuinfo &amp;&amp;
+   (grep -q nan_2008 /proc/cpuinfo || ./nan2008) then
   NAN_SWITCH=--with-nan=2008
 fi</userinput></screen>
 
@@ -226,13 +227,6 @@ fi</userinput></screen>
           <xref linkend='ch-tools-chroot'/> to fail), or produce bad results
           (causing test failures building some packages, for example Glibc
           and Python).</para>
-          <!-- TODO: If the kernel is booted with ieee754=emulated, we'll
-               be just using the default of the toolchain but that's not
-               always the best.  If the host toolchain already uses an NaN
-               encoding different from the hardware FPU, the FPU will be
-               disabled and all FP instructions are emulated by the kernel.
-               That's obviously very slow.  But I've not figured out a
-               method to probe.  -->
         </listitem>
       </varlistentry>
 
