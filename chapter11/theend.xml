@@ -59,6 +59,7 @@ ID=lfs
 PRETTY_NAME="Linux From Scratch &version;"
 VERSION_CODENAME="&lt;your name here&gt;"
 HOME_URL="&lfs-root;lfs/"
+RELEASE_TYPE="&os-release-type;"
 EOF</userinput></screen>
 
   <para>Be sure to customize the fields 'DISTRIB_CODENAME' and

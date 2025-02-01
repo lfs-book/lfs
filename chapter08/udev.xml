@@ -48,17 +48,19 @@
     <systemitem class="groupname">sgx</systemitem>, from the default udev
     rules:</para>
 
- <screen><userinput remap="pre">sed -i -e 's/GROUP="render"/GROUP="video"/' \
-       -e 's/GROUP="sgx", //' rules.d/50-udev-default.rules.in</userinput></screen>
+ <screen><userinput remap="pre">sed -e 's/GROUP="render"/GROUP="video"/' \
+    -e 's/GROUP="sgx", //'               \
+    -i rules.d/50-udev-default.rules.in</userinput></screen>
 
     <para>Remove one udev rule requiring a full Systemd installation:</para>
 
- <screen><userinput remap="pre">sed '/systemd-sysctl/s/^/#/' -i rules.d/99-systemd.rules.in</userinput></screen>
+ <screen><userinput remap="pre">sed -i '/systemd-sysctl/s/^/#/' rules.d/99-systemd.rules.in</userinput></screen>
 
     <para>Adjust the hardcoded paths to network configuration files for the
     standalone udev installation:</para>
 
- <screen><userinput remap="pre">sed '/NETWORK_DIRS/s/systemd/udev/' -i src/basic/path-lookup.h</userinput></screen>
+ <screen><userinput remap="pre">sed -e '/NETWORK_DIRS/s/systemd/udev/' \
+    -i src/libsystemd/sd-network/network-util.h</userinput></screen>
 
     <para>Prepare Udev for compilation:</para>
 

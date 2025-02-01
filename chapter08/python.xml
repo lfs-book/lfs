@@ -88,7 +88,8 @@
     limit and 1 SBU (measured when building Binutils pass 1 with one CPU
     core) should be enough.  Some tests are flaky, so the test suite will
     automatically re-run failed tests.  If a test failed but then passed
-    when re-run, it should be considered as passed.</para>
+    when re-run, it should be considered as passed.  One test, test_ssl,
+    is known to fail in the chroot environment.</para>
 
     <para>Install the package:</para>
 
@@ -163,7 +164,7 @@ EOF
 
 tar --no-same-owner \
     -xvf ../python-&python-version;-docs-html.tar.bz2
-cp -R --no-preserve=mode python-&python-minor;-docs-html/* \
+cp -R --no-preserve=mode python-&python-version;-docs-html/* \
     /usr/share/doc/python-&python-version;/html</userinput></screen>
 
     <variablelist>

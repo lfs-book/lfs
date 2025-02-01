@@ -34,6 +34,7 @@
                                              &patches-root;,
                                              &donwloads-root;, and
                                              &test-results; -->
+<!ENTITY os-release-type "development"> <!-- used by /etc/os-release -->
 ]]><!-- End %development -->
 
 <![ %release; [
@@ -52,6 +53,7 @@
                                           &test-results; -->
 <!ENTITY releasedate     "%reldate;">
 <!ENTITY copyrightdate   "%crdate;">
+<!ENTITY os-release-type "stable"> <!-- used by /etc/os-release -->
 ]]>
 
 <![ %rc; [
@@ -70,6 +72,7 @@
                                                     &test-results; -->
 <!ENTITY releasedate     "%reldate;">
 <!ENTITY copyrightdate   "%crdate;">
+<!ENTITY os-release-type "development"> <!-- used by /etc/os-release -->
 ]]>
 
 <![ %sysv; [
@@ -92,9 +95,11 @@
 <!ENTITY test-results    "&lfs-root;lfs/build-logs/&generic-version;/">
 <!ENTITY secadv          "&lfs-root;lfs/advisories/">
 
-<!-- 4.19 EOL is Dec 2024
-     so for LFS 12.3 we may consider moving to 5.4 -->
-<!ENTITY min-kernel      "4.19">
+<!-- 5.4 EOL is Dec 2025
+     so for LFS 12.5 we may consider moving to 5.10.
+     Keep an extra whitespace here to align the trailing "\" in glibc
+     configure command if y < 10 in x.y.  -->
+<!ENTITY min-kernel      "5.4 ">
 
 <!--
 <!ENTITY patches-rootd   "&lfs-root;patches/lfs/&generic-versiond;/">
@@ -129,6 +134,8 @@
 
 <!ENTITY root            "<systemitem class='username'>root</systemitem>">
 <!ENTITY lfs-user        "<systemitem class='username'>lfs</systemitem>">
+<!ENTITY lfs-username    "<userinput remap='user'>lfs</userinput>">
+<!ENTITY lfs-groupname   "<userinput remap='group'>lfs</userinput>">
 <!ENTITY devtmpfs        "<systemitem class='filesystem'>devtmpfs</systemitem>">
 <!ENTITY fstab           "<filename>/etc/fstab</filename>">
 <!ENTITY boot-dir        "<filename class='directory'>/boot</filename>">
