@@ -46,7 +46,7 @@
     <para>Create a compatibility symbolic link required for proper
     operation of the dynamic library loader:</para>
 
-<screen><userinput remap="pre">if $LFS_TGT-gcc -v 2>&amp;1 | grep nan=2008 &amp;>/dev/null; then
+<screen><userinput remap="pre">if $LFS_TGT-gcc -v |&amp; grep -q nan=2008; then
   ln -sfv ../lib/ld-linux-mipsn8.so.1 $LFS/lib64
 else
   ln -sfv ../lib/ld.so.1 $LFS/lib64
