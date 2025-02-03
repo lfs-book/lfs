@@ -55,7 +55,8 @@
 
     <para>Now prepare Coreutils for compilation:</para>
 
-<screen><userinput remap="configure">autoreconf -fiv
+<screen><userinput remap="configure">autoreconf -fv
+automake -af
 FORCE_UNSAFE_CONFIGURE=1 ./configure \
             --prefix=/usr            \
             --enable-no-install-program=kill,uptime</userinput></screen>
@@ -69,6 +70,14 @@ FORCE_UNSAFE_CONFIGURE=1 ./configure \
           <para>The patch for internationalization has modified the
           build system, so the configuration files must
           be regenerated.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><command>automake</command></term>
+        <listitem>
+          <para>Work around a problem with an older versions of autotools.
+          </para>
         </listitem>
       </varlistentry>
 
