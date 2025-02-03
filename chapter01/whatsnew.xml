@@ -44,9 +44,9 @@
     <listitem>
       <para>Bc-&bc-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Binutils-&binutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Bison-&bison-version;</para>
     </listitem>-->
@@ -56,9 +56,9 @@
     <!--<listitem>
       <para>Check-&check-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Coreutils-&coreutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>DejaGNU-&dejagnu-version;</para>
     </listitem>-->
@@ -68,9 +68,9 @@
     <!--<listitem>
       <para>Diffutils-&diffutils-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
        <para>E2fsprogs-&e2fsprogs-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
        <para>Expat-&expat-version;</para>
     </listitem>
@@ -101,9 +101,9 @@
     <listitem>
       <para>Gettext-&gettext-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Glibc-&glibc-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>GMP-&gmp-version;</para>
     </listitem>-->
@@ -182,9 +182,9 @@
     <listitem>
       <para>Man-DB-&man-db-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Man-pages-&man-pages-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>MarkupSafe-&markupsafe-version;</para>
     </listitem>
@@ -209,9 +209,9 @@
     <!--<listitem>
       <para>Patch-&patch-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Perl-&perl-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Pkgconf-&pkgconf-version;</para>
     </listitem>-->

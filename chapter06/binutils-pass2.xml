@@ -55,7 +55,7 @@
     produced binaries mistakenly linked against libraries from the host
     distro.  Work around this issue:</para>
 
-<screen><userinput remap="pre">sed '6009s/$add_dir//' -i ltmain.sh</userinput></screen>
+<screen><userinput remap="pre">sed '6031s/$add_dir//' -i ltmain.sh</userinput></screen>
 
     <para>Create a separate build directory again:</para>
 
