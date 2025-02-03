@@ -119,6 +119,7 @@ meson setup --prefix=/usr --libdir=/usr/lib32 --buildtype=release --wrap-mode=no
 <screen><userinput remap="install">DESTDIR=$(pwd)/destdir ninja install
 mkdir -pv /usr/lib32/pkgconfig
 cp -av $(pwd)/destdir/usr/lib32/libdbus-1.so* /usr/lib32/
+cp -av $(pwd)/destdir/usr/lib32/dbus-1.0 /usr/lib32/
 cp -v  $(pwd)/destdir/usr/lib32/pkgconfig/dbus-1.pc /usr/lib32/pkgconfig/</userinput></screen>
 
   </sect2><!-- m32 -->
@@ -150,6 +151,7 @@ meson setup --prefix=/usr --libdir=/usr/libx32 --buildtype=release --wrap-mode=n
 <screen><userinput remap="install">DESTDIR=$(pwd)/destdir ninja install
 mkdir -pv /usr/libx32/pkgconfig
 cp -av $(pwd)/destdir/usr/libx32/libdbus-1.so* /usr/libx32/
+cp -av $(pwd)/destdir/usr/libx32/dbus-1.0 /usr/libx32/
 cp -v  $(pwd)/destdir/usr/libx32/pkgconfig/dbus-1.pc /usr/libx32/pkgconfig/</userinput></screen>
 
   </sect2><!-- mx32 -->
