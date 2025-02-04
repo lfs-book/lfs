@@ -317,6 +317,15 @@ install -vm755 dest/usr/lib/*.so.* /usr/lib</userinput></screen>
         the locales.  Once they are finished, reboot the system
         immediately.
       </para>
+
+      <para>
+        When the system has successfully rebooted, if you are running
+        a LFS system prior to 12.0 (exclusive) where GCC was not built
+        with the <parameter>--disable-fixincludes</parameter> option,
+        remove the stale <quote>fixed</quote> copies of the Glibc headers:
+      </para>
+
+      <screen role='nodump'><userinput>rm -rfv $(dirname $(gcc -print-libgcc-file-name))/include-fixed/*</userinput></screen>
     </important>
 
     <para>Install the package:</para>
