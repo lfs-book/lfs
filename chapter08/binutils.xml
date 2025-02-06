@@ -57,7 +57,6 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="configure">../configure --prefix=/usr       \
              --sysconfdir=/etc   \
-             --enable-gold       \
              --enable-ld=default \
              --enable-plugins    \
              --enable-shared     \
@@ -69,14 +68,6 @@ cd       build</userinput></screen>
 
     <variablelist>
       <title>The meaning of the new configure parameters:</title>
-
-      <varlistentry>
-        <term><parameter>--enable-gold</parameter></term>
-        <listitem>
-          <para>Build the gold linker and install it as ld.gold (alongside the
-          default linker).</para>
-        </listitem>
-      </varlistentry>
 
       <varlistentry>
         <term><parameter>--enable-ld=default</parameter></term>
@@ -142,12 +133,6 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="test">grep '^FAIL:' $(find -name '*.log')</userinput></screen>
 
-    <para>Twelve tests fail in the gold test suite when the
-    <option>--enable-default-pie</option> and
-    <option>--enable-default-ssp</option> options are passed to GCC.</para>
-
- <!--    <para>Three tests in the gprofng suite are also known to fail.</para>-->
-
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make tooldir=/usr install</userinput></screen>
@@ -167,7 +152,7 @@ cd       build</userinput></screen>
       <segtitle>Installed directory</segtitle>
 
       <seglistitem>
-        <seg>addr2line, ar, as, c++filt, dwp, elfedit, gprof, gprofng, ld, ld.bfd, ld.gold, nm,
+        <seg>addr2line, ar, as, c++filt, dwp, elfedit, gprof, gprofng, ld, ld.bfd, nm,
         objcopy, objdump, ranlib, readelf, size, strings, and strip</seg>
         <seg>libbfd.so, libctf.so, libctf-nobfd.so, libgprofng.so,
         libopcodes.so, and libsframe.so</seg>
@@ -273,17 +258,6 @@ cd       build</userinput></screen>
           references</para>
           <indexterm zone="ch-system-binutils ld">
             <primary sortas="b-ld">ld</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="ld.gold">
-        <term><command>ld.gold</command></term>
-        <listitem>
-          <para>A cut down version of ld that only supports the
-          elf object file format</para>
-          <indexterm zone="ch-system-binutils ld.gold">
-            <primary sortas="b-ld.gold">ld.gold</primary>
           </indexterm>
         </listitem>
       </varlistentry>
