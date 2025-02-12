@@ -91,7 +91,8 @@ su tester -c "PATH=$PATH make check"</userinput></screen>
     <para>One test named
     <literal>ps with output flag bsdtime,cputime,etime,etimes</literal>
     is known to fail if the host kernel is not built with
-    <literal>CONFIG_BSD_PROCESS_ACCT</literal> enabled.</para>
+    <literal>CONFIG_BSD_PROCESS_ACCT</literal> enabled. In
+    addition, one pgrep test may fail in the chroot environment.</para>
 
     <para>Install the package:</para>
 
