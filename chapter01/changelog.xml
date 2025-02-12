@@ -41,6 +41,36 @@
     -->
 
     <listitem>
+      <para>2025-02-13</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to vim-9.1.1106. Addresses
+          <ulink url="&lfs-ticket-root;4500">#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to diffutils-3.11. Fixes
+          <ulink url='&lfs-ticket-root;5639'>#5639</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to libffi-3.4.7. Fixes
+          <ulink url='&lfs-ticket-root;5642'>#5642</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.13.2. Fixes
+          <ulink url='&lfs-ticket-root;5643'>#5643</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to Python3-3.13.2. Fixes
+          <ulink url='&lfs-ticket-root;5640'>#5640</ulink>.</para>
+        </listitem>
+        <listitem revision="sysv">
+          <para>[bdubbs] - Update to sysvinit-3.14. Fixes
+          <ulink url='&lfs-ticket-root;5641'>#5641</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2025-02-02</para>
       <itemizedlist>
         <listitem>
@@ -433,7 +463,7 @@
           <para>[bdubbs] - Update to tcl9.0.0. Fixes
           <ulink url='&lfs-ticket-root;5570'>#5570</ulink>.</para>
         </listitem>
-        <listitem revision="sysv">
+        <listitem>
           <para>[bdubbs] - Update to linux-6.11.1. Fixes
           <ulink url='&lfs-ticket-root;5556'>#5556</ulink>.</para>
         </listitem>

@@ -65,9 +65,9 @@
     <listitem revision="systemd">
       <para>D-Bus-&dbus-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Diffutils-&diffutils-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
        <para>E2fsprogs-&e2fsprogs-version;</para>
     </listitem>
@@ -155,9 +155,9 @@
     <listitem>
       <para>Libelf from Elfutils-&elfutils-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Libffi-&libffi-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Libpipeline-&libpipeline-version;</para>
     </listitem>
@@ -295,9 +295,11 @@
   <itemizedlist>
     <title>Added:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
+    <!--
     <listitem>
       <para>binutils-2.43.1-upstream_fix-1.patch</para>
     </listitem>
+    -->
   </itemizedlist>
 
   <itemizedlist>
