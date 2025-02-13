@@ -44,6 +44,9 @@
       <para>2025-02-13</para>
       <itemizedlist>
         <listitem>
+          <para>[bdubbs] - LFS-12.3-rc1 released.</para>
+        </listitem>
+        <listitem>
           <para>[bdubbs] - Update to vim-9.1.1106. Addresses
           <ulink url="&lfs-ticket-root;4500">#4500</ulink>.</para>
         </listitem>
