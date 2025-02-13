@@ -80,11 +80,9 @@ sed '/test_glvs/d' -i src/testdir/Make_all.mak</userinput></screen>
     cause issues with the settings of the current terminal (especially while
     we are overriding the <envar>TERM</envar> variable to satisfy some
     assumptions of the test suite).  The problem can be
-    avoided by redirecting the output to a log file as shown above.</para>
-
-    <para>Four tests related to GetLatestVimScripts are known to fail in 
-    the chroot environment because wget or curl are not available to 
-    download the required test scripts.</para>
+    avoided by redirecting the output to a log file as shown above.  A
+    successful test will result in the words <computeroutput>ALL
+    DONE</computeroutput> in the log file at completion.</para>
 
     <para>Install the package:</para>
 
