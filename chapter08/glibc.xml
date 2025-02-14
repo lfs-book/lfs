@@ -322,10 +322,14 @@ install -vm755 dest/usr/lib/*.so.* /usr/lib</userinput></screen>
         When the system has successfully rebooted, if you are running
         a LFS system prior to 12.0 (exclusive) where GCC was not built
         with the <parameter>--disable-fixincludes</parameter> option,
+        move two GCC headers into a better location and
         remove the stale <quote>fixed</quote> copies of the Glibc headers:
       </para>
 
-      <screen role='nodump'><userinput>rm -rfv $(dirname $(gcc -print-libgcc-file-name))/include-fixed/*</userinput></screen>
+      <screen role='nodump'><userinput>DIR=$(dirname $(gcc -print-libgcc-file-name))
+[ -e $DIR/include/limits.h ] || mv $DIR/include{-fixed,}/limits.h
+[ -e $DIR/include/syslimits.h ] || mv $DIR/include{-fixed,}/syslimits.h
+rm -rfv $(dirname $(gcc -print-libgcc-file-name))/include-fixed/*</userinput></screen>
     </important>
 
     <para>Install the package:</para>
