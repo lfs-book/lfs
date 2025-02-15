@@ -41,19 +41,6 @@
   <sect2 role="installation">
     <title>Installation of Binutils</title>
 
-    <para>First, apply a patch to prevent a bug that causing
-    unnecessary relinking with packages that depend on cmake-3.31.0
-    or newer:</para>
-
-<screen><userinput remap="pre">patch -Np1 -i ../&binutils-upstream-patch;</userinput></screen>
-
-    <para>
-      Then fix some bugs which may cause some packages fail to build for
-      LoongArch:
-    </para>
-
-    <screen><userinput remap="pre">patch -Np1 -i ../&binutils-loongarch-patch;</userinput></screen>
-
     <para>The Binutils documentation recommends building Binutils
     in a dedicated build directory:</para>
 
@@ -140,15 +127,14 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="test">grep '^FAIL:' $(find -name '*.log')</userinput></screen>
 
- <!--    <para>Three tests in the gprofng suite are also known to fail.</para>-->
-
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make tooldir=/usr install</userinput></screen>
 
-    <para>Remove useless static libraries:</para>
+    <para>Remove useless static libraries and other files:</para>
 
-<screen><userinput remap="install">rm -fv /usr/lib/lib{bfd,ctf,ctf-nobfd,gprofng,opcodes,sframe}.a</userinput></screen>
+<screen><userinput remap="install">rm -rfv /usr/lib/lib{bfd,ctf,ctf-nobfd,gprofng,opcodes,sframe}.a \
+        /usr/share/doc/gprofng/</userinput></screen>
 
   </sect2>
 

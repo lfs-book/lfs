@@ -152,7 +152,7 @@ esac</userinput></screen>
 
     <para>You may see some test failures. The Glibc test suite is
     somewhat dependent on the host system. A few failures out of
-    over 5000 tests can generally be ignored. This is a list of the
+    over 6000 tests can generally be ignored. This is a list of the
     most common issues seen for recent versions of LFS:</para>
 
     <itemizedlist>
@@ -317,6 +317,19 @@ install -vm755 dest/usr/lib/*.so.* /usr/lib</userinput></screen>
         the locales.  Once they are finished, reboot the system
         immediately.
       </para>
+
+      <para>
+        When the system has successfully rebooted, if you are running
+        a LFS system prior to 12.0 (exclusive) where GCC was not built
+        with the <parameter>--disable-fixincludes</parameter> option,
+        move two GCC headers into a better location and
+        remove the stale <quote>fixed</quote> copies of the Glibc headers:
+      </para>
+
+      <screen role='nodump'><userinput>DIR=$(dirname $(gcc -print-libgcc-file-name))
+[ -e $DIR/include/limits.h ] || mv $DIR/include{-fixed,}/limits.h
+[ -e $DIR/include/syslimits.h ] || mv $DIR/include{-fixed,}/syslimits.h
+rm -rfv $(dirname $(gcc -print-libgcc-file-name))/include-fixed/*</userinput></screen>
     </important>
 
     <para>Install the package:</para>

@@ -232,7 +232,7 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
   }
 
   if ( $package == "tcl" )
-     return find_max( $lines, "/tcl\d/", "/^.*tcl(\d\.[\d\.]*\d)-src.*$/" );
+     return find_max( $lines, "/tcl8/", "/^.*tcl(\d\.[\d\.]*\d)-src.*$/" );
 
   if ( $package == "gmp" )
      return find_max( $lines, "/$package/", "/^.*$package-([\d\._]*\d[a-z]?).tar.*$/" );
