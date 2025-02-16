@@ -189,14 +189,12 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <!-- gen-vect-*: Likely https://gcc.gnu.org/PR113418
          pr108357.c: https://gcc.gnu.org/PR108357#c5
          update-threading.c: https://gcc.gnu.org/PR110628
-         vect-117.c: https://gcc.gnu.org/PR113685
-         pr64076: Binutils bug (ld crashes), needs a triage -->
+         vect-117.c: https://gcc.gnu.org/PR113685 -->
     <para>The tests named
     <filename>gen-vect-11b.c</filename>,
     <filename>gen-vect-11c.c</filename>,
     <filename>gen-vect-26.c</filename>,
     <filename>gen-vect-28.c</filename>,
-    <filename>pr64076</filename>,
     <filename>pr108357.c</filename>,
     <filename>update-threading.c</filename>,
     and <filename>vect-117.c</filename> are known to fail.</para>
