@@ -186,7 +186,6 @@ set timeout=5
 insmod part_gpt
 insmod ext2
 set root=(hd0,2)
-set gfxpayload=1024x768x32
 
 insmod efi_gop
 
@@ -211,14 +210,6 @@ EOF</userinput></screen>
       modules are already embedded and those two <command>insmod</command>
       commands will do nothing.  But they do no harm anyway, and they may
       be needed with some rare configurations.
-    </para>
-
-    <para>
-      The <command>set gfxpayload=1024x768x32</command> command sets the
-      resolution and color depth of the VESA framebuffer to be passed to the
-      kernel.  It's necessary for the kernel SimpleDRM driver to use the
-      VESA framebuffer.  You can use a different resolution or color depth
-      value which better suits for your monitor.
     </para>
 
     <note><para>From <application>GRUB</application>'s perspective, the
