@@ -128,6 +128,11 @@ su tester -c "make -k check"</userinput></screen>
        enabled.
     </para>
 
+    <para>
+      Two other tests, lsfd: SOURCE column and utmp: last, are known to
+      fail in the chroot environment.
+    </para>
+
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
