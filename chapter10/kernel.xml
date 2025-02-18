@@ -273,7 +273,7 @@
           on panic.  As of Linux-6.12, none of the dedicated drivers for
           mainstream GPU models really supports this, but it's supported by
           the <quote>Simple framebuffer driver</quote> which runs on the
-          VESA (or EFI) framebuffer before the dedicated GPU driver is
+          EFI framebuffer before the dedicated GPU driver is
           loaded.  If the dedicated GPU driver is built as a module
           (instead of a part of the kernel image) and no initramfs is
           used, this functionality will work just fine before the root
@@ -312,10 +312,9 @@
           <parameter>Simple framebuffer driver</parameter>
         </term>
         <listitem>
-          <para>These allow to use the VESA framebuffer (or the EFI
-          framebuffer if booting the LFS system via UEFI) as a DRM device.
-          The VESA framebuffer will be set up by GRUB (or the EFI
-          framebuffer will be set up by the UEFI firmware), so the DRM panic
+          <para>These allow to use the EFI framebuffer as a DRM device.
+          The EFI
+          framebuffer will be set up by the UEFI firmware, so the DRM panic
           handler can function before the GPU-specific DRM driver is
           loaded.</para>
         </listitem>
