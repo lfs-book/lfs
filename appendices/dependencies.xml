@@ -1544,7 +1544,7 @@
       <segmentedlist id="kbd-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-         <seg>Bash, Binutils, Bison, Check, Coreutils, Flex, GCC, Gettext,
+         <seg>Bash, Binutils, Bison, Coreutils, Flex, GCC, Gettext,
          Glibc, Gzip, Make, Patch, and Sed</seg>
         </seglistitem>
       </segmentedlist>
