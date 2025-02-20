@@ -47,6 +47,12 @@
 
     <screen><userinput remap="pre">patch -Np1 -i ../&gcc-upstream-fixes-patch;</userinput></screen>
 -->
+
+    <para>Again, fix the issue causing runtime failures with Glibc-2.41 or
+    newer:</para>
+
+    <screen><userinput remap="pre">sed '/mips16.S/s|^//||' -i libgcc/config/mips/lib1funcs.S</userinput></screen>
+
     <para>As in the first build of GCC, the GMP, MPFR, and MPC packages are
     required. Unpack the tarballs and move them into the required directories:</para>
 

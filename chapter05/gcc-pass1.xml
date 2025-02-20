@@ -43,6 +43,14 @@
   <sect2 role="installation">
     <title>Installation of Cross GCC</title>
 
+    <!-- https://gcc.gnu.org/r15-3205
+         If unfixed it'll make libgcc_s.so.1 requiring execstack and
+         blow up Glibc >= 2.41 tests.  -->
+    <para>At first, fix an issue causing runtime failures with Glibc-2.41 or
+    newer:</para>
+
+    <screen><userinput remap="pre">sed '/mips16.S/s|^//||' -i libgcc/config/mips/lib1funcs.S</userinput></screen>
+
     <para>GCC requires the GMP, MPFR and MPC packages. As these packages may
     not be included in your host distribution, they will be built with
     GCC.  Unpack each package into the GCC source directory and rename the

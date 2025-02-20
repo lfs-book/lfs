@@ -41,6 +41,11 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
+    <para>Again, fix the issue causing runtime failures with Glibc-2.41 or
+    newer:</para>
+
+    <screen><userinput remap="pre">sed '/mips16.S/s|^//||' -i libgcc/config/mips/lib1funcs.S</userinput></screen>
+
     <para>For building on 64-bit MIPS, change the default directory name for
     64-bit libraries to <quote>lib</quote>:</para>
 
