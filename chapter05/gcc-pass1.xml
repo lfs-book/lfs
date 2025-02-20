@@ -122,7 +122,9 @@ fi</userinput></screen>
     --disable-libvtv          \
     --disable-libstdcxx       \
     --enable-languages=c,c++  \
-    $NAN_SWITCH</userinput></screen>
+    $NAN_SWITCH
+
+unset NAN_SWITCH</userinput></screen>
     <variablelist>
       <title>The meaning of the configure options:</title>
 
