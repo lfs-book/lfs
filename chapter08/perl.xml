@@ -40,12 +40,7 @@
 
   <sect2 role="installation">
     <title>Installation of Perl</title>
-<!--
-    <para>First, apply a patch that fixes an issue highlighted by recent
-    versions of gdbm:</para>
 
-<screen><userinput remap="pre">patch -Np1 -i ../&perl-fix-patch;</userinput></screen>
--->
     <para>Workaround an building issue on MIPS:</para>
 
 <screen><userinput remap="pre">sed 's@/bin/mips@/bin/false@g' -i Configure</userinput></screen>

@@ -44,9 +44,9 @@
     <listitem>
       <para>Bc-&bc-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Binutils-&binutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Bison-&bison-version;</para>
     </listitem>-->
@@ -56,21 +56,21 @@
     <!--<listitem>
       <para>Check-&check-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Coreutils-&coreutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>DejaGNU-&dejagnu-version;</para>
     </listitem>-->
     <listitem revision="systemd">
       <para>D-Bus-&dbus-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Diffutils-&diffutils-version;</para>
-    </listitem>-->
-    <!--<listitem>
+    </listitem>
+    <listitem>
        <para>E2fsprogs-&e2fsprogs-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
        <para>Expat-&expat-version;</para>
     </listitem>
@@ -101,9 +101,9 @@
     <listitem>
       <para>Gettext-&gettext-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Glibc-&glibc-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>GMP-&gmp-version;</para>
     </listitem>-->
@@ -155,9 +155,9 @@
     <listitem>
       <para>Libelf from Elfutils-&elfutils-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Libffi-&libffi-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Libpipeline-&libpipeline-version;</para>
     </listitem>
@@ -182,9 +182,9 @@
     <listitem>
       <para>Man-DB-&man-db-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Man-pages-&man-pages-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>MarkupSafe-&markupsafe-version;</para>
     </listitem>
@@ -209,9 +209,9 @@
     <!--<listitem>
       <para>Patch-&patch-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Perl-&perl-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Pkgconf-&pkgconf-version;</para>
     </listitem>-->
@@ -295,9 +295,11 @@
   <itemizedlist>
     <title>Added:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
+    <!--
     <listitem>
       <para>binutils-2.43.1-upstream_fix-1.patch</para>
     </listitem>
+    -->
   </itemizedlist>
 
   <itemizedlist>

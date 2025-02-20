@@ -176,6 +176,14 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <para>In libstdc++ tests, the test named
     <filename>abi_check</filename> is known to fail.</para>
 
+    <!-- https://github.com/google/sanitizers/issues/1716
+         Affecting any host distro with a large vm.mmap_rnd_bits.
+         The fix is https://github.com/llvm/llvm-project/commit/0784b1eefa36
+         but it's not in GCC 14.  TODO retry with
+             sudo sysctl vm.mmap_rnd_bits=32
+         on the host distro when we update to GCC 15.  -->
+    <para>The tsan tests are known to fail on some host distros.</para>
+
     <para>A few unexpected failures cannot always be avoided. In some cases
     test failures depend on the specific hardware of the system.<!--The GCC developers
     are usually aware of these issues, but have not resolved them yet.-->
