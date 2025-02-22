@@ -68,6 +68,10 @@
 
 <screen><userinput remap="test">make test</userinput></screen>
 
+    <!-- ??? seems since glibc-2.40.  Reproducible on AOSC.  -->
+    <para>The <command>./libcap.so --usage</command> test is known to fail
+    on MIPS.</para>
+
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make prefix=/usr lib=lib install</userinput></screen>
