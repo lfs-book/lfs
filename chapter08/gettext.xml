@@ -77,8 +77,7 @@
 
     </variablelist>
 -->
-    <para>To test the results (this takes a long time, around 3 SBUs),
-    issue:</para>
+    <para>To test the results, issue:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
 

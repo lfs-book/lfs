@@ -104,7 +104,7 @@ export BUILD_BZIP2=0</userinput></screen>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>To test the results (approximately 11 SBU), issue:</para>
+    <para>To test the results, issue:</para>
 
 <screen><userinput remap="test">TEST_JOBS=$(nproc) make test_harness</userinput></screen>
 
