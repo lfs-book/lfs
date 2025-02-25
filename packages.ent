@@ -497,10 +497,10 @@
 <!ENTITY man-db-fin-du "44 MB">
 <!ENTITY man-db-fin-sbu "0.3 SBU">
 
-<!ENTITY man-pages-version "6.10">
-<!ENTITY man-pages-size "1,835 KB">
+<!ENTITY man-pages-version "6.11">
+<!ENTITY man-pages-size "1,837 KB">
 <!ENTITY man-pages-url "&kernel;linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "31b3dd6309da64a249ff01f53616b17f">
+<!ENTITY man-pages-md5 "f38a68fcd6cd0faf8a17956b16e8aa60">
 <!ENTITY man-pages-home "https://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-fin-du "52 MB">
 <!ENTITY man-pages-fin-sbu "0.1 SBU">
@@ -754,10 +754,10 @@
 <!ENTITY util-linux-fin-du "316 MB">
 <!ENTITY util-linux-fin-sbu "0.5 SBU">
 
-<!ENTITY vim-version "9.1.1106">
+<!ENTITY vim-version "9.1.1122">
 <!-- <!ENTITY vim-majmin "90"> -->
 <!ENTITY vim-docdir "vim/vim91">
-<!ENTITY vim-size "18,053 KB">
+<!ENTITY vim-size "18,057 KB">
 <!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">
 <!-- N.B. LFS 9.0 uses
      https://github.com/vim/vim/archive/v8.1.1846/vim-8.1.1846.tar.gz
@@ -771,7 +771,7 @@
      example, https://github.com/vim/vim/tags?after=v8.1.1847 will show
      us v8.1.1846. -->
 <!--<!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.gz">-->
-<!ENTITY vim-md5 "3ed2d26c95b08dff8b8b29786937b693">
+<!ENTITY vim-md5 "c6980db0c12e69dd5086b151b4958360">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "251 MB">
 <!ENTITY vim-fin-sbu "3.4 SBU">
