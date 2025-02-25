@@ -61,7 +61,6 @@ cd       build</userinput></screen>
              --enable-default-hash-style=gnu</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure">../configure --prefix=/usr       \
              --sysconfdir=/etc   \
-             --enable-gold       \
              --enable-ld=default \
              --enable-plugins    \
              --enable-shared     \
@@ -100,7 +99,7 @@ cd       build</userinput></screen>
       <varlistentry arch="ml_32,ml_x32,ml_all">
         <term><parameter>--enable-multilib</parameter></term>
         <listitem>
-          <para>Enables multilib support in bintutils.</para>
+          <para>Enables multilib support in binutils.</para>
         </listitem>
       </varlistentry>
 
