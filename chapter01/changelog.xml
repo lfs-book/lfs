@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>2025-02-24</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-6.12.  Fixes
+          <ulink url='&lfs-ticket-root;5658'>#5658</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2025-02-19</para>
       <itemizedlist>
         <listitem>
