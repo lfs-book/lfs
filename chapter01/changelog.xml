@@ -44,6 +44,9 @@
       <para>2025-02-27</para>
       <itemizedlist>
         <listitem>
+          <para>[bdubbs] -  LFS-12.1-rc2 released.</para>
+        </listitem>
+        <listitem>
           <para>[bdubbs] - Update to zstd-1.5.7.  Fixes
           <ulink url='&lfs-ticket-root;5652'>#5652</ulink>.</para>
         </listitem>
