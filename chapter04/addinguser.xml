@@ -80,7 +80,7 @@ useradd -s /bin/bash -g &lfs-groupname; -m -k /dev/null &lfs-username;</userinpu
   all the directories under <filename class="directory">$LFS</filename> by making
   <systemitem class="username">lfs</systemitem> the owner:</para>
 
-<screen><userinput>chown -v &lfs-username; $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
+<screen><userinput>chown -v &lfs-username; $LFS/{usr{,/*},var,etc,tools}
 case $(uname -m) in
   x86_64) chown -v &lfs-username; $LFS/lib64 ;;
 esac</userinput></screen>
