@@ -91,6 +91,7 @@ meson setup --prefix=/usr ..    \
     
 <screen><userinput remap="pre">cd .. &amp;&amp;
 rm -rf build &amp;&amp;
+mkdir build &amp;&amp;
 cd build</userinput></screen>
 
     <para>Prepare Kmod for compilation:</para>
@@ -127,6 +128,7 @@ rm -rf DESTDIR</userinput></screen>
 
 <screen><userinput remap="pre">cd .. &amp;&amp;
 rm -rf build &amp;&amp;
+mkdir build &amp;&amp;
 cd build</userinput></screen>
 
     <para>Prepare Kmod for compilation:</para>
