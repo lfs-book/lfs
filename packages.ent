@@ -384,7 +384,7 @@
 <!ENTITY lfs-bootscripts-version "20240825">      <!-- Scripts depend on this format -->
 <!ENTITY lfs-bootscripts-size "33 KB">
 <!ENTITY lfs-bootscripts-url "&downloads-root;lfs-bootscripts-&lfs-bootscripts-version;.tar.xz">
-<!ENTITY lfs-bootscripts-md5 "a236eaa9a1f699bc3fb6ab2acd7e7b6c">
+<!ENTITY lfs-bootscripts-md5 "7b078c594a77e0f9cd53a0027471c3bc">
 <!ENTITY lfs-bootscripts-home " ">
 <!ENTITY lfs-bootscripts-cfg-du "244 KB">
 <!ENTITY lfs-bootscripts-cfg-sbu "less than 0.1 SBU">
