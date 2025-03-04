@@ -45,7 +45,7 @@
       <itemizedlist>
         <listitem>
           <para>[bdubbs] - Update to vim-9.1.1166 (Security Update).  Fixes
-          <ulink url='&lfs-ticket-root;5666'>#56566</ulink>.</para>
+          <ulink url='&lfs-ticket-root;5666'>#5666</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
