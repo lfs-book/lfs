@@ -43,6 +43,16 @@
     </xsl:choose>
   </xsl:template>
 
+  <!-- footnote/para[1]: this template is in {docbook-xsl}/xhtml/footnote.xsl
+       which is imported. This means that template has less precedence
+       than the above one. To have higher precedence, it must be at
+       the same import level (then, since it is more restrictive, it is
+       applied preferably to the above).-->
+  <xsl:template match="footnote/para[1]">
+  <!-- just use the original template -->
+    <xsl:apply-imports/>
+  </xsl:template>
+
     <!-- screen:
            Changed class attribute asignament to fit our look needs.
            Removed unused line numbering support. -->
