@@ -69,10 +69,25 @@
       </listitem>
 
       <listitem> <para>If a package containing a shared library is updated, and
-      if the name of the library changes, then any packages dynamically
+      if the name of the library<footnote><para>The name of a shared library is
+      the string coded in the <constant>DT_SONAME</constant> entry of its
+      ELF dynamic section.  You can get it with the
+      <command>readelf -d <replaceable>&lt;library file&gt;</replaceable>
+      | grep SONAME</command> command.  In most cases it's suffixed with
+      <literal>.so.<replaceable>&lt;a version
+      number&gt;</replaceable></literal>, but there are some cases where
+      it contains multiple numbers for versioning (like
+      <filename>libbz2.so.1.0</filename>), contains the version number
+      before the <filename class='extension'>.so</filename> suffix (like
+      <filename>libbfd-&binutils-version;</filename>), or does not contain
+      any version number at all (for example
+      <filename>libmemusage.so</filename>).
+      Generally there is no correlation between the package version and the
+      version number(s) in the library name.</para></footnote>
+      changes, then any packages dynamically
       linked to the library must be recompiled, to link against the
-      newer library.  (Note that there is no correlation between the package
-      version and the name of the library.) For example, consider a package
+      newer library.
+      For example, consider a package
       foo-1.2.3 that installs a shared library with the name <filename
       class='libraryfile'>libfoo.so.1</filename>. Suppose you upgrade the package to
       a newer version foo-1.2.4 that installs a shared library with the name
