@@ -114,10 +114,10 @@
 <!ENTITY coreutils-fin-du "182 MB">
 <!ENTITY coreutils-fin-sbu "1.2 SBU">
 
-<!ENTITY dbus-version "1.16.0">
-<!ENTITY dbus-size "1,092 KB">
+<!ENTITY dbus-version "1.16.2">
+<!ENTITY dbus-size "1,090 KB">
 <!ENTITY dbus-url "https://dbus.freedesktop.org/releases/dbus/dbus-&dbus-version;.tar.xz">
-<!ENTITY dbus-md5 "66bfcf1f42d4ebc634ca558d14335e92">
+<!ENTITY dbus-md5 "97832e6f0a260936d28536e5349c22e5">
 <!ENTITY dbus-home "https://www.freedesktop.org/wiki/Software/dbus">
 <!ENTITY dbus-fin-du "17 MB">
 <!ENTITY dbus-fin-sbu "0.1 SBU">
@@ -156,10 +156,10 @@
 <!ENTITY elfutils-fin-du "135 MB">
 <!ENTITY elfutils-fin-sbu "0.3 SBU">
 
-<!ENTITY expat-version "2.6.4">
-<!ENTITY expat-size "476 KB">
+<!ENTITY expat-version "2.7.0">
+<!ENTITY expat-size "482 KB">
 <!ENTITY expat-url "&sourceforge;expat/expat-&expat-version;.tar.xz">
-<!ENTITY expat-md5 "101fe3e320a2800f36af8cf4045b45c7">
+<!ENTITY expat-md5 "974e9de880e731c00112ca069062343a">
 <!ENTITY expat-home "https://libexpat.github.io/">
 <!ENTITY expat-fin-du "14 MB">
 <!ENTITY expat-fin-sbu "0.1 SBU">
@@ -317,10 +317,10 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.3 SBU">
 
-<!ENTITY iana-etc-version "20250123">
+<!ENTITY iana-etc-version "20250304">
 <!ENTITY iana-etc-size "591 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "f8a0ebdc19a5004cf42d8bdcf614fa5d">
+<!ENTITY iana-etc-md5 "e01a3d742ad61738879fd5d461dd5c50">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -359,10 +359,10 @@
 <!ENTITY isl-fin-du "20 MB">
 <!ENTITY isl-fin-sbu "0.1 SBU">
 
-<!ENTITY jinja2-version "3.1.5">
-<!ENTITY jinja2-size "239 KB">
+<!ENTITY jinja2-version "3.1.6">
+<!ENTITY jinja2-size "240 KB">
 <!ENTITY jinja2-url "&pypi-src;/J/Jinja2/jinja2-&jinja2-version;.tar.gz">
-<!ENTITY jinja2-md5 "083d64f070f6f1b5f75971ae60240785">
+<!ENTITY jinja2-md5 "66d4c25ff43d1deaf9637ccda523dec8">
 <!ENTITY jinja2-home "https://jinja.palletsprojects.com/en/3.1.x/">
 <!ENTITY jinja2-fin-du "2.5 MB">
 <!ENTITY jinja2-fin-sbu "less than 0.1 SBU">
@@ -375,10 +375,10 @@
 <!ENTITY kbd-fin-du "34 MB">
 <!ENTITY kbd-fin-sbu "0.1 SBU">
 
-<!ENTITY kmod-version "34">
+<!ENTITY kmod-version "34.1">
 <!ENTITY kmod-size "331 KB">
 <!ENTITY kmod-url "&kernel;linux/utils/kernel/kmod/kmod-&kmod-version;.tar.xz">
-<!ENTITY kmod-md5 "3e6c5c9ad9c7367ab9c3cc4f08dfde62">
+<!ENTITY kmod-md5 "bdc01ba7d330685af597c16c5f58c0e2">
 <!ENTITY kmod-home "https://github.com/kmod-project/kmod">
 <!ENTITY kmod-fin-du "11 MB">
 <!ENTITY kmod-fin-sbu "less than 0.1 SBU">
@@ -399,10 +399,10 @@
 <!ENTITY lfs-bootscripts-cfg-du "BOOTSCRIPTS-INSTALL-KB KB">
 <!ENTITY lfs-bootscripts-cfg-sbu "less than 0.1 SBU">
 
-<!ENTITY libcap-version "2.73">
-<!ENTITY libcap-size "191 KB">
+<!ENTITY libcap-version "2.75">
+<!ENTITY libcap-size "194 KB">
 <!ENTITY libcap-url "&kernel;linux/libs/security/linux-privs/libcap2/libcap-&libcap-version;.tar.xz">
-<!ENTITY libcap-md5 "0e186df9de9b1e925593a96684fe2e32">
+<!ENTITY libcap-md5 "9406193ddb794dfbf9e71490053085f9">
 <!ENTITY libcap-home "https://sites.google.com/site/fullycapable/">
 <!ENTITY libcap-fin-du "3.0 MB">
 <!ENTITY libcap-fin-sbu "less than 0.1 SBU">
@@ -441,12 +441,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "13">
-<!ENTITY linux-patch-version "4">
+<!ENTITY linux-patch-version "7">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "145,015 KB">
+<!ENTITY linux-size "145,105 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "13b9e6c29105a34db4647190a43d1810">
+<!ENTITY linux-md5 "2c6aaac4edbf719c70d4099b1cad99e3">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -497,10 +497,10 @@
 <!ENTITY man-db-fin-du "44 MB">
 <!ENTITY man-db-fin-sbu "0.3 SBU">
 
-<!ENTITY man-pages-version "6.12">
-<!ENTITY man-pages-size "1,838 KB">
+<!ENTITY man-pages-version "6.13">
+<!ENTITY man-pages-size "1,839 KB">
 <!ENTITY man-pages-url "&kernel;linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "44de430a598605eaba3e36dd43f24298">
+<!ENTITY man-pages-md5 "5349329fef307e755933266b26eac873">
 <!ENTITY man-pages-home "https://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-fin-du "52 MB">
 <!ENTITY man-pages-fin-sbu "0.1 SBU">
@@ -587,10 +587,10 @@
 <!ENTITY perl-fin-du "245 MB">
 <!ENTITY perl-fin-sbu "1.3 SBU">
 
-<!ENTITY pkgconf-version "2.3.0">
-<!ENTITY pkgconf-size "309 KB">
+<!ENTITY pkgconf-version "2.4.3">
+<!ENTITY pkgconf-size "314 KB">
 <!ENTITY pkgconf-url "https://distfiles.ariadne.space/pkgconf/pkgconf-&pkgconf-version;.tar.xz">
-<!ENTITY pkgconf-md5 "833363e77b5bed0131c7bc4cc6f7747b">
+<!ENTITY pkgconf-md5 "781a513f4ca3d068155482a37986d594">
 <!ENTITY pkgconf-home "https://github.com/pkgconf/pkgconf">
 <!ENTITY pkgconf-fin-du "4.7 MB">
 <!ENTITY pkgconf-fin-sbu "less than 0.1 SBU">
@@ -647,10 +647,10 @@
 <!ENTITY sed-fin-du "30 MB">
 <!ENTITY sed-fin-sbu "0.3 SBU">
 
-<!ENTITY setuptools-version "75.8.1">
-<!ENTITY setuptools-size "1,313 KB">
+<!ENTITY setuptools-version "76.0.0">
+<!ENTITY setuptools-size "1,318 KB">
 <!ENTITY setuptools-url "&pypi-src;/s/setuptools/setuptools-&setuptools-version;.tar.gz">
-<!ENTITY setuptools-md5 "7dc3d3f529b76b10e35326e25c676b30">
+<!ENTITY setuptools-md5 "a15701d19326a1d4132fce56f2861a60">
 <!ENTITY setuptools-home "&pypi-home;/setuptools/">
 <!ENTITY setuptools-fin-du "26 MB">
 <!ENTITY setuptools-fin-sbu "less than 0.1 SBU">
@@ -663,10 +663,10 @@
 <!ENTITY shadow-fin-du "114 MB">
 <!ENTITY shadow-fin-sbu "0.1 SBU">
 
-<!ENTITY sysklogd-version "2.7.0">
-<!ENTITY sysklogd-size "465 KB">
+<!ENTITY sysklogd-version "2.7.1">
+<!ENTITY sysklogd-size "473 KB">
 <!ENTITY sysklogd-url "https://github.com/troglobit/sysklogd/releases/download/v&sysklogd-version;/sysklogd-&sysklogd-version;.tar.gz">
-<!ENTITY sysklogd-md5 "611c0fa5c138eb7a532f3c13bdf11ebc">
+<!ENTITY sysklogd-md5 "f4a1554f73a267218e69e168a8cb2950">
 <!ENTITY sysklogd-home "https://www.infodrom.org/projects/sysklogd/">
 <!ENTITY sysklogd-fin-du "4.1 MB">
 <!ENTITY sysklogd-fin-sbu "less than 0.1 SBU">
@@ -754,10 +754,10 @@
 <!ENTITY util-linux-fin-du "316 MB">
 <!ENTITY util-linux-fin-sbu "0.5 SBU">
 
-<!ENTITY vim-version "9.1.1166">
+<!ENTITY vim-version "9.1.1202">
 <!-- <!ENTITY vim-majmin "90"> -->
 <!ENTITY vim-docdir "vim/vim91">
-<!ENTITY vim-size "18,077 KB">
+<!ENTITY vim-size "18,114 KB">
 <!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">
 <!-- N.B. LFS 9.0 uses
      https://github.com/vim/vim/archive/v8.1.1846/vim-8.1.1846.tar.gz
@@ -771,7 +771,7 @@
      example, https://github.com/vim/vim/tags?after=v8.1.1847 will show
      us v8.1.1846. -->
 <!--<!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.gz">-->
-<!ENTITY vim-md5 "718d43ce957ab7c81071793de176c2eb">
+<!ENTITY vim-md5 "97d30bee45129ac75b95dd0ade5c10e0">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "251 MB">
 <!ENTITY vim-fin-sbu "3.4 SBU">
