@@ -51,7 +51,7 @@
           <para>[bdubbs] - Update to iana-etc-20250304. Addresses
           <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
         </listitem>
-        <listitem>
+        <listitem revision='sysv'>
           <para>[bdubbs] - Update to sysklogd-2.7.1. Fixes
           <ulink url='&lfs-ticket-root;5668'>#5668</ulink>.</para>
         </listitem>
@@ -87,7 +87,7 @@
           <para>[bdubbs] - Update to expat-2.7.0. Fixes
           <ulink url='&lfs-ticket-root;5675'>#5675</ulink>.</para>
         </listitem>
-        <listitem>
+        <listitem revision='systemd'>
           <para>[bdubbs] - Update to dbus-1.16.2. Fixes
           <ulink url='&lfs-ticket-root;5663'>#5663</ulink>.</para>
         </listitem>
