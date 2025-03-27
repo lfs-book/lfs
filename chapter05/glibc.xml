@@ -252,7 +252,7 @@ SEARCH_DIR("=/lib")
 SEARCH_DIR("=/usr/lib");</computeroutput></screen>
 
    <para>A 32-bit system may use a few other directories, but anyway
-   the important facet here is all the pathes should begin with an equal sign
+   the important facet here is all the paths should begin with an equal sign
    (<literal>=</literal>), which would be replaced with the sysroot
    directory that we've configured for the linker.</para>
 
