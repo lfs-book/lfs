@@ -91,7 +91,6 @@ cd       build</userinput></screen>
       --host=$LFS_TGT                    \
       --build=$(../scripts/config.guess) \
       --enable-kernel=&min-kernel;               \
-      --with-headers=$LFS/usr/include    \
       --disable-nscd                     \
       libc_cv_slibdir=/usr/lib</userinput></screen>
 
@@ -113,16 +112,6 @@ cd       build</userinput></screen>
           <para>This tells Glibc to compile the library with support
           for &min-kernel; and later Linux kernels.  Workarounds for older
           kernels are not enabled.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--with-headers=$LFS/usr/include</parameter></term>
-        <listitem>
-          <para>This tells Glibc to compile itself against the headers
-          recently installed to the $LFS/usr/include directory, so that
-          it knows exactly what features the kernel has and can optimize
-          itself accordingly.</para>
         </listitem>
       </varlistentry>
 

@@ -439,27 +439,19 @@ checking what linker to use... /mnt/lfs/tools/i686-lfs-linux-gnu/bin/ld</compute
     standard C library (glibc) to interface with features that the Linux
     kernel will provide.</para>
 
-    <para>Next comes glibc. The most important
-    considerations for building glibc are the compiler, binary tools, and
-    kernel headers. The compiler and binary tools are not an issue
-    as <parameter>--host=$LFS_TGT</parameter> makes the build system to use
-    those tools prefixed with <literal>$LFS_TGT-</literal> as we've
-    discussed.  The kernel headers can
-    be a bit more complicated. Therefore, we take no risks and use
-    the available configure switch to enforce the correct selection. After
-    the run of <command>configure</command>, check the contents of the
-    <filename>config.make</filename> file in the <filename
-    class="directory">build</filename> directory for all important details.
-    These items highlight an important aspect of the glibc
-    package&mdash;it is very self-sufficient in terms of its build machinery,
-    and generally does not rely on toolchain defaults.</para>
+    <para>Next comes glibc. This is the first package that we cross-compile.
+    We use the <parameter>--host=$LFS_TGT</parameter> option to make
+    the build system to use those tools prefixed with
+    <literal>$LFS_TGT-</literal>, and the
+    <parameter>--build=$(../scripts/config.guess)</parameter> option to
+    enable <quote>the cross-compilation mode</quote> as we've discussed.
+    The <envar>DESTDIR</envar> variable is used to force installation into
+    the LFS file system.</para>
 
     <para>As mentioned above, the standard C++ library is compiled next, followed in
     <xref linkend="chapter-temporary-tools"/> by other programs that must
     be cross-compiled to break circular dependencies at build time.
-    The install step of all those packages uses the
-    <envar>DESTDIR</envar> variable to force installation
-    in the LFS filesystem.</para>
+    The steps for those packages are similar to the steps for glibc.</para>
 
     <para>At the end of <xref linkend="chapter-temporary-tools"/> the native
     LFS compiler is installed. First binutils-pass2 is built,
