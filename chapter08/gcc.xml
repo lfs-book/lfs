@@ -223,7 +223,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     that compiling and linking will work as expected. We do this by performing
     some sanity checks:</para>
 
-<screen><userinput>echo 'int main(){}' | cc dummy.c -x c - -v -Wl,--verbose &amp;&gt; dummy.log
+<screen><userinput>echo 'int main(){}' | cc -x c - -v -Wl,--verbose &amp;&gt; dummy.log
 readelf -l a.out | grep ': /lib'</userinput></screen>
 
   <para>There should be no errors,
