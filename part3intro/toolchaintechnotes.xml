@@ -285,7 +285,7 @@
     <systemitem class='library'>libc</systemitem> that the host distro
     <systemitem class='library'>libc</systemitem> likely provides (unless,
     maybe the host distro uses a different
-    <systemitem class='library'>libc</systemitem> implementaion like Musl),
+    <systemitem class='library'>libc</systemitem> implementation like Musl),
     so it won't fail like how the really useful programs would likely.
     Thus we must explicitly specify <quote>the build</quote> triplet to
     enable <quote>the cross-compilation mode.</quote>  The value we use is
