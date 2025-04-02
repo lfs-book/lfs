@@ -87,7 +87,7 @@
       <para>Flex-&flex-version;</para>
     </listitem>-->
     <listitem>
-      <para>Flit-core-&flit-core-version;</para>
+      <para>Flit-Core-&flit-core-version;</para>
     </listitem>
     <!--<listitem>
       <para>Gawk-&gawk-version;</para>
