@@ -47,7 +47,6 @@
 cd       build
 
 meson setup --prefix=/usr ..    \
-            --sbindir=/usr/sbin \
             --buildtype=release \
             -D manpages=false</userinput></screen>
 
@@ -100,7 +99,6 @@ cd build</userinput></screen>
 CC="gcc -m32 -march=i686"              \
 CXX="g++ -m32 -march=i686"             \
 meson setup --prefix=/usr ..    \
-            --sbindir=/usr/sbin \
             --buildtype=release \
             --libdir=/usr/lib32 \
             -D manpages=false</userinput></screen>
@@ -137,7 +135,6 @@ cd build</userinput></screen>
 CC="gcc -mx32"                          \
 CXX="g++ -mx32"                         \
 meson setup --prefix=/usr ..    \
-            --sbindir=/usr/sbin \
             --buildtype=release \
             --libdir=/usr/libx32 \
             -D manpages=false</userinput></screen>
