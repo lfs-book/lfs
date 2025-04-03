@@ -305,12 +305,9 @@
   <itemizedlist>
     <title>Removed:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
-    <!--<listitem>
-      <para>expect-5.45.4-gcc14-1.patch</para>
-    </listitem>-->
-    <!--<listitem>
-      <para>readline-8.2-upstream_fixes-3.patch</para>
-    </listitem>-->
+    <listitem>
+      <para>Check-0.15.2</para>
+    </listitem>
   </itemizedlist>
 
 </sect1>

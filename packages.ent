@@ -96,14 +96,6 @@
 <!ENTITY bzip2-fin-du "7.2 MB">
 <!ENTITY bzip2-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY check-version "0.15.2">
-<!ENTITY check-size "760 KB">
-<!ENTITY check-url "&github;/libcheck/check/releases/download/&check-version;/check-&check-version;.tar.gz">
-<!ENTITY check-md5 "50fcafcecde5a380415b12e9c574e0b2">
-<!ENTITY check-home "https://libcheck.github.io/check">
-<!ENTITY check-fin-du "11 MB">
-<!ENTITY check-fin-sbu "0.1 SBU (about 2.1 SBU with tests)">
-
 <!ENTITY coreutils-version "9.6">
 <!ENTITY coreutils-size "5,991 KB">
 <!ENTITY coreutils-url "&gnu;coreutils/coreutils-&coreutils-version;.tar.xz">
