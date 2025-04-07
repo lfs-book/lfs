@@ -23,9 +23,9 @@
   <itemizedlist>
     <title>Upgraded to:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
-    <listitem>
+    <!--<listitem>
     <para>None</para>
-    </listitem>
+    </listitem>-->
     <!--<listitem>
       <para>Acl-&acl-version;</para>
     </listitem>-->
