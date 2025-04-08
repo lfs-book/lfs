@@ -23,9 +23,9 @@
   <itemizedlist>
     <title>Upgraded to:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
-    <listitem>
+    <!--<listitem>
     <para>None</para>
-    </listitem>
+    </listitem>-->
     <!--<listitem>
       <para>Acl-&acl-version;</para>
     </listitem>-->
@@ -87,7 +87,7 @@
       <para>Flex-&flex-version;</para>
     </listitem>-->
     <listitem>
-      <para>Flit-core-&flit-core-version;</para>
+      <para>Flit-Core-&flit-core-version;</para>
     </listitem>
     <!--<listitem>
       <para>Gawk-&gawk-version;</para>
