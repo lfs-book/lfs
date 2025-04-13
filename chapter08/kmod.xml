@@ -43,41 +43,20 @@
 
     <para>Prepare Kmod for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr     \
-            --sysconfdir=/etc \
-            --with-openssl    \
-            --with-xz         \
-            --with-zstd       \
-            --with-zlib       \
-            --disable-manpages</userinput></screen>
+    <screen><userinput remap="configure">mkdir -p build
+cd       build
+
+meson setup --prefix=/usr ..    \
+            --sbindir=/usr/sbin \
+            --buildtype=release \
+            -D manpages=false</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
 
       <varlistentry>
         <term>
-          <parameter>--with-openssl</parameter>
-        </term>
-        <listitem>
-          <para>This option enables Kmod to handle PKCS7 signatures for
-          kernel modules.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <parameter>--with-xz</parameter>,
-          <parameter>--with-zlib</parameter>, and
-          <parameter>--with-zstd</parameter>
-        </term>
-        <listitem>
-          <para>These options enable Kmod to handle compressed kernel modules.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term>
-          <parameter>--disable-manpages</parameter>
+          <parameter>-D manpages=false</parameter>
         </term>
         <listitem>
           <para>This option disables generating the man pages which
@@ -89,25 +68,15 @@
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
+<screen><userinput remap="make">ninja</userinput></screen>
 
     <para>The test suite of this package requires raw kernel headers
     (not the <quote>sanitized</quote> kernel headers installed earlier),
     which are beyond the scope of LFS.</para>
 
-    <para>Install the package and recreate some symlinks for
-    compatibility with Module-Init-Tools (the package that previously handled
-    Linux kernel modules).  The building system will create all these
-    symlinks in <filename class='directory'>/usr/bin</filename>, but we
-    only want <command>lsmod</command> there and all other symlinks in
-    <filename class='directory'>/usr/sbin</filename> instead:</para>
+    <para>Now install the package:</para>
 
-<screen><userinput remap="install">make install
-
-for target in depmod insmod modinfo modprobe rmmod; do
-  ln -sfv ../bin/kmod /usr/sbin/$target
-  rm -fv /usr/bin/$target
-done</userinput></screen>
+<screen><userinput remap="install">ninja install</userinput></screen>
 
   </sect2>
 

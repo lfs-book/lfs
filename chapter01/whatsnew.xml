@@ -125,9 +125,9 @@
     <listitem>
       <para>Iana-Etc-&iana-etc-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Inetutils-&inetutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Intltool-&intltool-version;</para>
     </listitem>-->
@@ -140,9 +140,9 @@
     <listitem>
       <para>Kbd-&kbd-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Kmod-&kmod-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Less-&less-version;</para>
     </listitem>
@@ -278,9 +278,9 @@
     <!--<listitem>
       <para>Zlib-&zlib-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Zstd-&zstd-version;</para>
-    </listitem>-->
+    </listitem>
   </itemizedlist>
 
   <!--<itemizedlist>
