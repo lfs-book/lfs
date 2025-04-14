@@ -7,7 +7,7 @@
 <!ENTITY % rc          "IGNORE"> <!-- set to INCLUDE for rc,
                                       set to IGNORE for development or
                                        release -->
-<!ENTITY % relnum "loongarch-12.0"><!-- must be given for release or rc -->
+<!ENTITY % relnum "12.0"><!-- must be given for release or rc -->
 <!ENTITY % reldate "September 1st, 2023"><!-- must ve given for release or rc -->
 <!ENTITY % crdate "1999-2023"><!-- must ve given for release or rc -->
 <!ENTITY % rcnum  "0"><!-- must be given only for rc -->
@@ -38,14 +38,15 @@
 
 <![ %release; [
 <![ %sysv; [
-<!ENTITY version         "%relnum;">
+<!ENTITY x86-version     "%relnum;">
 <!ENTITY short-version   "%relnum;">  <!-- Used below in &blfs-book; -->
 ]]>
 <![ %systemd; [
-<!ENTITY version         "%relnum;-systemd">
+<!ENTITY x86-version     "%relnum;-systemd">
 <!ENTITY short-version   "%relnum;-systemd"> <!-- Used below in &blfs-book; -->
 ]]>
-<!ENTITY errata          "&lfs-root;lfs/errata/&version;/">
+<!ENTITY version         "loongarch-&x86-version;">
+<!ENTITY errata          "&lfs-root;lfs/errata/&x86-version;/">
 <!ENTITY generic-version "%relnum;"> <!-- Used below in
                                           &patches-root;,
                                           &donwloads-root;, and
@@ -56,14 +57,15 @@
 
 <![ %rc; [
 <![ %sysv; [
-<!ENTITY version         "%relnum;-rc%rcnum;">
+<!ENTITY x86-version     "%relnum;-rc%rcnum;">
 <!ENTITY short-version   "svn">  <!-- Used below in &blfs-book; -->
 ]]>
 <![ %systemd; [
-<!ENTITY version         "%relnum;-systemd-rc%rcnum;">
+<!ENTITY x86-version     "%relnum;-systemd-rc%rcnum;">
 <!ENTITY short-version   "systemd">  <!-- Used below in &blfs-book; -->
 ]]>
-<!ENTITY errata          "&lfs-root;lfs/errata/&version;/">
+<!ENTITY version         "loongarch-&x86-version;">
+<!ENTITY errata          "&lfs-root;lfs/errata/&x86-version;/">
 <!ENTITY generic-version "%relnum;-rc%rcnum;"> <!-- Used below in
                                                     &patches-root;,
                                                     &downloads-root;, and
@@ -89,7 +91,7 @@
 <!-- Only used for sysv (lfs-bootscripts): -->
 <!ENTITY downloads-root  "&lfs-root;lfs/downloads/&generic-version;/">
 <!ENTITY livecd-root     "&lfs-root;livecd/">
-<!ENTITY test-results    "&lfs-root;lfs/build-logs/&generic-version;/">
+<!ENTITY test-results    "&lfs-root;~xry111/lfs/build-logs/&generic-version;/">
 <!ENTITY secadv          "&lfs-root;lfs/advisories/">
 
 <!ENTITY min-kernel      "5.19">
