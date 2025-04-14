@@ -43,6 +43,12 @@
   <sect2 role="installation">
     <title>Installation of Diffutils</title>
 
+    <para>First, fix a problem in the current version of diffutils:</para>
+
+    <screen><userinput remap="pre">sed -e '46252,+3 s/^/#/' \
+    -e '46596,+3 s/^/#/' \
+    -i configure</userinput></screen>
+
     <para>Prepare Diffutils for compilation:</para>
 
     <screen><userinput remap="configure">./configure --prefix=/usr   \

@@ -2416,6 +2416,46 @@
         </seglistitem>
       </segmentedlist>
 
+<!-- Begin Packaging dependency info -->
+  <bridgehead renderas="sect2" id="Packaging-dep">Packaging</bridgehead>
+
+      <segmentedlist id="packaging-depends">
+        <segtitle>&dependencies;</segtitle>
+        <seglistitem>
+          <seg>Python</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="packaging-rundeps">
+        <segtitle>&runtime;</segtitle>
+        <seglistitem>
+          <seg>Python</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="packaging-testdeps">
+        <segtitle>&testsuites;</segtitle>
+        <seglistitem>
+          <seg>No test suite available</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="packaging-before">
+        <segtitle>&before;</segtitle>
+        <seglistitem>
+          <seg>Wheel</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="packaging-optdeps">
+        <segtitle>&external;</segtitle>
+        <seglistitem>
+          <seg>
+            <ulink url='&blfs-book;general/python-modules.html#pytest'>pytest</ulink>
+          </seg>
+        </seglistitem>
+      </segmentedlist>
+
 <!-- Begin Patch dependency info -->
   <bridgehead renderas="sect2" id="patch-dep">Patch</bridgehead>
 
@@ -3269,7 +3309,7 @@
       <segmentedlist id="wheel-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Python and Flit-core</seg>
+          <seg>Python, Flit-core, and packaging</seg>
         </seglistitem>
       </segmentedlist>
 
