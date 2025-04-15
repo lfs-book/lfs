@@ -399,49 +399,6 @@
         </seglistitem>
       </segmentedlist>
 
-<!-- Begin Check dependency info -->
-  <bridgehead renderas="sect2" id="check-dep">Check</bridgehead>
-
-      <segmentedlist id="check-depends">
-        <segtitle>&dependencies;</segtitle>
-        <seglistitem>
-          <seg>Gawk, GCC, Grep, Make, Sed, and Texinfo</seg>
-        </seglistitem>
-      </segmentedlist>
-
-      <segmentedlist id="check-rundeps">
-        <segtitle>&runtime;</segtitle>
-        <seglistitem>
-          <seg>Bash and Gawk</seg>
-        </seglistitem>
-      </segmentedlist>
-
-      <segmentedlist id="check-testdeps">
-        <segtitle>&testsuites;</segtitle>
-        <seglistitem>
-          <seg>None</seg>
-        </seglistitem>
-      </segmentedlist>
-
-      <segmentedlist id="check-before">
-        <segtitle>&before;</segtitle>
-        <seglistitem>
-          <seg>None</seg>
-        </seglistitem>
-      </segmentedlist>
-
-      <segmentedlist id="check-optdeps">
-        <segtitle>&external;</segtitle>
-        <seglistitem>
-          <seg>
-            <ulink url='&github;/testing-cabal/subunit'>libsubunit</ulink>
-            and
-            <ulink url='http://cyberelk.net/tim/software/patchutils/'>
-              patchutils</ulink>
-          </seg>
-        </seglistitem>
-      </segmentedlist>
-
 <!-- Begin Coreutils dependency info -->
   <bridgehead renderas="sect2" id="coreutils-dep">Coreutils</bridgehead>
 
@@ -2459,6 +2416,46 @@
         </seglistitem>
       </segmentedlist>
 
+<!-- Begin Packaging dependency info -->
+  <bridgehead renderas="sect2" id="Packaging-dep">Packaging</bridgehead>
+
+      <segmentedlist id="packaging-depends">
+        <segtitle>&dependencies;</segtitle>
+        <seglistitem>
+          <seg>Python</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="packaging-rundeps">
+        <segtitle>&runtime;</segtitle>
+        <seglistitem>
+          <seg>Python</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="packaging-testdeps">
+        <segtitle>&testsuites;</segtitle>
+        <seglistitem>
+          <seg>No test suite available</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="packaging-before">
+        <segtitle>&before;</segtitle>
+        <seglistitem>
+          <seg>Wheel</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="packaging-optdeps">
+        <segtitle>&external;</segtitle>
+        <seglistitem>
+          <seg>
+            <ulink url='&blfs-book;general/python-modules.html#pytest'>pytest</ulink>
+          </seg>
+        </seglistitem>
+      </segmentedlist>
+
 <!-- Begin Patch dependency info -->
   <bridgehead renderas="sect2" id="patch-dep">Patch</bridgehead>
 
@@ -3312,7 +3309,7 @@
       <segmentedlist id="wheel-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Python and Flit-core</seg>
+          <seg>Python, Flit-core, and packaging</seg>
         </seglistitem>
       </segmentedlist>
 

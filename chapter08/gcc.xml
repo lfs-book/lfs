@@ -228,8 +228,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     that compiling and linking will work as expected. We do this by performing
     some sanity checks:</para>
 
-<screen><userinput>echo 'int main(){}' &gt; dummy.c
-cc dummy.c -v -Wl,--verbose &amp;&gt; dummy.log
+<screen><userinput>echo 'int main(){}' | cc -x c - -v -Wl,--verbose &amp;&gt; dummy.log
 readelf -l a.out | grep ': /lib'</userinput></screen>
 
   <para>There should be no errors,
@@ -324,7 +323,7 @@ SEARCH_DIR("/usr/lib");</computeroutput></screen>
 
   <para>Once everything is working correctly, clean up the test files:</para>
 
-<screen><userinput>rm -v dummy.c a.out dummy.log</userinput></screen>
+<screen><userinput>rm -v a.out dummy.log</userinput></screen>
 
     <para>Finally, move a misplaced file:</para>
 
