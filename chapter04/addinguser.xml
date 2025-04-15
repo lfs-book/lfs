@@ -80,7 +80,7 @@ useradd -s /bin/bash -g &lfs-groupname; -m -k /dev/null &lfs-username;</userinpu
   all the directories under <filename class="directory">$LFS</filename> by making
   <systemitem class="username">lfs</systemitem> the owner:</para>
 
-<screen><userinput>chown -v &lfs-username; $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}</userinput></screen>
+<screen><userinput>chown -v &lfs-username; $LFS/{usr{,/*},var,etc,tools}</userinput></screen>
 
 <note><para>In some host systems, the following <command>su</command> command does not complete
   properly and suspends the login for the &lfs-user; user to the background.

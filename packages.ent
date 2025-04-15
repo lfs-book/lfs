@@ -200,10 +200,10 @@
 <!ENTITY flex-fin-du "33 MB">
 <!ENTITY flex-fin-sbu "0.1 SBU">
 
-<!ENTITY flit-core-version "3.10.1">
-<!ENTITY flit-core-size "42 KB">
+<!ENTITY flit-core-version "3.11.0">
+<!ENTITY flit-core-size "51 KB">
 <!ENTITY flit-core-url "&pypi-src;/f/flit-core/flit_core-&flit-core-version;.tar.gz">
-<!ENTITY flit-core-md5 "a3381dd58e23e9826c5199b1f70318b0">
+<!ENTITY flit-core-md5 "6d677b1acef1769c4c7156c7508e0dbd">
 <!ENTITY flit-core-home "&pypi-home;/flit-core/">
 <!ENTITY flit-core-fin-du "1.0 MB">
 <!ENTITY flit-core-fin-sbu "less than 0.1 SBU">
@@ -245,10 +245,10 @@
 <!ENTITY gdbm-fin-du "13 MB">
 <!ENTITY gdbm-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY gettext-version "0.23.1">
-<!ENTITY gettext-size "10,780 KB">
+<!ENTITY gettext-version "0.24">
+<!ENTITY gettext-size "8,120 KB">
 <!ENTITY gettext-url "&gnu;gettext/gettext-&gettext-version;.tar.xz">
-<!ENTITY gettext-md5 "1a174902c396e95c7d9761033fe1360e">
+<!ENTITY gettext-md5 "87aea3013802a3c60fa3feb5c7164069">
 <!ENTITY gettext-home "&gnu-software;gettext/">
 <!ENTITY gettext-tmp-du "349 MB">
 <!ENTITY gettext-tmp-sbu "1.3 SBU">
@@ -325,10 +325,10 @@
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY inetutils-version "2.5">
-<!ENTITY inetutils-size "1,632 KB">
+<!ENTITY inetutils-version "2.6">
+<!ENTITY inetutils-size "1,724 KB">
 <!ENTITY inetutils-url "&gnu;inetutils/inetutils-&inetutils-version;.tar.xz">
-<!ENTITY inetutils-md5 "9e5a6dfd2d794dc056a770e8ad4a9263">
+<!ENTITY inetutils-md5 "401d7d07682a193960bcdecafd03de94">
 <!ENTITY inetutils-home "&gnu-software;inetutils/">
 <!ENTITY inetutils-fin-du "35 MB">
 <!ENTITY inetutils-fin-sbu "0.2 SBU">
@@ -365,10 +365,10 @@
 <!ENTITY kbd-fin-du "34 MB">
 <!ENTITY kbd-fin-sbu "0.1 SBU">
 
-<!ENTITY kmod-version "33">
-<!ENTITY kmod-size "503 KB">
+<!ENTITY kmod-version "34">
+<!ENTITY kmod-size "331 KB">
 <!ENTITY kmod-url "&kernel;linux/utils/kernel/kmod/kmod-&kmod-version;.tar.xz">
-<!ENTITY kmod-md5 "c451c4aa61521adbe8af147f498046f8">
+<!ENTITY kmod-md5 "3e6c5c9ad9c7367ab9c3cc4f08dfde62">
 <!ENTITY kmod-home "https://github.com/kmod-project/kmod">
 <!ENTITY kmod-fin-du "11 MB">
 <!ENTITY kmod-fin-sbu "less than 0.1 SBU">
@@ -431,12 +431,12 @@
 
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "13">
-<!ENTITY linux-patch-version "2">
+<!ENTITY linux-patch-version "4">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "145,012 KB">
+<!ENTITY linux-size "145,015 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "437f6b439649d8c4c0dd03fda817f443">
+<!ENTITY linux-md5 "13b9e6c29105a34db4647190a43d1810">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -487,10 +487,10 @@
 <!ENTITY man-db-fin-du "44 MB">
 <!ENTITY man-db-fin-sbu "0.3 SBU">
 
-<!ENTITY man-pages-version "6.11">
-<!ENTITY man-pages-size "1,837 KB">
+<!ENTITY man-pages-version "6.12">
+<!ENTITY man-pages-size "1,838 KB">
 <!ENTITY man-pages-url "&kernel;linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "f38a68fcd6cd0faf8a17956b16e8aa60">
+<!ENTITY man-pages-md5 "44de430a598605eaba3e36dd43f24298">
 <!ENTITY man-pages-home "https://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-fin-du "52 MB">
 <!ENTITY man-pages-fin-sbu "0.1 SBU">
@@ -637,18 +637,18 @@
 <!ENTITY sed-fin-du "30 MB">
 <!ENTITY sed-fin-sbu "0.3 SBU">
 
-<!ENTITY setuptools-version "75.8.0">
-<!ENTITY setuptools-size "1,312 KB">
+<!ENTITY setuptools-version "75.8.1">
+<!ENTITY setuptools-size "1,313 KB">
 <!ENTITY setuptools-url "&pypi-src;/s/setuptools/setuptools-&setuptools-version;.tar.gz">
-<!ENTITY setuptools-md5 "a42b075e3e18e724580f4caf7944354a">
+<!ENTITY setuptools-md5 "7dc3d3f529b76b10e35326e25c676b30">
 <!ENTITY setuptools-home "&pypi-home;/setuptools/">
 <!ENTITY setuptools-fin-du "26 MB">
 <!ENTITY setuptools-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY shadow-version "4.17.2">
-<!ENTITY shadow-size "2,267 KB">
+<!ENTITY shadow-version "4.17.3">
+<!ENTITY shadow-size "2,274 KB">
 <!ENTITY shadow-url "&github;/shadow-maint/shadow/releases/download/&shadow-version;/shadow-&shadow-version;.tar.xz">
-<!ENTITY shadow-md5 "d9b6b8028ebb5971857b7f6b10ffba0e">
+<!ENTITY shadow-md5 "0da190e53ecee76237e4c8f3f39531ed">
 <!ENTITY shadow-home "&github;/shadow-maint/shadow/">
 <!ENTITY shadow-fin-du "114 MB">
 <!ENTITY shadow-fin-sbu "0.1 SBU">
@@ -661,21 +661,21 @@
 <!ENTITY sysklogd-fin-du "4.1 MB">
 <!ENTITY sysklogd-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY systemd-version  "257">
+<!ENTITY systemd-version  "257.3">
 <!--<!ENTITY systemd-stable   "6b4878d">-->
 <!-- The above entity is used whenever we move to a stable backport branch. 
      In the event of a critical problem or kernel change that is incompatible, 
      we will switch to the backport branch until the next stable release. -->
-<!ENTITY systemd-size     "15,805 KB">
+<!ENTITY systemd-size     "15,847 KB">
 <!ENTITY systemd-url      "&github;/systemd/systemd/archive/v&systemd-version;/systemd-&systemd-version;.tar.gz">
 <!--<!ENTITY systemd-url      "&anduin-sources;/systemd-&systemd-version;-&systemd-stable;.tar.xz">-->
-<!ENTITY systemd-md5      "a51c7f9ab0d8b0a08dcf14bea2b6a5cb">
+<!ENTITY systemd-md5      "8e4fc90c7aead651fa5c50bd1b34abc2">
 <!ENTITY systemd-home     "https://www.freedesktop.org/wiki/Software/systemd/">
-<!ENTITY systemd-man-version "257">
-<!ENTITY systemd-man-size "732 KB">
+<!ENTITY systemd-man-version "257.3">
+<!ENTITY systemd-man-size "733 KB">
 <!--<!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-version;-&systemd-stable;.tar.xz">-->
 <!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-man-version;.tar.xz">
-<!ENTITY systemd-man-md5  "ac0b54961b1f20474fdff0927bc8be14">
+<!ENTITY systemd-man-md5  "9b77c3b066723d490cb10aed4fb05696">
 <!ENTITY systemd-fin-du   "307 MB">
 <!ENTITY systemd-fin-sbu  "1.1 SBU">
 
@@ -744,10 +744,10 @@
 <!ENTITY util-linux-fin-du "316 MB">
 <!ENTITY util-linux-fin-sbu "0.5 SBU">
 
-<!ENTITY vim-version "9.1.1122">
+<!ENTITY vim-version "9.1.1166">
 <!-- <!ENTITY vim-majmin "90"> -->
 <!ENTITY vim-docdir "vim/vim91">
-<!ENTITY vim-size "18,057 KB">
+<!ENTITY vim-size "18,077 KB">
 <!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">
 <!-- N.B. LFS 9.0 uses
      https://github.com/vim/vim/archive/v8.1.1846/vim-8.1.1846.tar.gz
@@ -761,7 +761,7 @@
      example, https://github.com/vim/vim/tags?after=v8.1.1847 will show
      us v8.1.1846. -->
 <!--<!ENTITY vim-url "&anduin-sources;/vim-&vim-version;.tar.gz">-->
-<!ENTITY vim-md5 "c6980db0c12e69dd5086b151b4958360">
+<!ENTITY vim-md5 "718d43ce957ab7c81071793de176c2eb">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "251 MB">
 <!ENTITY vim-fin-sbu "3.4 SBU">
@@ -804,10 +804,10 @@
 <!ENTITY zlib-fin-du "6.4 MB">
 <!ENTITY zlib-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY zstd-version "1.5.6">
-<!ENTITY zstd-size "2,351 KB">
+<!ENTITY zstd-version "1.5.7">
+<!ENTITY zstd-size "2,378 KB">
 <!ENTITY zstd-url "https://github.com/facebook/zstd/releases/download/v&zstd-version;/zstd-&zstd-version;.tar.gz">
-<!ENTITY zstd-md5 "5a473726b3445d0e5d6296afd1ab6854">
+<!ENTITY zstd-md5 "780fc1896922b1bc52a4e90980cdda48">
 <!ENTITY zstd-home "https://facebook.github.io/zstd/">
 <!ENTITY zstd-fin-du "85 MB">
 <!ENTITY zstd-fin-sbu "0.4 SBU">
