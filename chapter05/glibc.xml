@@ -221,8 +221,8 @@ readelf -l a.out | grep ': /lib'</userinput></screen>
   <para>This command should return the following output:</para>
 
 <screen><computeroutput>#include &lt;...&gt; search starts here:
- /mnt/lfs/tools/lib/gcc/x86_64-lfs-linux-gnu/&gcc-version;/include
- /mnt/lfs/tools/lib/gcc/x86_64-lfs-linux-gnu/&gcc-version;/include-fixed
+ /mnt/lfs/tools/lib/gcc/loongarch64-lfs-linux-gnu/&gcc-version;/include
+ /mnt/lfs/tools/lib/gcc/loongarch64-lfs-linux-gnu/&gcc-version;/include-fixed
  /mnt/lfs/usr/include</computeroutput></screen>
 
    <para>Again, the directory named after your target triplet may be
@@ -235,11 +235,11 @@ readelf -l a.out | grep ': /lib'</userinput></screen>
   <para>References to paths that have components with '-linux-gnu' should
   be ignored, but otherwise the output of the last command should be:</para>
 
-<screen><computeroutput>SEARCH_DIR("=/mnt/lfs/tools/x86_64-lfs-linux-gnu/lib64")
+<screen><computeroutput>SEARCH_DIR("=/mnt/lfs/tools/loongarch64-lfs-linux-gnu/lib64")
 SEARCH_DIR("=/usr/local/lib64")
 SEARCH_DIR("=/lib64")
 SEARCH_DIR("=/usr/lib64")
-SEARCH_DIR("=/mnt/lfs/tools/x86_64-lfs-linux-gnu/lib")
+SEARCH_DIR("=/mnt/lfs/tools/loongarch64-lfs-linux-gnu/lib")
 SEARCH_DIR("=/usr/local/lib")
 SEARCH_DIR("=/lib")
 SEARCH_DIR("=/usr/lib");</computeroutput></screen>
@@ -264,7 +264,7 @@ SEARCH_DIR("=/usr/lib");</computeroutput></screen>
   <para>The output of the last command should be (allowing for
   platform-specific differences in dynamic linker name):</para>
 
-<screen><computeroutput>found ld-linux-x86-64.so.2 at /mnt/lfs/usr/lib/ld-linux-x86-64.so.2</computeroutput></screen>
+<screen><computeroutput>found ld-linux-loongarch-lp64d.so.1 at /mnt/lfs/usr/lib/ld-linux-loongarch-lp64d.so.1</computeroutput></screen>
 
   <para>If the output does not appear as shown above or is not received
   at all, then something is seriously wrong. Investigate and retrace the
