@@ -96,18 +96,10 @@
 <!ENTITY bzip2-fin-du "7.2 MB">
 <!ENTITY bzip2-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY check-version "0.15.2">
-<!ENTITY check-size "760 KB">
-<!ENTITY check-url "&github;/libcheck/check/releases/download/&check-version;/check-&check-version;.tar.gz">
-<!ENTITY check-md5 "50fcafcecde5a380415b12e9c574e0b2">
-<!ENTITY check-home "https://libcheck.github.io/check">
-<!ENTITY check-fin-du "11 MB">
-<!ENTITY check-fin-sbu "0.1 SBU (about 2.1 SBU with tests)">
-
-<!ENTITY coreutils-version "9.6">
-<!ENTITY coreutils-size "5,991 KB">
+<!ENTITY coreutils-version "9.7">
+<!ENTITY coreutils-size "6,015 KB">
 <!ENTITY coreutils-url "&gnu;coreutils/coreutils-&coreutils-version;.tar.xz">
-<!ENTITY coreutils-md5 "0ed6cc983fe02973bc98803155cc1733">
+<!ENTITY coreutils-md5 "6b7285faf7d5eb91592bdd689270d3f1">
 <!ENTITY coreutils-home "&gnu-software;coreutils/">
 <!ENTITY coreutils-tmp-du "181 MB">
 <!ENTITY coreutils-tmp-sbu "0.3 SBU">
@@ -130,10 +122,10 @@
 <!ENTITY dejagnu-tmp-du "6.9 MB">
 <!ENTITY dejagnu-tmp-sbu "less than 0.1 SBU">
 
-<!ENTITY diffutils-version "3.11">
-<!ENTITY diffutils-size "1,881 KB">
+<!ENTITY diffutils-version "3.12">
+<!ENTITY diffutils-size "1,894 KB">
 <!ENTITY diffutils-url "&gnu;diffutils/diffutils-&diffutils-version;.tar.xz">
-<!ENTITY diffutils-md5 "75ab2bb7b5ac0e3e10cece85bd1780c2">
+<!ENTITY diffutils-md5 "d1b18b20868fb561f77861cd90b05de4">
 <!ENTITY diffutils-home "&gnu-software;diffutils/">
 <!ENTITY diffutils-tmp-du "35 MB">
 <!ENTITY diffutils-tmp-sbu "0.1 SBU">
@@ -208,10 +200,10 @@
 <!ENTITY flit-core-fin-du "1.0 MB">
 <!ENTITY flit-core-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY gawk-version "5.3.1">
-<!ENTITY gawk-size "3,428 KB">
+<!ENTITY gawk-version "5.3.2">
+<!ENTITY gawk-size "3,662 KB">
 <!ENTITY gawk-url "&gnu;gawk/gawk-&gawk-version;.tar.xz">
-<!ENTITY gawk-md5 "4e9292a06b43694500e0620851762eec">
+<!ENTITY gawk-md5 "b7014650c5f45e5d4837c31209dc0037">
 <!ENTITY gawk-home "&gnu-software;gawk/">
 <!ENTITY gawk-tmp-du "47 MB">
 <!ENTITY gawk-tmp-sbu "0.1 SBU">
@@ -273,18 +265,18 @@
 <!ENTITY gmp-fin-du "54 MB">
 <!ENTITY gmp-fin-sbu "0.3 SBU">
 
-<!ENTITY gperf-version "3.1">
-<!ENTITY gperf-size "1,188 KB">
+<!ENTITY gperf-version "3.2.1">
+<!ENTITY gperf-size "1,240 KB">
 <!ENTITY gperf-url "&gnu;gperf/gperf-&gperf-version;.tar.gz">
-<!ENTITY gperf-md5 "9e251c0a618ad0824b51117d5d9db87e">
+<!ENTITY gperf-md5 "06212b91bdc53526cffb346916c854d6">
 <!ENTITY gperf-home "&gnu-software;gperf/">
 <!ENTITY gperf-fin-du "6.1 MB">
 <!ENTITY gperf-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY grep-version "3.11">
-<!ENTITY grep-size "1,664 KB">
+<!ENTITY grep-version "3.12">
+<!ENTITY grep-size "1,874 KB">
 <!ENTITY grep-url "&gnu;grep/grep-&grep-version;.tar.xz">
-<!ENTITY grep-md5 "7c9bbd74492131245f7cdb291fa142c0">
+<!ENTITY grep-md5 "5d9301ed9d209c4a88c8d3a6fd08b9ac">
 <!ENTITY grep-home "&gnu-software;grep/">
 <!ENTITY grep-tmp-du "27 MB">
 <!ENTITY grep-tmp-sbu "0.1 SBU">
@@ -307,10 +299,10 @@
 <!ENTITY grub-fin-du "166 MB">
 <!ENTITY grub-fin-sbu "0.3 SBU">
 
-<!ENTITY gzip-version "1.13">
-<!ENTITY gzip-size "819 KB">
+<!ENTITY gzip-version "1.14">
+<!ENTITY gzip-size "865 KB">
 <!ENTITY gzip-url "&gnu;gzip/gzip-&gzip-version;.tar.xz">
-<!ENTITY gzip-md5 "d5c9fc9441288817a4a0be2da0249e29">
+<!ENTITY gzip-md5 "4bf5a10f287501ee8e8ebe00ef62b2c2">
 <!ENTITY gzip-home "&gnu-software;gzip/">
 <!ENTITY gzip-tmp-du "11 MB">
 <!ENTITY gzip-tmp-sbu "0.1 SBU">
@@ -341,10 +333,10 @@
 <!ENTITY intltool-fin-du "1.5 MB">
 <!ENTITY intltool-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY iproute2-version "6.13.0">
-<!ENTITY iproute2-size "906 KB">
+<!ENTITY iproute2-version "6.14.0">
+<!ENTITY iproute2-size "908 KB">
 <!ENTITY iproute2-url "&kernel;linux/utils/net/iproute2/iproute2-&iproute2-version;.tar.xz">
-<!ENTITY iproute2-md5 "1603d25120d03feeaba9b360d03ffaec">
+<!ENTITY iproute2-md5 "84ee9c0b8bc09623e20c1341c9525024">
 <!ENTITY iproute2-home "&kernel;linux/utils/net/iproute2/">
 <!ENTITY iproute2-fin-du "17 MB">
 <!ENTITY iproute2-fin-sbu "0.1 SBU">
@@ -399,18 +391,18 @@
 <!ENTITY lfs-bootscripts-cfg-du "BOOTSCRIPTS-INSTALL-KB KB">
 <!ENTITY lfs-bootscripts-cfg-sbu "less than 0.1 SBU">
 
-<!ENTITY libcap-version "2.75">
-<!ENTITY libcap-size "194 KB">
+<!ENTITY libcap-version "2.76">
+<!ENTITY libcap-size "195 KB">
 <!ENTITY libcap-url "&kernel;linux/libs/security/linux-privs/libcap2/libcap-&libcap-version;.tar.xz">
-<!ENTITY libcap-md5 "9406193ddb794dfbf9e71490053085f9">
+<!ENTITY libcap-md5 "449ade7d620b5c4eeb15a632fbaa4f74">
 <!ENTITY libcap-home "https://sites.google.com/site/fullycapable/">
 <!ENTITY libcap-fin-du "3.0 MB">
 <!ENTITY libcap-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY libffi-version "3.4.7">
-<!ENTITY libffi-size "1,362 KB">
+<!ENTITY libffi-version "3.4.8">
+<!ENTITY libffi-size "1,366 KB">
 <!ENTITY libffi-url "https://github.com/libffi/libffi/releases/download/v&libffi-version;/libffi-&libffi-version;.tar.gz">
-<!ENTITY libffi-md5 "696a1d483a1174ce8a477575546a5284">
+<!ENTITY libffi-md5 "ba5fc49d57d13b9e6cecd0c78d76688b">
 <!ENTITY libffi-home "https://sourceware.org/libffi/">
 <!ENTITY libffi-fin-du "11 MB">
 <!ENTITY libffi-fin-sbu "1.7 SBU">
@@ -440,13 +432,13 @@
 <!ENTITY libxcrypt-fin-sbu "0.1 SBU">
 
 <!ENTITY linux-major-version "6">
-<!ENTITY linux-minor-version "13">
-<!ENTITY linux-patch-version "7">
+<!ENTITY linux-minor-version "14">
+<!ENTITY linux-patch-version "2">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "145,105 KB">
+<!ENTITY linux-size "145,911 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "2c6aaac4edbf719c70d4099b1cad99e3">
+<!ENTITY linux-md5 "7f305d1d40d8ca9393c58071f01453ed">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -513,10 +505,10 @@
 <!ENTITY markupsafe-fin-du "500 KB">
 <!ENTITY markupsafe-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY meson-version "1.7.0">
-<!ENTITY meson-size "2,241 KB">
+<!ENTITY meson-version "1.7.2">
+<!ENTITY meson-size "4,892 KB">
 <!ENTITY meson-url "&github;/mesonbuild/meson/releases/download/&meson-version;/meson-&meson-version;.tar.gz">
-<!ENTITY meson-md5 "c20f3e5ebbb007352d22f4fd6ceb925c">
+<!ENTITY meson-md5 "caec869e85ba1046f22972fbd5d2c497">
 <!ENTITY meson-home "https://mesonbuild.com">
 <!ENTITY meson-fin-du "44 MB">
 <!ENTITY meson-fin-sbu "less than 0.1 SBU">
@@ -555,13 +547,21 @@
 <!ENTITY ninja-fin-du "37 MB">
 <!ENTITY ninja-fin-sbu "0.2 SBU">
 
-<!ENTITY openssl-version "3.4.1">
-<!ENTITY openssl-size "17,917 KB">
+<!ENTITY openssl-version "3.5.0">
+<!ENTITY openssl-size "51,892 KB">
 <!ENTITY openssl-url "&github;/openssl/openssl/releases/download/openssl-&openssl-version;/openssl-&openssl-version;.tar.gz">
-<!ENTITY openssl-md5 "fb7a747ac6793a7ad7118eaba45db379">
+<!ENTITY openssl-md5 "51da7d2bdf7f4f508cb024f562eb9b03">
 <!ENTITY openssl-home "https://www.openssl-library.org/">
 <!ENTITY openssl-fin-du "920 MB">
 <!ENTITY openssl-fin-sbu "1.8 SBU">
+
+<!ENTITY packaging-version "24.2">
+<!ENTITY packaging-size "164 KB">
+<!ENTITY packaging-url "https://files.pythonhosted.org/packages/source/p/packaging/packaging-&packaging-version;.tar.gz">
+<!ENTITY packaging-md5 "97dbaca91e00d6b9fd86866e8c7897ae">
+<!ENTITY packaging-home "&pypi-home;/packaging/">
+<!ENTITY packaging-fin-du "2.7 MB">
+<!ENTITY packaging-fin-sbu "less than 0.1 SBU">
 
 <!ENTITY patch-version "2.8">
 <!ENTITY patch-size "886 KB">
@@ -575,12 +575,12 @@
 
 <!ENTITY perl-version-major "5">
 <!ENTITY perl-version-minor "40">
-<!ENTITY perl-version-patch "1">
+<!ENTITY perl-version-patch "2">
 <!ENTITY perl-version-min "&perl-version-major;.&perl-version-minor;">
 <!ENTITY perl-version "&perl-version-major;.&perl-version-minor;.&perl-version-patch;">
-<!ENTITY perl-size "13,605 KB">
+<!ENTITY perl-size "13,598 KB">
 <!ENTITY perl-url "https://www.cpan.org/src/5.0/perl-&perl-version;.tar.xz">
-<!ENTITY perl-md5 "bab3547a5cdf2302ee0396419d74a42e">
+<!ENTITY perl-md5 "9ad7a269dc4053cdbeecd4fde444291b">
 <!ENTITY perl-home "https://www.perl.org/">
 <!ENTITY perl-tmp-du "285 MB">
 <!ENTITY perl-tmp-sbu "0.6 SBU">
@@ -614,19 +614,19 @@
 <!-- If python minor version changes, updates in python and
      meson pages will be needed: python3.6 and python3.6m -->
 
-<!ENTITY python-version "3.13.2">
+<!ENTITY python-version "3.13.3">
 <!ENTITY python-minor "3.13">
-<!ENTITY python-size "22,091 KB">
+<!ENTITY python-size "22,124 KB">
 <!ENTITY python-url "https://www.python.org/ftp/python/&python-version;/Python-&python-version;.tar.xz">
-<!ENTITY python-md5 "4c2d9202ab4db02c9d0999b14655dfe5">
+<!ENTITY python-md5 "8bb5f0b8c9d9d7b87d7d98510e8d58e5">
 <!ENTITY python-home "https://www.python.org/">
 <!ENTITY python-tmp-du "634 MB">
 <!ENTITY python-tmp-sbu "0.5 SBU">
 <!ENTITY python-fin-du "501 MB">
 <!ENTITY python-fin-sbu "2.1 SBU">
 <!ENTITY python-docs-url "https://www.python.org/ftp/python/doc/&python-version;/python-&python-version;-docs-html.tar.bz2">
-<!ENTITY python-docs-md5 "d6aede88f480a018d26b3206f21654ae">
-<!ENTITY python-docs-size "10,102 KB">
+<!ENTITY python-docs-md5 "5b65ca5579dac14e425cd247af6fd043">
+<!ENTITY python-docs-size "10,112 KB">
 
 <!ENTITY readline-version "8.2.13">
 <!ENTITY readline-soversion "8.2"><!-- used for stripping -->
@@ -663,10 +663,10 @@
 <!ENTITY shadow-fin-du "114 MB">
 <!ENTITY shadow-fin-sbu "0.1 SBU">
 
-<!ENTITY sysklogd-version "2.7.1">
-<!ENTITY sysklogd-size "473 KB">
+<!ENTITY sysklogd-version "2.7.2">
+<!ENTITY sysklogd-size "474 KB">
 <!ENTITY sysklogd-url "https://github.com/troglobit/sysklogd/releases/download/v&sysklogd-version;/sysklogd-&sysklogd-version;.tar.gz">
-<!ENTITY sysklogd-md5 "f4a1554f73a267218e69e168a8cb2950">
+<!ENTITY sysklogd-md5 "af60786956a2dc84054fbf46652e515e">
 <!ENTITY sysklogd-home "https://www.infodrom.org/projects/sysklogd/">
 <!ENTITY sysklogd-fin-du "4.1 MB">
 <!ENTITY sysklogd-fin-sbu "less than 0.1 SBU">
@@ -776,10 +776,10 @@
 <!ENTITY vim-fin-du "251 MB">
 <!ENTITY vim-fin-sbu "3.4 SBU">
 
-<!ENTITY wheel-version "0.45.1">
-<!ENTITY wheel-size "106 KB">
+<!ENTITY wheel-version "0.46.1">
+<!ENTITY wheel-size "54 KB">
 <!ENTITY wheel-url "&pypi-src;/w/wheel/wheel-&wheel-version;.tar.gz">
-<!ENTITY wheel-md5 "dddc505d0573d03576c7c6c5a4fe0641">
+<!ENTITY wheel-md5 "65e09ee84af36821e3b1e9564aa91bd5">
 <!ENTITY wheel-home "&pypi-home;/wheel/">
 <!ENTITY wheel-fin-du "1.6 MB">
 <!ENTITY wheel-fin-sbu "less than 0.1 SBU">
@@ -792,10 +792,10 @@
 <!ENTITY xml-parser-fin-du "2.4 MB">
 <!ENTITY xml-parser-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY xz-version "5.8.0">
-<!ENTITY xz-size "1,424 KB">
+<!ENTITY xz-version "5.8.1">
+<!ENTITY xz-size "1,428 KB">
 <!ENTITY xz-url "https://github.com//tukaani-project/xz/releases/download/v&xz-version;/xz-&xz-version;.tar.xz">
-<!ENTITY xz-md5 "3bfff9c10abc3b7fb25962be8b0359fb">
+<!ENTITY xz-md5 "cf5e1feb023d22c6bdaa30e84ef3abe3">
 <!ENTITY xz-home "https://tukaani.org/xz">
 <!ENTITY xz-tmp-du "21 MB">
 <!ENTITY xz-tmp-sbu "0.1 SBU">

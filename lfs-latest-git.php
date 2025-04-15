@@ -118,7 +118,6 @@ function get_packages( $package, $dirpath )
 //if ( $package != "wheel" ) return 0; // debug
 
 if ( $package == "bc"         ) $dirpath = github("gavinhoward/bc");
-if ( $package == "check"      ) $dirpath = github("libcheck/check");
 if ( $package == "e2fsprogs"  ) $dirpath = "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs";
 if ( $package == "expat"      ) $dirpath = "https://sourceforge.net/projects/expat/files";
 if ( $package == "elfutils"   ) $dirpath = "https://sourceware.org/ftp/elfutils";

@@ -111,15 +111,6 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Check (&check-version;) - <token>&check-size;</token>:</term>
-      <listitem>
-        <para>Home page: <ulink url="&check-home;"/></para>
-        <para>Download: <ulink url="&check-url;"/></para>
-        <para>MD5 sum: <literal>&check-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
       <term>Coreutils (&coreutils-version;) - <token>&coreutils-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&coreutils-home;"/></para>
@@ -603,6 +594,15 @@
         <para>Home page: <ulink url="&openssl-home;"/></para>
         <para>Download: <ulink url="&openssl-url;"/></para>
         <para>MD5 sum: <literal>&openssl-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Packaging (&packaging-version;) - <token>&packaging-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&packaging-home;"/></para>
+        <para>Download: <ulink url="&packaging-url;"/></para>
+        <para>MD5 sum: <literal>&packaging-md5;</literal></para>
       </listitem>
     </varlistentry>
 
