@@ -158,7 +158,7 @@
 
 <!ENTITY expat-version "2.7.1">
 <!ENTITY expat-size "485 KB">
-<!ENTITY expat-url "&sourceforge;expat/expat-&expat-version;.tar.xz">
+<!ENTITY expat-url "&github;/libexpat/libexpat/releases/download/R_2_7_1/expat-&expat-version;.tar.xz">
 <!ENTITY expat-md5 "9f0c266ff4b9720beae0c6bd53ae4469">
 <!ENTITY expat-home "https://libexpat.github.io/">
 <!ENTITY expat-fin-du "14 MB">
