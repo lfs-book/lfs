@@ -43,10 +43,6 @@
   <sect2 role="installation">
     <title>Installation of Patch</title>
 
-    &update-config-text;
-
-<screen><userinput remap="pre">tar -C build-aux &update-config-arg;</userinput></screen>
-
     <para>Prepare Patch for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr   \
