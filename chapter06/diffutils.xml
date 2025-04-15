@@ -43,7 +43,10 @@
   <sect2 role="installation">
     <title>Installation of Diffutils</title>
 
-    <para>First, fix a problem in the current version of diffutils:</para>
+    <para>When Diffutils is being configured, it checks to see if it is
+    being cross compiled. If it is, configuration fails. Since we are
+    cross compiling, comment out the specific lines that perform that
+    test now:</para>
 
     <screen><userinput remap="pre">sed -e '46252,+3 s/^/#/' \
     -e '46596,+3 s/^/#/' \
