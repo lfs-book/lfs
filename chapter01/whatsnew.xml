@@ -294,7 +294,7 @@
     <listitem><para></para></listitem>  <!-- satisfy build -->
 
     <listitem>
-      <para>Packaging-24.2</para>
+      <para>Packaging-&packaging-version;</para>
     </listitem>
 
   </itemizedlist>
