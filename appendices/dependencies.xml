@@ -828,7 +828,7 @@
       <segmentedlist id="flit-core-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>Wheel</seg>
+          <seg>Packaging and Wheel</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1196,7 +1196,7 @@
       <segmentedlist id="groff-testdeps">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
-          <seg>No test suite available</seg>
+          <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1598,7 +1598,7 @@
       <segmentedlist id="less-testdeps">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
-          <seg>No test suite available</seg>
+          <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2422,7 +2422,7 @@
       <segmentedlist id="packaging-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Python</seg>
+          <seg>Flit-core and Python</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2647,7 +2647,7 @@
       <segmentedlist id="psmisc-testdeps">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
-          <seg>No test suite available</seg>
+          <seg>Expect</seg>
         </seglistitem>
       </segmentedlist>
 

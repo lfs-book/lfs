@@ -62,7 +62,6 @@
       <segtitle>Installed directories</segtitle>
 
       <seglistitem>
-        <seg>packaging</seg>
         <seg>
            /usr/lib/python&python-minor;/site-packages/packaging and
            /usr/lib/python&python-minor;/site-packages/packaging-&packaging-version;.dist-info
