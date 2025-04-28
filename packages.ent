@@ -212,7 +212,7 @@
 
 <!ENTITY gcc-version "15.1.0">
 <!ENTITY gcc-size "93,744 KB">
-<!ENTITY gcc-url "&gnu;gcc/gcc-&gcc-version;.tar.xz">
+<!ENTITY gcc-url "&gnu;gcc/gcc-&gcc-version;/gcc-&gcc-version;.tar.xz">
 <!ENTITY gcc-md5 "e55d13c55428bca27b4d2ea02f883135">
 <!ENTITY gcc-home "https://gcc.gnu.org/">
 <!ENTITY gcc-tmpp1-du "4.8 GB">
@@ -531,7 +531,7 @@
 
 <!ENTITY ncurses-version "6.5">
 <!ENTITY ncurses-size "2,156 KB">
-<!ENTITY ncurses-url "https://invisible-mirror.net/archives/ncurses/ncurses-&ncurses-version;-20250419.tgz">
+<!ENTITY ncurses-url "https://invisible-mirror.net/archives/ncurses/current/ncurses-&ncurses-version;-20250419.tgz">
 <!ENTITY ncurses-md5 "6ceb0f9f2389fea01d6ed7ab8a41c3a7">
 <!ENTITY ncurses-home "&gnu-software;ncurses/">
 <!ENTITY ncurses-tmp-du "53 MB">
