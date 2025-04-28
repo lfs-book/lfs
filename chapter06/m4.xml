@@ -50,6 +50,8 @@ echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h</userinput></screen>
 -->
     <para>Prepare M4 for compilation:</para>
 
+<screen><userinput remap="pre">sed 's/\[\[__nodiscard__]]//' -i lib/config.hin</userinput></screen>
+
 <screen><userinput remap="configure">./configure --prefix=/usr   \
             --host=$LFS_TGT \
             --build=$(build-aux/config.guess)</userinput></screen>

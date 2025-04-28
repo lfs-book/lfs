@@ -61,10 +61,10 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Expect GCC14 Patch - <token>&expect-gcc14-patch-size;</token>:</term>
+      <term>Expect GCC15 Patch - <token>&expect-gcc15-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&expect-gcc14-patch;"/></para>
-        <para>MD5 sum: <literal>&expect-gcc14-patch-md5;</literal></para>
+        <para>Download: <ulink url="&patches-root;&expect-gcc15-patch;"/></para>
+        <para>MD5 sum: <literal>&expect-gcc15-patch-md5;</literal></para>
       </listitem>
    </varlistentry>
 

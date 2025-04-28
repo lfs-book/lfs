@@ -47,6 +47,9 @@ echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h</userinput></screen>
 -->
     <para>Prepare M4 for compilation:</para>
 
+<screen><userinput remap="pre">sed 's/\[\[__nodiscard__]]//' -i lib/config.hin</userinput></screen>
+<screen><userinput remap="pre">sed 's/test-stdalign\$(EXEEXT) //' -i tests/Makefile.in</userinput></screen>
+
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
 
     <para>Compile the package:</para>

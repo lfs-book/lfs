@@ -43,15 +43,15 @@
 
     <para>Prepare Bc for compilation:</para>
 
-<screen><userinput remap="configure">CC=gcc ./configure --prefix=/usr -G -O3 -r</userinput></screen>
+<screen><userinput remap="configure">CC='gcc -std=c99' ./configure --prefix=/usr -G -O3 -r</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
 
       <varlistentry>
-        <term><parameter>CC=gcc</parameter></term>
+        <term><parameter>CC='gcc -std=c99'</parameter></term>
         <listitem>
-          <para>This parameter specifies the compiler to use.</para>
+          <para>This parameter specifies the compiler and the C standard to use.</para>
         </listitem>
       </varlistentry>
 

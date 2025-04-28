@@ -64,6 +64,8 @@
 
     <para>Prepare GMP for compilation:</para>
 
+<screen><userinput remap="pre">sed '/long long t1;/,+1s/()/(...)/' -i configure</userinput></screen>
+
 <screen><userinput remap="configure">./configure --prefix=/usr    \
             --enable-cxx     \
             --disable-static \
