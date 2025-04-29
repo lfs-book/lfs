@@ -32,7 +32,7 @@
         Standard Base (LSB) Version 5.0 (2015)</ulink></para>
 
         <para>The LSB has four separate specifications: Core, Desktop,
-        Runtime Languages, and Imaging.  Some parts of Core and Desktop
+        Languages, and Imaging.  Some parts of Core and Desktop
         specifications are architecture specific.  There are also two trial
         specifications: Gtk3 and Graphics.  LFS attempts to conform to the LSB
         specifications for the IA32 (32-bit x86) or AMD64 (x86_64)
@@ -50,7 +50,7 @@
 
     <para>While it is possible to create a complete system that will pass the LSB
     certification tests <quote>from scratch,</quote> this can't be done without many additional packages
-    that are beyond the scope of the LFS book.  Installation instructions for these
+    that are beyond the scope of the LFS book.  Installation instructions for some of these
     additional packages can be found in BLFS. </para>
 
     <variablelist>
@@ -62,9 +62,12 @@
       <varlistentry>
         <term><emphasis>LSB Core:</emphasis></term>
         <listitem>
-          <para>Bash, Bc, Binutils, Coreutils, Diffutils, File, Findutils, Gawk,
-                Grep, Gzip, M4, Man-DB, Ncurses, Procps, Psmisc, Sed,
-                Shadow, Tar, Util-linux, Zlib</para>
+          <para>
+            Bash, Bc, Binutils, Coreutils, Diffutils, File, Findutils, Gawk,
+            GCC, Gettext, Glibc, Grep, Gzip, M4, Man-DB, Procps, Psmisc,
+            Sed, Shadow, <phrase revision='sysv'>SysVinit</phrase><phrase
+            revision='systemd'>Systemd</phrase>, Tar, Util-linux, Zlib
+          </para>
         </listitem>
       </varlistentry>
 
@@ -76,9 +79,9 @@
       </varlistentry>
 
       <varlistentry>
-        <term><emphasis>LSB Runtime Languages:</emphasis></term>
+        <term><emphasis>LSB Languages:</emphasis></term>
         <listitem>
-          <para>Perl, Python</para>
+          <para>Perl</para>
         </listitem>
       </varlistentry>
 
@@ -107,8 +110,9 @@
       <varlistentry>
         <term><emphasis>LSB Core:</emphasis></term>
         <listitem>
-          <para>At, Batch (a part of At), Cpio, Ed, Fcrontab, LSB-Tools, NSPR,
-          NSS, PAM, Pax, Sendmail (or Postfix or Exim), time
+          <para>At, Batch (a part of At), BLFS Bash Startup Files, Cpio, Ed,
+          Fcrontab, LSB-Tools, NSPR, NSS, Linux-PAM, Pax, Sendmail
+          (or Postfix or Exim), Time
           </para>
         </listitem>
       </varlistentry>
@@ -117,15 +121,15 @@
         <term><emphasis>LSB Desktop:</emphasis></term>
         <listitem>
           <para>Alsa, ATK, Cairo, Desktop-file-utils, Freetype, Fontconfig,
-          Gdk-pixbuf, Glib2, GTK+2, Icon-naming-utils, Libjpeg-turbo, Libpng, Libtiff,
-          Libxml2, MesaLib, Pango, Xdg-utils, Xorg</para>
+          Gdk-pixbuf, Glib2, GLU, Icon-naming-utils, Libjpeg-turbo,
+          Libxml2, Mesa, Pango, Xdg-utils, Xorg</para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><emphasis>LSB Runtime Languages:</emphasis></term>
+        <term><emphasis>LSB Languages:</emphasis></term>
         <listitem>
-          <para>Libxml2, Libxslt </para>
+          <para>Libxml2, Libxslt</para>
         </listitem>
       </varlistentry>
 
@@ -146,29 +150,59 @@
     </variablelist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Packages not supplied by LFS or BLFS
-      needed to satisfy the LSB Requirements</bridgehead>
+      <bridgehead renderas="sect3">Components not supplied or optionally
+      supplied by LFS or BLFS needed to satisfy the LSB
+      Requirements</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry>
         <term><emphasis>LSB Core:</emphasis></term>
         <listitem>
-          <para>None</para>
+          <para>
+            <command>install_initd</command>,
+            <filename class='libraryfile'>libcrypt.so.1</filename>
+            (can be provided with optional instructions for the LFS
+            Libxcrypt package),
+            <filename class='libraryfile'>libncurses.so.5</filename>
+            (can be provided with optional instructions for the LFS
+            Ncurses package),
+            <filename class='libraryfile'>libncursesw.so.5</filename>
+            (but <filename class='libraryfile'>libncursesw.so.6</filename>
+            is provided by the LFS Ncurses package)
+          </para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
         <term><emphasis>LSB Desktop:</emphasis></term>
         <listitem>
-          <para>Qt4 (but Qt5 is provided)</para>
+          <para>
+            <filename class='libraryfile'>libgdk-x11-2.0.so</filename>
+            (but <filename class='libraryfile'>libgdk-3.so</filename>
+            is provided by the BLFS GTK+-3 package),
+            <filename class='libraryfile'>libgtk-x11-2.0.so</filename>
+            (but <filename class='libraryfile'>libgtk-3.so</filename>
+            and <filename class='libraryfile'>libgtk-4.so</filename>
+            are provided by the BLFS GTK+-3 and GTK-4 packages),
+            <filename class='libraryfile'>libpng12.so</filename>
+            (but <filename class='libraryfile'>libpng16.so</filename>
+            is provided by the BLFS Libpng package),
+            <filename class='libraryfile'>libQt*.so.4</filename>
+            (but <filename class='libraryfile'>libQt6*.so.6</filename>
+            are provided by the BLFS Qt6 package),
+            <filename class='libraryfile'>libtiff.so.4</filename>
+            (but <filename class='libraryfile'>libtiff.so.6</filename>
+            is provided by the BLFS Libtiff package)
+          </para>
         </listitem>
       </varlistentry>
 
       <varlistentry>
-        <term><emphasis>LSB Runtime Languages:</emphasis></term>
+        <term><emphasis>LSB Languages:</emphasis></term>
         <listitem>
-          <para>None</para>
+          <para><command>/usr/bin/python</command> (LSB requires Python2 but
+          LFS and BLFS only provide Python3)</para>
         </listitem>
       </varlistentry>
 
@@ -182,7 +216,11 @@
       <varlistentry>
         <term><emphasis>LSB Gtk3 and LSB Graphics (Trial Use):</emphasis></term>
         <listitem>
-          <para>None</para>
+          <para>
+            <filename class='libraryfile'>libpng15.so</filename>
+            (but <filename class='libraryfile'>libpng16.so</filename>
+            is provided by the BLFS Libpng package)
+          </para>
         </listitem>
       </varlistentry>
 

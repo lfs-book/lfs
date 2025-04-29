@@ -24,10 +24,15 @@
   backup of the LFS system in its current state.</para>
 
   <para>A <command>strip</command> command with the
-  <parameter>--strip-unneeded</parameter> option removes all debug symbols
-  from a binary or library.  It also removes all symbol table entries not
+  <parameter>--strip-unneeded</parameter> option removes all debug symbols from
+  a binary or library.  It also removes all symbol table entries not normally
   needed by the linker (for static libraries) or dynamic linker (for
-  dynamically linked binaries and shared libraries).</para>
+  dynamically linked binaries and shared libraries). Using
+  <parameter>--strip-debug</parameter> does not remove symbol table entries
+  that may be needed by some applications.  The difference between "unneeded"
+  and "debug" is very small. For example, an unstripped libc.a is 22.4 MB.
+  After stripping with --strip-debug it is 5.9 MB.  Using --strip-unneeded only
+  reduces the size further to only 5.8 MB.</para>
 
   <!-- TODO: Zstd is better than Zlib for both speed and size.
              Unfortunately Valgrind does not support Zstd-compressed debug
@@ -83,7 +88,7 @@ cd /usr/lib
 for LIB in $save_usrlib; do
     objcopy --only-keep-debug --compress-debug-sections=zlib $LIB $LIB.dbg
     cp $LIB /tmp/$LIB
-    strip --strip-unneeded /tmp/$LIB
+    strip --strip-debug /tmp/$LIB
     objcopy --add-gnu-debuglink=$LIB.dbg /tmp/$LIB
     install -vm755 /tmp/$LIB /usr/lib
     rm /tmp/$LIB
@@ -102,14 +107,14 @@ online_usrlib="libbfd-&binutils-version;.so
 
 for BIN in $online_usrbin; do
     cp /usr/bin/$BIN /tmp/$BIN
-    strip --strip-unneeded /tmp/$BIN
+    strip --strip-debug /tmp/$BIN
     install -vm755 /tmp/$BIN /usr/bin
     rm /tmp/$BIN
 done
 
 for LIB in $online_usrlib; do
     cp /usr/lib/$LIB /tmp/$LIB
-    strip --strip-unneeded /tmp/$LIB
+    strip --strip-debug /tmp/$LIB
     install -vm755 /tmp/$LIB /usr/lib
     rm /tmp/$LIB
 done
@@ -120,7 +125,7 @@ for i in $(find /usr/lib -type f -name \*.so* ! -name \*dbg) \
     case "$online_usrbin $online_usrlib $save_usrlib" in
         *$(basename $i)* )
             ;;
-        * ) strip --strip-unneeded $i
+        * ) strip --strip-debug $i
             ;;
     esac
 done

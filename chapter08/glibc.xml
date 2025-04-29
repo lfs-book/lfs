@@ -153,7 +153,7 @@ esac</userinput></screen>
 
     <para>You may see some test failures. The Glibc test suite is
     somewhat dependent on the host system. A few failures out of
-    over 5000 tests can generally be ignored. This is a list of the
+    over 6000 tests can generally be ignored. This is a list of the
     most common issues seen for recent versions of LFS:</para>
 
     <itemizedlist>
@@ -313,6 +313,19 @@ install -vm755 dest/usr/lib/*.so.* /usr/lib</userinput></screen>
         the locales.  Once they are finished, reboot the system
         immediately.
       </para>
+
+      <para>
+        When the system has successfully rebooted, if you are running
+        a LFS system prior to 12.0 (exclusive) where GCC was not built
+        with the <parameter>--disable-fixincludes</parameter> option,
+        move two GCC headers into a better location and
+        remove the stale <quote>fixed</quote> copies of the Glibc headers:
+      </para>
+
+      <screen role='nodump'><userinput>DIR=$(dirname $(gcc -print-libgcc-file-name))
+[ -e $DIR/include/limits.h ] || mv $DIR/include{-fixed,}/limits.h
+[ -e $DIR/include/syslimits.h ] || mv $DIR/include{-fixed,}/syslimits.h
+rm -rfv $(dirname $(gcc -print-libgcc-file-name))/include-fixed/*</userinput></screen>
     </important>
 
     <para>Install the package:</para>
@@ -376,7 +389,6 @@ localedef -i it_IT -f ISO-8859-1 it_IT
 localedef -i it_IT -f ISO-8859-15 it_IT@euro
 localedef -i it_IT -f UTF-8 it_IT.UTF-8
 localedef -i ja_JP -f EUC-JP ja_JP
-localedef -i ja_JP -f SHIFT_JIS ja_JP.SJIS 2> /dev/null || true
 localedef -i ja_JP -f UTF-8 ja_JP.UTF-8
 localedef -i nl_NL@euro -f ISO-8859-15 nl_NL@euro
 localedef -i ru_RU -f KOI8-R ru_RU.KOI8-R
@@ -397,15 +409,6 @@ localedef -i zh_TW -f UTF-8 zh_TW.UTF-8</userinput></screen>
     following time-consuming command:</para>
 
 <screen><userinput remap="locale-full">make localedata/install-locales</userinput></screen>
-
-    <para>Then use the <command>localedef</command> command to create and
-    install locales not listed in the
-    <filename>glibc-&glibc-version;/localedata/SUPPORTED</filename> file
-    when you need them. For instance, the following two locales are
-    needed for some tests later in this chapter:</para>
-
-<screen role="nodump"><userinput remap="locale-full">localedef -i C -f UTF-8 C.UTF-8
-localedef -i ja_JP -f SHIFT_JIS ja_JP.SJIS 2> /dev/null || true</userinput></screen>
 
     <note><para>Glibc now uses libidn2 when resolving internationalized
     domain names.  This is a run time dependency.  If this capability
@@ -492,7 +495,7 @@ done
 
 cp -v zone.tab zone1970.tab iso3166.tab $ZONEINFO
 zic -d $ZONEINFO -p America/New_York
-unset ZONEINFO</userinput></screen>
+unset ZONEINFO tz</userinput></screen>
 
     <variablelist>
       <title>The meaning of the zic commands:</title>

@@ -67,7 +67,7 @@
 
     <para>Build Ninja with:</para>
 
-<screen><userinput remap="configure">python3 configure.py --bootstrap</userinput></screen>
+<screen><userinput remap="configure">python3 configure.py --bootstrap --verbose</userinput></screen>
 
     <variablelist>
       <title>The meaning of the build option:</title>
@@ -80,10 +80,20 @@
         </listitem>
       </varlistentry>
 
+      <varlistentry>
+        <term><parameter>--verbose</parameter></term>
+        <listitem>
+          <para>This parameter makes <command>configure.py</command> show
+          the progress building Ninja.</para>
+        </listitem>
+      </varlistentry>
+
     </variablelist>
 
     <para>The package tests cannot run in the chroot environment. They require 
-    <ulink url="&blfs-book;general/cmake.html">cmake</ulink>.</para>
+    <ulink url="&blfs-book;general/cmake.html">cmake</ulink>.  But the basic
+    function of this package is already tested by rebuilding itself
+    (with the <parameter>--bootstrap</parameter> option) anyway.</para>
 <!--
     <para>To test the results, issue:</para>
 

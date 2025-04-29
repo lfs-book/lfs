@@ -42,7 +42,15 @@
 
   <sect2 role="installation">
     <title>Installation of Gettext</title>
+<!--
+    <para>At first, fix an issue causing the package fail to build with
+    libxml-2.12 or later.  The fix is optional for building LFS, but
+    required if rebuilding this package in BLFS with libxml
+    installed:</para>
 
+<screen><userinput remap="pre">sed -e '/^structured/s/xmlError \*/typeof(xmlCtxtGetLastError(NULL)) /' \
+    -i gettext-tools/src/its.c</userinput></screen>
+-->
     <para>Prepare Gettext for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr    \
@@ -69,8 +77,7 @@
 
     </variablelist>
 -->
-    <para>To test the results (this takes a long time, around 3 SBUs),
-    issue:</para>
+    <para>To test the results, issue:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
 

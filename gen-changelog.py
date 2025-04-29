@@ -62,7 +62,7 @@ rem = rem.symmetric_difference(upd)
 
 ticket = {}
 security = set()
-url = 'https://wiki.linuxfromscratch.org/lfs/report/1?format=tab'
+url = 'https://wiki.linuxfromscratch.org/lfs/query?status=!closed&order=priority&format=tab'
 tsv = urlopen(url)
 for i in tsv:
     fields = i.decode().split('\t')

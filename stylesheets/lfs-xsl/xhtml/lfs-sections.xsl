@@ -166,7 +166,7 @@
       </xsl:choose>
       <xsl:call-template name="language.attribute"/>
       <xsl:apply-templates/>
-      <xsl:apply-templates select="sect1info" mode="svn-keys"/>
+      <xsl:call-template name="process.footnotes"/>
     </div>
   </xsl:template>
 

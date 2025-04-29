@@ -53,10 +53,13 @@
 <screen><userinput remap="make">make</userinput></screen>
 
     <para>The Acl tests must be run on a filesystem that supports access
-    controls, but not until the <application>Coreutils</application> package has been built,
-    using the <application>Acl</application> libraries.  If desired, return to this package
-    and run <command>make check</command> after the <application>Coreutils</application>
-    package has been built.</para>
+    controls.  To test the results, issue:</para>
+
+<screen><userinput remap="test">make check</userinput></screen>
+
+    <para>One test named <filename>test/cp.test</filename> is known to
+    fail because <application>Coreutils</application> is not built with
+    the <application>Acl</application> support yet.</para>
 
     <para>Install the package:</para>
 

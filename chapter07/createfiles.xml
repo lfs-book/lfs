@@ -180,11 +180,11 @@ EOF</userinput></screen>
   <systemitem class="groupname">nogroup</systemitem> to avoid an
   unnamed ID.  But other distros may treat this ID differently, so any
   portable program should not depend on this assignment.</para>
-
+<!--
   <para>Some packages need a locale.</para>
 
 <screen><userinput>localedef -i C -f UTF-8 C.UTF-8</userinput></screen>
-
+-->
   <para>Some tests in <xref linkend="chapter-building-system"/> need a regular
   user. We add this user here and delete this account at the end of that
   chapter.</para>

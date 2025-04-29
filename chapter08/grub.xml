@@ -105,7 +105,8 @@
     the tests depend on packages that are not available in the limited
     LFS environment. To run the tests anyway, run <command>make check</command>.</para>
 
-    <para>Install the package:</para>
+    <para>Install the package, and move the Bash completion support file to
+    the location recommended by the Bash completion maintainers:</para>
 
 <screen><userinput remap="install">make install
 mv -v /etc/bash_completion.d/grub /usr/share/bash-completion/completions</userinput></screen>
@@ -176,7 +177,7 @@ mv -v /etc/bash_completion.d/grub /usr/share/bash-completion/completions</userin
       <varlistentry id="grub-fstest">
         <term><command>grub-fstest</command></term>
         <listitem>
-          <para>Is a tool to debug the filesystem driver</para>
+          <para>Is a tool to debug the file system driver</para>
           <indexterm zone="ch-system-grub grub-fstest">
             <primary sortas="b-grub-fstest">grub-fstest</primary>
           </indexterm>
