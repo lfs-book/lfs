@@ -44,9 +44,10 @@
     <title>Installation of Cross GCC</title>
 
     <note><para>GCC-15: Actually (End of April 2025) the multilib branch
-      differs from trunk os the multilib brach includes gcc-15. Since
-      gcc is using a new C standard (c23) by default, there might be some
-      package which do not compile with this version of gcc.</para>
+      differs from trunk (the main LFS development branch) as the multilib
+      branch includes gcc-15. Since gcc is using a new C standard (c23) by
+      default, there might be some package which do not compile with this
+      version of gcc.</para>
       <para>There are some tweaks in some packages and some packages
       are early release candidates (-rc1). Upstream (the LFS trunk) will
       wait to upgrade to gcc-15 until those packages are officially
