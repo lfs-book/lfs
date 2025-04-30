@@ -58,6 +58,9 @@
 
 <screen><userinput remap="test">make check</userinput></screen>
 
+    <para>Two tests are known to fail, dwarf_srclang_check and 
+    run-backtrace-native-core.sh.</para>
+
     <para>Install only Libelf:</para>
 
 <screen><userinput remap="install">make -C libelf install

@@ -149,9 +149,9 @@
     <listitem>
       <para>Libcap-&libcap-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Libelf from Elfutils-&elfutils-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Libffi-&libffi-version;</para>
     </listitem>
