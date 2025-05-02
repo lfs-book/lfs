@@ -29,10 +29,12 @@
   needed by the linker (for static libraries) or dynamic linker (for
   dynamically linked binaries and shared libraries). Using
   <parameter>--strip-debug</parameter> does not remove symbol table entries
-  that may be needed by some applications.  The difference between "unneeded"
-  and "debug" is very small. For example, an unstripped libc.a is 22.4 MB.
-  After stripping with --strip-debug it is 5.9 MB.  Using --strip-unneeded only
-  reduces the size further to only 5.8 MB.</para>
+  that may be needed by some applications.  The difference between
+  <literal>unneeded</literal> and <literal>debug</literal> is very small.
+  For example, an unstripped <filename class='libraryfile'>libc.a</filename>
+  is 22.4 MB. After stripping with <parameter>--strip-debug</parameter> it
+  is 5.9 MB. Using <parameter>--strip-unneeded</parameter> only reduces the
+  size further to 5.8 MB.</para>
 
   <para>The debugging symbols from selected libraries are compressed with
   <application>Zstd</application> and preserved in separate files.  That
