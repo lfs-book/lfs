@@ -46,8 +46,8 @@
 
     <para>Prepare Libelf for compilation:</para>
 
-    <screen><userinput remap="configure">./configure --prefix=/usr                \
-            --disable-debuginfod         \
+    <screen><userinput remap="configure">./configure --prefix=/usr        \
+            --disable-debuginfod \
             --enable-libdebuginfod=dummy</userinput></screen>
 
     <para>Compile the package:</para>
@@ -57,6 +57,9 @@
     <para>To test the results, issue:</para>
 
 <screen><userinput remap="test">make check</userinput></screen>
+
+    <para>Two tests are known to fail, dwarf_srclang_check and 
+    run-backtrace-native-core.sh.</para>
 
     <para>Install only Libelf:</para>
 

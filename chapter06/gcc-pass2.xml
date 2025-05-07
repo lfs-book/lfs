@@ -97,23 +97,23 @@ cd       build</userinput></screen>
 
     <para>Now prepare GCC for compilation:</para>
 
-<screen arch="default"><userinput remap="configure">../configure                                       \
-    --build=$(../config.guess)                     \
-    --host=$LFS_TGT                                \
-    --target=$LFS_TGT                              \
-    LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc      \
-    --prefix=/usr                                  \
-    --with-build-sysroot=$LFS                      \
-    --enable-default-pie                           \
-    --enable-default-ssp                           \
-    --disable-nls                                  \
-    --disable-multilib                             \
-    --disable-libatomic                            \
-    --disable-libgomp                              \
-    --disable-libquadmath                          \
-    --disable-libsanitizer                         \
-    --disable-libssp                               \
-    --disable-libvtv                               \
+<screen arch="default"><userinput remap="configure">../configure                   \
+    --build=$(../config.guess) \
+    --host=$LFS_TGT            \
+    --target=$LFS_TGT          \
+    LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc \
+    --prefix=/usr              \
+    --with-build-sysroot=$LFS  \
+    --enable-default-pie       \
+    --enable-default-ssp       \
+    --disable-nls              \
+    --disable-multilib         \
+    --disable-libatomic        \
+    --disable-libgomp          \
+    --disable-libquadmath      \
+    --disable-libsanitizer     \
+    --disable-libssp           \
+    --disable-libvtv           \
     --enable-languages=c,c++</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure" 
     arch="ml_32">mlist=m64,m32</userinput><userinput remap="configure"
