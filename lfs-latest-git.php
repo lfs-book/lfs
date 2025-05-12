@@ -279,7 +279,7 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
      return find_max( $lines, "/tag_name/", '/^.*v([\d\.]+).*$/' );
 
   if ( $package == "openssl" )
-     return find_max( $lines, "/name.:/", "/^.*OpenSSL ([\d\.]+\d).*$/" );
+     return find_max( $lines, "/name:/", "/^.*OpenSSL ([\d\.]+\d).*$/" );
 
   if ( $package == "Python" )
      return find_max( $lines, "/Python 3/", "/^.*Python (3[\d\.]*\d) .*$/" );
