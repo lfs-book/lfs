@@ -52,9 +52,7 @@ echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h</userinput></screen>
 
 <screen><userinput remap="configure">./configure --prefix=/usr   \
             --host=$LFS_TGT \
-            --build=$(build-aux/config.guess) \
-            sv_cv_stack_direction=-1          \
-            sv_cv_stack_direction_msg="grows down"</userinput></screen>
+            --build=$(build-aux/config.guess)</userinput></screen>
 
     <para>Compile the package:</para>
 
