@@ -40,6 +40,74 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
     <listitem>
+      <para>2025-05-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to setuptools-80.7.1. Fixes
+          <ulink url='&lfs-ticket-root;5715'>#5715</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-6.14. Fixes
+          <ulink url='&lfs-ticket-root;5720'>#5720</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-db-2.13.1. Fixes
+          <ulink url='&lfs-ticket-root;5719'>#5719</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to m4-1.4.20. Fixes
+          <ulink url='&lfs-ticket-root;5722'>#5722</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.14.6. Fixes
+          <ulink url='&lfs-ticket-root;5717'>#5717</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gettext-0.25. Fixes
+          <ulink url='&lfs-ticket-root;5718'>#5718</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2025-05-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to vim-9.1.1353. Addresses
+          <ulink url='&lfs-ticket-root;4500'>#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to setuptools-80.0.1. Fixes
+          <ulink url='&lfs-ticket-root;5710'>#5710</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to packaging-25.0. Fixes
+          <ulink url='&lfs-ticket-root;5706'>#5706</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to meson-1.8.0. Fixes
+          <ulink url='&lfs-ticket-root;5713'>#5713</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.14.4. Fixes
+          <ulink url='&lfs-ticket-root;5709'>#5709</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20250407. Addresses
+          <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gperf-3.3. Fixes
+          <ulink url='&lfs-ticket-root;5708'>#5708</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to elfutils-0.193. Fixes
+          <ulink url='&lfs-ticket-root;5711'>#5711</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2025-04-15</para>
       <itemizedlist>
         <listitem>
