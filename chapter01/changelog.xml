@@ -40,6 +40,32 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
     <listitem>
+      <para>2025-06-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update build instructions to accomodate
+          gcc-15 for bc, expect, ncurses, and gmp.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gcc-15.1.0. Fixes
+          <ulink url='&lfs-ticket-root;5707'>#5707</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to less-678. Fixes
+          <ulink url='&lfs-ticket-root;5724'>#5724</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to readline-8.3-rc1. Fixes
+          <ulink url='&lfs-ticket-root;5726'>#5726</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bash-5.3-rc1. Fixes
+          <ulink url='&lfs-ticket-root;5718'>#5714</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2025-05-15</para>
       <itemizedlist>
         <listitem>
