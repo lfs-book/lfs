@@ -43,6 +43,28 @@
   <sect2 role="installation">
     <title>Installation of Bash</title>
 
+    <para>
+      Fix an issue when host has already gcc-15:
+    </para>
+<screen><userinput remap="configure">patch -Np1 &lt;&lt;EOF
+--- bash-5.3-rc1/bashansi.h     2024-03-26 00:17:49.000000000 +0800
++++ bash-5.3-rc1.patched/bashansi.h     2025-05-21 15:04:17.090096535 +0800
+@@ -35,8 +35,11 @@
+ #  include "ansi_stdlib.h"
+ #endif /* !HAVE_STDLIB_H */
+ 
+-/* If bool is not a compiler builtin, prefer stdbool.h if we have it */
+-#if !defined (HAVE_C_BOOL)
++/* If bool is not a compiler builtin, prefer stdbool.h if we have it
++
++   Explicitly check __STDC_VERSION__ here in addition to HAVE_C_BOOL:
++   in cross-compilation build tools does not include config.h.  */
++#if !defined (HAVE_C_BOOL) &amp;&amp; (!defined(__STDC_VERSION__) || __STDC_VERSION__ &lt; 202311L)
+ #  if defined (HAVE_STDBOOL_H)
+ #    include &lt;stdbool.h&gt;
+ #  else
+EOF</userinput></screen>
+
     <para>Prepare Bash for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr                      \
