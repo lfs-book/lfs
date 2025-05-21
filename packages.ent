@@ -531,8 +531,8 @@
 
 <!ENTITY ncurses-version "6.5">
 <!ENTITY ncurses-size "3,699 KB">
-<!ENTITY ncurses-url "https://invisible-mirror.net/archives/ncurses/current/ncurses-&ncurses-version;-20250503.tgz">
-<!ENTITY ncurses-md5 "d76fe944c5c24cdeabeb6fce0acbf94b">
+<!ENTITY ncurses-url "https://invisible-mirror.net/archives/ncurses/current/ncurses-&ncurses-version;-20250517.tgz">
+<!ENTITY ncurses-md5 "f969398c02415326ca075db69e04f87f">
 <!ENTITY ncurses-home "&gnu-software;ncurses/">
 <!ENTITY ncurses-tmp-du "53 MB">
 <!ENTITY ncurses-tmp-sbu "0.4 SBU">
