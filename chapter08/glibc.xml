@@ -68,12 +68,12 @@ cd       build</userinput></screen>
 
     <para>Prepare Glibc for compilation:</para>
 
-<screen><userinput remap="configure">../configure --prefix=/usr       \
-             --disable-werror    \
-             --disable-nscd      \
-             --enable-kernel=&min-kernel;\
-             libc_cv_slibdir=/usr/lib \
-             --enable-stack-protector=strong</userinput></screen>
+<screen><userinput remap="configure">../configure --prefix=/usr                   \
+             --disable-werror                \
+             --disable-nscd                  \
+             libc_cv_slibdir=/usr/lib        \
+             --enable-stack-protector=strong \
+             --enable-kernel=&min-kernel;</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
