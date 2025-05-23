@@ -329,7 +329,8 @@ install -vm755 dest/usr/lib/*.so.* /usr/lib</userinput></screen>
       <screen role='nodump'><userinput>DIR=$(dirname $(gcc -print-libgcc-file-name))
 [ -e $DIR/include/limits.h ] || mv $DIR/include{-fixed,}/limits.h
 [ -e $DIR/include/syslimits.h ] || mv $DIR/include{-fixed,}/syslimits.h
-rm -rfv $(dirname $(gcc -print-libgcc-file-name))/include-fixed/*</userinput></screen>
+rm -rfv $DIR/include-fixed/*
+unset DIR</userinput></screen>
     </important>
 
     <para>Install the package:</para>
