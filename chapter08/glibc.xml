@@ -111,7 +111,7 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>--disable-nscd</parameter></term>
         <listitem>
-          <para>Do not build the name service cache daemon which is no 
+          <para>Do not build the name service cache daemon which is no
           longer used.</para>
         </listitem>
       </varlistentry>
@@ -621,7 +621,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
 
     <para>Clear the build directory and remove artefacts from
     previous build:</para>
-      
+
 <screen><userinput remap="pre">rm -rf ./*
 find .. -name "*.a" -delete</userinput></screen>
 
@@ -632,11 +632,13 @@ find .. -name "*.a" -delete</userinput></screen>
       --prefix=/usr                      \
       --host=i686-pc-linux-gnu           \
       --build=$(../scripts/config.guess) \
-      --enable-kernel=&min-kernel;                \
-      --disable-nscd                     \
       --libdir=/usr/lib32                \
       --libexecdir=/usr/lib32            \
-      libc_cv_slibdir=/usr/lib32</userinput></screen>
+      --disable-werror                   \
+      --disable-nscd                     \
+      libc_cv_slibdir=/usr/lib32         \
+      --enable-stack-protector=strong    \
+      --enable-kernel=&min-kernel;</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -686,7 +688,7 @@ readelf -l a.out | grep '/ld-linux'</userinput></screen>
   <!-- - - - - - - - - - -->
   <!-- Multilib - x32bit -->
   <!-- - - - - - - - - - -->
-  
+
   <sect2 arch="ml_x32,ml_all">
     <title>Building Glibc - x32bit</title>
 
@@ -696,7 +698,7 @@ readelf -l a.out | grep '/ld-linux'</userinput></screen>
 
     <para>Clear the build directory and remove artefacts from
     previous build:</para>
-      
+
 <screen><userinput remap="pre">rm -rf ./*
 find .. -name "*.a" -delete</userinput></screen>
 
@@ -707,11 +709,13 @@ find .. -name "*.a" -delete</userinput></screen>
       --prefix=/usr                      \
       --host=x86_64-pc-linux-gnux32      \
       --build=$(../scripts/config.guess) \
-      --enable-kernel=&min-kernel;                \
-      --disable-nscd                     \
       --libdir=/usr/libx32               \
       --libexecdir=/usr/libx32           \
-      libc_cv_slibdir=/usr/libx32</userinput></screen>
+      --disable-werror                   \
+      --disable-nscd                     \
+      libc_cv_slibdir=/usr/libx32        \
+      --enable-stack-protector=strong    \
+      --enable-kernel=&min-kernel;</userinput></screen>
 
     <para>Compile the package:</para>
 

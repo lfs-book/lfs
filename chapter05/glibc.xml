@@ -129,7 +129,7 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>--disable-nscd</parameter></term>
         <listitem>
-          <para>Do not build the name service cache daemon which is no 
+          <para>Do not build the name service cache daemon which is no
           longer used.</para>
         </listitem>
       </varlistentry>
@@ -314,7 +314,7 @@ SEARCH_DIR("=/usr/lib");</computeroutput></screen>
 
     <para>Clear the build directory and remove artefacts from
     previous build:</para>
-      
+
 <screen><userinput remap="pre">make clean
 find .. -name "*.a" -delete</userinput></screen>
 
@@ -326,12 +326,12 @@ CXX="$LFS_TGT-g++ -m32" \
       --prefix=/usr                      \
       --host=$LFS_TGT32                  \
       --build=$(../scripts/config.guess) \
-      --enable-kernel=&min-kernel;                \
-      --with-headers=$LFS/usr/include    \
       --disable-nscd                     \
+      --with-headers=$LFS/usr/include    \
       --libdir=/usr/lib32                \
       --libexecdir=/usr/lib32            \
-      libc_cv_slibdir=/usr/lib32</userinput></screen>
+      libc_cv_slibdir=/usr/lib32         \
+      --enable-kernel=&min-kernel;</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -376,7 +376,7 @@ readelf -l a.out | grep '/ld-linux'</userinput></screen>
   <!-- - - - - - - - - - -->
   <!-- Multilib - x32bit -->
   <!-- - - - - - - - - - -->
-  
+
   <sect2 arch="ml_x32,ml_all">
     <title>Building Glibc - x32bit</title>
 
@@ -386,7 +386,7 @@ readelf -l a.out | grep '/ld-linux'</userinput></screen>
 
     <para>Clear the build directory and remove artefacts from
     previous build:</para>
-      
+
 <screen><userinput remap="pre">make clean
 find .. -name "*.a" -delete</userinput></screen>
 
@@ -398,12 +398,12 @@ CXX="$LFS_TGT-g++ -mx32" \
       --prefix=/usr                      \
       --host=$LFS_TGTX32                 \
       --build=$(../scripts/config.guess) \
-      --enable-kernel=&min-kernel;                \
-      --with-headers=$LFS/usr/include    \
       --disable-nscd                     \
+      --with-headers=$LFS/usr/include    \
       --libdir=/usr/libx32               \
       --libexecdir=/usr/libx32           \
-      libc_cv_slibdir=/usr/libx32</userinput></screen>
+      libc_cv_slibdir=/usr/libx32        \
+      --enable-kernel=&min-kernel;</userinput></screen>
 
     <para>Compile the package:</para>
 
