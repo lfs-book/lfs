@@ -27,8 +27,12 @@
          Prevent creation of dummy sect1 files used to emulate sub-chapters.
          The original template is in {docbook-xsl}/xhtml/chunk-code.xsl
          It also matches other sect* tags. The code for those tags are
-         unchanged. -->
-  <xsl:template match="sect1">
+         unchanged. Note that the priority attribute is not strictly
+         required, because the original template is less restrictive in
+         matching, so has less precedence. But in case the docbook dev
+         add a match="sect1" template in their chunk-code.xsl, then it will
+         be necessary!-->
+  <xsl:template match="sect1" priority="1">
     <xsl:variable name="ischunk">
       <xsl:call-template name="chunk"/>
     </xsl:variable>
