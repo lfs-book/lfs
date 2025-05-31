@@ -84,6 +84,7 @@ cd       build</userinput></screen>
     --host=$LFS_TGT            \
     --target=$LFS_TGT          \
     --prefix=/usr              \
+    --with-arch=mips64r2       \
     --with-build-sysroot=$LFS  \
     --enable-default-pie       \
     --enable-default-ssp       \
