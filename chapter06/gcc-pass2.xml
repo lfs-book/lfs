@@ -89,7 +89,6 @@ cd       build</userinput></screen>
     --build=$(../config.guess) \
     --host=$LFS_TGT            \
     --target=$LFS_TGT          \
-    LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc \
     --prefix=/usr              \
     --with-build-sysroot=$LFS  \
     --enable-default-pie       \
@@ -103,6 +102,7 @@ cd       build</userinput></screen>
     --disable-libssp           \
     --disable-libvtv           \
     --enable-languages=c,c++   \
+    LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc \
     $($LFS_TGT-gcc -v 2>&amp;1 | grep -o ..with-nan=2008)</userinput></screen>
 
     <variablelist>

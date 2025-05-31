@@ -26,15 +26,15 @@
       </listitem>
     </varlistentry>
 -->
-<!--
+
     <varlistentry>
-      <term>Bash Upstream Fixes Patch - <token>&bash-upstream-fixes-patch-size;</token>:</term>
+      <term>Bash Cross Compile Fix Patch - <token>&bash-crosscompile-fix-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&bash-upstream-fixes-patch;"/></para>
-        <para>MD5 sum: <literal>&bash-upstream-fixes-patch-md5;</literal></para>
+        <para>Download: <ulink url="&patches-root;&bash-crosscompile-fix-patch;"/></para>
+        <para>MD5 sum: <literal>&bash-crosscompile-fix-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
--->
+
 <!--
     <varlistentry>
       <term>Binutils Upstream Fixes Patch - <token>&binutils-upstream-patch-size;</token>:</term>
@@ -53,6 +53,14 @@
     </varlistentry>
 
     <varlistentry>
+      <term>Coreutils Upstream Fixe Patch - <token>&coreutils-upstream-patch-size;</token>:</term>
+      <listitem>
+        <para>Download: <ulink url="&patches-root;&coreutils-upstream-patch;"/></para>
+        <para>MD5 sum: <literal>&coreutils-upstream-patch-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Coreutils Internationalization Fixes Patch - <token>&coreutils-i18n-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="&patches-root;&coreutils-i18n-patch;"/></para>
@@ -61,10 +69,10 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Expect GCC14 Patch - <token>&expect-gcc14-patch-size;</token>:</term>
+      <term>Expect GCC15 Patch - <token>&expect-gcc15-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&expect-gcc14-patch;"/></para>
-        <para>MD5 sum: <literal>&expect-gcc14-patch-md5;</literal></para>
+        <para>Download: <ulink url="&patches-root;&expect-gcc15-patch;"/></para>
+        <para>MD5 sum: <literal>&expect-gcc15-patch-md5;</literal></para>
       </listitem>
    </varlistentry>
 
@@ -118,24 +126,23 @@
       </listitem>
     </varlistentry>
 -->
-<!--
+
     <varlistentry>
-      <term>Pkgconf Upstream Fix Patch - <token>&pkgconf-upstream-fix-patch-size;</token>:</term>
+      <term>Perl Upstream Fix Patch - <token>&perl-upstream-fix-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&pkgconf-upstream-fix-patch;"/></para>
-        <para>MD5 sum: <literal>&pkgconf-upstream-fix-patch-md5;</literal></para>
+        <para>Download: <ulink url="&patches-root;&perl-upstream-fix-patch;"/></para>
+        <para>MD5 sum: <literal>&perl-upstream-fix-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
--->
-<!--
+
     <varlistentry>
-      <term>Readline Upstream Fix Patch - <token>&readline-fixes-patch-size;</token>:</term>
+      <term>Python Security Fix Patch - <token>&python-security-fixes-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&readline-fixes-patch;"/></para>
-        <para>MD5 sum: <literal>&readline-fixes-patch-md5;</literal></para>
+        <para>Download: <ulink url="&patches-root;&python-security-fixes-patch;"/></para>
+        <para>MD5 sum: <literal>&python-security-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
--->
+
     <varlistentry revision="sysv">
       <term>SysVinit Consolidated Patch - <token>&sysvinit-consolidated-patch-size;</token>:</term>
       <listitem>
