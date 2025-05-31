@@ -48,11 +48,7 @@
 <!ENTITY automake-fin-sbu "less than 0.1 SBU (about 1.1 SBU with tests)">
 
 <!ENTITY bash-version "5.3-rc1">
-<<<<<<< HEAD
-<!ENTITY bash-size "10,868 KB">
-=======
 <!ENTITY bash-size "10,491 KB">
->>>>>>> origin/gcc15
 <!ENTITY bash-url "&gnu;bash/bash-&bash-version;.tar.gz">
 <!ENTITY bash-md5 "f58f56196606a0d0cef9b96b733d256c">
 <!ENTITY bash-home "&gnu-software;bash/">
@@ -215,11 +211,7 @@
 <!ENTITY gawk-fin-sbu "0.2 SBU">
 
 <!ENTITY gcc-version "15.1.0">
-<<<<<<< HEAD
-<!ENTITY gcc-size "93,744 KB">
-=======
 <!ENTITY gcc-size "95,966 KB">
->>>>>>> origin/gcc15
 <!ENTITY gcc-url "&gnu;gcc/gcc-&gcc-version;/gcc-&gcc-version;.tar.xz">
 <!ENTITY gcc-md5 "e55d13c55428bca27b4d2ea02f883135">
 <!ENTITY gcc-home "https://gcc.gnu.org/">
@@ -537,16 +529,10 @@
 <!ENTITY mpfr-fin-du "43 MB">
 <!ENTITY mpfr-fin-sbu "0.2 SBU">
 
-<<<<<<< HEAD
-<!ENTITY ncurses-version "6.5">
-<!ENTITY ncurses-size "3,699 KB">
-<!ENTITY ncurses-url "https://invisible-mirror.net/archives/ncurses/current/ncurses-&ncurses-version;-20250517.tgz">
-=======
 <!ENTITY ncurses-version "6.5-20250517">
 <!ENTITY ncurses-base-version "6.5">
 <!ENTITY ncurses-size "3,700 KB">
 <!ENTITY ncurses-url "https://invisible-mirror.net/archives/ncurses/current/ncurses-&ncurses-version;.tgz">
->>>>>>> origin/gcc15
 <!ENTITY ncurses-md5 "f969398c02415326ca075db69e04f87f">
 <!ENTITY ncurses-home "&gnu-software;ncurses/">
 <!ENTITY ncurses-tmp-du "53 MB">
@@ -643,17 +629,10 @@
 <!ENTITY python-docs-md5 "5b65ca5579dac14e425cd247af6fd043">
 <!ENTITY python-docs-size "10,112 KB">
 
-<<<<<<< HEAD
-<!ENTITY readline-version "8.3">
-<!ENTITY readline-soversion "8.3"><!-- used for stripping -->
-<!ENTITY readline-size "2,974 KB">
-<!ENTITY readline-url "&gnu;readline/readline-&readline-version;-rc1.tar.gz">
-=======
 <!ENTITY readline-version "8.3-rc1">
 <!ENTITY readline-soversion "8.3"><!-- used for stripping -->
 <!ENTITY readline-size "3,336 KB">
 <!ENTITY readline-url "&gnu;readline/readline-&readline-version;.tar.gz">
->>>>>>> origin/gcc15
 <!ENTITY readline-md5 "65e32c25e6ba871e5b026d22d0b81002">
 <!ENTITY readline-home "https://tiswww.case.edu/php/chet/readline/rltop.html">
 <!ENTITY readline-fin-du "16 MB">
