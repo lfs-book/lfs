@@ -101,7 +101,6 @@ cd       build</userinput></screen>
     --build=$(../config.guess) \
     --host=$LFS_TGT            \
     --target=$LFS_TGT          \
-    LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc \
     --prefix=/usr              \
     --with-build-sysroot=$LFS  \
     --enable-default-pie       \
@@ -114,7 +113,8 @@ cd       build</userinput></screen>
     --disable-libsanitizer     \
     --disable-libssp           \
     --disable-libvtv           \
-    --enable-languages=c,c++</userinput></screen>
+    --enable-languages=c,c++   \
+    LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc</userinput></screen>
 <screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure" 
     arch="ml_32">mlist=m64,m32</userinput><userinput remap="configure"
     arch="ml_x32">mlist=m64,mx32</userinput><userinput remap="configure"
@@ -136,7 +136,9 @@ cd       build</userinput></screen>
     --disable-libsanitizer                         \
     --disable-libssp                               \
     --disable-libvtv                               \
-    --enable-languages=c,c++</userinput></screen>
+    --enable-languages=c,c++                       \
+    LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc 
+    </userinput></screen>
 
     <variablelist>
       <title>The meaning of the new configure options:</title><!-- WIP -->

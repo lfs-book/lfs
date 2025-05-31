@@ -69,7 +69,7 @@
 
     <para>Now, make some changes to allow the package with gcc-15.1 or later:</para>
 
-<screen><userinput remap="pre">patch -Np1 -i ../expect-&expect-version;-gcc15-1.patch</userinput></screen>
+<screen><userinput remap="pre">patch -Np1 -i ../&expect-gcc15-patch;</userinput></screen>
 
     <para>Prepare Expect for compilation:</para>
 
