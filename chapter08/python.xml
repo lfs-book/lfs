@@ -43,12 +43,17 @@
   <sect2 role="installation">
     <title>Installation of Python 3</title>
 
+    <para>First, apply a security patch to the current package:</para>
+
+    <screen><userinput remap="pre">patch -Np1 -i ../&python-security-fixes-patch;</userinput></screen>
+    
     <para>Prepare Python for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr        \
-            --enable-shared      \
-            --with-system-expat  \
-            --enable-optimizations</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr          \
+            --enable-shared        \
+            --with-system-expat    \
+            --enable-optimizations \
+            --without-static-libpython</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -69,6 +74,14 @@
         build are used to improve the optimized final version.</para>
         <!-- This description was drawn from the README.rst file
         in the Python-3.11.0 package. -->
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term><parameter>--without-static-libpython</parameter></term>
+      <listitem>
+        <para>This switch prevents building a large, but unneeded, static
+        library.</para>
       </listitem>
     </varlistentry>
 
