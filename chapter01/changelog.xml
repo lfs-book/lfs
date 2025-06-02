@@ -43,8 +43,20 @@
       <para>2025-06-01</para>
       <itemizedlist>
         <listitem>
+          <para>[bdubbs] - Update to iana-etc-20250519. Addresses
+          <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to vim-9.1.1418. Addresses
+          <ulink url='&lfs-ticket-root;4500'>#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to kbd-2.8.0. Fixes
+          <ulink url='&lfs-ticket-root;5736'>#5736</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[bdubbs] - Update to systemd-257.6. Fixes
-          <ulink url='&lfs-ticket-root;5774'>#5774</ulink>.</para>
+          <ulink url='&lfs-ticket-root;5674'>#5674</ulink>.</para>
         </listitem>
         <listitem>
           <para>[bdubbs] - Update to setuptools-80.9.0. Fixes
@@ -81,7 +93,7 @@
       </itemizedlist>
     </listitem>
 
-    <listitem>
+    <listitem> 
       <para>2025-05-15</para>
       <itemizedlist>
         <listitem>
