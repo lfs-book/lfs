@@ -61,7 +61,7 @@
     <para>Two tests are known to fail, dwarf_srclang_check and 
     run-backtrace-native-core.sh.</para>
 
-    <para>Six tests are known to fail due to incomplete MIPS
+    <para>Seven tests are known to fail due to incomplete MIPS
     support.</para>
 
     <para>Install only Libelf:</para>
