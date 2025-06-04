@@ -77,14 +77,6 @@
       </listitem>
     </varlistentry>
 
-    <varlistentry>
-      <term><parameter>--without-static-libpython</parameter></term>
-      <listitem>
-        <para>This switch prevents building a large, but unneeded, static
-        library.</para>
-      </listitem>
-    </varlistentry>
-
     </variablelist>
 
     <para>Compile the package:</para>

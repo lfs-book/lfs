@@ -53,7 +53,7 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Coreutils Upstream Fixe Patch - <token>&coreutils-upstream-patch-size;</token>:</term>
+      <term>Coreutils Upstream Fix Patch - <token>&coreutils-upstream-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="&patches-root;&coreutils-upstream-patch;"/></para>
         <para>MD5 sum: <literal>&coreutils-upstream-patch-md5;</literal></para>

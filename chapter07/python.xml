@@ -52,9 +52,10 @@
 
     <para>Prepare Python for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr   \
-            --enable-shared \
-            --without-ensurepip</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr       \
+            --enable-shared     \
+            --without-ensurepip \
+            --without-static-libpython</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure option:</title>
@@ -74,6 +75,13 @@
         </listitem>
       </varlistentry>
 
+      <varlistentry>
+        <term><parameter>--without-static-libpython</parameter></term>
+        <listitem>
+          <para>This switch prevents building a large, but unneeded, static
+          library.</para>
+        </listitem>
+      </varlistentry>
     </variablelist>
 
     <para>Compile the package:</para>

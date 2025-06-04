@@ -127,7 +127,7 @@
          make will spawn new shell processes during "make install".  -->
 
     <para>The installation of this package will overwrite
-    <filename class="libraryfile">libncursesw.so.&ncurses-version;</filename>
+    <filename class="libraryfile">libncursesw.so.&ncurses-base-version;</filename>
     in-place.  It may crash the shell process which is using code and data
     from the library file.  Install the package with
     <literal>DESTDIR</literal>, and replace the library file correctly using

@@ -47,10 +47,10 @@
 <!ENTITY automake-fin-du "121 MB">
 <!ENTITY automake-fin-sbu "less than 0.1 SBU (about 1.1 SBU with tests)">
 
-<!ENTITY bash-version "5.3-rc1">
-<!ENTITY bash-size "10,491 KB">
+<!ENTITY bash-version "5.3-rc2">
+<!ENTITY bash-size "10,734 KB">
 <!ENTITY bash-url "&gnu;bash/bash-&bash-version;.tar.gz">
-<!ENTITY bash-md5 "f58f56196606a0d0cef9b96b733d256c">
+<!ENTITY bash-md5 "9c440d7c5ca37433e496c5e22f8918c6">
 <!ENTITY bash-home "&gnu-software;bash/">
 <!ENTITY bash-tmp-du "68 MB">
 <!ENTITY bash-tmp-sbu "0.2 SBU">
@@ -629,11 +629,11 @@
 <!ENTITY python-docs-md5 "5b65ca5579dac14e425cd247af6fd043">
 <!ENTITY python-docs-size "10,112 KB">
 
-<!ENTITY readline-version "8.3-rc1">
+<!ENTITY readline-version "8.3-rc2">
 <!ENTITY readline-soversion "8.3"><!-- used for stripping -->
-<!ENTITY readline-size "3,336 KB">
+<!ENTITY readline-size "3,337 KB">
 <!ENTITY readline-url "&gnu;readline/readline-&readline-version;.tar.gz">
-<!ENTITY readline-md5 "65e32c25e6ba871e5b026d22d0b81002">
+<!ENTITY readline-md5 "d580a2ab42aa69d09c237b1e2058914d">
 <!ENTITY readline-home "https://tiswww.case.edu/php/chet/readline/rltop.html">
 <!ENTITY readline-fin-du "16 MB">
 <!ENTITY readline-fin-sbu "less than 0.1 SBU">
