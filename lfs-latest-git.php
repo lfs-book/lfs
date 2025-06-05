@@ -118,7 +118,6 @@ function get_packages( $package, $dirpath )
 //if ( $package != "wheel" ) return 0; // debug
 
 if ( $package == "bc"         ) $dirpath = github("gavinhoward/bc");
-if ( $package == "check"      ) $dirpath = github("libcheck/check");
 if ( $package == "e2fsprogs"  ) $dirpath = "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs";
 if ( $package == "expat"      ) $dirpath = "https://sourceforge.net/projects/expat/files";
 if ( $package == "elfutils"   ) $dirpath = "https://sourceware.org/ftp/elfutils";
@@ -140,6 +139,7 @@ if ( $package == "mpfr"       ) $dirpath = "https://mpfr.loria.fr/mpfr-current";
 if ( $package == "ncurses"    ) $dirpath = "https://invisible-mirror.net/archives/ncurses";
 if ( $package == "ninja"      ) $dirpath = github("ninja-build/ninja");
 if ( $package == "openssl"    ) $dirpath = github("openssl/openssl");
+if ( $package == "packaging"  ) $dirpath = "https://pypi.org/rss/project/packaging/releases.xml";
 if ( $package == "procps-ng"  ) $dirpath = "https://gitlab.com/procps-ng/procps/-/tags";
 if ( $package == "psmisc"     ) $dirpath = "https://gitlab.com/psmisc/psmisc/-/tags";
 if ( $package == "Python"     ) $dirpath = "https://www.python.org/downloads/source/";
@@ -262,6 +262,9 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
   if ( $package == "wheel" )
      return find_max( $lines, "/wheel\/\d/", "/^.*wheel\/([\d\.]+).*$/" );
   # End Python modules
+
+  if ( $package == "packaging" )
+     return find_max( $lines, "/packaging/", "/^.*^.*packaging.([\d\.]+\d)\/.*$/" );
 
   if ( $package == "procps-ng" )
      return find_max( $lines, "/v\d/", "/^.*v([\d\.]+)$/" );

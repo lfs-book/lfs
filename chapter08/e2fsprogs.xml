@@ -52,12 +52,12 @@ cd       build</userinput></screen>
 
     <para>Prepare E2fsprogs for compilation:</para>
 
-<screen><userinput remap="configure">../configure --prefix=/usr           \
-             --sysconfdir=/etc       \
-             --enable-elf-shlibs     \
-             --disable-libblkid      \
-             --disable-libuuid       \
-             --disable-uuidd         \
+<screen><userinput remap="configure">../configure --prefix=/usr       \
+             --sysconfdir=/etc   \
+             --enable-elf-shlibs \
+             --disable-libblkid  \
+             --disable-libuuid   \
+             --disable-uuidd     \
              --disable-fsck</userinput></screen>
 
     <variablelist>

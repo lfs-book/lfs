@@ -7,9 +7,9 @@
 <!ENTITY % rc          "IGNORE"> <!-- set to INCLUDE for rc,
                                       set to IGNORE for development or
                                        release -->
-<!ENTITY % relnum "11.3"><!-- must be given for release or rc -->
-<!ENTITY % reldate "March 1st, 2023"><!-- must ve given for release or rc -->
-<!ENTITY % crdate "1999-2022"><!-- must ve given for release or rc -->
+<!ENTITY % relnum "12.3"><!-- must be given for release or rc -->
+<!ENTITY % reldate "March 5th, 2025"><!-- must ve given for release or rc -->
+<!ENTITY % crdate "1999-2025"><!-- must ve given for release or rc -->
 <!ENTITY % rcnum  "0"><!-- must be given only for rc -->
 <!-- ================================================================== -->
 <!-- Do not change anything below unless the www or book layouts change -->
@@ -98,10 +98,8 @@
 <!ENTITY secadv          "&lfs-root;lfs/advisories/">
 
 <!-- 5.4 EOL is Dec 2025
-     so for LFS 12.5 we may consider moving to 5.10.
-     Keep an extra whitespace here to align the trailing "\" in glibc
-     configure command if y < 10 in x.y.  -->
-<!ENTITY min-kernel      "5.4 ">
+	 so for LFS 12.5 we may consider moving to 5.10. -->
+<!ENTITY min-kernel      "5.4">
 
 <!--
 <!ENTITY patches-rootd   "&lfs-root;patches/lfs/&generic-versiond;/">
