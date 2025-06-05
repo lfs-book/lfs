@@ -41,7 +41,7 @@
   <sect2 role="installation">
     <title>Installation of Coreutils</title>
 
-    <para>First apply a security patch identified upstream:</para>
+    <para>First, apply a patch for a security problem identified upstream:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&coreutils-upstream-patch;</userinput></screen>
 

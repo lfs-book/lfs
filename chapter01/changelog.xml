@@ -40,6 +40,28 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
     <listitem>
+      <para>2025-06-04</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to ncurses-6.5-20250531. Fixes
+          <ulink url='&lfs-ticket-root;5737'>#5737</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to readline-8.3-rc2. Fixes
+          <ulink url='&lfs-ticket-root;5738'>#5738</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bash-5.3-rc2. Fixes
+          <ulink url='&lfs-ticket-root;5738'>#5738</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to Python-3.13.4. Fixes
+          <ulink url='&lfs-ticket-root;5739'>#6739</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2025-06-01</para>
       <itemizedlist>
         <listitem>
@@ -88,7 +110,7 @@
         </listitem>
         <listitem>
           <para>[bdubbs] - Update to bash-5.3-rc1. Fixes
-          <ulink url='&lfs-ticket-root;5718'>#5714</ulink>.</para>
+          <ulink url='&lfs-ticket-root;5714'>#5714</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>

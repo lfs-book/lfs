@@ -48,7 +48,7 @@
 <!ENTITY automake-fin-sbu "less than 0.1 SBU (about 1.1 SBU with tests)">
 
 <!ENTITY bash-version "5.3-rc2">
-<!ENTITY bash-size "10,734 KB">
+<!ENTITY bash-size "10,774 KB">
 <!ENTITY bash-url "&gnu;bash/bash-&bash-version;.tar.gz">
 <!ENTITY bash-md5 "9c440d7c5ca37433e496c5e22f8918c6">
 <!ENTITY bash-home "&gnu-software;bash/">
@@ -529,11 +529,11 @@
 <!ENTITY mpfr-fin-du "43 MB">
 <!ENTITY mpfr-fin-sbu "0.2 SBU">
 
-<!ENTITY ncurses-version "6.5-20250517">
+<!ENTITY ncurses-version "6.5-20250531">
 <!ENTITY ncurses-base-version "6.5">
 <!ENTITY ncurses-size "3,700 KB">
 <!ENTITY ncurses-url "https://invisible-mirror.net/archives/ncurses/current/ncurses-&ncurses-version;.tgz">
-<!ENTITY ncurses-md5 "f969398c02415326ca075db69e04f87f">
+<!ENTITY ncurses-md5 "5104913b6dc4804c45442b710c9ae912">
 <!ENTITY ncurses-home "&gnu-software;ncurses/">
 <!ENTITY ncurses-tmp-du "53 MB">
 <!ENTITY ncurses-tmp-sbu "0.4 SBU">
@@ -615,23 +615,23 @@
 <!-- If python minor version changes, updates in python and
      meson pages will be needed: python3.6 and python3.6m -->
 
-<!ENTITY python-version "3.13.3">
+<!ENTITY python-version "3.13.4">
 <!ENTITY python-minor "3.13">
-<!ENTITY python-size "22,124 KB">
+<!ENTITY python-size "22,142 KB">
 <!ENTITY python-url "https://www.python.org/ftp/python/&python-version;/Python-&python-version;.tar.xz">
-<!ENTITY python-md5 "8bb5f0b8c9d9d7b87d7d98510e8d58e5">
+<!ENTITY python-md5 "2e2a8eb2e1be50049dc4248d99a52f89">
 <!ENTITY python-home "https://www.python.org/">
 <!ENTITY python-tmp-du "634 MB">
 <!ENTITY python-tmp-sbu "0.5 SBU">
 <!ENTITY python-fin-du "501 MB">
 <!ENTITY python-fin-sbu "2.1 SBU">
 <!ENTITY python-docs-url "https://www.python.org/ftp/python/doc/&python-version;/python-&python-version;-docs-html.tar.bz2">
-<!ENTITY python-docs-md5 "5b65ca5579dac14e425cd247af6fd043">
-<!ENTITY python-docs-size "10,112 KB">
+<!ENTITY python-docs-md5 "5c708de9d0f811199466f6c712381bbe">
+<!ENTITY python-docs-size "10,128 KB">
 
 <!ENTITY readline-version "8.3-rc2">
 <!ENTITY readline-soversion "8.3"><!-- used for stripping -->
-<!ENTITY readline-size "3,337 KB">
+<!ENTITY readline-size "3,338 KB">
 <!ENTITY readline-url "&gnu;readline/readline-&readline-version;.tar.gz">
 <!ENTITY readline-md5 "d580a2ab42aa69d09c237b1e2058914d">
 <!ENTITY readline-home "https://tiswww.case.edu/php/chet/readline/rltop.html">

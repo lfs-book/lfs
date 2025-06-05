@@ -297,16 +297,10 @@
       <para>Packaging-&packaging-version;</para>
     </listitem>
     <listitem>
-      <para>bash-5.3-rc1-cross_compile_fix-1.patch</para>
-    </listitem>
-    <listitem>
       <para>coreutils-9.7-upstream_fix-1.patch</para>
     </listitem>
     <listitem>
       <para>perl-5.40.2-upstream_fix-1.patch</para>
-    </listitem>
-    <listitem>
-      <para>Python-3.13.3-security_fixes-1.patch</para>
     </listitem>
 
   </itemizedlist>
