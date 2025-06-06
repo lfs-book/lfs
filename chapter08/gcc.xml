@@ -174,21 +174,16 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
          on the host distro when we update to GCC 15.  -->
     <para>The tsan tests are known to fail on some host distros.</para>
 
-    <!-- https://gcc.gnu.org/PR111224 for modules.
-         https://gcc.gnu.org/PR112376 for ssa-dom-thread-7.
-         TODO: for others why?? -->
+    <!-- TODO: why?? -->
     <para>On ARM64, many tests in
     the <filename class='directory'>c-c++-common/hwasan</filename>,
-    the <filename class='directory'>gcc.target/aarch64/sve/acle</filename>
-    directory,
-    the <filename class='directory'>gcc.target/aarch64/sme</filename>
-    directory,
-    and the
-    <filename class='directory'>g++.dg/modules</filename>
-    directory are known to fail.
+    the <filename class='directory'>gcc.target/aarch64/sve/acle</filename>,
+    and the <filename class='directory'>gcc.target/aarch64/sme</filename>
+    directories are known to fail.
     The tests named <filename>memset-strict-align-1.c</filename>,
-    <filename>ssa-dom-thread-7.c</filename>, and
-    <filename>pr113618.c</filename> are also known to fail.</para>
+    <filename>ssa-dom-thread-7.c</filename>,
+    <filename>pr113618.c</filename>, and
+    <filename>pr114991.c</filename> are also known to fail.</para>
 
     <para>A few unexpected failures cannot always be avoided. In some cases
     test failures depend on the specific hardware of the system.<!--The GCC developers
