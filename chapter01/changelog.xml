@@ -93,7 +93,7 @@
           <ulink url='&lfs-ticket-root;5734'>#5734</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update build instructions to accomodate
+          <para>[bdubbs] - Update build instructions to accommodate
           gcc-15 for bc, expect, ncurses, and gmp.</para>
         </listitem>
         <listitem>
