@@ -44,13 +44,16 @@
     <title>Installation of Ncurses</title>
 
     <para>First, run the following commands to build the <quote>tic</quote>
-    program on the build host:</para>
+      program on the build host. We install it in
+      <filename class="directory">$LFS/tools</filename>, so that it is found
+      in the <envar>PATH</envar> when needed:</para>
 
 <screen><userinput remap="pre">mkdir build
 pushd build
-  ../configure AWK=gawk
+  ../configure --prefix=$LFS/tools AWK=gawk
   make -C include
   make -C progs tic
+  install progs/tic $LFS/tools/bin
 popd</userinput></screen>
 
     <para>Prepare Ncurses for compilation:</para>
@@ -147,27 +150,13 @@ popd</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make DESTDIR=$LFS TIC_PATH=$(pwd)/build/progs/tic install
+<screen><userinput remap="install">make DESTDIR=$LFS install
 ln -sv libncursesw.so $LFS/usr/lib/libncurses.so
 sed -e 's/^#if.*XOPEN.*$/#if 1/' \
     -i $LFS/usr/include/curses.h</userinput></screen>
-<!--
-    <para>Remove an unneeded static library not handled by
-    <command>configure</command>:</para>
 
-<screen><userinput remap="install">rm -v $LFS/usr/lib/libncurses++w.a</userinput></screen>
--->
     <variablelist>
       <title>The meaning of the install options:</title>
-
-      <varlistentry>
-        <term><parameter>TIC_PATH=$(pwd)/build/progs/tic</parameter></term>
-        <listitem>
-          <para>We need to pass the path of the newly built
-          <command>tic</command> program that runs on the building machine, so
-          the terminal database can be created without errors.</para>
-        </listitem>
-      </varlistentry>
 
       <varlistentry>
         <term><command>ln -sv libncursesw.so $LFS/usr/lib/libncurses.so</command></term>
