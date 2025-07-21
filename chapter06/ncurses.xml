@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Installation of Ncurses</title>
 
-    <para>First, run the following commands to build the <quote>tic</quote>
+    <para>First, run the following commands to build the <command>tic</command>
       program on the build host. We install it in
       <filename class="directory">$LFS/tools</filename>, so that it is found
       in the <envar>PATH</envar> when needed:</para>
