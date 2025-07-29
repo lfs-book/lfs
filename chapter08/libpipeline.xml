@@ -49,9 +49,8 @@
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>To test the results, issue:</para>
-
-<screen><userinput remap="test">make check</userinput></screen>
+    <para>The tests require the <application>Check</application> library
+    that we've removed from LFS.</para>
 
     <para>Install the package:</para>
 

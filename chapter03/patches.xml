@@ -25,7 +25,6 @@
         <para>MD5 sum: <literal>&autoconf-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
--->
 
     <varlistentry>
       <term>Bash Cross Compile Fix Patch - <token>&bash-crosscompile-fix-patch-size;</token>:</term>
@@ -34,7 +33,7 @@
         <para>MD5 sum: <literal>&bash-crosscompile-fix-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+-->
 <!--
     <varlistentry>
       <term>Binutils LoongArch Fix Patch - <token>&binutils-loongarch-patch-size;</token>:</term>
@@ -133,7 +132,6 @@
         <para>MD5 sum: <literal>&libpipeline-checks-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
--->
 
     <varlistentry>
       <term>Perl Upstream Fix Patch - <token>&perl-upstream-fix-patch-size;</token>:</term>
@@ -150,6 +148,7 @@
         <para>MD5 sum: <literal>&python-security-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
+-->
 
     <varlistentry revision="sysv">
       <term>SysVinit Consolidated Patch - <token>&sysvinit-consolidated-patch-size;</token>:</term>

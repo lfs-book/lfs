@@ -146,9 +146,9 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="test">ulimit -s -H unlimited</userinput></screen>
 
-    <para>Now remove/fix several known test failures:</para>
+    <para>Now remove several known test failures:</para>
 
-<screen><userinput remap="test">sed -e '/cpython/d'               -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp</userinput></screen>
+<screen><userinput remap="test">sed -e '/cpython/d' -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp</userinput></screen>
 
     <para>Test the results as a non-privileged user, but do not stop at errors:</para>
 
