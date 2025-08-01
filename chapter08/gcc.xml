@@ -41,6 +41,10 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
+    <para>First, make a change required by glibc-2.42 or later:</para>
+
+<screen><userinput remap="pre">sed -i '/struct_termio_sz/d' libsanitizer/sanitizer_common/*</userinput></screen>
+
     <para>Set the default directory name for
     64-bit libraries to <quote>lib</quote>:</para>
 
