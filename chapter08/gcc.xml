@@ -41,6 +41,10 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
+    <para>First, make a change required by glibc-2.42 or later:</para>
+
+<screen><userinput remap="pre">sed -i '/struct_termio_sz/d' libsanitizer/sanitizer_common/*</userinput></screen>
+
     <para>If building on x86_64, change the default directory name for 64-bit
     libraries to <quote>lib</quote>:</para>
 
@@ -178,10 +182,9 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="test">ulimit -s -H unlimited</userinput></screen>
 
-    <para>Now remove/fix several known test failures:</para>
+    <para>Now remove several known test failures:</para>
 
-<screen><userinput remap="test">sed -e '/cpython/d'               -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp
-sed -e 's/300000/(1|300000)/'     -i ../libgomp/testsuite/libgomp.c-c++-common/pr109062.c</userinput></screen>
+<screen><userinput remap="test">sed -e '/cpython/d' -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp</userinput></screen>
 
     <para>Test the results as a non-privileged user, but do not stop at errors:</para>
 
