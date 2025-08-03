@@ -222,7 +222,7 @@
 <!ENTITY gcc-fin-du "6.3 GB ">
 <!ENTITY gcc-fin-sbu "46 SBU (with tests)">
 <!ENTITY libquadmath-version "0.0.0">
-<!ENTITY libstdcpp-version   "6.0.33">
+<!ENTITY libstdcpp-version   "6.0.34">
 <!ENTITY libitm-version      "1.0.0">
 <!ENTITY libatomic-version   "1.2.0">
 
