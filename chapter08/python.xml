@@ -42,11 +42,17 @@
 
   <sect2 role="installation">
     <title>Installation of Python 3</title>
-<!--
-    <para>First, apply a security patch to the current package:</para>
 
-    <screen><userinput remap="pre">patch -Np1 -i ../&python-security-fixes-patch;</userinput></screen>
--->    
+    <!-- CVE-2025-8194, see BLFS ticket #21895. The sed adds three lines. Thank
+    you Bruce for the sed! Please do not modify the spacing. -renodr -->
+    <para>First, fix a security vulnerability in the tarfile module:</para>
+
+<screen><userinput remap="pre">sed -e '/Round/{n;n;a\
+        # Only non-negative offsets are allowed\
+        if count &lt; 0:\
+            raise InvalidHeaderError("invalid offset")
+}' -i Lib/tarfile.py</userinput></screen>
+
     <para>Prepare Python for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr          \

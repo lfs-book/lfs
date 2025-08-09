@@ -49,7 +49,7 @@
       <title>The meaning of the configure options:</title>
 
       <varlistentry>
-        <term><parameter>CC=gcc -std=c99</parameter></term>
+        <term><parameter>CC='gcc -std=c99'</parameter></term>
         <listitem>
           <para>This parameter specifies the compiler and C standard to use.</para>
         </listitem>

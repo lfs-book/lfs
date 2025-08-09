@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>2025-08-05</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Fixed CVE-2025-8194 in Python. Fixes
+          <ulink url="&lfs-ticket-root;5774">#5774</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2025-08-01</para>
       <itemizedlist>
         <listitem>
