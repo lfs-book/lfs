@@ -43,20 +43,6 @@
     <note>
       <para>
         On LoongArch systems, the following instruction builds GRUB for UEFI.
-        But because LFS lacks the FreeType package and the Unifont data
-        file, GRUB won't install any font for the boot loader and
-        the GRUB boot menu will be displayed using a coarse font or in a
-        smaller region on the screen.
-        If wanted, after the LFS system is finished, install
-        <ulink url="&blfs-book;general/freetype.html">FreeType</ulink>
-        and then install the GRUB compoents not installed from LFS following
-        <ulink url="&blfs-book;postlfs/grub-efi.html">the BLFS
-        instruction</ulink>, but remove the <option>--target=x86_64</option>
-        option and skip the command to install the
-        <filename class='directory'>/usr/lib/grub/x86_64-efi</filename>
-        directory.
-      </para>
-      <para>
         If your system firmware does not support UEFI, you need to skip the
         content of this page and try to figure out how to boot your system.
       </para>
