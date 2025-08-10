@@ -1,0 +1,44 @@
+name: Build MLFS Book
+
+on:
+  workflow_dispatch:
+    inputs:
+      arch:
+        description: 'Multilib ARCH (ml_32, ml_x32, ml_all, default)'
+        required: false
+        default: 'ml_all'
+      rev:
+        description: 'Init system revision (e.g., sysv or systemd)'
+        required: false
+        default: 'sysv'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build MLFS HTML Book
+
+    steps:
+      - name: Checkout mlfs repo
+        uses: actions/checkout@v4
+        with:
+          ref: multilib
+
+      - name: Install required packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y make xsltproc docbook-xml docbook-xsl
+
+      - name: Build mlfs book
+        env:
+          BASEDIR: ${{ github.workspace }}/output
+          REV: ${{ github.event.inputs.rev || 'sysv' }}
+          ARCH: ${{ github.event.inputs.arch || 'ml_all' }}
+        run: |
+          mkdir -p "$BASEDIR"
+          make BASEDIR="$BASEDIR" REV="$REV" ARCH="$ARCH"
+
+      - name: Upload built book as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlfs-html-book
+          path: output/
