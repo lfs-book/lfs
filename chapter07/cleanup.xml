@@ -159,9 +159,9 @@ tar -cJpf $HOME/lfs-temp-tools-&version;.tar.xz .</userinput></screen>
     environment variable is not set for the &root; user, it will destroy
     your entire host system.  YOU ARE WARNED.</para></warning>
 
-<screen role="nodump"><computeroutput>cd $LFS
+<screen role="nodump"><literal>cd $LFS
 rm -rf ./*
-tar -xpf $HOME/lfs-temp-tools-&version;.tar.xz</computeroutput></screen>
+tar -xpf $HOME/lfs-temp-tools-&version;.tar.xz</literal></screen>
 
     <para>
        Again, double check that the environment has been set up properly

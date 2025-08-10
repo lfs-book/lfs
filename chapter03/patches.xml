@@ -124,7 +124,6 @@
         <para>MD5 sum: <literal>&libpipeline-checks-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
--->
 
     <varlistentry>
       <term>Perl Upstream Fix Patch - <token>&perl-upstream-fix-patch-size;</token>:</term>
@@ -134,7 +133,6 @@
       </listitem>
     </varlistentry>
 
-<!--
     <varlistentry>
       <term>Python Security Fix Patch - <token>&python-security-fixes-patch-size;</token>:</term>
       <listitem>

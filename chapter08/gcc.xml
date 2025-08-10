@@ -146,7 +146,7 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="test">ulimit -s -H unlimited</userinput></screen>
 
-    <para>Now remove/fix several known test failures:</para>
+    <para>Now remove several known test failures:</para>
 
 <screen><userinput remap="test">sed -e '/cpython/d' -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp</userinput></screen>
 
@@ -166,13 +166,9 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     url="&test-results;"/> and
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
-    <!-- https://github.com/google/sanitizers/issues/1716
-         Affecting any host distro with a large vm.mmap_rnd_bits.
-         The fix is https://github.com/llvm/llvm-project/commit/0784b1eefa36
-         but it's not in GCC 14.  TODO retry with
-             sudo sysctl vm.mmap_rnd_bits=32
-         on the host distro when we update to GCC 15.  -->
-    <para>The tsan tests are known to fail on some host distros.</para>
+    <!-- https://gcc.gnu.org/PR118885 -->
+    <para>The tests related to <filename>pr90579.c</filename> are known
+    to fail.</para>
 
     <!-- TODO: why?? -->
     <para>On ARM64, many tests in
