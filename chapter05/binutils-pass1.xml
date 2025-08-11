@@ -82,6 +82,16 @@ cd       build</userinput></screen>
     <variablelist>
       <title>The meaning of the configure options:</title>
 
+      <note>
+        <para>
+          Contrary to other packages, not all the options listed below appear
+          when running <command>./configure --help</command>. For example,
+          to find the <option>--with-sysroot</option> option, you have to run
+          <command>ld/configure --help</command>. All the options can be
+          listed at once with <command>./configure --help=recursive</command>.
+        </para>
+      </note>
+
       <varlistentry>
         <term><parameter>--prefix=$LFS/tools</parameter></term>
         <listitem>

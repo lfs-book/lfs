@@ -62,7 +62,7 @@
            CFLAGS is still automatically set to -march=something.  -->
     </note>
 
-    <para>First, make an adjustment for compatibilty with gcc-15 and later:</para>
+    <para>First, make an adjustment for compatibility with gcc-15 and later:</para>
 
 <screen><userinput remap="pre">sed -i '/long long t1;/,+1s/()/(...)/' configure</userinput></screen>
 

@@ -213,6 +213,21 @@ EOF</userinput></screen>
       <filename>/run/systemd/resolve/stub-resolv.conf</filename>. So it's
       unnecessary to create a <filename>/etc/resolv.conf</filename>
       manually.</para>
+
+      <note>
+        <para>
+          If you want to use <command>systemd-resolved</command> for the
+          LFS system but you need to access the Internet in the chroot
+          environment (for example, for building a BLFS package of which the
+          build process requires an Internet connection), create the
+          <filename>/etc/resolv.conf</filename> file following the
+          static configuration below for the chroot environment so the name
+          resolution will work in the chroot environment.  When you exit
+          the chroot environment, remove it so
+          <command>systemd-resolved</command> will create the symlink on
+          boot.
+        </para>
+      </note>
       <!--Create a
       symlink in <filename>/etc</filename> to use the generated file:</para>
 
