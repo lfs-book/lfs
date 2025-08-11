@@ -54,8 +54,8 @@ tar -xf ../mpc-&mpc-version;.tar.gz
 mv -v mpc-&mpc-version; mpc</userinput></screen>
 
 
-    <para arch="default">If building on x86_64, change the default directory name for 64-bit
-    libraries to <quote>lib</quote>:</para>
+    <para arch="default">If you are building on x86_64, change the default directory name for
+    64-bit libraries to <quote>lib</quote>:</para>
 
 <screen arch="default"><userinput remap="pre">case $(uname -m) in
   x86_64)
@@ -77,7 +77,7 @@ esac</userinput></screen>
 <screen arch="ml_32,ml_all"><userinput remap="pre">sed '/STACK_REALIGN_DEFAULT/s/0/(!TARGET_64BIT \&amp;\&amp; TARGET_SSE)/' \
       -i gcc/config/i386/i386.h</userinput></screen>
 
-    <para>Override the building rule of libgcc and libstdc++ headers, to
+    <para>Override the build rules of the libgcc and libstdc++ headers to
     allow building these libraries with POSIX threads support:</para>
 
 <screen><userinput remap="pre">sed '/thread_header =/s/@.*@/gthr-posix.h/' \
@@ -143,10 +143,10 @@ cd       build</userinput></screen>
           <para>Normally, using <parameter>--host</parameter> ensures that
           a cross-compiler is used for building GCC, and that compiler knows
           that it has to look for headers and libraries in <filename
-          class="directory">$LFS</filename>. But the build system for GCC uses
-          other tools, which are not aware of this location. This switch is
-          needed so those tools will find the needed files in <filename
-          class="directory">$LFS</filename>, and not on the host.</para>
+          class="directory">$LFS</filename>. However, the build system for GCC
+          uses additional tools which are not aware of this location. This
+          switch is needed so those tools will find the needed files in
+          <filename class="directory">$LFS</filename>, and not on the host.</para>
         </listitem>
       </varlistentry>
 
