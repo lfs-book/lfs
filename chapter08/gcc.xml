@@ -166,10 +166,6 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     url="&test-results;"/> and
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
-    <!-- https://gcc.gnu.org/PR118885 -->
-    <para>The tests related to <filename>pr90579.c</filename> are known
-    to fail.</para>
-
     <!-- TODO: why?? -->
     <para>On ARM64, many tests in
     the <filename class='directory'>c-c++-common/hwasan</filename>
