@@ -47,6 +47,11 @@
     by way of sanitizing various C header files that are shipped in the Linux
     kernel source tarball.</para>
 
+    <para>Update the kernel source tree from &linux-major-version;.&linux-minor-version;
+    to &linux-version;:</para>
+
+<screen><userinput remap="pre">xzcat ../patch-&linux-version;.xz | patch -Np1</userinput></screen>
+
     <para>Make sure there are no stale files embedded in the package:</para>
 
 <screen><userinput remap="pre">make mrproper</userinput></screen>
