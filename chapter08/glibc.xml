@@ -188,13 +188,6 @@ esac</userinput></screen>
         <emphasis>elf/tst-sprof-basic</emphasis> are known to fail.</para>
       </listitem>
 
-      <!-- Maybe hardware / compiler issue??  -->
-      <listitem>
-        <para>On MIPS, some math tests related to the
-        <function>exp10m1</function>, <function>log10p1</function>,
-        and <function>log2p1</function> functions are known to fail.</para>
-      </listitem>
-
       <!-- https://sourceware.org/pipermail/libc-alpha/2024-January/154221.html
            https://sourceware.org/glibc/wiki/Testing/Tests/stdlib/tst-arc4random-thread -->
       <listitem>
