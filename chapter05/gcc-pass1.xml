@@ -126,6 +126,7 @@ esac</userinput></screen>
         <literal>movdqa</literal> instruction fails with a General
         Protection Error and the Linux kernel terminates the process
         with a SIGSEGV.</para>
+    </note>
 
     <para>The GCC documentation recommends building GCC
     in a dedicated build directory:</para>
