@@ -57,6 +57,10 @@
 
 <screen><userinput remap="pre">sed '6031s/$add_dir//' -i ltmain.sh</userinput></screen>
 
+    <para>Apply a patch to fix an issue identified upstream:</para>
+
+    <screen><userinput remap="pre">patch -Np1 -i ../&binutils-loongarch-patch;</userinput></screen>
+
     <para>Create a separate build directory again:</para>
 
 <screen><userinput remap="pre">mkdir -v build

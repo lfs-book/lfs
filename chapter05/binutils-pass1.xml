@@ -53,6 +53,10 @@
     linker and assembler to determine which of their own features to
     enable.</para>
 
+    <para>Apply a patch to fix an issue identified upstream:</para>
+
+    <screen><userinput remap="pre">patch -Np1 -i ../&binutils-loongarch-patch;</userinput></screen>
+
     <para>The Binutils documentation recommends building Binutils
     in a dedicated build directory:</para>
 
