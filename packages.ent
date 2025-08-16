@@ -432,16 +432,16 @@
 <!ENTITY libxcrypt-fin-sbu "0.1 SBU">
 
 <!ENTITY linux-major-version "6">
-<!ENTITY linux-minor-version "15">
-<!ENTITY linux-patch-version "9">
+<!ENTITY linux-minor-version "16">
+<!ENTITY linux-patch-version "1">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "147,625 KB">
+<!ENTITY linux-size "149,042 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-major-version;.&linux-minor-version;.tar.xz">
-<!ENTITY linux-md5 "c0f205cc27982a875c519f644a6288c4">
+<!ENTITY linux-md5 "dd850269c3f456c0ff5518b1a2a81836">
 <!ENTITY linux-patch-url "&kernel;linux/kernel/v&linux-major-version;.x/patch-&linux-version;.xz">
-<!ENTITY linux-patch-md5 "08de8c6221bb585f1450fddf645e49fd">
-<!ENTITY linux-patch-size "713.1 KB">
+<!ENTITY linux-patch-md5 "eb4243641ac31f0f8813d9f103b3660b">
+<!ENTITY linux-patch-size "196 KB">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 :
  minimum is allnoconfig
