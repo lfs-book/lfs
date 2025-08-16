@@ -41,6 +41,45 @@
     -->
 
     <listitem>
+      <para>2025-08-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Add a modification to glibc from upstream
+          to solve an incompatibility with valgrind. Fixes
+          <ulink url='&lfs-ticket-root;5778'>#5778</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20250807. Addresses
+          <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to vim-9.1.1829. Addresses
+          <ulink url='&lfs-ticket-root;4500'>#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to ncurses-6.5-20250809. Fixes
+          <ulink url='&lfs-ticket-root;5780'>#5780</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to Python-3.13.7 (Security Update). Fixes
+          <ulink url='&lfs-ticket-root;5779'>#5779</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-6.16.1. Fixes
+          <ulink url='&lfs-ticket-root;5758'>#5758</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iproute2-6.16.0. Fixes
+          <ulink url='&lfs-ticket-root;5773'>#5773</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to systemd-257.8. Fixes
+          <ulink url='&lfs-ticket-root;5751'>#5751</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2025-08-08</para>
       <itemizedlist>
         <listitem>
