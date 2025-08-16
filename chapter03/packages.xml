@@ -485,7 +485,7 @@
           <para>We use the baseline version of the package and
           separately downloaded patches.  This saves some download time
           as well as disk space as for subsequent patch level upgrades
-          only the patch file is required to download.
+          as only the patch file is required to download.
           </para>
         </note>
       </listitem>
