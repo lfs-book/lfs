@@ -68,6 +68,23 @@ mv -v mpc-&mpc-version; mpc</userinput></screen>
 <screen><userinput remap="pre">sed -e 's/lib64/lib/' \
     -i.orig gcc/config/mips/{mips.h,t-linux64}</userinput></screen>
 
+    <note>
+      <para>
+        This example demonstrates the use of the
+        <parameter>-i.orig</parameter> switch.  It makes the
+        <command>sed</command> copy the <filename>t-linux64</filename> file
+        to <filename>t-linux64.orig</filename>, and then edit the original
+        <filename>t-linux64</filename> file inplace.  So you may run
+        <command>diff -u gcc/config/i386/t-linux64{.orig,}</command>
+        to visualize the change done by the <command>sed</command> command
+        afterwards.  We'll simply use <parameter>-i</parameter> (which just
+        edits the original file inplace without copying it) for all other
+        packages in the book, but you can change it to
+        <parameter>-i.orig</parameter> in any case you want to keep a copy
+        of the original file.
+      </para>
+    </note>
+
     <para>The GCC documentation recommends building GCC
     in a dedicated build directory:</para>
 
