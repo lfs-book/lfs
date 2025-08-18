@@ -258,7 +258,7 @@ rm -rf DESTDIR</userinput></screen>
             <application>Perl compatible regular expressions.</application>
           </para>
           <indexterm zone="ch-system-pcre2 pcre2grep">
-            <primary sortas="c-pcre2grep">pcre2grep</primary>
+            <primary sortas="b-pcre2grep">pcre2grep</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -271,7 +271,7 @@ rm -rf DESTDIR</userinput></screen>
             <application>Perl compatible regular expression.</application>
           </para>
           <indexterm zone="ch-system-pcre2 pcre2test">
-            <primary sortas="c-pcre2test">pcre2</primary>
+            <primary sortas="b-pcre2test">pcre2</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -284,7 +284,7 @@ rm -rf DESTDIR</userinput></screen>
             <application>PCRE2</application> libraries
           </para>
           <indexterm zone="ch-system-pcre2 pcre2-config">
-            <primary sortas="c-pcre2-config">pcre2-config</primary>
+            <primary sortas="b-pcre2-config">pcre2-config</primary>
           </indexterm>
         </listitem>
       </varlistentry>
