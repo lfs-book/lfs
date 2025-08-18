@@ -581,6 +581,14 @@
 <!ENTITY patch-fin-du "13 MB">
 <!ENTITY patch-fin-sbu "0.2 SBU">
 
+<!ENTITY pcre2-version "10.45">
+<!ENTITY pcre2-size "1.9 MB">
+<!ENTITY pcre2-url "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-&pcre2-version;/pcre2-&pcre2-version;.tar.bz2">
+<!ENTITY pcre2-md5 "f71abbe1b5adf25cd9af5d26ef223b66">
+<!ENTITY pcre2-home "https://github.com/PCRE2Project">
+<!ENTITY pcre2-fin-du "20 MB">
+<!ENTITY pcre2-fin-sbu "0.5 SBU">
+ 
 <!ENTITY perl-version-major "5">
 <!ENTITY perl-version-minor "42">
 <!ENTITY perl-version-patch "0">
@@ -670,6 +678,16 @@
 <!ENTITY shadow-home "&github;/shadow-maint/shadow/">
 <!ENTITY shadow-fin-du "115 MB">
 <!ENTITY shadow-fin-sbu "0.1 SBU">
+
+<!ENTITY sqlite-version "3.50.4">
+<!ENTITY sqlite-version-pkg "3500400">
+<!ENTITY sqlite-year "2025">
+<!ENTITY sqlite-size "3.0 MB">
+<!ENTITY sqlite-url "https://sqlite.org/&sqlite-year;/sqlite-autoconf-&sqlite-version-pkg;.tar.gz">
+<!ENTITY sqlite-md5 "d74bbdca4ab1b2bd46d3b3f8dbb0f3db">
+<!ENTITY sqlite-home "https://sqlite.org">
+<!ENTITY sqlite-fin-du "0.0 MB">
+<!ENTITY sqlite-fin-sbu "0.1 SBU">
 
 <!ENTITY sysklogd-version "2.7.2">
 <!ENTITY sysklogd-size "474 KB">

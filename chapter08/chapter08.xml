@@ -47,6 +47,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="psmisc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gettext.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="bison.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="pcre2.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="grep.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="bash.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libtool.xml"/>
@@ -63,6 +64,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="openssl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libelf.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libffi.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="sqlite.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="python.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="flit-core.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="packaging.xml"/>

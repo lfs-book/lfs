@@ -618,6 +618,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>PCRE2 (&pcre2-version;) - <token>&pcre2-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&pcre2-home;"/></para>
+        <para>Download: <ulink url="&pcre2-url;"/></para>
+        <para>MD5 sum: <literal>&pcre2-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Perl (&perl-version;) - <token>&perl-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&perl-home;"/></para>
@@ -703,6 +712,15 @@
         <para>Home page: <ulink url="&shadow-home;"/></para>
         <para>Download: <ulink url="&shadow-url;"/></para>
         <para>MD5 sum: <literal>&shadow-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Sqlite (&sqlite-version;) - <token>&sqlite-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&sqlite-home;"/></para>
+        <para>Download: <ulink url="&sqlite-url;"/></para>
+        <para>MD5 sum: <literal>&sqlite-md5;</literal></para>
       </listitem>
     </varlistentry>
 
