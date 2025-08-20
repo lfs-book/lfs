@@ -18,6 +18,7 @@
       duplicated URLs due that may be split for PDF output -->
     <xsl:if test="(contains(@url, '.tar.') or
                    contains(@url, '.tgz')  or
+                   contains(@url, '.xz')  or
                    contains(@url, '.patch')) and
                   not(ancestor-or-self::*/@condition = 'pdf')">
       <xsl:choose>
