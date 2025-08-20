@@ -449,6 +449,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>Libsigsegv (&libsigsegv-version;) - <token>&libsigsegv-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&libsigsegv-home;"/></para>
+        <para>Download: <ulink url="&libsigsegv-url;"/></para>
+        <para>MD5 sum: <literal>&libsigsegv-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Libtool (&libtool-version;) - <token>&libtool-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&libtool-home;"/></para>

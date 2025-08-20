@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-libsigsegv" role="wrap">
+  <?dbhtml filename="libsigsegv.html"?>
+
+  <sect1info condition="script">
+    <productname>libsigsegv</productname>
+    <productnumber>&libsigsegv-version;</productnumber>
+    <address>&libsigsegv-url;</address>
+  </sect1info>
+
+  <title>libsigsegv-&libsigsegv-version;</title>
+
+  <indexterm zone="ch-system-libsigsegv">
+    <primary sortas="a-libsigsegv">libsigsegv</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>
+      libsigsegv is a library for handling page faults in user mode. A page fault
+      occurs when a program tries to access to a region of memory that is
+      currently not available. Catching and handling a page fault is a useful
+      technique for implementing pageable virtual memory, memory-mapped access
+      to persistent databases, generational garbage collectors, stack overflow
+      handlers, and distributed shared memory.
+    </para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&libsigsegv-fin-sbu;</seg>
+        <seg>&libsigsegv-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of libsigsegv</title>
+
+    <para>
+      Prepare <application>libsigsegv</application> for compilation:
+    </para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr   \
+            --enable-shared \
+            --disable-static</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the configure parameters:</title>
+
+      <varlistentry>
+        <term><parameter>--enable-shared</parameter></term>
+        <listitem>
+          <para>This switch ensures that shared
+          libraries are compiled.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>
+      To test the results, issue:
+    </para>
+
+<screen><userinput remap="test">make check</userinput></screen>
+
+    <para>
+      Now, as the <systemitem class="username">root</systemitem> user:
+    </para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="contents-libigsegv">
+    <title>Contents of libsigsegv</title>
+
+    <segmentedlist>
+      <segtitle>Installed Program</segtitle>
+      <segtitle>Installed Library</segtitle>
+      <segtitle>Installed Directory</segtitle>
+
+      <seglistitem>
+        <seg>
+          None
+        </seg>
+        <seg>
+          libsigsegv.so
+        </seg>
+        <seg>
+          None
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="libsigsegv-lib">
+        <term><filename class="libraryfile">libsigsegv.so</filename></term>
+        <listitem>
+          <para>
+            is a library for handling page faults in user mode
+          </para>
+          <indexterm zone="ch-system-libsigsegv libsigsegv-lib">
+            <primary sortas="c-libsigsegv">libsigsegv.so</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

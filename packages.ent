@@ -415,6 +415,14 @@
 <!ENTITY libpipeline-fin-du "10 MB">
 <!ENTITY libpipeline-fin-sbu "0.1 SBU">
 
+<!ENTITY libsigsegv-version "2.15">
+<!ENTITY libsigsegv-size "484 KB">
+<!ENTITY libsigsegv-url "&gnu;libsigsegv/libsigsegv-&libsigsegv-version;.tar.gz">
+<!ENTITY libsigsegv-md5 "c2885785b3e5d1c94b1adb22b3002ccc">
+<!ENTITY libsigsegv-home "&gnu-software;liblibsigsegv/">
+<!ENTITY libsigsegv-fin-du "3 MB">
+<!ENTITY libsigsegv-fin-sbu "0.1 SBU">
+
 <!ENTITY libtool-version "2.5.4">
 <!ENTITY libtool-size "1,033 KB">
 <!ENTITY libtool-url "&gnu;libtool/libtool-&libtool-version;.tar.xz">
