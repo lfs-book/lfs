@@ -437,7 +437,7 @@
 -->
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "16">
-<!ENTITY linux-patch-version "1">
+<!ENTITY linux-patch-version "2">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
 <!ENTITY linux-size "149,042 KB">
@@ -445,8 +445,8 @@
 <!ENTITY linux-md5 "dd850269c3f456c0ff5518b1a2a81836">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!ENTITY linux-patch-url "&kernel;linux/kernel/v&linux-major-version;.x/patch-&linux-version;.xz">
-<!ENTITY linux-patch-md5 "eb4243641ac31f0f8813d9f103b3660b">
-<!ENTITY linux-patch-size "196 KB">
+<!ENTITY linux-patch-md5 "57ca21c1773c4829d1f993623d2bf049">
+<!ENTITY linux-patch-size "389 KB">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 :
  minimum is allnoconfig
  typical is defconfig
