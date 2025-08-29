@@ -1,3 +1,6 @@
+2025-08-27 Bruce Dubbs <bdubbs@linuxfromscratch.org>
+   * Change 'return' to exit in network script.
+
 2024-08-25 Xi Ruoyao <xry111@xry111.site>
    * Remove an empty line and an outdated comment (not valid anymore after
      /usr merge) from init-functions.

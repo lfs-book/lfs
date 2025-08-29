@@ -166,6 +166,13 @@ esac</userinput></screen>
         is known to fail in the LFS chroot environment.</para>
       </listitem>
 
+      <!-- https://sourceware.org/pipermail/libc-alpha/2025-August/169612.html -->
+      <listitem>
+        <para><emphasis>misc/tst-preadvwritev2</emphasis> and
+        <emphasis>misc/tst-preadvwritev64v2</emphasis> are known to fail
+        if the host kernel is Linux-6.14 or later.</para>
+      </listitem>
+
       <listitem>
         <para>Some tests, for example
         <emphasis>nss/tst-nss-files-hosts-multi</emphasis> and
