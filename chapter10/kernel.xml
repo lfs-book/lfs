@@ -175,8 +175,8 @@
       <para>If your host hardware is using UEFI and you wish to boot the
       LFS system with it, you should adjust some kernel configuration
       following <ulink url="&blfs-book;postlfs/grub-setup.html#uefi-kernel">
-      the BLFS page</ulink> <emphasis role='bold'>even if you'll use the
-      UEFI bootloader from the host distro</emphasis>.</para>
+      the BLFS page</ulink><!--emphasis role='bold'>even if you'll use the
+      UEFI bootloade</emphasis-->.</para>
     </note>
 
     <variablelist>

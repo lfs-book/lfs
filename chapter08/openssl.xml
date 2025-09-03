@@ -65,7 +65,7 @@
 
 <screen><userinput remap="test">HARNESS_JOBS=<replaceable>$(nproc)</replaceable> make test</userinput></screen>
 
-    <para>One test, 30-test_afalg.t, is known to fail if the host kernel
+    <para>One test, 30-test_afalg.t, is known to fail if the temporary kernel
     does not have <option>CONFIG_CRYPTO_USER_API_SKCIPHER</option> enabled,
     or does not have any options providing an AES with CBC implementation
     (for example, the combination of <option>CONFIG_CRYPTO_AES</option>

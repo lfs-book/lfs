@@ -97,9 +97,10 @@
          Two tests need a /etc/fstab file.  They are skipped if the host
          distro isn't using systemd as the init system, so don't remove
          the creation of /etc/fstab unless you've tested it with such a
-         host distro (for example LFS systemd or Debian).  -->
-    <para>If desired, create a dummy <filename>/etc/fstab</filename> file
-    to satisfy two tests and run the test suite as a non-&root;
+         host distro (for example LFS systemd or Debian).
+         It shouldn't affect CLFS??? -->
+    <para>If desired, <!--create a dummy <filename>/etc/fstab</filename> file
+    to satisfy two tests and -->run the test suite as a non-&root;
     user:</para>
 
     <warning><para>Running the test suite as the
@@ -113,8 +114,8 @@
 <screen role="nodump"><userinput>bash tests/run.sh --srcdir=$PWD --builddir=$PWD</userinput></screen>
     </warning>
 
-<screen><userinput remap="test">touch /etc/fstab
-chown -R tester .
+<screen><userinput remap="test"><!--touch /etc/fstab
+-->chown -R tester .
 su tester -c "make -k check"</userinput></screen>
 
     <para> 

@@ -73,7 +73,7 @@
 <screen><userinput remap="test">make check</userinput></screen>
 
     <para>One test, capabilities: binary store/restore, is known to fail if it is
-    run because LFS lacks selinux, but will be skipped if the host kernel does
+    run because LFS lacks selinux, but will be skipped if the temporary kernel does
     not support extended attributes or security labels on the filesystem
     used for building LFS.</para>
 

@@ -145,8 +145,8 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="test">make check</userinput></screen>
 
-    <para>You may see some test failures. The Glibc test suite is
-    somewhat dependent on the host system. A few failures out of
+    <para>You may see some test failures. <!--The Glibc test suite is
+    somewhat dependent on the host system.--> A few failures out of
     over 6000 tests can generally be ignored. This is a list of the
     most common issues seen for recent versions of LFS:</para>
 
@@ -155,7 +155,7 @@ cd       build</userinput></screen>
       <listitem>
         <para><emphasis>misc/tst-preadvwritev2</emphasis> and
         <emphasis>misc/tst-preadvwritev64v2</emphasis> are known to fail
-        if the host kernel is Linux-6.14 or later.</para>
+        <!--if the host kernel is Linux-6.14 or later-->.</para>
       </listitem>
 
       <listitem>
@@ -181,9 +181,9 @@ cd       build</userinput></screen>
       <listitem>
         <para>Additionally, some tests may fail with a relatively old CPU
         model (for example
-        <emphasis>elf/tst-cpu-features-cpuinfo</emphasis>) or host kernel
+        <emphasis>elf/tst-cpu-features-cpuinfo</emphasis>)<!-- or host kernel
         version (for example
-        <emphasis>stdlib/tst-arc4random-thread</emphasis>).</para>
+        <emphasis>stdlib/tst-arc4random-thread</emphasis>)-->.</para>
       </listitem>
     </itemizedlist>
 

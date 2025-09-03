@@ -144,15 +144,15 @@ FORCE_UNSAFE_CONFIGURE=1 ./configure \
          so the test failures are not reproducible in jhalfs even if
          running the build in a PTY.  Don't use jhalfs to test if we can
          remove < /dev/null.  -->
-    <para>Now run the tests (using <filename>/dev/null</filename> for the
+    <para>Now run the tests<!-- (using <filename>/dev/null</filename> for the
     standard input, or two tests may be broken if building LFS in a
     graphical terminal or a session in SSH or GNU Screen because the
     standard input is connected to a PTY from host distro, and the device
     node for such a PTY cannot be accessed from the LFS chroot
-    environment):</para>
+    environment)-->:</para>
 
-<screen><userinput remap="test">su tester -c "PATH=$PATH make -k RUN_EXPENSIVE_TESTS=yes check" \
-   &lt; /dev/null</userinput></screen>
+<screen><userinput remap="test">su tester -c "PATH=$PATH make -k RUN_EXPENSIVE_TESTS=yes check"<!-- \
+   &lt; /dev/null--></userinput></screen>
 
     <para>Remove the temporary group:</para>
 
