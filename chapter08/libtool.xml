@@ -61,7 +61,7 @@
     <!-- dev: - -disable-static works but causes additional test failures
               so we manually remove the static library -->
 
-    <para>Remove a useless static library:</para>
+    <para>Remove a static library only useful for the test suite:</para>
 
 <screen><userinput remap="install">rm -fv /usr/lib/libltdl.a</userinput></screen>
 
