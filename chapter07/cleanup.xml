@@ -138,9 +138,9 @@ mount -v -t ext4 <replaceable>/dev/sdx4</replaceable> /mnt/lfs-backup</computero
     it will destroy your entire host system.
     YOU ARE WARNED.</para></warning>
 
-<screen role="nodump"><computeroutput>cd /mnt/lfs-target
+<screen role="nodump"><literal>cd /mnt/lfs-target
 rm -rf ./*
-tar -xpf /mnt/lfs-backup/lfs-temp-tools-&version;.tar.xz</computeroutput></screen>
+tar -xpf /mnt/lfs-backup/lfs-temp-tools-&version;.tar.xz</literal></screen>
 
     <para>
        Again, unmount the two partitions, reconnect the device to the target

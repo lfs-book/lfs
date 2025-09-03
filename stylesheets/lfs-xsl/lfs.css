@@ -577,6 +577,10 @@ tt, code, kbd, pre, .command {
   font-style: italic;
 }
 
+code.computeroutput {
+   color: blue;
+}
+
 pre {
   background-color: #e5e5e5;
   border: 1px solid #050505;

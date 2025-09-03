@@ -92,9 +92,9 @@ cd       build</userinput></screen>
       --prefix=/usr                      \
       --host=$LFS_TGT                    \
       --build=$(../scripts/config.guess) \
-      --enable-kernel=&linux-major-version;.&linux-minor-version;                \
       --disable-nscd                     \
-      libc_cv_slibdir=/usr/lib</userinput></screen>
+      libc_cv_slibdir=/usr/lib           \
+      --enable-kernel=&linux-version;</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>

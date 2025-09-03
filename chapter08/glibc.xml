@@ -49,11 +49,15 @@
     store their runtime data in the FHS-compliant locations:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
-<!--
-    <para>Now fix a security vulnerability:</para>
 
-<screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-patch;</userinput></screen>
--->
+    <para>Now fix an issue which may break Valgrind in BLFS:</para>
+
+<screen><userinput remap="pre">sed -e '/unistd.h/i #include &lt;string.h&gt;' \
+    -e '/libc_rwlock_init/c\
+  __libc_rwlock_define_initialized (, reset_lock);\
+  memcpy (&amp;lock, &amp;reset_lock, sizeof (lock));' \
+    -i stdlib/abort.c </userinput></screen>
+
     <para>The Glibc documentation recommends building Glibc
     in a dedicated build directory:</para>
 
@@ -68,12 +72,12 @@ cd       build</userinput></screen>
 
     <para>Prepare Glibc for compilation:</para>
 
-<screen><userinput remap="configure">../configure --prefix=/usr                            \
-             --disable-werror                         \
-             --enable-kernel=&linux-major-version;.&linux-minor-version;                      \
-             --enable-stack-protector=strong          \
-             --disable-nscd                           \
-             libc_cv_slibdir=/usr/lib</userinput></screen>
+<screen><userinput remap="configure">../configure --prefix=/usr                   \
+             --disable-werror                \
+             --disable-nscd                  \
+             libc_cv_slibdir=/usr/lib        \
+             --enable-stack-protector=strong \
+             --enable-kernel=&linux-version;</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -139,16 +143,6 @@ cd       build</userinput></screen>
     <para>Generally a few tests do not pass. The test failures listed below
     are usually safe to ignore.</para>
 
-<!-- Use remap="make" here to work around a jhalfs issue. -->
-<!--<screen><userinput remap="make">case $(uname -m) in
-  i?86)   ln -sfnv $PWD/elf/ld-linux.so.2        /lib ;;
-  x86_64) ln -sfnv $PWD/elf/ld-linux-x86-64.so.2 /lib ;;
-esac</userinput></screen>
-
-    <note><para>The symbolic link above is needed to run the tests at this
-    stage of building in the chroot environment.  It will be overwritten
-    in the install phase below.</para></note>
--->
 <screen><userinput remap="test">make check</userinput></screen>
 
     <para>You may see some test failures. The Glibc test suite is
@@ -157,6 +151,12 @@ esac</userinput></screen>
     most common issues seen for recent versions of LFS:</para>
 
     <itemizedlist>
+      <!-- https://sourceware.org/pipermail/libc-alpha/2025-August/169612.html -->
+      <listitem>
+        <para><emphasis>misc/tst-preadvwritev2</emphasis> and
+        <emphasis>misc/tst-preadvwritev64v2</emphasis> are known to fail
+        if the host kernel is Linux-6.14 or later.</para>
+      </listitem>
 
       <listitem>
         <para>Some tests, for example
@@ -323,9 +323,10 @@ install -vm755 dest/usr/lib/*.so.* /usr/lib</userinput></screen>
       </para>
 
       <screen role='nodump'><userinput>DIR=$(dirname $(gcc -print-libgcc-file-name))
-[ -e $DIR/include/limits.h ] || mv $DIR/include{-fixed,}/limits.h
+[ -e $DIR/include/limits.h ]    || mv $DIR/include{-fixed,}/limits.h
 [ -e $DIR/include/syslimits.h ] || mv $DIR/include{-fixed,}/syslimits.h
-rm -rfv $(dirname $(gcc -print-libgcc-file-name))/include-fixed/*</userinput></screen>
+rm -rfv $DIR/include-fixed/*
+unset DIR</userinput></screen>
     </important>
 
     <para>Install the package:</para>

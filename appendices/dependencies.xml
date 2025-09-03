@@ -3378,7 +3378,10 @@
       <segmentedlist id="xml-parser-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg>
+            <ulink
+            url="https://metacpan.org/pod/LWP::UserAgent">LWP::UserAgent</ulink>
+          </seg>
         </seglistitem>
       </segmentedlist>
 

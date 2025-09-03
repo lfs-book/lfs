@@ -45,10 +45,11 @@
 
     <para>Prepare Python for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr        \
-            --enable-shared      \
-            --with-system-expat  \
-            --enable-optimizations</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr          \
+            --enable-shared        \
+            --with-system-expat    \
+            --enable-optimizations \
+            --without-static-libpython</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
