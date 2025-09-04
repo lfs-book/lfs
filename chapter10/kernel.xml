@@ -59,12 +59,12 @@
         At this point optimization and customization is not a goal.
       </para>
 
-
+      
       <para>
         For general information on kernel configuration see <ulink
         url="&hints-root;kernel-configuration.txt"/>.  Additional information
         about configuring and building the kernel can be found at <ulink
-        url="&anduin-sources;/kernel-nutshell/"/>.
+        url="&anduin-sources;/kernel-nutshell/"/>. 
         These references are a bit
         dated, but still give a reasonable overview of the process.
       </para>
@@ -76,11 +76,6 @@
         to avoid spam.
       </para>
     </important>
-
-    <para>Update the kernel source tree from &linux-major-version;.&linux-minor-version;
-    to &linux-version;:</para>
-
-<screen><userinput remap="pre">xzcat ../patch-&linux-version;.xz | patch -Np1</userinput></screen>
 
     <para>Prepare for compilation by running the following command:</para>
 
@@ -145,7 +140,7 @@
 
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
         href="kernel/systemd.xml"/>
-
+   
       <para>Enable some additional features if you are building a 64-bit
       system.  If you are using menuconfig, enable them in the order of
       <parameter>CONFIG_PCI_MSI</parameter> first, then
@@ -215,7 +210,7 @@
     [*] x32 ABI for 64-bit mode [CONFIG_X86_X32]
 </screen>
     </note>
-
+    
     <variablelist>
       <title>The rationale for the above configuration items:</title>
 
@@ -389,7 +384,7 @@
           <para>Support running the interrupt controller of 64-bit x86
           processors in x2APIC mode.  x2APIC may be enabled by firmware on
           64-bit x86 systems, and a kernel without this option enabled will
-          panic on boot if x2APIC is enabled by firmware.  This option
+          panic on boot if x2APIC is enabled by firmware.  This option 
           has no effect, but also does no harm if x2APIC is disabled by the
           firmware.</para>
         </listitem>
