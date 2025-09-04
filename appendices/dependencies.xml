@@ -1139,7 +1139,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Gettext, Glibc, Grep,
-          Make, Patch, Sed, and Texinfo</seg>
+          Make, Patch, Pcre2, Sed, and Texinfo</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1168,9 +1168,7 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-            <ulink url="&blfs-book;general/pcre2.html">PCRE2</ulink>
-            and
-            <ulink url="&blfs-book;general/libsigsegv.html">libsigsegv</ulink>
+            None
           </seg>
         </seglistitem>
       </segmentedlist>
@@ -1584,7 +1582,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Diffutils, GCC, Glibc, Grep, Make,
-          Ncurses, and Sed</seg>
+          Ncurses, Pcre2, and Sed</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1613,8 +1611,7 @@
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>
-            <ulink url="&blfs-book;general/pcre2.html">PCRE2</ulink> or
-            <ulink url="&blfs-book;general/pcre.html">PCRE</ulink>
+            None
           </seg>
         </seglistitem>
       </segmentedlist>
@@ -1759,7 +1756,7 @@
       <segmentedlist id="libpipeline-testdeps">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
-          <seg>Check and Pkgconf</seg>
+          <seg>Pkgconf</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2497,6 +2494,48 @@
         </seglistitem>
       </segmentedlist>
 
+<!-- Begin Pcre2 dependency info -->
+  <bridgehead renderas="sect2" id="pcre2-dep">Pcre2</bridgehead>
+
+      <segmentedlist id="pcre2-depends">
+        <segtitle>&dependencies;</segtitle>
+        <seglistitem>
+          <seg>Bash, Binutils, Bzip2, Coreutils, GCC, Glibc, GZip, Make, and
+          Readline</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="pcre2-rundeps">
+        <segtitle>&runtime;</segtitle>
+        <seglistitem>
+          <seg>Glibc</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="pcre2-testdeps">
+        <segtitle>&testsuites;</segtitle>
+        <seglistitem>
+          <seg>Grep</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="pcre2-before">
+        <segtitle>&before;</segtitle>
+        <seglistitem>
+          <seg>Grep and Less</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="pcre2-optdeps">
+        <segtitle>&external;</segtitle>
+        <seglistitem>
+          <seg>
+            <ulink url="&blfs-book;general/valgrind.html">Valgrind</ulink> and 
+            <ulink url="https://thrysoee.dk/editline/">libedit</ulink>
+          </seg>
+        </seglistitem>
+      </segmentedlist>
+
 <!-- Begin Perl dependency info -->
   <bridgehead renderas="sect2" id="perl-dep">Perl</bridgehead>
 
@@ -2916,7 +2955,7 @@
         <seglistitem>
          <seg>Acl, Bash, Binutils, Coreutils, Diffutils, Gawk,
          GCC, Glibc, Gperf, Grep, Jinja2, Libcap, Libxcrypt, Lz4, Meson,
-         OpenSSL, Pkgconf, Sed, Util-linux, and Zstd</seg>
+         OpenSSL, Pcre2, Pkgconf, Sed, Util-linux, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2983,7 +3022,6 @@
               url="&blfs-book;general/python-modules.html#lxml">lxml</ulink>,
             <ulink url="&blfs-book;postlfs/make-ca.html">make-ca</ulink>,
             <ulink url="&blfs-book;postlfs/p11-kit.html">p11-kit</ulink>,
-            <ulink url="&blfs-book;general/pcre2.html">PCRE2</ulink>,
             <ulink url="&pypi-home;pefile">pefile</ulink>,
             <ulink url="&blfs-book;postlfs/polkit.html">Polkit</ulink>,
             <ulink url='&pypi-home;/pyelftools'>pyelftools</ulink>,

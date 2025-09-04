@@ -41,6 +41,21 @@
     -->
 
     <listitem>
+      <para>2025-09-03</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Add the pcre2 package. Fixes
+          <ulink url='&lfs-ticket-root;5782'>#5782</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Add a description on how to use a kernel base+patch
+          in Chapter 3.  Fixes
+          <ulink url='&lfs-ticket-root;5785'>#5785</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2025-09-01</para>
       <itemizedlist>
         <listitem>

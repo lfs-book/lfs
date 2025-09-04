@@ -91,13 +91,13 @@
         <para>This package contains programs for compressing and decompressing
         files.  It is required to decompress many LFS packages.</para>
       </listitem>
-
+<!--
       <listitem>
         <para>Check</para>
 
         <para>This package provides a test harness for other programs.</para>
       </listitem>
-
+-->
       <listitem>
         <para>Coreutils</para>
 
@@ -478,6 +478,14 @@
         applying a <emphasis>patch</emphasis> file typically created
         by the <application>diff</application> program.  It is needed by
         the build procedure for several LFS packages.</para>
+      </listitem>
+
+      <listitem>
+        <para>Pcre2</para>
+
+        <para>This package provides a set of functions that implement regular 
+        expression pattern matching using the same syntax and semantics as 
+        Perl 5.</para>
       </listitem>
 
       <listitem>
