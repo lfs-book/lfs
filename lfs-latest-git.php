@@ -140,6 +140,7 @@ if ( $package == "ncurses"    ) $dirpath = "https://invisible-mirror.net/archive
 if ( $package == "ninja"      ) $dirpath = github("ninja-build/ninja");
 if ( $package == "openssl"    ) $dirpath = github("openssl/openssl");
 if ( $package == "packaging"  ) $dirpath = "https://pypi.org/rss/project/packaging/releases.xml";
+if ( $package == "pcre"       ) $dirpath = github("PCRE2Project/pcre2") );
 if ( $package == "procps-ng"  ) $dirpath = "https://gitlab.com/procps-ng/procps/-/tags";
 if ( $package == "psmisc"     ) $dirpath = "https://gitlab.com/psmisc/psmisc/-/tags";
 if ( $package == "Python"     ) $dirpath = "https://www.python.org/downloads/source/";
@@ -265,6 +266,9 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
 
   if ( $package == "packaging" )
      return find_max( $lines, "/packaging/", "/^.*^.*packaging.([\d\.]+\d)\/.*$/" );
+
+  if ( $book_index == "pcre2" )
+     return find_max( $lines, '/name.:/', '/^.*pcre2-([\d\.]+\d).*$/' );
 
   if ( $package == "procps-ng" )
      return find_max( $lines, "/v\d/", "/^.*v([\d\.]+)$/" );

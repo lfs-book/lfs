@@ -16,10 +16,11 @@
       <!-- If some package don't have the predefined strings in their
       name, the next test must be fixed to match it also. Skip possible
       duplicated URLs due that may be split for PDF output -->
-    <xsl:if test="(contains(@url, '.tar.') or
-                   contains(@url, '.tgz')  or
-                   contains(@url, '.patch')) and
-                  not(ancestor-or-self::*/@condition = 'pdf')">
+    <xsl:if test="( (contains(@url, '.tar.') and not( ancestor::note ) ) or
+                    contains(@url, '.tgz'  )                             or
+                    contains(@url, '.patch')
+                  ) and
+                    not(ancestor-or-self::*/@condition = 'pdf')">
       <xsl:choose>
         <xsl:when test="contains(@url,'?download')">
           <xsl:value-of select="substring-before(@url,'?download')"/>
