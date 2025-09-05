@@ -57,7 +57,7 @@
 
     <para>After patching, the backspace key generates the character with code 127,
     and the delete key generates a well-known escape sequence.</para>
-
+<!--
     <para>Remove the redundant <command>resizecons</command> program (it requires
     the defunct svgalib to provide the video mode files - for normal use
     <command>setfont</command> sizes the console appropriately) together with its
@@ -65,7 +65,7 @@
 
 <screen><userinput remap="pre">sed -i '/RESIZECONS_PROGS=/s/yes/no/' configure
 sed -i 's/resizecons.8 //' docs/man/man8/Makefile.in</userinput></screen>
-
+-->
     <para>Prepare Kbd for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr --disable-vlock</userinput></screen>
