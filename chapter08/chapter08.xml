@@ -64,6 +64,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="openssl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libelf.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libffi.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="sqlite.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="python.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="flit-core.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="packaging.xml"/>

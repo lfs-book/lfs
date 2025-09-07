@@ -677,6 +677,20 @@
 <!ENTITY shadow-fin-du "115 MB">
 <!ENTITY shadow-fin-sbu "0.1 SBU">
 
+<!ENTITY sqlite-version "3500400">
+<!ENTITY sqlite-short-version "3.50.4">
+<!ENTITY sqlite-year "2025">
+<!ENTITY sqlite-size "3,099 KB">
+<!ENTITY sqlite-url "https://sqlite.org/&sqlite-year;/sqlite-autoconf-&sqlite-version;.tar.gz">
+<!ENTITY sqlite-md5 "d74bbdca4ab1b2bd46d3b3f8dbb0f3db">
+<!ENTITY sqlite-home "https://sqlite.org">
+<!ENTITY sqlite-fin-du "71 MB">
+<!ENTITY sqlite-fin-sbu "0.4 SBU">
+<!ENTITY sqlite-doc-version "&sqlite-version;">
+<!ENTITY sqlite-doc-size "5,943 KB">
+<!ENTITY sqlite-doc-url  "&anduin-sources;/sqlite-doc-&sqlite-doc-version;.tar.xz">
+<!ENTITY sqlite-doc-md5  "63a62af5b35913459954e6e66876f2b8">
+
 <!ENTITY sysklogd-version "2.7.2">
 <!ENTITY sysklogd-size "474 KB">
 <!ENTITY sysklogd-url "https://github.com/troglobit/sysklogd/releases/download/v&sysklogd-version;/sysklogd-&sysklogd-version;.tar.gz">

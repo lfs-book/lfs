@@ -553,6 +553,13 @@
         securely.</para>
       </listitem>
 
+      <listitem>
+        <para>Sqlite</para>
+
+        <para>This package provides a serverless, zero-configuration, 
+        transactional SQL database engine.</para>
+      </listitem>
+
       <listitem revision="sysv">
         <para>Sysklogd</para>
 

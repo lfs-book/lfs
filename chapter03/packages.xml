@@ -742,6 +742,30 @@
       </listitem>
     </varlistentry>
 
+    <varlistentry>
+      <term>Sqlite (&sqlite-version;) - <token>&sqlite-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&sqlite-home;"/></para>
+        <para>Download: <ulink url="&sqlite-url;"/></para>
+        <para>MD5 sum: <literal>&sqlite-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Sqlite Documentation (&sqlite-version;) - <token>&sqlite-doc-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&sqlite-home;"/></para>
+        <para>Download: <ulink url="&sqlite-doc-url;"/></para>
+        <para>MD5 sum: <literal>&sqlite-doc-md5;</literal></para>
+
+        <note>
+          <para>The Linux From Scratch team generates its own tarball of the
+          documentation pages using the sqlite documentation zip file. This is done 
+          in order to avoid unnecessary dependencies.</para>
+        </note>
+      </listitem>
+    </varlistentry>
+
     <varlistentry revision="sysv">
       <term>Sysklogd (&sysklogd-version;) - <token>&sysklogd-size;</token>:</term>
       <listitem>

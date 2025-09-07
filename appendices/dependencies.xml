@@ -2584,7 +2584,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Gawk, GCC, Glibc, Grep, Make,
-          and Sed</seg>
+          Sed, and Sqlite</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2905,6 +2905,47 @@
             <ulink url="&blfs-book;postlfs/cracklib.html">CrackLib</ulink>
             and
             <ulink url="&blfs-book;postlfs/linux-pam.html">Linux-PAM</ulink>
+          </seg>
+        </seglistitem>
+      </segmentedlist>
+
+<!-- Begin Sqlite dependency info -->
+  <bridgehead renderas="sect2" id="Sqlite-dep">Pcre2</bridgehead>
+
+      <segmentedlist id="Sqlite-depends">
+        <segtitle>&dependencies;</segtitle>
+        <seglistitem>
+          <seg>Bash, Binutils, GCC, Glibc, Gzip, Make, Ncurses, and Readline</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="Sqlite-rundeps">
+        <segtitle>&runtime;</segtitle>
+        <seglistitem>
+          <seg>Glibc</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="Sqlite-testdeps">
+        <segtitle>&testsuites;</segtitle>
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="Sqlite-before">
+        <segtitle>&before;</segtitle>
+        <seglistitem>
+          <seg>Python</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="Sqlite-optdeps">
+        <segtitle>&external;</segtitle>
+        <seglistitem>
+          <seg>
+            <ulink url="&blfs-book;general/libarchive.html">libarchive</ulink> and 
+            <ulink url="https://thrysoee.dk/editline/">libedit</ulink>
           </seg>
         </seglistitem>
       </segmentedlist>
