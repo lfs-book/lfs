@@ -189,17 +189,17 @@ rm -rf DESTDIR</userinput></screen>
 
     <para>Prepare pcre2 for compilation:</para>
 
-<screen><userinput remap="configure">CC="gcc -mx32" CXX="g++ -mx32"                   \
-./configure --prefix=/usr                        \
-            --libdir=/usr/libx32                 \
-            --host=--host=x86_64-pc-linux-gnux32 \
-            --enable-unicode                     \
-            --enable-jit                         \
-            --enable-pcre2-16                    \
-            --enable-pcre2-32                    \
-            --enable-pcre2grep-libz              \
-            --enable-pcre2grep-libbz2            \
-            --enable-pcre2test-libreadline       \
+<screen><userinput remap="configure">CC="gcc -mx32" CXX="g++ -mx32"             \
+./configure --prefix=/usr                  \
+            --libdir=/usr/libx32           \
+            --host=x86_64-pc-linux-gnux32  \
+            --enable-unicode               \
+            --enable-jit                   \
+            --enable-pcre2-16              \
+            --enable-pcre2-32              \
+            --enable-pcre2grep-libz        \
+            --enable-pcre2grep-libbz2      \
+            --enable-pcre2test-libreadline \
             --disable-static</userinput></screen>
 
     <para>Compile the package:</para>
