@@ -443,7 +443,7 @@
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
 <!ENTITY linux-size "147,622 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "019a3cea6458f01331dfa5afdd1ce252">
+<!ENTITY linux-md5 "32d45755e4b39d06e9be58f6817445ee">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
