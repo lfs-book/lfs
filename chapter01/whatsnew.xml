@@ -119,9 +119,9 @@
     <!--<listitem>
       <para>Gzip-&gzip-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Iana-Etc-&iana-etc-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Inetutils-&inetutils-version;</para>
     </listitem>-->
@@ -134,9 +134,9 @@
     <!--<listitem>
       <para>Jinja2-&jinja2-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Kbd-&kbd-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Kmod-&kmod-version;</para>
     </listitem>-->
@@ -164,9 +164,9 @@
     <!--<listitem>
       <para>Libxcrypt-&libxcrypt-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Linux-&linux-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Lz4-&lz4-version;</para>
     </listitem>-->
@@ -185,9 +185,9 @@
     <!--<listitem>
       <para>MarkupSafe-&markupsafe-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Meson-&meson-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>MPC-&mpc-version;</para>
     </listitem>-->
@@ -206,6 +206,9 @@
     <!--<listitem>
       <para>Patch-&patch-version;</para>
     </listitem>-->
+    <listitem>
+      <para>Pcre2-&pcre2-version;</para>
+    </listitem>
     <!--<listitem>
       <para>Perl-&perl-version;</para>
     </listitem>-->
@@ -233,6 +236,9 @@
     <!--<listitem>
       <para>Shadow-&shadow-version;</para>
     </listitem>-->
+    <!--<listitem>
+      <para>Sqlite-&sqlite-version;</para>
+    </listitem>-->
     <!--<listitem revision="sysv">
       <para>Sysklogd-&sysklogd-version;</para>
     </listitem>-->
@@ -245,9 +251,9 @@
     <!--<listitem>
       <para>Tar-&tar-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Tcl-&tcl-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Texinfo-&texinfo-version;</para>
     </listitem>-->
@@ -260,9 +266,9 @@
     <!--<listitem>
       <para>Util-linux-&util-linux-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Vim-&vim-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Wheel-&wheel-version;</para>
     </listitem>-->
@@ -292,8 +298,8 @@
   <itemizedlist>
     <title>Added:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
-    <listitem><para>pcre2</para></listitem> 
-    <listitem><para>sqlite</para></listitem> 
+    <listitem><para>Pcre2-&pcre2-version;</para></listitem>  <!-- satisfy build -->
+    <listitem><para>Sqlite-&sqlite-version;</para></listitem>  <!-- satisfy build -->
   </itemizedlist>
 
   <itemizedlist>

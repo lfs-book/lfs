@@ -3,8 +3,8 @@
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
   %general-entities;
-  <!ENTITY tdbc-ver          "1.1.10">
-  <!ENTITY itcl-ver          "4.3.2">
+  <!ENTITY tdbc-ver          "1.1.12">
+  <!ENTITY itcl-ver          "4.3.4">
 ]>
 
 <sect1 id="ch-system-tcl" role="wrap">
@@ -103,6 +103,10 @@ unset SRCDIR</userinput></screen>
     <para>To test the results, issue:</para>
 
 <screen><userinput remap="test">make test</userinput></screen>
+
+    <para>Three tests (out of over 43000 total tests) from the cmdAH.test file
+    are known to fail in the chroot environment.  All tests pass in a full
+    system. </para>
 
     <para>Install the package:</para>
 
