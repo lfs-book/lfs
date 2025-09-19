@@ -64,6 +64,8 @@ function find_even_max( $lines, $regex_match, $regex_replace )
 
 function http_get_file( $url )
 {
+  $url = preg_replace( "/ftp.gnu.org/", "mirrors.ibiblio.org", $url );
+
   if ( preg_match( "/mpfr/", $url ) )
   {
     # There seems to be a problem with the mpfs certificate
@@ -140,11 +142,13 @@ if ( $package == "ncurses"    ) $dirpath = "https://invisible-mirror.net/archive
 if ( $package == "ninja"      ) $dirpath = github("ninja-build/ninja");
 if ( $package == "openssl"    ) $dirpath = github("openssl/openssl");
 if ( $package == "packaging"  ) $dirpath = "https://pypi.org/rss/project/packaging/releases.xml";
+if ( $package == "pcre2"      ) $dirpath = github("PCRE2Project/pcre2");
 if ( $package == "procps-ng"  ) $dirpath = "https://gitlab.com/procps-ng/procps/-/tags";
 if ( $package == "psmisc"     ) $dirpath = "https://gitlab.com/psmisc/psmisc/-/tags";
 if ( $package == "Python"     ) $dirpath = "https://www.python.org/downloads/source/";
 if ( $package == "setuptools" ) $dirpath = "https://pypi.org/rss/project/setuptools/releases.xml";
 if ( $package == "shadow"     ) $dirpath = github("shadow-maint/shadow");
+if ( $package == "sqlite-autoconf" ) $dirpath = "https://sqlite.org/download.html";
 if ( $package == "sysvinit"   ) $dirpath = github("slicer69/sysvinit");
 if ( $package == "sysklogd"   ) $dirpath = github("troglobit/sysklogd");
 if ( $package == "systemd"    ) $dirpath = github("systemd/systemd");
@@ -266,6 +270,12 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
   if ( $package == "packaging" )
      return find_max( $lines, "/packaging/", "/^.*^.*packaging.([\d\.]+\d)\/.*$/" );
 
+  if ( $package == "pcre2" )
+     return find_max( $lines, '/name.:/', '/^.*pcre2-([\d\.]+\d).*$/' );
+
+  if ( $package == "sqlite-autoconf" )
+     return find_max( $lines, '/autoconf/', '/^.*autoconf-(\d+).tar.*$/' );
+
   if ( $package == "procps-ng" )
      return find_max( $lines, "/v\d/", "/^.*v([\d\.]+)$/" );
 
@@ -359,6 +369,11 @@ function get_current()
       else if ( preg_match( "/lz4/", $file ) )
       {
         $pkg_pattern= "/(\D*4).*/";
+      }
+
+      else if ( preg_match( "/pcre2/", $file ) )
+      {
+        $pkg_pattern= "/(\D*2).*/";
       }
 
       else if ( preg_match( "/systemd-man-pages/", $file ) ) continue;

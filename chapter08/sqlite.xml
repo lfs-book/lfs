@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-sqlite" role="wrap">
+  <?dbhtml filename="sqlite.html"?>
+
+  <sect1info condition="script">
+    <productname>sqlite</productname>
+    <productnumber>&sqlite-version;</productnumber>
+    <address>&sqlite-url;</address>
+  </sect1info>
+
+  <title>Sqlite-&sqlite-version;</title>
+
+  <indexterm zone="ch-system-sqlite">
+    <primary sortas="a-sqlite">Sqlite</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The Sqlite package is a software library that implements 
+    a self-contained, serverless, zero-configuration, transactional 
+    SQL database engine.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&sqlite-fin-sbu;</seg>
+        <seg>&sqlite-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of Sqlite</title>
+
+    <para>Unpack the documentation:</para>
+
+<screen><userinput remap="pre">tar -xf ../sqlite-doc-&sqlite-doc-version;.tar.xz</userinput></screen>
+
+    <para>Prepare Sqlite for compilation with:</para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr    \
+            --disable-static  \
+            --enable-fts{4,5} \
+            CPPFLAGS="-D SQLITE_ENABLE_COLUMN_METADATA=1 \
+                      -D SQLITE_ENABLE_UNLOCK_NOTIFY=1   \
+                      -D SQLITE_ENABLE_DBSTAT_VTAB=1     \
+                      -D SQLITE_SECURE_DELETE=1"</userinput></screen>
+    <variablelist>
+      <title>The meaning of the make option:</title>
+
+      <varlistentry>
+        <term><parameter>--enable-fts{4,5}</parameter></term>
+        <listitem>
+          <para>These switches enable support for version 4 and 5 of 
+          the full text search (FTS) extension.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>CPPFLAGS="-D SQLITE_ENABLE_COLUMN_METADATA=1 ...</parameter></term>
+        <listitem>
+          <para>Some applications require these options to be turned on. The only
+            way to do this is to include them in the CFLAGS or CPPFLAGS. We use
+            the latter so the default value (or any value set by the user) of
+            CFLAGS won't be affected. For further information on what can be
+            specified see https://www.sqlite.org/compile.html.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>This package does not come with a test suite.</para>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+    <para>If desired, install the documentation:</para>
+
+<screen><userinput remap="install">install -v -m755 -d /usr/share/doc/sqlite-&sqlite-short-version;
+cp -v -R sqlite-doc-&sqlite-doc-version;/* /usr/share/doc/sqlite-&sqlite-short-version;</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-sqlite" role="content">
+    <title>Contents of Sqlite</title>
+
+    <segmentedlist>
+      <segtitle>Installed programs</segtitle>
+      <segtitle>Installed libraries</segtitle>
+      <segtitle>Installed directories</segtitle>
+
+      <seglistitem>
+        <seg>sqlite3</seg>
+        <seg>libsqlite3.so</seg>
+        <seg>/usr/share/doc/sqlite-&sqlite-short-version;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="sqlite3">
+        <term><command>sqlite3</command></term>
+        <listitem>
+          <para>is a terminal-based front-end to the SQLite library that 
+          can evaluate queries interactively and display the results</para>
+          <indexterm zone="ch-system-sqlite sqlite3">
+            <primary sortas="b-sqlite3">sqlite3</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libsqlite3.so">
+        <term><filename class="libraryfile">libsqlite3.so</filename></term>
+        <listitem>
+          <para>contains the SQLite API functions</para> 
+          <indexterm zone="ch-system-sqlite libsqlite3.so">
+            <primary sortas="c-libsqlite3.so">libsqlite3.so</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

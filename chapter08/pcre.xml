@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-pcre2" role="wrap">
+  <?dbhtml filename="pcre2.html"?>
+
+  <sect1info condition="script">
+    <productname>pcre2</productname>
+    <productnumber>&pcre2-version;</productnumber>
+    <address>&pcre2-url;</address>
+  </sect1info>
+
+  <title>Pcre2-&pcre2-version;</title>
+
+  <indexterm zone="ch-system-pcre2">
+    <primary sortas="a-Pcre2">Pcre2</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The pcre2 package contains a new generation of the Perl Compatible 
+    Regular Expression libraries.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&pcre2-fin-sbu;</seg>
+        <seg>&pcre2-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of Pcre2</title>
+
+    <para>Prepare pcre2 for compilation:</para>
+
+<screen><userinput remap="configure">./configure --prefix=/usr                       \
+            --docdir=/usr/share/doc/pcre2-10.45 \
+            --enable-unicode                    \
+            --enable-jit                        \
+            --enable-pcre2-16                   \
+            --enable-pcre2-32                   \
+            --enable-pcre2grep-libz             \
+            --enable-pcre2grep-libbz2           \
+            --enable-pcre2test-libreadline      \
+            --disable-static</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the new configure options:</title>
+
+      <varlistentry>
+        <term><parameter>--enable-unicode</parameter></term>
+        <listitem>
+          <para>
+            This option enables Unicode support and includes the functions for
+            handling UTF-8/16/32 character strings in the library. 
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-jit</parameter></term>
+        <listitem>
+          <para>
+            This option enables Just-in-time compiling, which can greatly
+            speed up pattern matching.  
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-pcre2-16</parameter></term>
+        <listitem>
+          <para>
+            This option enables 16 bit character support. 
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-pcre2-32</parameter></term>
+        <listitem>
+          <para>
+            This option enables 32 bit character support. 
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-pcre2grep-libz</parameter></term>
+        <listitem>
+          <para>
+            This option adds support for reading .gz compressed files to pcre2grep.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-pcre2grep-libbz2</parameter></term>
+        <listitem>
+          <para>
+            This option adds support for reading .bz2 compressed files to pcre2grep.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-pcre2test-libreadline</parameter></term>
+        <listitem>
+          <para>
+            This option adds line editing and history features to the pcre2test program.
+          </para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>To test the results, issue:</para>
+
+<screen><userinput remap="test">make check</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">make install</userinput></screen>
+
+  </sect2>
+
+
+  <sect2 id="contents-pcre2" role="content">
+    <title>Contents of Pcre2</title>
+
+    <segmentedlist>
+      <segtitle>Installed programs</segtitle>
+      <segtitle>Installed library</segtitle>
+
+      <seglistitem>
+        <seg>pcre2grep and pcre2test</seg>
+        <seg>libpcre2-8.so, libpcre2-16.so, libpcre2-32.so, and libpcre2-posix.so</seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="pcre2grep">
+        <term><command>pcre2grep</command></term>
+        <listitem>
+          <para>is a version of grep that understands Perl compatible regular 
+          expressions</para>
+          <indexterm zone="ch-system-pcre2 pcre2grep">
+            <primary sortas="b-pcre2grep">pcre2grep</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="pcre2test">
+        <term><command>pcre2test</command></term>
+        <listitem>
+          <para>can test a Perl compatible regular expression</para>
+          <indexterm zone="ch-system-pcre2 pcre2test">
+            <primary sortas="b-pcre2test">pcre2test</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>
