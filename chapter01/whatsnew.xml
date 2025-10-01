@@ -53,9 +53,9 @@
     <!--<listitem>
       <para>Bzip2-&bzip2-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Coreutils-&coreutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>DejaGNU-&dejagnu-version;</para>
     </listitem>-->
@@ -68,9 +68,9 @@
     <!--<listitem>
        <para>E2fsprogs-&e2fsprogs-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
        <para>Expat-&expat-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
        <para>Expect-&expect-version;</para>
     </listitem>-->
@@ -182,9 +182,9 @@
     <!--<listitem>
       <para>Man-pages-&man-pages-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>MarkupSafe-&markupsafe-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Meson-&meson-version;</para>
     </listitem>
@@ -200,9 +200,9 @@
     <!--<listitem>
       <para>Ninja-&ninja-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>OpenSSL-&openssl-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Patch-&patch-version;</para>
     </listitem>-->
@@ -263,9 +263,9 @@
     <!--<listitem revision="sysv">
       <para>Udev from Systemd-&systemd-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Util-linux-&util-linux-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Vim-&vim-version;</para>
     </listitem>
@@ -298,13 +298,14 @@
   <itemizedlist>
     <title>Added:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
-    <listitem><para>Pcre2-&pcre2-version;</para></listitem>  <!-- satisfy build -->
-    <listitem><para>Sqlite-&sqlite-version;</para></listitem>  <!-- satisfy build -->
+    <listitem><para>Coreutils-9.8-i18n-2.patch</para></listitem> 
   </itemizedlist>
 
   <itemizedlist>
     <title>Removed:</title>
     <listitem><para></para></listitem>  <!-- satisfy build -->
+    <listitem><para>Coreutils-9.7-i18n-1.patch</para></listitem>  
+    <listitem><para>Coreutils-9.7-upstream_fix-1.patch</para></listitem>  
   </itemizedlist>
 
 </sect1>
