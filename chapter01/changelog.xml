@@ -44,6 +44,10 @@
       <para>2025-10-01</para>
       <itemizedlist>
         <listitem>
+          <para>[renodr] - Update to systemd-258 (including udev for SysV).
+          Fixes <ulink url="&lfs-ticket-root;5791">#5791</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[bdubbs] - Update to vim-9.1.1806. Addresses
           <ulink url='&lfs-ticket-root;5006'>#4500</ulink>.</para>
         </listitem>
@@ -69,15 +73,15 @@
         </listitem>
         <listitem>
           <para>[bdubbs] - Update to meson-1.9.1. Fixes
-          <ulink url='&lfs-ticket-root;5707'>#5797</ulink>.</para>
+          <ulink url='&lfs-ticket-root;5797'>#5797</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to openssl-3.5.3. Fixes
-          <ulink url='&lfs-ticket-root;5703'>#5793</ulink>.</para>
+          <para>[renodr] - Update to openssl-3.5.4 (Security Update). Fixes
+          <ulink url='&lfs-ticket-root;5793'>#5793</ulink>.</para>
         </listitem>
         <listitem>
           <para>[bdubbs] - Update to util-linux-2.41.2. Fixes
-          <ulink url='&lfs-ticket-root;5708'>#5798</ulink>.</para>
+          <ulink url='&lfs-ticket-root;5798'>#5798</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
