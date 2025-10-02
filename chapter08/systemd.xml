@@ -319,6 +319,9 @@ meson setup ..                       \
       -D userdb=false                \
       -D man=disabled                \
       -D mode=release </userinput></screen>
+<!-- We still use -D userdb=false for m32 to prevent the utilities from being
+     built. We only are interested in libraries here, and userdb has none.
+     - zeckma -->
 
     <para>Compile the package:</para>
 
@@ -375,6 +378,9 @@ meson setup ..                       \
       -D userdb=false                \
       -D man=disabled                \
       -D mode=release </userinput></screen>
+<!-- We still use -D userdb=false for mx32 to prevent the utilities from being
+     built. We only are interested in libraries here, and userdb has none.
+     - zeckma -->
 
     <para>Compile the package:</para>
 
