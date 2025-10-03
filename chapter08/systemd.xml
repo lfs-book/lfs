@@ -410,7 +410,8 @@ rm -rf DESTDIR</userinput></screen>
         machinectl, mount.ddi (symlink to systemd-dissect), networkctl,
         oomctl, portablectl, poweroff (symlink to
         systemctl), reboot (symlink to systemctl), resolvconf (symlink to
-        resolvectl), resolvectl, run0, runlevel (symlink to systemctl), shutdown
+        resolvectl), resolvectl, run0 (symlink to systemd-run), runlevel
+        (symlink to systemctl), shutdown
         (symlink to systemctl), systemctl, systemd-ac-power, systemd-analyze,
         systemd-ask-password, systemd-cat, systemd-cgls, systemd-cgtop,
         systemd-confext (symlink to systemd-sysext), systemd-creds,
@@ -997,7 +998,7 @@ rm -rf DESTDIR</userinput></screen>
       <varlistentry id="systemd-vpick">
         <term><command>systemd-vpick</command></term>
         <listitem>
-          <para>Is used to resolve paths to a ".v/ versioned directory</para>
+          <para>Is used to resolve paths to a ".v/" versioned directory</para>
           <indexterm zone="ch-system-systemd systemd-vpick">
             <primary sortas="b-systemd-vpick">systemd-vpick</primary>
           </indexterm>
