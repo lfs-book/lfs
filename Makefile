@@ -39,7 +39,7 @@ ifneq ($(ARCH), default)
   ifneq ($(ARCH), ml_32)
     ifneq ($(ARCH), ml_x32)
       ifneq ($(ARCH), ml_all)
-        $(error ARCH must be either 'default' (default if unset), 'ml_32', 'ml_x32' or 'ml_all'.)
+        $(error ARCH must be either 'default' (default if unset), 'ml_32', 'ml_x32', or 'ml_all')
       endif
     endif
   endif
