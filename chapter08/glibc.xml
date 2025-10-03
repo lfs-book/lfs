@@ -639,7 +639,7 @@ find .. -name "*.a" -delete</userinput></screen>
 
     <para>Configure Glibc for m32 with the following commands:</para>
 
-<screen><userinput remap="configure">CC="gcc -m32" CXX="g++ -m32" \
+<screen><userinput remap="configure">CC="gcc -m32" CXX="g++ -m32"             \
 ../configure                             \
       --prefix=/usr                      \
       --host=i686-pc-linux-gnu           \
@@ -716,7 +716,7 @@ find .. -name "*.a" -delete</userinput></screen>
 
     <para>Configure Glibc for mx32 with the following commands:</para>
 
-<screen><userinput remap="configure">CC="gcc -mx32" CXX="g++ -mx32" \
+<screen><userinput remap="configure">CC="gcc -mx32" CXX="g++ -mx32"           \
 ../configure                             \
       --prefix=/usr                      \
       --host=x86_64-pc-linux-gnux32      \
