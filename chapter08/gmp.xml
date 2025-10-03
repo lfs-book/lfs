@@ -148,17 +148,16 @@ cp -v configfsf.sub   config.sub</userinput></screen>
 
     <para>Prepare GMP for compilation:</para>
 
-<screen><userinput remap="configure">ABI="32" \
+<screen><userinput remap="configure">ABI="32"                               \
 CFLAGS="-m32 -O2 -pedantic -fomit-frame-pointer -mtune=generic -march=i686" \
-CXXFLAGS="$CFLAGS" \
+CXXFLAGS="$CFLAGS"                     \
 PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
-./configure                      \
-    --host=i686-pc-linux-gnu     \
-    --prefix=/usr                \
-    --disable-static             \
-    --enable-cxx                 \
-    --libdir=/usr/lib32          \
-    --includedir=/usr/include/m32/gmp</userinput></screen>
+./configure --prefix=/usr              \
+            --host=i686-pc-linux-gnu   \
+            --disable-static           \
+            --enable-cxx               \
+            --libdir=/usr/lib32        \
+            --includedir=/usr/include/m32/gmp</userinput></screen>
 
     <variablelist>
       <title>The meaning of the new configure options:</title>
@@ -221,17 +220,16 @@ cp -v configfsf.sub   config.sub</userinput></screen>
 
     <para>Prepare GMP for compilation:</para>
 
-<screen><userinput remap="configure">ABI="x32" \
+<screen><userinput remap="configure">ABI="x32"                                 \
 CFLAGS="-mx32 -O2 -pedantic -fomit-frame-pointer -mtune=generic -march=x86-64" \
-CXXFLAGS="$CFLAGS" \
-PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
-./configure                       \
-    --host=x86_64-pc-linux-gnux32 \
-    --prefix=/usr                 \
-    --disable-static              \
-    --enable-cxx                  \
-    --libdir=/usr/libx32          \
-    --includedir=/usr/include/mx32/gmp</userinput></screen>
+CXXFLAGS="$CFLAGS"                        \
+PKG_CONFIG_PATH="/usr/libx32/pkgconfig"   \
+./configure --prefix=/usr                 \
+            --host=x86_64-pc-linux-gnux32 \
+            --disable-static              \
+            --enable-cxx                  \
+            --libdir=/usr/libx32          \
+            --includedir=/usr/include/mx32/gmp</userinput></screen>
 
     <para>Compile the package:</para>
 
