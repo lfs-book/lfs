@@ -160,27 +160,28 @@ cd       build</userinput></screen>
     arch="ml_32">mlist=m64,m32</userinput><userinput remap="configure"
     arch="ml_x32">mlist=m64,mx32</userinput><userinput remap="configure"
     arch="ml_all">mlist=m64,m32,mx32</userinput>
-<userinput remap="configure">../configure                  \
-    --target=$LFS_TGT                              \
-    --prefix=$LFS/tools                            \
-    --with-glibc-version=&glibc-version;                      \
-    --with-sysroot=$LFS                            \
-    --with-newlib                                  \
-    --without-headers                              \
-    --enable-default-pie                           \
-    --enable-default-ssp                           \
-    --enable-initfini-array                        \
-    --disable-nls                                  \
-    --disable-shared                               \
-    --enable-multilib --with-multilib-list=$mlist  \
-    --disable-decimal-float                        \
-    --disable-threads                              \
-    --disable-libatomic                            \
-    --disable-libgomp                              \
-    --disable-libquadmath                          \
-    --disable-libssp                               \
-    --disable-libvtv                               \
-    --disable-libstdcxx                            \
+<userinput remap="configure">../configure                    \
+    --target=$LFS_TGT           \
+    --prefix=$LFS/tools         \
+    --with-glibc-version=&glibc-version;   \
+    --with-sysroot=$LFS         \
+    --with-newlib               \
+    --without-headers           \
+    --enable-default-pie        \
+    --enable-default-ssp        \
+    --enable-initfini-array     \
+    --disable-nls               \
+    --disable-shared            \
+    --enable-multilib           \
+    --with-multilib-list=$mlist \
+    --disable-decimal-float     \
+    --disable-threads           \
+    --disable-libatomic         \
+    --disable-libgomp           \
+    --disable-libquadmath       \
+    --disable-libssp            \
+    --disable-libvtv            \
+    --disable-libstdcxx         \
     --enable-languages=c,c++</userinput></screen>
 
     <variablelist>

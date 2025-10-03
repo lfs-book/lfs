@@ -115,23 +115,24 @@ cd       build</userinput></screen>
     arch="ml_32">mlist=m64,m32</userinput><userinput remap="configure"
     arch="ml_x32">mlist=m64,mx32</userinput><userinput remap="configure"
     arch="ml_all">mlist=m64,m32,mx32</userinput>
-<userinput remap="configure">../configure                                       \
-    --build=$(../config.guess)                     \
-    --host=$LFS_TGT                                \
-    --target=$LFS_TGT                              \
-    --prefix=/usr                                  \
-    --with-build-sysroot=$LFS                      \
-    --enable-default-pie                           \
-    --enable-default-ssp                           \
-    --disable-nls                                  \
-    --enable-multilib --with-multilib-list=$mlist  \
-    --disable-libatomic                            \
-    --disable-libgomp                              \
-    --disable-libquadmath                          \
-    --disable-libsanitizer                         \
-    --disable-libssp                               \
-    --disable-libvtv                               \
-    --enable-languages=c,c++                       \
+<userinput remap="configure">../configure                    \
+    --build=$(../config.guess)  \
+    --host=$LFS_TGT             \
+    --target=$LFS_TGT           \
+    --prefix=/usr               \
+    --with-build-sysroot=$LFS   \
+    --enable-default-pie        \
+    --enable-default-ssp        \
+    --disable-nls               \
+    --enable-multilib           \
+    --with-multilib-list=$mlist \
+    --disable-libatomic         \
+    --disable-libgomp           \
+    --disable-libquadmath       \
+    --disable-libsanitizer      \
+    --disable-libssp            \
+    --disable-libvtv            \
+    --enable-languages=c,c++    \
     LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc</userinput></screen>
 
     <variablelist>
