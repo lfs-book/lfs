@@ -77,8 +77,7 @@
     <para>Prepare Zlib for compilation:</para>
 
 <screen><userinput remap="configure">CFLAGS+=" -m32" CXXFLAGS+=" -m32" \
-./configure --prefix=/usr \
-    --libdir=/usr/lib32</userinput></screen>
+./configure --prefix=/usr --libdir=/usr/lib32</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -104,8 +103,7 @@ rm -rf DESTDIR</userinput></screen>
     <para>Prepare Zlib for compilation:</para>
 
 <screen><userinput remap="configure">CFLAGS+=" -mx32" CXXFLAGS+=" -mx32" \
-./configure --prefix=/usr    \
-    --libdir=/usr/libx32</userinput></screen>
+./configure --prefix=/usr --libdir=/usr/libx32</userinput></screen>
 
     <para>Compile the package:</para>
 
