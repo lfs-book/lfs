@@ -320,8 +320,8 @@ find .. -name "*.a" -delete</userinput></screen>
 
     <para>Configure Glibc for m32 with the following commands:</para>
 
-<screen><userinput remap="configure">CC="$LFS_TGT-gcc -m32" \
-CXX="$LFS_TGT-g++ -m32" \
+<screen><userinput remap="configure">CC="$LFS_TGT-gcc -m32"                   \
+CXX="$LFS_TGT-g++ -m32"                  \
 ../configure                             \
       --prefix=/usr                      \
       --host=$LFS_TGT32                  \
@@ -392,8 +392,8 @@ find .. -name "*.a" -delete</userinput></screen>
 
     <para>Configure Glibc for mx32 with the following commands:</para>
 
-<screen><userinput remap="configure">CC="$LFS_TGT-gcc -mx32" \
-CXX="$LFS_TGT-g++ -mx32" \
+<screen><userinput remap="configure">CC="$LFS_TGT-gcc -mx32"                  \
+CXX="$LFS_TGT-g++ -mx32"                 \
 ../configure                             \
       --prefix=/usr                      \
       --host=$LFS_TGTX32                 \
