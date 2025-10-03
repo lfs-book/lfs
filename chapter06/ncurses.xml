@@ -200,18 +200,18 @@ sed -e 's/^#if.*XOPEN.*$/#if 1/' \
 
     <para>Prepare Ncurses for compilation:</para>
 
-<screen><userinput remap="configure">CC="$LFS_TGT-gcc -m32"              \
-CXX="$LFS_TGT-g++ -m32"             \
-./configure --prefix=/usr           \
-            --host=$LFS_TGT32       \
-            --build=$(./config.guess)    \
-            --libdir=/usr/lib32     \
-            --mandir=/usr/share/man \
-            --with-shared           \
-            --without-normal        \
-            --with-cxx-shared       \
-            --without-debug         \
-            --without-ada           \
+<screen><userinput remap="configure">CC="$LFS_TGT-gcc -m32"                \
+CXX="$LFS_TGT-g++ -m32"               \
+./configure --prefix=/usr             \
+            --host=$LFS_TGT32         \
+            --build=$(./config.guess) \
+            --libdir=/usr/lib32       \
+            --mandir=/usr/share/man   \
+            --with-shared             \
+            --without-normal          \
+            --with-cxx-shared         \
+            --without-debug           \
+            --without-ada             \
             --disable-stripping</userinput></screen>
 
     <para>Compile the package:</para>
@@ -239,18 +239,18 @@ rm -rf DESTDIR</userinput></screen>
 
     <para>Prepare Ncurses for compilation:</para>
 
-<screen><userinput remap="configure">CC="$LFS_TGT-gcc -mx32"             \
-CXX="$LFS_TGT-g++ -mx32"            \
-./configure --prefix=/usr           \
-            --host=$LFS_TGTX32      \
-            --build=$(./config.guess)    \
-            --libdir=/usr/libx32    \
-            --mandir=/usr/share/man \
-            --with-shared           \
-            --without-normal        \
-            --with-cxx-shared       \
-            --without-debug         \
-            --without-ada           \
+<screen><userinput remap="configure">CC="$LFS_TGT-gcc -mx32"               \
+CXX="$LFS_TGT-g++ -mx32"              \
+./configure --prefix=/usr             \
+            --host=$LFS_TGTX32        \
+            --build=$(./config.guess) \
+            --libdir=/usr/libx32      \
+            --mandir=/usr/share/man   \
+            --with-shared             \
+            --without-normal          \
+            --with-cxx-shared         \
+            --without-debug           \
+            --without-ada             \
             --disable-stripping</userinput></screen>
 
     <para>Compile the package:</para>
