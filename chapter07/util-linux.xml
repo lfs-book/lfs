@@ -140,21 +140,20 @@
 
     <para>Prepare Util-linux for compilation:</para>
 
-<screen><userinput remap="configure">CC="gcc -m32" \
+<screen><userinput remap="configure">CC="gcc -m32"                        \
 ./configure --host=i686-pc-linux-gnu \
             --libdir=/usr/lib32      \
             --runstatedir=/run       \
-            --docdir=/usr/share/doc/util-linux-&util-linux-version; \
-            --disable-chfn-chsh   \
-            --disable-login       \
-            --disable-nologin     \
-            --disable-su          \
-            --disable-setpriv     \
-            --disable-runuser     \
-            --disable-pylibmount  \
-            --disable-static      \
-            --disable-liblastlog2 \
-            --without-python      \
+            --disable-chfn-chsh      \
+            --disable-login          \
+            --disable-nologin        \
+            --disable-su             \
+            --disable-setpriv        \
+            --disable-runuser        \
+            --disable-pylibmount     \
+            --disable-static         \
+            --disable-liblastlog2    \
+            --without-python         \
             ADJTIME_PATH=/var/lib/hwclock/adjtime</userinput></screen>
 
     <para>Compile the package:</para>
@@ -182,21 +181,20 @@ rm -rf DESTDIR</userinput></screen>
 
     <para>Prepare Util-linux for compilation:</para>
 
-<screen><userinput remap="configure">CC="gcc -mx32" \
+<screen><userinput remap="configure">CC="gcc -mx32"                            \
 ./configure --host=x86_64-pc-linux-gnux32 \
-            --libdir=/usr/libx32     \
-            --runstatedir=/run       \
-            --docdir=/usr/share/doc/util-linux-&util-linux-version; \
-            --disable-chfn-chsh   \
-            --disable-login       \
-            --disable-nologin     \
-            --disable-su          \
-            --disable-setpriv     \
-            --disable-runuser     \
-            --disable-pylibmount  \
-            --disable-static      \
-            --disable-liblastlog2 \
-            --without-python      \
+            --libdir=/usr/libx32          \
+            --runstatedir=/run            \
+            --disable-chfn-chsh           \
+            --disable-login               \
+            --disable-nologin             \
+            --disable-su                  \
+            --disable-setpriv             \
+            --disable-runuser             \
+            --disable-pylibmount          \
+            --disable-static              \
+            --disable-liblastlog2         \
+            --without-python              \
             ADJTIME_PATH=/var/lib/hwclock/adjtime</userinput></screen>
 
     <para>Compile the package:</para>
