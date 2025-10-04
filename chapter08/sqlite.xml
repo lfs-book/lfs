@@ -128,7 +128,7 @@ cp -v -R sqlite-doc-&sqlite-doc-version;/* /usr/share/doc/sqlite-&sqlite-short-v
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
+<screen><userinput remap="make">make LDFLAGS.rpath=""</userinput></screen>
 
     <para>Install the package:</para>
 
@@ -164,7 +164,7 @@ rm -rf DESTDIR</userinput></screen>
 
     <para>Compile the package:</para>
 
-    <screen><userinput remap="make">make</userinput></screen>
+    <screen><userinput remap="make">make LDFLAGS.rpath=""</userinput></screen>
 
     <para>Install the package:</para>
 
