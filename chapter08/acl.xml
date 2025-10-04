@@ -80,11 +80,11 @@
 
     <para>Prepare Acl for compilation:</para>
 
-<screen><userinput remap="configure">CC="gcc -m32" ./configure \
-    --prefix=/usr         \
-    --disable-static      \
-    --libdir=/usr/lib32   \
-    --libexecdir=/usr/lib32   \
+<screen><userinput remap="configure">CC="gcc -m32" ./configure   \
+    --prefix=/usr           \
+    --disable-static        \
+    --libdir=/usr/lib32     \
+    --libexecdir=/usr/lib32 \
     --host=i686-pc-linux-gnu</userinput></screen>
 
     <para>Compile the package:</para>
@@ -112,11 +112,11 @@ rm -rf DESTDIR</userinput></screen>
 
     <para>Prepare Acl for compilation:</para>
 
-<screen><userinput remap="configure">CC="gcc -mx32" ./configure \
-    --prefix=/usr          \
-    --disable-static       \
-    --libdir=/usr/libx32   \
-    --libexecdir=/usr/libx32   \
+<screen><userinput remap="configure">CC="gcc -mx32" ./configure   \
+    --prefix=/usr            \
+    --disable-static         \
+    --libdir=/usr/libx32     \
+    --libexecdir=/usr/libx32 \
     --host=x86_64-pc-linux-gnux32</userinput></screen>
 
     <para>Compile the package:</para>
