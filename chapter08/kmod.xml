@@ -88,19 +88,17 @@ meson setup --prefix=/usr ..    \
 
     <para>Clean previous build:</para>
     
-<screen><userinput remap="pre">cd .. &amp;&amp;
-rm -rf build &amp;&amp;
-mkdir build &amp;&amp;
-cd build</userinput></screen>
+    <screen><userinput remap="pre">rm -rf *</userinput></screen>
 
     <para>Prepare Kmod for compilation:</para>
 
-<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
+<screen><userinput remap="configure">
+PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
 CC="gcc -m32 -march=i686"              \
 CXX="g++ -m32 -march=i686"             \
-meson setup --prefix=/usr ..    \
-            --buildtype=release \
-            --libdir=/usr/lib32 \
+meson setup --prefix=/usr ..           \
+            --libdir=/usr/lib32        \
+            --buildtype=release        \
             -D manpages=false</userinput></screen>
 
     <para>Compile the package:</para>
@@ -124,19 +122,16 @@ rm -rf DESTDIR</userinput></screen>
 
     <para>Clean previous build:</para>
 
-<screen><userinput remap="pre">cd .. &amp;&amp;
-rm -rf build &amp;&amp;
-mkdir build &amp;&amp;
-cd build</userinput></screen>
+<screen><userinput remap="pre">rm -rf *</userinput></screen>
 
     <para>Prepare Kmod for compilation:</para>
 
 <screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
 CC="gcc -mx32"                          \
 CXX="g++ -mx32"                         \
-meson setup --prefix=/usr ..    \
-            --buildtype=release \
-            --libdir=/usr/libx32 \
+meson setup --prefix=/usr ..            \
+            --libdir=/usr/libx32        \
+            --buildtype=release         \
             -D manpages=false</userinput></screen>
 
     <para>Compile the package:</para>
