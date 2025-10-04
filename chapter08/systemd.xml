@@ -301,24 +301,24 @@ done</userinput></screen>
         (-Dblkid deprecated) -->
     <para>Prepare systemd for compilation:</para>
 
-    <screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
-CC="gcc -m32"                        \
-CXX="g++ -m32"                       \
-LANG=en_US.UTF-8                     \
-meson setup ..                       \
-      --prefix=/usr                  \
-      --libdir=/usr/lib32            \
-      --buildtype=release            \
-      -D default-dnssec=no           \
-      -D firstboot=false             \
-      -D install-tests=false         \
-      -D ldconfig=false              \
-      -D sysusers=false              \
-      -D rpmmacrosdir=no             \
-      -D homed=disabled              \
-      -D userdb=false                \
-      -D man=disabled                \
-      -D mode=release </userinput></screen>
+<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
+CC="gcc -m32"                          \
+CXX="g++ -m32"                         \
+LANG=en_US.UTF-8                       \
+meson setup --prefix=/usr              \
+            --libdir=/usr/lib32        \
+            --buildtype=release        \
+            -D default-dnssec=no       \
+            -D firstboot=false         \
+            -D install-tests=false     \
+            -D ldconfig=false          \
+            -D sysusers=false          \
+            -D rpmmacrosdir=no         \
+            -D homed=disabled          \
+            -D userdb=false            \
+            -D man=disabled            \
+            -D mode=release            \
+            ..</userinput></screen>
 <!-- We still use -D userdb=false for m32 to prevent the utilities from being
      built. We only are interested in libraries here, and userdb has none.
      - zeckma -->
@@ -360,24 +360,24 @@ sed '/long drift_freq;/s@long @int64_t @' -i src/timesync/timesyncd-manager.h</u
 -->
     <para>Prepare systemd for compilation:</para>
 
-    <screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
-CC="gcc -mx32"                       \
-CXX="g++ -mx32"                      \
-LANG=en_US.UTF-8                     \
-meson setup ..                       \
-      --prefix=/usr                  \
-      --libdir=/usr/libx32           \
-      --buildtype=release            \
-      -D default-dnssec=no           \
-      -D firstboot=false             \
-      -D install-tests=false         \
-      -D ldconfig=false              \
-      -D sysusers=false              \
-      -D rpmmacrosdir=no             \
-      -D homed=false                 \
-      -D userdb=false                \
-      -D man=disabled                \
-      -D mode=release </userinput></screen>
+<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
+CC="gcc -mx32"                          \
+CXX="g++ -mx32"                         \
+LANG=en_US.UTF-8                        \
+meson setup --prefix=/usr               \
+            --libdir=/usr/libx32        \
+            --buildtype=release         \
+            -D default-dnssec=no        \
+            -D firstboot=false          \
+            -D install-tests=false      \
+            -D ldconfig=false           \
+            -D sysusers=false           \
+            -D rpmmacrosdir=no          \
+            -D homed=false              \
+            -D userdb=false             \
+            -D man=disabled             \
+            -D mode=release             \
+            ..</userinput></screen>
 <!-- We still use -D userdb=false for mx32 to prevent the utilities from being
      built. We only are interested in libraries here, and userdb has none.
      - zeckma -->
