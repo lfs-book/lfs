@@ -127,7 +127,7 @@ cp -av --remove-destination .libs/libcrypt.so.1* /usr/lib</userinput></screen>
 
     <para>Prepare Libxcrypt for compilation:</para>
 
-<screen><userinput remap="configure">CC="gcc -m32" \
+<screen><userinput remap="configure">CC="gcc -m32"                            \
 ./configure --prefix=/usr                \
             --host=i686-pc-linux-gnu     \
             --libdir=/usr/lib32          \
@@ -142,8 +142,8 @@ cp -av --remove-destination .libs/libcrypt.so.1* /usr/lib</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">cp -av .libs/libcrypt.so* /usr/lib32/ &amp;&amp;
-make install-pkgconfigDATA &amp;&amp;
+<screen><userinput remap="install">cp -av .libs/libcrypt.so* /usr/lib32/
+make install-pkgconfigDATA
 ln -svf libxcrypt.pc /usr/lib32/pkgconfig/libcrypt.pc</userinput></screen>
 
   </sect2><!-- m32 -->
@@ -160,7 +160,7 @@ ln -svf libxcrypt.pc /usr/lib32/pkgconfig/libcrypt.pc</userinput></screen>
 
     <para>Prepare Libxcrypt for compilation:</para>
 
-<screen><userinput remap="configure">CC="gcc -mx32" \
+<screen><userinput remap="configure">CC="gcc -mx32"                            \
 ./configure --prefix=/usr                 \
             --host=x86_64-pc-linux-gnux32 \
             --libdir=/usr/libx32          \
@@ -175,8 +175,8 @@ ln -svf libxcrypt.pc /usr/lib32/pkgconfig/libcrypt.pc</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">cp -av .libs/libcrypt.so* /usr/libx32/ &amp;&amp;
-make install-pkgconfigDATA &amp;&amp;
+<screen><userinput remap="install">cp -av .libs/libcrypt.so* /usr/libx32/
+make install-pkgconfigDATA
 ln -svf libxcrypt.pc /usr/libx32/pkgconfig/libcrypt.pc</userinput></screen>
 
   </sect2><!-- mx32 -->
