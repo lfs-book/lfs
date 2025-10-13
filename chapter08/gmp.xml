@@ -187,7 +187,7 @@ make</userinput></screen>
 
 <screen><userinput remap="test">make check 2>&amp;1 | tee gmp-check-log</userinput></screen>
  
-    <para>Ensure that all 197 tests in the test suite passed.
+    <para>Ensure that all 199 tests in the test suite passed.
     Check the results by issuing the following command:</para>
 
 <screen><userinput remap="test">awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log</userinput></screen>
@@ -245,7 +245,7 @@ make</userinput></screen>
 
 <screen><userinput remap="test">make check 2>&amp;1 | tee gmp-check-log</userinput></screen>
  
-    <para>Ensure that all 197 tests in the test suite passed.
+    <para>Ensure that all 199 tests in the test suite passed.
     Check the results by issuing the following command:</para>
 
 <screen><userinput remap="test">awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log</userinput></screen>
