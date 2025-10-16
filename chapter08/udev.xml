@@ -55,11 +55,11 @@
     <para>Remove one udev rule requiring a full Systemd installation:</para>
 
  <screen><userinput remap="pre">sed -i '/systemd-sysctl/s/^/#/' rules.d/99-systemd.rules.in</userinput></screen>
-
+<!-- Not needed in 258.1
     <para>Fix a bug that prevents udev from running correctly:</para>
 
 <screen><userinput remap="pre">sed -i "/udev_dependencies,/a \                'link_with': udev_link_with," src/udev/meson.build</userinput></screen>
-
+-->
     <para>Adjust the hardcoded paths to network configuration files for the
     standalone udev installation:</para>
 

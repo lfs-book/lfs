@@ -89,8 +89,7 @@
     limit and 1 SBU (measured when building Binutils pass 1 with one CPU
     core) should be enough.  Some tests are flaky, so the test suite will
     automatically re-run failed tests.  If a test failed but then passed
-    when re-run, it should be considered as passed.  One test, test_ssl,
-    is known to fail in the chroot environment.</para>
+    when re-run, it should be considered as passed.</para>
 
     <para>Install the package:</para>
 
