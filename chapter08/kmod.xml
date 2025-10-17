@@ -92,8 +92,7 @@ meson setup --prefix=/usr ..    \
 
     <para>Prepare Kmod for compilation:</para>
 
-<screen><userinput remap="configure">
-PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
+<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
 CC="gcc -m32 -march=i686"              \
 CXX="g++ -m32 -march=i686"             \
 meson setup --prefix=/usr ..           \
