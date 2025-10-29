@@ -56,7 +56,7 @@
                       -D SQLITE_ENABLE_DBSTAT_VTAB=1     \
                       -D SQLITE_SECURE_DELETE=1"</userinput></screen>
     <variablelist>
-      <title>The meaning of the make option:</title>
+      <title>The meaning of the configure options:</title>
 
       <varlistentry>
         <term><parameter>--enable-fts{4,5}</parameter></term>
@@ -81,7 +81,13 @@
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
+<screen><userinput remap="make">make LDFLAGS.rpath=""</userinput></screen>
+
+    <para>The <parameter>LDFLAGS.rpath=""</parameter> option prevents
+    hard coding library search paths (rpath) into the shared library.
+    This package does not need rpath for an installation into the standard
+    location, and rpath may sometimes cause unwanted effects or even
+    security issues.</para>
 
     <para>This package does not come with a test suite.</para>
 

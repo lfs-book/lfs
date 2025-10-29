@@ -42,11 +42,6 @@
   <sect2 role="installation">
     <title>Installation of Util-linux</title>
 
-<!--
-    <para>First, disable a problematic test:</para>
-
-    <screen><userinput remap="pre">sed -i '/test_mkfds/s/^/#/' tests/helpers/Makemodule.am</userinput></screen>
--->
     <para>Prepare Util-linux for compilation:</para>
 
     <screen revision="sysv"><userinput remap="configure">./configure --bindir=/usr/bin     \
@@ -127,20 +122,16 @@ su tester -c "make -k check"</userinput></screen>
        fail if the kernel option <option>CONFIG_NETLINK_DIAG</option> is not
        enabled.
     </para>
-
+<!--
     <para>
       One test, <literal>kill: decode functions</literal>, is known to fail
       with bash-5.3-rc1 or newer.
     </para>
-
+-->
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
-<!--
-  <para>Finally, install the man pages:</para>
-
-<screen><userinput remap="install">tar -xf ../util-linux-man-pages-&util-linux-version;.tar.xz - -directory /usr/share/man - -strip-components=1</userinput></screen>
--->
+  
   </sect2>
 
   <sect2 id="contents-utillinux" role="content">
