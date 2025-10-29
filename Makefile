@@ -139,7 +139,7 @@ validate: tmpdir version
 	$(Q)./aux-file-data.sh $(RENDERTMP)/lfs-full.xml
 	@echo "Validation complete."
 
-profile-html:
+profile-html: validate
 	@echo "Generating profiled XML for XHTML..."
 	$(Q)xsltproc --nonet                              \
                 --stringparam profile.condition html \

@@ -64,7 +64,6 @@ meson setup ..                \
       -D sysusers=false       \
       -D rpmmacrosdir=no      \
       -D homed=disabled       \
-      -D userdb=false         \
       -D man=disabled         \
       -D mode=release         \
       -D pamconfdir=no        \
@@ -141,11 +140,10 @@ meson setup ..                \
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>-D homed=disabled</parameter> and
-        <parameter>-D userdb=false</parameter></term>
+        <term><parameter>-D homed=disabled</parameter></term>
         <listitem>
-          <para>Remove two daemons with dependencies that do not fit
-          within the scope of LFS.</para>
+          <para>Remove a daemon which has dependencies that do not fit within
+          the scope of LFS.</para>
         </listitem>
       </varlistentry>
 
@@ -243,7 +241,7 @@ ninja test</userinput></screen>
     <!-- Please make sure systemd man pages tarball has a common leading
          component in the path.  -->
 <screen><userinput remap="install">tar -xf ../../systemd-man-pages-&systemd-man-version;.tar.xz \
-    --no-same-owner --strip-components=1     \
+    --no-same-owner --strip-components=1   \
     -C /usr/share/man</userinput></screen>
 
     <para>Create the <filename>/etc/machine-id</filename> file needed by
@@ -275,12 +273,13 @@ ninja test</userinput></screen>
       <segtitle>Installed directories</segtitle>
 
       <seglistitem>
-        <seg>busctl, coredumpctl, halt (symlink to systemctl),
+        <seg>bootctl, busctl, coredumpctl, halt (symlink to systemctl),
         hostnamectl, init, journalctl, kernel-install, localectl, loginctl,
         machinectl, mount.ddi (symlink to systemd-dissect), networkctl,
         oomctl, portablectl, poweroff (symlink to
         systemctl), reboot (symlink to systemctl), resolvconf (symlink to
-        resolvectl), resolvectl, runlevel (symlink to systemctl), shutdown
+        resolvectl), resolvectl, run0 (symlink to systemd-run), runlevel
+        (symlink to systemctl), shutdown
         (symlink to systemctl), systemctl, systemd-ac-power, systemd-analyze,
         systemd-ask-password, systemd-cat, systemd-cgls, systemd-cgtop,
         systemd-confext (symlink to systemd-sysext), systemd-creds,
@@ -288,21 +287,22 @@ ninja test</userinput></screen>
         systemd-dissect, systemd-escape, systemd-hwdb, systemd-id128,
         systemd-inhibit, systemd-machine-id-setup,
         systemd-mount, systemd-notify, systemd-nspawn, systemd-path,
-        systemd-repart, systemd-resolve (symlink to resolvectl), systemd-run,
-        systemd-socket-activate, systemd-stdio-bridge, systemd-sysext,
-        systemd-tmpfiles, systemd-tty-ask-password-agent,
+        systemd-pty-forward, systemd-repart, systemd-resolve
+        (symlink to resolvectl), systemd-run, systemd-socket-activate,
+        systemd-stdio-bridge, systemd-sysext, systemd-tmpfiles,
+        systemd-tty-ask-password-agent, systemd-vpick,
         systemd-umount (symlink to systemd-mount),
-        telinit (symlink to systemctl), timedatectl, and udevadm</seg>
+        timedatectl, udevadm, userdbctl, and varlinkctl</seg>
         <seg>libnss_myhostname.so.2, libnss_mymachines.so.2,
         libnss_resolve.so.2, libnss_systemd.so.2,
         libsystemd.so, libsystemd-shared-&systemd-version;.so (in /usr/lib/systemd),
         and libudev.so</seg>
         <seg>/etc/binfmt.d, /etc/init.d, /etc/kernel, /etc/modules-load.d,
         /etc/sysctl.d, /etc/systemd, /etc/tmpfiles.d, /etc/udev,
-        /etc/xdg/systemd, /usr/lib/systemd, /usr/lib/udev, /usr/include/systemd,
-        /usr/lib/binfmt.d, /usr/lib/environment.d, /usr/lib/kernel,
-        /usr/lib/modules-load.d, /usr/lib/sysctl.d, /usr/lib/systemd,
-        /usr/lib/tmpfiles.d,
+        /etc/xdg/systemd, /usr/include/systemd, /usr/lib/binfmt.d,
+        /usr/lib/credstore, /usr/lib/environment.d, /usr/lib/kernel,
+        /usr/lib/modprobe.d, /usr/lib/modules-load.d,  /usr/lib/systemd,
+        /usr/lib/udev, /usr/lib/sysctl.d, /usr/lib/systemd, /usr/lib/tmpfiles.d,
         /usr/share/doc/systemd-&systemd-version;, /usr/share/factory,
         /usr/share/systemd, /var/lib/systemd, and /var/log/journal</seg>
       </seglistitem>
@@ -312,6 +312,16 @@ ninja test</userinput></screen>
       <bridgehead renderas="sect3">Short Descriptions</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="bootctl">
+        <term><command>bootctl</command></term>
+        <listitem>
+          <para>Is used to control EFI firmware boot settings on a system</para>
+          <indexterm zone="ch-system-systemd bootctl">
+            <primary sortas="b-bootctl">bootctl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
 
       <varlistentry id="busctl">
         <term><command>busctl</command></term>
@@ -498,6 +508,17 @@ ninja test</userinput></screen>
           DNS records, and services</para>
           <indexterm zone="ch-system-systemd resolvectl">
             <primary sortas="b-resolvectl">resolvectl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="run0">
+        <term><command>run0</command></term>
+        <listitem>
+          <para>Temporary elevates or acquires different privileges, similar
+          to sudo</para>
+          <indexterm zone="ch-system-systemd run0">
+            <primary sortas="b-run0">run0</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -742,6 +763,17 @@ ninja test</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="systemd-pty-forward">
+        <term><command>systemd-pty-forward</command></term>
+        <listitem>
+          <para>Is used to run a command with a custom terminal background
+          color or title</para>
+          <indexterm zone="ch-system-systemd systemd-pty-forward">
+            <primary sortas="b-systemd-pty-forward">systemd-pty-forward</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="systemd-repart">
         <term><command>systemd-repart</command></term>
         <listitem>
@@ -831,6 +863,17 @@ ninja test</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="systemd-vpick">
+        <term><command>systemd-vpick</command></term>
+        <listitem>
+          <para>Is used to resolve paths to a ".v/" versioned directory</para>
+          <indexterm zone="ch-system-systemd systemd-vpick">
+            <primary sortas="b-systemd-vpick">systemd-vpick</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+<!-- Removed in 258
       <varlistentry id="telinit">
         <term><command>telinit</command></term>
         <listitem>
@@ -841,6 +884,7 @@ ninja test</userinput></screen>
           </indexterm>
         </listitem>
       </varlistentry>
+-->
 
       <varlistentry id="timedatectl">
         <term><command>timedatectl</command></term>
@@ -862,6 +906,26 @@ ninja test</userinput></screen>
           triggers uevents for a given device</para>
           <indexterm zone="ch-system-systemd udevadm">
             <primary sortas="b-udevadm">udevadm</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="userdbctl">
+        <term><command>userdbctl</command></term>
+        <listitem>
+          <para>Is used to inspect users, groups, and group memberships</para>
+          <indexterm zone="ch-system-systemd userdbctl">
+            <primary sortas="b-userdbctl">userdbctl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="varlinkctl">
+        <term><command>varlinkctl</command></term>
+        <listitem>
+          <para>Is used to interact with and invoke Varlink services</para>
+          <indexterm zone="ch-system-systemd varlinkctl">
+            <primary sortas="b-varlinkctl">varlinkctl</primary>
           </indexterm>
         </listitem>
       </varlistentry>
