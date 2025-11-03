@@ -90,9 +90,10 @@ rm /usr/lib/libelf.a</userinput></screen>
             --disable-debuginfod     \
             --enable-libdebuginfod=dummy</userinput></screen>
 
-    <para>Compile the package:</para>
+    <para>Compile only Libelf:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
+<screen><userinput remap="make">make -C lib
+make -C libelf</userinput></screen>
 
     <para>Install the package:</para>
 
@@ -123,9 +124,10 @@ rm -rf DESTDIR</userinput></screen>
             --disable-debuginfod          \
             --enable-libdebuginfod=dummy</userinput></screen>
 
-    <para>Compile the package:</para>
+    <para>Compile only Libelf:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
+<screen><userinput remap="make">make -C lib
+make -C libelf</userinput></screen>
 
     <para>Install the package:</para>
 
