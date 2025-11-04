@@ -59,7 +59,8 @@ make -C libelf</userinput></screen>
 
 <screen><userinput remap="test">make -k check</userinput></screen>
 
-    <para>Two tests are known to fail: dwarf_srclang_check and 
+    <para>The above command builds the utilities part of the package as well as
+    the unit tests. Two tests are known to fail: dwarf_srclang_check and 
     run-backtrace-native-core.sh.</para>
 
     <para>Install only Libelf:</para>
