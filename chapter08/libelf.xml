@@ -99,6 +99,7 @@ make -C libelf</userinput></screen>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR -C libelf install
 install -vDm644 config/libelf.pc DESTDIR/usr/lib32/pkgconfig/libelf.pc
+rm -vf DESTDIR/usr/lib32/libelf.a
 cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR</userinput></screen>
 
@@ -133,6 +134,7 @@ make -C libelf</userinput></screen>
 
 <screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR -C libelf install
 install -vDm644 config/libelf.pc DESTDIR/usr/libx32/pkgconfig/libelf.pc
+rm -vf DESTDIR/usr/libx32/libelf.a
 cp -Rv DESTDIR/usr/libx32/* /usr/libx32
 rm -rf DESTDIR</userinput></screen>
 
