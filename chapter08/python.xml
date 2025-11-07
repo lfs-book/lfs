@@ -195,7 +195,7 @@ tar --strip-components=1  \
 
       <seglistitem>
         <seg>
-          2to3, idle3, pip3, pydoc3, python3, and python3-config
+          idle3, pip3, pydoc3, python3, and python3-config
         </seg>
         <seg>
           libpython&python-minor;.so and libpython3.so
@@ -212,7 +212,7 @@ tar --strip-components=1  \
       <bridgehead renderas="sect3">Short Descriptions</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
-
+      <!--
       <varlistentry id="python-2to3">
         <term><command>2to3</command></term>
         <listitem>
@@ -227,7 +227,7 @@ tar --strip-components=1  \
           </indexterm>
         </listitem>
       </varlistentry>
-
+      -->
       <varlistentry id="idle3">
         <term><command>idle3</command></term>
         <listitem>
