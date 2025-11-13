@@ -50,16 +50,18 @@
             --disable-debuginfod \
             --enable-libdebuginfod=dummy</userinput></screen>
 
-    <para>Compile the package:</para>
+    <para>Compile only Libelf:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
+<screen><userinput remap="make">make -C lib
+make -C libelf</userinput></screen>
 
     <para>To test the results, issue:</para>
 
 <screen><userinput remap="test">make -k check</userinput></screen>
 
-    <para>Two tests are known to fail, dwarf_srclang_check and 
-    run-backtrace-native-core.sh.</para>
+    <para>The above command builds the utilities that are part of the package
+    as well as the unit tests. Two tests are known to fail: dwarf_srclang_check
+    and run-backtrace-native-core.sh.</para>
 
     <para>Install only Libelf:</para>
 

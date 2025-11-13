@@ -149,6 +149,7 @@ if ( $package == "Python"     ) $dirpath = "https://www.python.org/downloads/sou
 if ( $package == "setuptools" ) $dirpath = "https://pypi.org/rss/project/setuptools/releases.xml";
 if ( $package == "shadow"     ) $dirpath = github("shadow-maint/shadow");
 if ( $package == "sqlite-autoconf" ) $dirpath = "https://sqlite.org/download.html";
+if ( $package == "sqlite-doc" ) $dirpath = "https://sqlite.org/download.html";
 if ( $package == "sysvinit"   ) $dirpath = github("slicer69/sysvinit");
 if ( $package == "sysklogd"   ) $dirpath = github("troglobit/sysklogd");
 if ( $package == "systemd"    ) $dirpath = github("systemd/systemd");
@@ -275,6 +276,9 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
 
   if ( $package == "sqlite-autoconf" )
      return find_max( $lines, '/autoconf/', '/^.*autoconf-(\d+).tar.*$/' );
+
+  if ( $package == "sqlite-doc" )
+     return find_max( $lines, '/sqlite-doc/', '/^.*doc-(\d+).zip.*$/' );
 
   if ( $package == "procps-ng" )
      return find_max( $lines, "/v\d/", "/^.*v([\d\.]+)$/" );
