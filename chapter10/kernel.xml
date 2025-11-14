@@ -187,28 +187,20 @@
       </para>
 
       <para arch="ml_32,ml_all">
-        If support for any 32bit ABI was built, make sure that the option
-        "IA32 Emulation" is selected. The option 'IA32 a.out support' is
-        optional.
+        If support for any 32-bit ABI was built, make sure that the option
+        "IA32 Emulation" is selected.
       </para>
 
+      <xi:include arch="ml_32,ml_all" xmlns:xi="http://www.w3.org/2001/XInclude"
+        href="kernel/multilib-32.xml"/>
+
       <para arch="ml_x32,ml_all">
-        If support for the x32bit ABI was built, make sure that the option
+        If support for the x32-bit ABI was built, make sure that the option
         "x32 ABI for 64-bit mode" is selected.
       </para>
 
-<screen arch="ml_32">Binary Emulations  ---&gt;
-    [*] IA32 Emulation [CONFIG_IA32_EMULATION]
-    &lt;M&gt;   IA32 a.out support [CONFIG_IA32_AOUT]
-</screen>
-<screen arch="ml_x32">Binary Emulations  ---&gt;
-    [*] x32 ABI for 64-bit mode [CONFIG_X86_X32]
-</screen>
-<screen arch="ml_all">Binary Emulations  ---&gt;
-    [*] IA32 Emulation [CONFIG_IA32_EMULATION]
-    &lt;M&gt;   IA32 a.out support [CONFIG_IA32_AOUT]
-    [*] x32 ABI for 64-bit mode [CONFIG_X86_X32]
-</screen>
+      <xi:include arch="ml_x32,ml_all" xmlns:xi="http://www.w3.org/2001/XInclude"
+        href="kernel/multilib-x32.xml"/>
     </note>
     
     <variablelist>
