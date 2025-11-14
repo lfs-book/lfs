@@ -6,8 +6,8 @@
 ]>
 
 <bookinfo>
-  <title>Linux From Scratch</title>
-  <subtitle>Version &version;<phrase arch="ml_32,ml_x32,ml_all">-multilib</phrase></subtitle>
+  <title>Multilib Linux From Scratch</title>
+  <subtitle>Version &version;</subtitle>
   <subtitle>Published &releasedate;</subtitle>
 
   <authorgroup>
