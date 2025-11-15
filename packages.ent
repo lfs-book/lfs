@@ -65,10 +65,10 @@
 <!ENTITY bc-fin-du "7.8 MB">
 <!ENTITY bc-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY binutils-version "2.45">
-<!ENTITY binutils-size "27,216 KB">
+<!ENTITY binutils-version "2.45.1">
+<!ENTITY binutils-size "27,307 KB">
 <!ENTITY binutils-url "https://sourceware.org/pub/binutils/releases/binutils-&binutils-version;.tar.xz">
-<!ENTITY binutils-md5 "dee5b4267e0305a99a3c9d6131f45759">
+<!ENTITY binutils-md5 "ff59f8dc1431edfa54a257851bea74e7">
 <!ENTITY binutils-home "&gnu-software;binutils/">
 <!ENTITY binutils-tmpp1-du "678 MB">
 <!ENTITY binutils-tmpp1-sbu "1 SBU">
@@ -96,10 +96,10 @@
 <!ENTITY bzip2-fin-du "7.3 MB">
 <!ENTITY bzip2-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY coreutils-version "9.8">
-<!ENTITY coreutils-size "6,089 KB">
+<!ENTITY coreutils-version "9.9">
+<!ENTITY coreutils-size "6,148 KB">
 <!ENTITY coreutils-url "&gnu;coreutils/coreutils-&coreutils-version;.tar.xz">
-<!ENTITY coreutils-md5 "b2e687b6e664b9dd76581836c5c3e782">
+<!ENTITY coreutils-md5 "ce613d0dae179f4171966ecd0a898ec4">
 <!ENTITY coreutils-home "&gnu-software;coreutils/">
 <!ENTITY coreutils-tmp-du "181 MB">
 <!ENTITY coreutils-tmp-sbu "0.3 SBU">
@@ -413,10 +413,10 @@
 <!ENTITY libtool-fin-du "44 MB">
 <!ENTITY libtool-fin-sbu "0.6 SBU">
 
-<!ENTITY libxcrypt-version "4.4.38">
-<!ENTITY libxcrypt-size "612 KB">
+<!ENTITY libxcrypt-version "4.5.1">
+<!ENTITY libxcrypt-size "655 KB">
 <!ENTITY libxcrypt-url "&github;/besser82/libxcrypt/releases/download/v&libxcrypt-version;/libxcrypt-&libxcrypt-version;.tar.xz">
-<!ENTITY libxcrypt-md5 "1796a5d20098e9dd9e3f576803c83000">
+<!ENTITY libxcrypt-md5 "7be4cacda2055aa41133f7a577512a08">
 <!ENTITY libxcrypt-home "&github;/besser82/libxcrypt/">
 <!ENTITY libxcrypt-fin-du "12 MB">
 <!ENTITY libxcrypt-fin-sbu "0.1 SBU">
@@ -424,12 +424,12 @@
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "17">
 <!ENTITY linux-majmin-version "&linux-major-version;.&linux-minor-version;">
-<!ENTITY linux-patch-version "6">
+<!ENTITY linux-patch-version "8">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "149,744 KB">
+<!ENTITY linux-size "149,793 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "23443e9140171bd424dd71187b425fda">
+<!ENTITY linux-md5 "74c34fafb5914d05447863cdc304ab55">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -663,19 +663,19 @@
 <!ENTITY shadow-fin-du "115 MB">
 <!ENTITY shadow-fin-sbu "0.1 SBU">
 
-<!ENTITY sqlite-version "3500400">
-<!ENTITY sqlite-short-version "3.50.4">
+<!ENTITY sqlite-version "3510000">
+<!ENTITY sqlite-short-version "3.51.0">
 <!ENTITY sqlite-year "2025">
-<!ENTITY sqlite-size "3,099 KB">
+<!ENTITY sqlite-size "3,133 KB">
 <!ENTITY sqlite-url "https://sqlite.org/&sqlite-year;/sqlite-autoconf-&sqlite-version;.tar.gz">
-<!ENTITY sqlite-md5 "d74bbdca4ab1b2bd46d3b3f8dbb0f3db">
+<!ENTITY sqlite-md5 "cfcf0004cb6893d2555b33d89ff39cb6">
 <!ENTITY sqlite-home "https://sqlite.org">
 <!ENTITY sqlite-fin-du "71 MB">
 <!ENTITY sqlite-fin-sbu "0.4 SBU">
 <!ENTITY sqlite-doc-version "&sqlite-version;">
-<!ENTITY sqlite-doc-size "5,943 KB">
+<!ENTITY sqlite-doc-size "5,942 KB">
 <!ENTITY sqlite-doc-url  "&anduin-sources;/sqlite-doc-&sqlite-doc-version;.tar.xz">
-<!ENTITY sqlite-doc-md5  "63a62af5b35913459954e6e66876f2b8">
+<!ENTITY sqlite-doc-md5  "383d8db5502bbc385c0415fe3f653cf4">
 
 <!ENTITY sysklogd-version "2.7.2">
 <!ENTITY sysklogd-size "474 KB">
