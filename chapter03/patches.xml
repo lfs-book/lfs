@@ -34,7 +34,7 @@
       </listitem>
     </varlistentry>
 -->
-
+<!--
     <varlistentry>
       <term>Binutils LoongArch Fix Patch - <token>&binutils-loongarch-patch-size;</token>:</term>
       <listitem>
@@ -42,7 +42,7 @@
         <para>MD5 sum: <literal>&binutils-loongarch-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-<!--
+
     <varlistentry>
       <term>Binutils Upstream Fixes Patch - <token>&binutils-upstream-patch-size;</token>:</term>
       <listitem>
