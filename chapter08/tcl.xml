@@ -124,7 +124,7 @@ chmod 644 /usr/lib/libtclstub&tcl-major-version;.a</userinput></screen>
 
     <para>Rename a man page that conflicts with a Perl man page:</para>
 
-    <screen><userinput remap="install">mv /usr/share/man/man3/{Thread,Tcl_Thread}.3</userinput></screen>
+    <screen><userinput remap="install">mv -v /usr/share/man/man3/{Thread,Tcl_Thread}.3</userinput></screen>
 
     <para>Optionally, install the documentation by issuing
     the following commands:</para>
