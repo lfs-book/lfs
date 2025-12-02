@@ -43,7 +43,7 @@
 
     <para>For this package, we only need to copy the files into place:</para>
 
-<screen><userinput remap="install">cp services protocols /etc</userinput></screen>
+<screen><userinput remap="install">cp -v services protocols /etc</userinput></screen>
 
   </sect2>
 
