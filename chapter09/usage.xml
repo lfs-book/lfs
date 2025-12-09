@@ -93,10 +93,68 @@
 <screen><userinput>for i in $(seq 1 6); do
   ln -sv agetty /etc/init.d/agetty.tty$i
   rc-update add agetty.tty$i default
-done </userinput></screen>
+done</userinput></screen>
 
   <para>These <literal>tty</literal> services are started on the
   <literal>default</literal> run level.</para>
+
+  </sect2>
+
+  <sect2 id="ch-config-udevd">
+    <title>Creating the Udevd Service</title>
+
+    <indexterm zone="ch-config-udevd">
+      <primary sortas="d-udevd">udevd</primary>
+    <secondary>configuring</secondary></indexterm>
+
+  <para>OpenRC doesn't ship a service for <command>udevd</command>, leading to
+  kernel modules not being loaded. Create and enable it now:</para>
+
+<screen><userinput>cat &gt; /etc/init.d/udevd &lt;&lt; "EOF"
+<literal>#!/sbin/openrc-run
+# Starts the udevd daemon and adds device nods via udevadm.
+# Authors: Zeckma - zeckma.tech@gmail.com
+# Version: LFS 12.5
+
+description="starts the udevd daemon"
+
+depend()
+{
+  after localnet
+  before modules
+}
+
+start()
+{
+  ebegin "Starting the udevd daemon"
+
+# Start the udev daemon to continually watch for, and act on,
+# uevents
+  SYSTEMD_LOG_TARGET=kmsg /sbin/udevd --daemon
+
+# Now traverse /sys in order to "coldplug" devices that have
+# already been discovered
+  /bin/udevadm trigger --action=add    --type=subsystems
+  /bin/udevadm trigger --action=add    --type=devices
+  /bin/udevadm trigger --action=change --type=devices
+
+# Now wait for udevd to process the uevents we triggered
+  /bin/udevadm settle
+
+# If any LVM based partitions are on the system, ensure they
+# are activated so they can be used.
+  if [ -x /sbin/vgchange ]; then /sbin/vgchange -a y >/dev/null; fi
+
+}</literal>
+EOF
+
+rc-update add udevd boot</userinput></screen>
+
+    <para>
+      This service should load most if not all modules automatically. If you
+      need to load a given module but it isn't being loaded, pass the module
+      name to the <filename>/etc/conf.d/modules</filename> configuration file.
+    </para>
 
   </sect2>
 
