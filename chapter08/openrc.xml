@@ -41,13 +41,16 @@
   <sect2 role="installation">
     <title>Installation of OpenRC</title>
 
-    <para>Compile the package:</para>
+    <para>Prepare OpenRC for compilation:</para>
 
-<screen><userinput remap="make">mkdir build
+<screen><userinput remap="configure">mkdir build
 cd    build
 
-meson setup --prefix=/usr --buildtype=release ..
-ninja</userinput></screen>
+meson setup --prefix=/usr --buildtype=release ..</userinput></screen>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">ninja</userinput></screen>
 
     <para>To run the tests, issue:</para>
 
