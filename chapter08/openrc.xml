@@ -224,7 +224,7 @@ done</userinput></screen>
         <listitem>
           <para>
             Gives the status of the most crucial services, followed by normal
-            serices
+            services
           </para>
           <indexterm zone="ch-system-openrc rc-sstat">
             <primary sortas="b-rc-sstat">rc-sstat</primary>
