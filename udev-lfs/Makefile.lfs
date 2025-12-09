@@ -21,11 +21,9 @@ install:
               $(DESTDIR)/usr/share/doc/udev-$(VERSION)/lfs
 
    # Copy rules
-	@cp -v udev-lfs-$(VERSION)/*.rules $(DESTDIR)/etc/udev/rules.d
 	@cp -v udev-lfs-$(VERSION)/init-net-rules.sh \
           udev-lfs-$(VERSION)/write_net_rules   \
           udev-lfs-$(VERSION)/rule_generator.functions $(DESTDIR)/usr/lib/udev
 
    # Copy documentation
 	@cp -v udev-lfs-$(VERSION)/README     $(DESTDIR)/usr/share/doc/udev-$(VERSION)/lfs
-	@cp -v udev-lfs-$(VERSION)/*.txt      $(DESTDIR)/usr/share/doc/udev-$(VERSION)/lfs
