@@ -286,7 +286,7 @@ done</userinput></screen>
         <term><command>supervise-daemon</command></term>
         <listitem>
           <para>
-            Supervises a demon in a service file
+            Supervises a daemon in a service file
           </para>
           <indexterm zone="ch-system-openrc supervise-daemon">
             <primary sortas="b-supervise-daemon">supervise-daemon</primary>
