@@ -46,7 +46,22 @@
 <screen><userinput remap="configure">mkdir build
 cd    build
 
-meson setup --prefix=/usr --buildtype=release ..</userinput></screen>
+meson setup --prefix=/usr       \
+            --buildtype=release \
+            -D pam=false ..</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the configure options:</title>
+
+      <varlistentry>
+        <term><parameter>-D pam=false</parameter></term>
+        <listitem>
+          <para>This disables needing Linux-PAM for the build, since it is not
+          installed yet.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
 
     <para>Compile the package:</para>
 
