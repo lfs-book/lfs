@@ -224,7 +224,7 @@
 
         <para>This package produces a program that generates a perfect hash
         function from a set of keys. It is required by
-        <phrase revision='sysv'>Udev</phrase>
+        <phrase revision='openrc'>Udev</phrase>
         <phrase revision='systemd'>Systemd</phrase>.</para>
       </listitem>
 
@@ -463,6 +463,16 @@
         the packages in LFS.</para>
       </listitem>
 
+      <listitem revision="openrc">
+        <para>OpenRC</para>
+
+        <para>This package provides an <application>init</application> program
+        and system control capabilities as an alternative to Systemd. It has a
+        smaller installation size but strong support compared to others like
+        SysVinit. It is used by a few Linux distributions such as Gentoo and
+        Alpine.</para>
+      </listitem>
+
       <listitem>
         <para>Openssl</para>
 
@@ -560,7 +570,7 @@
         transactional SQL database engine.</para>
       </listitem>
 
-      <listitem revision="sysv">
+      <listitem revision="openrc">
         <para>Sysklogd</para>
 
         <para>This package supplies programs for logging system messages,
@@ -573,19 +583,11 @@
 
         <para>This package provides an <application>init</application> program
         and several additional boot and system control capabilities as an
-        alternative to SysVinit.  It is used by many Linux distributions.
+        alternative to OpenRC.  It is used by many Linux distributions.
         </para>
       </listitem>
 
-      <listitem revision="sysv">
-        <para>SysVinit</para>
-
-        <para>This package provides the <application>init</application>
-        program, the parent of all the other processes on a running Linux
-        system. </para>
-      </listitem>
-
-      <listitem revision="sysv">
+      <listitem revision="openrc">
         <para>Udev</para>
 
         <para>This package is a device manager.  It dynamically controls the

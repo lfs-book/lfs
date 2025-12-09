@@ -136,7 +136,7 @@
            "make -C kernel KERNEL_TREE=</usr/src/linux-&linux-version> -->
 
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-        href="kernel/sysv.xml"/>
+        href="kernel/openrc.xml"/>
 
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
         href="kernel/systemd.xml"/>

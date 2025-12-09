@@ -11,16 +11,16 @@ else
 endif
 
 ifndef REV
-  REV = sysv
+  REV = openrc
 endif
 
-ifneq ($(REV), sysv)
+ifneq ($(REV), openrc)
   ifneq ($(REV), systemd)
-    $(error REV must be 'sysv' (default) or 'systemd'.)
+    $(error REV must be 'openrc' (default) or 'systemd'.)
   endif
 endif
 
-ifeq ($(REV), sysv)
+ifeq ($(REV), openrc)
   BASEDIR         ?= $(HOME)/public_html/lfs-book
   PDF_OUTPUT      ?= LFS-BOOK.pdf
   NOCHUNKS_OUTPUT ?= LFS-BOOK.html
@@ -117,9 +117,6 @@ tmpdir:
 	$(Q)rm -f $(RENDERTMP)/*pdf.fo
 
 validate: tmpdir version
-	@echo "Processing bootscripts..."
-	$(Q)bash process-scripts.sh
-
 	@echo "Adjusting for revision $(REV)..."
 	$(Q)xsltproc --nonet                               \
                 --xinclude                            \
@@ -135,8 +132,6 @@ validate: tmpdir version
                --output $(RENDERTMP)/lfs-full.xml \
                $(RENDERTMP)/lfs-html2.xml
 
-	$(Q)rm -f appendices/*.script
-	$(Q)./aux-file-data.sh $(RENDERTMP)/lfs-full.xml
 	@echo "Validation complete."
 
 profile-html: validate
@@ -189,9 +184,6 @@ $(BASEDIR)/md5sums: stylesheets/wget-list.xsl $(DOWNLOADS_DEP)
                 --output $(BASEDIR)/md5sums \
                 stylesheets/md5sum.xsl      \
                 $(RENDERTMP)/md5sum.xml
-	$(Q)sed -i -e \
-       "s/BOOTSCRIPTS-MD5SUM/$(shell md5sum lfs-bootscripts*.tar.xz | cut -d' ' -f1)/" \
-       $(BASEDIR)/md5sums
 
 version:
 	$(Q)./git-version.sh $(REV)

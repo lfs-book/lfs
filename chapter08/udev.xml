@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-system-udev" role="wrap" revision="sysv">
+<sect1 id="ch-system-udev" role="wrap" revision="openrc">
   <?dbhtml filename="udev.html"?>
 
   <sect1info condition="script">
@@ -247,7 +247,7 @@ rm /usr/share/man/man*/systemd*</userinput></screen>
       <bridgehead renderas="sect3">Short Descriptions</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
-      <varlistentry id="udevadm" revision="sysv">
+      <varlistentry id="udevadm" revision="openrc">
         <term><command>udevadm</command></term>
         <listitem>
           <para>Generic udev administration tool: controls the udevd daemon,

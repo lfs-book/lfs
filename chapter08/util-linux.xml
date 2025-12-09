@@ -44,7 +44,7 @@
 
     <para>Prepare Util-linux for compilation:</para>
 
-    <screen revision="sysv"><userinput remap="configure">./configure --bindir=/usr/bin     \
+    <screen revision="openrc"><userinput remap="configure">./configure --bindir=/usr/bin     \
             --libdir=/usr/lib     \
             --runstatedir=/run    \
             --sbindir=/usr/sbin   \

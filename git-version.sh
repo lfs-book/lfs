@@ -1,17 +1,17 @@
 #!/bin/bash
 
-if [ "$1" = sysv ]; then
-    SYSV="INCLUDE"
+if [ "$1" = openrc ]; then
+    OPENRC="INCLUDE"
     SYSTEMD="IGNORE "
 elif [ "$1" = systemd ]; then
-    SYSV="IGNORE "
+    OPENRC="IGNORE "
     SYSTEMD="INCLUDE"
 else
     echo You must provide either \"sysv\" or \"systemd\" as argument
     exit 1
 fi
 
-echo "<!ENTITY % sysv    \"$SYSV\">"     >  conditional.ent
+echo "<!ENTITY % openrc  \"$OPENRC\">"   >  conditional.ent
 echo "<!ENTITY % systemd \"$SYSTEMD\">"  >> conditional.ent
 
 if [ -e LFS-RELEASE ]; then
@@ -21,7 +21,7 @@ fi
 if ! git status > /dev/null; then
     # Either it's not a git repository or git is unavailable.
     # Just workaround.
-    echo "<![ %sysv; ["                                    >  version.ent
+    echo "<![ %openrc; ["                                  >  version.ent
     echo "<!ENTITY version           \"unknown\">"         >> version.ent
     echo "]]>"                                             >> version.ent
     echo "<![ %systemd; ["                                 >> version.ent
@@ -61,7 +61,7 @@ if [ "$(git diff HEAD | wc -l)" != "0" ]; then
     versiond="$versiond-wip"
 fi
 
-echo "<![ %sysv; ["                                        >  version.ent
+echo "<![ %openrc; ["                                      >  version.ent
 echo "<!ENTITY version           \"$version\">"            >> version.ent
 echo "]]>"                                                 >> version.ent
 echo "<![ %systemd; ["                                     >> version.ent

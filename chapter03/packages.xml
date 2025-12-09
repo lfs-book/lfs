@@ -404,15 +404,6 @@
       </listitem>
     </varlistentry>
 
-    <varlistentry revision="sysv">
-      <term>LFS-Bootscripts (&lfs-bootscripts-version;) - <token>&lfs-bootscripts-size;</token>:</term>
-      <listitem>
-        <para>Home page: <ulink url="&lfs-bootscripts-home;"/></para>
-        <para>Download: <ulink url="&lfs-bootscripts-url;"/></para>
-        <para>MD5 sum: <literal>&lfs-bootscripts-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
     <varlistentry>
       <term>Libcap (&libcap-version;) - <token>&libcap-size;</token>:</term>
       <listitem>
@@ -608,6 +599,15 @@
       </listitem>
     </varlistentry>
 
+    <varlistentry revision="openrc">
+      <term>OpenRC (&openrc-version;) - <token>&openrc-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&openrc-home;"/></para>
+        <para>Download: <ulink url="&openrc-url;"/></para>
+        <para>MD5 sum: <literal>&openrc-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
     <varlistentry>
       <term>OpenSSL (&openssl-version;) - <token>&openssl-size;</token>:</term>
       <listitem>
@@ -757,7 +757,7 @@
       </listitem>
     </varlistentry>
 
-    <varlistentry revision="sysv">
+    <varlistentry revision="openrc">
       <term>Sysklogd (&sysklogd-version;) - <token>&sysklogd-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&sysklogd-home;"/></para>
@@ -787,16 +787,6 @@
           man pages using the systemd source. This is done in order to avoid
           unnecessary dependencies.</para>
         </note>
-      </listitem>
-    </varlistentry>
-
-
-    <varlistentry revision="sysv">
-      <term>SysVinit (&sysvinit-version;) - <token>&sysvinit-size;</token>:</term>
-      <listitem>
-        <para>Home page: <ulink url="&sysvinit-home;"/></para>
-        <para>Download: <ulink url="&sysvinit-url;"/></para>
-        <para>MD5 sum: <literal>&sysvinit-md5;</literal></para>
       </listitem>
     </varlistentry>
 
@@ -844,7 +834,7 @@
       </listitem>
     </varlistentry>
 
-    <varlistentry revision="sysv">
+    <varlistentry revision="openrc">
       <term>Udev-lfs Tarball (&udev-lfs-version;) - <token>&udev-lfs-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="&udev-lfs-url;"/></para>

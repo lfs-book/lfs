@@ -1,3 +1,6 @@
+2023-12-08  <zeckma.tech@gmail.com>
+   * 55-lfs.rules: Removed. Not applicable to OpenRC.
+
 2023-08-18  <bdubbs@linuxfromscratch.org>
    * Fix regression when removing cdrom entries
 

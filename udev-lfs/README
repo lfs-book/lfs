@@ -16,14 +16,11 @@ contrib              - Useful rules from debian
 contrib/debian
 contrib/debian/write_cd_aliases
 
-55-lfs.rules         - LFS custom rules
 write_net_rules      - Scripts for LFS rules
 write_cd_rules
 rule_generator.functions
 
-55-lfs.txt           - Documentation for LFS installed rules
-
-ChangeLog            - Log of changes to 55-lfs-rules
+ChangeLog            - Log of changes
 
 init-net-rules.sh    - A script for establishing persistent network
                        rules before the first LFS boot

@@ -261,7 +261,7 @@ esac</userinput></screen>
         </listitem>
 
         <!-- Otherwise on lfs-systemd nscd will fail to start on boot,
-             and on both lfs-sysv and lfs-systemd useradd etc. will try
+             and on both lfs-openrc and lfs-systemd useradd etc. will try
              to start nscd, then nscd will fail to start as well and
              produce some spurious error message.  -->
         <listitem>
@@ -461,7 +461,7 @@ localedef -i zh_TW -f UTF-8 zh_TW.UTF-8</userinput></screen>
     <para>Create a new file <filename>/etc/nsswitch.conf</filename> by running the
     following:</para>
 
-<screen revision='sysv'><userinput>cat &gt; /etc/nsswitch.conf &lt;&lt; "EOF"
+<screen revision='openrc'><userinput>cat &gt; /etc/nsswitch.conf &lt;&lt; "EOF"
 <literal># Begin /etc/nsswitch.conf
 
 passwd: files

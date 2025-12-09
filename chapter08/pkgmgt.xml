@@ -372,7 +372,7 @@ make DESTDIR=/usr/pkg/libfoo/1.1 install</userinput></screen>
       <filename>/etc/shadow</filename>, and
       <filename>/etc/ld.so.conf</filename>.
     </phrase>
-    <phrase revision="sysv">
+    <phrase revision="openrc">
       <filename>/etc/shadow</filename>,
       <filename>/etc/ld.so.conf</filename>,
       <filename>/etc/sysconfig/rc.site</filename>,

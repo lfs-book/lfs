@@ -539,6 +539,14 @@
 <!ENTITY ninja-fin-du "43 MB">
 <!ENTITY ninja-fin-sbu "0.2 SBU">
 
+<!ENTITY openrc-version "0.63">
+<!ENTITY openrc-size "260 KB">
+<!ENTITY openrc-url "&github;/OpenRC/openrc/archive/&openrc-version;/openrc-&openrc-version;.tar.gz">
+<!ENTITY openrc-md5 "f73566fc120e19e5a96fb0134cbb5ac8">
+<!ENTITY openrc-home "https://wiki.gentoo.org/wiki/OpenRC">
+<!ENTITY openrc-fin-du "13 MB">
+<!ENTITY openrc-fin-sbu "0.1 SBU">
+
 <!ENTITY openssl-version "3.6.0">
 <!ENTITY openssl-size "53,686 KB">
 <!ENTITY openssl-url "&github;/openssl/openssl/releases/download/openssl-&openssl-version;/openssl-&openssl-version;.tar.gz">
@@ -702,14 +710,6 @@
 <!ENTITY systemd-man-md5  "3f748dd5a2047aa8ac6e79f0b03175be">
 <!ENTITY systemd-fin-du   "337 MB">
 <!ENTITY systemd-fin-sbu  "1.4 SBU">
-
-<!ENTITY sysvinit-version "3.14">
-<!ENTITY sysvinit-size "236 KB">
-<!ENTITY sysvinit-url "&github;/slicer69/sysvinit/releases/download/&sysvinit-version;/sysvinit-&sysvinit-version;.tar.xz">
-<!ENTITY sysvinit-md5 "bc6890b975d19dc9db42d0c7364dd092">
-<!ENTITY sysvinit-home "&savannah-nongnu;/projects/sysvinit">
-<!ENTITY sysvinit-fin-du "3.9 MB">
-<!ENTITY sysvinit-fin-sbu "less than 0.1 SBU">
 
 <!ENTITY tar-version "1.35">
 <!ENTITY tar-size "2,263 KB">

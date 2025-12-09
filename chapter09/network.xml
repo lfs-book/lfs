@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 id="ch-config-network" revision="sysv">
+<sect1 id="ch-config-network" revision="openrc">
   <?dbhtml filename="network.html"?>
 
   <title>General Network Configuration</title>
@@ -17,15 +17,9 @@
   <sect2>
     <title>Creating Network Interface Configuration Files</title>
 
-    <para>The files in <filename class="directory">/etc/sysconfig/</filename>
-    usually determine which interfaces are brought up and down by the network
-    script.  This directory should
-    contain a file for each interface to be configured, such as
-    <filename>ifconfig.xyz</filename>, where <quote>xyz</quote> describes
-    the network card.  The interface name (e.g. eth0) is usually appropriate.
-    Each file contains the attributes of one interface, such as its IP
-    address(es), subnet masks, and so forth.  The stem of
-    the filename must be <emphasis>ifconfig</emphasis>.</para>
+    <para>The <filename>/etc/conf.d/network</filename> file determines which
+    interfaces are brought up and down by the <command>network</command>
+    service.</para>
 
     <note>
       <para>If the procedure in the previous section was not used, udev
@@ -44,57 +38,9 @@
       <emphasis>even in the chroot environment</emphasis>.</para>
     </note>
 
-    <para>The following command creates a sample file for the
-    <emphasis>eth0</emphasis> device with a static IP address:</para>
-<!-- jhalfs relies on the values for IFACE, IP, etc. If you want to change
-     them, please inform the jhalfs maintainer(s). -->
-<screen><userinput>cd /etc/sysconfig/
-cat &gt; ifconfig.<replaceable>eth0</replaceable> &lt;&lt; "EOF"
-<literal>ONBOOT=<replaceable>yes</replaceable>
-IFACE=<replaceable>eth0</replaceable>
-SERVICE=<replaceable>ipv4-static</replaceable>
-IP=<replaceable>192.168.1.2</replaceable>
-GATEWAY=<replaceable>192.168.1.1</replaceable>
-PREFIX=<replaceable>24</replaceable>
-BROADCAST=<replaceable>192.168.1.255</replaceable></literal>
-EOF</userinput></screen>
-
-    <para>The values in italics must be changed in each file, to set
-    the interfaces up correctly.</para>
-
-    <para>If the <envar>ONBOOT</envar> variable is set to <literal>yes</literal> the
-    System V network script will bring up the Network Interface Card (NIC) during
-    the system boot process. If set to anything besides <literal>yes</literal>, the NIC
-    will be ignored by the network script and will not be started automatically.
-    Interfaces can be manually started or stopped with the
-    <command>ifup</command> and <command>ifdown</command> commands.</para>
-
-    <para>The <envar>IFACE</envar> variable defines the interface name,
-    for example, eth0.  It is required for all network device configuration
-    files. The filename extension must match this value.</para>
-
-    <para>The <envar>SERVICE</envar> variable defines the method used for
-    obtaining the IP address. The LFS-Bootscripts package has a modular IP
-    assignment format, and creating additional files in the <filename
-    class="directory">/lib/services/</filename> directory allows other IP
-    assignment methods. This is commonly used for Dynamic Host Configuration
-    Protocol (DHCP), which is addressed in the BLFS book.</para>
-
-    <para>The <envar>GATEWAY</envar> variable should contain the default
-    gateway IP address, if one is present. If not, then comment out the
-    variable entirely.</para>
-
-    <para>The <envar>PREFIX</envar> variable specifies the number of
-    bits used in the subnet. Each segment of an IP address is 8 bits. If the
-    subnet's netmask is 255.255.255.0, then it is using the first three segments
-    (24 bits) to specify the network number. If the netmask is 255.255.255.240,
-    the subnet is using the first 28 bits.  Prefixes longer than 24 bits are
-    commonly used by DSL and cable-based Internet Service Providers (ISPs).
-    In this example (PREFIX=24), the netmask is 255.255.255.0. Adjust the
-    <envar>PREFIX</envar> variable according to your specific subnet.
-    If omitted, the PREFIX defaults to 24.</para>
-
-    <para>For more information see the <command>ifup</command> man page.</para>
+    <para>To specify the interfaces you want to have brought up, edit
+    the <filename>/etc/conf.d/network</filename> configuration file, which has
+    plenty of comments.</para>
 
   </sect2>
   <sect2 id="resolv.conf">

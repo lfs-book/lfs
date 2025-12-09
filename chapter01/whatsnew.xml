@@ -239,14 +239,14 @@
     <listitem>
       <para>Sqlite-&sqlite-version;</para>
     </listitem>
-    <!--<listitem revision="sysv">
+    <!--<listitem revision="openrc">
       <para>Sysklogd-&sysklogd-version;</para>
     </listitem>-->
     <listitem>
       <para>Systemd-&systemd-version;</para>
     </listitem>
-    <!--<listitem revision="sysv">
-      <para>SysVinit-&sysvinit-version;</para>
+    <!--<listitem revision="openrc">
+      <para>SysVinit-&openrcinit-version;</para>
     </listitem>-->
     <!--<listitem>
       <para>Tar-&tar-version;</para>
@@ -260,7 +260,7 @@
     <!--<listitem>
       <para>Tzdata-&tzdata-version;</para>
     </listitem>-->
-    <!--<listitem revision="sysv">
+    <!--<listitem revision="openrc">
       <para>Udev from Systemd-&systemd-version;</para>
     </listitem>-->
     <listitem>

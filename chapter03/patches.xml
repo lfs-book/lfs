@@ -134,13 +134,6 @@
     </varlistentry>
 -->
 
-    <varlistentry revision="sysv">
-      <term>SysVinit Consolidated Patch - <token>&sysvinit-consolidated-patch-size;</token>:</term>
-      <listitem>
-        <para>Download: <ulink url="&patches-root;&sysvinit-consolidated-patch;"/></para>
-        <para>MD5 sum: <literal>&sysvinit-consolidated-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
 <!--
     <varlistentry revision="systemd">
       <term>Systemd Upstream Fixes Patch - <token>&systemd-upstream-patch-size;</token>:</term>

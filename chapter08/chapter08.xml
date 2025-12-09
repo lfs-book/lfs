@@ -94,20 +94,20 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="systemd.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dbus.xml"/>
 
-  <!-- sysv only -->
+  <!-- openrc only -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="udev.xml"/>
 
-  <!-- Both sysv on systemd builds -->
+  <!-- Both openrc and systemd builds -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="man-db.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="procps.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="util-linux.xml"/>
 
-  <!-- Both sysv and systemd builds -->
+  <!-- Both openrc and systemd builds -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="e2fsprogs.xml"/>
 
-  <!-- sysv only -->
+  <!-- openrc only -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="sysklogd.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="sysvinit.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="openrc.xml"/>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="aboutdebug.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="stripping.xml"/>

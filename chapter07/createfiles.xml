@@ -60,9 +60,9 @@ EOF</userinput></screen>
   <para>Create the <filename>/etc/passwd</filename> file by running the following
   command:</para>
 
-<screen revision="sysv"><userinput>cat &gt; /etc/passwd &lt;&lt; "EOF"
+<screen revision="openrc"><userinput>cat &gt; /etc/passwd &lt;&lt; "EOF"
 <literal>root:x:0:0:root:/root:/bin/bash
-bin:x:1:1:bin:/dev/null:/usr/bin/false
+bin^:x:1:1:bin:/dev/null:/usr/bin/false
 daemon:x:6:6:Daemon User:/dev/null:/usr/bin/false
 messagebus:x:18:18:D-Bus Message Daemon User:/run/dbus:/usr/bin/false
 uuidd:x:80:80:UUID Generation Daemon User:/dev/null:/usr/bin/false
@@ -92,7 +92,7 @@ EOF</userinput></screen>
   <para>Create the <filename>/etc/group</filename> file by running the following
   command:</para>
 
-<screen revision="sysv"><userinput>cat &gt; /etc/group &lt;&lt; "EOF"
+<screen revision="openrc"><userinput>cat &gt; /etc/group &lt;&lt; "EOF"
 <literal>root:x:0:
 bin:x:1:daemon
 sys:x:2:
@@ -168,7 +168,7 @@ EOF</userinput></screen>
   with a GID of 1 be present. The GID of 5 is widely used for the
   <systemitem class="groupname">tty</systemitem> group, and the number 5 is
   also used in <phrase revision="systemd">systemd</phrase>
-  <phrase revision="sysv"><filename>/etc/fstab</filename></phrase> for the
+  <phrase revision="openrc"><filename>/etc/fstab</filename></phrase> for the
   <systemitem class="filesystem">devpts</systemitem> filesystem.
   All other group names and GIDs can be chosen freely by the system
   administrator since well-written programs do not depend on GID numbers,
@@ -222,7 +222,7 @@ chmod -v 600  /var/log/btmp</userinput></screen>
   the bad login attempts.</para>
 
   <!-- systemd no longer creates this -->
-  <note revision='sysv'><para>The <filename>/run/utmp</filename> file
+  <note revision='openrc'><para>The <filename>/run/utmp</filename> file
   records the users that are currently logged in.  This file is created
   dynamically in the boot scripts.</para></note>
 
@@ -231,7 +231,7 @@ chmod -v 600  /var/log/btmp</userinput></screen>
        module.  Maybe we can stop to create them at all.  -->
   <note>
     <para>
-      The <phrase revision='sysv'><filename>utmp</filename>,
+      The <phrase revision='opnerc'><filename>utmp</filename>,
       </phrase><filename>wtmp</filename>, <filename>btmp</filename>, and
       <filename>lastlog</filename> files use 32-bit integers for timestamps
       and they'll be fundamentally broken after year 2038.  Many packages
