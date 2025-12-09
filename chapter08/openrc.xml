@@ -88,9 +88,17 @@ meson setup --prefix=/usr       \
   ln -sv openrc-$i /sbin/$i
 done
 
-for i in {poweroff,reboot}; do
-  ln -sv openrc-shutdown /sbin/$i
-done</userinput></screen>
+cat &gt; /sbin/poweroff &lt;&lt; "EOF"
+<literal>#!/bin/sh
+/sbin/shutdown --poweroff now</literal>
+EOF
+
+cat &gt; /sbin/reboot &lt;&lt; "EOF"
+<literal>#!/bin/sh
+/sbin/shutdown --reboot now</literal>
+EOF
+
+chmod 755 /sbin/poweroff /sbin/reboot</userinput></screen>
 
   </sect2>
 
@@ -110,11 +118,11 @@ done</userinput></screen>
           openrc-init,
           openrc-run,
           openrc-shutdown,
-          poweroff (link to openrc-shutdown),
+          poweroff,
           rc-service,
           rc-sstat,
           rc-update,
-          reboot (link to openrc-shutdown),
+          reboot,
           shutdown (link to openrc-shutdown),
           start-stop-daemon, and
           supervise-daemon
