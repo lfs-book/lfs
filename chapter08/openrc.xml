@@ -41,10 +41,9 @@
   <sect2 role="installation">
     <title>Installation of OpenRC</title>
 
-    <para>If you won't be doing a DESTDIR installation, fix one of the scripts
-    that prohibit a normal installation:</para>
+    <para>Fix a script to allow a normal installation:</para>
 
-<screen remap="pre"><userinput>sed -i 's/\${DESTDIR}\///g' tools/meson_final.sh</userinput></screen>
+<screen remap="pre"><userinput>sed -i '/set\ -u/d' tools/meson_final.sh</userinput></screen>
 
     <para>Prepare OpenRC for compilation:</para>
 
