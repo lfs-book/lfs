@@ -43,7 +43,7 @@
 
     <para>Fix a script to allow a normal installation:</para>
 
-<screen remap="pre"><userinput>sed -i '/set\ -u/d' tools/meson_final.sh</userinput></screen>
+<screen remap="pre"><userinput>sed -i '/set -u/d' tools/meson_final.sh</userinput></screen>
 
     <para>Prepare OpenRC for compilation:</para>
 

@@ -91,7 +91,7 @@
   services:</para>
 
 <screen><userinput>for i in $(seq 1 6); do
-  ln -sv agetty /etc/init.d/agetty.tty$i
+  ln -sfv agetty /etc/init.d/agetty.tty$i
   rc-update add agetty.tty$i default
 done</userinput></screen>
 
@@ -148,6 +148,7 @@ start()
 }</literal>
 EOF
 
+chmod +x /etc/init.d/udevd
 rc-update add udevd boot</userinput></screen>
 
     <para>
