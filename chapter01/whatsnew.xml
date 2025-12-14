@@ -257,12 +257,12 @@
     <!--<listitem>
       <para>Texinfo-&texinfo-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Tzdata-&tzdata-version;</para>
-    </listitem>-->
-    <!--<listitem revision="openrc">
+    </listitem>
+    <listitem revision="openrc">
       <para>Udev from Systemd-&systemd-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Util-linux-&util-linux-version;</para>
     </listitem>
