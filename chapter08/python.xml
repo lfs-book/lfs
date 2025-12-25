@@ -43,6 +43,12 @@
   <sect2 role="installation">
     <title>Installation of Python 3</title>
 
+    <para>Fix a regression that causes issues in BLFS packages like
+    pyatspi:</para>
+
+<screen><userinput remap="pre">sed -e "/self.namespaceURI =/i\        self.ownerDocument = None" \
+    -i Lib/xml/dom/minidom.py</userinput></screen>
+
     <para>Prepare Python for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr          \
