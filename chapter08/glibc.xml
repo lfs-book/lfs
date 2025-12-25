@@ -643,10 +643,10 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
         pcprofiledump, pldd, sln, sotruss, sprof, tzselect, xtrace,
         zdump, and zic</seg>
         <seg>ld-linux-loongarch64-lp64d.so.1,
-        libBrokenLocale.{a,so}, libanl.{a,so},
+        libBrokenLocale.{a,so},
         libc.{a,so}, libc_nonshared.a, libc_malloc_debug.so,
         libdl.{a,so.2}, libg.a, libm.{a,so},
-        libmcheck.a, libmemusage.so, libmvec.{a,so}, libnsl.so.1,
+        libmcheck.a, libmemusage.so, libmvec.{a,so},
         libnss_compat.so, libnss_dns.so, libnss_files.so, libnss_hesiod.so,
         libpcprofile.so, libpthread.{a,so.0},
         libresolv.{a,so}, librt.{a,so.1},
@@ -908,18 +908,6 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libanl">
-        <term><filename class="libraryfile">libanl</filename></term>
-        <listitem>
-          <para>Dummy library containing no functions.  Previously was the
-          asynchronous name lookup library, whose functions are now in
-          <filename class='libraryfile'>libc</filename></para>
-          <indexterm zone="ch-system-glibc libanl">
-            <primary sortas="c-libanl">libanl</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
       <varlistentry id="libc">
         <term><filename class="libraryfile">libc</filename></term>
         <listitem>
@@ -1001,16 +989,6 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
           information about the memory usage of a program</para>
           <indexterm zone="ch-system-glibc libmemusage">
             <primary sortas="c-libmemusage">libmemusage</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libnsl">
-        <term><filename class="libraryfile">libnsl</filename></term>
-        <listitem>
-          <para>The network services library, now deprecated</para>
-          <indexterm zone="ch-system-glibc libnsl">
-            <primary sortas="c-libnsl">libnsl</primary>
           </indexterm>
         </listitem>
       </varlistentry>
