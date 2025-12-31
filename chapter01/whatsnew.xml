@@ -122,9 +122,9 @@
     <listitem>
       <para>Iana-Etc-&iana-etc-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Inetutils-&inetutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Intltool-&intltool-version;</para>
     </listitem>-->
@@ -233,9 +233,9 @@
     <!--<listitem>
       <para>Setuptools-&setuptools-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Shadow-&shadow-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Sqlite-&sqlite-version;</para>
     </listitem>
@@ -275,9 +275,9 @@
     <!--<listitem>
       <para>XML::Parser-&xml-parser-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Xz-&xz-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Zlib-&zlib-version;</para>
     </listitem>-->
