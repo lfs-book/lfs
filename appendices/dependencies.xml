@@ -2995,7 +2995,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
          <seg>Acl, Bash, Binutils, Coreutils, Diffutils, Gawk,
-         GCC, Glibc, Gperf, Grep, Jinja2, Libcap, Libxcrypt, Lz4, Meson,
+         GCC, Glibc, Gperf, Grep, Jinja2, Libxcrypt, Lz4, Meson,
          OpenSSL, Pcre2, Pkgconf, Sed, Util-linux, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
@@ -3003,7 +3003,7 @@
       <segmentedlist id="systemd-rundeps" revision='systemd'>
         <segtitle>&runtime;</segtitle>
         <seglistitem>
-          <seg>Acl, Glibc, Libcap, Libxcrypt, OpenSSL, Util-linux, Xz,
+          <seg>Acl, Glibc, Libxcrypt, OpenSSL, Util-linux, Xz,
           Zlib, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
