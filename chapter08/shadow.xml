@@ -144,10 +144,36 @@ find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;</userinput></s
       <varlistentry>
         <term><parameter>--disable-logind</parameter></term>
         <listitem>
-           <para>This option is not needed at this point in LFS, 
-           as it requires systemd and doesn't provide any utility to 
-           users at this stage.</para>
+          <para>This option makes Shadow (specifically, the
+          <command>login</command> and <command>who</command> programs) use
+          the <filename>/run/utmp</filename> file instead of logind to track
+          the active login sessions, as logind isn't available yet in the
+          incomplete LFS system.  But as we've discussed in
+          <xref linkend='ch-tools-createfiles'/>, the
+          <filename>/run/utmp</filename> file format will be completely
+          broken after year 2038.  The LFS editors will attempt to resolve
+          the issue before that year.</para>
         </listitem>
+
+        <!-- TODO: How?  IMO maybe just rebuild shadow after systemd/elogind
+             (then elogind will be need to copied from BLFS but without the
+             recommended dependencies; perhaps PAM will need to be moved
+             as well).
+
+             And we cannot move the first shadow build to chapter 7 because
+             it still needs libxcrypt.  Oh man.
+
+             The second option is simply moving shadow to the end of
+             chapter 8 and using a small custom helper instead of su for
+             running the testsuite as &tester;.  Still needing elogind and
+             maybe PAM.
+
+             The third option may be simply taking out the session tracking
+             functionality here by making get_session_host() and
+             active_sessions_count() dummies simply returning zero if
+             building w/o logind, and telling the users who need this
+             functionality to rebuild shadow in BLFS with all the
+             recommended dependencies.  -->
       </varlistentry>
 
       <varlistentry>
