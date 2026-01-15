@@ -438,12 +438,12 @@
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "18">
 <!ENTITY linux-majmin-version "&linux-major-version;.&linux-minor-version;">
-<!ENTITY linux-patch-version "2">
+<!ENTITY linux-patch-version "5">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "150,680 KB">
+<!ENTITY linux-size "150,709 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "857247c53271cdc89e26a49e5a85d06b">
+<!ENTITY linux-md5 "31f7fa030a361abb6ea52e0472220225">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -534,11 +534,11 @@
 <!ENTITY mpfr-fin-du "43 MB">
 <!ENTITY mpfr-fin-sbu "0.2 SBU">
 
-<!ENTITY ncurses-version "6.5-20250809">
-<!ENTITY ncurses-base-version "6.5">
+<!ENTITY ncurses-version "6.6">
+<!ENTITY ncurses-base-version "6.6">
 <!ENTITY ncurses-size "3,703 KB">
-<!ENTITY ncurses-url "https://invisible-mirror.net/archives/ncurses/current/ncurses-&ncurses-version;.tgz">
-<!ENTITY ncurses-md5 "679987405412f970561cc85e1e6428a2">
+<!ENTITY ncurses-url "https://invisible-mirror.net/archives/ncurses/ncurses-&ncurses-version;.tar.gz">
+<!ENTITY ncurses-md5 "dd45bf6854430af403452a7a6a40652c">
 <!ENTITY ncurses-home "&gnu-software;ncurses/">
 <!ENTITY ncurses-tmp-du "54 MB">
 <!ENTITY ncurses-tmp-sbu "0.4 SBU">
@@ -677,19 +677,19 @@
 <!ENTITY shadow-fin-du "115 MB">
 <!ENTITY shadow-fin-sbu "0.1 SBU">
 
-<!ENTITY sqlite-version "3510100">
-<!ENTITY sqlite-short-version "3.51.1">
-<!ENTITY sqlite-year "2025">
-<!ENTITY sqlite-size "3,133 KB">
+<!ENTITY sqlite-version "3510200">
+<!ENTITY sqlite-short-version "3.51.2">
+<!ENTITY sqlite-year "2026">
+<!ENTITY sqlite-size "3,134 KB">
 <!ENTITY sqlite-url "https://sqlite.org/&sqlite-year;/sqlite-autoconf-&sqlite-version;.tar.gz">
-<!ENTITY sqlite-md5 "2fe030b42ee30d6980f0b33947426d96">
+<!ENTITY sqlite-md5 "49600a5739d382c648b1a317e4b57446">
 <!ENTITY sqlite-home "https://sqlite.org">
 <!ENTITY sqlite-fin-du "71 MB">
 <!ENTITY sqlite-fin-sbu "0.4 SBU">
 <!ENTITY sqlite-doc-version "&sqlite-version;">
-<!ENTITY sqlite-doc-size "5,983 KB">
+<!ENTITY sqlite-doc-size "6,109 KB">
 <!ENTITY sqlite-doc-url  "&anduin-sources;/sqlite-doc-&sqlite-doc-version;.tar.xz">
-<!ENTITY sqlite-doc-md5  "f26a8417d51d17bd03c47ba3f8ebd0c0">
+<!ENTITY sqlite-doc-md5  "6f798c5dcd409ee563684c70be7e16fe">
 
 <!ENTITY sysklogd-version "2.7.2">
 <!ENTITY sysklogd-size "474 KB">
