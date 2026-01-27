@@ -85,8 +85,29 @@ make clean</userinput></screen>
 <screen><userinput remap="install">make PREFIX=/usr install</userinput></screen>
 
     <para>Install the shared library:</para>
+
 <screen><userinput remap="install">cp -av libbz2.so.* /usr/lib
 ln -sv libbz2.so.&bzip2-version; /usr/lib/libbz2.so</userinput></screen>
+
+    <para>The name of the shared library isn't standardized and it varies
+    among distros.  The instruction above has installed
+    <filename class='libraryfile'>libbz2.so.1.0</filename>, but some
+    applications, for example Kbd, expects a different name
+    <filename class='libraryfile'>libbz2.so.1</filename> that some other
+    distros are using.  Create a compatibility symlink for them:</para>
+
+<screen><userinput>ln -sv libbz2.so.&bzip2-version; /usr/lib/libbz2.so.1</userinput></screen>
+
+    <note>
+      <para>The symlink approach is only valid here because the library
+      name difference is a result of different aesthetic views of the
+      distro maintainers, not real ABI incompatibilities.  In general
+      a library name difference most likely indicates an ABI incompatibility
+      and it would be very likely invalid to <quote>hide</quote> the
+      difference via a symlink.  Read
+      <xref linkend='pkgmgmt-upgrade-issues'/> for details about library
+      names.</para>
+    </note>
 
     <para>Install the shared <command>bzip2</command> binary into the
     <filename class="directory">/usr/bin</filename> directory, and replace
