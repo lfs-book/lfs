@@ -689,7 +689,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Bzip2, Coreutils, Diffutils, Gawk, GCC, Glibc,
-          Grep, Make, Sed, Xz, and Zlib</seg>
+          Grep, Make, Sed, Xz, Zlib, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1541,7 +1541,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Bison, Coreutils, Flex, GCC, Gettext, Glibc,
-          Gzip, Make, OpenSSL, Pkgconf, Sed, Xz, and Zlib</seg>
+          Gzip, Make, OpenSSL, Pkgconf, Sed, Xz, Zlib, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2751,8 +2751,8 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Expat, GCC, Gdbm, Gettext, Glibc,
-          Grep, Libffi, Libxcrypt, Make, Ncurses, OpenSSL, Pkgconf, Sed, and
-          Util-linux</seg>
+          Grep, Libffi, Libxcrypt, Make, Ncurses, OpenSSL, Pkgconf, Sed,
+          Util-linux, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -3569,7 +3569,8 @@
       <segmentedlist id="zstd-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>Binutils, GCC, Libelf, and &systemd-udev;</seg>
+          <seg>Binutils, File, GCC, Kmod, Libelf, Python,
+          and &systemd-udev;</seg>
         </seglistitem>
       </segmentedlist>
 
