@@ -41,6 +41,11 @@
   <sect2 role="installation">
     <title>Installation of Coreutils</title>
 
+    <para>First, make some fixes introduced by glibc-2.43:</para>
+
+<screen><userinput remap="pre">sed -r '/_GL_EXTERN_C/s/w?memchr|bsearch/(&amp;)/' \
+    -i $(find -name \*.in.h)</userinput></screen>
+
     <para>POSIX requires that programs from Coreutils recognize character
     boundaries correctly even in multibyte locales. The following patch fixes
     this non-compliance and other internationalization-related bugs.</para>
