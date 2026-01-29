@@ -43,6 +43,11 @@
   <sect2 role="installation">
     <title>Installation of Coreutils</title>
 
+    <para>First, make some fixes introduced by glibc-2.43:</para>
+
+<screen><userinput remap="pre">sed -r '/_GL_EXTERN_C/s/w?memchr|bsearch/(&amp;)/' \
+    -i $(find -name \*.in.h)</userinput></screen>
+
     <para>Prepare Coreutils for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr                     \
