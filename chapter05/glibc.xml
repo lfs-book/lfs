@@ -209,9 +209,9 @@ readelf -l a.out | grep ': /lib'</userinput></screen>
 
   <para>The output of the last command should be:</para>
 
-<screen><computeroutput>/mnt/lfs/lib/../lib/Scrt1.o succeeded
-/mnt/lfs/lib/../lib/crti.o succeeded
-/mnt/lfs/lib/../lib/crtn.o succeeded</computeroutput></screen>
+<screen><computeroutput>/mnt/lfs/lib/Scrt1.o succeeded
+/mnt/lfs/lib/crti.o succeeded
+/mnt/lfs/lib/crtn.o succeeded</computeroutput></screen>
 
   <para>Verify that the compiler is searching for the correct header
   files:</para>
