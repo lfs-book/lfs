@@ -45,6 +45,11 @@
 
     <screen><userinput remap="pre">sed -i 's/char [*]q/const &amp;/' libgomp/affinity-fmt.c</userinput></screen>
 
+    <para>Fix a severe performance issue and two compiler crash issues
+    on LoongArch:</para>
+
+    <screen><userinput remap="pre">patch -Np1 -i ../&gcc-loongarch-fixes-patch;</userinput></screen>
+
     <para>Set the default directory name for
     64-bit libraries to <quote>lib</quote>:</para>
 

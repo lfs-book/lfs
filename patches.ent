@@ -64,3 +64,9 @@
 <!ENTITY systemd-upstream-patch-md5 "8d9c1014445c463cf7c24c162b1e0686">
 <!ENTITY systemd-upstream-patch-size "7.2 KB">
 -->
+
+<!-- Put LoongArch patches last to reduce the chance of a conflict during
+     merge.  -->
+<!ENTITY gcc-loongarch-fixes-patch "gcc-&gcc-version;-loongarch_fixes-1.patch">
+<!ENTITY gcc-loongarch-fixes-patch-md5 "9e9ab8423aa3e37b68cf9f372d3c5cfa">
+<!ENTITY gcc-loongarch-fixes-patch-size "7.4 KB">
