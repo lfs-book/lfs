@@ -52,14 +52,6 @@
     </varlistentry>
 
     <varlistentry>
-      <term>Coreutils Upstream Fix Patch - <token>&coreutils-upstream-patch-size;</token>:</term>
-      <listitem>
-        <para>Download: <ulink url="&patches-root;&coreutils-upstream-patch;"/></para>
-        <para>MD5 sum: <literal>&coreutils-upstream-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
       <term>Coreutils Internationalization Fixes Patch - <token>&coreutils-i18n-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="&patches-root;&coreutils-i18n-patch;"/></para>
@@ -84,6 +76,7 @@
       </listitem>
     </varlistentry>
 -->
+
 <!--
     <varlistentry>
       <term>Glibc Upstream Fix Patch - <token>&glibc-upstream-patch-size;</token>:</term>
@@ -93,6 +86,7 @@
       </listitem>
     </varlistentry>
 -->
+
     <varlistentry>
       <term>Glibc FHS Patch - <token>&glibc-fhs-patch-size;</token>:</term>
       <listitem>

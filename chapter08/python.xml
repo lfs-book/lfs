@@ -43,6 +43,12 @@
   <sect2 role="installation">
     <title>Installation of Python 3</title>
 
+    <para>Fix a regression that causes issues in BLFS packages like
+    pyatspi:</para>
+
+<screen><userinput remap="pre">sed -e "/self.namespaceURI =/i\        self.ownerDocument = None" \
+    -i Lib/xml/dom/minidom.py</userinput></screen>
+
     <para>Prepare Python for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr          \
@@ -89,8 +95,7 @@
     limit and 1 SBU (measured when building Binutils pass 1 with one CPU
     core) should be enough.  Some tests are flaky, so the test suite will
     automatically re-run failed tests.  If a test failed but then passed
-    when re-run, it should be considered as passed.  One test, test_ssl,
-    is known to fail in the chroot environment.</para>
+    when re-run, it should be considered as passed.</para>
 
     <para>Install the package:</para>
 
@@ -196,7 +201,7 @@ tar --strip-components=1  \
 
       <seglistitem>
         <seg>
-          2to3, idle3, pip3, pydoc3, python3, and python3-config
+          idle3, pip3, pydoc3, python3, and python3-config
         </seg>
         <seg>
           libpython&python-minor;.so and libpython3.so
@@ -213,7 +218,7 @@ tar --strip-components=1  \
       <bridgehead renderas="sect3">Short Descriptions</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
-
+      <!--
       <varlistentry id="python-2to3">
         <term><command>2to3</command></term>
         <listitem>
@@ -228,7 +233,7 @@ tar --strip-components=1  \
           </indexterm>
         </listitem>
       </varlistentry>
-
+      -->
       <varlistentry id="idle3">
         <term><command>idle3</command></term>
         <listitem>

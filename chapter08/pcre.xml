@@ -44,7 +44,7 @@
     <para>Prepare pcre2 for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr                       \
-            --docdir=/usr/share/doc/pcre2-10.45 \
+            --docdir=/usr/share/doc/pcre2-&pcre2-version; \
             --enable-unicode                    \
             --enable-jit                        \
             --enable-pcre2-16                   \

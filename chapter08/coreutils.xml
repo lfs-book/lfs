@@ -41,9 +41,10 @@
   <sect2 role="installation">
     <title>Installation of Coreutils</title>
 
-    <para>First, apply a patch for a security problem identified upstream:</para>
+    <para>First, make some fixes introduced by glibc-2.43:</para>
 
-<screen><userinput remap="pre">patch -Np1 -i ../&coreutils-upstream-patch;</userinput></screen>
+<screen><userinput remap="pre">sed -r '/_GL_EXTERN_C/s/w?memchr|bsearch/(&amp;)/' \
+    -i $(find -name \*.in.h)</userinput></screen>
 
     <para>POSIX requires that programs from Coreutils recognize character
     boundaries correctly even in multibyte locales. The following patch fixes
@@ -56,6 +57,13 @@
       bugs to the Coreutils maintainers, please check first to see if 
       those bugs are reproducible without this patch.</para>
     </note>
+
+    <!-- https://github.com/coreutils/coreutils/commit/bd528f923482 -->
+    <para>Fix a bug causing the <command>cp</command> command to hang
+    forever when copying sparse files on
+    <systemitem class='filesystem'>ext4</systemitem> file systems:</para>
+
+<screen><userinput remap="pre">sed '/off_t ext_end =/s/ipos/src_pos/' -i src/copy-file-data.c</userinput></screen>
 
     <para>Now prepare Coreutils for compilation:</para>
 
