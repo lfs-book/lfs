@@ -43,6 +43,11 @@
   <sect2 role="installation">
     <title>Installation of Cross GCC</title>
 
+    <para>Fix a severe performance issue and two compiler crash issues
+    on LoongArch:</para>
+
+    <screen><userinput remap="pre">patch -Np1 -i ../&gcc-loongarch-fixes-patch;</userinput></screen>
+
     <para>GCC requires the GMP, MPFR and MPC packages. As these packages may
     not be included in your host distribution, they will be built with
     GCC.  Unpack each package into the GCC source directory and rename the
