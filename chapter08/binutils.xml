@@ -41,7 +41,7 @@
   <sect2 role="installation">
     <title>Installation of Binutils</title>
 
-    <para>First, make some fixes introduced by glibc-2.43:</para>
+    <para>First, make a fix required by glibc-2.43 and later:</para>
 
 <screen><userinput remap="pre">sed -i 's/__collector_util_funcs.x/(&amp;)/' gprofng/src/collector_module.h</userinput></screen>
 
