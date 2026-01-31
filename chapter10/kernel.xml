@@ -366,7 +366,13 @@
     <para>Unless module support has been disabled in the kernel configuration,
     install the modules with:</para>
 
-<screen><userinput remap="install">make modules_install</userinput></screen>
+<screen><userinput remap="install">make INSTALL_MOD_STRIP=1 modules_install</userinput></screen>
+
+    <!-- FIXME: I don't think this is the correct solution.  -->
+    <para>The <parameter>INSTALL_MOD_STRIP=1</parameter> option makes the
+    build system strip the kernel modules after installation.  We need that
+    to work around a memory allocate failure when the kernel loads large
+    modules (for example the AMDGPU module).</para>
 
     <para>After kernel compilation is complete, additional steps are
     required to complete the installation. Some files need to be copied to
