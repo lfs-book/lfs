@@ -201,10 +201,6 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     url="&test-results;"/> and
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
-    <!-- https://gcc.gnu.org/PR118885 -->
-    <para>Four tests related to <filename>pr90579.c</filename> are known
-    to fail.</para>
-
     <para>Five tests related to <filename>analyzer/strchr-1.c</filename> are known
     to fail.</para>
 
@@ -283,9 +279,9 @@ readelf -l a.out | grep ': /lib'</userinput></screen>
 
   <para>The output of the last command should be:</para>
 
-<screen><computeroutput>/usr/lib/gcc/loongarch64-unknown-linux-gnu/&gcc-version;/../../../../lib/Scrt1.o succeeded
-/usr/lib/gcc/loongarch64-unknown-linux-gnu/&gcc-version;/../../../../lib/crti.o succeeded
-/usr/lib/gcc/loongarch64-unknown-linux-gnu/&gcc-version;/../../../../lib/crtn.o succeeded</computeroutput></screen>
+<screen><computeroutput>/usr/lib/gcc/loongarch64-unknown-linux-gnu/&gcc-version;/../../../Scrt1.o succeeded
+/usr/lib/gcc/loongarch64-unknown-linux-gnu/&gcc-version;/../../../crti.o succeeded
+/usr/lib/gcc/loongarch64-unknown-linux-gnu/&gcc-version;/../../../crtn.o succeeded</computeroutput></screen>
 
   <para>Depending on your machine architecture, the above may differ slightly.
   The difference will be the name of the directory
