@@ -54,10 +54,13 @@
 
 <screen><userinput remap="make">make -C lib
 make -C libelf</userinput></screen>
-
+<!--
     <para>To test the results, issue:</para>
 
 <screen><userinput remap="test">make -k check</userinput></screen>
+-->
+
+    <para>The test suite fails to build with glibc-2.43 or newer.</para>
 
     <para>The above command builds the utilities that are part of the package
     as well as the unit tests. Two tests are known to fail: dwarf_srclang_check

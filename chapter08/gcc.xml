@@ -41,7 +41,7 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
-    <para>First, make some fixes introduced by glibc-2.43:</para>
+    <para>First, make a fix required by glibc-2.43 and later:</para>
 
     <screen><userinput remap="pre">sed -i 's/char [*]q/const &amp;/' libgomp/affinity-fmt.c</userinput></screen>
 

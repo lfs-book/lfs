@@ -204,7 +204,7 @@
       <para>OpenSSL-&openssl-version;</para>
     </listitem>
     <listitem>
-      <para>packaging-&packaging-version;</para>
+      <para>Packaging-&packaging-version;</para>
     </listitem>
     <!--<listitem>
       <para>Patch-&patch-version;</para>
