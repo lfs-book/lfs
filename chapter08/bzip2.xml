@@ -145,7 +145,8 @@ make -f Makefile-libbz2_so</userinput></screen>
 
 <screen><userinput remap="install">install -Dm755 libbz2.so.1.0.8 /usr/lib32/libbz2.so.1.0.8
 ln -sf libbz2.so.1.0.8 /usr/lib32/libbz2.so
-ln -sf libbz2.so.1.0.8 /usr/lib32/libbz2.so.1</userinput></screen>
+ln -sf libbz2.so.1.0.8 /usr/lib32/libbz2.so.1
+ln -sf libbz2.so.1.0.8 /usr/lib32/libbz2.so.1.0</userinput></screen>
 
   </sect2><!-- m32 -->
 
@@ -170,7 +171,8 @@ make -f Makefile-libbz2_so</userinput></screen>
 
 <screen><userinput remap="install">install -Dm755 libbz2.so.1.0.8 /usr/libx32/libbz2.so.1.0.8
 ln -sf libbz2.so.1.0.8 /usr/libx32/libbz2.so
-ln -sf libbz2.so.1.0.8 /usr/libx32/libbz2.so.1</userinput></screen>
+ln -sf libbz2.so.1.0.8 /usr/libx32/libbz2.so.1
+ln -sf libbz2.so.1.0.8 /usr/libx32/libbz2.so.1.0</userinput></screen>
 
   </sect2><!-- mx32 -->
 
