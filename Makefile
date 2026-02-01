@@ -21,15 +21,15 @@ ifneq ($(REV), sysv)
 endif
 
 ifeq ($(REV), sysv)
-  BASEDIR         ?= $(HOME)/public_html/lfs-book
-  PDF_OUTPUT      ?= LFS-BOOK.pdf
-  NOCHUNKS_OUTPUT ?= LFS-BOOK.html
-  DUMPDIR         ?= $(HOME)/lfs-commands
+  BASEDIR         ?= $(HOME)/public_html/mlfs-book
+  PDF_OUTPUT      ?= MLFS-BOOK.pdf
+  NOCHUNKS_OUTPUT ?= MLFS-BOOK.html
+  DUMPDIR         ?= $(HOME)/mlfs-commands
 else
-  BASEDIR         ?= $(HOME)/public_html/lfs-systemd
-  PDF_OUTPUT      ?= LFS-SYSD-BOOK.pdf
-  NOCHUNKS_OUTPUT ?= LFS-SYSD-BOOK.html
-  DUMPDIR         ?= $(HOME)/lfs-sysd-commands
+  BASEDIR         ?= $(HOME)/public_html/mlfs-systemd
+  PDF_OUTPUT      ?= MLFS-SYSD-BOOK.pdf
+  NOCHUNKS_OUTPUT ?= MLFS-SYSD-BOOK.html
+  DUMPDIR         ?= $(HOME)/mlfs-sysd-commands
 endif
 
 ifndef ARCH
