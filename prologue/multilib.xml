@@ -31,7 +31,7 @@
       the software's bit size while still offering a mainly 64-bit
       experience.</para>
 
-    <para>This book provides 32-bit (i386/i486/i586/i686) and x32-bit
+    <para>This book provides 32-bit (i?86) and x32-bit
       dependencies and toolchains intended for 64-bit x86 (x86_64)
       systems.</para>
 
