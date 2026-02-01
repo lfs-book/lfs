@@ -19,22 +19,10 @@
       <firstname>Managing Editor: Bruce</firstname>
       <surname>Dubbs</surname>
     </author>
-
     <author revision="systemd">
       <firstname>Editor: Douglas R.</firstname>
       <surname>Reno</surname>
     </author>
-
-    <author revision="systemd">
-      <firstname>Editor: DJ</firstname>
-      <surname>Lucas</surname>
-    </author>
-
-    <author arch="ml_32,ml_x32,ml_all">
-      <firstname>Editor: Thomas</firstname>
-      <surname>Trepl</surname>
-    </author>
-
     <author arch="ml_32,ml_x32,ml_all">
       <firstname>Editor: Zeckma</firstname>
     </author>
