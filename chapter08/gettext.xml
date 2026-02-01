@@ -43,7 +43,7 @@
   <sect2 role="installation">
     <title>Installation of Gettext</title>
 
-    <para>First, make some fixes introduced by glibc-2.43:</para>
+    <para>First, make a fix required by glibc-2.43 and later:</para>
 
 <screen><userinput remap="pre">sed -r '/_GL_EXTERN_C/s/w?memchr|bsearch/(&amp;)/' \
     -i $(find -name \*.in.h)</userinput></screen>

@@ -216,11 +216,16 @@ meson setup ..                \
 
 <screen><userinput remap="make">ninja</userinput></screen>
 
-    <para>Some tests need a basic <filename>/etc/os-release</filename> file.
-    To test the results, issue:</para>
+    <para>One test creates a mount point in
+    <filename class='directory'>/tmp</filename> that we cannot clean up so
+    easily after running the test suite, and some tests need a basic
+    <filename>/etc/os-release</filename> file.  To test the results, create
+    this file and run the test suite in a separate mount namespace (so the
+    mount point is only visible for the test suite and it gets cleaned up
+    automatically after the test suite finishes):</para>
 
 <screen><userinput remap="test">echo 'NAME="Linux From Scratch"' &gt; /etc/os-release
-ninja test</userinput></screen>
+unshare -m ninja test</userinput></screen>
 
     <!-- test-namespace needs /run/systemd/inaccessible/sock, which only exists
          after initializing the system with systemd.  -->
