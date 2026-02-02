@@ -200,22 +200,9 @@ esac</userinput></screen>
       </listitem>
 
       <listitem>
-        <para>On MIPS, the test named <emphasis>nptl/tst-mutex10</emphasis>
-        is known to time out even with a very large timeout factor.</para>
-      </listitem>
-
-      <listitem>
         <para>On MIPS, the test named
         <emphasis>elf/tst-ro-dynamic</emphasis> and the test named
         <emphasis>elf/tst-sprof-basic</emphasis> are known to fail.</para>
-      </listitem>
-
-      <!-- https://sourceware.org/pipermail/libc-alpha/2024-January/154221.html
-           https://sourceware.org/glibc/wiki/Testing/Tests/stdlib/tst-arc4random-thread -->
-      <listitem>
-        <para>The <emphasis>stdlib/tst-arc4random-thread</emphasis>
-        test is known to fail with some host kernel versions due to a
-        kernel bug on MIPS.</para>
       </listitem>
 
       <listitem>
