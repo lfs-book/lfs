@@ -157,6 +157,34 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="make">make</userinput></screen>
 
+    <!-- The GCC manual actually states if the application needs to throw
+         and catch exceptions across different shared libraries, libgcc_s
+         must be used.  Thus it seems on all architectures we should link
+         libstdc++ against libgcc_s.  But on all other architectures I've
+         tested, the exception handling seems fine even with the static
+         libgcc and libgcc_eh libraries (as long as they are from GCC pass 2
+         instead of pass 1, see LDFLAGS_FOR_TARGET).  Maybe this is actually
+         some sort of bug in the MIPS toolchain or an inhernet limitation
+         of the MIPS ABI (a spaghetti with some aspects traceable to SGI
+         IRIX).  -->
+    <para>The <command>libtool</command> copy for building the C++ runtime
+    library was configured with GCC pass 1 as the compiler.  GCC pass 1
+    lacks the shared GCC runtime library
+    (<filename class='libraryfile'>libgcc_s.so</filename>), so the
+    <command>libtool</command> copy has linked the C++ runtime library
+    against the static libraries
+    <filename class='libraryfile'>libgcc.a</filename> and
+    <filename class='libraryfile'>libgcc_eh.a</filename> instead.  The
+    result is insufficiant for the correct exception handling on MIPS,
+    causing glibc tests to fail.  To allow testing glibc, edit the
+    <command>libtool</command> copy and rebuild the C++ runtime library with
+    <filename class='libraryfile'>libgcc_s.so</filename> instead of the
+    static libraries:</para>
+
+<screen><userinput>sed '/postdeps=/s/-lgcc/&amp;_s/g' -i $LFS_TGT/libstdc++-v3/libtool
+rm $LFS_TGT/libstdc++-v3/src/libstdc++.la
+make -C $LFS_TGT/libstdc++-v3 src/libstdc++.la</userinput></screen>
+
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make DESTDIR=$LFS install</userinput></screen>
