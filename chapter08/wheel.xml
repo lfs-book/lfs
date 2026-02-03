@@ -46,7 +46,7 @@
 
     <para>Install Wheel with the following command:</para>
 
-<screen><userinput remap="install">pip3 install --no-index --find-links=dist wheel</userinput></screen>
+<screen><userinput remap="install">pip3 install --no-index --find-links dist wheel</userinput></screen>
 
   </sect2>
 

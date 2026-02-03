@@ -45,12 +45,14 @@
 <screen revision="sysv"><userinput remap="configure">./configure --prefix=/usr                           \
             --docdir=/usr/share/doc/procps-ng-&procps-ng-version; \
             --disable-static                        \
-            --disable-kill</userinput></screen>
+            --disable-kill                          \
+            --enable-watch8bit</userinput></screen>
 
 <screen revision="systemd"><userinput remap="configure">./configure --prefix=/usr                           \
             --docdir=/usr/share/doc/procps-ng-&procps-ng-version; \
             --disable-static                        \
             --disable-kill                          \
+            --enable-watch8bit                      \
             --with-systemd</userinput></screen>
 
     <variablelist>
@@ -63,12 +65,20 @@
           command; it will be installed from the Util-linux package.</para>
         </listitem>
       </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--enable-watch8bit</parameter></term>
+        <listitem>
+          <para>This switch enables the ncursesw support for the
+          <command>watch</command> command, so it can handle 8-bit
+          characters.</para>
+        </listitem>
+      </varlistentry>
     </variablelist>
 
     <para>Compile the package:</para>
 
-<screen revision='sysv'><userinput remap="make">make</userinput></screen>
-<screen revision='systemd'><userinput remap="make">make src_w_LDADD='$(LDADD) -lsystemd'</userinput></screen>
+<screen><userinput remap="make">make</userinput></screen>
 
     <!-- To editors: "pmap {X,XX} with unreachable process" tests don't work
          as root.  They may seem to pass due to some Tcl/Expect/DejaGNU
@@ -81,7 +91,8 @@ su tester -c "PATH=$PATH make check"</userinput></screen>
     <para>One test named
     <literal>ps with output flag bsdtime,cputime,etime,etimes</literal>
     is known to fail if the host kernel is not built with
-    <literal>CONFIG_BSD_PROCESS_ACCT</literal> enabled.</para>
+    <literal>CONFIG_BSD_PROCESS_ACCT</literal> enabled. In
+    addition, one pgrep test may fail in the chroot environment.</para>
 
     <para>Install the package:</para>
 

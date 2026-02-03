@@ -42,6 +42,15 @@ mount -v -t ext4 /dev/<replaceable>&lt;yyy&gt;</replaceable> $LFS/home</userinpu
   <replaceable>&lt;yyy&gt;</replaceable> with the appropriate partition
   names.</para>
 
+  <para>Set the owner and permission mode of the
+  <filename class='directory'>$LFS</filename> directory (i.e. the root
+  directory in the newly created file system for the LFS system) to
+  &root; and <literal>755</literal> in case the host distro has been
+  configured to use a different default for <command>mkfs</command>:</para>
+
+<screen role='nodump'><userinput>chown root:root $LFS
+chmod 755 $LFS</userinput></screen>
+
   <para>Ensure that this new partition is not mounted with permissions that are
   too restrictive (such as the <option>nosuid</option> or
   <option>nodev</option> options). Run the <command>mount</command> command

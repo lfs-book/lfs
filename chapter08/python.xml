@@ -43,12 +43,19 @@
   <sect2 role="installation">
     <title>Installation of Python 3</title>
 
+    <para>Fix a regression that causes issues in BLFS packages like
+    pyatspi:</para>
+
+<screen><userinput remap="pre">sed -e "/self.namespaceURI =/i\        self.ownerDocument = None" \
+    -i Lib/xml/dom/minidom.py</userinput></screen>
+
     <para>Prepare Python for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr        \
-            --enable-shared      \
-            --with-system-expat  \
-            --enable-optimizations</userinput></screen>
+<screen><userinput remap="configure">./configure --prefix=/usr          \
+            --enable-shared        \
+            --with-system-expat    \
+            --enable-optimizations \
+            --without-static-libpython</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
@@ -88,8 +95,7 @@
     limit and 1 SBU (measured when building Binutils pass 1 with one CPU
     core) should be enough.  Some tests are flaky, so the test suite will
     automatically re-run failed tests.  If a test failed but then passed
-    when re-run, it should be considered as passed.  One test, test_ssl,
-    is known to fail in the chroot environment.</para>
+    when re-run, it should be considered as passed.</para>
 
     <para>Install the package:</para>
 
@@ -162,21 +168,21 @@ EOF
 
 <screen><userinput remap="install">install -v -dm755 /usr/share/doc/python-&python-version;/html
 
-tar --no-same-owner \
-    -xvf ../python-&python-version;-docs-html.tar.bz2
-cp -R --no-preserve=mode python-&python-version;-docs-html/* \
-    /usr/share/doc/python-&python-version;/html</userinput></screen>
+tar --strip-components=1  \
+    --no-same-owner       \
+    --no-same-permissions \
+    -C /usr/share/doc/python-&python-version;/html \
+    -xvf ../python-&python-version;-docs-html.tar.bz2</userinput></screen>
 
     <variablelist>
       <title>The meaning of the documentation install commands:</title>
 
     <varlistentry>
-      <term><option>--no-same-owner</option> (tar) and <option>--no-preserve=mode</option> (cp)</term>
+      <term><option>--no-same-owner</option> and <option>--no-same-permissions</option></term>
       <listitem>
         <para>Ensure the installed files have the correct ownership and
         permissions.  Without these options, <application>tar</application>
-        will install the package files with the upstream creator's values
-        and files would have restrictive permissions.
+        will install the package files with the upstream creator's values.
         </para>
       </listitem>
     </varlistentry>
@@ -195,7 +201,7 @@ cp -R --no-preserve=mode python-&python-version;-docs-html/* \
 
       <seglistitem>
         <seg>
-          2to3, idle3, pip3, pydoc3, python3, and python3-config
+          idle3, pip3, pydoc3, python3, and python3-config
         </seg>
         <seg>
           libpython&python-minor;.so and libpython3.so
@@ -212,7 +218,7 @@ cp -R --no-preserve=mode python-&python-version;-docs-html/* \
       <bridgehead renderas="sect3">Short Descriptions</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
-
+      <!--
       <varlistentry id="python-2to3">
         <term><command>2to3</command></term>
         <listitem>
@@ -227,7 +233,7 @@ cp -R --no-preserve=mode python-&python-version;-docs-html/* \
           </indexterm>
         </listitem>
       </varlistentry>
-
+      -->
       <varlistentry id="idle3">
         <term><command>idle3</command></term>
         <listitem>

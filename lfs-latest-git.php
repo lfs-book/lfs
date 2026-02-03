@@ -64,6 +64,8 @@ function find_even_max( $lines, $regex_match, $regex_replace )
 
 function http_get_file( $url )
 {
+  $url = preg_replace( "/ftpmirror.gnu.org/", "mirrors.ibiblio.org/gnu", $url );
+
   if ( preg_match( "/mpfr/", $url ) )
   {
     # There seems to be a problem with the mpfs certificate
@@ -118,7 +120,6 @@ function get_packages( $package, $dirpath )
 //if ( $package != "wheel" ) return 0; // debug
 
 if ( $package == "bc"         ) $dirpath = github("gavinhoward/bc");
-if ( $package == "check"      ) $dirpath = github("libcheck/check");
 if ( $package == "e2fsprogs"  ) $dirpath = "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs";
 if ( $package == "expat"      ) $dirpath = "https://sourceforge.net/projects/expat/files";
 if ( $package == "elfutils"   ) $dirpath = "https://sourceware.org/ftp/elfutils";
@@ -140,11 +141,15 @@ if ( $package == "mpfr"       ) $dirpath = "https://mpfr.loria.fr/mpfr-current";
 if ( $package == "ncurses"    ) $dirpath = "https://invisible-mirror.net/archives/ncurses";
 if ( $package == "ninja"      ) $dirpath = github("ninja-build/ninja");
 if ( $package == "openssl"    ) $dirpath = github("openssl/openssl");
+if ( $package == "packaging"  ) $dirpath = "https://pypi.org/rss/project/packaging/releases.xml";
+if ( $package == "pcre2"      ) $dirpath = github("PCRE2Project/pcre2");
 if ( $package == "procps-ng"  ) $dirpath = "https://gitlab.com/procps-ng/procps/-/tags";
 if ( $package == "psmisc"     ) $dirpath = "https://gitlab.com/psmisc/psmisc/-/tags";
 if ( $package == "Python"     ) $dirpath = "https://www.python.org/downloads/source/";
 if ( $package == "setuptools" ) $dirpath = "https://pypi.org/rss/project/setuptools/releases.xml";
 if ( $package == "shadow"     ) $dirpath = github("shadow-maint/shadow");
+if ( $package == "sqlite-autoconf" ) $dirpath = "https://sqlite.org/download.html";
+if ( $package == "sqlite-doc" ) $dirpath = "https://sqlite.org/download.html";
 if ( $package == "sysvinit"   ) $dirpath = github("slicer69/sysvinit");
 if ( $package == "sysklogd"   ) $dirpath = github("troglobit/sysklogd");
 if ( $package == "systemd"    ) $dirpath = github("systemd/systemd");
@@ -232,7 +237,7 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
   }
 
   if ( $package == "tcl" )
-     return find_max( $lines, "/tcl\d/", "/^.*tcl(\d\.[\d\.]*\d)-src.*$/" );
+     return find_max( $lines, "/tcl8/", "/^.*tcl(\d\.[\d\.]*\d)-src.*$/" );
 
   if ( $package == "gmp" )
      return find_max( $lines, "/$package/", "/^.*$package-([\d\._]*\d[a-z]?).tar.*$/" );
@@ -262,6 +267,18 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
   if ( $package == "wheel" )
      return find_max( $lines, "/wheel\/\d/", "/^.*wheel\/([\d\.]+).*$/" );
   # End Python modules
+
+  if ( $package == "packaging" )
+     return find_max( $lines, "/packaging/", "/^.*^.*packaging.([\d\.]+\d)\/.*$/" );
+
+  if ( $package == "pcre2" )
+     return find_max( $lines, '/name.:/', '/^.*pcre2-([\d\.]+\d).*$/' );
+
+  if ( $package == "sqlite-autoconf" )
+     return find_max( $lines, '/autoconf/', '/^.*autoconf-(\d+).tar.*$/' );
+
+  if ( $package == "sqlite-doc" )
+     return find_max( $lines, '/sqlite-doc/', '/^.*doc-(\d+).zip.*$/' );
 
   if ( $package == "procps-ng" )
      return find_max( $lines, "/v\d/", "/^.*v([\d\.]+)$/" );
@@ -356,6 +373,11 @@ function get_current()
       else if ( preg_match( "/lz4/", $file ) )
       {
         $pkg_pattern= "/(\D*4).*/";
+      }
+
+      else if ( preg_match( "/pcre2/", $file ) )
+      {
+        $pkg_pattern= "/(\D*2).*/";
       }
 
       else if ( preg_match( "/systemd-man-pages/", $file ) ) continue;

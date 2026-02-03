@@ -42,7 +42,7 @@
 
   <sect2 role="installation">
     <title>Installation of Bash</title>
-
+    
     <para>Prepare Bash for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr                      \

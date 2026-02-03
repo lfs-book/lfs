@@ -91,13 +91,13 @@
         <para>This package contains programs for compressing and decompressing
         files.  It is required to decompress many LFS packages.</para>
       </listitem>
-
+<!--
       <listitem>
         <para>Check</para>
 
         <para>This package provides a test harness for other programs.</para>
       </listitem>
-
+-->
       <listitem>
         <para>Coreutils</para>
 
@@ -481,6 +481,14 @@
       </listitem>
 
       <listitem>
+        <para>Pcre2</para>
+
+        <para>This package provides a set of functions that implement regular 
+        expression pattern matching using the same syntax and semantics as 
+        Perl 5.</para>
+      </listitem>
+
+      <listitem>
         <para>Perl</para>
 
         <para>This package is an interpreter for the runtime language
@@ -543,6 +551,13 @@
 
         <para>This package contains programs for handling passwords
         securely.</para>
+      </listitem>
+
+      <listitem>
+        <para>Sqlite</para>
+
+        <para>This package provides a serverless, zero-configuration, 
+        transactional SQL database engine.</para>
       </listitem>
 
       <listitem revision="sysv">

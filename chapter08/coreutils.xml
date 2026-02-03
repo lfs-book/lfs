@@ -41,6 +41,11 @@
   <sect2 role="installation">
     <title>Installation of Coreutils</title>
 
+    <para>First, make a fix required by glibc-2.43 and later:</para>
+
+<screen><userinput remap="pre">sed -r '/_GL_EXTERN_C/s/w?memchr|bsearch/(&amp;)/' \
+    -i $(find -name \*.in.h)</userinput></screen>
+
     <para>POSIX requires that programs from Coreutils recognize character
     boundaries correctly even in multibyte locales. The following patch fixes
     this non-compliance and other internationalization-related bugs.</para>
@@ -53,22 +58,44 @@
       those bugs are reproducible without this patch.</para>
     </note>
 
+    <!-- https://github.com/coreutils/coreutils/commit/bd528f923482 -->
+    <para>Fix a bug causing the <command>cp</command> command to hang
+    forever when copying sparse files on
+    <systemitem class='filesystem'>ext4</systemitem> file systems:</para>
+
+<screen><userinput remap="pre">sed '/off_t ext_end =/s/ipos/src_pos/' -i src/copy-file-data.c</userinput></screen>
+
     <para>Now prepare Coreutils for compilation:</para>
 
-<screen><userinput remap="configure">autoreconf -fiv
+<screen><userinput remap="configure">autoreconf -fv
+automake -af
 FORCE_UNSAFE_CONFIGURE=1 ./configure \
             --prefix=/usr            \
             --enable-no-install-program=kill,uptime</userinput></screen>
 
     <variablelist>
-      <title>The meaning of the configure options:</title>
+      <title>The meaning of the commands and configure options:</title>
 
       <varlistentry>
-        <term><command>autoreconf</command></term>
+        <term><command>autoreconf -fv</command></term>
         <listitem>
           <para>The patch for internationalization has modified the
           build system, so the configuration files must
-          be regenerated.</para>
+          be regenerated.  Normally we would use the
+          <parameter>-i</parameter> option to update the standard
+          auxiliary files, but for this package it does not work because
+          <filename>configure.ac</filename> specified an old gettext
+          version.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><command>automake -af</command></term>
+        <listitem>
+	  <para>The automake auxiliary files were not updated by
+	  <command>autoreconf</command> due to the missing
+	  <parameter>-i</parameter> option.  This command updates them
+	  to prevent a build failure.</para>
         </listitem>
       </varlistentry>
 
@@ -133,12 +160,6 @@ FORCE_UNSAFE_CONFIGURE=1 ./configure \
     <para>Remove the temporary group:</para>
 
 <screen><userinput remap="test">groupdel dummy</userinput></screen>
-
-    <para>
-       Two tests, <filename>tests/cp/preserve-mode.sh</filename> and
-       <filename>tests/mv/acl.sh</filename>, are known to
-       fail in the chroot environment, but pass in a complete system.
-    </para>
 
     <para>Install the package:</para>
 

@@ -43,6 +43,15 @@
   <sect2 role="installation">
     <title>Installation of Libcap</title>
 
+    <note>
+      <para>
+        If updating this package on an existing system and the go compiler is
+        installed, prevent a build error by using <command>export GOLANG=no</command>
+        before running the commands below.  Be sure to unset <envar>GOLANG</envar>
+        after installation is complete.
+      </para>
+    </note>
+
     <para>Prevent static libraries from being installed:</para>
 
 <screen><userinput remap="pre">sed -i '/install -m.*STA/d' libcap/Makefile</userinput></screen>

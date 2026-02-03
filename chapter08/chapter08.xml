@@ -23,6 +23,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="zstd.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="file.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="readline.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="pcre.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="m4.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="bc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="flex.xml"/>
@@ -60,17 +61,18 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="autoconf.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="automake.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="openssl.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="kmod.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libelf.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libffi.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="sqlite.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="python.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="flit-core.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="packaging.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="wheel.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="setuptools.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ninja.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="meson.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="kmod.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="coreutils.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="check.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="diffutils.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gawk.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="findutils.xml"/>

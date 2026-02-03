@@ -151,9 +151,9 @@
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
         href="kernel/x2apic.xml"/>
 
-      <para>If you are building a 32-bit system running on a hardware
-      with RAM more than 4GB, adjust the configuration so the kernel will
-      be able to use up to 64GB physical RAM:</para>
+      <para>If you are building a 32-bit system,
+      adjust the configuration so the kernel will
+      be able to use up to 4GB physical RAM:</para>
 
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
         href="kernel/highmem.xml"/>

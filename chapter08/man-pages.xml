@@ -48,7 +48,32 @@
 
     <para>Install Man-pages by running:</para>
 
-<screen><userinput remap="install">make prefix=/usr install</userinput></screen>
+<screen><userinput remap="install">make -R GIT=false prefix=/usr install</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the options:</title>
+
+      <!-- TODO: Try if we can remove this when we update make.  -->
+      <varlistentry>
+        <term><parameter>-R</parameter></term>
+        <listitem>
+          <para>This prevents <command>make</command> from setting any
+          built-in variables.  The building system of man-pages does not
+          work well with built-in variables, but currently there is no way
+          to disable them except passing <parameter>-R</parameter>
+          explicitly via the command line.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>GIT=false</parameter></term>
+        <listitem>
+          <para>This prevents the building system from emitting many
+          <computeroutput>git: command not found</computeroutput>
+          warnings lines.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
 
   </sect2>
 

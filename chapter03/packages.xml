@@ -3,6 +3,7 @@
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
   %general-entities;
+  <!ENTITY kernel-directory "https://www.kernel.org/pub/linux/kernel/v6.x">
 ]>
 
 <sect1 id="ch-materials-packages">
@@ -107,15 +108,6 @@
         <!--<para>Home page: <ulink url="&bzip2-home;"/></para>-->
         <para>Download: <ulink url="&bzip2-url;"/></para>
         <para>MD5 sum: <literal>&bzip2-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term>Check (&check-version;) - <token>&check-size;</token>:</term>
-      <listitem>
-        <para>Home page: <ulink url="&check-home;"/></para>
-        <para>Download: <ulink url="&check-url;"/></para>
-        <para>MD5 sum: <literal>&check-md5;</literal></para>
       </listitem>
     </varlistentry>
 
@@ -475,15 +467,43 @@
 
         <note>
           <para>The Linux kernel is updated quite frequently, many times due to
-          discoveries of security vulnerabilities.  The latest available
-          <!--&linux-major-version;.&linux-minor-version;.x--> stable kernel
-          version <!--should--> may be
-          used, unless the errata page says otherwise.</para>
+          discoveries of security vulnerabilities.  The latest available stable
+          kernel version may be used, unless the errata page says
+          otherwise.</para>
 
           <para>For users with limited speed or expensive bandwidth who wish to
           update the Linux kernel, a baseline version of the package and
           patches can be downloaded separately.  This may save some time or
-          cost for a subsequent patch level upgrade within a minor release.
+          cost for a subsequent patch level upgrade within a minor
+          release.</para>
+
+          <para>
+            As an example, for linux-&linux-version;, the following could be downloaded:
+
+            <itemizedlist spacing="compact">
+              <listitem>
+                <para>
+                  <ulink url='&kernel-directory;/linux-&linux-majmin-version;.tar.xz'/>
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  <ulink url='&kernel-directory;/patch-&linux-version;.xz'/>
+                </para>
+              </listitem>
+            </itemizedlist>
+
+            Then in <xref linkend='ch-tools-linux-headers'/> and 
+            <xref linkend='ch-bootable-kernel'/> unpack the kernel, change
+            to the package directory and then apply the patch with 
+            <userinput>xzcat ../patch-&linux-version;.xz | patch -Np1</userinput>.
+          </para>
+
+          <para>
+            At this point, if a newer point version of the kernel is needed, then
+            only the newer patch is needed. However, if a new minor version is 
+            desired, then both full minor version and any desired patch will both
+            need to be downloaded.
           </para>
         </note>
       </listitem>
@@ -598,11 +618,29 @@
     </varlistentry>
 
     <varlistentry>
+      <term>Packaging (&packaging-version;) - <token>&packaging-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&packaging-home;"/></para>
+        <para>Download: <ulink url="&packaging-url;"/></para>
+        <para>MD5 sum: <literal>&packaging-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Patch (&patch-version;) - <token>&patch-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&patch-home;"/></para>
         <para>Download: <ulink url="&patch-url;"/></para>
         <para>MD5 sum: <literal>&patch-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Pcre2 (&pcre2-version;) - <token>&pcre2-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&pcre2-home;"/></para>
+        <para>Download: <ulink url="&pcre2-url;"/></para>
+        <para>MD5 sum: <literal>&pcre2-md5;</literal></para>
       </listitem>
     </varlistentry>
 
@@ -692,6 +730,30 @@
         <para>Home page: <ulink url="&shadow-home;"/></para>
         <para>Download: <ulink url="&shadow-url;"/></para>
         <para>MD5 sum: <literal>&shadow-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Sqlite (&sqlite-version;) - <token>&sqlite-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&sqlite-home;"/></para>
+        <para>Download: <ulink url="&sqlite-url;"/></para>
+        <para>MD5 sum: <literal>&sqlite-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Sqlite Documentation (&sqlite-version;) - <token>&sqlite-doc-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&sqlite-home;"/></para>
+        <para>Download: <ulink url="&sqlite-doc-url;"/></para>
+        <para>MD5 sum: <literal>&sqlite-doc-md5;</literal></para>
+
+        <note>
+          <para>The Linux From Scratch team generates its own tarball of the
+          documentation pages using the sqlite documentation zip file. This is done 
+          in order to avoid unnecessary dependencies.</para>
+        </note>
       </listitem>
     </varlistentry>
 
