@@ -143,10 +143,10 @@
 
 </userinput><userinput>rm -vf dummy.c a.out</userinput></screen>
           <para>
-            If either of the <command>./a.out</command> commands result in an 
-            "Exec format error" message, then you do not have a system kernel
-            capable of building for that architecture within LFS. At that
-            point, try using another distribution or installation media.
+            If the above commands result in "Exec format" or compiler errors,
+            then you do not have a system kernel and/or toolchain capable of
+            building for one or all of the above architectures within LFS. At
+            that point, try using another distribution or installation media.
           </para>
         </listitem>
       </itemizedlist>
