@@ -137,7 +137,7 @@ cd       build</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-       <term><parameter>--enable-targets=all/</parameter></term>
+       <term><parameter>--enable-targets=all</parameter></term>
         <listitem>
           <para>This switch tells GCC to enable 64-bit code generation
           support even if we are building it for a 32-bit system.
