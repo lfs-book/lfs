@@ -142,7 +142,7 @@ cd       build</userinput></screen>
           <para>This switch tells GCC to enable 64-bit code generation
           support even if we are building it for a 32-bit system.
           It's needed to build GRUB for 64-bit UEFI.  This switch has no
-          effect if building a 64-bit LFS.</para>
+          effect if building for 64-bit.</para>
         </listitem>
       </varlistentry>
     </variablelist>
