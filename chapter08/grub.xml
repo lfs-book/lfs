@@ -40,18 +40,6 @@
   <sect2 role="installation">
     <title>Installation of GRUB</title>
 
-    <note>
-      <para>
-        If your system has UEFI support and you wish to boot LFS with UEFI,
-        you need to install GRUB with UEFI support (and its dependencies) by
-        following the instructions on
-        <ulink url="&blfs-book;postlfs/grub-efi.html">the BLFS page</ulink>.
-        You may skip this package, or install this package and the BLFS
-        GRUB for UEFI package without conflict (the BLFS page provides
-        instructions for both cases).
-      </para>
-    </note>
-
     <warning>
       <para>Unset any environment variables which may affect the build:</para>
 
@@ -103,8 +91,61 @@
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-  <para>Making your LFS system bootable with GRUB will be discussed in
-  <xref linkend="ch-bootable-grub" role='.'/></para>
+    <para>There are following sections that allow you to install support for
+    UEFI. After you have installed that support, if at all, making your LFS
+    system bootable with GRUB will be discussed in
+    <xref linkend="ch-bootable-grub" role='.'/></para>
+
+    <para>There are still more packages that need to be installed before the
+    system can become bootable.</para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of GRUB for 64-bit UEFI</title>
+
+    <para>If you want to boot with 64-bit UEFI, build the package again to
+    include support for it:</para>
+
+<screen><userinput remap="configure">make clean
+./configure --prefix=/usr       \
+            --sysconfdir=/etc   \
+            --target=x86_64     \
+            --with-platform=efi \
+            --disable-efiemu    \
+            --disable-werror</userinput></screen>
+
+    <para>Compile the package again:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install support for 64-bit UEFI:</para>
+
+<screen><userinput remap="install">make -C grub-core install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of GRUB for 32-bit UEFI</title>
+
+    <para>If you need support for 32-bit UEFI, which is very rare, then once
+    again build the package to include that support:</para>
+
+<screen><userinput remap="configure">make clean
+./configure --prefix=/usr       \
+            --sysconfdir=/etc   \
+            --target=i386       \
+            --with-platform=efi \
+            --disable-efiemu    \
+            --disable-werror</userinput></screen>
+
+    <para>Compile the package again:</para>
+
+<screen><userinput remap="make">make</userinput></screen>
+
+    <para>Install support for 32-bit UEFI:</para>
+
+<screen><userinput remap="install">make -C grub-core install</userinput></screen>
 
   </sect2>
 
