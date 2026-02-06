@@ -90,7 +90,8 @@
   <literal>tty</literal> that's needed. Create and enable those
   services:</para>
 
-<screen><userinput>for i in $(seq 1 6); do
+<screen><userinput>rm -vf /etc/runlevels/default/agetty*
+for i in $(seq 1 6); do
   ln -sfv agetty /etc/init.d/agetty.tty$i
   rc-update add agetty.tty$i default
 done</userinput></screen>
@@ -107,52 +108,71 @@ done</userinput></screen>
       <primary sortas="d-udevd">udevd</primary>
     <secondary>configuring</secondary></indexterm>
 
-  <para>OpenRC doesn't ship a service for <command>udevd</command>, leading to
-  kernel modules not being loaded. Create and enable it now:</para>
+  <para>OpenRC doesn't ship services for <command>udevd</command>, leading to
+  kernel modules not being loaded. Create and enable them now:</para>
 
 <screen><userinput>cat &gt; /etc/init.d/udevd &lt;&lt; "EOF"
 <literal>#!/sbin/openrc-run
-# Starts the udevd daemon and adds device nods via udevadm.
+# Starts the udevd daemon.
 # Authors: Zeckma - zeckma.tech@gmail.com
 # Version: LFS 12.5
 
 description="starts the udevd daemon"
 
-depend()
-{
+supervisor=supervise-daemon
+command=/sbin/udevd
+command_args="--daemon"
+pidfile="/run/${RC_SVCNAME}.pid"
+
+depend() {
   after localnet
-  before modules
+  after modules
 }
 
-start()
-{
-  ebegin "Starting the udevd daemon"
+stop() {
+  ebegin "Stopping ${RC_SVCNAME}"
+  /bin/udevadm control --exit
+  eend $?
+}</literal>
+EOF
 
-# Start the udev daemon to continually watch for, and act on,
-# uevents
-  SYSTEMD_LOG_TARGET=kmsg /sbin/udevd --daemon
+cat &gt; /etc/init.d/udev-trigger &lt;&lt; "EOF"
+<literal>#!/sbin/openrc-run
+# Coldplugs devices and settles the udevd daemon.
+# Authors: Zeckma - zeckma.tech@gmail.com
+# Version: LFS 12.5
 
-# Now traverse /sys in order to "coldplug" devices that have
-# already been discovered
+description="coldplugs devices"
+
+depend() {
+  after udevd
+  provides dev
+  keyword -shutdown
+}
+
+start() {
+  ebegin "Coldplugging devices"
+
   /bin/udevadm trigger --action=add    --type=subsystems
   /bin/udevadm trigger --action=add    --type=devices
   /bin/udevadm trigger --action=change --type=devices
 
-# Now wait for udevd to process the uevents we triggered
-  /bin/udevadm settle
+# Wait for udevd to process the uevents we triggered
+  /bin/udevadm settle --timeout=5
 
 # If any LVM based partitions are on the system, ensure they
 # are activated so they can be used.
   if [ -x /sbin/vgchange ]; then /sbin/vgchange -a y >/dev/null; fi
-
 }</literal>
 EOF
 
-chmod +x /etc/init.d/udevd
-rc-update add udevd boot</userinput></screen>
+for i in udev{d,-trigger}; do
+  chmod 755 /etc/init.d/$i
+  rc-update add $i sysinit
+done</userinput></screen>
 
     <para>
-      This service should load most if not all modules automatically. If you
+      These services should load most if not all modules automatically. If you
       need to load a given module but it isn't being loaded, pass the module
       name to the <filename>/etc/conf.d/modules</filename> configuration file.
     </para>
@@ -234,6 +254,18 @@ rc-update add udevd boot</userinput></screen>
     the proper keyboard layout and terminal fonts in the X Window System, with
     ssh sessions, or with a serial console.</para>
   </note>
+
+  </sect2>
+
+  <sect2 id="ch-config-agetty">
+    <title>Configuring Agetty</title>
+
+    <para>
+      If you don't want the boot logs to be cleared on the first TTY, which
+      Agetty will clear them by default, add <option>--noclear</option> to
+      <literal>agetty_options</literal> in the
+      <filename>/etc/conf.d/agetty</filename> file.
+    </para>
 
   </sect2>
 
