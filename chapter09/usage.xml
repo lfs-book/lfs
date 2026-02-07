@@ -119,9 +119,8 @@ done</userinput></screen>
 
 description="starts the udevd daemon"
 
-supervisor=supervise-daemon
 command=/sbin/udevd
-command_args="--daemon"
+command_background=yes
 pidfile="/run/${RC_SVCNAME}.pid"
 
 depend() {
