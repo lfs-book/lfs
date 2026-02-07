@@ -88,9 +88,9 @@
   <systemitem class="filesystem">VFAT</systemitem>, you can run the following
   instead:</para>
 
-<screen role="nodump"><userinput>mkfs.vfat /dev/<replaceable>&lt;yyy&gt;</replaceable></userinput></screen>
+<screen role="nodump"><userinput>mkfs.vfat /dev/<replaceable>&lt;zzz&gt;</replaceable></userinput></screen>
 
-  <para>Replace <replaceable>&lt;yyy&gt;</replaceable> with the name of the
+  <para>Replace <replaceable>&lt;zzz&gt;</replaceable> with the name of the
   EFI System Partition.</para>
 
 </sect1>

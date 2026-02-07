@@ -111,13 +111,26 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
     <para>
       The following sections go over how to boot with BIOS and UEFI.
       The GRUB installations for BIOS, 64-bit UEFI, and 32-bit UEFI can
-      coexist and share the same configuration. So you can create both
-      the BIOS Boot Partition and the EFI System Partition, and install
-      GRUB for all the supported firmware types (i.e. running three
-      <command>grub-install</command> commands). If you are unsure about
-      your firmware type, or you plan to move the hard drive to a different
-      computer, this is something you can do as a blanket strategy.
+      coexist and share the same configuration. The images and data live at
+      different locations, so you can create both the BIOS Boot Partition and
+      the EFI System Partition, and install GRUB for all the supported firmware
+      types (i.e. running three <command>grub-install</command> commands). If
+      you are unsure about your firmware type, or you plan to move the hard
+      drive to a different computer, this is something you can do as a blanket
+      strategy.
     </para>
+
+    <note><para>
+      If you're doing UEFI boot but have created the Grub Bios partition, it
+      may be a good idea to run the command for BIOS in case UEFI booting does
+      not work as expected.
+    </para></note>
+
+    <note><para>
+      If you only need to install GRUB for one boot method, you don't have to
+      run commands for both methods. You can just run the command for the boot
+      method you need.
+    </para></note>
 
     <sect3>
       <title>Booting With BIOS</title>
