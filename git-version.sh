@@ -53,7 +53,7 @@ full_date="$month $day$suffix, $year"
 
 sha="$(git describe --abbrev=1)"
 rev=$(echo "$sha" | sed 's/-g[^-]*$//')
-version="$rev"
+version="$rev-openrc"
 versiond="$rev-systemd"
 
 if [ "$(git diff HEAD | wc -l)" != "0" ]; then

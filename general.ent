@@ -39,8 +39,8 @@
 
 <![ %release; [
 <![ %openrc; [
-<!ENTITY version         "%relnum;">
-<!ENTITY short-version   "%relnum;">  <!-- Used below in &blfs-book; -->
+<!ENTITY version         "%relnum;-openrc">
+<!ENTITY short-version   "%relnum;-openrc">  <!-- Used below in &blfs-book; -->
 ]]>
 <![ %systemd; [
 <!ENTITY version         "%relnum;-systemd">

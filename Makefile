@@ -21,10 +21,10 @@ ifneq ($(REV), openrc)
 endif
 
 ifeq ($(REV), openrc)
-  BASEDIR         ?= $(HOME)/public_html/lfs-book
-  PDF_OUTPUT      ?= LFS-BOOK.pdf
-  NOCHUNKS_OUTPUT ?= LFS-BOOK.html
-  DUMPDIR         ?= $(HOME)/lfs-commands
+  BASEDIR         ?= $(HOME)/public_html/lfs-openrc
+  PDF_OUTPUT      ?= LFS-OPENRC.pdf
+  NOCHUNKS_OUTPUT ?= LFS-OPENRC.html
+  DUMPDIR         ?= $(HOME)/lfs-openrc-commands
 else
   BASEDIR         ?= $(HOME)/public_html/lfs-systemd
   PDF_OUTPUT      ?= LFS-SYSD-BOOK.pdf
