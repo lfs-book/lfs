@@ -58,13 +58,15 @@
       those bugs are reproducible without this patch.</para>
     </note>
 
-    <!-- https://github.com/coreutils/coreutils/commit/bd528f923482 -->
+    <!-- https://github.com/coreutils/coreutils/commit/bd528f923482
+         Seems to be fixed in version 9.10.
+
     <para>Fix a bug causing the <command>cp</command> command to hang
     forever when copying sparse files on
     <systemitem class='filesystem'>ext4</systemitem> file systems:</para>
 
 <screen><userinput remap="pre">sed '/off_t ext_end =/s/ipos/src_pos/' -i src/copy-file-data.c</userinput></screen>
-
+-->
     <para>Now prepare Coreutils for compilation:</para>
 
 <screen><userinput remap="configure">autoreconf -fv
