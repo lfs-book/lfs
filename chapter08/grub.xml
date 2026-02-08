@@ -119,6 +119,12 @@
 
 <screen><userinput remap="pre">make clean</userinput></screen>
 
+    <!-- See https://wiki.linuxfromscratch.org/lfs/ticket/5857. Remove this at
+    next grub version -->
+    <para>Fix a bug introduced in grub-2.14:</para>
+
+<screen><userinput remap="pre">sed 's/--image-base/--nonexist-linker-option/' -i configure</userinput></screen>
+
     <para>Now build GRUB with 64-bit UEFI support:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr       \
@@ -148,6 +154,12 @@
     clean the source tree:</para>
 
 <screen><userinput remap="pre">make clean</userinput></screen>
+
+    <!-- See https://wiki.linuxfromscratch.org/lfs/ticket/5857. Remove this at
+    next grub version -->
+    <para>Fix a bug introduced in grub-2.14:</para>
+
+<screen><userinput remap="pre">sed 's/--image-base/--nonexist-linker-option/' -i configure</userinput></screen>
 
     <para>Now build GRUB with 32-bit UEFI support:</para>
 
