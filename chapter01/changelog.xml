@@ -56,7 +56,7 @@
           <ulink url='&lfs-ticket-root;5863'>#5863</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to Python3-3.14.3. Fixes
+          <para>[bdubbs] - Update to Python3-3.14.3 (Security Update). Fixes
           <ulink url='&lfs-ticket-root;5859'>#5859</ulink>.</para>
         </listitem>
         <listitem>
