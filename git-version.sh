@@ -7,7 +7,7 @@ elif [ "$1" = systemd ]; then
     OPENRC="IGNORE "
     SYSTEMD="INCLUDE"
 else
-    echo You must provide either \"sysv\" or \"systemd\" as argument
+    echo You must provide either \"openrc\" or \"systemd\" as argument
     exit 1
 fi
 
