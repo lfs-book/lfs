@@ -148,7 +148,7 @@
     <para>A lot of UEFI systems have a Compatibility Support Mode (CSM) or
     Legacy Boot option, allowing to boot with Bios. It could be a good idea to
     create a Grub Bios partition if your system supports CSM in case UEFI
-    booting does not work as expected.
+    booting does not work as expected.</para>
     </sect3>
 
     <sect3>
