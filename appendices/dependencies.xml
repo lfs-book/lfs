@@ -689,7 +689,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Bzip2, Coreutils, Diffutils, Gawk, GCC, Glibc,
-          Grep, Make, Sed, Xz, and Zlib</seg>
+          Grep, Make, Sed, Xz, Zlib, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -1541,7 +1541,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Bison, Coreutils, Flex, GCC, Gettext, Glibc,
-          Gzip, Make, OpenSSL, Pkgconf, Sed, Xz, and Zlib</seg>
+          Gzip, Make, OpenSSL, Pkgconf, Sed, Xz, Zlib, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2711,8 +2711,8 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Expat, GCC, Gdbm, Gettext, Glibc,
-          Grep, Libffi, Libxcrypt, Make, Ncurses, OpenSSL, Pkgconf, Sed, and
-          Util-linux</seg>
+          Grep, Libffi, Libxcrypt, Make, Ncurses, OpenSSL, Pkgconf, Sed,
+          Util-linux, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2995,7 +2995,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
          <seg>Acl, Bash, Binutils, Coreutils, Diffutils, Gawk,
-         GCC, Glibc, Gperf, Grep, Jinja2, Libcap, Libxcrypt, Lz4, Meson,
+         GCC, Glibc, Gperf, Grep, Jinja2, Libxcrypt, Lz4, Meson,
          OpenSSL, Pcre2, Pkgconf, Sed, Util-linux, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
@@ -3003,7 +3003,7 @@
       <segmentedlist id="systemd-rundeps" revision='systemd'>
         <segtitle>&runtime;</segtitle>
         <seglistitem>
-          <seg>Acl, Glibc, Libcap, Libxcrypt, OpenSSL, Util-linux, Xz,
+          <seg>Acl, Glibc, Libxcrypt, OpenSSL, Util-linux, Xz,
           Zlib, and Zstd</seg>
         </seglistitem>
       </segmentedlist>
@@ -3567,7 +3567,8 @@
       <segmentedlist id="zstd-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>Binutils, GCC, Libelf, and &systemd-udev;</seg>
+          <seg>Binutils, File, GCC, Kmod, Libelf, Python,
+          and &systemd-udev;</seg>
         </seglistitem>
       </segmentedlist>
 

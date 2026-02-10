@@ -40,21 +40,22 @@
   <important>
     <para>
       Listed on the next page are several important packages located at
-      ftp.gnu.org.  That site is the canonical location of the
-      subject packages but has been affected by a long term
-      distributed denial of services (DDOS) attack.  See
+      <uri>ftpmirror.gnu.org</uri>.  The canonical location of the
+      subject packages are <uri>ftp.gnu.org</uri> but due to
+      a long term distributed denial of services (DDOS) attack the site
+      administrator suggested the LFS editors to use
+      <uri>ftpmirror.gnu.org</uri> instead.  See
       <ulink url="https://news.slashdot.org/story/25/07/06/1737253/the-fsf-faces-active-ongoing-and-increasing-ddos-attacks">Slashdot News</ulink> for details.
     </para>
 
     <para>
-      An alternative for ftp.gnu.org is to use one of the mirrors for that
-      site.  A list of mirrors is located at 
-      <ulink url="https://www.gnu.org/prep/ftp.en.html"/>
-    </para>
-
-    <para>
-      If you choose to use the wget list described below, that file will
-      also need to be modified to use your desired mirror.
+      The <uri>ftpmirror.gnu.org</uri> URL actually redirects to one of the
+      mirrors of the <uri>ftp.gnu.org</uri> site.  You may also select a
+      mirror manually instead of using <uri>ftpmirror.gnu.org</uri>.
+      A list of mirrors is located at
+      <ulink url="https://www.gnu.org/prep/ftp.en.html"/>.
+      If you choose to use the wget list described below, that file also
+      can be modified to use your desired mirror.
     </para>
     
   </important>

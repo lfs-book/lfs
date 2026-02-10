@@ -76,6 +76,7 @@
       </listitem>
     </varlistentry>
 -->
+
 <!--
     <varlistentry>
       <term>Glibc Upstream Fix Patch - <token>&glibc-upstream-patch-size;</token>:</term>
@@ -85,6 +86,7 @@
       </listitem>
     </varlistentry>
 -->
+
     <varlistentry>
       <term>Glibc FHS Patch - <token>&glibc-fhs-patch-size;</token>:</term>
       <listitem>

@@ -41,6 +41,10 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
+    <para>First, make a fix required by glibc-2.43 and later:</para>
+
+    <screen><userinput remap="pre">sed -i 's/char [*]q/const &amp;/' libgomp/affinity-fmt.c</userinput></screen>
+
     <para>On ARM64 hosts, set the default directory name for
     64-bit libraries to <quote>lib</quote>:</para>
 
@@ -201,6 +205,13 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <filename>nonlocal_goto_*.c</filename>,
     <filename>pr113618.c</filename>, and
     <filename>pr114991.c</filename> are also known to fail.</para>
+
+    <!-- https://gcc.gnu.org/PR118885 -->
+    <para>Four tests related to <filename>pr90579.c</filename> are known
+    to fail.</para>
+
+    <para>Five tests related to <filename>analyzer/strchr-1.c</filename> are known
+    to fail.</para>
 
     <para>A few unexpected failures cannot always be avoided. In some cases
     test failures depend on the specific hardware of the system.<!--The GCC developers
