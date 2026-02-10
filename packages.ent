@@ -150,7 +150,7 @@
 
 <!ENTITY expat-version "2.7.4">
 <!ENTITY expat-size "496 KB">
-<!ENTITY expat-url "&github;/libexpat/libexpat/releases/download/R_2_7_3/expat-&expat-version;.tar.xz">
+<!ENTITY expat-url "&github;/libexpat/libexpat/releases/download/R_2_7_4/expat-&expat-version;.tar.xz">
 <!ENTITY expat-md5 "5d3d1e1c829f8fb6f42b8e3e2371afa3">
 <!ENTITY expat-home "https://libexpat.github.io/">
 <!ENTITY expat-fin-du "14 MB">
@@ -655,10 +655,10 @@
 <!ENTITY setuptools-fin-du "25 MB">
 <!ENTITY setuptools-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY shadow-version "4.19.2">
-<!ENTITY shadow-size "2,385 KB">
+<!ENTITY shadow-version "4.19.3">
+<!ENTITY shadow-size "2,293 KB">
 <!ENTITY shadow-url "&github;/shadow-maint/shadow/releases/download/&shadow-version;/shadow-&shadow-version;.tar.xz">
-<!ENTITY shadow-md5 "8af944a9e943ad9b5847b9d62699ef3c">
+<!ENTITY shadow-md5 "c56d98c09e5dbae816250ba5c2285a37">
 <!ENTITY shadow-home "&github;/shadow-maint/shadow/">
 <!ENTITY shadow-fin-du "115 MB">
 <!ENTITY shadow-fin-sbu "0.1 SBU">
