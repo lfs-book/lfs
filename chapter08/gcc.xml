@@ -206,10 +206,6 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <filename>pr113618.c</filename>, and
     <filename>pr114991.c</filename> are also known to fail.</para>
 
-    <!-- https://gcc.gnu.org/PR118885 -->
-    <para>Four tests related to <filename>pr90579.c</filename> are known
-    to fail.</para>
-
     <para>Five tests related to <filename>analyzer/strchr-1.c</filename> are known
     to fail.</para>
 
