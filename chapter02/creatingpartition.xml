@@ -105,7 +105,7 @@
     system.</para> </sect3>
 
     <sect3>
-    <title>The Grub Bios Partition</title>
+    <title>The Grub BIOS Partition</title>
 
     <para>If the <emphasis>boot disk</emphasis> has been partitioned with a
     GUID Partition Table (GPT), then a small, typically 1 MB, partition must be
@@ -120,10 +120,10 @@
     disklabel, then this partition is not needed as space already exists before
     the first partition that Grub can use.</para>
 
-    <note><para>The Grub Bios partition must be on the drive that the BIOS
+    <note><para>The Grub BIOS partition must be on the drive that the BIOS
     uses to boot the system.  This is not necessarily the drive that holds
     the LFS root partition. The disks on a system may use different
-    partition table types. The necessity of the Grub Bios partition depends
+    partition table types. The necessity of the Grub BIOS partition depends
     only on the partition table type of the boot disk.</para></note>
     </sect3>
 
@@ -146,8 +146,8 @@
     <filename class="directory">/boot/efi</filename>.</para>
 
     <para>A lot of UEFI systems have a Compatibility Support Mode (CSM) or
-    Legacy Boot option, allowing to boot with Bios. It could be a good idea to
-    create a Grub Bios partition if your system supports CSM in case UEFI
+    Legacy Boot option, allowing to boot with BIOS. It could be a good idea to
+    create a Grub BIOS partition if your system supports CSM in case UEFI
     booting does not work as expected.</para>
     </sect3>
 

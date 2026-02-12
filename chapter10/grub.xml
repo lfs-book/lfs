@@ -121,7 +121,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
     </para>
 
     <note><para>
-      If you're doing UEFI boot but have created the Grub Bios partition, it
+      If you're doing UEFI boot but have created the Grub BIOS partition, it
       may be a good idea to run the command for BIOS in case UEFI booting does
       not work as expected.
     </para></note>
