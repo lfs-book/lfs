@@ -238,9 +238,9 @@
 <!ENTITY gdbm-fin-sbu "less than 0.2 SBU">
 
 <!ENTITY gettext-version "1.0">
-<!ENTITY gettext-size "31,928 KB">
-<!ENTITY gettext-url "&gnu;gettext/gettext-&gettext-version;.tar.gz">
-<!ENTITY gettext-md5 "4ba57b13fc49183a9b8ef6a691571a90">
+<!ENTITY gettext-size "10,471 KB">
+<!ENTITY gettext-url "&gnu;gettext/gettext-&gettext-version;.tar.xz">
+<!ENTITY gettext-md5 "dc8b2911535929cec1e263706b0a13a1">
 <!ENTITY gettext-home "&gnu-software;gettext/">
 <!ENTITY gettext-tmp-du "463 MB">
 <!ENTITY gettext-tmp-sbu "1.5 SBU">
