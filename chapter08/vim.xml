@@ -84,7 +84,8 @@ sed '/test_plugin_glvs/d' -i src/testdir/Make_all.mak</userinput></screen>
     successful test will result in the words <computeroutput>ALL
     DONE</computeroutput> in the log file at completion.</para>
 
-    <para>One test, test_matchfuzzy.vim, is known to fail on some systems.</para>
+    <para>One test, Test_client_server_stopinsert(), is known to fail
+    intermittently on some systems.</para>
 
     <para>Install the package:</para>
 

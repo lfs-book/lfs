@@ -40,11 +40,6 @@
   <sect2 role="installation">
     <title>Installation of M4</title>
 
-    <para>First, make a fix required by glibc-2.43 and later:</para>
-
-<screen><userinput remap="pre">sed -r '/_GL_EXTERN_C/s/w?memchr|bsearch/(&amp;)/' \
-    -i $(find -name \*.in.h)</userinput></screen>
-
     <para>Prepare M4 for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
