@@ -11,12 +11,12 @@ else
 endif
 
 ifndef REV
-  REV = sysv
+  REV = systemd
 endif
 
 ifneq ($(REV), sysv)
   ifneq ($(REV), systemd)
-    $(error REV must be 'sysv' (default) or 'systemd'.)
+    $(error REV must be 'sysv' or 'systemd' (default).)
   endif
 endif
 
