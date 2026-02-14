@@ -44,9 +44,6 @@
       <para>2026-02-14</para>
       <itemizedlist>
         <listitem>
-          <para>[zeckma] - MLFS-13.0-rc1 released.</para>
-        </listitem>
-        <listitem>
           <para>[bdubbs] - Update to vim-9.1.2144 (Security Update). Addresses
           <ulink url='&lfs-ticket-root;4500'>#4500</ulink>.</para>
         </listitem>
