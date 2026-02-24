@@ -63,43 +63,51 @@
 
 <screen><userinput remap="install">ln -sv pkgconf   /usr/bin/pkg-config
 ln -sv pkgconf.1 /usr/share/man/man1/pkg-config.1</userinput></screen>
-<!--
+
     <para arch="ml_32,ml_x32,ml_all">
-      For better support of the multilib platform create some
-      additional files by executing the following commands:
+      When targetting the <phrase arch="ml_32,ml_all">32-bit</phrase>
+      <phrase arch="ml_all">or</phrase>
+      <phrase arch="ml_x32,ml_all">x32-bit</phrase>
+      architecture<phrase arch="ml_all">s</phrase> on 64-bit, some packages
+      will use Pkg-config in a way that will pull in libraries that have only
+      been built for 64-bit. This spirals into linker or other errors. This
+      can be fixed by creating Pkg-config personalities which can then be used
+      to override default Pkg-config behavior. Create them now:
     </para>
 
-<screen arch="ml_32,ml_x32,ml_all"><userinput remap="install">ln -sv pkgconf /usr/bin/i686-pc-linux-gnu-pkg-config
-ln -sv pkgconf /usr/bin/x86_64-pc-linux-gnux32-pkg-config
-ln -sv pkgconf /usr/bin/x86_64-pc-linux-gnu-pkg-config
-
+<screen arch="ml_32,ml_x32,ml_all"><userinput remap="install"
+  arch="ml_32,ml_all">ln -sv pkgconf /usr/bin/i686-pc-linux-gnu-pkg-config
+</userinput><userinput remap="install"
+  arch="ml_x32,ml_all">ln -sv pkgconf /usr/bin/x86_64-pc-linux-gnux32-pkg-config
+</userinput><userinput remap="install"
+  arch="ml_32,ml_x32,ml_all">ln -sv pkgconf /usr/bin/x86_64-pc-linux-gnu-pkg-config
+</userinput><userinput remap="install" arch="ml_32,ml_x32,ml_all">
 mkdir -pv /usr/share/pkgconfig/personality.d
-
-cat &gt; /usr/share/pkgconfig/personality.d/i686-pc-linux-gnu.personality &lt;&lt;EOF
-Triplet: i686-pc-linux-gnu
+</userinput><userinput remap="install" arch="ml_32,ml_all">
+cat &gt; /usr/share/pkgconfig/personality.d/i686-pc-linux-gnu.personality &lt;&lt; EOF
+<literal>Triplet: i686-pc-linux-gnu
 SysrootDir: /
 DefaultSearchPaths: /usr/lib32/pkgconfig:/usr/share/pkgconfig
 SystemIncludePaths: /usr/include
-SystemLibraryPaths: /usr/lib32
+SystemLibraryPaths: /usr/lib32</literal>
 EOF
-
-cat &gt; /usr/share/pkgconfig/personality.d/x86_64-pc-linux-gnux32.personality &lt;&lt;EOF
-Triplet: x86_64-pc-linux-gnux32
+</userinput><userinput remap="install" arch="ml_x32,ml_all">
+cat &gt; /usr/share/pkgconfig/personality.d/x86_64-pc-linux-gnux32.personality &lt;&lt; EOF
+<literal>Triplet: x86_64-pc-linux-gnux32
 SysrootDir: /
 DefaultSearchPaths: /usr/libx32/pkgconfig:/usr/share/pkgconfig
 SystemIncludePaths: /usr/include
-SystemLibraryPaths: /usr/libx32
+SystemLibraryPaths: /usr/libx32</literal>
 EOF
-
-cat &gt; /usr/share/pkgconfig/personality.d/x86_64-pc-linux-gnu.personality &lt;&lt;EOF
-Triplet: x86_64-pc-linux-gnu
+</userinput><userinput remap="install" arch="ml_32,ml_x32,ml_all">
+cat &gt; /usr/share/pkgconfig/personality.d/x86_64-pc-linux-gnu.personality &lt;&lt; EOF
+<literal>Triplet: x86_64-pc-linux-gnu
 SysrootDir: /
 DefaultSearchPaths: /usr/lib/pkgconfig:/usr/share/pkgconfig
 SystemIncludePaths: /usr/include
-SystemLibraryPaths: /usr/lib
-EOF
-</userinput></screen>
--->
+SystemLibraryPaths: /usr/lib</literal>
+EOF</userinput></screen>
+
   </sect2>
 
   <sect2 id="contents-pkgconf" role="content">
