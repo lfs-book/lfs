@@ -45,7 +45,7 @@
 
     <screen><userinput remap="pre">sed -i 's/char [*]q/const &amp;/' libgomp/affinity-fmt.c</userinput></screen>
 
-    <para>If building on x86_64, change the default directory name for 64-bit
+    <para arch="default">If building on x86_64, change the default directory name for 64-bit
     libraries to <quote>lib</quote>:</para>
 
 <screen arch="default"><userinput remap="pre">case $(uname -m) in
