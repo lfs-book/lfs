@@ -45,8 +45,8 @@
       <para>
         If you've installed Linux-PAM, you should follow
         <ulink url='&blfs-book;postlfs/shadow.html'>the BLFS
-        instruction</ulink> instead of this page to build (or, rebuild or
-        upgrade) shadow.
+        instructions</ulink> instead of this page to build, rebuild,
+        upgrade shadow.
       </para>
     </important>
 
