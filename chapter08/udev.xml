@@ -233,7 +233,7 @@ meson setup --prefix=/usr             \
 
 <screen><userinput remap="install">mkdir -pv /usr/lib32/pkgconfig
 cp -av libudev.so{,*[0-9]} /usr/lib32/
-sed -e "s;/usr/lib;&amp;32;g" src/libudev/libudev.pc > /usr/lib32/pkgconfig/libudev.pc</userinput></screen>
+cp src/libudev/libudev.pc  /usr/lib32/pkgconfig/</userinput></screen>
 
   </sect2><!-- m32 -->
 
@@ -269,7 +269,7 @@ meson setup --prefix=/usr             \
 
 <screen><userinput remap="install">mkdir -pv /usr/libx32/pkgconfig
 cp -av libudev.so{,*[0-9]} /usr/libx32/
-sed -e "s;/usr/lib;&amp;x32;g" src/libudev/libudev.pc > /usr/libx32/pkgconfig/libudev.pc</userinput></screen>
+cp src/libudev/libudev.pc  /usr/libx32/pkgconfig/</userinput></screen>
 
   </sect2><!-- mx32 -->
   

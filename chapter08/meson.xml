@@ -110,7 +110,7 @@ cups-config = 'cups-config'
 llvm-config = 'llvm-config'
 exe_wrapper = ''
 
-[paths]
+[built-in options]
 libdir = 'lib32'
 
 [properties]
@@ -142,7 +142,7 @@ cups-config = 'cups-config'
 llvm-config = 'llvm-config'
 exe_wrapper = ''
 
-[paths]
+[built-in options]
 libdir = 'libx32'
 
 [properties]
