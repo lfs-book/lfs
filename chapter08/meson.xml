@@ -110,6 +110,9 @@ cups-config = 'cups-config'
 llvm-config = 'llvm-config'
 exe_wrapper = ''
 
+[paths]
+libdir = 'lib32'
+
 [properties]
 sizeof_void* = 4
 sizeof_long = 4
@@ -138,6 +141,9 @@ strip = '/usr/bin/strip'
 cups-config = 'cups-config'
 llvm-config = 'llvm-config'
 exe_wrapper = ''
+
+[paths]
+libdir = 'libx32'
 
 [properties]
 sizeof_void* = 4
