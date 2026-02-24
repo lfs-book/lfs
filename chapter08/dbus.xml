@@ -93,7 +93,7 @@ meson setup --prefix=/usr --buildtype=release --wrap-mode=nofallback ..</userinp
   </sect2>
 
   <!-- - - - - - - - - - -->
-  <!-- Multilib - 32bit  -->
+  <!-- Multilib - 32-bit  -->
   <!-- - - - - - - - - - -->
 
   <sect2 arch="ml_32,ml_all" role="installation">
@@ -125,7 +125,7 @@ cp -v  $(pwd)/destdir/usr/lib32/pkgconfig/dbus-1.pc /usr/lib32/pkgconfig/</useri
   </sect2><!-- m32 -->
 
   <!-- - - - - - - - - - -->
-  <!-- Multilib - x32bit -->
+  <!-- Multilib - x32-bit -->
   <!-- - - - - - - - - - -->
 
   <sect2 arch="ml_x32,ml_all" role="installation">

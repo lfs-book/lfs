@@ -130,11 +130,11 @@ make install-html</userinput></screen>
   </sect2>
 
   <!-- - - - - - - - - - -->
-  <!-- Multilib - 32bit  -->
+  <!-- Multilib - 32-bit  -->
   <!-- - - - - - - - - - -->
 
   <sect2 arch="ml_32,ml_all" role="installation">
-    <title>Installation of GMP - 32bit</title>
+    <title>Installation of GMP - 32-bit</title>
 
     <para>Clean previous build:</para>
 
@@ -202,7 +202,7 @@ rm -rf DESTDIR</userinput></screen>
   </sect2><!-- m32 -->
 
   <!-- - - - - - - - - - -->
-  <!-- Multilib - x32bit -->
+  <!-- Multilib - x32-bit -->
   <!-- - - - - - - - - - -->
 
   <sect2 arch="ml_x32,ml_all" role="installation">

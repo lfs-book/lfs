@@ -66,11 +66,11 @@
   </sect2>
 
   <!-- - - - - - - - - - -->
-  <!-- Multilib - 32bit  -->
+  <!-- Multilib - 32-bit  -->
   <!-- - - - - - - - - - -->
   
   <sect2 arch="ml_32,ml_all" role="installation">
-    <title>Installation of Expat - 32bit</title>
+    <title>Installation of Expat - 32-bit</title>
 
     <para>Clean previous build but keep precompiled doc because it
     cannot be rebuilt in this stage of the system:</para>
@@ -99,11 +99,11 @@ rm -rf DESTDIR</userinput></screen>
   </sect2><!-- m32 -->
 
   <!-- - - - - - - - - - -->
-  <!-- Multilib - x32bit -->
+  <!-- Multilib - x32-bit -->
   <!-- - - - - - - - - - -->
   
   <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Expat - x32bit</title>
+    <title>Installation of Expat - x32-bit</title>
 
     <para>Clean previous build but keep precompiled doc because it
     cannot be rebuilt in this stage of the system:</para>

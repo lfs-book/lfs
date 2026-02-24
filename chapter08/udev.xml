@@ -201,10 +201,10 @@ rm /usr/share/man/man*/systemd*</userinput></screen>
   </sect2>
 
   <!-- - - - - - - - - - -->
-  <!-- Multilib - 32bit  -->
+  <!-- Multilib - 32-bit  -->
   <!-- - - - - - - - - - -->
   <sect2 arch="ml_32,ml_all" role="installation">
-    <title>Installation of Udev - 32bit</title>
+    <title>Installation of Udev - 32-bit</title>
 
     <para>Clean previous build (while still in the build directory):</para>
 
@@ -240,10 +240,10 @@ sed -e "s;/usr/lib;&amp;32;g" src/libudev/libudev.pc > /usr/lib32/pkgconfig/libu
   </sect2><!-- m32 -->
 
   <!-- - - - - - - - - - -->
-  <!-- Multilib - x32bit -->
+  <!-- Multilib - x32-bit -->
   <!-- - - - - - - - - - -->
   <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Udev - x32bit</title>
+    <title>Installation of Udev - x32-bit</title>
     <para>Clean previous build (while still in the build directory):</para>
 
 <screen><userinput remap="pre">rm -rf *</userinput></screen>

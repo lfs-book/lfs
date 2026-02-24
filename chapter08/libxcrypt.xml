@@ -120,10 +120,10 @@ cp -av --remove-destination .libs/libcrypt.so.1* /usr/lib</userinput></screen>
   </sect2>
 
   <!-- - - - - - - - - - -->
-  <!-- Multilib - 32bit  -->
+  <!-- Multilib - 32-bit  -->
   <!-- - - - - - - - - - -->
   <sect2 arch="ml_32,ml_all" role="installation">
-    <title>Installation of Libxcrypt - 32bit</title>
+    <title>Installation of Libxcrypt - 32-bit</title>
 
     <para>Clean previous build:</para>
 
@@ -153,10 +153,10 @@ ln -svf libxcrypt.pc /usr/lib32/pkgconfig/libcrypt.pc</userinput></screen>
   </sect2><!-- m32 -->
 
   <!-- - - - - - - - - - -->
-  <!-- Multilib - x32bit  -->
+  <!-- Multilib - x32-bit  -->
   <!-- - - - - - - - - - -->
   <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Libxcrypt - x32bit</title>
+    <title>Installation of Libxcrypt - x32-bit</title>
 
     <para>Clean previous build:</para>
 

@@ -98,7 +98,7 @@ esac</userinput></screen>
 </userinput></screen>
 
     <para arch="ml_32,ml_all">Make <literal>-mstackrealign</literal>
-      a default for 32bit objects:</para>
+      a default for 32-bit objects:</para>
 
 <screen arch="ml_32,ml_all"><userinput remap="pre">sed '/STACK_REALIGN_DEFAULT/s/0/(!TARGET_64BIT \&amp;\&amp; TARGET_SSE)/' \
       -i gcc/config/i386/i386.h</userinput></screen>

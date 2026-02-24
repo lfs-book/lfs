@@ -125,11 +125,11 @@ done</userinput></screen>
   </sect2>
 
   <!-- - - - - - - - - - -->
-  <!-- Multilib - 32bit  -->
+  <!-- Multilib - 32-bit  -->
   <!-- - - - - - - - - - -->
   
   <sect2 arch="ml_32,ml_all" role="installation">
-    <title>Installation of Bzip2 - 32bit</title>
+    <title>Installation of Bzip2 - 32-bit</title>
 
     <para>Clean previous build:</para>
 
@@ -151,11 +151,11 @@ ln -svf libbz2.so.1.0.8 /usr/lib32/libbz2.so.1.0</userinput></screen>
   </sect2><!-- m32 -->
 
   <!-- - - - - - - - - - -->
-  <!-- Multilib - x32bit -->
+  <!-- Multilib - x32-bit -->
   <!-- - - - - - - - - - -->
   
   <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Bzip2 - x32bit</title>
+    <title>Installation of Bzip2 - x32-bit</title>
 
     <para>Clean previous build:</para>
 

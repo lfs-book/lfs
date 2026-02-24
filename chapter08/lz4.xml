@@ -61,10 +61,10 @@
   </sect2>
 
   <!-- - - - - - - - - - -->
-  <!-- Multilib - 32bit  -->
+  <!-- Multilib - 32-bit  -->
   <!-- - - - - - - - - - -->
   <sect2 arch="ml_32,ml_all" role="installation">
-    <title>Installation of Lz4 - 32bit</title>
+    <title>Installation of Lz4 - 32-bit</title>
 
     <para>Clean previous build:</para>
 
@@ -86,10 +86,10 @@ cp -a m32/usr/lib32/* /usr/lib32/
   </sect2><!-- m32 -->
 
   <!-- - - - - - - - - - -->
-  <!-- Multilib - x32bit -->
+  <!-- Multilib - x32-bit -->
   <!-- - - - - - - - - - -->
   <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Lz4 - x32bit</title>
+    <title>Installation of Lz4 - x32-bit</title>
 
     <para>Clean previous build:</para>
 
