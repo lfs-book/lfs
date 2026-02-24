@@ -92,13 +92,11 @@ meson setup --prefix=/usr ..    \
 
     <para>Prepare Kmod for compilation:</para>
 
-<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
-CC="gcc -m32 -march=i686"              \
-CXX="g++ -m32 -march=i686"             \
-meson setup --prefix=/usr ..           \
-            --libdir=/usr/lib32        \
-            --buildtype=release        \
-            -D manpages=false</userinput></screen>
+<screen><userinput remap="configure">meson setup --prefix=/usr       \
+            --buildtype=release \
+            --cross-file=lib32  \
+            -D manpages=false   \
+            ..</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -125,13 +123,11 @@ rm -rf DESTDIR</userinput></screen>
 
     <para>Prepare Kmod for compilation:</para>
 
-<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
-CC="gcc -mx32"                          \
-CXX="g++ -mx32"                         \
-meson setup --prefix=/usr ..            \
-            --libdir=/usr/libx32        \
-            --buildtype=release         \
-            -D manpages=false</userinput></screen>
+<screen><userinput remap="configure">meson setup --prefix=/usr       \
+            --buildtype=release \
+            --cross-file=libx32 \
+            -D manpages=false   \
+            ..</userinput></screen>
 
     <para>Compile the package:</para>
 

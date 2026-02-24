@@ -212,17 +212,15 @@ rm /usr/share/man/man*/systemd*</userinput></screen>
 
     <para>Prepare Udev for compilation:</para>
 
-<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
-CC="gcc -m32 -march=i686"              \
-CXX="g++ -m32 -march=i686"             \
-LANG=en_US.UTF-8                       \
-meson setup --prefix=/usr              \
-            --buildtype=release        \
-            -D mode=release            \
-            -D dev-kvm-mode=0660       \
-            -D link-udev-shared=false  \
-            -D logind=false            \
-            -D vconsole=false          \
+<screen><userinput remap="configure">LANG=en_US.UTF-8                      \
+meson setup --prefix=/usr             \
+            --buildtype=release       \
+            --cross-file=lib32        \
+            -D mode=release           \
+            -D dev-kvm-mode=0660      \
+            -D link-udev-shared=false \
+            -D logind=false           \
+            -D vconsole=false         \
             ..</userinput></screen>
 
     <para>Compile the package:</para>
@@ -250,20 +248,15 @@ sed -e "s;/usr/lib;&amp;32;g" src/libudev/libudev.pc > /usr/lib32/pkgconfig/libu
 
     <para>Prepare Udev for compilation:</para>
 
-<screen><userinput remap="configure">
-PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
-CC="gcc -mx32"                          \
-CXX="g++ -mx32"                         \
-CFLAGS+=" -Wno-error=shift-overflow"    \
-CXXFLAGS+=" -Wno-error=shift-overflow"  \
-LANG=en_US.UTF-8                        \
-meson setup --prefix=/usr               \
-            --buildtype=release         \
-            -D mode=release             \
-            -D dev-kvm-mode=0660        \
-            -D link-udev-shared=false   \
-            -D logind=false             \
-            -D vconsole=false           \
+<screen><userinput remap="configure">LANG=en_US.UTF-8                      \
+meson setup --prefix=/usr             \
+            --buildtype=release       \
+            --cross-file=libx32       \
+            -D mode=release           \
+            -D dev-kvm-mode=0660      \
+            -D link-udev-shared=false \
+            -D logind=false           \
+            -D vconsole=false         \
             ..</userinput></screen>
 
     <para>Compile the package:</para>

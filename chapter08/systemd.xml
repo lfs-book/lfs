@@ -280,49 +280,22 @@ unshare -m ninja test</userinput></screen>
 
 <screen><userinput remap="pre">rm -rf *</userinput></screen>
 
-<!-- Remove the symlink to work around missing xsltproc
-     Man page generation will be properly supressed in meson options -->
-
-    <!-- para>Create a symlink to work around missing xsltproc:</para -->
-
-<!-- screen><userinput remap="pre">ln -sf /tools/bin/true /usr/bin/xsltproc</userinput></screen -->
-<!-- screen><userinput remap="pre">ln -sf /bin/true /usr/bin/xsltproc</userinput></screen -->
-
-<!-- with cross-LFS we have util-linux in place:
-    <para>Because we have not yet installed the final version of Util-Linux,
-    create links to the libraries in the approprite location:</para>
-
-<screen><userinput remap="pre">for file in /tools/lib32/lib{blkid,mount,uuid}*; do
-    ln -sf $file /usr/lib32/
-done</userinput></screen>
--->
-
-<!-- Match config switch style (-Dxxx -> -D xxx) to initial build above
-     Properly supress man page generation (-D man=disabled)
-        (Removes need for xsltproc symlink)
-     Remove deprecated switches that are duplicates/not needed
-        (-Drootlibdir deprecated, covered by libdir= option)
-        (-Db_lto not found in meson-options.txt, lto handled by mode switch)
-        (-Dblkid deprecated) -->
     <para>Prepare systemd for compilation:</para>
 
-<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
-CC="gcc -m32"                          \
-CXX="g++ -m32"                         \
-LANG=en_US.UTF-8                       \
-meson setup --prefix=/usr              \
-            --libdir=/usr/lib32        \
-            --buildtype=release        \
-            -D default-dnssec=no       \
-            -D firstboot=false         \
-            -D install-tests=false     \
-            -D ldconfig=false          \
-            -D sysusers=false          \
-            -D rpmmacrosdir=no         \
-            -D homed=disabled          \
-            -D userdb=false            \
-            -D man=disabled            \
-            -D mode=release            \
+<screen><userinput remap="configure">LANG=en_US.UTF-8                   \
+meson setup --prefix=/usr          \
+            --buildtype=release    \
+            --cross-file=lib32     \
+            -D default-dnssec=no   \
+            -D firstboot=false     \
+            -D install-tests=false \
+            -D ldconfig=false      \
+            -D sysusers=false      \
+            -D rpmmacrosdir=no     \
+            -D homed=disabled      \
+            -D userdb=false        \
+            -D man=disabled        \
+            -D mode=release        \
             ..</userinput></screen>
 <!-- We still use -D userdb=false for m32 to prevent the utilities from being
      built. We only are interested in libraries here, and userdb has none.
@@ -357,31 +330,22 @@ rm -rf DESTDIR</userinput></screen>
 
 <screen><userinput remap="pre">rm -rf *</userinput></screen>
 
-<!--
-    <para>Fix an issue on x32:</para>
-
-<screen><userinput remap="pre">sed '/log_debug/s@PRI_TIMEX@PRIi64@' -i src/timesync/timesyncd-manager.c
-sed '/long drift_freq;/s@long @int64_t @' -i src/timesync/timesyncd-manager.h</userinput></screen>
--->
     <para>Prepare systemd for compilation:</para>
 
-<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
-CC="gcc -mx32"                          \
-CXX="g++ -mx32"                         \
-LANG=en_US.UTF-8                        \
-meson setup --prefix=/usr               \
-            --libdir=/usr/libx32        \
-            --buildtype=release         \
-            -D default-dnssec=no        \
-            -D firstboot=false          \
-            -D install-tests=false      \
-            -D ldconfig=false           \
-            -D sysusers=false           \
-            -D rpmmacrosdir=no          \
-            -D homed=false              \
-            -D userdb=false             \
-            -D man=disabled             \
-            -D mode=release             \
+<screen><userinput remap="configure">LANG=en_US.UTF-8                   \
+meson setup --prefix=/usr          \
+            --buildtype=release    \
+            --cross-file=libx32    \
+            -D default-dnssec=no   \
+            -D firstboot=false     \
+            -D install-tests=false \
+            -D ldconfig=false      \
+            -D sysusers=false      \
+            -D rpmmacrosdir=no     \
+            -D homed=false         \
+            -D userdb=false        \
+            -D man=disabled        \
+            -D mode=release        \
             ..</userinput></screen>
 <!-- We still use -D userdb=false for mx32 to prevent the utilities from being
      built. We only are interested in libraries here, and userdb has none.

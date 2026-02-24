@@ -105,10 +105,11 @@ meson setup --prefix=/usr --buildtype=release --wrap-mode=nofallback ..</userinp
 
     <para>Prepare dbus for compilation:</para>
 
-<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
-CC="gcc -m32 -march=i686"              \
-CXX="g++ -m32 -march=i686"             \
-meson setup --prefix=/usr --libdir=/usr/lib32 --buildtype=release --wrap-mode=nofallback ..</userinput></screen>
+<screen><userinput remap="configure">meson setup --prefix=/usr          \
+            --buildtype=release    \
+            --cross-file=lib32     \
+            --wrap-mode=nofallback \
+            ..</userinput></screen>
 
     <para>Compile the package:</para>
 
@@ -137,10 +138,11 @@ cp -v  $(pwd)/destdir/usr/lib32/pkgconfig/dbus-1.pc /usr/lib32/pkgconfig/</useri
 
     <para>Prepare dbus for compilation:</para>
 
-<screen><userinput remap="configure">PKG_CONFIG_PATH="/usr/libx32/pkgconfig" \
-CC="gcc -mx32"                          \
-CXX="g++ -mx32"                         \
-meson setup --prefix=/usr --libdir=/usr/libx32 --buildtype=release --wrap-mode=nofallback ..</userinput></screen>
+<screen><userinput remap="configure">meson setup --prefix=/usr          \
+            --buildtype=release    \
+            --cross-file=libx32    \
+            --wrap-mode=nofallback \
+            ..</userinput></screen>
 
     <para>Compile the package:</para>
 

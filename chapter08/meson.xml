@@ -159,6 +159,11 @@ endian = 'little'</literal>
 EOF
 done</userinput></screen>
 
+    <note arch="ml_32,ml_x32,ml_all"><para>
+      These files will be used by default in packages that will use Meson-based
+      build systems to reduce any architecture and upgrading issues.
+    </para></note>
+
   </sect2>
 
   <sect2 id="contents-meson" role="content">
