@@ -41,11 +41,6 @@
   <sect2 role="installation">
     <title>Installation of Coreutils</title>
 
-    <para>First, make a fix required by glibc-2.43 and later:</para>
-
-<screen><userinput remap="pre">sed -r '/_GL_EXTERN_C/s/w?memchr|bsearch/(&amp;)/' \
-    -i $(find -name \*.in.h)</userinput></screen>
-
     <para>POSIX requires that programs from Coreutils recognize character
     boundaries correctly even in multibyte locales. The following patch fixes
     this non-compliance and other internationalization-related bugs.</para>
@@ -58,20 +53,21 @@
       those bugs are reproducible without this patch.</para>
     </note>
 
-    <!-- https://github.com/coreutils/coreutils/commit/bd528f923482 -->
+    <!-- https://github.com/coreutils/coreutils/commit/bd528f923482
+         Seems to be fixed in version 9.10.
+
     <para>Fix a bug causing the <command>cp</command> command to hang
     forever when copying sparse files on
     <systemitem class='filesystem'>ext4</systemitem> file systems:</para>
 
 <screen><userinput remap="pre">sed '/off_t ext_end =/s/ipos/src_pos/' -i src/copy-file-data.c</userinput></screen>
-
+-->
     <para>Now prepare Coreutils for compilation:</para>
 
 <screen><userinput remap="configure">autoreconf -fv
 automake -af
 FORCE_UNSAFE_CONFIGURE=1 ./configure \
-            --prefix=/usr            \
-            --enable-no-install-program=kill,uptime</userinput></screen>
+            --prefix=/usr</userinput></screen>
 
     <variablelist>
       <title>The meaning of the commands and configure options:</title>
@@ -107,15 +103,16 @@ FORCE_UNSAFE_CONFIGURE=1 ./configure \
           </para>
         </listitem>
       </varlistentry>
-
+<!--
       <varlistentry>
-        <term><parameter>--enable-no-install-program=kill,uptime</parameter></term>
+        <term><parameter>- -enable-no-install-program=kill,uptime</parameter></term>
         <listitem>
           <para>The purpose of this switch is to prevent Coreutils from
           installing programs that will be installed by other packages.
           </para>
         </listitem>
       </varlistentry>
+-->
     </variablelist>
 
     <para>Compile the package:</para>
