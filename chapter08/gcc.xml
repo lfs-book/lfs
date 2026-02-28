@@ -210,7 +210,8 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
          update-threading.c: https://gcc.gnu.org/PR110628
          vect-117.c: https://gcc.gnu.org/PR113685
          vect-121.c and vect-epilogues.c: https://gcc.gnu.org/PR119293
-         vect-reduc-chain-*.c: ??? -->
+         vect-reduc-chain-*.c: ???
+         vect-early-break_52.c: ??? -->
     <para>The tests named
     <filename>gen-vect-11*.c</filename>,
     <filename>gen-vect-26.c</filename>,
@@ -220,6 +221,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <filename>update-threading.c</filename>,
     <filename>vect-117.c</filename>,
     <filename>vect-121.c</filename>,
+    <filename>vect-early-break_52.c</filename>,
     <filename>vect-epilogues.c</filename>,
     <filename>vect-reduc-chain-*.c</filename> are known to fail.</para>
 
