@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>2026-02-27</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to vim-9.2.0078 (Security update). Fixes
+          <ulink url='&lfs-ticket-root;5877'>#5877</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2026-02-19</para>
       <itemizedlist>
         <listitem>
