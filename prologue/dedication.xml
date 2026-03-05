@@ -7,5 +7,26 @@
 
 <dedication>
   <title>Dedication</title>
-  <para>This book is dedicated</para>
+  <para>This book is dedicated to Ken Moffat.</para>
+
+  <para>
+    Ken Moffat first posted to the LFS mailing lists on May 19th, 2001.
+    There he discussed building LFS from the previous February.  In
+    the last 25 years Ken became an editor and active on the mailing 
+    lists, always willing to help.
+  </para>
+
+  <para>
+    One of Ken's avid interests was computer fonts.  To that end he created
+    a website that is still active at 
+    <ulink url="https://typosetting.linuxfromscratch.org/"/>.
+    He was also the editor who spearheaded the security advisories and he 
+    took care of countless security updates and problems during his 
+    time as an editor.
+  </para>
+
+  <para>
+    Ken passed away on June 26th, 2025.  He is missed.
+  </para>
+
 </dedication>
