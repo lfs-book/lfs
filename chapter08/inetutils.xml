@@ -116,8 +116,10 @@
          by the kernel already happen to be sorted.  Mounting a tmpfs on
          $LFS/tmp seems able to make it pass but we don't do that by the
          book.  IMO the test is just misdesigned.  -->
+    <!-- Not seen with inetutils-2.7.
     <para>One test named <filename>libls.sh</filename> is known to
     fail sometimes.</para>
+    -->
 
     <para>Install the package:</para>
 

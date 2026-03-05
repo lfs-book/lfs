@@ -67,8 +67,7 @@
 <screen><userinput remap="configure">autoreconf -fv
 automake -af
 FORCE_UNSAFE_CONFIGURE=1 ./configure \
-            --prefix=/usr            \
-            --enable-no-install-program=kill,uptime</userinput></screen>
+            --prefix=/usr</userinput></screen>
 
     <variablelist>
       <title>The meaning of the commands and configure options:</title>
@@ -104,15 +103,16 @@ FORCE_UNSAFE_CONFIGURE=1 ./configure \
           </para>
         </listitem>
       </varlistentry>
-
+<!--
       <varlistentry>
-        <term><parameter>--enable-no-install-program=kill,uptime</parameter></term>
+        <term><parameter>- -enable-no-install-program=kill,uptime</parameter></term>
         <listitem>
           <para>The purpose of this switch is to prevent Coreutils from
           installing programs that will be installed by other packages.
           </para>
         </listitem>
       </varlistentry>
+-->
     </variablelist>
 
     <para>Compile the package:</para>
