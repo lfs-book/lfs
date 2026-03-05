@@ -29,24 +29,13 @@
     </listitem>
 
     <listitem>
-      <para><ulink url="mailto:jim@linuxfromscratch.org">Jim
-      Gifford</ulink> &lt;jim@linuxfromscratch.org&gt; &ndash; CLFS Project
-      Co-Leader</para>
+      <para><ulink url="mailto:renodr@linuxfromscratch.org">Douglas R. Reno</ulink>
+      &lt;renodr@linuxfromscratch.org&gt; &ndash; Systemd Editor</para>
     </listitem>
 
     <listitem>
       <para><ulink url="mailto:pierre@linuxfromscratch.org">Pierre Labastie</ulink>
       &lt;pierre@linuxfromscratch.org&gt; &ndash; BLFS Editor and ALFS Lead</para>
-    </listitem>
-
-    <listitem>
-      <para><ulink url="mailto:dj@linuxfromscratch.org">DJ Lucas</ulink>
-      &lt;dj@linuxfromscratch.org&gt; &ndash; LFS and BLFS Editor</para>
-    </listitem>
-
-    <listitem>
-      <para><ulink url="mailto:ken@linuxfromscratch.org">Ken Moffat</ulink>
-      &lt;ken@linuxfromscratch.org&gt; &ndash; BLFS Editor</para>
     </listitem>
 
     <listitem>
@@ -326,6 +315,12 @@
     </listitem>
 
     <listitem>
+      <para><ulink url="mailto:jim@linuxfromscratch.org">Jim
+      Gifford</ulink> &lt;jim@linuxfromscratch.org&gt; &ndash; CLFS Project
+      Co-Leader</para>
+    </listitem>
+
+    <listitem>
       <para>Alex Groenewoud &ndash; LFS Technical Writer</para>
     </listitem>
 
@@ -364,9 +359,19 @@
     </listitem>
 
     <listitem>
+      <para><ulink url="mailto:dj@linuxfromscratch.org">DJ Lucas</ulink>
+      &lt;dj@linuxfromscratch.org&gt; &ndash; LFS and BLFS Editor</para>
+    </listitem>
+
+    <listitem>
       <para><ulink url="mailto:randy@linuxfromscratch.org">Randy
       McMurchy</ulink> &lt;randy@linuxfromscratch.org&gt; &ndash; BLFS
       Project Leader, LFS Editor</para>
+    </listitem>
+
+    <listitem>
+      <para><ulink url="mailto:ken@linuxfromscratch.org">Ken Moffat</ulink>
+      &lt;ken@linuxfromscratch.org&gt; &ndash; BLFS Editor</para>
     </listitem>
 
     <listitem>
@@ -390,11 +395,6 @@
       <para><ulink url="mailto:scot@linuxfromscratch.org">Scot Mc
       Pherson</ulink> &lt;scot@linuxfromscratch.org&gt; &ndash; LFS NNTP
       Gateway Maintainer</para>
-    </listitem>
-
-    <listitem>
-      <para><ulink url="mailto:renodr@linuxfromscratch.org">Douglas R. Reno</ulink>
-      &lt;renodr@linuxfromscratch.org&gt; &ndash; Systemd Editor</para>
     </listitem>
 
     <listitem>
