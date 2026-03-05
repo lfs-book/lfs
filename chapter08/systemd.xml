@@ -616,7 +616,7 @@ rm -rf DESTDIR</userinput></screen>
       <varlistentry id="run0">
         <term><command>run0</command></term>
         <listitem>
-          <para>Temporary elevates or acquires different privileges, similar
+          <para>Temporarily elevates or acquires different privileges, similar
           to sudo</para>
           <indexterm zone="ch-system-systemd run0">
             <primary sortas="b-run0">run0</primary>
