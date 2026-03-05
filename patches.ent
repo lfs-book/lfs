@@ -64,3 +64,9 @@
 <!ENTITY systemd-upstream-patch-md5 "8d9c1014445c463cf7c24c162b1e0686">
 <!ENTITY systemd-upstream-patch-size "7.2 KB">
 -->
+
+<!-- Put MIPS patches last to reduce the chance of a conflict during
+     merge.  -->
+<!ENTITY glibc-mips-fix-patch "glibc-&glibc-version;-mips_fix-1.patch">
+<!ENTITY glibc-mips-fix-patch-md5 "0cc7517c3882717ec9df2dc2126d209c">
+<!ENTITY glibc-mips-fix-patch-size "3.8 KB">
