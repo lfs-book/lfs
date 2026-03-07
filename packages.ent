@@ -614,8 +614,8 @@
 <!-- If python minor version changes, updates in python and
      meson pages will be needed: python3.6 and python3.6m -->
 
-<!ENTITY python-version "3.14.0">
-<!ENTITY python-minor "3.14">
+<!ENTITY python-version "3.13.7">
+<!ENTITY python-minor "3.13">
 <!ENTITY python-size "23,043 KB">
 <!ENTITY python-url "https://www.python.org/ftp/python/&python-version;/Python-&python-version;.tar.xz">
 <!ENTITY python-md5 "41389edaf9c643263cbed9b5ed307df8">
