@@ -72,16 +72,16 @@
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">CC="gcc -m32" make BUILD_STATIC=no</userinput></screen>
+<screen><userinput remap="make">CC="gcc -m32" make BUILD_STATIC=no -C lib</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make BUILD_STATIC=no         \
-     PREFIX=/usr             \
-     LIBDIR=/usr/lib32       \
-     LIBVER_SRC=../lib/lz4.h \
-     DESTDIR=$(pwd)/m32 install
-cp -a m32/usr/lib32/* /usr/lib32/</userinput></screen>
+<screen><userinput remap="install">make BUILD_STATIC=no    \
+     PREFIX=/usr        \
+     LIBDIR=/usr/lib32  \
+     DESTDIR=$(pwd)/m32 \
+     -C lib install
+cp -vR m32/usr/lib32/* /usr/lib32/</userinput></screen>
 
   </sect2><!-- m32 -->
 
@@ -97,16 +97,16 @@ cp -a m32/usr/lib32/* /usr/lib32/</userinput></screen>
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">CC="gcc -mx32" make BUILD_STATIC=no</userinput></screen>
+<screen><userinput remap="make">CC="gcc -mx32" make BUILD_STATIC=no -C lib</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make BUILD_STATIC=no         \
-     PREFIX=/usr             \
-     LIBDIR=/usr/libx32      \
-     LIBVER_SRC=../lib/lz4.h \
-     DESTDIR=$(pwd)/mx32 install
-cp -a mx32/usr/libx32/* /usr/libx32/</userinput></screen>
+<screen><userinput remap="install">make BUILD_STATIC=no     \
+     PREFIX=/usr         \
+     LIBDIR=/usr/libx32  \
+     DESTDIR=$(pwd)/mx32 \
+     -C lib install
+cp -vR mx32/usr/libx32/* /usr/libx32/</userinput></screen>
 
   </sect2><!-- mx32 -->
 
