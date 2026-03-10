@@ -24,17 +24,10 @@
   backup of the LFS system in its current state.</para>
 
   <para>A <command>strip</command> command with the
-  <parameter>--strip-unneeded</parameter> option removes all debug symbols from
-  a binary or library.  It also removes all symbol table entries not normally
+  <parameter>--strip-unneeded</parameter> option removes all debug symbols
+  from a binary or library.  It also removes all symbol table entries not
   needed by the linker (for static libraries) or dynamic linker (for
-  dynamically linked binaries and shared libraries). Using
-  <parameter>--strip-debug</parameter> does not remove symbol table entries
-  that may be needed by some applications.  The difference between
-  <literal>unneeded</literal> and <literal>debug</literal> is very small.
-  For example, an unstripped <filename class='libraryfile'>libc.a</filename>
-  is 22.4 MB. After stripping with <parameter>--strip-debug</parameter> it
-  is 5.9 MB. Using <parameter>--strip-unneeded</parameter> only reduces the
-  size further to 5.8 MB.</para>
+  dynamically linked binaries and shared libraries).</para>
 
   <para>The debugging symbols from selected libraries are compressed with
   <application>Zstd</application> and preserved in separate files.  That
@@ -87,7 +80,7 @@ cd /usr/lib
 for LIB in $save_usrlib; do
     objcopy --only-keep-debug --compress-debug-sections=zstd $LIB $LIB.dbg
     cp $LIB /tmp/$LIB
-    strip --strip-debug /tmp/$LIB
+    strip --strip-unneeded /tmp/$LIB
     objcopy --add-gnu-debuglink=$LIB.dbg /tmp/$LIB
     install -vm755 /tmp/$LIB /usr/lib
     rm /tmp/$LIB
@@ -106,14 +99,14 @@ online_usrlib="libbfd-&binutils-version;.20260210.so
 
 for BIN in $online_usrbin; do
     cp /usr/bin/$BIN /tmp/$BIN
-    strip --strip-debug /tmp/$BIN
+    strip --strip-unneeded /tmp/$BIN
     install -vm755 /tmp/$BIN /usr/bin
     rm /tmp/$BIN
 done
 
 for LIB in $online_usrlib; do
     cp /usr/lib/$LIB /tmp/$LIB
-    strip --strip-debug /tmp/$LIB
+    strip --strip-unneeded /tmp/$LIB
     install -vm755 /tmp/$LIB /usr/lib
     rm /tmp/$LIB
 done
@@ -124,7 +117,7 @@ for i in $(find /usr/lib -type f -name \*.so* ! -name \*dbg) \
     case "$online_usrbin $online_usrlib $save_usrlib" in
         *$(basename $i)* )
             ;;
-        * ) strip --strip-debug $i
+        * ) strip --strip-unneeded $i
             ;;
     esac
 done
