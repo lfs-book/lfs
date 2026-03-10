@@ -20,9 +20,13 @@
       <surname>Dubbs</surname>
     </author>
 
-    <author>
+    <author revision="systemd">
       <firstname>Editor: Douglas R.</firstname>
       <surname>Reno</surname>
+    </author>
+
+    <author revision="openrc">
+      <firstname>Editor: Zeckma</firstname>
     </author>
   </authorgroup>
 
