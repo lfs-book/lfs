@@ -115,7 +115,7 @@ done</userinput></screen>
 <literal>#!/sbin/openrc-run
 # Starts the udevd daemon.
 # Authors: Zeckma - zeckma.tech@gmail.com
-# Version: LFS 12.5
+# Version: LFS 13.0
 
 description="starts the udevd daemon"
 
@@ -139,7 +139,7 @@ cat &gt; /etc/init.d/udev-trigger &lt;&lt; "EOF"
 <literal>#!/sbin/openrc-run
 # Coldplugs devices and settles the udevd daemon.
 # Authors: Zeckma - zeckma.tech@gmail.com
-# Version: LFS 12.5
+# Version: LFS 13.0
 
 description="coldplugs devices"
 
