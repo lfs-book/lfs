@@ -51,7 +51,7 @@ esac
 
 full_date="$month $day$suffix, $year"
 
-sha="$(git describe --abbrev=1)"
+sha="$(git describe --tags --abbrev=1)"
 rev=$(echo "$sha" | sed 's/-g[^-]*$//')
 version="$rev"
 versiond="$rev-systemd"
