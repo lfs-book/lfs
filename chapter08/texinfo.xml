@@ -41,11 +41,6 @@
   <sect2 role="installation">
     <title>Installation of Texinfo</title>
 
-    <!-- https://cgit.git.savannah.gnu.org/cgit/texinfo.git/commit/?id=f4ac5b857cf5 -->
-    <para>Fix a code pattern that causes Perl-5.42 or later to display a warning:</para>
-
-<screen><userinput remap="pre">sed 's/! $output_file eq/$output_file ne/' -i tp/Texinfo/Convert/*.pm</userinput></screen>
-
     <para>Prepare Texinfo for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
