@@ -6,7 +6,7 @@
 ]>
 
 <bookinfo>
-  <title>Multilib Linux From Scratch</title>
+  <title>Multilib Linux From Scratch<phrase revision='sysv'> (SysVinit Edition)</phrase></title>
   <subtitle>Version &version;</subtitle>
   <subtitle>Published &releasedate;</subtitle>
 

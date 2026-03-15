@@ -43,7 +43,7 @@
 <!ENTITY short-version   "%relnum;">  <!-- Used below in &blfs-book; -->
 ]]>
 <![ %systemd; [
-<!ENTITY version         "%relnum;-systemd">
+<!ENTITY version         "%relnum;">
 <!ENTITY short-version   "%relnum;-systemd"> <!-- Used below in &blfs-book; -->
 ]]>
 <!ENTITY errata          "&lfs-root;lfs/errata/&version;/">

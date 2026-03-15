@@ -245,7 +245,7 @@
     <!--<listitem revision="sysv">
       <para>Sysklogd-&sysklogd-version;</para>
     </listitem>-->
-    <listitem>
+    <listitem revision="systemd">
       <para>Systemd-&systemd-version;</para>
     </listitem>
     <!--<listitem revision="sysv">
@@ -263,9 +263,9 @@
     <listitem>
       <para>Tzdata-&tzdata-version;</para>
     </listitem>
-    <!--<listitem revision="sysv">
+    <listitem revision="sysv">
       <para>Udev from Systemd-&systemd-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Util-linux-&util-linux-version;</para>
     </listitem>-->

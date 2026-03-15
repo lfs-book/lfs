@@ -14,10 +14,6 @@ fi
 echo "<!ENTITY % sysv    \"$SYSV\">"     >  conditional.ent
 echo "<!ENTITY % systemd \"$SYSTEMD\">"  >> conditional.ent
 
-if [ -e LFS-RELEASE ]; then
-	exit 0
-fi
-
 if ! git status > /dev/null; then
     # Either it's not a git repository or git is unavailable.
     # Just workaround.
@@ -51,23 +47,15 @@ esac
 
 full_date="$month $day$suffix, $year"
 
-sha="$(git describe --tags --abbrev=1)"
-rev=$(echo "$sha" | sed 's/-g[^-]*$//')
-version="$rev"
-versiond="$rev-systemd"
-
-if [ "$(git diff HEAD | wc -l)" != "0" ]; then
-    version="$version-wip"
-    versiond="$versiond-wip"
-fi
+sha="$(git describe --abbrev=1 --always --exclude '*')"
+githash=$(echo -n "#" && echo -n "$sha")
+version="$githash"
 
 echo "<![ %sysv; ["                                        >  version.ent
 echo "<!ENTITY version           \"$version\">"            >> version.ent
 echo "]]>"                                                 >> version.ent
 echo "<![ %systemd; ["                                     >> version.ent
-echo "<!ENTITY version          \"$versiond\">"            >> version.ent
+echo "<!ENTITY version           \"$version\">"            >> version.ent
 echo "]]>"                                                 >> version.ent
 echo "<!ENTITY releasedate       \"$full_date\">"          >> version.ent
 echo "<!ENTITY copyrightdate     \"1999-$year\">"          >> version.ent
-
-[ -z "$DIST" ] || echo $version > "$DIST"

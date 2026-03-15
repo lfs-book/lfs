@@ -14,22 +14,23 @@ ifndef REV
   REV = systemd
 endif
 
-ifneq ($(REV), sysv)
-  ifneq ($(REV), systemd)
-    $(error REV must be 'sysv' or 'systemd' (default).)
+ifneq ($(REV), systemd)
+  ifneq ($(REV), sysv)
+    $(error REV must be 'systemd' (default) or 'sysv'.)
   endif
 endif
 
-ifeq ($(REV), sysv)
-  BASEDIR         ?= $(HOME)/public_html/mlfs-book
-  PDF_OUTPUT      ?= MLFS-BOOK.pdf
-  NOCHUNKS_OUTPUT ?= MLFS-BOOK.html
+ifeq ($(REV), systemd)
+  BASEDIR         ?= $(HOME)/public_html/mlfs
+  PDF_OUTPUT      ?= MLFS.pdf
+  NOCHUNKS_OUTPUT ?= MLFS.html
   DUMPDIR         ?= $(HOME)/mlfs-commands
-else
-  BASEDIR         ?= $(HOME)/public_html/mlfs-systemd
-  PDF_OUTPUT      ?= MLFS-SYSD-BOOK.pdf
-  NOCHUNKS_OUTPUT ?= MLFS-SYSD-BOOK.html
-  DUMPDIR         ?= $(HOME)/mlfs-sysd-commands
+endif
+ifeq ($(REV), sysv)
+  BASEDIR         ?= $(HOME)/public_html/mlfs-sysv
+  PDF_OUTPUT      ?= MLFS-SYSV.pdf
+  NOCHUNKS_OUTPUT ?= MLFS-SYSV.html
+  DUMPDIR         ?= $(HOME)/mlfs-sysv-commands
 endif
 
 ifndef ARCH
@@ -51,7 +52,7 @@ else
 endif
 
 book: validate profile-html
-	@echo "Generating chunked XHTML files at $(BASEDIR)/ ..."
+	@echo "Generating chunked XHTML files at $(BASEDIR)..."
 	$(Q)xsltproc --nonet                          \
       --stringparam chunk.quietly $(CHUNK_QUIET) \
       --stringparam rootid "$(ROOT_ID)"          \
@@ -228,14 +229,4 @@ dump-commands: validate
 
 all: book nochunks pdf dump-commands
 
-dist:
-	$(Q)DIST=/tmp/LFS-RELEASE ./git-version.sh $(REV)
-	$(Q)rm -f lfs-$$(</tmp/LFS-RELEASE).tar.xz
-	$(Q)tar cJf lfs-$$(</tmp/LFS-RELEASE).tar.xz \
-		$(shell git ls-tree HEAD . --name-only -r) version.ent \
-		-C /tmp LFS-RELEASE \
-		--transform "s,^,lfs-$$(</tmp/LFS-RELEASE)/,"
-	$(Q)echo "Generated XML tarball lfs-$$(</tmp/LFS-RELEASE).tar.xz"
-
-.PHONY : all book dump-commands nochunks pdf profile-html tmpdir validate md5sums wget-list version dist
-
+.PHONY : all book dump-commands nochunks pdf profile-html tmpdir validate md5sums wget-list version
