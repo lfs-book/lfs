@@ -284,7 +284,14 @@
 
         <para>This package contains programs for basic and advanced IPv4 and
         IPv6 networking.  It was chosen over the other common network
-        tools package (net-tools) for its IPv6 capabilities.  </para>
+        tools package (net-tools) for its IPv6 capabilities.</para>
+      </listitem>
+
+      <listitem>
+        <para>ISL</para>
+
+        <para>This package contains a library for manipulating integer points.
+        It is mainly used by GCC to enable graphite loop optimizations.</para>
       </listitem>
 
       <listitem revision="systemd">

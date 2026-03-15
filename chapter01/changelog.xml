@@ -44,6 +44,9 @@
       <para>2026-03-15</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Document ISL for rationale and dependencies.</para>
+        </listitem>
+        <listitem>
           <para>[bdubbs] - Update to vim-9.2.0161. Addresses
           <ulink url='&lfs-ticket-root;4500'>#4500</ulink>.</para>
         </listitem>
