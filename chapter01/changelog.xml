@@ -13,8 +13,9 @@
   <para>This is version &version; of the Multilib Linux From Scratch book,
   dated &releasedate;. If the first change in this changelog is more than six
   months old, a newer and better version of this book is probably available.
-  To find out, please look through <ulink url="/mlfs/view/"/> or see <ulink
-  url="/mlfs/news.html"/>.</para>
+  To find out, please look through the MLFS <ulink url="/mlfs/view/">version
+  index</ulink> or see the MLFS <ulink
+  url="/mlfs/news.html">news</ulink> for potentially new announcements.</para>
 
   <para>Below is a list of changes made since the previous release of the
   book.</para>
