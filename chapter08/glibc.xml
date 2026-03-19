@@ -627,14 +627,11 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
   </sect3>
   </sect2>
 
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - 32-bit  -->
-  <!-- - - - - - - - - - -->
-  <sect2 arch="ml_32,ml_all">
+  <sect2>
     <title>Building Glibc - 32-bit</title>
 
-    <para>Now recompile for m32. The extracted source can be
-    reused but needs to be cleaned before installing the m32
+    <para>Now build Glibc for 32-bit. The extracted source can be
+    reused but needs to be cleaned before installing the 32-bit
     version of Glibc.</para>
 
     <para>Clear the build directory and remove artefacts from
@@ -643,7 +640,7 @@ mkdir -pv /etc/ld.so.conf.d</userinput></screen>
 <screen><userinput remap="pre">rm -rf ./*
 find .. -name "*.a" -delete</userinput></screen>
 
-    <para>Configure Glibc for m32 with the following commands:</para>
+    <para>Configure Glibc for 32-bit with the following commands:</para>
 
 <screen><userinput remap="configure">CC="gcc -m32" CXX="g++ -m32"             \
 ../configure                             \
@@ -668,9 +665,6 @@ find .. -name "*.a" -delete</userinput></screen>
 cp -a DESTDIR/usr/lib32/* /usr/lib32/
 install -vm644 DESTDIR/usr/include/gnu/{lib-names,stubs}-32.h \
                /usr/include/gnu/</userinput></screen>
-<!-- no longer required as they are created in chap5
-ln -svf ../lib32/ld-linux.so.2 /lib/ld-linux.so.2
--->
 
     <para>Add the library name to the dynamic loader config:</para>
 
@@ -701,83 +695,7 @@ readelf -l a.out | grep '/ld-linux'</userinput></screen>
 
     </caution>
 
-  </sect2><!-- m32 -->
-
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - x32-bit -->
-  <!-- - - - - - - - - - -->
-
-  <sect2 arch="ml_x32,ml_all">
-    <title>Building Glibc - x32-bit</title>
-
-    <para>Now recompile for mx32. The extracted source can be
-    reused but needs to be cleaned before installing the mx32
-    version of Glibc.</para>
-
-    <para>Clear the build directory and remove artefacts from
-    previous build:</para>
-
-<screen><userinput remap="pre">rm -rf ./*
-find .. -name "*.a" -delete</userinput></screen>
-
-    <para>Configure Glibc for mx32 with the following commands:</para>
-
-<screen><userinput remap="configure">CC="gcc -mx32" CXX="g++ -mx32"           \
-../configure                             \
-      --prefix=/usr                      \
-      --host=x86_64-pc-linux-gnux32      \
-      --build=$(../scripts/config.guess) \
-      --libdir=/usr/libx32               \
-      --libexecdir=/usr/libx32           \
-      --disable-werror                   \
-      --disable-nscd                     \
-      libc_cv_slibdir=/usr/libx32        \
-      --enable-stack-protector=strong    \
-      --enable-kernel=&min-kernel;</userinput></screen>
-
-    <para>Compile the package:</para>
-
-<screen><userinput remap="make">make</userinput></screen>
-
-    <para>Install the package:</para>
-
-<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -a DESTDIR/usr/libx32/* /usr/libx32/
-install -vm644 DESTDIR/usr/include/gnu/{lib-names,stubs}-x32.h \
-               /usr/include/gnu/</userinput></screen>
-<!-- no longer required as they are created in chap5
-ln -svf ../libx32/ld-linux-x32.so.2 /lib/ld-linux-x32.so.2
--->
-    <para>Add the library name to the dynamic loader config:</para>
-
-<screen role="install"><userinput>echo "/usr/libx32" &gt;&gt; /etc/ld.so.conf</userinput></screen>
-
-    <caution>
-      <para>At this point, it is imperative to stop and ensure that the basic
-      functions (compiling and linking) of the new toolchain are working as
-      expected. To perform a sanity check, run the following commands:</para>
-
-<screen><userinput>echo 'int main(){}' &gt; dummy.c
-gcc -mx32 dummy.c
-readelf -l a.out | grep '/ld-linux-x32'</userinput></screen>
-
-      <para>If everything is working correctly, there should be no errors,
-      and the output of the last command will be of the form:</para>
-
-<screen><computeroutput>[Requesting program interpreter: /libx32/ld-linux-x32.so.2]</computeroutput></screen>
-
-      <para>If the output is not shown as above or there was no output at all,
-      then something is wrong. Investigate and retrace the steps to find out
-      where the problem is and correct it. This issue must be resolved before
-      continuing on.</para>
-
-      <para>Once all is well, clean up the test files:</para>
-
-<screen><userinput>rm -v dummy.c a.out</userinput></screen>
-
-    </caution>
-
-  </sect2><!-- mx32 -->
+  </sect2>
 
   <sect2 id="contents-glibc" role="content">
     <title>Contents of Glibc</title>

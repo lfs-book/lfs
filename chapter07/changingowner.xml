@@ -33,14 +33,6 @@
   user <systemitem class="username">root</systemitem> by running the following
   command:</para>
 
-<screen><userinput>chown --from &lfs-username; -R root:root $LFS/{usr,var,etc,tools}
-case $(uname -m) in
-  x86_64) chown --from &lfs-username; -R root:root $LFS/lib64 ;;
-esac</userinput></screen>
+<screen><userinput>chown --from &lfs-username; -R root:root $LFS/{usr,lib64,var,etc,tools}</userinput></screen>
 
-  <para arch="ml_32,ml_x32,ml_all">Some more directories exists for
-  multilib support. Change their ownership, too:</para>
-<screen arch="ml_32,ml_x32,ml_all"><userinput arch="ml_32,ml_all">chown -R root:root $LFS/lib32</userinput>
-<userinput arch="ml_x32,ml_all">chown -R root:root $LFS/libx32</userinput></screen>
-  
 </sect1>

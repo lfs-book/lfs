@@ -10,10 +10,11 @@
 
   <title>Changelog</title>
 
-  <para>This is version &version;<phrase arch="ml_32,ml_x32,ml_all">-multilib</phrase> of the Linux From Scratch book, dated
-  &releasedate;. If this book is more than six months old, a newer and better
-  version is probably already available. To find out, please check one of the
-  mirrors via <ulink url="&lfs-root;mirrors.html"/>.</para>
+  <para>This is version &version; of the Multilib Linux From Scratch book,
+  dated &releasedate;. If the first change in this changelog is more than six
+  months old, a newer and better version of this book is probably available.
+  To find out, please look through <ulink url="/mlfs/view/"/> or see <ulink
+  url="/mlfs/news.html"/>.</para>
 
   <para>Below is a list of changes made since the previous release of the
   book.</para>
@@ -39,6 +40,15 @@
     <listitem revision="sysv"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
     -->
+
+    <listitem>
+      <para>2026-03-19</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Removed x32-bit support.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
     <listitem>
       <para>2026-03-15</para>

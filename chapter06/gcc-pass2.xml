@@ -54,27 +54,17 @@ tar -xf ../mpc-&mpc-version;.tar.gz
 mv -v mpc-&mpc-version; mpc</userinput></screen>
 
 
-    <para arch="default">If you are building on x86_64, change the default directory name for
-    64-bit libraries to <quote>lib</quote>:</para>
-
-<screen arch="default"><userinput remap="pre">case $(uname -m) in
-  x86_64)
-    sed -e '/m64=/s/lib64/lib/' \
-        -i.orig gcc/config/i386/t-linux64
-  ;;
-esac</userinput></screen>
-
-    <para arch="ml_32,ml_x32,ml_all">Change the default directory name for the
+    <para>Change the default directory name for the
     libraries:</para>
 
-<screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e '/m64=/s/lib64/lib/' \
+<screen><userinput remap="pre">sed -e '/m64=/s/lib64/lib/' \
     -e '/m32=/s/m32=.*/m32=..\/lib32$(call if_multiarch,:i386-linux-gnu)/' \
     -i.orig gcc/config/i386/t-linux64</userinput></screen>
 
-    <para arch="ml_32,ml_all">Make <literal>-mstackrealign</literal> a default for 32-bit
+    <para>Make <literal>-mstackrealign</literal> a default for 32-bit
       objects:</para>
 
-<screen arch="ml_32,ml_all"><userinput remap="pre">sed '/STACK_REALIGN_DEFAULT/s/0/(!TARGET_64BIT \&amp;\&amp; TARGET_SSE)/' \
+<screen><userinput remap="pre">sed '/STACK_REALIGN_DEFAULT/s/0/(!TARGET_64BIT \&amp;\&amp; TARGET_SSE)/' \
       -i gcc/config/i386/i386.h</userinput></screen>
 
     <para>Override the build rules of the libgcc and libstdc++ headers to
@@ -93,46 +83,24 @@ cd       build</userinput></screen>
 
     <para>Now prepare GCC for compilation:</para>
 
-<screen arch="default"><userinput remap="configure">../configure                   \
-    --build=$(../config.guess) \
-    --host=$LFS_TGT            \
-    --target=$LFS_TGT          \
-    --prefix=/usr              \
-    --with-build-sysroot=$LFS  \
-    --enable-default-pie       \
-    --enable-default-ssp       \
-    --disable-nls              \
-    --disable-multilib         \
-    --disable-libatomic        \
-    --disable-libgomp          \
-    --disable-libquadmath      \
-    --disable-libsanitizer     \
-    --disable-libssp           \
-    --disable-libvtv           \
-    --enable-languages=c,c++   \
-    LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc</userinput></screen>
-<screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure" 
-    arch="ml_32">mlist=m64,m32</userinput><userinput remap="configure"
-    arch="ml_x32">mlist=m64,mx32</userinput><userinput remap="configure"
-    arch="ml_all">mlist=m64,m32,mx32</userinput>
-<userinput remap="configure">../configure                    \
-    --build=$(../config.guess)  \
-    --host=$LFS_TGT             \
-    --target=$LFS_TGT           \
-    --prefix=/usr               \
-    --with-build-sysroot=$LFS   \
-    --enable-default-pie        \
-    --enable-default-ssp        \
-    --disable-nls               \
-    --enable-multilib           \
-    --with-multilib-list=$mlist \
-    --disable-libatomic         \
-    --disable-libgomp           \
-    --disable-libquadmath       \
-    --disable-libsanitizer      \
-    --disable-libssp            \
-    --disable-libvtv            \
-    --enable-languages=c,c++    \
+<screen><userinput remap="configure">../configure                     \
+    --build=$(../config.guess)   \
+    --host=$LFS_TGT              \
+    --target=$LFS_TGT            \
+    --prefix=/usr                \
+    --with-build-sysroot=$LFS    \
+    --enable-default-pie         \
+    --enable-default-ssp         \
+    --disable-nls                \
+    --enable-multilib            \
+    --with-multilib-list=m64,m32 \
+    --disable-libatomic          \
+    --disable-libgomp            \
+    --disable-libquadmath        \
+    --disable-libsanitizer       \
+    --disable-libssp             \
+    --disable-libvtv             \
+    --enable-languages=c,c++     \
     LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc</userinput></screen>
 
     <variablelist>

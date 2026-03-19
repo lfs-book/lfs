@@ -62,15 +62,13 @@ mv -v gmp-&gmp-version; gmp
 tar -xf ../mpc-&mpc-version;.tar.gz
 mv -v mpc-&mpc-version; mpc</userinput></screen>
 
-    <para arch="default">On x86_64 hosts, set the default directory name for
-    64-bit libraries to <quote>lib</quote>:</para>
+    <para>Change the default directory name for
+    libraries:</para>
 
-<screen arch="default"><userinput remap="pre">case $(uname -m) in
-  x86_64)
-    sed -e '/m64=/s/lib64/lib/' \
-        -i.orig gcc/config/i386/t-linux64
- ;;
-esac</userinput></screen>
+<screen><userinput remap="pre">sed -e '/m64=/s/lib64/lib/' \
+    -e '/m32=/s/m32=.*/m32=..\/lib32$(call if_multiarch,:i386-linux-gnu)/' \
+    -i.orig gcc/config/i386/t-linux64
+</userinput></screen>
 
     <note>
       <para>
@@ -81,7 +79,7 @@ esac</userinput></screen>
         <filename>t-linux64</filename> file inplace.  So you may run
         <command>diff -u gcc/config/i386/t-linux64{.orig,}</command>
         to visualize the change done by the <command>sed</command> command
-        afterwards.  We'll simply use <parameter>-i</parameter> (which just
+        afterwards. We'll simply use <parameter>-i</parameter> (which just
         edits the original file inplace without copying it) for all other
         packages in the book, but you can change it to
         <parameter>-i.orig</parameter> in any case you want to keep a copy
@@ -89,43 +87,32 @@ esac</userinput></screen>
       </para>
     </note>
 
-    <para arch="ml_32,ml_x32,ml_all">Change the default directory name for
-    libraries:</para>
+    <para>Make <literal>-mstackrealign</literal> a default for 32-bit
+    objects:</para>
 
-<screen arch="ml_32,ml_x32,ml_all"><userinput remap="pre">sed -e '/m64=/s/lib64/lib/' \
-    -e '/m32=/s/m32=.*/m32=..\/lib32$(call if_multiarch,:i386-linux-gnu)/' \
-    -i.orig gcc/config/i386/t-linux64
-</userinput></screen>
-
-    <para arch="ml_32,ml_all">Make <literal>-mstackrealign</literal>
-      a default for 32-bit objects:</para>
-
-<screen arch="ml_32,ml_all"><userinput remap="pre">sed '/STACK_REALIGN_DEFAULT/s/0/(!TARGET_64BIT \&amp;\&amp; TARGET_SSE)/' \
+<screen><userinput remap="pre">sed '/STACK_REALIGN_DEFAULT/s/0/(!TARGET_64BIT \&amp;\&amp; TARGET_SSE)/' \
       -i gcc/config/i386/i386.h</userinput></screen>
 
-    <note arch="ml_32,ml_all">
-      <para>Adding the <literal>-mstackrealign</literal> flag by default
-        helps to overcome issues with old binaries which cannot be
-        recompiled on the actual OS.</para>
-
-      <!-- Thanks to xry111 for explaining the technical background: -->
-
-      <para>Today the x86-32 SysV psABI (used by all Linux programs)
-        mandates a 16-byte alignment of the stack frame, so the routines
-        using SSE will save/load SSE vectors onto/from the stack using a
-        <literal>movaps</literal> instruction (which only works with
-        aligned addresses, but faster than its counterpart allowing
-        unaligned addresses, <literal>movups</literal>).</para>
-
-      <para>But some really old x86-32 Linux binaries (compiled about
-        15 years ago), and all Windows x86-32 binaries which might be
-        run via <application>Wine</application> or <application>Steam</application>
-        only aligns the
-        stack frame to 4-byte. Thus, when it calls a SSE routine in LFS
-        built without <literal>-mstackrealign</literal>, the
-        <literal>movdqa</literal> instruction fails with a General
-        Protection Error and the Linux kernel terminates the process
-        with a SIGSEGV.</para>
+    <note>
+      <para>The <literal>-mstackrealign</literal> has a special purpose for
+        32-bit. All applications have a stack frame alignment.
+        Typically in old applications (and also some applications in today's
+        age) that are built for 32-bit, typically for Windows,
+        have a stack frame alignment of 4 bytes. The x86 System V ABI Processor
+        Supplement demands that both 32-bit and 64-bit applications have a
+        stack frame alignment of 16 bytes.</para>
+      <para>The stack frame alignment is necessary for the x86 assembly
+      <literal>movaps</literal> and <literal>movdqa</literal> instructions to
+      work, which are used as faster alternatives to <literal>movups</literal>.
+      When the stack frame alignment is not correct, those assembly
+      instructions will trigger a General Protection Error, leading to a
+      <literal>SIGSEGV</literal> kill signal.</para>
+      <para>In order to prevent this, <literal>-mstackrealign</literal> offers
+      different potential stack frame alignments if necessary. In order to
+      ensure that every piece of software has a good stack frame alignment,
+      every package is compiled with <literal>-mstackrealign</literal>, which
+      the above makes it the default for targeting 32-bit. Glibc is the main
+      one that needs it.</para>
     </note>
 
     <para>The GCC documentation recommends building GCC
@@ -136,52 +123,28 @@ cd       build</userinput></screen>
 
     <para>Prepare GCC for compilation:</para>
 
-<screen arch="default"><userinput remap="configure">../configure                  \
-    --target=$LFS_TGT         \
-    --prefix=$LFS/tools       \
-    --with-glibc-version=&glibc-version; \
-    --with-sysroot=$LFS       \
-    --with-newlib             \
-    --without-headers         \
-    --enable-default-pie      \
-    --enable-default-ssp      \
-    --disable-nls             \
-    --disable-shared          \
-    --disable-multilib        \
-    --disable-threads         \
-    --disable-libatomic       \
-    --disable-libgomp         \
-    --disable-libquadmath     \
-    --disable-libssp          \
-    --disable-libvtv          \
-    --disable-libstdcxx       \
-    --enable-languages=c,c++</userinput></screen>
-<screen arch="ml_32,ml_x32,ml_all"><userinput remap="configure" 
-    arch="ml_32">mlist=m64,m32</userinput><userinput remap="configure"
-    arch="ml_x32">mlist=m64,mx32</userinput><userinput remap="configure"
-    arch="ml_all">mlist=m64,m32,mx32</userinput>
-<userinput remap="configure">../configure                    \
-    --target=$LFS_TGT           \
-    --prefix=$LFS/tools         \
-    --with-glibc-version=&glibc-version;   \
-    --with-sysroot=$LFS         \
-    --with-newlib               \
-    --without-headers           \
-    --enable-default-pie        \
-    --enable-default-ssp        \
-    --enable-initfini-array     \
-    --disable-nls               \
-    --disable-shared            \
-    --enable-multilib           \
-    --with-multilib-list=$mlist \
-    --disable-decimal-float     \
-    --disable-threads           \
-    --disable-libatomic         \
-    --disable-libgomp           \
-    --disable-libquadmath       \
-    --disable-libssp            \
-    --disable-libvtv            \
-    --disable-libstdcxx         \
+<screen><userinput remap="configure">../configure                     \
+    --target=$LFS_TGT            \
+    --prefix=$LFS/tools          \
+    --with-glibc-version=&glibc-version;    \
+    --with-sysroot=$LFS          \
+    --with-newlib                \
+    --without-headers            \
+    --enable-default-pie         \
+    --enable-default-ssp         \
+    --enable-initfini-array      \
+    --disable-nls                \
+    --disable-shared             \
+    --enable-multilib            \
+    --with-multilib-list=m64,m32 \
+    --disable-decimal-float      \
+    --disable-threads            \
+    --disable-libatomic          \
+    --disable-libgomp            \
+    --disable-libquadmath        \
+    --disable-libssp             \
+    --disable-libvtv             \
+    --disable-libstdcxx          \
     --enable-languages=c,c++</userinput></screen>
 
     <variablelist>
@@ -240,18 +203,11 @@ cd       build</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry arch="default">
-        <term><parameter>--disable-multilib</parameter></term>
-        <listitem>
-          <para>On x86_64, LFS does not support a multilib configuration.
-          This switch is harmless for x86.</para>
-        </listitem>
-      </varlistentry>
-      <varlistentry arch="ml_32,ml_x32,ml_all">
+      <varlistentry>
         <term><parameter>--enable-multilib --with-multilib-list=...</parameter></term>
         <listitem>
-          <para>LFS can be used to support multilib. Which they are is
-          specified in the multilib list.</para>
+          <para>These parameters both enable multilib and which architectures
+          to support.</para>
         </listitem>
       </varlistentry>
 

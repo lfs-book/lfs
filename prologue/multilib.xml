@@ -5,7 +5,7 @@
   %general-entities;
 ]>
 
-<sect1 arch="ml_32,ml_x32,ml_all" id="pre-multilib">
+<sect1 id="pre-multilib">
   <?dbhtml filename="multilib.html"?>
 
   <title>About the Multilib Edition</title>
@@ -31,9 +31,8 @@
       the software's bit size while still offering a mainly 64-bit
       experience.</para>
 
-    <para>This book provides 32-bit (i?86) and x32-bit
-      dependencies and toolchains intended for 64-bit x86 (x86_64)
-      systems.</para>
+    <para>This book provides 32-bit (i?86) dependencies and toolchains intended
+      for 64-bit x86 (x86_64/AMD64) systems.</para>
 
   </sect2>
 
@@ -54,9 +53,8 @@
       against or into. The toolchains in place need to gain that support.</para>
 
     <para>The duty of MLFS is to arm the system with toolchains that can target
-      32-bit and/or x32-bit, then provide basic dependencies that allow
-      32-bit/x32-bit compilations of packages outside of LFS to succeed and
-      work as expected.</para>
+      32-bit, then provide basic dependencies that allow 32-bit compilation and
+      execution of packages within and outside base LFS.</para>
 
   </sect2>
 
@@ -66,8 +64,8 @@
       less-so using the produced result day-to-day. Installing support for
       different bit sizes adds more onto the table at a price and makes the
       initial LFS installing experience more confusing. It's recommended to
-      have installed LFS before installing MLFS. However, if you choose
-      to do the latter, you may encounter situations where having a multilib
+      have installed LFS before installing MLFS. If you choose to install
+      normal LFS, however, you may encounter situations where having a multilib
       system is rather beneficial. The following covers a non-exhaustive list
       of reasons to do so:
       <itemizedlist>
@@ -76,8 +74,8 @@
           software.</para></listitem>
         <listitem><para>Setting up virtualization for a system with a different
           bit size.</para></listitem>
-        <listitem><para>To learn the fundamentals of how multilib is set
-        up.</para></listitem>
+        <listitem><para>To learn the fundamentals of how multilib
+          works.</para></listitem>
       </itemizedlist>
       
     </para>
@@ -90,70 +88,64 @@
       bootstrapping the system from another Linux distribution. At the same
       time, it was mentioned that a compiler with no support for other bit
       sizes built in will fail to build anything for that bit size. This means
-      that to build a compiler with support for other bit sizes (32-bit and
-      x32-bit), you need the system you are bootstrapping from to have that
-      support built into the compilers and must have the dependencies that
-      go along with them.</para>
+      that to build a compiler with support for other bit sizes (32-bit).
+      you need the system you are bootstrapping from to have that support built
+      into the toolchain and must have the dependencies that are required by
+      it.</para>
 
     <para>Over time, users of MLFS found that the best media for this
       purpose is the <ulink
       url="https://www.gentoo.org/downloads/#amd64">Gentoo CD</ulink>. It's
       personal preference whether you want to use the minimal installation CD,
       LiveGUI USB image, or the QCOW2 image. The LiveGUI USB image is very user
-      friendly, using KDE as the desktop environment and has web browsers for
-      use. The CDs offer 32-bit and x32-bit support on top of 64-bit. If you
-      already built an MLFS system, MLFS offers a good base to bootstrap from
-      as well.</para>
+      friendly, using KDE Plasma as the desktop environment and has web
+      browsers for use. The CDs offer 32-bit support on AMD64 (x86_64).
+      If you already built an MLFS system, MLFS offers a good base to
+      bootstrap from as well.</para>
 
     <para>Building a multilib system is not that much different from 
       building a system using the vanilla LFS book. Besides incorporating 
       changes that allow multilib support in some packages or toolchains,
-      the overall process requires compiling some packages multiple times:
+      the overall process requires compiling some packages a couple of times:
       <orderedlist>
         <listitem>
-          <para>For 64-bit (can provide both programs, libraries, and
-          data)</para>
+          <para>For 64-bit (can provide programs, libraries, header files,
+          Pkg-config files, and assets)</para>
         </listitem>
-        <listitem arch="ml_32,ml_all">
-          <para>For 32-bit (typically installs only libraries)</para>
-        </listitem>
-        <listitem arch="ml_x32,ml_all">
-          <para>For x32-bit (typically installs only libraries)</para>
+        <listitem>
+          <para>For 32-bit (typically installs only libraries, very rarely
+          architecture-specific header files, and architecture-specific
+          Pkg-config files)</para>
         </listitem>
       </orderedlist>
     </para>
 
-    <para>Continue if your system meets the
-      following requirements:
+    <para>Continue if your system meets the following requirements:
       <itemizedlist>
         <listitem>
-          <para>You have a x86_64 system.</para>
+          <para>You have an x86_64/AMD64 system with an x86_64/AMD64 operating
+          system.</para>
         </listitem>
         <listitem>
           <para>
-            Have the ability to execute 32-bit/x32-bit software. Check
+            Have the ability to execute 32-bit software. Check
             compatibility by running the following commands:
           </para>
 <screen><userinput>echo 'int main(){}' &gt; dummy.c
-</userinput><userinput arch="ml_32,ml_all">gcc -m32 dummy.c
+gcc -m32 dummy.c
 ./a.out
-
-</userinput><userinput arch="ml_x32,ml_all">gcc -mx32 dummy.c
-./a.out
-
-</userinput><userinput>rm -vf dummy.c a.out</userinput></screen>
+rm -vf dummy.c a.out</userinput></screen>
           <para>
             If the above commands result in "Exec format" or compiler errors,
             then you do not have a system kernel and/or toolchain capable of
-            building for one or all of the above architectures within LFS. At
-            that point, try using another distribution or installation media.
+            building or running 32-bit software. At that point, try using
+            another distribution or installation media.
           </para>
         </listitem>
       </itemizedlist>
     </para>
 
-    <para>If you passed the above architecture
-      requirements, go ahead and build MLFS.</para>
+    <para>If you passed the above requirements, go ahead and build MLFS.</para>
 
   </sect2>
 

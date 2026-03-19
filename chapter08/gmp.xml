@@ -42,17 +42,8 @@
     <title>Installation of GMP</title>
 
     <note>
-      <para>If you are building for 32-bit x86, but you have a CPU which is
-      capable of running 64-bit code <emphasis>and</emphasis> you have specified
-      <envar>CFLAGS</envar> in the environment, the configure script will
-      attempt to configure for 64-bits and fail.
-      Avoid this by invoking the configure command below with
-<screen role="nodump"><userinput><parameter>ABI=32</parameter> ./configure ...</userinput></screen></para>
-    </note>
-
-    <note>
       <para>The default settings of GMP produce libraries optimized for
-      the host processor.  If libraries suitable for processors less
+      the host processor. If libraries suitable for processors less
       capable than the host's CPU are desired, generic libraries can be
       created by appending the <option>--host=none-linux-gnu</option> option
       to the <command>configure</command> command.</para>
@@ -129,11 +120,7 @@ make install-html</userinput></screen>
 
   </sect2>
 
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - 32-bit  -->
-  <!-- - - - - - - - - - -->
-
-  <sect2 arch="ml_32,ml_all" role="installation">
+  <sect2 role="installation">
     <title>Installation of GMP - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -148,9 +135,9 @@ cp -v configfsf.sub   config.sub</userinput></screen>
 
     <para>Prepare GMP for compilation:</para>
 
-<screen><userinput remap="configure">ABI="32"                               \
-CFLAGS="-m32 -O2 -pedantic -fomit-frame-pointer -mtune=generic -march=i686" \
+<screen><userinput remap="configure">CFLAGS="-m32 -O2 -pedantic -fomit-frame-pointer -mtune=generic -march=i686" \
 CXXFLAGS="$CFLAGS"                     \
+ABI="32"                               \
 PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
 ./configure --prefix=/usr              \
             --host=i686-pc-linux-gnu   \
@@ -165,9 +152,12 @@ PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
       <varlistentry>
         <term><parameter>--includedir=/usr/include/m32/gmp</parameter></term>
         <listitem>
-          <para>Some definitions in gmp.h differs for each arch but
-          has same name. Therefore, the headers must be separated from
-          each other.</para>
+          <para>The headers for GMP differ between architectures. Since dealing
+          with GMP is a delicate matter, the headers must be separated per
+          architecture. On a per-package basis, the header path for GMP will
+          overriden, like in the case of <ulink
+          url="/glfs/view/dev/shareddeps/nettle.html">Nettle</ulink> in
+          GLFS.</para>
         </listitem>
       </varlistentry>
 
@@ -199,65 +189,7 @@ cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 cp -Rv DESTDIR/usr/include/m32/* /usr/include/m32/
 rm -rf DESTDIR</userinput></screen>
 
-  </sect2><!-- m32 -->
-
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - x32-bit -->
-  <!-- - - - - - - - - - -->
-
-  <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of GMP - x32-bit</title>
-
-    <para>Clean previous build:</para>
-
-<screen><userinput remap="pre">make distclean</userinput></screen>
-
-    <para>Generic libraries can be created by running
-    the following:</para>
-
-<screen role="nodump"><userinput remap="pre">cp -v configfsf.guess config.guess
-cp -v configfsf.sub   config.sub</userinput></screen>
-
-    <para>Prepare GMP for compilation:</para>
-
-<screen><userinput remap="configure">ABI="x32"                                 \
-CFLAGS="-mx32 -O2 -pedantic -fomit-frame-pointer -mtune=generic -march=x86-64" \
-CXXFLAGS="$CFLAGS"                        \
-PKG_CONFIG_PATH="/usr/libx32/pkgconfig"   \
-./configure --prefix=/usr                 \
-            --host=x86_64-pc-linux-gnux32 \
-            --disable-static              \
-            --enable-cxx                  \
-            --libdir=/usr/libx32          \
-            --includedir=/usr/include/mx32/gmp</userinput></screen>
-
-    <para>Compile the package:</para>
-
-<screen><userinput remap="make">sed -i 's/$(exec_prefix)\/include/$\(includedir\)/' Makefile
-make</userinput></screen>
-
-    <important>
-      <para>The test suite for GMP in this section is considered critical.
-      Do not skip it under any circumstances.</para>
-    </important>
-
-    <para>Test the results:</para>
-
-<screen><userinput remap="test">make check 2>&amp;1 | tee gmp-check-log</userinput></screen>
- 
-    <para>Ensure that all 199 tests in the test suite passed.
-    Check the results by issuing the following command:</para>
-
-<screen><userinput remap="test">awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log</userinput></screen>
-
-    <para>Install the package:</para>
-
-<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR/usr/libx32/* /usr/libx32
-cp -Rv DESTDIR/usr/include/mx32/* /usr/include/mx32/
-rm -rf DESTDIR</userinput></screen>
-
-  </sect2><!-- mx32 -->
+  </sect2>
 
   <sect2 id="contents-gmp" role="content">
     <title>Contents of GMP</title>

@@ -1,3 +1,2 @@
 IA32_EMULATION='*'
 IA32_EMULATION_DEFAULT_DISABLED=' '
-arch='ml_32,ml_all'

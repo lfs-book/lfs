@@ -134,11 +134,7 @@ su tester -c "make -k check"</userinput></screen>
   
   </sect2>
 
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - 32-bit  -->
-  <!-- - - - - - - - - - -->
-  
-  <sect2 arch="ml_32,ml_all" role="installation">
+  <sect2 role="installation">
     <title>Installation of Util-linux - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -202,78 +198,7 @@ su tester -c "make -k check"</userinput></screen>
 cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR</userinput></screen>
 
-  </sect2><!-- m32 -->
-
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - x32-bit -->
-  <!-- - - - - - - - - - -->
-  
-  <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Util-linux - x32-bit</title>
-
-    <para>Clean previous build:</para>
-
-<screen><userinput remap="pre">make distclean</userinput></screen>
-
-    <para>Move a tool out of the way which is optionally used by
-    configure but will report invalid paths for multilib builds.</para>
-
-<screen><userinput remap="configure">mv /usr/bin/ncursesw6-config{,.tmp}</userinput></screen>
-
-    <para>Prepare Util-linux for compilation:</para>
-
-<screen revision="sysv"><userinput remap="configure">CC="gcc -mx32"                             \
-./configure --host=x86_64-pc-linux-gnux32  \
-            --libdir=/usr/libx32           \
-            --runstatedir=/run             \
-            --sbindir=/usr/sbin            \
-            --disable-chfn-chsh            \
-            --disable-login                \
-            --disable-nologin              \
-            --disable-su                   \
-            --disable-setpriv              \
-            --disable-runuser              \
-            --disable-pylibmount           \
-            --disable-liblastlog2          \
-            --disable-static               \
-            --without-python               \
-            --without-systemd              \
-            --without-systemdsystemunitdir \
-            ADJTIME_PATH=/var/lib/hwclock/adjtime</userinput></screen>
-
-<screen revision="systemd"><userinput remap="configure">
-CC="gcc -mx32"                            \
-./configure --host=x86_64-pc-linux-gnux32 \
-            --libdir=/usr/libx32          \
-            --runstatedir=/run            \
-            --sbindir=/usr/sbin           \
-            --disable-chfn-chsh           \
-            --disable-login               \
-            --disable-nologin             \
-            --disable-su                  \
-            --disable-setpriv             \
-            --disable-runuser             \
-            --disable-pylibmount          \
-            --disable-liblastlog2         \
-            --disable-static              \
-            --without-python              \
-            ADJTIME_PATH=/var/lib/hwclock/adjtime</userinput></screen>
-
-    <para>Restore the tool previously moved away:</para>
-
-<screen><userinput remap="configure">mv /usr/bin/ncursesw6-config{.tmp,}</userinput></screen>
-
-    <para>Compile the package:</para>
-
-<screen><userinput remap="make">make</userinput></screen>
-
-    <para>Install the package:</para>
-
-<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR/usr/libx32/* /usr/libx32
-rm -rf DESTDIR</userinput></screen>
-
-  </sect2><!-- mx32 -->
+  </sect2>
 
   <sect2 id="contents-utillinux" role="content">
     <title>Contents of Util-linux</title>

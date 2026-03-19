@@ -21,9 +21,7 @@
   by libltdl, and it's known that some .la files can break BLFS package
   builds.  Remove those files now:</para>
 
-<screen><userinput>find /usr/lib /usr/libexec -name \*.la -delete</userinput><userinput arch="ml_32,ml_all">
-find /usr/lib32 -name \*.la -delete</userinput><userinput arch="ml_x32,ml_all">
-find /usr/libx32 -name \*.la -delete</userinput></screen>
+<screen><userinput>find /usr/lib{,32,exec} -name \*.la -delete</userinput></screen>
 
    <para>For more information about libtool archive files, see the <ulink
    url="&blfs-book;introduction/la-files.html">BLFS section "About Libtool
@@ -33,7 +31,7 @@ find /usr/libx32 -name \*.la -delete</userinput></screen>
    <xref linkend="chapter-chroot-temporary-tools"/> is still partially
    installed and not needed anymore. Remove it with:</para>
 
-<screen><userinput>find /usr -depth -name $(uname -m)-lfs-linux-gnu\* | xargs rm -rf</userinput></screen>
+<screen><userinput>find /usr -depth -name x86_64-lfs-linux-gnu\* | xargs rm -rf</userinput></screen>
 
    <para>Finally, remove the temporary 'tester' user account created at the
    beginning of the previous chapter.</para>

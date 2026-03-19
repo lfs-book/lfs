@@ -273,7 +273,7 @@ unshare -m ninja test</userinput></screen>
   <!-- Multilib - 32-bit  -->
   <!-- - - - - - - - - - -->
   
-  <sect2 arch="ml_32,ml_all" role="installation">
+  <sect2 role="installation">
     <title>Installation of systemd - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -297,9 +297,9 @@ meson setup --prefix=/usr          \
             -D man=disabled        \
             -D mode=release        \
             ..</userinput></screen>
-<!-- We still use -D userdb=false for m32 to prevent the utilities from being
-     built. We only are interested in libraries here, and userdb has none.
-     - zeckma -->
+<!-- We still use -D userdb=false for 32-bit to prevent the utilities from
+     being built. We only are interested in libraries here, and userdb has
+     none. - zeckma -->
 
     <para>Compile the package:</para>
 
@@ -317,53 +317,7 @@ cp -av DESTDIR/usr/lib32/libudev.so* /usr/lib32/
 cp -v  DESTDIR/usr/lib32/pkgconfig/* /usr/lib32/pkgconfig/
 rm -rf DESTDIR</userinput></screen>
 
-  </sect2><!-- m32 -->
-
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - x32-bit -->
-  <!-- - - - - - - - - - -->
-  
-  <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of systemd - x32-bit</title>
-
-    <para>Clean previous build:</para>
-
-<screen><userinput remap="pre">rm -rf *</userinput></screen>
-
-    <para>Prepare systemd for compilation:</para>
-
-<screen><userinput remap="configure">LANG=en_US.UTF-8                   \
-meson setup --prefix=/usr          \
-            --buildtype=release    \
-            --cross-file=libx32    \
-            -D default-dnssec=no   \
-            -D firstboot=false     \
-            -D install-tests=false \
-            -D ldconfig=false      \
-            -D sysusers=false      \
-            -D rpmmacrosdir=no     \
-            -D homed=false         \
-            -D userdb=false        \
-            -D man=disabled        \
-            -D mode=release        \
-            ..</userinput></screen>
-<!-- We still use -D userdb=false for mx32 to prevent the utilities from being
-     built. We only are interested in libraries here, and userdb has none.
-     - zeckma -->
-
-    <para>Compile the package:</para>
-
-<screen><userinput remap="make">LANG=en_US.UTF-8 ninja</userinput></screen>
-
-    <para>Install the package:</para>
-
-<screen><userinput remap="install">LANG=en_US.UTF-8 DESTDIR=$PWD/DESTDIR ninja install
-cp -av DESTDIR/usr/libx32/libsystemd.so* /usr/libx32/
-cp -av DESTDIR/usr/libx32/libudev.so* /usr/libx32/
-cp -v  DESTDIR/usr/libx32/pkgconfig/* /usr/libx32/pkgconfig/
-rm -rf DESTDIR</userinput></screen>
-
-  </sect2><!-- mx32 -->
+  </sect2>
 
   <sect2 id="contents-systemd" role="content">
     <title>Contents of systemd</title>

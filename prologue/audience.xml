@@ -14,9 +14,9 @@
     Installing vanilla LFS has all its perks and upsides, alongside an
     educational benefit. This book aims to solve another problem, where users
     may need to build or run something for 32-bit on a 64-bit machine, where
-    64-bit is the architecture they built LFS for. <phrase
-    arch="ml_32,ml_x32,ml_all"><xref linkend="pre-multilib"/> covers why this
-    may be the case and how multilib works.</phrase>
+    64-bit is the architecture they built LFS for. <xref
+    linkend="pre-multilib"/> covers why this may be the case and how multilib
+    works.
   </para>
 
   <para>

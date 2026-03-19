@@ -60,10 +60,7 @@
 
   </sect2>
 
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - 32-bit  -->
-  <!-- - - - - - - - - - -->
-  <sect2 arch="ml_32,ml_all" role="installation">
+  <sect2 role="installation">
     <title>Installation of Lz4 - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -83,32 +80,7 @@
      -C lib install
 cp -vR m32/usr/lib32/* /usr/lib32/</userinput></screen>
 
-  </sect2><!-- m32 -->
-
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - x32-bit -->
-  <!-- - - - - - - - - - -->
-  <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Lz4 - x32-bit</title>
-
-    <para>Clean previous build:</para>
-
-<screen><userinput remap="pre">make clean</userinput></screen>
-
-    <para>Compile the package:</para>
-
-<screen><userinput remap="make">CC="gcc -mx32" make BUILD_STATIC=no -C lib</userinput></screen>
-
-    <para>Install the package:</para>
-
-<screen><userinput remap="install">make BUILD_STATIC=no     \
-     PREFIX=/usr         \
-     LIBDIR=/usr/libx32  \
-     DESTDIR=$(pwd)/mx32 \
-     -C lib install
-cp -vR mx32/usr/libx32/* /usr/libx32/</userinput></screen>
-
-  </sect2><!-- mx32 -->
+  </sect2>
 
   <sect2 id="contents-lz4" role="content">
     <title>Contents of Lz4</title>

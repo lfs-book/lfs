@@ -275,36 +275,11 @@ EOF
 
 bash version-check.sh</userinput></screen>
 
-    <para arch="ml_32,ml_all">
-      Building the m32 multilib support requires the kernel of the host
-      system to have the 32-bit emulation support included:
+    <para>
+      You should also run the commands shown in <xref linkend="pre-multilib"/>
+      to ensure the toolchain can target 32-bit.
     </para>
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../chapter10/kernel/multilib-32.xml"/>
-
-    <para arch="ml_x32,ml_all">
-      Building the mx32 multilib support requires the kernel of the host
-      system to have the x32 ABI support included:
-    </para>
-
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../chapter10/kernel/multilib-x32.xml"/>
-
-    <para arch="ml_all">
-      In case your kernel does not have the x32 ABI support enabled but
-      only the 32-bit emulation support, you can continue to build your
-      system but you have to leave out any sections showing instructions
-      for building x32 objects, vice versa.
-    </para>
-
-    <para arch="ml_32,ml_x32,ml_all">
-      If the kernel feature required for a multilib architecture is not
-      enabled, building the multilib architecture for a package in
-      Chapter 8 may either fail immediately, or cause hidden breakages
-      because autoconf cannot probe the system features properly.
-    </para>
-    
   </sect2>
 
 </sect1>

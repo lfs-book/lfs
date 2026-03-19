@@ -124,11 +124,7 @@ done</userinput></screen>
 
   </sect2>
 
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - 32-bit  -->
-  <!-- - - - - - - - - - -->
-  
-  <sect2 arch="ml_32,ml_all" role="installation">
+  <sect2 role="installation">
     <title>Installation of Bzip2 - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -148,33 +144,7 @@ ln -svf libbz2.so.1.0.8 /usr/lib32/libbz2.so
 ln -svf libbz2.so.1.0.8 /usr/lib32/libbz2.so.1
 ln -svf libbz2.so.1.0.8 /usr/lib32/libbz2.so.1.0</userinput></screen>
 
-  </sect2><!-- m32 -->
-
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - x32-bit -->
-  <!-- - - - - - - - - - -->
-  
-  <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Bzip2 - x32-bit</title>
-
-    <para>Clean previous build:</para>
-
-<screen><userinput remap="pre">make clean
-make -f Makefile-libbz2_so clean</userinput></screen>
-
-    <para>Compile the package:</para>
-
-<screen><userinput remap="make">sed -e "s/^CC=.*/CC=gcc -mx32/" -i Makefile{,-libbz2_so}
-make -f Makefile-libbz2_so</userinput></screen>
-
-    <para>Install the package:</para>
-
-<screen><userinput remap="install">install -Dm755 libbz2.so.1.0.8 /usr/libx32/libbz2.so.1.0.8
-ln -svf libbz2.so.1.0.8 /usr/libx32/libbz2.so
-ln -svf libbz2.so.1.0.8 /usr/libx32/libbz2.so.1
-ln -svf libbz2.so.1.0.8 /usr/libx32/libbz2.so.1.0</userinput></screen>
-
-  </sect2><!-- mx32 -->
+  </sect2>
 
   <sect2 id="contents-bzip2" role="content">
     <title>Contents of Bzip2</title>

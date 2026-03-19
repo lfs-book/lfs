@@ -67,11 +67,7 @@
 
   </sect2>
 
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - 32-bit  -->
-  <!-- - - - - - - - - - -->
-  
-  <sect2 arch="ml_32,ml_all" role="installation">
+  <sect2 role="installation">
     <title>Installation of Acl - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -97,39 +93,7 @@
 cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR</userinput></screen>
 
-  </sect2><!-- m32 -->
-
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - x32-bit -->
-  <!-- - - - - - - - - - -->
-  
-  <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Acl - x32-bit</title>
-
-    <para>Clean previous build:</para>
-
-<screen><userinput remap="pre">make distclean</userinput></screen>
-
-    <para>Prepare Acl for compilation:</para>
-
-<screen><userinput remap="configure">CC="gcc -mx32" ./configure   \
-    --prefix=/usr            \
-    --disable-static         \
-    --libdir=/usr/libx32     \
-    --libexecdir=/usr/libx32 \
-    --host=x86_64-pc-linux-gnux32</userinput></screen>
-
-    <para>Compile the package:</para>
-
-<screen><userinput remap="make">make</userinput></screen>
-
-    <para>Install the package:</para>
-
-<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR/usr/libx32/* /usr/libx32
-rm -rf DESTDIR</userinput></screen>
-
-  </sect2><!-- mx32 -->
+  </sect2>
 
   <sect2 id="contents-acl" role="content">
     <title>Contents of Acl</title>

@@ -97,10 +97,7 @@
 
   </sect2>
 
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - 32-bit  -->
-  <!-- - - - - - - - - - -->
-  <sect2 arch="ml_32,ml_all" role="installation">
+  <sect2 role="installation">
     <title>Installation of Libxcrypt - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -129,41 +126,7 @@
 make DESTDIR=$LFS install-pkgconfigDATA &amp;&amp;
 ln -svf libxcrypt.pc $LFS/usr/lib32/pkgconfig/libcrypt.pc</userinput></screen>
 
-  </sect2><!-- m32 -->
-
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - x32-bit  -->
-  <!-- - - - - - - - - - -->
-  <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Libxcrypt - x32-bit</title>
-
-    <para>Clean previous build:</para>
-
-<screen><userinput remap="pre">make distclean</userinput></screen>
-
-    <para>Prepare File for compilation:</para>
-
-<screen><userinput remap="configure">CC="gcc -mx32" \
-./configure --target=$LFS_TGT32           \
-            --prefix=/usr                 \
-            --host=x86_64-pc-linux-gnux32 \
-            --libdir=/usr/libx32          \
-            --enable-hashes=strong,glibc  \
-            --enable-obsolete-api=glibc   \
-            --disable-static              \
-            --disable-failure-tokens</userinput></screen>
-
-    <para>Compile the package:</para>
-
-<screen><userinput remap="make">make</userinput></screen>
-
-    <para>Install the package:</para>
-
-<screen><userinput remap="install">cp -av .libs/libcrypt.so* $LFS/usr/libx32/ &amp;&amp;
-make DESTDIR=$LFS install-pkgconfigDATA &amp;&amp;
-ln -svf libxcrypt.pc $LFS/usr/libx32/pkgconfig/libcrypt.pc</userinput></screen>
-
-  </sect2><!-- mx32 -->
+  </sect2>
 
   <sect2 role="content">
     <title/>

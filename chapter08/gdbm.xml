@@ -85,11 +85,7 @@
 
   </sect2>
 
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - 32-bit  -->
-  <!-- - - - - - - - - - -->
-
-  <sect2 arch="ml_32,ml_all" role="installation">
+  <sect2 role="installation">
     <title>Installation of GDBM - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -115,40 +111,8 @@
 cp -Rv DESTDIR/usr/lib32/* /usr/lib32/
 rm -rf DESTDIR</userinput></screen>
 
-  </sect2><!-- m32 -->
+  </sect2>
 
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - x32-bit -->
-  <!-- - - - - - - - - - -->
-
-  <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of GDBM - x32-bit</title>
-
-    <para>Clean previous build:</para>
-
-<screen><userinput remap="pre">make distclean</userinput></screen>
-
-    <para>Prepare GDBM for compilation:</para>
-
-<screen><userinput remap="configure">CC="gcc -mx32" CXX="g++ -mx32"            \
-./configure --prefix=/usr                 \
-            --libdir=/usr/libx32          \
-            --host=x86_64-pc-linux-gnux32 \
-            --disable-static              \
-            --enable-libgdbm-compat</userinput></screen>
-
-    <para>Compile the package:</para>
-
-<screen><userinput remap="make">make</userinput></screen>
-
-    <para>Install the package:</para>
-
-<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR/usr/libx32/* /usr/libx32/
-rm -rf DESTDIR</userinput></screen>
-
-  </sect2><!-- mx32 -->
-  
   <sect2 id="contents-gdbm" role="content">
     <title>Contents of GDBM</title>
 

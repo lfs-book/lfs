@@ -151,12 +151,14 @@
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
         href="kernel/x2apic.xml"/>
 
-      <para>If you are building a 32-bit system,
-      adjust the configuration so the kernel will
-      be able to use up to 4GB physical RAM:</para>
+      <para>
+        The kernel on a multilib system needs to be able to
+        identify and start binaries compiled for different architectures
+        than the default. Enable support for the 32-bit ABI.
+      </para>
 
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-        href="kernel/highmem.xml"/>
+        href="kernel/multilib-32.xml"/>
 
       <para>If the partition for the LFS system is in a NVME SSD (i. e. the
       device node for the partition is <filename>/dev/nvme*</filename>
@@ -186,30 +188,6 @@
       UEFI bootloader from the host distro</emphasis>.</para>
     </note>
 
-    <note arch="ml_32,ml_x32,ml_all">
-      <para>
-        The kernel on a multilib system needs to be able to
-        identify and start binaries compiled for different architectures
-        than the default.
-      </para>
-
-      <para arch="ml_32,ml_all">
-        If support for any 32-bit ABI was built, make sure that the option
-        "IA32 Emulation" is selected.
-      </para>
-
-      <xi:include arch="ml_32,ml_all" xmlns:xi="http://www.w3.org/2001/XInclude"
-        href="kernel/multilib-32.xml"/>
-
-      <para arch="ml_x32,ml_all">
-        If support for the x32-bit ABI was built, make sure that the option
-        "x32 ABI for 64-bit mode" is selected.
-      </para>
-
-      <xi:include arch="ml_x32,ml_all" xmlns:xi="http://www.w3.org/2001/XInclude"
-        href="kernel/multilib-x32.xml"/>
-    </note>
-    
     <variablelist>
       <title>The rationale for the above configuration items:</title>
 

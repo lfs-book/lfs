@@ -99,11 +99,7 @@
 
   </sect2>
 
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - 32-bit  -->
-  <!-- - - - - - - - - - -->
-  
-  <sect2 arch="ml_32,ml_all" role="installation">
+  <sect2 role="installation">
     <title>Installation of Libffi - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -133,43 +129,7 @@
 cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR</userinput></screen>
 
-  </sect2><!-- m32 -->
-
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - x32-bit -->
-  <!-- - - - - - - - - - -->
-  
-  <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Libffi - x32-bit</title>
-
-    <para>Clean previous build:</para>
-
-<screen><userinput remap="pre">make distclean</userinput></screen>
-
-    <para>Prepare Libffi for compilation:</para>
-
-<screen><userinput remap="configure">CC="gcc -mx32" CXX="g++ -mx32"                 \
-./configure --prefix=/usr                      \
-            --libdir=/usr/libx32               \
-            --host=x86_64-unknown-linux-gnux32 \
-            --disable-static                   \
-            --with-gcc-arch=x86_64</userinput></screen>
-
-    <para>Compile the package:</para>
-
-<screen><userinput remap="make">make</userinput></screen>
-
-    <para>To test the results, issue:</para>
-
-<screen><userinput remap="test">make check</userinput></screen>
-
-    <para>Install the package:</para>
-
-<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR/usr/libx32/* /usr/libx32
-rm -rf DESTDIR</userinput></screen>
-
-  </sect2><!-- mx32 -->
+  </sect2>
 
   <sect2 id="contents-libffi" role="content">
     <title>Contents of Libffi</title>

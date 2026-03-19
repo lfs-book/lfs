@@ -127,11 +127,7 @@
 
   </sect2>
 
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - 32-bit  -->
-  <!-- - - - - - - - - - -->
-  
-  <sect2 arch="ml_32,ml_all" role="installation">
+  <sect2 role="installation">
     <title>Installation of Util-linux - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -166,48 +162,7 @@
 cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR</userinput></screen>
 
-  </sect2><!-- m32 -->
-
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - x32-bit -->
-  <!-- - - - - - - - - - -->
-  
-  <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Util-linux - x32-bit</title>
-
-    <para>Clean previous build:</para>
-
-<screen><userinput remap="pre">make distclean</userinput></screen>
-
-    <para>Prepare Util-linux for compilation:</para>
-
-<screen><userinput remap="configure">CC="gcc -mx32"                            \
-./configure --host=x86_64-pc-linux-gnux32 \
-            --libdir=/usr/libx32          \
-            --runstatedir=/run            \
-            --disable-chfn-chsh           \
-            --disable-login               \
-            --disable-nologin             \
-            --disable-su                  \
-            --disable-setpriv             \
-            --disable-runuser             \
-            --disable-pylibmount          \
-            --disable-static              \
-            --disable-liblastlog2         \
-            --without-python              \
-            ADJTIME_PATH=/var/lib/hwclock/adjtime</userinput></screen>
-
-    <para>Compile the package:</para>
-
-<screen><userinput remap="make">make</userinput></screen>
-
-    <para>Install the package:</para>
-
-<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR/usr/libx32/* /usr/libx32
-rm -rf DESTDIR</userinput></screen>
-
-  </sect2><!-- mx32 -->
+  </sect2>
 
   <sect2 role="content">
     <title/>

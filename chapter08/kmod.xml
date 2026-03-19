@@ -79,11 +79,7 @@ meson setup --prefix=/usr ..    \
 
   </sect2>
 
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - 32-bit  -->
-  <!-- - - - - - - - - - -->
-  
-  <sect2 arch="ml_32,ml_all" role="installation">
+  <sect2 role="installation">
     <title>Installation of Kmod - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -108,38 +104,7 @@ meson setup --prefix=/usr ..    \
 cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR</userinput></screen>
 
-  </sect2><!-- m32 -->
-
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - x32-bit -->
-  <!-- - - - - - - - - - -->
-  
-  <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Kmod - x32-bit</title>
-
-    <para>Clean previous build:</para>
-
-<screen><userinput remap="pre">rm -rf *</userinput></screen>
-
-    <para>Prepare Kmod for compilation:</para>
-
-<screen><userinput remap="configure">meson setup --prefix=/usr       \
-            --buildtype=release \
-            --cross-file=libx32 \
-            -D manpages=false   \
-            ..</userinput></screen>
-
-    <para>Compile the package:</para>
-
-<screen><userinput remap="make">ninja</userinput></screen>
-
-    <para>Install the package:</para>
-
-<screen><userinput remap="install">DESTDIR=$PWD/DESTDIR ninja install
-cp -Rv DESTDIR/usr/libx32/* /usr/libx32
-rm -rf DESTDIR</userinput></screen>
-
-  </sect2><!-- mx32 -->
+  </sect2>
 
   <sect2 id="contents-kmod" role="content">
     <title>Contents of Kmod</title>

@@ -102,11 +102,7 @@ cp -v -R sqlite-doc-&sqlite-doc-version;/* /usr/share/doc/sqlite-&sqlite-short-v
 
   </sect2>
 
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - 32-bit  -->
-  <!-- - - - - - - - - - -->
-  
-  <sect2 arch="ml_32,ml_all" role="installation">
+  <sect2 role="installation">
     <title>Installation of Sqlite - 32-bit</title>
 
     <para>Clean previous build:</para>
@@ -136,43 +132,7 @@ cp -v -R sqlite-doc-&sqlite-doc-version;/* /usr/share/doc/sqlite-&sqlite-short-v
 cp -Rv DESTDIR/usr/lib32/* /usr/lib32
 rm -rf DESTDIR</userinput></screen>
 
-  </sect2><!-- m32 -->
-
-  <!-- - - - - - - - - - -->
-  <!-- Multilib - x32-bit -->
-  <!-- - - - - - - - - - -->
-  
-  <sect2 arch="ml_x32,ml_all" role="installation">
-    <title>Installation of Sqlite - x32-bit</title>
-
-    <para>Clean previous build:</para>
-
-<screen><userinput remap="pre">make distclean</userinput></screen>
-
-    <para>Prepare Sqlite for compilation:</para>
-
-<screen><userinput remap="configure">CC="gcc -mx32" CXX="g++ -mx32"            \
-./configure --prefix=/usr                 \
-            --libdir=/usr/libx32          \
-            --host=x86_64-pc-linux-gnux32 \
-            --disable-static              \
-            --enable-fts{4,5}             \
-            CPPFLAGS="-D SQLITE_ENABLE_COLUMN_METADATA=1 \
-                      -D SQLITE_ENABLE_UNLOCK_NOTIFY=1   \
-                      -D SQLITE_ENABLE_DBSTAT_VTAB=1     \
-                      -D SQLITE_SECURE_DELETE=1"</userinput></screen>
-
-    <para>Compile the package:</para>
-
-    <screen><userinput remap="make">make LDFLAGS.rpath=""</userinput></screen>
-
-    <para>Install the package:</para>
-
-<screen><userinput remap="install">make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR/usr/libx32/* /usr/libx32
-rm -rf DESTDIR</userinput></screen>
-
-  </sect2><!-- mx32 -->
+  </sect2>
 
   <sect2 id="contents-sqlite" role="content">
     <title>Contents of Sqlite</title>

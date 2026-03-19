@@ -42,9 +42,6 @@ ln -sfv /run/lock /var/lock
 install -dv -m 0750 /root
 install -dv -m 1777 /tmp /var/tmp</userinput></screen>
 
-  <para arch="ml_32,ml_x32,ml_all">Required directories for multilib
-  support have already been created during previous installation steps.</para>
-
   <para>Directories are, by default, created with permission mode 755, but
   this is not desirable everywhere. In the commands above, two
   changes are made&mdash;one to the home directory of user <systemitem

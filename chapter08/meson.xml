@@ -73,11 +73,8 @@ install -vDm644 data/shell-completions/zsh/_meson /usr/share/zsh/site-functions/
 
     </variablelist>
 
-    <para arch="ml_32,ml_x32,ml_all">
-      When targetting the <phrase arch="ml_32,ml_all">32-bit</phrase>
-      <phrase arch="ml_all">or</phrase>
-      <phrase arch="ml_x32,ml_all">x32-bit</phrase>
-      architecture<phrase arch="ml_all">s</phrase> on 64-bit, some packages
+    <para>
+      When targeting the 32-bit architecture on 64-bit, some packages
       using Meson-based build systems will sometimes use wrong
       architecture-specific settings, bit sizes, and pull in libraries not
       meant for the architecture being targeted. This doesn't happen often but
@@ -86,17 +83,14 @@ install -vDm644 data/shell-completions/zsh/_meson /usr/share/zsh/site-functions/
       output.
     </para>
 
-    <para arch="ml_32,ml_x32,ml_all">
+    <para>
       Cross and native files specify architecture specific information
       which either honestly and slyly tells Meson what the target or host is so
       it uses correct information and libraries. Create those files now:
     </para>
 
-<screen arch="ml_32,ml_x32,ml_all"><userinput remap="install"
-  arch="ml_32,ml_x32,ml_all">mkdir -pv /usr/share/meson/cross
+<screen><userinput remap="install">mkdir -pv /usr/share/meson/cross
 mkdir -pv /usr/share/meson/native
-</userinput><userinput remap="install"
-  arch="ml_32,ml_all">
 for i in {cross/lib32,native/x86}; do
 cat &gt; /usr/share/meson/$i &lt;&lt; "EOF"
 <literal>[binaries]
@@ -125,41 +119,9 @@ cpu_family = 'x86'
 cpu = 'i686'
 endian = 'little'</literal>
 EOF
-done</userinput><userinput remap="install"
-  arch="ml_all">
-</userinput><userinput remap="install"
-  arch="ml_x32,ml_all">
-for i in {cross/libx32,native/x32}; do
-cat &gt; /usr/share/meson/$i &lt;&lt; "EOF"
-<literal>[binaries]
-c = ['gcc', '-mx32']
-cpp = ['g++', '-mx32']
-rust = ['rustc', '--target', 'x86_64-unknown-linux-gnux32']
-pkg-config = 'x86_64-pc-linux-gnux32-pkg-config'
-ar = '/usr/bin/ar'
-strip = '/usr/bin/strip'
-cups-config = 'cups-config'
-llvm-config = 'llvm-config'
-exe_wrapper = ''
-
-[built-in options]
-libdir = 'libx32'
-
-[properties]
-sizeof_void* = 4
-sizeof_long = 4
-
-[host_machine]
-system = 'linux'
-subsystem = 'linux'
-kernel = 'linux'
-cpu_family = 'x86'
-cpu = 'x86_64'
-endian = 'little'</literal>
-EOF
 done</userinput></screen>
 
-    <note arch="ml_32,ml_x32,ml_all"><para>
+    <note><para>
       These files will be used by default in packages that will use Meson-based
       build systems to reduce any architecture and upgrading issues.
     </para></note>
