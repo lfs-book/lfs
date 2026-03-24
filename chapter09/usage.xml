@@ -114,8 +114,8 @@ done</userinput></screen>
 <screen><userinput>cat &gt; /etc/init.d/udevd &lt;&lt; "EOF"
 <literal>#!/sbin/openrc-run
 # Starts the udevd daemon.
-# Authors: Zeckma - zeckma.tech@gmail.com
-# Version: LFS 13.0
+# Authors: Zeckma - zeckma@linuxfromscratch.com
+# Version: LFS &version;
 
 description="starts the udevd daemon"
 
@@ -138,8 +138,8 @@ EOF
 cat &gt; /etc/init.d/udev-trigger &lt;&lt; "EOF"
 <literal>#!/sbin/openrc-run
 # Coldplugs devices and settles the udevd daemon.
-# Authors: Zeckma - zeckma.tech@gmail.com
-# Version: LFS 13.0
+# Authors: Zeckma - zeckma@linuxfromscratch.com
+# Version: LFS &version;
 
 description="coldplugs devices"
 
@@ -175,6 +175,46 @@ done</userinput></screen>
       need to load a given module but it isn't being loaded, pass the module
       name to the <filename>/etc/conf.d/modules</filename> configuration file.
     </para>
+
+  </sect2>
+
+  <sect2 id="ch-config-sysklogd">
+    <title>Creating the Sysklogd Service</title>
+
+    <indexterm zone="ch-config-sysklogd">
+      <primary sortas="d-sysklogd">sysklogd</primary>
+    <secondary>configuring</secondary></indexterm>
+
+  <para>OpenRC doesn't ship a service for <command>syslogd</command>, leading
+  important messages not being captured. Create and enable the service for the
+  logger:</para>
+
+<screen><userinput>cat &gt; /etc/init.d/sysklogd &lt;&lt; "EOF"
+<literal>#!/sbin/openrc-run
+# Starts the sysklogd daemon.
+# Authors: Zeckma - zeckma@linuxfromscratch.com
+# Version: LFS &version;
+
+command=/sbin/syslogd
+pidfile="/run/${RC_SVCNAME}.pid"
+command_background=true
+command_args="-F ${sysklogd_options}"
+
+depend() {
+  need clock hostname
+  after root
+  provide logger
+}
+
+reload() {
+  ebegin "Reloading sysklogd"
+  start-stop-daemon --signal HUP --pidfile ${pidfile}
+  eend $?
+}</literal>
+EOF
+
+chmod 755 /etc/init.d/sysklogd
+rc-update add sysklogd boot</userinput></screen>
 
   </sect2>
 
