@@ -77,7 +77,8 @@ meson setup --prefix=/usr       \
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">ninja install</userinput></screen>
+<screen><userinput remap="install">ninja install &amp;&amp;
+mv -v /sbin/rc-update /bin</userinput></screen>
 
     <para>OpenRC provides <application>init</application> and other programs of
     its own. However, the shorthands for them aren't created. Create the
