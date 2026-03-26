@@ -41,6 +41,28 @@
   <sect2 role="installation">
     <title>Installation of XML::Parser</title>
 
+    <note>
+      <para>This package is scheduled to move to BLFS.  Until that can be
+      done, two Python modules need to be added.  To do that, we also
+      have to enable DNS by temporarily adding /etc/resolv.conf.</para>
+
+<screen><userinput role="nodump">cat > /etc/resolv.conf &lt;&lt; EOF
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+EOF</userinput></screen>
+    </note>
+
+    <para>Now add two Python modules:</para>
+    
+<screen><userinput remap="pre">yes | cpan -i File::ShareDir
+yes | cpan -i File::ShareDir::Install</userinput></screen>
+
+    <para>Finish this temproary workaround by  removing /etc/resolv.conf.  
+    A discussion of this file
+    will be made at <xref linkend='resolv.conf'/></para>
+
+<screen><userinput remap="pre">rm /etc/resolv.conf</userinput></screen>
+
     <para>Prepare XML::Parser for compilation:</para>
 
 <screen><userinput remap="configure">perl Makefile.PL</userinput></screen>

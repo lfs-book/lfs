@@ -44,6 +44,10 @@
       <para>2026-03-26</para>
       <itemizedlist>
         <listitem>
+          <para>[bdubbs] - Update to XML-Parser-2.53 (Security update). Fixes
+          <ulink url='&lfs-ticket-root;5892'>#5892</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[bdubbs] - Add a sed to glibc-2.43 (Security update). Fixes
           <ulink url='&lfs-ticket-root;5895'>#5895</ulink>.</para>
         </listitem>

@@ -796,10 +796,10 @@
 <!ENTITY wheel-fin-du "708 KB">
 <!ENTITY wheel-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY xml-parser-version "2.51">
-<!ENTITY xml-parser-size "307 KB">
+<!ENTITY xml-parser-version "2.53">
+<!ENTITY xml-parser-size "313 KB">
 <!ENTITY xml-parser-url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-&xml-parser-version;.tar.gz">
-<!ENTITY xml-parser-md5 "1ab894865dc9de1dd9f360aa7c4fbd34">
+<!ENTITY xml-parser-md5 "2d2b6ffbfd93e09302b61f01b64960fa">
 <!ENTITY xml-parser-home "&github;/chorny/XML-Parser">
 <!ENTITY xml-parser-fin-du "2.3 MB">
 <!ENTITY xml-parser-fin-sbu "less than 0.1 SBU">
