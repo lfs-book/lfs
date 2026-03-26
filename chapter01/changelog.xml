@@ -44,6 +44,10 @@
       <para>2026-03-26</para>
       <itemizedlist>
         <listitem>
+          <para>[bdubbs] - Add a sed to glibc-2.43 (Security update). Fixes
+          <ulink url='&lfs-ticket-root;5895'>#5895</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[bdubbs] - Add a patch to Python-3.14.3 (Security update). Fixes
           <ulink url='&lfs-ticket-root;5896'>#5896</ulink>.</para>
         </listitem>
