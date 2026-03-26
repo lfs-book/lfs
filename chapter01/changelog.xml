@@ -41,6 +41,20 @@
     -->
 
     <listitem>
+      <para>2026-03-26</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Add a patch to Python-3.14.3 (Security update). Fixes
+          <ulink url='&lfs-ticket-root;5896'>#5896</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to expat-2.7.5 (Security update). Fixes
+          <ulink url='&lfs-ticket-root;5891'>#5891</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2026-03-15</para>
       <itemizedlist>
         <listitem>
