@@ -150,7 +150,7 @@
 
 <!ENTITY expat-version "2.7.5">
 <!ENTITY expat-size "497 KB">
-<!ENTITY expat-url "&github;/libexpat/libexpat/releases/download/R_2_7_4/expat-&expat-version;.tar.xz">
+<!ENTITY expat-url "&github;/libexpat/libexpat/releases/download/R_2_7_5/expat-&expat-version;.tar.xz">
 <!ENTITY expat-md5 "b2dc971ac2009807c8fcb94a04a6ade8">
 <!ENTITY expat-home "https://libexpat.github.io/">
 <!ENTITY expat-fin-du "14 MB">
