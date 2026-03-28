@@ -42,11 +42,13 @@
 
   <sect2 role="installation">
     <title>Installation of Glibc</title>
-<!--
-    <para>First, apply some changes from upstream:</para>
 
-<screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-patch;</userinput></screen>
--->
+    <para>First, apply a fix to DNS processing from upstream:</para>
+
+<screen><userinput remap="pre">sed -e '/while..ancount/c\  for (; ancount > 0; --ancount)'  \
+    -e '/binary_hnok..expected/s/expected_name/name_buffer/' \
+    -i resolv/nss_dns/dns-host.c</userinput></screen>
+
     <para>Some of the Glibc programs use the non-FHS compliant
     <filename class="directory">/var/db</filename> directory to store
     their runtime data. Apply the following patch to make such programs
