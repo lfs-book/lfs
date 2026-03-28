@@ -148,10 +148,10 @@
 <!ENTITY elfutils-fin-du "41 MB">
 <!ENTITY elfutils-fin-sbu "0.1 SBU">
 
-<!ENTITY expat-version "2.7.4">
-<!ENTITY expat-size "496 KB">
-<!ENTITY expat-url "&github;/libexpat/libexpat/releases/download/R_2_7_4/expat-&expat-version;.tar.xz">
-<!ENTITY expat-md5 "5d3d1e1c829f8fb6f42b8e3e2371afa3">
+<!ENTITY expat-version "2.7.5">
+<!ENTITY expat-size "497 KB">
+<!ENTITY expat-url "&github;/libexpat/libexpat/releases/download/R_2_7_5/expat-&expat-version;.tar.xz">
+<!ENTITY expat-md5 "b2dc971ac2009807c8fcb94a04a6ade8">
 <!ENTITY expat-home "https://libexpat.github.io/">
 <!ENTITY expat-fin-du "14 MB">
 <!ENTITY expat-fin-sbu "0.1 SBU">
@@ -796,10 +796,10 @@
 <!ENTITY wheel-fin-du "708 KB">
 <!ENTITY wheel-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY xml-parser-version "2.47">
-<!ENTITY xml-parser-size "276 KB">
+<!ENTITY xml-parser-version "2.53">
+<!ENTITY xml-parser-size "313 KB">
 <!ENTITY xml-parser-url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-&xml-parser-version;.tar.gz">
-<!ENTITY xml-parser-md5 "89a8e82cfd2ad948b349c0a69c494463">
+<!ENTITY xml-parser-md5 "2d2b6ffbfd93e09302b61f01b64960fa">
 <!ENTITY xml-parser-home "&github;/chorny/XML-Parser">
 <!ENTITY xml-parser-fin-du "2.3 MB">
 <!ENTITY xml-parser-fin-sbu "less than 0.1 SBU">
