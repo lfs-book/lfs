@@ -32,9 +32,9 @@
     <!--<listitem>
       <para>Attr-&attr-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Autoconf-&autoconf-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Automake-&automake-version;</para>
     </listitem>-->
@@ -185,12 +185,12 @@
     <!--<listitem>
       <para>MarkupSafe-&markupsafe-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Meson-&meson-version;</para>
-    </listitem>-->
-    <!--<listitem>
+    </listitem>
+    <listitem>
       <para>MPC-&mpc-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>MPFR-&mpfr-version;</para>
     </listitem>-->
