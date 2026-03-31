@@ -804,10 +804,10 @@
 <!ENTITY xml-parser-fin-du "2.3 MB">
 <!ENTITY xml-parser-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY xz-version "5.8.2">
-<!ENTITY xz-size "1,476 KB">
+<!ENTITY xz-version "5.8.3">
+<!ENTITY xz-size "1,512 KB">
 <!ENTITY xz-url "https://github.com//tukaani-project/xz/releases/download/v&xz-version;/xz-&xz-version;.tar.xz">
-<!ENTITY xz-md5 "87c8bb8addf7189d3a51f6a5f03163fc">
+<!ENTITY xz-md5 "a02753f34e5546d20213b87f876a0933">
 <!ENTITY xz-home "https://tukaani.org/xz">
 <!ENTITY xz-tmp-du "24 MB">
 <!ENTITY xz-tmp-sbu "0.1 SBU">
