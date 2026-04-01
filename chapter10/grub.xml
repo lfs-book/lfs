@@ -193,6 +193,41 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
         needed to manipulate EFI variables.
       </para>
 
+      <note>
+        <para>
+          Some UEFI bootloaders, while rare, skip the hardcoded EFI path. Such
+          systems most of the time are old, like Lenevo ThinkPads or HP
+          desktops/laptops. When the boot entry is missing in the BIOS, you
+          will need to install the BLFS package <ulink
+          url="&blfs-book;postlfs/efibootmgr.html">efibootmgr</ulink> to create
+          a boot entry for UEFI.
+        </para>
+        <para>
+          First install the package, then mount the EFI variable file system:
+        </para>
+<screen role="nodump"><userinput>mountpoint /sys/firmware/efi/efivars || mount -v -t efivarfs efivarfs /sys/firmware/efi/efivars</userinput></screen>
+        <para>
+          Now create a boot entry for the EFI:
+        </para>
+<screen role="nodump"><userinput>efibootmgr -c -d /dev/sd<replaceable>&lt;x&gt;</replaceable> \
+  -p <replaceable>&lt;y&gt;</replaceable> -L "LFS" -l '\EFI\BOOT\BOOT<replaceable>&lt;X64&gt;</replaceable>.EFI'</userinput></screen>
+        <para>
+          The <literal>/dev/sd<replaceable>&lt;x&gt;</replaceable></literal>
+          drive should match the one you are installing LFS onto. The
+          <replaceable>&lt;y&gt;</replaceable> partition number should match
+          the number which the ESP is mounted. If the ESP is on
+          <literal>/dev/sda2</literal>, then the partition number would be
+          <literal>2</literal>. If you are using 32-bit UEFI, replace
+          <replaceable>&lt;X64&gt;</replaceable> with <literal>IA32</literal>.
+        </para>
+        <para>
+          Now umount the EFI variable file system, which should no longer be
+          needed for the boot process, as the file system is only used for
+          EFI manipulation:
+        </para>
+<screen role="nodump"><userinput>umount -v /sys/firmware/efi/efivars</userinput></screen>
+      </note>
+
     </sect3>
 
   </sect2>
