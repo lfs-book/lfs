@@ -81,8 +81,8 @@ sed '/test_plugin_glvs/d' -i src/testdir/Make_all.mak</userinput></screen>
     we are overriding the <envar>TERM</envar> variable to satisfy some
     assumptions of the test suite).  The problem can be
     avoided by redirecting the output to a log file as shown above.  A
-    successful test will result in the words <computeroutput>ALL
-    DONE</computeroutput> in the log file at completion.</para>
+    successful test will show <computeroutput>FAILED: 0</computeroutput> in the 
+    log file at completion.</para>
 
     <para>Two tests, Test_client_server_stopinsert() and Test_popup_setbuf(), are 
     known to fail on some systems.</para>
