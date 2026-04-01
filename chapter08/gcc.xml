@@ -215,6 +215,10 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <para>Four tests related to <filename>pr90579.c</filename> are known
     to fail.</para>
 
+    <!-- https://gcc.gnu.org/PR124682 -->
+    <para>Eight tests related to <filename>builtin-math-6.c</filename> are
+    known to fail.</para>
+
     <para>Five tests related to <filename>analyzer/strchr-1.c</filename> are known
     to fail.</para>
 
