@@ -200,10 +200,14 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
           desktops/laptops. When the boot entry is missing in the BIOS, you
           will need to install the BLFS package <ulink
           url="&blfs-book;postlfs/efibootmgr.html">efibootmgr</ulink> to create
-          a boot entry for UEFI.
+          a boot entry for UEFI. If it's easier, the package can be installed
+          via the distribution's package manager, if applicable, and used on
+          the host instead of on the LFS system. This can prevent the need for
+          downloading more tarballs onto the LFS system for now.
         </para>
         <para>
-          First install the package, then mount the EFI variable file system:
+          First install the package, then mount the EFI variable file system if
+          it isn't already mounted:
         </para>
 <screen role="nodump"><userinput>mountpoint /sys/firmware/efi/efivars || mount -v -t efivarfs efivarfs /sys/firmware/efi/efivars</userinput></screen>
         <para>
@@ -221,9 +225,9 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
           <replaceable>&lt;X64&gt;</replaceable> with <literal>IA32</literal>.
         </para>
         <para>
-          Now umount the EFI variable file system, which should no longer be
-          needed for the boot process, as the file system is only used for
-          EFI manipulation:
+          Now unmount the EFI variable file system<phrase revision='sysv'>,
+          which should no longer be needed for the boot process, as the file
+          system is only used for EFI manipulation</phrase>:
         </para>
 <screen role="nodump"><userinput>umount -v /sys/firmware/efi/efivars</userinput></screen>
       </note>
