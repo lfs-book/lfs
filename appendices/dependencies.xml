@@ -3242,7 +3242,7 @@
       <segmentedlist id="texinfo-optdeps">
         <segtitle>&external;</segtitle>
         <seglistitem>
-          <seg>None</seg>
+          <seg>SWIG</seg>
         </seglistitem>
       </segmentedlist>
 
