@@ -64,7 +64,7 @@ EOF</userinput></screen>
 <screen><userinput remap="pre">yes | cpan -i File::ShareDir
 yes | cpan -i File::ShareDir::Install</userinput></screen>
 
-    <para>Finish this temproary workaround by  removing /etc/resolv.conf.  
+    <para>Finish this temporary workaround by  removing /etc/resolv.conf.  
     A discussion of this file
     will be made at <xref linkend='resolv.conf'/></para>
 
