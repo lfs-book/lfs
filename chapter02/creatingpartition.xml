@@ -215,7 +215,7 @@
   <para>The above example makes a few assumptions:
      <itemizedlist>
        <listitem>
-         <para>The table type is a GUID Partition Table (GPT).</para>
+         <para>The partition table is a GUID Partition Table (GPT).</para>
        </listitem>
 
        <listitem>
@@ -254,7 +254,8 @@
        <listitem>
          <para>Another partition can be added for installing the "host"
          system for building LFS. A minimal sized partition, 10 GiB, should be
-         sufficient.</para>
+         sufficient. If you are building the system using a LiveCD, a host 
+         partition may not be required.</para>
        </listitem>
 
      </itemizedlist>
