@@ -22,10 +22,10 @@
     <warning><para>Configuring GRUB incorrectly can render your system
     inoperable without an alternate boot device such as a CD-ROM or bootable
     USB drive. This section is not required to boot your LFS system.  You may
-    just want to modify your current boot loader, e.g. Grub-Legacy, GRUB2, or
-    LILO.</para></warning>
+    just want to modify your current boot loader, e.g. Grub-Legacy or
+    GRUB2.</para></warning>
 
-    <para> Ensure that an emergency boot disk is ready to <quote>rescue</quote>
+    <para>Ensure that an emergency boot disk is ready to <quote>rescue</quote>
     the computer if the computer becomes unusable (un-bootable).  If you do not
     already have a boot device, you can create one.  In order for the procedure
     below to work, you need to jump ahead to BLFS and install
@@ -73,8 +73,10 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
 
     <para>If booting the system via UEFI, GRUB works by storing the main
     GRUB image as a PE-COFF executable file at a standard location in the
-    EFI System Partition. The EFI firmware loads the file at the standard
-    location and executes it.</para>
+    EFI System Partition: <filename>EFI/BOOT/BOOTX64.EFI</filename> (or
+    <filename>EFI/BOOT/BOOTIA32.EFI</filename> for
+    <literal>i386-efi</literal>). The UEFI firmware loads it from the
+    standard location and executes it, launching GRUB.</para>
 
     <para>Many GRUB functions (including booting the Linux kernel) are
     not included in the main GRUB image. Instead, they are stored in a file
@@ -87,20 +89,35 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
     and load other modules.</para>
 
     <para>The location of the boot partition is a choice of the user that
-    affects the configuration.  One recommendation is to have a separate small
-    (suggested size is 200 MB) partition just for boot information. That way
-    for each build, whether it's LFS or a commercial distro, it can access the
-    same boot files and can access can any booted system. If you choose to do
-    this, you will need to mount the separate partition, move all files in the
-    current <filename class="directory">/boot</filename> directory (e.g. the
-    Linux kernel you just built in the previous section) to the new partition.
+    affects the configuration. One recommendation is to have a separate small
+    (suggested size is 200 MB) partition just for boot information. In doing
+    so, not just LFS, but any Linux distribution, can access the same boot
+    files, and in turn any booted system. If you choose to do this, you will
+    need to mount the separate partition, move all files in the current
+    <filename class="directory">/boot</filename> directory (e.g. the Linux
+    kernel you just built in the previous section) to the new partition.
     You will then need to unmount the partition and remount it as <filename
-    class="directory">/boot</filename>.  If you do this, be sure to update
+    class="directory">/boot</filename>. If you do this, be sure to update
     <filename>/etc/fstab</filename>.</para>
+
+    <note>
+      <para><filename class="directory">/boot</filename> can reside on the
+      host. With this configuration, you should bind-mount it so that LFS can
+      access the directory.</para>
+      <para>Outside the chroot, you should bind <filename
+      class="directory">/boot</filename> as such:</para>
+<screen role="nodump"><userinput>mount -v --bind /boot $LFS/boot</userinput></screen>
+      <para>Now <filename class="directory">/boot</filename> from the host
+      should be accessible within the LFS chroot.</para>
+    </note>
 
     <para>Leaving <filename class="directory">/boot</filename> on
     the current LFS partition will also work, but configuration
     for multiple systems is more difficult.</para>
+
+    <para>For examples and more information on boot partition layouts, looking
+    at <xref linkend="ch-partitioning-creatingpartition"/> may be
+    informative.</para>
 
     <para>Using the above information, determine the appropriate
     designator for the root partition (or boot partition, if a separate
@@ -165,7 +182,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
         <filename>/boot/efi/EFI/BOOT/BOOTX64.EFI</filename> file.
         If it already exists, it's likely that it's the entry of another boot
         loader (for example the GRUB installation from the host distro, or the
-        Windows Boot Manager). Backup the file so it can be restored later,
+        Windows Boot Manager). Backup the file so it can be restored later
         or loaded as a secondary boot loader by the new GRUB installation
         from LFS.</para>
       </warning>
@@ -209,7 +226,8 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
           First install the package, then mount the EFI variable file system if
           it isn't already mounted:
         </para>
-<screen role="nodump"><userinput>mountpoint /sys/firmware/efi/efivars || mount -v -t efivarfs efivarfs /sys/firmware/efi/efivars</userinput></screen>
+<screen role="nodump"><userinput>mountpoint /sys/firmware/efi/efivars ||
+  mount -v -t efivarfs efivarfs /sys/firmware/efi/efivars</userinput></screen>
         <para>
           Now create a boot entry for the EFI:
         </para>
@@ -227,7 +245,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
         <para>
           Now unmount the EFI variable file system<phrase revision='sysv'>,
           which should no longer be needed for the boot process, as the file
-          system is only used for EFI manipulation</phrase>:
+          system is only used for EFI variable manipulation</phrase>:
         </para>
 <screen role="nodump"><userinput>umount -v /sys/firmware/efi/efivars</userinput></screen>
       </note>
