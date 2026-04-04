@@ -229,7 +229,7 @@
        </listitem>
 
        <listitem>
-         <para>The EFI partition must formatted as VFAT.</para>
+         <para>The EFI partition must be formatted as VFAT.</para>
        </listitem>
 
        <listitem>
