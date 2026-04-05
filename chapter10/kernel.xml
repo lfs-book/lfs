@@ -148,11 +148,18 @@
 
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
         href="kernel/nvme.xml"/>
+
+      <para>If you are booting with UEFI, adjust the kernel so it can have EFI
+      partition and runtime support, on top of supporting the DOS VFAT
+      filesystem which is needed for the EFI partition:</para>
+
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+        href="kernel/uefi.xml"/>
     </note>
 
     <note revision="systemd">
-      <para>While "The IPv6 Protocol" is not strictly
-      required, it is highly recommended by the systemd developers.</para>
+      <para>While "The IPv6 Protocol" is not strictly required, it is highly
+      recommended by the systemd developers.</para>
     </note>
 
     <para>There are several other options that may be desired

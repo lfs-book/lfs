@@ -25,6 +25,23 @@
 
     <para>The GRUB package contains the GRand Unified Bootloader.</para>
 
+    <note><para>The instruction for this package assumes your system
+    utilizes the UEFI firmware.  Otherwise your may have to configure
+    GRUB differently (or GRUB may not work for the system at all), and
+    you may need to figure out how to boot the LFS system on your
+    own.</para></note>
+
+    <warning>
+      <para>Unset any environment variables which may affect the build:</para>
+
+      <screen><userinput remap='pre'>unset {C,CPP,CXX,LD}FLAGS</userinput></screen>
+
+      <para>Don't try <quote>tuning</quote> this package with custom
+      compilation flags. This package is a bootloader. The low-level
+      operations in the source code may be broken by
+      aggressive optimization.</para>
+    </warning>
+
     <segmentedlist>
       <segtitle>&buildtime;</segtitle>
       <segtitle>&diskspace;</segtitle>
@@ -38,89 +55,36 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of GRUB</title>
+    <title>Installation of GRUB for UEFI</title>
 
-    <note>
-      <para>
-        On ARM64 systems, the following instruction builds GRUB for UEFI.
-        But because LFS lacks the FreeType package and the Unifont data
-        file, GRUB won't install any font for the boot loader and
-        the GRUB boot menu will be displayed using a coarse font or in a
-        smaller region on the screen.
-        If wanted, after the LFS system is finished, install
-        <ulink url="&blfs-book;general/freetype.html">FreeType</ulink>
-        and then install the GRUB compoents not installed from LFS following
-        <ulink url="&blfs-book;postlfs/grub-efi.html">the BLFS
-        instruction</ulink>, but remove the <option>--target=x86_64</option>
-        option and skip the command to install the
-        <filename class='directory'>/usr/lib/grub/x86_64-efi</filename>
-        directory.
-      </para>
-      <para>
-        If your system firmware does not support UEFI, you need to skip the
-        content of this page and try to figure out how to boot your system.
-      </para>
-    </note>
+    <para>Now configure GRUB for UEFI support:</para>
 
-    <warning>
-      <para>Unset any environment variables which may affect the build:</para>
-
-      <screen><userinput remap='pre'>unset {C,CPP,CXX,LD}FLAGS</userinput></screen>
-
-      <para>Don't try <quote>tuning</quote> this package with custom
-      compilation flags. This package is a bootloader. The low-level
-      operations in the source code may be broken by
-      aggressive optimization.</para>
-    </warning>
-
-    <!-- See https://wiki.linuxfromscratch.org/lfs/ticket/5857. Remove this at
-    next grub version -->
-    <para>First fix a bug introduced in grub-2.14:</para>
-
-<screen><userinput remap="pre">sed 's/--image-base/--nonexist-linker-option/' -i configure</userinput></screen>
-
-    <para>Prepare GRUB for compilation:</para>
-
-<screen><userinput remap="configure">./configure --prefix=/usr     \
-            --sysconfdir=/etc \
-            --disable-efiemu  \
+<screen><userinput remap="configure">./configure --prefix=/usr       \
+            --sysconfdir=/etc   \
+            --with-platform=efi \
+            --disable-efiemu    \
             --disable-werror</userinput></screen>
 
     <variablelist>
       <title>The meaning of the new configure options:</title>
 
       <varlistentry>
-        <term><parameter>--disable-werror</parameter></term>
+        <term><parameter>--with-platform=efi</parameter></term>
         <listitem>
-          <para>This allows the build to complete with warnings introduced
-          by more recent versions of Flex.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--disable-efiemu</parameter></term>
-        <listitem>
-          <para>This option minimizes what is built by disabling a feature and
-          eliminating some test programs not needed for LFS.</para>
+          <para>This specifies that EFI is a platform GRUB should
+          target.</para>
         </listitem>
       </varlistentry>
 
     </variablelist>
 
-    <para>Compile the package:</para>
+    <para>Compile the package for UEFI support:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>The test suite for this packages is not recommended.  Most of
-    the tests depend on packages that are not available in the limited
-    LFS environment. To run the tests anyway, run <command>make check</command>.</para>
-
-    <para>Install the package:</para>
+    <para>Install support for UEFI:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
-
-  <para>Making your LFS system bootable with GRUB will be discussed in
-  <xref linkend="ch-bootable-grub" role='.'/></para>
 
   </sect2>
 
