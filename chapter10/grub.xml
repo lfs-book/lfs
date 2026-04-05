@@ -3,7 +3,7 @@
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
   %general-entities;
-  <!ENTITY efi-BOOT-suffix "X64">
+  <!ENTITY efi-BOOT-suffix "AA64">
 ]>
 
 <sect1 id="ch-bootable-grub" role="wrap">
@@ -115,7 +115,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
         from LFS.</para>
       </warning>
 
-<screen role="nodump"><userinput>grub-install --target=x86_64-efi --removable</userinput></screen>
+<screen role="nodump"><userinput>grub-install --target=arm64-efi --removable</userinput></screen>
 
       <para>
         The <parameter>--removable</parameter> option makes
