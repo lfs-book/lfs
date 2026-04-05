@@ -42,13 +42,11 @@
 
   <sect2 role="installation">
     <title>Installation of Python 3</title>
-<!-- Fixed in Python-3.14.3
-    <para>Fix a regression that causes issues in BLFS packages like
-    pyatspi:</para>
 
-<screen><userinput remap="pre">sed -e "/self.namespaceURI =/i\        self.ownerDocument = None" \
-    -i Lib/xml/dom/minidom.py</userinput></screen>
--->
+    <para>First, apply a security patch for issues identified upstream:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../&python-security-fixes-patch;</userinput></screen>
+
     <para>Prepare Python for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr          \
@@ -96,6 +94,13 @@
     core) should be enough.  Some tests are flaky, so the test suite will
     automatically re-run failed tests.  If a test failed but then passed
     when re-run, it should be considered as passed.</para>
+
+    <!-- DO NOT REMOVE EVEN IF IT'S NOT REPRODUCIBLE IN JHALFS:
+         jhalfs creates /etc/resolv.conf, that's different from the
+         by-hand build.  -->
+    <para>Two tests, <literal>test_urllib2</literal> and
+    <literal>test_urllibnet</literal>, are known to fail because name
+    resolution is not configured in the incomplete LFS environment.</para>
 
     <para>Install the package:</para>
 

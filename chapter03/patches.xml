@@ -141,7 +141,7 @@
         <para>MD5 sum: <literal>&perl-upstream-fix-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+-->
     <varlistentry>
       <term>Python Security Fix Patch - <token>&python-security-fixes-patch-size;</token>:</term>
       <listitem>
@@ -149,7 +149,6 @@
         <para>MD5 sum: <literal>&python-security-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
--->
 
     <varlistentry revision="sysv">
       <term>SysVinit Consolidated Patch - <token>&sysvinit-consolidated-patch-size;</token>:</term>

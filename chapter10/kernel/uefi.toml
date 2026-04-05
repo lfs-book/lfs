@@ -1,0 +1,12 @@
+# forced by !EXPERT
+BLOCK = { value = '*', forced = true }
+EFI='*'
+EFI_STUB='*'
+PARTITION_ADVANCED='* '
+EFI_PARTITION="*"
+VFAT_FS="*M"
+EFIVAR_FS="*M"
+# forced by both ACPI and PCI on a typical x86 desktop/server system
+NLS = { value = "*", forced = "*" }
+NLS_CODEPAGE_437="*M"
+NLS_ISO8859_1="*M"

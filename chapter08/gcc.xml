@@ -201,6 +201,10 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     url="&test-results;"/> and
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
+    <!-- https://gcc.gnu.org/PR124682 -->
+    <para>Eight tests related to <filename>builtin-math-6.c</filename> are
+    known to fail.</para>
+
     <para>Five tests related to <filename>analyzer/strchr-1.c</filename> are known
     to fail.</para>
 
