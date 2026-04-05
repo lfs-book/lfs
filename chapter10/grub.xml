@@ -202,6 +202,12 @@ insmod efi_gop
 
 menuentry "GNU/Linux, Linux &linux-version;-lfs-&version;" {
         linux   /boot/vmlinuz-&linux-version;-lfs-&version; root=/dev/sda2 ro
+}
+
+menuentry "Debian" {
+        insmod fat
+        insmod chain
+        chainloader (hd0,1)/EFI/DEBIAN/GRUB&efi-BOOT-suffix;.EFI
 }</literal>
 EOF</userinput></screen>
 <!-- GOP is probably not needed anyhow, since we're not using terminal_output
@@ -223,6 +229,15 @@ EOF</userinput></screen>
       <command>insmod</command> commands for them will do nothing. However,
       they do no harm anyway, and they may be needed with some rare
       configurations.
+    </para>
+
+    <para>
+      The <quote>Debian</quote> section demonstrate how a UEFI boot loader
+      can <quote>chainload</quote> another.  If you've backed up the
+      previous <filename>BOOT&efi-BOOT-suffix;.EFI</filename> file before
+      running the <command>grub-install</command> command, you can put it
+      it back into the ESP (with a different path) and chainload it as
+      well.
     </para>
 
     <note>

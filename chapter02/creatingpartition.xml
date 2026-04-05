@@ -137,11 +137,14 @@
       this LFS edition.</emphasis>  The churn caused by squashing kernels of
       different distros into one shared partition is so much that the editor
       maintaining this edition does not want to spend any time on such a
-      configuration.  If you want to access the boot loader configuration
-      from all the installed distros, consider using a separate partition
-      for <filename class='directory'>/boot/grub</filename> instead: doing
-      so will likely require hacking other distros so the details will not
-      be explained in the book.</para></listitem>
+      configuration.  If you want to share one GRUB installation for
+      multiple LFS installations, consider using a separate partition
+      for <filename class='directory'>/boot/grub</filename> instead.  If
+      you want to configure a dual-boot for LFS and the host distro, it's
+      cleaner to keep their bootloader installations separated and
+      <quote>chainload</quote> the host bootloader from the LFS grub,
+      as we'll explain in
+      <xref linkend='ch-bootable-grub'/>.</para></listitem>
 
       <listitem><para>/home &ndash; Highly recommended.  Share your home
       directory and user customization across multiple distributions or LFS
