@@ -144,7 +144,7 @@
       cleaner to keep their bootloader installations separated and
       <quote>chainload</quote> the host bootloader from the LFS grub,
       as we'll explain in
-      <xref linkend='ch-bootable-grub'/>.</para></listitem>
+      <xref linkend='ch-bootable-grub' role='.'/></para></listitem>
 
       <listitem><para>/home &ndash; Highly recommended.  Share your home
       directory and user customization across multiple distributions or LFS
