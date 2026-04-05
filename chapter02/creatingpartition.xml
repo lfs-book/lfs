@@ -160,11 +160,15 @@
 
     <itemizedlist>
 
-      <listitem><para>/boot &ndash; Highly recommended.  Use this partition to
-      store kernels and other booting information.  To minimize potential boot
-      problems with larger disks, make this the first physical partition on
-      your first disk drive.  A partition size of 200 megabytes is
-      adequate.</para></listitem>
+      <listitem><para>/boot &ndash; <emphasis role='bold'>NOT supported by
+      this LFS edition.</emphasis>  The churn caused by squashing kernels of
+      different distros into one shared partition is so much that the editor
+      maintaining this edition does not want to spend any time on such a
+      configuration.  If you want to access the boot loader configuration
+      from all the installed distros, consider using a separate partition
+      for <filename class='directory'>/boot/grub</filename> instead: doing
+      so will likely require hacking other distros so the details will not
+      be explained in the book.</para></listitem>
 
       <listitem><para>/home &ndash; Highly recommended.  Share your home
       directory and user customization across multiple distributions or LFS
