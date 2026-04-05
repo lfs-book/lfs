@@ -198,10 +198,7 @@ insmod ext2
 
 set root=(hd0,2)
 
-# For UEFI
 insmod efi_gop
-
-set gfxpayload=1024x768x32
 
 menuentry "GNU/Linux, Linux &linux-version;-lfs-&version;" {
         linux   /boot/vmlinuz-&linux-version;-lfs-&version; root=/dev/sda2 ro
@@ -226,15 +223,6 @@ EOF</userinput></screen>
       <command>insmod</command> commands for them will do nothing. However,
       they do no harm anyway, and they may be needed with some rare
       configurations.
-    </para>
-
-    <para>
-      The <command>set gfxpayload=1024x768x32</command> command sets the
-      resolution and color depth of the VESA framebuffer to be passed to the
-      kernel.  It's necessary for the kernel SimpleDRM driver to use the
-      VESA framebuffer.  You can use a different resolution or color depth
-      value which better suits for your monitor.  This line does nothing
-      when the system is booted via UEFI, but it does no harm anyway.
     </para>
 
     <note>
