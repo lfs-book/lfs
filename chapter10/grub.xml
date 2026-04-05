@@ -305,10 +305,12 @@ EOF</userinput></screen>
       <filename>efi_uga</filename> are for video support. GOP, or Graphics
       Output Protocol, is the modern approach. UGA, or UGA Draw Protocol, is
       a legacy way of handling it.
-      In a typical configuration, these four modules are already embedded in
-      the main GRUB image by <command>grub-install</command>, and those four
-      <command>insmod</command> commands will do nothing; However, they do no
-      harm anyway, and they may be needed with some rare configurations.
+      In a typical configuration, the <filename>part_gpt</filename> and
+      <filename>ext2</filename> modules are already embedded in
+      the main GRUB image by <command>grub-install</command>, and the
+      <command>insmod</command> commands for them will do nothing. However,
+      they do no harm anyway, and they may be needed with some rare
+      configurations.
     </para>
 
     <para>
