@@ -152,7 +152,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
           Now create a boot entry for the EFI:
         </para>
 <screen role="nodump"><userinput>efibootmgr -c -d /dev/sd<replaceable>&lt;x&gt;</replaceable> \
-  -p <replaceable>&lt;y&gt;</replaceable> -L "LFS" -l '\EFI\BOOT\BOOT<replaceable>&lt;&efi-BOOT-suffix;&gt;</replaceable>.EFI'</userinput></screen>
+  -p <replaceable>&lt;y&gt;</replaceable> -L "LFS" -l '\EFI\BOOT\BOOT&efi-BOOT-suffix;.EFI'</userinput></screen>
         <para>
           The <literal>/dev/sd<replaceable>&lt;x&gt;</replaceable></literal>
           drive should match the one you are installing LFS onto. The
