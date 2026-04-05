@@ -40,6 +40,16 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
   </sect2>
 
   <sect2>
+    <title>Turn off Secure Boot</title>
+
+    <para>LFS does not have the essential packages to support Secure Boot.
+    To set up the boot process following the instructions in this section,
+    Secure Boot must be turned off from the configuration interface of the
+    firmware. Read the documentation provided by the manufacturer of your
+    system to find out how.</para>
+  </sect2>
+
+  <sect2>
     <title>GRUB Naming Conventions</title>
 
     <para>GRUB uses its own naming structure for drives and partitions in
