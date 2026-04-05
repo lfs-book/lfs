@@ -365,9 +365,9 @@ EOF</userinput></screen>
       but doing so will require an initramfs, which is beyond the scope of
       LFS.</para>
       <para>The name of the device node for a partition in
-      <filename class='directory'>/dev</filename> may also change (this is less
-      likely than a GRUB designator change).  You can also replace
-      paths to device nodes like <literal>/dev/sda1</literal> with
+      <filename class='directory'>/dev</filename> may also change (very
+      frequently on some systems with multiple NVME disks).  You can also
+      replace paths to device nodes like <literal>/dev/sda1</literal> with
       <literal>PARTUUID=<replaceable>&lt;partition UUID&gt;</replaceable></literal>,
       in <filename>/etc/fstab</filename>, to avoid a potential boot failure
       in case the device node name has changed.</para>
