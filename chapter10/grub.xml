@@ -111,14 +111,13 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
     <filename>/etc/fstab</filename>.</para>
 
     <note>
-      <para><filename class="directory">/boot</filename> can reside on the
-      host. With this configuration, you should bind-mount it so that LFS can
-      access the directory.</para>
-      <para>Outside the chroot, you should bind <filename
-      class="directory">/boot</filename> as such:</para>
-<screen role="nodump"><userinput>mount -v --bind /boot $LFS/boot</userinput></screen>
-      <para>Now <filename class="directory">/boot</filename> from the host
-      should be accessible within the LFS chroot.</para>
+      <para>If the host distro utilizes a separate partition for
+      <filename class="directory">/boot</filename> and you want the LFS
+      system to use that partition for
+      <filename class="directory">/boot</filename> as well, just mount
+      the partition at <filename class="directory">$LFS/boot</filename>
+      in the host distro.  The Linux kernel supports to mount one
+      partition at multiple mount points.</para>
     </note>
 
     <para>Leaving <filename class="directory">/boot</filename> on
