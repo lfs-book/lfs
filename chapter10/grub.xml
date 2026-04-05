@@ -16,27 +16,16 @@
 
   <title>Using GRUB to Set Up the Boot Process</title>
 
-  <note>
-    <para>
-      If your system has UEFI support and you wish to boot LFS with UEFI,
-      you should skip the instructions in this page but still learn the
-      syntax of <filename>grub.cfg</filename> and the method to specify
-      a partition in the file from this page, and configure GRUB with UEFI
-      support using the instructions provided in
-      <ulink url="&blfs-book;postlfs/grub-setup.html">the BLFS page</ulink>.
-    </para>
-  </note>
-
   <sect2>
     <title>Introduction</title>
 
     <warning><para>Configuring GRUB incorrectly can render your system
     inoperable without an alternate boot device such as a CD-ROM or bootable
     USB drive. This section is not required to boot your LFS system.  You may
-    just want to modify your current boot loader, e.g. Grub-Legacy, GRUB2, or
-    LILO.</para></warning>
+    just want to modify your current boot loader, e.g. Grub-Legacy or
+    GRUB2.</para></warning>
 
-    <para> Ensure that an emergency boot disk is ready to <quote>rescue</quote>
+    <para>Ensure that an emergency boot disk is ready to <quote>rescue</quote>
     the computer if the computer becomes unusable (un-bootable).  If you do not
     already have a boot device, you can create one.  In order for the procedure
     below to work, you need to jump ahead to BLFS and install
@@ -73,26 +62,62 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
   <sect2>
     <title>Setting Up the Configuration</title>
 
-    <para>GRUB works by writing data to the first physical track of the
-    hard disk.  This area is not part of any file system.  The programs
-    there access GRUB modules in the boot partition.  The default location
-    is /boot/grub/.</para>
+    <para>If booting the system via BIOS, GRUB works by writing a stub to
+    the first sector (named the Master Boot Record, or MBR) of the hard
+    disk. This area is not part of any file system. The BIOS loads and
+    executes the content of MBR, then the stub loads the main GRUB image from
+    the BIOS Boot Partition. The GRUB image is stored as raw data instead
+    of a file (there must be no file system on the BIOS Boot Partition), so
+    the stub doesn't need to support any file system and it can be made small
+    enough to fit in the MBR.</para>
+
+    <para>If booting the system via UEFI, GRUB works by storing the main
+    GRUB image as a PE-COFF executable file at a standard location in the
+    EFI System Partition: <filename>EFI/BOOT/BOOTX64.EFI</filename> (or
+    <filename>EFI/BOOT/BOOTIA32.EFI</filename> for
+    <literal>i386-efi</literal>). The UEFI firmware loads it from the
+    standard location and executes it, launching GRUB.</para>
+
+    <para>Many GRUB functions (including booting the Linux kernel) are
+    not included in the main GRUB image. Instead, they are stored in a file
+    system as GRUB modules. That file system is usually mounted in a
+    way that the GRUB modules can be accessed in
+    <filename class='directory'>/boot/grub</filename> on most Linux
+    distributions. To avoid the chicken-and-egg problem,
+    <command>grub-install</command> embeds the modules necessary to
+    access this file system into the main GRUB image, so it can find
+    and load other modules.</para>
 
     <para>The location of the boot partition is a choice of the user that
-    affects the configuration.  One recommendation is to have a separate small
-    (suggested size is 200 MB) partition just for boot information.  That way
-    each build, whether LFS or some commercial distro, can access the same boot
-    files and access can be made from any booted system.  If you choose to do
-    this, you will need to mount the separate partition, move all files in the
-    current <filename class="directory">/boot</filename> directory (e.g. the
-    Linux kernel you just built in the previous section) to the new partition.
+    affects the configuration. One recommendation is to have a separate small
+    (suggested size is 200 MB) partition just for boot information. In doing
+    so, not just LFS, but any Linux distribution, can access the same boot
+    files, and in turn any booted system. If you choose to do this, you will
+    need to mount the separate partition, move all files in the current
+    <filename class="directory">/boot</filename> directory (e.g. the Linux
+    kernel you just built in the previous section) to the new partition.
     You will then need to unmount the partition and remount it as <filename
-    class="directory">/boot</filename>.  If you do this, be sure to update
+    class="directory">/boot</filename>. If you do this, be sure to update
     <filename>/etc/fstab</filename>.</para>
+
+    <note>
+      <para><filename class="directory">/boot</filename> can reside on the
+      host. With this configuration, you should bind-mount it so that LFS can
+      access the directory.</para>
+      <para>Outside the chroot, you should bind <filename
+      class="directory">/boot</filename> as such:</para>
+<screen role="nodump"><userinput>mount -v --bind /boot $LFS/boot</userinput></screen>
+      <para>Now <filename class="directory">/boot</filename> from the host
+      should be accessible within the LFS chroot.</para>
+    </note>
 
     <para>Leaving <filename class="directory">/boot</filename> on
     the current LFS partition will also work, but configuration
     for multiple systems is more difficult.</para>
+
+    <para>For examples and more information on boot partition layouts, looking
+    at <xref linkend="ch-partitioning-creatingpartition"/> may be
+    informative.</para>
 
     <para>Using the above information, determine the appropriate
     designator for the root partition (or boot partition, if a separate
@@ -100,25 +125,132 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
     (or separate boot) partition is <filename
     class="partition">sda2</filename>.</para>
 
-    <para>Install the GRUB files into <filename
-    class="directory">/boot/grub</filename> and set up the boot track:</para>
+    <para>
+      The following sections go over how to boot with BIOS and UEFI.
+      The GRUB installations for BIOS, 64-bit UEFI, and 32-bit UEFI can
+      coexist and share the same configuration. The images and data live at
+      different locations, so you can create both the BIOS Boot Partition and
+      the EFI System Partition, and install GRUB for all the supported firmware
+      types (i.e. running three <command>grub-install</command> commands). If
+      you are unsure about your firmware type, or you plan to move the hard
+      drive to a different computer, this is something you can do as a blanket
+      strategy.
+    </para>
 
-    <warning>
-      <para>The following command will overwrite the current boot loader. Do not
-      run the command if this is not desired, for example, if using a third party
-      boot manager to manage the Master Boot Record (MBR).</para>
-    </warning>
+    <note><para>
+      If you're doing UEFI boot but have created the Grub BIOS partition, it
+      may be a good idea to run the command for BIOS in case UEFI booting does
+      not work as expected.
+    </para></note>
 
-<screen role="nodump"><userinput>grub-install /dev/sda</userinput></screen>
+    <note><para>
+      If you only need to install GRUB for one boot method, you don't have to
+      run commands for both methods. You can just run the command for the boot
+      method you need.
+    </para></note>
 
-    <note>
-      <para>If the system has been booted using UEFI,
-      <command>grub-install</command> will try to install files for the
-      <emphasis>x86_64-efi</emphasis> target, but those files
-      have not been installed in <xref linkend="chapter-building-system"/>.
-      If this is the case, add <option>--target i386-pc</option> to the
-      command above.</para>
-    </note>
+    <sect3>
+      <title>Booting With BIOS</title>
+
+      <para>For booting with BIOS, make sure the boot partition is mounted
+      (if using a separate one) and the BIOS Boot partition exists. After that,
+      install the GRUB files into <filename
+      class="directory">/boot/grub</filename> and set up the boot track:</para>
+
+      <warning>
+        <para>The following command will overwrite the current boot loader. Do
+        not run the command if this is not desired, for example, if using a
+        third party boot manager to manage the MBR.</para>
+      </warning>
+
+<screen role="nodump"><userinput>grub-install /dev/sda --target=i386-pc</userinput></screen>
+
+    </sect3>
+
+    <sect3>
+      <title>Booting With UEFI</title>
+
+      <para>For booting with UEFI, make sure the boot partition is mounted
+      (if using a separate one) and the EFI System Partition is mounted at
+      <filename class='directory'>/boot/efi</filename>. After that, install the
+      GRUB files into <filename class="directory">/boot/grub</filename> and the
+      main GRUB image at
+      <filename>/boot/efi/EFI/BOOT/BOOTX64.EFI</filename>:</para>
+
+      <warning>
+        <para>The following command will overwrite the
+        <filename>/boot/efi/EFI/BOOT/BOOTX64.EFI</filename> file.
+        If it already exists, it's likely that it's the entry of another boot
+        loader (for example the GRUB installation from the host distro, or the
+        Windows Boot Manager). Backup the file so it can be restored later
+        or loaded as a secondary boot loader by the new GRUB installation
+        from LFS.</para>
+      </warning>
+
+<screen role="nodump"><userinput>grub-install --target=x86_64-efi --removable</userinput></screen>
+
+      <para>
+        The command above assumes that you have 64-bit UEFI firmware.
+        If you want to make the system bootable on 32-bit UEFI firmware,
+        run the command with <literal>x86_64-efi</literal> replaced by
+        <literal>i386-efi</literal>.
+      </para>
+
+      <para>
+        The <parameter>--removable</parameter> option makes
+        <command>grub-install</command> use the standard location,
+        <filename>EFI/BOOT/BOOTX64.EFI</filename> (or
+        <filename>EFI/BOOT/BOOTIA32.EFI</filename> for
+        <literal>i386-efi</literal>), instead of the location GRUB prefers
+        (<filename>EFI/GRUB/GRUBX64.EFI</filename> or
+        <filename>EFI/GRUB/GRUBIA32.EFI</filename>).  Using a non-standard
+        location would result in the location in a EFI variable be recorded,
+        but LFS lacks the BLFS package <ulink
+        url="&blfs-book;postlfs/efibootmgr.html">efibootmgr</ulink>, which is
+        needed to manipulate EFI variables.
+      </para>
+
+      <note>
+        <para>
+          Some UEFI bootloaders, while rare, skip the hardcoded EFI path. Such
+          systems most of the time are old, like Lenevo ThinkPads or HP
+          desktops/laptops. When the boot entry is missing in the BIOS, you
+          will need to install the BLFS package <ulink
+          url="&blfs-book;postlfs/efibootmgr.html">efibootmgr</ulink> to create
+          a boot entry for UEFI. If it's easier, the package can be installed
+          via the distribution's package manager, if applicable, and used on
+          the host instead of on the LFS system. This can prevent the need for
+          downloading more tarballs onto the LFS system for now.
+        </para>
+        <para>
+          First install the package, then mount the EFI variable file system if
+          it isn't already mounted:
+        </para>
+<screen role="nodump"><userinput>mountpoint /sys/firmware/efi/efivars ||
+  mount -v -t efivarfs efivarfs /sys/firmware/efi/efivars</userinput></screen>
+        <para>
+          Now create a boot entry for the EFI:
+        </para>
+<screen role="nodump"><userinput>efibootmgr -c -d /dev/sd<replaceable>&lt;x&gt;</replaceable> \
+  -p <replaceable>&lt;y&gt;</replaceable> -L "LFS" -l '\EFI\BOOT\BOOT<replaceable>&lt;X64&gt;</replaceable>.EFI'</userinput></screen>
+        <para>
+          The <literal>/dev/sd<replaceable>&lt;x&gt;</replaceable></literal>
+          drive should match the one you are installing LFS onto. The
+          <replaceable>&lt;y&gt;</replaceable> partition number should match
+          the number which the ESP is mounted. If the ESP is on
+          <literal>/dev/sda2</literal>, then the partition number would be
+          <literal>2</literal>. If you are using 32-bit UEFI, replace
+          <replaceable>&lt;X64&gt;</replaceable> with <literal>IA32</literal>.
+        </para>
+        <para>
+          Now unmount the EFI variable file system<phrase revision='sysv'>,
+          which should no longer be needed for the boot process, as the file
+          system is only used for EFI variable manipulation</phrase>:
+        </para>
+<screen role="nodump"><userinput>umount -v /sys/firmware/efi/efivars</userinput></screen>
+      </note>
+
+    </sect3>
 
   </sect2>
 
@@ -134,30 +266,40 @@ set timeout=5
 
 insmod part_gpt
 insmod ext2
+
 set root=(hd0,2)
+
+# For UEFI
+insmod efi_gop
+insmod efi_uga
+
 set gfxpayload=1024x768x32
 
 menuentry "GNU/Linux, Linux &linux-version;-lfs-&version;" {
         linux   /boot/vmlinuz-&linux-version;-lfs-&version; root=/dev/sda2 ro
 }</literal>
 EOF</userinput></screen>
+<!-- GOP is probably not needed anyhow, since we're not using terminal_output
+     gfxterm. -->
 
     <para>
       The <command>insmod</command> commands load the
       <application>GRUB</application> modules named
-      <filename>part_gpt</filename> and <filename>ext2</filename>.
+      <filename>part_gpt</filename>, <filename>ext2</filename>,
+      <filename>efi_gop</filename>, and
+      <filename>efi_uga</filename>.
       Despite the naming, <filename>ext2</filename> actually supports
       <systemitem class='filesystem'>ext2</systemitem>,
       <systemitem class='filesystem'>ext3</systemitem>, and
       <systemitem class='filesystem'>ext4</systemitem> filesystems.
-      The <command>grub-install</command> command has embedded some modules
-      into the main <application>GRUB</application> image (installed into
-      the MBR or the GRUB BIOS partition) to access the other modules
-      (in <filename class='directory'>/boot/grub/i386-pc</filename>) without
-      a chicken-or-egg issue, so with a typical configuration these two
-      modules are already embedded and those two <command>insmod</command>
-      commands will do nothing.  But they do no harm anyway, and they may
-      be needed with some rare configurations.
+      On UEFI systems, <filename>efi_gop</filename> and
+      <filename>efi_uga</filename> are for video support. GOP, or Graphics
+      Output Protocol, is the modern approach. UGA, or UGA Draw Protocol, is
+      a legacy way of handling it.
+      In a typical configuration, these four modules are already embedded in
+      the main GRUB image by <command>grub-install</command>, and those four
+      <command>insmod</command> commands will do nothing; However, they do no
+      harm anyway, and they may be needed with some rare configurations.
     </para>
 
     <para>
@@ -165,7 +307,8 @@ EOF</userinput></screen>
       resolution and color depth of the VESA framebuffer to be passed to the
       kernel.  It's necessary for the kernel SimpleDRM driver to use the
       VESA framebuffer.  You can use a different resolution or color depth
-      value which better suits for your monitor.
+      value which better suits for your monitor.  This line does nothing
+      when the system is booted via UEFI, but it does no harm anyway.
     </para>
 
     <note><para>From <application>GRUB</application>'s perspective, the
@@ -219,8 +362,9 @@ EOF</userinput></screen>
     can write a configuration file automatically.  It uses a set of scripts in
     /etc/grub.d/ and will destroy any customizations that you make.  These scripts
     are designed primarily for non-source distributions and are not recommended for
-    LFS.  If you install a commercial Linux distribution, there is a good chance
-    that this program will be run.  Be sure to back up your grub.cfg file.</para></caution>
+    LFS. If you install a commercial Linux distribution, there is a good chance
+    that this program will be run.  Be sure to back up your grub.cfg
+    file.</para></caution>
 
    </sect2>
 
