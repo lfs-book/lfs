@@ -46,7 +46,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
     To set up the boot process following the instructions in this section,
     Secure Boot must be turned off from the configuration interface of the
     firmware. Read the documentation provided by the manufacturer of your
-    system to find out how.</para>
+    system to find out how to turn off Secure Boot support..</para>
   </sect2>
 
   <sect2>
@@ -116,8 +116,8 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
       system to use that partition for
       <filename class="directory">/boot</filename> as well, just mount
       the partition at <filename class="directory">$LFS/boot</filename>
-      in the host distro.  The Linux kernel supports to mount one
-      partition at multiple mount points.</para>
+      in the host distro. The Linux kernel supports mounting partitions
+      at multiple mount points.</para>
     </note>
 
     <para>Leaving <filename class="directory">/boot</filename> on
