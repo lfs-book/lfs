@@ -243,9 +243,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
           <replaceable>&lt;X64&gt;</replaceable> with <literal>IA32</literal>.
         </para>
         <para>
-          Now unmount the EFI variable file system<phrase revision='sysv'>,
-          which should no longer be needed for the boot process, as the file
-          system is only used for EFI variable manipulation</phrase>:
+          Now unmount the EFI variable file system:
         </para>
 <screen role="nodump"><userinput>umount -v /sys/firmware/efi/efivars</userinput></screen>
       </note>
