@@ -251,6 +251,16 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
           <literal>2</literal>. If you are using 32-bit UEFI, replace
           <replaceable>&lt;X64&gt;</replaceable> with <literal>IA32</literal>.
         </para>
+
+        <para>
+          Some (broken) firmwares may require additional parameters
+          for <command>efibootmgr</command>, like
+          <parameter>--full-dev-path</parameter> or
+          <parameter>-e 1 -E</parameter>.  Read the man page
+          <ulink role='man' url='&man;efibootmgr.8'>efibootmgr(8)</ulink>
+          for details.
+        </para>
+
         <para>
           Now unmount the EFI variable file system<phrase revision='sysv'>,
           which should no longer be needed for the boot process, as the file
