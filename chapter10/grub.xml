@@ -198,13 +198,20 @@ insmod ext2
 
 set root=(hd0,2)
 
-# For UEFI
 insmod efi_gop
-
-set gfxpayload=1024x768x32
 
 menuentry "GNU/Linux, Linux &linux-version;-lfs-&version;" {
         linux   /boot/vmlinuz-&linux-version;-lfs-&version; root=/dev/sda2 ro
+}
+
+menuentry "Debian" {
+        insmod fat
+        insmod chain
+        chainloader (hd0,1)/EFI/DEBIAN/GRUB&efi-BOOT-suffix;.EFI
+}
+
+menuentry "Firmware Setup" {
+        fwsetup
 }</literal>
 EOF</userinput></screen>
 <!-- GOP is probably not needed anyhow, since we're not using terminal_output
@@ -229,12 +236,19 @@ EOF</userinput></screen>
     </para>
 
     <para>
-      The <command>set gfxpayload=1024x768x32</command> command sets the
-      resolution and color depth of the VESA framebuffer to be passed to the
-      kernel.  It's necessary for the kernel SimpleDRM driver to use the
-      VESA framebuffer.  You can use a different resolution or color depth
-      value which better suits for your monitor.  This line does nothing
-      when the system is booted via UEFI, but it does no harm anyway.
+      The <quote>Debian</quote> section demonstrate how a UEFI boot loader
+      can <quote>chainload</quote> another.  If you've backed up the
+      previous <filename>BOOT&efi-BOOT-suffix;.EFI</filename> file before
+      running the <command>grub-install</command> command, you can put it
+      it back into the ESP (with a different path) and chainload it as
+      well.
+    </para>
+
+    <para>
+      The <quote>Firmware Setup</quote> section demonstrate the use of
+      the <command>fwsetup</command> command, which invokes the
+      configuration interface of the UEFI firmware (widely known as
+      <quote>BIOS Setup</quote>).
     </para>
 
     <note>
@@ -263,9 +277,9 @@ EOF</userinput></screen>
       but doing so will require an initramfs, which is beyond the scope of
       LFS.</para>
       <para>The name of the device node for a partition in
-      <filename class='directory'>/dev</filename> may also change (this is less
-      likely than a GRUB designator change).  You can also replace
-      paths to device nodes like <literal>/dev/sda1</literal> with
+      <filename class='directory'>/dev</filename> may also change (very
+      frequently on some systems with multiple NVME disks).  You can also
+      replace paths to device nodes like <literal>/dev/sda1</literal> with
       <literal>PARTUUID=<replaceable>&lt;partition UUID&gt;</replaceable></literal>,
       in <filename>/etc/fstab</filename>, to avoid a potential boot failure
       in case the device node name has changed.</para>
