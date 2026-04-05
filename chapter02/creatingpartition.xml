@@ -207,11 +207,9 @@
 
 <screen>Number  Start (sector)    End (sector)        Size   Code  Name
    1            2048           22527       10.0 MiB  EF00  EFI system partition
-   2           22528           24575     1024.0 KiB  EF02  BIOS boot partition
-   3           24576         1048575      500.0 MiB  8300  /boot
-   4         1048576         5242879        2.0 GiB  8200  swap
-   5         5242880        89128959       40.0 GiB  8300  lfs13.0+
-   6        89128960       173015039       40.0 GiB  8300  /home</screen>
+   2           22528         4216831        2.0 GiB  8200  swap
+   3         4216832        88102911       40.0 GiB  8300  lfs13.0+
+   4        88102912       171988991       40.0 GiB  8300  /home</screen>
 
   <para>The above example makes a few assumptions:
      <itemizedlist>
@@ -220,31 +218,11 @@
        </listitem>
 
        <listitem>
-         <para>Both EFI and BIOS Boot partitions are present, although
-         only one will be used. Which is used depends on the system BIOS.
-         If the system is old, it will not have UEFI capabilities at all.
-         Some later systems can disable UEFI through the BIOS by disabling
-         "Secure Boot" and enabling "Legacy Support" or "CSM" (Compatibility
-         Support Mode).  If you know in advance which mode you will use,
-         the other partition can be omitted.</para>
-       </listitem>
-
-       <listitem>
          <para>The EFI partition must be formatted as VFAT.</para>
        </listitem>
 
        <listitem>
-         <para>The BIOS partition is not formatted.</para>
-       </listitem>
-       
-       <listitem>
          <para>The swap partition must be formatted as swap.</para>
-       </listitem>
-       
-       <listitem>
-         <para>The /boot partition can be formatted as ext2 since
-         it is rarely written (and then only by root) and does
-         not need a journal.</para>
        </listitem>
        
        <listitem>
