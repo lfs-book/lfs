@@ -46,7 +46,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
     To set up the boot process following the instructions in this section,
     Secure Boot must be turned off from the configuration interface of the
     firmware. Read the documentation provided by the manufacturer of your
-    system to find out how to turn off Secure Boot support..</para>
+    system to find out how to turn off Secure Boot support.</para>
   </sect2>
 
   <sect2>
@@ -253,7 +253,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
         </para>
 
         <para>
-          Some (broken) firmwares may require additional parameters
+          Some (broken) firmware may require additional parameters
           for <command>efibootmgr</command>, like
           <parameter>--full-dev-path</parameter> or
           <parameter>-e 1 -E</parameter>.  Read the man page
