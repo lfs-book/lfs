@@ -65,6 +65,8 @@ cd       build</userinput></screen>
 
     <para>Prepare GCC for compilation:</para>
 
+<!-- enable-targets=all is not needed for MLFS since the default arch will
+     always be 64-bit. -->
 <screen><userinput remap="configure">../configure --prefix=/usr                \
              LD=ld                        \
              --enable-languages=c,c++     \
@@ -138,6 +140,7 @@ cd       build</userinput></screen>
           the Zlib library, rather than its own internal copy.</para>
         </listitem>
       </varlistentry>
+
     </variablelist>
 
     <note>

@@ -167,11 +167,18 @@
 
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
         href="kernel/nvme.xml"/>
+
+      <para>If you are booting with UEFI, adjust the kernel so it can have EFI
+      partition and runtime support, on top of supporting the DOS VFAT
+      filesystem which is needed for the EFI partition:</para>
+
+      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+        href="kernel/uefi.xml"/>
     </note>
 
     <note revision="systemd">
-      <para>While "The IPv6 Protocol" is not strictly
-      required, it is highly recommended by the systemd developers.</para>
+      <para>While "The IPv6 Protocol" is not strictly required, it is highly
+      recommended by the systemd developers.</para>
     </note>
 
     <para>There are several other options that may be desired
@@ -179,14 +186,6 @@
     for BLFS packages, see the <ulink
     url="&lfs-root;blfs/view/&short-version;/longindex.html#kernel-config-index">BLFS
     Index of Kernel Settings</ulink>.</para>
-
-    <note>
-      <para>If your host hardware is using UEFI and you wish to boot the
-      LFS system with it, you should adjust some kernel configuration
-      following <ulink url="&blfs-book;postlfs/grub-setup.html#uefi-kernel">
-      the BLFS page</ulink> <emphasis role='bold'>even if you'll use the
-      UEFI bootloader from the host distro</emphasis>.</para>
-    </note>
 
     <variablelist>
       <title>The rationale for the above configuration items:</title>
