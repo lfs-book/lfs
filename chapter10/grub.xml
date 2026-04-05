@@ -208,6 +208,10 @@ menuentry "Debian" {
         insmod fat
         insmod chain
         chainloader (hd0,1)/EFI/DEBIAN/GRUB&efi-BOOT-suffix;.EFI
+}
+
+menuentry "Firmware Setup" {
+        fwsetup
 }</literal>
 EOF</userinput></screen>
 <!-- GOP is probably not needed anyhow, since we're not using terminal_output
@@ -238,6 +242,13 @@ EOF</userinput></screen>
       running the <command>grub-install</command> command, you can put it
       it back into the ESP (with a different path) and chainload it as
       well.
+    </para>
+
+    <para>
+      The <quote>Firmware Setup</quote> section demonstrate the use of
+      the <command>fwsetup</command> command, which invokes the
+      configuration interface of the UEFI firmware (widely known as
+      <quote>BIOS Setup</quote>).
     </para>
 
     <note>
