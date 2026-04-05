@@ -40,6 +40,16 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
   </sect2>
 
   <sect2>
+    <title>Turn off Secure Boot</title>
+
+    <para>LFS does not have the essential packages to support Secure Boot.
+    To set up the boot process following the instructions in this section,
+    Secure Boot must be turned off from the configuration interface of the
+    firmware. Read the documentation provided by the manufacturer of your
+    system to find out how to turn off Secure Boot support.</para>
+  </sect2>
+
+  <sect2>
     <title>GRUB Naming Conventions</title>
 
     <para>GRUB uses its own naming structure for drives and partitions in
@@ -101,14 +111,13 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
     <filename>/etc/fstab</filename>.</para>
 
     <note>
-      <para><filename class="directory">/boot</filename> can reside on the
-      host. With this configuration, you should bind-mount it so that LFS can
-      access the directory.</para>
-      <para>Outside the chroot, you should bind <filename
-      class="directory">/boot</filename> as such:</para>
-<screen role="nodump"><userinput>mount -v --bind /boot $LFS/boot</userinput></screen>
-      <para>Now <filename class="directory">/boot</filename> from the host
-      should be accessible within the LFS chroot.</para>
+      <para>If the host distro utilizes a separate partition for
+      <filename class="directory">/boot</filename> and you want the LFS
+      system to use that partition for
+      <filename class="directory">/boot</filename> as well, just mount
+      the partition at <filename class="directory">$LFS/boot</filename>
+      in the host distro. The Linux kernel supports mounting partitions
+      at multiple mount points.</para>
     </note>
 
     <para>Leaving <filename class="directory">/boot</filename> on
@@ -242,6 +251,16 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
           <literal>2</literal>. If you are using 32-bit UEFI, replace
           <replaceable>&lt;X64&gt;</replaceable> with <literal>IA32</literal>.
         </para>
+
+        <para>
+          Some (broken) firmware may require additional parameters
+          for <command>efibootmgr</command>, like
+          <parameter>--full-dev-path</parameter> or
+          <parameter>-e 1 -E</parameter>.  Read the man page
+          <ulink role='man' url='&man;efibootmgr.8'>efibootmgr(8)</ulink>
+          for details.
+        </para>
+
         <para>
           Now unmount the EFI variable file system<phrase revision='sysv'>,
           which should no longer be needed for the boot process, as the file
@@ -296,10 +315,12 @@ EOF</userinput></screen>
       <filename>efi_uga</filename> are for video support. GOP, or Graphics
       Output Protocol, is the modern approach. UGA, or UGA Draw Protocol, is
       a legacy way of handling it.
-      In a typical configuration, these four modules are already embedded in
-      the main GRUB image by <command>grub-install</command>, and those four
-      <command>insmod</command> commands will do nothing; However, they do no
-      harm anyway, and they may be needed with some rare configurations.
+      In a typical configuration, the <filename>part_gpt</filename> and
+      <filename>ext2</filename> modules are already embedded in
+      the main GRUB image by <command>grub-install</command>, and the
+      <command>insmod</command> commands for them will do nothing. However,
+      they do no harm anyway, and they may be needed with some rare
+      configurations.
     </para>
 
     <para>
@@ -344,9 +365,9 @@ EOF</userinput></screen>
       but doing so will require an initramfs, which is beyond the scope of
       LFS.</para>
       <para>The name of the device node for a partition in
-      <filename class='directory'>/dev</filename> may also change (this is less
-      likely than a GRUB designator change).  You can also replace
-      paths to device nodes like <literal>/dev/sda1</literal> with
+      <filename class='directory'>/dev</filename> may also change (very
+      frequently on some systems with multiple NVME disks).  You can also
+      replace paths to device nodes like <literal>/dev/sda1</literal> with
       <literal>PARTUUID=<replaceable>&lt;partition UUID&gt;</replaceable></literal>,
       in <filename>/etc/fstab</filename>, to avoid a potential boot failure
       in case the device node name has changed.</para>
