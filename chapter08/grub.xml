@@ -25,15 +25,11 @@
 
     <para>The GRUB package contains the GRand Unified Bootloader.</para>
 
-    <note><para>This page is split up into multiple sections aimed to install
-    for a specific boot method (BIOS, 64-bit UEFI, and 32-bit UEFI). GRUB
-    cannot be built with all the boot method architectures at once.</para>
-    <para>You may skip other sections to go to the boot method you need. If in
-    doubt, you may follow all of the sections at the cost of extra build time.
-    After you have installed support for your boot method, then continue
-    building the rest of the packages in this chapter. Making your LFS system
-    bootable with GRUB will be discussed in <xref linkend="ch-bootable-grub"
-    role='.'/></para></note>
+    <note><para>The instruction for this package assumes your system
+    utilizes the UEFI firmware.  Otherwise your may have to configure
+    GRUB differently (or GRUB may not work for the system at all), and
+    you may need to figure out how to boot the LFS system on your
+    own.</para></note>
 
     <warning>
       <para>Unset any environment variables which may affect the build:</para>
@@ -59,158 +55,34 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of GRUB for BIOS</title>
+    <title>Installation of GRUB for UEFI</title>
 
-    <!-- See https://wiki.linuxfromscratch.org/lfs/ticket/5857. Remove this at
-    next grub version -->
-    <para>First fix a bug introduced in grub-2.14:</para>
-
-<screen><userinput remap="pre">sed 's/--image-base/--nonexist-linker-option/' -i configure</userinput></screen>
-
-    <para>Prepare GRUB for compilation:</para>
-
-<screen><userinput remap="configure">./configure --prefix=/usr     \
-            --sysconfdir=/etc \
-            --disable-efiemu  \
-            --disable-werror</userinput></screen>
-
-    <variablelist>
-      <title>The meaning of the new configure options:</title>
-
-      <varlistentry>
-        <term><parameter>--disable-werror</parameter></term>
-        <listitem>
-          <para>This allows the build to complete with warnings introduced
-          by more recent versions of Flex.</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--disable-efiemu</parameter></term>
-        <listitem>
-          <para>This option minimizes what is built by disabling a feature and
-          eliminating some test programs not needed for LFS.</para>
-        </listitem>
-      </varlistentry>
-
-    </variablelist>
-
-    <para>Compile the package:</para>
-
-<screen><userinput remap="make">make</userinput></screen>
-
-    <para>The test suite for this packages is not recommended.  Most of
-    the tests depend on packages that are not available in the limited
-    LFS environment. To run the tests anyway, run <command>make check</command>.</para>
-
-    <para>Install the package:</para>
-
-    <screen><userinput remap="install">make install</userinput></screen>
-
-  </sect2>
-
-  <sect2 role="installation">
-    <title>Installation of GRUB for 64-bit UEFI</title>
-
-    <para>If you want to boot with 64-bit UEFI, you should build support for
-    it.</para>
-
-    <para>First, if you built GRUB from any of the sections above,
-    clean the source tree:</para>
-
-<screen><userinput remap="pre">make clean</userinput></screen>
-
-    <para>Fix a bug introduced in grub-2.14:</para>
-
-<screen><userinput remap="pre">sed 's/--image-base/--nonexist-linker-option/' -i configure</userinput></screen>
-
-    <para>Now configure GRUB for 64-bit UEFI support:</para>
+    <para>Now configure GRUB for UEFI support:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr       \
             --sysconfdir=/etc   \
-            --target=x86_64     \
             --with-platform=efi \
             --disable-efiemu    \
             --disable-werror</userinput></screen>
 
     <variablelist>
       <title>The meaning of the new configure options:</title>
-
-      <varlistentry>
-        <term><parameter>--target=x86_64</parameter></term>
-        <listitem>
-          <para>This defines that the UEFI firmware architecture is x86_64,
-          which GRUB should target.</para>
-        </listitem>
-      </varlistentry>
 
       <varlistentry>
         <term><parameter>--with-platform=efi</parameter></term>
         <listitem>
-          <para>This specifies that EFI is a platform GRUB should target.
-          In combination with <parameter>--target=x86_64</parameter>, GRUB will
-          have the ability to target the <literal>x86_64-efi</literal>
-          platform.</para>
+          <para>This specifies that EFI is a platform GRUB should
+          target.</para>
         </listitem>
       </varlistentry>
 
     </variablelist>
 
-    <para>Compile the package for 64-bit UEFI support:</para>
+    <para>Compile the package for UEFI support:</para>
 
 <screen><userinput remap="make">make</userinput></screen>
 
-    <para>Install support for 64-bit UEFI:</para>
-
-<screen><userinput remap="install">make install</userinput></screen>
-
-  </sect2>
-
-  <sect2 role="installation">
-    <title>Installation of GRUB for 32-bit UEFI</title>
-
-    <para>If you want to boot with 32-bit UEFI, which is very rare, you should
-    build support for it.</para>
-
-    <para>First, if you built GRUB from any of the sections above,
-    clean the source tree:</para>
-
-<screen><userinput remap="pre">make clean</userinput></screen>
-
-    <para>Fix a bug introduced in grub-2.14:</para>
-
-<screen><userinput remap="pre">sed 's/--image-base/--nonexist-linker-option/' -i configure</userinput></screen>
-
-    <para>Now configure GRUB for 32-bit UEFI support:</para>
-
-<screen><userinput remap="configure">./configure --prefix=/usr       \
-            --sysconfdir=/etc   \
-            --target=i386       \
-            --with-platform=efi \
-            --disable-efiemu    \
-            --disable-werror</userinput></screen>
-
-    <variablelist>
-      <title>The meaning of the new configure options:</title>
-
-      <varlistentry>
-        <term><parameter>--target=i386</parameter></term>
-        <listitem>
-          <para>This defines that the UEFI firmware architecture is
-          i386/32-bit, which GRUB should target. In combination with
-          <parameter>--with-platform=efi</parameter>, GRUB will
-          have the ability to target the <literal>i386-efi</literal>
-          platform.</para>
-        </listitem>
-      </varlistentry>
-
-    </variablelist>
-
-    <para>Compile the package for 32-bit UEFI support:</para>
-
-<screen><userinput remap="make">make</userinput></screen>
-
-    <para>Install support for 32-bit UEFI:</para>
+    <para>Install support for UEFI:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
 
@@ -238,12 +110,6 @@
         is first run)</seg>
       </seglistitem>
     </segmentedlist>
-
-    <note><para>
-      <filename class="directory">/usr/lib/grub</filename> will have different
-      contents based on what platform(s) you have installed GRUB for. Namely,
-      there will be different GRUB modules for each platform.
-    </para></note>
 
     <variablelist>
       <bridgehead renderas="sect3">Short Descriptions</bridgehead>
