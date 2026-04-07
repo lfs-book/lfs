@@ -69,6 +69,24 @@ EOF</userinput></screen>
   the kernel to convert the file names using UTF-8 so they can be
   interpreted in the UTF-8 locale.</para>
 
+  <para>
+    When booting with UEFI, the ESP must be formatted as a FAT filesystem, most
+    commonly VFAT. This file sees it as VFAT regardless. An example of how you
+    would go about an entry for the ESP would look like this:
+  </para>
+
+<screen><userinput>cat &gt;&gt; /etc/fstab &lt;&lt; "EOF"
+<literal>/dev/<replaceable>&lt;zzz&gt;</replaceable>     /boot/efi    vfat     rw,relatime,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0 2</literal>
+EOF</userinput></screen>
+
+  <para>
+    The <literal>iso8859-1</literal> IO charset is used here since UEFI
+    firmware implementations search for <filename
+    class="directory">\EFI\BOOT\BOOT...EFI</filename>, which in a
+    case-sensitive environment would not be satisfied. So that charset is used
+    to ensure the EFI image can be found.
+  </para>
+
   <!--note>
     <para>In the latter case, the kernel emits the following message:</para>
 
@@ -107,4 +125,5 @@ EOF</userinput></screen>
   <para>Note: Logical Volume Management (LVM) based partitions cannot use the
   <option>barrier</option> option.</para>
 -->
+
 </sect1>
