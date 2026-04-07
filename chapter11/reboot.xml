@@ -95,7 +95,6 @@
         <listitem><para>/etc/resolv.conf
           <phrase revision='systemd'>(optional)</phrase></para></listitem>
         <listitem><para>/etc/vimrc                   </para></listitem>
-        <listitem revision="openrc"><para>/etc/sysconfig/ifconfig.eth0</para></listitem>
       </itemizedlist>
     </listitem>
   </itemizedlist>
