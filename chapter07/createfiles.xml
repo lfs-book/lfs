@@ -223,9 +223,10 @@ chmod -v 600  /var/log/btmp</userinput></screen>
 
   <note><para>The <filename>/run/utmp</filename> file
   records the users that are currently logged in.
-  <phrase revision='openrc'>This file is created dynamically in the boot
-  scripts.</phrase><phrase revision='systemd'>This file is created
-  dynamically when a user logs into the system.</phrase></para></note>
+  This file is created dynamically
+  <phrase revision='openrc'>by the OpenRC services.</phrase>
+  <phrase revision='systemd'>when a user logs into the system.</phrase>
+  </para></note>
 
   <!-- AFAIK they are not vital for system function, users requiring such
        info should rely on systemd-logind or elogind or some custom PAM
