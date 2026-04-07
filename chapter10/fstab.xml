@@ -99,10 +99,14 @@ EOF</userinput></screen>
 EOF</userinput></screen>
 
   <para>
-    The <literal>iso8859-1</literal> IO charset is used here since UEFI
-    firmware implementations search for <filename
-    class="directory">\EFI\BOOT\BOOT...EFI</filename>, which in a
-    case-sensitive environment would not be satisfied. 
+    The <literal>iso8859-1</literal> IO charset is used here as we'll
+    enable it as a part of the kernel UEFI configuration in
+    <xref linkend='ch-bootable-kernel'/>.  Technically the IO charset should
+    match your locale as we've discussed above.  However the name of all the
+    files in the ESP only contains 7-bit ASCII characters, so things will
+    be OK as long as the character set for your locale treats 7-bit ASCII
+    characters in the same way as ISO-8859-1.  For example, UTF-8 is such
+    a character set.
   </para>
 
   <note>
@@ -115,9 +119,9 @@ EOF</userinput></screen>
     </para>
   </note>
 
-    <para>In the latter case, the kernel emits the following message:</para>
+<!--<para>In the latter case, the kernel emits the following message:</para>
 
-<!--  <note>
+    <note>
 <screen><computeroutput>FAT: utf8 is not a recommended IO charset for FAT filesystems,
     filesystem will be case sensitive!</computeroutput></screen>
 
