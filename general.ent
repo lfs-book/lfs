@@ -26,8 +26,12 @@
 <!ENTITY short-version   "svn">    <!-- Used below in &blfs-book; -->
 <!ENTITY errata          "&lfs-root;lfs/errata/development/">
 ]]>
+<![ %openrc; [
+<!ENTITY short-version   "svn"> <!-- Used below in &blfs-book; -->
+<!ENTITY errata          "&lfs-root;lfs/errata/development/">
+]]>
 <![ %systemd; [
-<!ENTITY short-version  "systemd"> <!-- Used below in &blfs-book; -->
+<!ENTITY short-version   "systemd"> <!-- Used below in &blfs-book; -->
 <!ENTITY errata          "&lfs-root;lfs/errata/systemd/">
 ]]>
 <!ENTITY generic-version "development"> <!-- Used below in
@@ -39,6 +43,10 @@
 
 <![ %release; [
 <![ %sysv; [
+<!ENTITY version         "%relnum;">
+<!ENTITY short-version   "%relnum;">  <!-- Used below in &blfs-book; -->
+]]>
+<![ %openrc; [
 <!ENTITY version         "%relnum;">
 <!ENTITY short-version   "%relnum;">  <!-- Used below in &blfs-book; -->
 ]]>
@@ -78,12 +86,21 @@
 <![ %sysv; [
 <!ENTITY wget-list       "wget-list-sysv">
 ]]>
+<![ %openrc; [
+<!ENTITY wget-list       "wget-list-openrc">
+]]>
 <![ %systemd; [
 <!ENTITY wget-list       "wget-list-systemd">
 ]]>
 
 <!ENTITY lfs-root        "https://www.linuxfromscratch.org/">
+<![ %openrc; [
+<!ENTITY blfs-root       "&lfs-root;~zeckma/openrc/blfs/">
+]]>
 <!ENTITY blfs-root       "&lfs-root;blfs/">
+<![ %openrc; [
+<!ENTITY blfs-book       "&blfs-root;&short-version;/">
+]]>
 <!ENTITY blfs-book       "&blfs-root;view/&short-version;/">
 <!ENTITY faq-root        "&lfs-root;faq/">
 <!ENTITY hints-root      "&lfs-root;hints/downloads/files/">

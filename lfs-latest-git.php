@@ -140,6 +140,7 @@ if ( $package == "mpc"        ) $dirpath = "https://ftp.gnu.org/gnu/mpc";
 if ( $package == "mpfr"       ) $dirpath = "https://mpfr.loria.fr/mpfr-current";
 if ( $package == "ncurses"    ) $dirpath = "https://invisible-mirror.net/archives/ncurses";
 if ( $package == "ninja"      ) $dirpath = github("ninja-build/ninja");
+if ( $package == "openrc"     ) $dirpath = github("OpenRC/openrc");
 if ( $package == "openssl"    ) $dirpath = github("openssl/openssl");
 if ( $package == "packaging"  ) $dirpath = "https://pypi.org/rss/project/packaging/releases.xml";
 if ( $package == "pcre2"      ) $dirpath = github("PCRE2Project/pcre2");

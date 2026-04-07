@@ -10,7 +10,7 @@
 
   <title>Managing Devices</title>
 
-  <sect2 revision="sysv">
+  <sect2 revision="openrc,sysv">
 
     <title>Network Devices</title>
 
@@ -129,7 +129,7 @@
 
   </sect2>
 
-  <sect2 revision="sysv">
+  <sect2 revision="openrc,sysv">
 
     <title>CD-ROM Symlinks</title>
 

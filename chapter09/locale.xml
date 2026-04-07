@@ -127,7 +127,7 @@ EOF</userinput></screen>
   <para><phrase revision='systemd'>The login shells are often unaffected by
   the settings in <filename>/etc/locale.conf</filename>. </phrase>Create the
   <filename>/etc/profile</filename>
-  <phrase revision='sysv'>once the proper locale settings have been
+  <phrase revision='openrc,sysv'>once the proper locale settings have been
   determined to set the desired locale</phrase><phrase
   revision='systemd'>to read the locale settings from
   <filename>/etc/locale.conf</filename> and export them</phrase>,
@@ -158,7 +158,7 @@ fi
 # End /etc/profile</literal>
 EOF</userinput></screen>
 
-<screen revision="sysv"><userinput>cat &gt; /etc/profile &lt;&lt; "EOF"
+<screen revision="openrc,sysv"><userinput>cat &gt; /etc/profile &lt;&lt; "EOF"
 <literal># Begin /etc/profile
 
 for i in $(locale); do

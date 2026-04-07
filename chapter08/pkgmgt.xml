@@ -368,7 +368,7 @@ make DESTDIR=/usr/pkg/libfoo/1.1 install</userinput></screen>
     <filename>/etc/fstab</filename>,
     <filename>/etc/passwd</filename>,
     <filename>/etc/group</filename>,
-    <phrase revision="systemd">
+    <phrase revision="systemd,openrc">
       <filename>/etc/shadow</filename>, and
       <filename>/etc/ld.so.conf</filename>.
     </phrase>

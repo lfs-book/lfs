@@ -4,7 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../general.ent">
   %general-entities;
   <!-- Convenient entity for "Systemd" or "Udev" -->
-  <!ENTITY systemd-udev "<phrase revision='systemd'>Systemd</phrase><phrase revision='sysv'>Udev</phrase>">
+  <!ENTITY systemd-udev "<phrase revision='systemd'>Systemd</phrase><phrase revision='openrc,sysv'>Udev</phrase>">
   <!ENTITY bdb "<ulink url='https://www.oracle.com/database/technologies/related/berkeleydb.html'>Berkeley DB</ulink>">
 ]>
 
@@ -2414,6 +2414,46 @@
         </seglistitem>
       </segmentedlist>
 
+<!-- Begin OpenRC dependency info -->                                      
+  <bridgehead renderas="sect2" id="openrcinit-dep" revision='openrc'>OpenRC</bridgehead>
+ 
+      <segmentedlist id="openrcinit-depends" revision='openrc'>                           
+        <segtitle>&dependencies;</segtitle>                                               
+        <seglistitem>                                                                     
+          <seg>Binutils, GCC, Glibc, Meson, Ninja, and Psmisc</seg>                       
+        </seglistitem>                                                                    
+      </segmentedlist>                                                                    
+                                                                                          
+      <segmentedlist id="openrcinit-rundeps" revision='openrc'>                           
+        <segtitle>&runtime;</segtitle>                                                    
+        <seglistitem>                                                                     
+          <seg>Glibc</seg>                                                                
+        </seglistitem>                                                                    
+      </segmentedlist>                                                                    
+                                                                                          
+      <segmentedlist id="openrcinit-testdeps" revision='openrc'>                          
+        <segtitle>&testsuites;</segtitle>                                                 
+        <seglistitem>                                                                     
+          <seg>Bash, Meson, and Ninja</seg>                                    
+        </seglistitem>                                                     
+      </segmentedlist>                                                          
+                                                                              
+      <segmentedlist id="openrcinit-before" revision='openrc'>              
+        <segtitle>&before;</segtitle>                                         
+        <seglistitem>                                           
+          <seg>None</seg>                                       
+        </seglistitem>                                                  
+      </segmentedlist>                                                      
+                                                                       
+      <segmentedlist id="openrcinit-optdeps" revision='openrc'>                
+        <segtitle>&external;</segtitle>                                       
+        <seglistitem>                                           
+          <seg>                                                 
+            <ulink url="&blfs-book;postlfs/linux-pam.html">Linux-PAM</ulink>
+          </seg>                                                            
+        </seglistitem>                                                      
+      </segmentedlist>
+
 <!-- Begin OpenSSL dependency info -->
   <bridgehead renderas="sect2" id="openssl-dep">OpenSSL</bridgehead>
 
@@ -2666,7 +2706,7 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, GCC, Glibc, Make, Ncurses,
-          <phrase revision='sysv'>and </phrase>Pkgconf<phrase
+          <phrase revision='openrc,sysv'>and </phrase>Pkgconf<phrase
           revision='systemd'>, and Systemd</phrase></seg>
         </seglistitem>
       </segmentedlist>
@@ -2697,7 +2737,7 @@
         <seglistitem>
           <seg>
             <phrase revision='systemd'>None</phrase>
-            <phrase revision='sysv'>
+            <phrase revision='openrc,sysv'>
               <ulink url='&blfs-book;general/elogind.html'>elogind</ulink>
             </phrase>
           </seg>
@@ -2990,37 +3030,37 @@
       </segmentedlist>
 
 <!-- Begin Sysklogd dependency info -->
-  <bridgehead renderas="sect2" id="sysklogd-dep" revision="sysv">Sysklogd</bridgehead>
+  <bridgehead renderas="sect2" id="sysklogd-dep" revision="openrc,sysv">Sysklogd</bridgehead>
 
-      <segmentedlist id="sysklogd-depends" revision="sysv">
+      <segmentedlist id="sysklogd-depends" revision="openrc,sysc">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Binutils, Coreutils, GCC, Glibc, Make, and Patch</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="sysklogd-rundeps" revision="sysv">
+      <segmentedlist id="sysklogd-rundeps" revision="openrc,sysv">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
           <seg>Glibc</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="sysklogd-testdeps" revision="sysv">
+      <segmentedlist id="sysklogd-testdeps" revision="openrc,sysv">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
           <seg>No test suite available</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="sysklogd-before" revision="sysv">
+      <segmentedlist id="sysklogd-before" revision="openrc,sysv">
         <segtitle>&before;</segtitle>
         <seglistitem>
           <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="sysklogd-optdeps" revision="sysv">
+      <segmentedlist id="sysklogd-optdeps" revision="openrc,sysv">
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>None</seg>
@@ -3124,44 +3164,6 @@
             and
             <ulink url="&blfs-book;postlfs/zsh.html">zsh</ulink>
           </seg>
-        </seglistitem>
-      </segmentedlist>
-
-<!-- Begin SysVinit dependency info -->
-  <bridgehead renderas="sect2" id="sysvinit-dep" revision='sysv'>SysVinit</bridgehead>
-
-      <segmentedlist id="sysvinit-depends" revision='sysv'>
-        <segtitle>&dependencies;</segtitle>
-        <seglistitem>
-          <seg>Binutils, Coreutils, GCC, Glibc, Make, and Sed</seg>
-        </seglistitem>
-      </segmentedlist>
-
-      <segmentedlist id="sysvinit-rundeps" revision='sysv'>
-        <segtitle>&runtime;</segtitle>
-        <seglistitem>
-          <seg>Glibc</seg>
-        </seglistitem>
-      </segmentedlist>
-
-      <segmentedlist id="sysvinit-testdeps" revision='sysv'>
-        <segtitle>&testsuites;</segtitle>
-        <seglistitem>
-          <seg>No test suite available</seg>
-        </seglistitem>
-      </segmentedlist>
-
-      <segmentedlist id="sysvinit-before" revision='sysv'>
-        <segtitle>&before;</segtitle>
-        <seglistitem>
-          <seg>None</seg>
-        </seglistitem>
-      </segmentedlist>
-
-      <segmentedlist id="sysvinit-optdeps" revision='sysv'>
-        <segtitle>&external;</segtitle>
-        <seglistitem>
-          <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -3284,9 +3286,9 @@
       </segmentedlist>
 
 <!-- Begin Udev dependency info -->
-  <bridgehead renderas="sect2" id="udev-dep" revision="sysv">Udev</bridgehead>
+  <bridgehead renderas="sect2" id="udev-dep" revision="openrc,sysv">Udev</bridgehead>
 
-      <segmentedlist id="udev-depends" revision="sysv">
+      <segmentedlist id="udev-depends" revision="openrc,sysv">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
          <seg>Acl, Bash, Binutils, Coreutils, Diffutils, Gawk,
@@ -3295,28 +3297,28 @@
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="udev-rundeps" revision="sysv">
+      <segmentedlist id="udev-rundeps" revision="openrc,sysv">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
           <seg>Acl, Glibc, Libcap, OpenSSL, and Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="udev-testdeps" revision="sysv">
+      <segmentedlist id="udev-testdeps" revision="openrc,sysv">
         <segtitle>&testsuites;</segtitle>
         <seglistitem>
           <seg>None</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="udev-before" revision="sysv">
+      <segmentedlist id="udev-before" revision="openrc,sysv">
         <segtitle>&before;</segtitle>
         <seglistitem>
           <seg>Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="udev-optdeps" revision="sysv">
+      <segmentedlist id="udev-optdeps" revision="openrc,sysv">
         <segtitle>&external;</segtitle>
         <seglistitem>
           <seg>None</seg>

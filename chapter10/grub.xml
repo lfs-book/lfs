@@ -294,8 +294,8 @@ insmod efi_uga
 
 set gfxpayload=1024x768x32
 
-menuentry "GNU/Linux, Linux &linux-version;-lfs-&version;" {
-        linux   /boot/vmlinuz-&linux-version;-lfs-&version; root=/dev/sda2 ro
+menuentry "GNU/Linux, Linux &linux-version;" {
+        linux   /boot/vmlinuz-&linux-version; root=/dev/sda2 ro
 }</literal>
 EOF</userinput></screen>
 <!-- GOP is probably not needed anyhow, since we're not using terminal_output

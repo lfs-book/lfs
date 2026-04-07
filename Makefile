@@ -15,8 +15,10 @@ ifndef REV
 endif
 
 ifneq ($(REV), systemd)
-  ifneq ($(REV), sysv)
-    $(error REV must be 'systemd' (default) or 'sysv'.)
+  ifneq ($(REV), openrc)
+    ifneq ($(REV), sysv)
+      $(error REV must be 'systemd' (default), 'openrc', or 'sysv'.)
+    endif
   endif
 endif
 
@@ -25,6 +27,12 @@ ifeq ($(REV), systemd)
   PDF_OUTPUT      ?= MLFS.pdf
   NOCHUNKS_OUTPUT ?= MLFS.html
   DUMPDIR         ?= $(HOME)/mlfs-commands
+endif
+ifeq ($(REV), openrc)
+  BASEDIR         ?= $(HOME)/public_html/mlfs-openrc
+  PDF_OUTPUT      ?= MLFS-OPENRC.pdf
+  NOCHUNKS_OUTPUT ?= MLFS-OPENRC.html
+  DUMPDIR         ?= $(HOME)/mlfs-openrc-commands
 endif
 ifeq ($(REV), sysv)
   BASEDIR         ?= $(HOME)/public_html/mlfs-sysv

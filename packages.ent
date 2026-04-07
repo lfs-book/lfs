@@ -553,6 +553,14 @@
 <!ENTITY ninja-fin-du "43 MB">
 <!ENTITY ninja-fin-sbu "0.2 SBU">
 
+<!ENTITY openrc-version "0.63">
+<!ENTITY openrc-size "260 KB">
+<!ENTITY openrc-url "&github;/OpenRC/openrc/archive/&openrc-version;/openrc-&openrc-version;.tar.gz">
+<!ENTITY openrc-md5 "f73566fc120e19e5a96fb0134cbb5ac8">
+<!ENTITY openrc-home "https://wiki.gentoo.org/wiki/OpenRC">
+<!ENTITY openrc-fin-du "13 MB">
+<!ENTITY openrc-fin-sbu "0.1 SBU">
+
 <!ENTITY openssl-version "3.6.1">
 <!ENTITY openssl-size "53,606 KB">
 <!ENTITY openssl-url "&github;/openssl/openssl/releases/download/openssl-&openssl-version;/openssl-&openssl-version;.tar.gz">
@@ -763,13 +771,22 @@
 <!ENTITY tzdata-md5 "09a2e016d36a4c7136475dd75acd4dbc">
 <!ENTITY tzdata-home "https://www.iana.org/time-zones">
 
+<![ %openrc; [
+<!ENTITY udev-lfs-version "udev-lfs-20251217">
+<!ENTITY udev-lfs-size    "12 KB">
+<!ENTITY udev-lfs-url     "&lfs-root;~zeckma/&udev-lfs-version;.tar.xz">
+<!ENTITY udev-lfs-md5     "0f800adc86b5c96897575d7ce440dab6">
+<!ENTITY udev-lfs-home    " ">
+<!ENTITY udev-fin-du      "162 MB">
+<!ENTITY udev-fin-sbu     "0.1 SBU">
+]]>
 <!ENTITY udev-lfs-version "udev-lfs-20230818">
 <!ENTITY udev-lfs-size    "10 KB">
 <!ENTITY udev-lfs-url     "&anduin-sources;/&udev-lfs-version;.tar.xz">
 <!ENTITY udev-lfs-md5     "acd4360d8a5c3ef320b9db88d275dae6">
 <!ENTITY udev-lfs-home    " ">
-<!ENTITY udev-fin-du "162 MB">
-<!ENTITY udev-fin-sbu "0.1 SBU">
+<!ENTITY udev-fin-du      "162 MB">
+<!ENTITY udev-fin-sbu     "0.1 SBU">
 
 <!ENTITY util-linux-minor "2.41">
 <!ENTITY util-linux-version "2.41.3"> <!-- 2.41.x -->

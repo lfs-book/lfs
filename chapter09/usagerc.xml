@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-config-usage" revision="openrc">
+  <?dbhtml filename="usage.html"?>
+
+  <title>OpenRC Usage and Configuration</title>
+
+  <indexterm zone="ch-config-usage">
+    <primary sortas="a-Usage">Usage</primary>
+    <secondary>usage</secondary>
+  </indexterm>
+
+  <sect2>
+    <title>How Does OpenRC Work?</title>
+
+    <para>This version of LFS uses a special booting facility named OpenRC,
+    which starts services according to a series of <emphasis>run
+    levels</emphasis>. These runlevels are slightly different from init systems
+    like SysVinit. While these runlevels exist, there is much less complexity
+    involved with OpenRC services. The process doesn't require
+    bootscripts.</para>
+  
+    <para>There is an alternative boot procedure called
+    <command>systemd</command>. We will not discuss that boot process any
+    further here. For a detailed description visit <ulink
+    url="https://www.linux.com/training-tutorials/understanding-and-using-systemd/"/>.</para>
+
+    <para>OpenRC's run level scheme has five run levels that are the most
+    important, with the ability to add more.
+    Each one of the five corresponds to certain modes the computer is in, like
+    if it's booting, shutting down, or has no networking. Here are the
+    descriptions of the different run levels as they are implemented in LFS:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>
+          sysinit: brings up and mounts kernel virtual filesystems
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          boot: starts up important services like setting the time and checks
+          the filesystem
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          nonetwork: default without networking
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          default: where most services should be, like setting up audio
+          services
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          shutdown: kills all processes and remounts <filename
+          class="directory">/</filename> in read-only mode
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <para>
+      Each service has dependency information, so a service on a given run
+      level will be started at the correct time if it has correct dependency
+      information.
+    </para>
+
+  </sect2>
+
+  <sect2 id="conf-openrc" role="configuration">
+  <title>Configuring OpenRC</title>
+
+  <indexterm zone="conf-openrc">
+    <primary sortas="a-OpenRC">OpenRC</primary>
+    <secondary>configuring</secondary>
+  </indexterm>
+
+  <para>Whenever a system is started, <command>agetty</command> is ran for a
+  number of <literal>tty</literal> devices. OpenRC provides an
+  <command>agetty</command> service but doesn't start it for each
+  <literal>tty</literal> that's needed. Create and enable those
+  services:</para>
+
+<screen><userinput>rm -vf /etc/runlevels/default/agetty*
+for i in $(seq 1 6); do
+  ln -sfv agetty /etc/init.d/agetty.tty$i
+  rc-update add agetty.tty$i default
+done</userinput></screen>
+
+  <para>These <literal>tty</literal> services are started on the
+  <literal>default</literal> run level.</para>
+
+  </sect2>
+
+  <sect2 id="ch-config-udevd">
+    <title>Creating the Udevd Service</title>
+
+    <indexterm zone="ch-config-udevd">
+      <primary sortas="d-udevd">udevd</primary>
+    <secondary>configuring</secondary></indexterm>
+
+  <para>OpenRC doesn't ship services for <command>udevd</command>, leading to
+  kernel modules not being loaded. Create and enable them now:</para>
+
+<screen><userinput>cat &gt; /etc/init.d/udevd &lt;&lt; "EOF"
+<literal>#!/sbin/openrc-run
+# Starts the udevd daemon.
+# Authors: Zeckma - zeckma@linuxfromscratch.com
+# Version: LFS &version;
+
+description="starts the udevd daemon"
+
+command=/sbin/udevd
+command_background=yes
+pidfile="/run/${RC_SVCNAME}.pid"
+
+depend() {
+  after localnet
+  after modules
+}
+
+stop() {
+  ebegin "Stopping ${RC_SVCNAME}"
+  /bin/udevadm control --exit
+  eend $?
+}</literal>
+EOF
+
+cat &gt; /etc/init.d/udev-trigger &lt;&lt; "EOF"
+<literal>#!/sbin/openrc-run
+# Coldplugs devices and settles the udevd daemon.
+# Authors: Zeckma - zeckma@linuxfromscratch.com
+# Version: LFS &version;
+
+description="coldplugs devices"
+
+depend() {
+  after udevd
+  provides dev
+  keyword -shutdown
+}
+
+start() {
+  ebegin "Coldplugging devices"
+
+  /bin/udevadm trigger --action=add    --type=subsystems
+  /bin/udevadm trigger --action=add    --type=devices
+  /bin/udevadm trigger --action=change --type=devices
+
+# Wait for udevd to process the uevents we triggered
+  /bin/udevadm settle --timeout=5
+
+# If any LVM based partitions are on the system, ensure they
+# are activated so they can be used.
+  if [ -x /sbin/vgchange ]; then /sbin/vgchange -a y >/dev/null; fi
+}</literal>
+EOF
+
+for i in udev{d,-trigger}; do
+  chmod 755 /etc/init.d/$i
+  rc-update add $i sysinit
+done</userinput></screen>
+
+    <para>
+      These services should load most if not all modules automatically. If you
+      need to load a given module but it isn't being loaded, pass the module
+      name to the <filename>/etc/conf.d/modules</filename> configuration file.
+    </para>
+
+  </sect2>
+
+  <sect2 id="ch-config-sysklogd">
+    <title>Creating the Sysklogd Service</title>
+
+    <indexterm zone="ch-config-sysklogd">
+      <primary sortas="d-sysklogd">sysklogd</primary>
+    <secondary>configuring</secondary></indexterm>
+
+  <para>OpenRC doesn't ship a service for <command>syslogd</command>, leading
+  important messages not being captured. Create and enable the service for the
+  logger:</para>
+
+<screen><userinput>cat &gt; /etc/init.d/sysklogd &lt;&lt; "EOF"
+<literal>#!/sbin/openrc-run
+# Starts the sysklogd daemon.
+# Authors: Zeckma - zeckma@linuxfromscratch.com
+# Version: LFS &version;
+
+command=/sbin/syslogd
+pidfile="/run/${RC_SVCNAME}.pid"
+command_background=true
+command_args="-F ${sysklogd_options}"
+
+depend() {
+  need clock hostname
+  after root
+  provide logger
+}
+
+reload() {
+  ebegin "Reloading sysklogd"
+  start-stop-daemon --signal HUP --pidfile ${pidfile}
+  eend $?
+}</literal>
+EOF
+
+chmod 755 /etc/init.d/sysklogd
+rc-update add sysklogd boot</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="ch-config-clock">
+    <title>Configuring the System Clock</title>
+
+    <indexterm zone="ch-config-clock">
+      <primary sortas="d-setclock">setclock</primary>
+    <secondary>configuring</secondary></indexterm>
+
+  <para>OpenRC provides a <command>hwclock</command> service which reads from
+  the hardware clock. It then sets the time. This time is obtained from either
+  applying timezone data from <filename>/etc/localtime</filename>, or it simply
+  doesn't do anything and displays the time as-is. In order to know what to do
+  with the hardware time, it needs to decide whether the time is UTC or local.
+  It has no way to do this on its own, so a configuration file is needed.
+  OpenRC provides one already, and should be edited.</para>
+
+  <para>If you cannot remember whether or not the hardware clock is set to UTC,
+  find out by running the <userinput>hwclock --localtime --show</userinput>
+  command. This will display what the current time is according to the hardware
+  clock. If this time matches whatever your watch says, then the hardware clock is
+  set to local time. If the output from <command>hwclock</command> is not local
+  time, chances are it is set to UTC time. Verify this by adding or subtracting
+  the proper amount of hours for the timezone to the time shown by
+  <command>hwclock</command>. For example, if you are currently in the MST
+  timezone, which is also known as GMT -0700, add seven hours to the local
+  time.</para>
+
+  <para>Once you know the hardware time uses, edit
+  <filename>/etc/conf.d/hwclock</filename> as necessary. There are plenty of
+  comments explaining what to edit.</para>
+
+  </sect2>
+
+  <sect2 id="ch-config-console">
+  <?dbhtml filename="console.html"?>
+
+  <title>Configuring the Linux Console</title>
+
+  <indexterm zone="ch-config-console">
+    <primary sortas="d-console">console</primary>
+    <secondary>configuring</secondary>
+  </indexterm>
+
+  <para>This section discusses how to configure the
+  <command>consolefont</command> and <command>keymap</command> services that
+  set up the console font and keyboard map. If non-ASCII characters (e.g., the
+  copyright sign, the British pound sign, and the Euro symbol) will not be used
+  and the keyboard is a U.S. one, much of this section can be skipped. Without
+  the configuration files, the <command>consolefont</command> and
+  <command>keymap</command> services will use the defaults.</para>
+
+  <para>The <command>consolefont</command> service reads the
+  <filename>/etc/conf.d/consolefont</filename> file for configuration
+  information. Decide which screen font will be used. Search <filename
+  class="directory">/usr/share/consolefonts</filename> for valid fonts.</para>
+
+  <para>The <command>keymaps</command> service reads the
+  <filename>/etc/conf.d/keymaps</filename> file for configuration
+  information. Decide which keymap will be used. Various
+  language-specific HOWTOs can also help with this; see <ulink
+  url="https://tldp.org/HOWTO/HOWTO-INDEX/other-lang.html"/>. If still in
+  doubt, look in the <filename class="directory">/usr/share/keymaps</filename>
+  directory for valid keymaps.</para>
+
+  <para>For both <command>consolefont</command> and <command>keymaps</command>,
+  configuration files exist for both and have comments that give good
+  information about what to provide to each parameter.</para>
+
+  <!-- Added because folks keep posting their console file with X questions
+  to blfs-support list -->
+  <note>
+    <para>The configuration files for the console only control
+    the Linux text console localization. It has nothing to do with setting
+    the proper keyboard layout and terminal fonts in the X Window System, with
+    ssh sessions, or with a serial console.</para>
+  </note>
+
+  </sect2>
+
+  <sect2 id="ch-config-agetty">
+    <title>Configuring Agetty</title>
+
+    <para>
+      If you don't want the boot logs to be cleared on the first TTY, which
+      Agetty will clear them by default, add <option>--noclear</option> to
+      <literal>agetty_options</literal> in the
+      <filename>/etc/conf.d/agetty</filename> file.
+    </para>
+
+  </sect2>
+
+  <sect2 id="ch-config-rc">
+    <title>The rc.conf File</title>
+
+    <indexterm zone="ch-config-rc">
+      <primary sortas="a-rc.conf">rc.conf</primary>
+    </indexterm>
+
+    <para>The <filename>/etc/rc.conf</filename> file contains settings that
+    control how OpenRC starts and operates. For example, you can tell OpenRC to
+    start services in parallel, or you can specify what run level you want the
+    system to run at. In most cases, you won't need to edit this file.</para>
+
+  </sect2>
+
+  <sect2 id="ch-config-other-rc">
+    <title>Other OpenRC Configuration Files</title>
+
+    <para>Many other services have configuration files in <filename
+    class="directory">/etc/conf.d</filename> and should match the service name
+    found in <filename class="directory">/etc/init.d</filename>. If a service
+    gives you any trouble, there may be a configuration file for it
+    already, and should have comments provided.</para>
+
+  </sect2>
+</sect1>

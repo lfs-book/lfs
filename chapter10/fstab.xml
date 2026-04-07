@@ -38,7 +38,7 @@ cgroup2        /sys/fs/cgroup cgroup2  nosuid,noexec,nodev 0     0
 # End /etc/fstab</literal>
 EOF</userinput></screen>
 
-<screen revision="systemd"><userinput>cat &gt; /etc/fstab &lt;&lt; "EOF"
+<screen revision="systemd,openrc"><userinput>cat &gt; /etc/fstab &lt;&lt; "EOF"
 <literal># Begin /etc/fstab
 
 # file system  mount-point  type     options             dump  fsck

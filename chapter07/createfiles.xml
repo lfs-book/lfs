@@ -60,7 +60,7 @@ EOF</userinput></screen>
   <para>Create the <filename>/etc/passwd</filename> file by running the following
   command:</para>
 
-<screen revision="sysv"><userinput>cat &gt; /etc/passwd &lt;&lt; "EOF"
+<screen revision="openrc,sysv"><userinput>cat &gt; /etc/passwd &lt;&lt; "EOF"
 <literal>root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/dev/null:/usr/bin/false
 daemon:x:6:6:Daemon User:/dev/null:/usr/bin/false
@@ -92,7 +92,7 @@ EOF</userinput></screen>
   <para>Create the <filename>/etc/group</filename> file by running the following
   command:</para>
 
-<screen revision="sysv"><userinput>cat &gt; /etc/group &lt;&lt; "EOF"
+<screen revision="openrc,sysv"><userinput>cat &gt; /etc/group &lt;&lt; "EOF"
 <literal>root:x:0:
 bin:x:1:daemon
 sys:x:2:
@@ -168,8 +168,8 @@ EOF</userinput></screen>
   with a GID of 1 be present. The GID of 5 is widely used for the
   <systemitem class="groupname">tty</systemitem> group, and the number 5 is
   also used in <phrase revision="systemd">systemd</phrase>
-  <phrase revision="sysv"><filename>/etc/fstab</filename></phrase> for the
-  <systemitem class="filesystem">devpts</systemitem> filesystem.
+  <phrase revision="openrc,sysv"><filename>/etc/fstab</filename></phrase> for
+  the <systemitem class="filesystem">devpts</systemitem> filesystem.
   All other group names and GIDs can be chosen freely by the system
   administrator since well-written programs do not depend on GID numbers,
   but rather use the group's name.</para>
@@ -223,9 +223,11 @@ chmod -v 600  /var/log/btmp</userinput></screen>
 
   <note><para>The <filename>/run/utmp</filename> file
   records the users that are currently logged in.
-  <phrase revision='sysv'>This file is created dynamically in the boot
-  scripts.</phrase><phrase revision='systemd'>This file is created
-  dynamically when a user logs into the system.</phrase></para></note>
+  This file is created dynamically
+  <phrase revision='sysv'>in the boot scripts.</phrase>
+  <phrase revision='openrc'>by the OpenRC services.</phrase>
+  <phrase revision='systemd'>when a user logs into the system.</phrase>
+  </para></note>
 
   <!-- AFAIK they are not vital for system function, users requiring such
        info should rely on systemd-logind or elogind or some custom PAM

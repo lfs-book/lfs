@@ -201,11 +201,14 @@
       <systemitem class='filesystem'>tmpfs</systemitem> on /tmp to make
       access to temporary files faster.</para></listitem>
 
-      <listitem revision='systemd'><para>/tmp &ndash; By default, systemd
+      <listitem revision='systemd,openrc'><para>/tmp &ndash; By default,
+      <phrase revision="systemd">systemd</phrase>
+      <phrase revision="openrc">OpenRC</phrase>
       mounts a <systemitem class='filesystem'>tmpfs</systemitem> here.
+      <phrase revision="systemd">
       If you want to override that behavior, follow
       <xref linkend='systemd-no-tmpfs'/> when configuring the LFS
-      system.</para></listitem>
+      system.</phrase></para></listitem>
 
       <listitem><para>/usr/src &ndash; This partition is very
       useful for providing a location to store BLFS source files and

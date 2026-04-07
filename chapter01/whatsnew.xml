@@ -200,6 +200,9 @@
     <!--<listitem>
       <para>Ninja-&ninja-version;</para>
     </listitem>-->
+    <!--<listitem revision="openrc">
+      <para>OpenRC-&openrc-version;</para>
+    </listitem>-->
     <!--<listitem>
       <para>OpenSSL-&openssl-version;</para>
     </listitem>-->
@@ -242,7 +245,7 @@
     <listitem>
       <para>Sqlite-&sqlite-version;</para>
     </listitem>
-    <!--<listitem revision="sysv">
+    <!--<listitem revision="openrc,sysv">
       <para>Sysklogd-&sysklogd-version;</para>
     </listitem>-->
     <listitem revision="systemd">
@@ -263,7 +266,7 @@
     <listitem>
       <para>Tzdata-&tzdata-version;</para>
     </listitem>
-    <listitem revision="sysv">
+    <listitem revision="openrc,sysv">
       <para>Udev from Systemd-&systemd-version;</para>
     </listitem>
     <!--<listitem>

@@ -37,10 +37,20 @@
       </itemizedlist>
     </listitem>
 
-    Note:  If a change is only specific to sysv or systemd, then use
-    <listitem revision="sysv"> or <listitem revision="systemd"> as
+    Note:  If a change is only specific to one or two init systems, then use
+    <listitem revision="init-system1,init-system2"> or as
     appropriate for the entry or if needed the entire day's listitem.
     -->
+
+    <listitem>
+      <para>2026-04-06</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Provide OpenRC support (doesn't replace Systemd or
+          SysVinit).</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
     <listitem>
       <para>2026-04-04</para>
@@ -68,7 +78,7 @@
           <ulink url='&lfs-ticket-root;4500'>#4500</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to <phrase revision="sysv">Udev from</phrase>
+          <para>[bdubbs] - Update to <phrase revision="openrc,sysv">Udev from</phrase>
           systemd-260.1. Fixes
           <ulink url='&lfs-ticket-root;5890'>#5890</ulink>.</para>
         </listitem>
@@ -153,7 +163,7 @@
           <ulink url='&lfs-ticket-root;5883'>#5883</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to <phrase revision="sysv">Udev from</phrase>
+          <para>[bdubbs] - Update to <phrase revision="openrc,sysv">Udev from</phrase>
           systemd-259.5. Fixes
           <ulink url='&lfs-ticket-root;5879'>#5879</ulink>.</para>
         </listitem>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-system-openrc" role="wrap" revision="openrc">
+  <?dbhtml filename="openrc.html"?>
+
+  <sect1info condition="script">
+    <productname>openrc</productname>
+    <productnumber>&openrc-version;</productnumber>
+    <address>&openrc-url;</address>
+  </sect1info>
+
+  <title>OpenRC-&openrc-version;</title>
+
+  <indexterm zone="ch-system-openrc">
+    <primary sortas="a-OpenRC">OpenRC</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title/>
+
+    <para>The OpenRC package contains programs for controlling the startup,
+    running, and shutdown of the system.</para>
+
+    <segmentedlist>
+      <segtitle>&buildtime;</segtitle>
+      <segtitle>&diskspace;</segtitle>
+
+      <seglistitem>
+        <seg>&openrc-fin-sbu;</seg>
+        <seg>&openrc-fin-du;</seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of OpenRC</title>
+
+    <para>Fix a script to allow a normal installation:</para>
+
+<screen><userinput remap="pre">sed -i '/set -u/d' tools/meson_final.sh</userinput></screen>
+
+    <para>Prepare OpenRC for compilation:</para>
+
+<screen><userinput remap="configure">mkdir build
+cd    build
+
+meson setup --prefix=/usr       \
+            --buildtype=release \
+            -D pam=false ..</userinput></screen>
+
+    <variablelist>
+      <title>The meaning of the configure options:</title>
+
+      <varlistentry>
+        <term><parameter>-D pam=false</parameter></term>
+        <listitem>
+          <para>This disables needing Linux-PAM for the build, since it is not
+          installed yet.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+    <para>Compile the package:</para>
+
+<screen><userinput remap="make">ninja</userinput></screen>
+
+    <para>To run the tests, issue:</para>
+
+<screen><userinput remap="test">ninja test</userinput></screen>
+
+    <para>Install the package:</para>
+
+<screen><userinput remap="install">ninja install &amp;&amp;
+mv -v /sbin/rc-update /bin</userinput></screen>
+
+    <para>OpenRC provides <application>init</application> and other programs of
+    its own. However, the shorthands for them aren't created. Create the
+    symlinks:</para>
+
+<screen><userinput>for i in {init,shutdown}; do
+  ln -sv openrc-$i /sbin/$i
+done
+
+cat &gt; /sbin/poweroff &lt;&lt; "EOF"
+<literal>#!/bin/sh
+/sbin/shutdown --poweroff now</literal>
+EOF
+
+cat &gt; /sbin/reboot &lt;&lt; "EOF"
+<literal>#!/bin/sh
+/sbin/shutdown --reboot now</literal>
+EOF
+
+chmod 755 /sbin/poweroff /sbin/reboot</userinput></screen>
+
+  </sect2>
+
+  <sect2 id="contents-openrc" role="content">
+    <title>Contents of OpenRC</title>
+
+    <segmentedlist>
+      <segtitle>Installed programs</segtitle>
+      <segtitle>Installed libraries</segtitle>
+      <segtitle>Installed directories</segtitle>
+
+      <seglistitem>
+        <seg>
+          rc-status,
+          init (link to openrc-init),
+          openrc,
+          openrc-init,
+          openrc-run,
+          openrc-shutdown,
+          poweroff,
+          rc-service,
+          rc-sstat,
+          rc-update,
+          reboot,
+          shutdown (link to openrc-shutdown),
+          start-stop-daemon, and
+          supervise-daemon
+        </seg>
+        <seg>
+          libeinfo.so and
+          librc.so
+        </seg>
+        <seg>
+          /etc/conf.d,
+          /etc/init.d,
+          /etc/local.d,
+          /etc/runlevels,
+          /etc/sysctl.d,
+          /usr/libexec/rc, and
+          /usr/share/openrc
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="rc-status">
+        <term><command>rc-status</command></term>
+        <listitem>
+          <para>
+            Gives the status of a service
+          </para>
+          <indexterm zone="ch-system-openrc rc-status">
+            <primary sortas="b-rc-status">rc-status</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="init">
+        <term><command>init</command></term>
+        <listitem>
+          <para>
+            Is the first process to be started when the kernel has initialized
+            the hardware; it takes over the boot process and starts all the
+            services; symlink to <command>openrc-init</command>
+          </para>
+          <indexterm zone="ch-system-openrc init">
+            <primary sortas="b-init">init</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="openrc">
+        <term><command>openrc</command></term>
+        <listitem>
+          <para>
+            starts and stops services on a given runlevel
+          </para>
+          <indexterm zone="ch-system-openrc openrc">
+            <primary sortas="b-openrc">openrc</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="openrc-init">
+        <term><command>openrc-init</command></term>
+        <listitem>
+          <para>
+            Gets called from <command>init</command> and starts every service
+            as needed
+          </para>
+          <indexterm zone="ch-system-openrc openrc-init">
+            <primary sortas="b-openrc-init">openrc-init</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="openrc-run">
+        <term><command>openrc-run</command></term>
+        <listitem>
+          <para>
+            Allows using shell commands in a service file
+          </para>
+          <indexterm zone="ch-system-openrc openrc-run">
+            <primary sortas="b-openrc-run">openrc-run</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="openrc-shutdown">
+        <term><command>openrc-shutdown</command></term>
+        <listitem>
+          <para>
+            Brings the system down in a secure way, signaling all processes and
+            notifying all logged-in users
+          </para>
+          <indexterm zone="ch-system-openrc openrc-shutdown">
+            <primary sortas="b-openrc-shutdown">openrc-shutdown</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="poweroff">
+        <term><command>poweroff</command></term>
+        <listitem>
+          <para>
+            Calls <command>openrc-shutdown</command> with
+            <parameter>--poweroff</parameter>, stopping all services and
+            processes before shutting down the system
+          </para>
+          <indexterm zone="ch-system-openrc poweroff">
+            <primary sortas="b-poweroff">poweroff</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="rc-service">
+        <term><command>rc-service</command></term>
+        <listitem>
+          <para>
+            Runs a given service after locating it
+          </para>
+          <indexterm zone="ch-system-openrc rc-service">
+            <primary sortas="b-rc-service">rc-service</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="rc-sstat">
+        <term><command>rc-sstat</command></term>
+        <listitem>
+          <para>
+            Gives the status of the most crucial services, followed by normal
+            services
+          </para>
+          <indexterm zone="ch-system-openrc rc-sstat">
+            <primary sortas="b-rc-sstat">rc-sstat</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="rc-update">
+        <term><command>rc-update</command></term>
+        <listitem>
+          <para>
+            Adds and removes services on a runlevel
+          </para>
+          <indexterm zone="ch-system-openrc rc-update">
+            <primary sortas="b-rc-update">rc-update</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="reboot">
+        <term><command>reboot</command></term>
+        <listitem>
+          <para>
+            Calls <command>openrc-shutdown</command> with
+            <parameter>--reboot</parameter>, stopping all services and
+            processes before telling the system to reboot
+          </para>
+          <indexterm zone="ch-system-openrc reboot">
+            <primary sortas="b-reboot">reboot</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="shutdown">
+        <term><command>shutdown</command></term>
+        <listitem>
+          <para>
+            Is a symlink to <command>openrc-shutdown</command>
+          </para>
+          <indexterm zone="ch-system-openrc shutdown">
+            <primary sortas="b-shutdown">shutdown</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="start-stop-daemon">
+        <term><command>start-stop-daemon</command></term>
+        <listitem>
+          <para>
+            Starts or stops a daemon in a service file
+          </para>
+          <indexterm zone="ch-system-openrc start-stop-daemon">
+            <primary sortas="b-start-stop-daemon">start-stop-daemon</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="supervise-daemon">
+        <term><command>supervise-daemon</command></term>
+        <listitem>
+          <para>
+            Supervises a daemon in a service file
+          </para>
+          <indexterm zone="ch-system-openrc supervise-daemon">
+            <primary sortas="b-supervise-daemon">supervise-daemon</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libeinfo">
+        <term><filename class="libraryfile">libeinfo</filename></term>
+        <listitem>
+          <para>
+            Contains functions for outputting colored messages
+          </para>
+          <indexterm zone="ch-system-openrc libeinfo">
+            <primary sortas="c-libeinfo">libeinfo</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="librc">
+        <term><filename class="libraryfile">librc</filename></term>
+        <listitem>
+          <para>
+            Provides the core OpenRC functions
+          </para>
+          <indexterm zone="ch-system-openrc librc">
+            <primary sortas="c-librc">librc</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

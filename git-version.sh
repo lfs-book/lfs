@@ -1,30 +1,32 @@
 #!/bin/bash
 
-if [ "$1" = sysv ]; then
-    SYSV="INCLUDE"
-    SYSTEMD="IGNORE "
-elif [ "$1" = systemd ]; then
-    SYSV="IGNORE "
+if [ "$1" = systemd ]; then
     SYSTEMD="INCLUDE"
+    OPENRC="IGNORE"
+    SYSV="IGNORE"
+elif [ "$1" = openrc ]; then
+    SYSTEMD="IGNORE"
+    OPENRC="INCLUDE"
+    SYSV="IGNORE"
+elif [ "$1" = sysv ]; then
+    SYSTEMD="IGNORE"
+    OPENRC="IGNORE"
+    SYSV="INCLUDE"
 else
-    echo You must provide either \"sysv\" or \"systemd\" as argument
+    echo You must provide \"systemd\", \"openrc\", or \"sysv\" as an argument
     exit 1
 fi
 
-echo "<!ENTITY % sysv    \"$SYSV\">"     >  conditional.ent
-echo "<!ENTITY % systemd \"$SYSTEMD\">"  >> conditional.ent
+echo "<!ENTITY % systemd \"$SYSTEMD\">"  >  conditional.ent
+echo "<!ENTITY % openrc  \"$OPENRC\">"   >> conditional.ent
+echo "<!ENTITY % sysv    \"$SYSV\">"     >> conditional.ent
 
 if ! git status > /dev/null; then
     # Either it's not a git repository or git is unavailable.
     # Just workaround.
-    echo "<![ %sysv; ["                                    >  version.ent
-    echo "<!ENTITY version           \"unknown\">"         >> version.ent
-    echo "]]>"                                             >> version.ent
-    echo "<![ %systemd; ["                                 >> version.ent
-    echo "<!ENTITY version           \"unknown-systemd\">" >> version.ent
-    echo "]]>"                                             >> version.ent
-    echo "<!ENTITY releasedate       \"unknown\">"         >> version.ent
-    echo "<!ENTITY copyrightdate     \"1999-2023\">"       >> version.ent
+    echo "<!ENTITY version           \"unknown\">"   >  version.ent
+    echo "<!ENTITY releasedate       \"unknown\">"   >> version.ent
+    echo "<!ENTITY copyrightdate     \"1999-2023\">" >> version.ent
     exit 0
 fi
 
@@ -51,11 +53,6 @@ sha="$(git describe --abbrev=1 --always --exclude '*')"
 githash=$(echo -n "#" && echo -n "$sha")
 version="$githash"
 
-echo "<![ %sysv; ["                                        >  version.ent
-echo "<!ENTITY version           \"$version\">"            >> version.ent
-echo "]]>"                                                 >> version.ent
-echo "<![ %systemd; ["                                     >> version.ent
-echo "<!ENTITY version           \"$version\">"            >> version.ent
-echo "]]>"                                                 >> version.ent
+echo "<!ENTITY version           \"$version\">"            >  version.ent
 echo "<!ENTITY releasedate       \"$full_date\">"          >> version.ent
 echo "<!ENTITY copyrightdate     \"1999-$year\">"          >> version.ent
