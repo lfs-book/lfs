@@ -222,7 +222,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
       <note>
         <para>
           Some UEFI bootloaders, while rare, skip the hardcoded EFI path. Such
-          systems most of the time are old, like Lenevo ThinkPads or HP
+          systems most of the time are old, like Lenovo ThinkPads or HP
           desktops/laptops. When the boot entry is missing in the BIOS, you
           will need to install the BLFS package <ulink
           url="&blfs-book;postlfs/efibootmgr.html">efibootmgr</ulink> to create
