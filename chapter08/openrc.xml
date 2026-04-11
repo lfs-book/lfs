@@ -77,8 +77,33 @@ meson setup --prefix=/usr       \
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">ninja install &amp;&amp;
-mv -v /sbin/rc-update /bin</userinput></screen>
+<screen><userinput remap="install">DESTDIR=$PWD/DESTDIR ninja install
+
+mv -v DESTDIR/{s,}bin/rc-update
+mv -v DESTDIR/{s,}bin DESTDIR/usr
+install -vDm755 DESTDIR/usr/bin/*  -t /usr/bin/
+install -vDm755 DESTDIR/usr/sbin/* -t /usr/sbin/
+rm -rf DESTDIR/usr/{s,}bin
+
+for conf in DESTDIR/etc/conf.d/*; do
+  if [ ! -e /etc/conf.d/$(basename $conf) ]; then
+    install -vDm644 $conf -t /etc/conf.d/
+  fi
+  rm -f $conf
+done
+
+cp -vR DESTDIR/* /
+rm -rf DESTDIR</userinput></screen>
+
+    <note><para>
+      OpenRC by default reinstalls the configuration files for the base
+      services, meaning that if you have configured a service like
+      <literal>agetty</literal>, a normal installation would have reset the
+      configuration to the default. The above ensures that doesn't happen when
+      applicable. The <command>rc-update</command> under some circumstances is
+      meant to be ran as a normal user as well, so it should be in <filename
+      class="directory">/usr/bin</filename>.
+    </para></note>
 
     <para>OpenRC provides <application>init</application> and other programs of
     its own. However, the shorthands for them aren't created. Create the
