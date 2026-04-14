@@ -56,7 +56,7 @@ EOF</userinput></screen>
 NAME="Linux From Scratch"
 VERSION="MLFS &version;"
 ID=lfs
-PRETTY_NAME="Linux From Scratch &version;"
+PRETTY_NAME="Multilib Linux From Scratch &version;"
 VERSION_CODENAME="&lt;your name here&gt;"
 HOME_URL="&lfs-root;lfs/"
 RELEASE_TYPE="&os-release-type;"
