@@ -309,10 +309,10 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.1 SBU">
 
-<!ENTITY iana-etc-version "20260327">
+<!ENTITY iana-etc-version "20260409">
 <!ENTITY iana-etc-size "595 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "1f718e7cf1ff4e6a88d0139094391c53">
+<!ENTITY iana-etc-md5 "3a3f440e17b144dc5d71803450f6d7d4">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -381,10 +381,10 @@
 <!ENTITY lfs-bootscripts-cfg-du "BOOTSCRIPTS-INSTALL-KB KB">
 <!ENTITY lfs-bootscripts-cfg-sbu "less than 0.1 SBU">
 
-<!ENTITY libcap-version "2.77">
-<!ENTITY libcap-size "196 KB">
+<!ENTITY libcap-version "2.78">
+<!ENTITY libcap-size "197 KB">
 <!ENTITY libcap-url "&kernel;linux/libs/security/linux-privs/libcap2/libcap-&libcap-version;.tar.xz">
-<!ENTITY libcap-md5 "58048c92f90ef8513c17fb9c24c2c1bd">
+<!ENTITY libcap-md5 "0ff11419aa4813c0a0f84fe67bf3b39e">
 <!ENTITY libcap-home "https://sites.google.com/site/fullycapable/">
 <!ENTITY libcap-fin-du "3.1 MB">
 <!ENTITY libcap-fin-sbu "less than 0.1 SBU">
@@ -424,12 +424,12 @@
 <!ENTITY linux-major-version "6">
 <!ENTITY linux-minor-version "19">
 <!ENTITY linux-majmin-version "&linux-major-version;.&linux-minor-version;">
-<!ENTITY linux-patch-version "10">
+<!ENTITY linux-patch-version "12">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "152,478 KB">
+<!ENTITY linux-size "152,503 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "c8e125047844efc0f0e0286f6c212bac">
+<!ENTITY linux-md5 "1fba0c8f101a95ec82dbb864c5ef8be9">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -496,10 +496,10 @@
 <!ENTITY markupsafe-fin-du "692 KB">
 <!ENTITY markupsafe-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY meson-version "1.10.2">
-<!ENTITY meson-size "2,366 KB">
+<!ENTITY meson-version "1.11.0">
+<!ENTITY meson-size "2,404 KB">
 <!ENTITY meson-url "&github;/mesonbuild/meson/releases/download/&meson-version;/meson-&meson-version;.tar.gz">
-<!ENTITY meson-md5 "4fd98e2e682effec9e0339ea6912e0f9">
+<!ENTITY meson-md5 "6166c98e71b2525622d32078d970e66c">
 <!ENTITY meson-home "https://mesonbuild.com">
 <!ENTITY meson-fin-du "48 MB">
 <!ENTITY meson-fin-sbu "less than 0.1 SBU">
@@ -547,10 +547,10 @@
 <!ENTITY openrc-fin-du "13 MB">
 <!ENTITY openrc-fin-sbu "0.1 SBU">
 
-<!ENTITY openssl-version "3.6.1">
-<!ENTITY openssl-size "53,606 KB">
+<!ENTITY openssl-version "3.6.2">
+<!ENTITY openssl-size "53,627 KB">
 <!ENTITY openssl-url "&github;/openssl/openssl/releases/download/openssl-&openssl-version;/openssl-&openssl-version;.tar.gz">
-<!ENTITY openssl-md5 "589777dc85ebbfeca70161c0c384d572">
+<!ENTITY openssl-md5 "f27e8f53ac612bb0e3e781a45799fb90">
 <!ENTITY openssl-home "https://www.openssl-library.org/">
 <!ENTITY openssl-fin-du "981 MB">
 <!ENTITY openssl-fin-sbu "1.9 SBU">
@@ -622,19 +622,19 @@
 <!-- If python minor version changes, updates in python and
      meson pages will be needed: python3.6 and python3.6m -->
 
-<!ENTITY python-version "3.14.3">
+<!ENTITY python-version "3.14.4">
 <!ENTITY python-minor "3.14">
-<!ENTITY python-size "23,222 KB">
+<!ENTITY python-size "23,297 KB">
 <!ENTITY python-url "https://www.python.org/ftp/python/&python-version;/Python-&python-version;.tar.xz">
-<!ENTITY python-md5 "ef513dcb836d219ae0e2b16ac9c87d0f">
+<!ENTITY python-md5 "279d92a745927c3aa5fdf68ec0bfd638">
 <!ENTITY python-home "https://www.python.org/">
 <!ENTITY python-tmp-du "592 MB">
 <!ENTITY python-tmp-sbu "0.5 SBU">
 <!ENTITY python-fin-du "494 MB">
 <!ENTITY python-fin-sbu "2.6 SBU">
 <!ENTITY python-docs-url "https://www.python.org/ftp/python/doc/&python-version;/python-&python-version;-docs-html.tar.bz2">
-<!ENTITY python-docs-md5 "005159be74cf46222d6399fbc0fb0ada">
-<!ENTITY python-docs-size "10,609 KB">
+<!ENTITY python-docs-md5 "3f98bcb588db43de46d0bc2f7fd64789">
+<!ENTITY python-docs-size "10,708 KB">
 
 <!ENTITY readline-version "8.3">
 <!ENTITY readline-soversion "8.3"><!-- used for stripping -->
@@ -671,19 +671,19 @@
 <!ENTITY shadow-fin-du "115 MB">
 <!ENTITY shadow-fin-sbu "0.1 SBU">
 
-<!ENTITY sqlite-version "3510300">
-<!ENTITY sqlite-short-version "3.51.3">
+<!ENTITY sqlite-version "3530000">
+<!ENTITY sqlite-short-version "3.53.0">
 <!ENTITY sqlite-year "2026">
-<!ENTITY sqlite-size "3,134 KB">
+<!ENTITY sqlite-size "3,198 KB">
 <!ENTITY sqlite-url "https://sqlite.org/&sqlite-year;/sqlite-autoconf-&sqlite-version;.tar.gz">
-<!ENTITY sqlite-md5 "8cffdf75fb83add16322849f96e4a8a0">
+<!ENTITY sqlite-md5 "6bf921caeae35c9dfe4246fe6602dd9c">
 <!ENTITY sqlite-home "https://sqlite.org">
 <!ENTITY sqlite-fin-du "124 MB">
 <!ENTITY sqlite-fin-sbu "0.4 SBU">
 <!ENTITY sqlite-doc-version "&sqlite-version;">
-<!ENTITY sqlite-doc-size "6,090 KB">
+<!ENTITY sqlite-doc-size "6,168 KB">
 <!ENTITY sqlite-doc-url  "&anduin-sources;/sqlite-doc-&sqlite-doc-version;.tar.xz">
-<!ENTITY sqlite-doc-md5  "73294b0c21e669d17f5460979d336b63">
+<!ENTITY sqlite-doc-md5  "c48e893d936297169f0ca6fbebfc1d4a">
 
 <!ENTITY sysklogd-version "2.7.2">
 <!ENTITY sysklogd-size "474 KB">
@@ -757,20 +757,20 @@
 <!ENTITY udev-fin-du "162 MB">
 <!ENTITY udev-fin-sbu "0.1 SBU">
 
-<!ENTITY util-linux-minor "2.41">
-<!ENTITY util-linux-version "2.41.3"> <!-- 2.41.x -->
-<!ENTITY util-linux-size "9,246 KB">
+<!ENTITY util-linux-minor "2.42">
+<!ENTITY util-linux-version "2.42"> <!-- 2.41.x -->
+<!ENTITY util-linux-size "10,360 KB">
 <!ENTITY util-linux-url "&kernel;linux/utils/util-linux/v&util-linux-minor;/util-linux-&util-linux-version;.tar.xz">
-<!ENTITY util-linux-md5 "d2faa85303dea29e7f6ee40a9465e528">
+<!ENTITY util-linux-md5 "cfb34c0a81a9907f25130c2f731e7e0b">
 <!ENTITY util-linux-home "https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/">
 <!ENTITY util-linux-tmp-du "192 MB">
 <!ENTITY util-linux-tmp-sbu "0.2 SBU">
 <!ENTITY util-linux-fin-du "346 MB">
 <!ENTITY util-linux-fin-sbu "0.5 SBU">
 
-<!ENTITY vim-version "9.2.0272">
+<!ENTITY vim-version "9.2.0340">
 <!ENTITY vim-docdir "vim/vim92">
-<!ENTITY vim-size "19,382 KB">
+<!ENTITY vim-size "19,418 KB">
 <!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">
 <!-- N.B. LFS 9.0 uses
      https://github.com/vim/vim/archive/v8.1.1846/vim-8.1.1846.tar.gz
@@ -783,7 +783,7 @@
      release.  The "Next" button just sets "after=" in the URL.  For
      example, https://github.com/vim/vim/tags?after=v8.1.1847 will show
      us v8.1.1846. -->
-<!ENTITY vim-md5 "c6db78eac11e239eced9fcfb71647def">
+<!ENTITY vim-md5 "6cd90ffd56d8b291d99a271e908f3ce7">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "217 MB">
 <!ENTITY vim-fin-sbu "3.2 SBU">
@@ -796,10 +796,10 @@
 <!ENTITY wheel-fin-du "708 KB">
 <!ENTITY wheel-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY xml-parser-version "2.54">
-<!ENTITY xml-parser-size "311 KB">
+<!ENTITY xml-parser-version "2.57">
+<!ENTITY xml-parser-size "442 KB">
 <!ENTITY xml-parser-url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-&xml-parser-version;.tar.gz">
-<!ENTITY xml-parser-md5 "3728514fca7326f2fb16e70ab3e17d84">
+<!ENTITY xml-parser-md5 "7b146ba2a8e86d9b87ef568b2355ecc4">
 <!ENTITY xml-parser-home "&github;/chorny/XML-Parser">
 <!ENTITY xml-parser-fin-du "2.3 MB">
 <!ENTITY xml-parser-fin-sbu "less than 0.1 SBU">
