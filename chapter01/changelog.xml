@@ -44,6 +44,16 @@
       <para>2026-04-15</para>
       <itemizedlist>
         <listitem>
+          <para>[jlocash] - Update the Python-3.14.4 patch for 2 more issues (Security update). Addresses
+          <ulink url='&lfs-ticket-root;5910'>#5910</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2026-04-15</para>
+      <itemizedlist>
+        <listitem>
           <para>[bdubbs] - Update to meson-1.11.0. Fixes
           <ulink url='&lfs-ticket-root;5911'>#5911</ulink>.</para>
         </listitem>
