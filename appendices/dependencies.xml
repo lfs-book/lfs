@@ -1369,7 +1369,7 @@
         </seglistitem>
       </segmentedlist>
 
-<!-- Begin Intltool dependency info -->
+<!-- Begin Intltool dependency info 
   <bridgehead renderas="sect2" id="intltool-dep">Intltool</bridgehead>
 
       <segmentedlist id="intltool-depends">
@@ -1378,7 +1378,7 @@
           <seg>Bash, Gawk, Glibc, Make, Perl, Sed, and XML::Parser</seg>
         </seglistitem>
       </segmentedlist>
-
+-->
       <segmentedlist id="intltool-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
@@ -3463,7 +3463,7 @@
         </seglistitem>
       </segmentedlist>
 
-<!-- Begin XML::Parser dependency info -->
+<!-- Begin XML::Parser dependency info 
   <bridgehead renderas="sect2" id="xml-parser-dep">XML::Parser</bridgehead>
 
       <segmentedlist id="xml-parser-depends">
@@ -3473,7 +3473,7 @@
           Perl</seg>
         </seglistitem>
       </segmentedlist>
-
+-->
       <segmentedlist id="xml-parser-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
