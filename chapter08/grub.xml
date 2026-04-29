@@ -120,10 +120,6 @@
 
 <screen><userinput remap="pre">make clean</userinput></screen>
 
-    <para>Fix a bug introduced in grub-2.14:</para>
-
-<screen><userinput remap="pre">sed 's/--image-base/--nonexist-linker-option/' -i configure</userinput></screen>
-
     <para>Now configure GRUB for 64-bit UEFI support:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr       \
@@ -176,10 +172,6 @@
     clean the source tree:</para>
 
 <screen><userinput remap="pre">make clean</userinput></screen>
-
-    <para>Fix a bug introduced in grub-2.14:</para>
-
-<screen><userinput remap="pre">sed 's/--image-base/--nonexist-linker-option/' -i configure</userinput></screen>
 
     <para>Now configure GRUB for 32-bit UEFI support:</para>
 
