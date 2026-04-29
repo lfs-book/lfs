@@ -313,8 +313,8 @@ EOF</userinput></screen>
       <systemitem class='filesystem'>ext4</systemitem> filesystems.
       On UEFI systems, <filename>efi_gop</filename> and
       <filename>efi_uga</filename> are for video support. GOP, or Graphics
-      Output Protocol, is the modern approach. UGA, or UGA Draw Protocol, is
-      a legacy way of handling it.
+      Output Protocol, is the modern approach. UGA, or Universal Graphics
+      Adaptor, is a legacy way of handling it.
       In a typical configuration, the <filename>part_gpt</filename> and
       <filename>ext2</filename> modules are already embedded in
       the main GRUB image by <command>grub-install</command>, and the
