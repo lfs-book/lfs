@@ -261,7 +261,7 @@
        </listitem>
        
        <listitem>
-         <para>The swap partition must be formatted as swap.</para>
+         <para>The swap partition must be initialized.</para>
        </listitem>
        
        <listitem>
