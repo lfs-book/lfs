@@ -116,7 +116,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
       system to use that partition for
       <filename class="directory">/boot</filename> as well, just mount
       the partition at <filename class="directory">$LFS/boot</filename>
-      in the host distro. The Linux kernel supports mounting partitions
+      in the host distro. The Linux kernel supports mounting one partition
       at multiple mount points.</para>
     </note>
 
@@ -216,14 +216,15 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
         location would result in the location in a EFI variable be recorded,
         but LFS lacks the BLFS package <ulink
         url="&blfs-book;postlfs/efibootmgr.html">efibootmgr</ulink>, which is
-        needed to manipulate EFI variables.
+        needed by GRUB to record the location into the EFI variable.
       </para>
 
       <note>
         <para>
-          Some UEFI bootloaders, while rare, skip the hardcoded EFI path. Such
+          Some UEFI firmware implementations, while rare, skip the standard
+          EFI path. Such
           systems most of the time are old, like Lenovo ThinkPads or HP
-          desktops/laptops. When the boot entry is missing in the BIOS, you
+          desktops/laptops. When the boot entry is missing in the firmware setup, you
           will need to install the BLFS package <ulink
           url="&blfs-book;postlfs/efibootmgr.html">efibootmgr</ulink> to create
           a boot entry for UEFI. If it's easier, the package can be installed
@@ -244,9 +245,9 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
   -p <replaceable>&lt;y&gt;</replaceable> -L "LFS" -l '\EFI\BOOT\BOOT<replaceable>&lt;X64&gt;</replaceable>.EFI'</userinput></screen>
         <para>
           The <literal>/dev/sd<replaceable>&lt;x&gt;</replaceable></literal>
-          drive should match the one you are installing LFS onto. The
+          drive should be the device node for the disk where the ESP exists. The
           <replaceable>&lt;y&gt;</replaceable> partition number should match
-          the number which the ESP is mounted. If the ESP is on
+          the number of the ESP. If the ESP is on
           <literal>/dev/sda2</literal>, then the partition number would be
           <literal>2</literal>. If you are using 32-bit UEFI, replace
           <replaceable>&lt;X64&gt;</replaceable> with <literal>IA32</literal>.
@@ -313,8 +314,8 @@ EOF</userinput></screen>
       <systemitem class='filesystem'>ext4</systemitem> filesystems.
       On UEFI systems, <filename>efi_gop</filename> and
       <filename>efi_uga</filename> are for video support. GOP, or Graphics
-      Output Protocol, is the modern approach. UGA, or UGA Draw Protocol, is
-      a legacy way of handling it.
+      Output Protocol, is the modern approach. UGA, or Universal Graphics
+      Adaptor, is a legacy way of handling it.
       In a typical configuration, the <filename>part_gpt</filename> and
       <filename>ext2</filename> modules are already embedded in
       the main GRUB image by <command>grub-install</command>, and the
