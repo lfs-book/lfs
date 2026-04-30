@@ -53,9 +53,9 @@
     <!--<listitem>
       <para>Bzip2-&bzip2-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Coreutils-&coreutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>DejaGNU-&dejagnu-version;</para>
     </listitem>-->
@@ -122,9 +122,9 @@
     <listitem>
       <para>Iana-Etc-&iana-etc-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Inetutils-&inetutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Intltool-&intltool-version;</para>
     </listitem>-->
@@ -149,9 +149,9 @@
     <listitem>
       <para>Libcap-&libcap-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Libelf from Elfutils-&elfutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Libffi-&libffi-version;</para>
     </listitem>-->
@@ -179,9 +179,9 @@
     <!--<listitem>
       <para>Man-DB-&man-db-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Man-pages-&man-pages-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>MarkupSafe-&markupsafe-version;</para>
     </listitem>-->
@@ -203,9 +203,9 @@
     <listitem>
       <para>OpenSSL-&openssl-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Packaging-&packaging-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Patch-&patch-version;</para>
     </listitem>-->
@@ -230,9 +230,9 @@
     <!--<listitem>
       <para>Readline-&readline-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Sed-&sed-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Setuptools-&setuptools-version;</para>
     </listitem>
@@ -272,9 +272,9 @@
     <listitem>
       <para>Vim-&vim-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Wheel-&wheel-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>XML::Parser-&xml-parser-version;</para>
     </listitem>-->
