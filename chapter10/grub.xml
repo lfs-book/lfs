@@ -116,7 +116,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
       system to use that partition for
       <filename class="directory">/boot</filename> as well, just mount
       the partition at <filename class="directory">$LFS/boot</filename>
-      in the host distro. The Linux kernel supports mounting partitions
+      in the host distro. The Linux kernel supports mounting one partition
       at multiple mount points.</para>
     </note>
 
