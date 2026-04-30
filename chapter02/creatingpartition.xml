@@ -145,7 +145,7 @@
     <para>For Grub, the EFI System Partition should be located at
     <filename class="directory">/boot/efi</filename>.</para>
 
-    <para>A lot of UEFI systems have a Compatibility Support Mode (CSM) or
+    <para>A lot of UEFI systems have a Compatibility Support Module (CSM) or
     Legacy Boot option, allowing to boot with BIOS. It could be a good idea to
     create a Grub BIOS partition if your system supports CSM in case UEFI
     booting does not work as expected.</para>
@@ -244,11 +244,11 @@
 
        <listitem>
          <para>Both EFI and BIOS Boot partitions are present, although
-         only one will be used. Which is used depends on the system BIOS.
+         only one will be used. Which is used depends on the system firmware.
          If the system is old, it will not have UEFI capabilities at all.
-         Some later systems can disable UEFI through the BIOS by disabling
+         Some later systems can disable UEFI through the firmware setup by disabling
          "Secure Boot" and enabling "Legacy Support" or "CSM" (Compatibility
-         Support Mode).  If you know in advance which mode you will use,
+         Support Module).  If you know in advance which mode you will use,
          the other partition can be omitted.</para>
        </listitem>
 
@@ -261,7 +261,7 @@
        </listitem>
        
        <listitem>
-         <para>The swap partition must be formatted as swap.</para>
+         <para>The swap partition must be initialized.</para>
        </listitem>
        
        <listitem>
