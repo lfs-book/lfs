@@ -149,8 +149,9 @@
 <!ENTITY elfutils-fin-sbu "0.1 SBU">
 
 <!ENTITY expat-version "2.8.0">
+<!ENTITY expat-dl-version "2_8_0">
 <!ENTITY expat-size "500 KB">
-<!ENTITY expat-url "&github;/libexpat/libexpat/releases/download/R_2_7_5/expat-&expat-version;.tar.xz">
+<!ENTITY expat-url "&github;/libexpat/libexpat/releases/download/R_&expat-dl-version;/expat-&expat-version;.tar.xz">
 <!ENTITY expat-md5 "db797f9ddef94ddb1af5ae7db05710ce">
 <!ENTITY expat-home "https://libexpat.github.io/">
 <!ENTITY expat-fin-du "14 MB">
