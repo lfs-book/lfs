@@ -161,6 +161,13 @@
 
   </itemizedlist>
 
+  <para>
+    Additionally, if you need to create a new ESP (EFI System Partition
+    read <xref linkend='ch-partitioning-creatingfilesystem'/> for details),
+    <ulink url='&blfs-book;postlfs/dosfstools.html'>dosfstools</ulink> is
+    needed.
+  </para>
+
   <important>
     <para>Note that the symlinks mentioned above are required to build an LFS
     system using the instructions contained within this book. Symlinks that
