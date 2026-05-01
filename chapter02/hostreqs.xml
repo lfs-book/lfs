@@ -162,7 +162,7 @@
   </itemizedlist>
 
   <para>
-    Additionally, if you need to create a new ESP (EFI System Partition
+    Additionally, if you need to create a new ESP (EFI System Partition,
     read <xref linkend='ch-partitioning-creatingfilesystem'/> for details),
     <ulink url='&blfs-book;postlfs/dosfstools.html'>dosfstools</ulink> is
     needed.
