@@ -13,7 +13,7 @@ else
 endif
 
 ifndef REV
-  REV = sysv
+  REV = systemd
 endif
 
 ifneq ($(REV), sysv)
