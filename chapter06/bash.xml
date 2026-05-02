@@ -45,13 +45,29 @@
 
     <para>Prepare Bash for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr                      \
+<screen><userinput remap="configure">CC_FOR_BUILD="gcc -std=gnu17" \
+./configure --prefix=/usr                      \
             --build=$(sh support/config.guess) \
             --host=$LFS_TGT                    \
             --without-bash-malloc</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
+
+      <varlistentry>
+        <term><parameter>CC_FOR_BUILD="gcc -std=gnu17"</parameter></term>
+        <listitem>
+          <para>The build system needs to compile some code generators
+          with the C compiler of the host distro (as we've discussed in
+          <xref linkend='ch-tools-toolchaintechnotes'/> it's not possible to
+          use the stage 1 or 2 GCC of LFS for this purpose).  If the host
+          distro ships GCC 15 or newer, the default C standard would
+          be C23 with GNU extensions (or maybe even newer), with that the
+          <quote>legacy</quote> code in the generators is not compatible.
+          Explicitly specify C17 with GNU extensions to work around the
+          issue.</para>
+        </listitem>
+      </varlistentry>
 
       <varlistentry>
         <term><parameter>--without-bash-malloc</parameter></term>
