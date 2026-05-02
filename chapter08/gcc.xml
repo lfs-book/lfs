@@ -68,7 +68,7 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="configure">../configure --prefix=/usr            \
              LD=ld                    \
-             --enable-languages=c,c++ \
+             --enable-languages=c,c++,fortran \
              --enable-default-pie     \
              --enable-default-ssp     \
              --disable-multilib       \
