@@ -240,8 +240,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     directory (and its content) is incorrect.  Change the ownership to the
     <systemitem class="username">root</systemitem> user and group:</para>
 
-<screen><userinput remap="install">chown -v -R root:root \
-    /usr/lib/gcc/$(gcc -dumpmachine)/&gcc-version;/include{,-fixed}</userinput></screen>
+<screen><userinput remap="install">chown -v -R root:root $(gcc -print-file-name=include){,}</userinput></screen>
 
     <para>Create a symlink required by the <ulink
     url="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s09.html">FHS</ulink>
@@ -259,8 +258,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <para>Add a compatibility symlink to enable building programs with
     Link Time Optimization (LTO):</para>
 
-<screen><userinput remap="install">ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so \
-        /usr/lib/bfd-plugins/</userinput></screen>
+<screen><userinput remap="install">ln -sfvr $(gcc -print-prog-name=liblto_plugin.so) /usr/lib/bfd-plugins/</userinput></screen>
 
     <para>Now that our final toolchain is in place, it is important to again ensure
     that compiling and linking will work as expected. We do this by performing

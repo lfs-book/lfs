@@ -73,10 +73,11 @@
     <option>CONFIG_CRYPTO_AES_NI_INTEL</option> if the CPU supports AES-NI)
     enabled.  If it fails, it can safely be ignored.</para>
 
-    <para>Install the package:</para>
+    <para>Install the package (setting an empty
+    <envar>INSTALL_LIBS</envar> prevents the installation of static
+    libraries):</para>
 
-<screen><userinput remap="install">sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
-make MANSUFFIX=ssl install</userinput></screen>
+<screen><userinput remap="install">make INSTALL_LIBS= MANSUFFIX=ssl install</userinput></screen>
 
     <para>Add the version to the documentation directory name, to be
     consistent with other packages:</para>
