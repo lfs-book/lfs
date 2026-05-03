@@ -37,6 +37,9 @@
    <para>Earlier versions of the listed software packages may work, but have
    not been tested.</para>
 
+   <para>Host systems that have the newest set of software may cause issues
+   when building a cross toolchain.</para>
+
   <itemizedlist spacing="compact">
 
     <listitem>
