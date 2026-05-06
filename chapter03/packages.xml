@@ -120,6 +120,15 @@
     </varlistentry>
 
     <varlistentry>
+      <term>CMake (&cmake-version;) - <token>&cmake-size;</token>:</term>
+      <listitem>
+        <para>Home page: <ulink url="&cmake-home;"/></para>
+        <para>Download: <ulink url="&cmake-url;"/></para>
+        <para>MD5 sum: <literal>&cmake-md5;</literal></para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>Coreutils (&coreutils-version;) - <token>&coreutils-size;</token>:</term>
       <listitem>
         <para>Home page: <ulink url="&coreutils-home;"/></para>
