@@ -244,7 +244,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     directory (and its content) is incorrect.  Change the ownership to the
     <systemitem class="username">root</systemitem> user and group:</para>
 
-<screen><userinput remap="install">chown -v -R root:root $(gcc -print-file-name=include){,}</userinput></screen>
+<screen><userinput remap="install">chown -v -R root:root $(gcc -print-file-name=include){,-fixed}</userinput></screen>
 
     <para>Create a symlink required by the <ulink
     url="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s09.html">FHS</ulink>
