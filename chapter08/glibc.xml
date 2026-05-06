@@ -206,7 +206,8 @@ esac</userinput></screen>
         model (for example
         <emphasis>elf/tst-cpu-features-cpuinfo</emphasis>) or host kernel
         version (for example
-        <emphasis>stdlib/tst-arc4random-thread</emphasis>).</para>
+        <emphasis>stdlib/tst-arc4random-thread</emphasis>), or with a
+        host kernel newer than &linux-version;.</para>
       </listitem>
     </itemizedlist>
 
