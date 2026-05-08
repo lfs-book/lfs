@@ -37,6 +37,16 @@
    <para>Earlier versions of the listed software packages may work, but have
    not been tested.</para>
 
+   <warning><para>Be aware that GCC newer than &gcc-version; or Binutils
+   newer than &binutils-version; are not tested.  Especially, GCC newer than
+   &gcc-version; is expected to be highly likely to break the build of this
+   LFS release.  Do not report such a breakage to the LFS editors.  Try
+   reading a newer release of the LFS book (if one exists), or using an
+   older host distro, or downgrading GCC (if the host distro supports to do
+   so), or reading the latest LFS development book (if it still does not
+   support GCC &gcc-version; or newer, wait for the editors to update the
+   book for 2 or 4 weeks).</para></warning>
+
   <itemizedlist spacing="compact">
 
     <listitem>
@@ -46,7 +56,7 @@
 
     <listitem>
       <para><emphasis role="strong">Binutils-2.38</emphasis> (Versions
-      greater than &binutils-version; are not recommended as they have
+      greater than &binutils-version; may not work as they have
       not been tested)</para>
     </listitem>
 
@@ -75,8 +85,8 @@
 
     <listitem>
       <para><emphasis role="strong">GCC-12.2</emphasis> including the C++
-      compiler, <command>g++</command> (Versions greater than &gcc-version; are
-      not recommended as they have not been tested). C and C++ standard
+      compiler, <command>g++</command> (Versions greater than &gcc-version;
+      may not work as they have not been tested). C and C++ standard
       libraries (with headers) must also be present so the C++ compiler can
       build hosted programs</para>
     </listitem>
@@ -166,6 +176,13 @@
     </listitem>
 
   </itemizedlist>
+
+  <para>
+    Additionally, if you need to create a new ESP (EFI System Partition,
+    read <xref linkend='ch-partitioning-creatingfilesystem'/> for details),
+    <ulink url='&blfs-book;postlfs/dosfstools.html'>dosfstools</ulink> is
+    needed.
+  </para>
 
   <important>
     <para>Note that the symlinks mentioned above are required to build an LFS

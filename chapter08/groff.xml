@@ -53,9 +53,12 @@
 
 <screen><userinput remap="configure">PAGE=<replaceable>&lt;paper_size&gt;</replaceable> ./configure --prefix=/usr</userinput></screen>
 
+    <!-- It looks like the build system may run "tbl" before it's fully
+         linked, causing "permission denied" (because the linker only
+         sets the x bit of tbl when the link is done). -->
     <para>Build the package:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
+<screen><userinput remap="make">make -j1</userinput></screen>
 
     <para>To test the results, issue:</para>
 
