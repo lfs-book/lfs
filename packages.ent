@@ -211,10 +211,10 @@
 <!ENTITY gawk-fin-du "45 MB">
 <!ENTITY gawk-fin-sbu "0.2 SBU">
 
-<!ENTITY gcc-version "15.2.0">
-<!ENTITY gcc-size "98,688 KB">
+<!ENTITY gcc-version "16.1.0">
+<!ENTITY gcc-size "100,056 KB">
 <!ENTITY gcc-url "&gnu;gcc/gcc-&gcc-version;/gcc-&gcc-version;.tar.xz">
-<!ENTITY gcc-md5 "b861b092bf1af683c46a8aa2e689a6fd">
+<!ENTITY gcc-md5 "9b016416f8e2dce4a0ef8759d1936446">
 <!ENTITY gcc-home "https://gcc.gnu.org/">
 <!ENTITY gcc-tmpp1-du "5.4 GB">
 <!ENTITY gcc-tmpp1-sbu "3.8 SBU">
