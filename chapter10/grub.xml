@@ -47,7 +47,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
     To set up the boot process following the instructions in this section,
     Secure Boot must be turned off from the configuration interface of the
     firmware. Read the documentation provided by the manufacturer of your
-    system to find out how.</para>
+    system to find out how to turn off Secure Boot support.</para>
   </sect2>
 
   <sect2>
@@ -127,14 +127,15 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
         location would result in the location in a EFI variable be recorded,
         but LFS lacks the BLFS package <ulink
         url="&blfs-book;postlfs/efibootmgr.html">efibootmgr</ulink>, which is
-        needed to manipulate EFI variables.
+        needed by GRUB to record the location into the EFI variable.
       </para>
 
       <note>
         <para>
-          Some UEFI bootloaders, while rare, skip the hardcoded EFI path.<!-- Such
-          systems most of the time are old, like Lenevo ThinkPads or HP
-          desktops/laptops. -->When the boot entry is missing in the BIOS, you
+          Some UEFI firmware implementations, while rare, skip the standard
+          EFI path.<!-- Such
+          systems most of the time are old, like Lenovo ThinkPads or HP
+          desktops/laptops.--> When the boot entry is missing in the firmware setup, you
           will need to install the BLFS package <ulink
           url="&blfs-book;postlfs/efibootmgr.html">efibootmgr</ulink> to create
           a boot entry for UEFI. If it's easier, the package can be installed
@@ -155,15 +156,15 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
   -p <replaceable>&lt;y&gt;</replaceable> -L "LFS" -l '\EFI\BOOT\BOOT&efi-BOOT-suffix;.EFI'</userinput></screen>
         <para>
           The <literal>/dev/sd<replaceable>&lt;x&gt;</replaceable></literal>
-          drive should match the one you are installing LFS onto. The
+          drive should be the device node for the disk where the ESP exists. The
           <replaceable>&lt;y&gt;</replaceable> partition number should match
-          the number which the ESP is mounted. If the ESP is on
+          the number of the ESP. If the ESP is on
           <literal>/dev/sda2</literal>, then the partition number would be
           <literal>2</literal>.
         </para>
 
         <para>
-          Some (broken) firmwares may require additional parameters
+          Some (broken) firmware may require additional parameters
           for <command>efibootmgr</command>, like
           <parameter>--full-dev-path</parameter> or
           <parameter>-e 1 -E</parameter>.  Read the man page
