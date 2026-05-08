@@ -110,24 +110,69 @@
       LoongArch.</para>
 
       <important>
+        <!-- We deliberately hard-code 5.19 instead of using min-kernel
+             here, for the correctness even after we raise min-kernel to
+             6.1 - I'm not so optimistic to believe old-world will have
+             its natural death before Dec. 2027, when the LFS trunk will
+             eventually raise min-kernel to 6.1 and we'll merge.  -->
         <para>
-          If a Linux distribution on LoongArch provides a kernel older than
-          &min-kernel;, it indicates the distribution is using a preliminary
-          version of the kernel ABI.  The preliminary draft was rejected by
-          the kernel maintainers and it's fundamentally incompatible with
-          the packages we will built for LFS.  Such <quote>old-world</quote>
-          distributions (for example, Loongnix) cannot be used as a host
-          distro for building LFS.
+          If a Linux distribution on LoongArch provides a kernel older
+          (exclusively) than 5.19, it indicates the distribution is using a
+          preliminary draft of the ABI provided by the kernel for the
+          userspace.  The ABI had been revised for several times before it
+          was finally integrated into Linux 5.19 and stablized, so those old
+          kernel versions are incompatible with some critical packages those
+          we will build (at least, glibc and GCC).  Such an
+          <quote>old-world</quote> distro (for example, Loongnix 20) cannot
+          be used as a host distro for building LFS.
         </para>
 
         <para>
           Do not attempt to update the kernel to &min-kernel; or later on
-          a old-world distro because doing so will cause a boot failure.
-          Use a <quote>new-world</quote> distribution providing Linux Kernel
-          &min-kernel; or newer instead.  You may need to contact the vendor
-          of your hardware to get a firmware update for booting a new-world
-          distribution because the boot protocol of LoongArch is stabilized
-          after the launch of the early LoongArch hardwares.
+          an old-world distro because doing so will almost definitely cause
+          a boot failure due to the ABI difference (i.e. the
+          <command>init</command> process will likely crash very soon after
+          startup).  Use a <quote>new-world</quote> distro providing Linux
+          5.19 or newer instead.  <!-- If the kernel version of a
+          <quote>new-world</quote> distro is older than &min-kernel;, you
+          may upgrade the kernel on your own.  (uncomment when we raise
+          min-kernel to 6.1) -->
+        </para>
+
+        <para>
+          Another source of the compatability issues is the boot protocol
+          provided by the firmware.  The UEFI specification for LoongArch
+          had been also revised for several times, similar to the revisions
+          of the kernel ABI for userspace.  The GRUB and Linux kernel
+          packages those we'll build for LFS are not compatible with the
+          old firmware developed following the early drafts of the UEFI
+          specifications.  Those old firmware implementations are only
+          reported to exist on the earliest models of the LoongArch hardware
+          based on Loongson 3A5000 processors and Loongson 7A1000 bridge
+          chips.  If you have such a board, you may need to contact the
+          vendor of your hardware to get a firmware update in order to boot
+          LFS.
+        </para>
+
+        <para>
+          Some sources describe the boot protocol difference as a part of
+          the <quote>old-world</quote> with <quote>new-world</quote>
+          difference.  We consider such a description misleading and
+          confusing.  In fact, the boot protocol difference is orthogonal
+          with the difference of the kernel ABI for userspace.  You may boot
+          some <quote>new-world</quote> distros (for example, AOSC OS) on
+          a firmware implementation providing the old boot protocol because
+          the maintainers of those distros have custom modifications to the
+          GRUB and Linux kernel for the old boot protocol support and build
+          LFS fine, but then LFS will fail to boot there.  Similarly, many
+          <quote>old-world</quote> distros can also boot on newer firmware
+          implementations following the stabilized UEFI specification.  As
+          the result, clearly distinguishing those two kinds of differences
+          is important to avoid confusions like <quote>my board has a [so
+          called] new-world firmware and I've booted a distro
+          [actually, old-world, perhaps just Loongnix 20] there fine, so the
+          distro must be new-world but why does it fail to work as a host
+          distro for building LFS?</quote>
         </para>
       </important>
 
