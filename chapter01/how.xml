@@ -26,10 +26,8 @@
   <para>As an alternative to installing a separate distribution on your
   machine, you may wish to use a LiveCD from a commercial distribution.</para>
 
-  <note><para>Rolling release distribution hosts, like Arch Linux, often update
-  to newer package versions rather quickly, which can cause configuration or
-  build failures with the versions of packages in this book. A new major
-  kernel, GCC, or OpenSSL version can cause such issues.</para></note>
+  <note><para>The host distro must satisfy
+  <xref linkend='ch-partitioning-hostreqs'/>.</para></note>
 
   <!--
   <note>
