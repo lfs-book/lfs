@@ -47,8 +47,10 @@
     <screen><userinput remap="pre">sed -i 's/char [*]q/const &amp;/' libgomp/affinity-fmt.c</userinput></screen>
     -->
 
-    <para>Fix a severe performance issue and two compiler crash issues
-    on LoongArch:</para>
+    <para>Fix a LoongArch code generation flaw which may allow
+    the malicious attacker to bypass the Stack Smashing Protection (SSP)
+    and a bug causing the BLFS package libarchive miscompiled on
+    LoongArch:</para>
 
     <screen><userinput remap="pre">patch -Np1 -i ../&gcc-loongarch-fixes-patch;</userinput></screen>
 

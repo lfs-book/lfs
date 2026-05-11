@@ -76,7 +76,7 @@
    </varlistentry>
 
     <varlistentry>
-      <term>GCC LoongArch Fixes Patch - <token>&gcc-loongarch-fixes-patch-size;</token>:</term>
+      <term>GCC LoongArch SSP Fix Patch - <token>&gcc-loongarch-fixes-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="https://www.linuxfromscratch.org/~xry111/lfs/patches/&gcc-loongarch-fixes-patch;"/></para>
         <para>MD5 sum: <literal>&gcc-loongarch-fixes-patch-md5;</literal></para>
