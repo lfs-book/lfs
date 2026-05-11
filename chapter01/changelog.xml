@@ -41,6 +41,49 @@
     -->
 
     <listitem>
+      <para>2026-05-11</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to vim-9.2.0461 (Security Update). Fixes
+          <ulink url='&lfs-ticket-root;5938'>#5938</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to sqlite-3.53.2. Fixes
+          <ulink url='&lfs-ticket-root;5929'>#5929</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to Python-3.14.5. Fixes
+          <ulink url='&lfs-ticket-root;5931'>#5931</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to openssl-4.0.0. Fixes
+          <ulink url='&lfs-ticket-root;5912'>#5912</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-7.0.5. Fixes
+          <ulink url='&lfs-ticket-root;5917'>#5917</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20260604. Addresses
+          <ulink url='&lfs-ticket-root;5006'>#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Add Python-3.14.5 linux7 build patch. Addresses
+          <ulink url='&lfs-ticket-root;5931'>#5931</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Add glibc linux7 fixes patch (Security Fix). Fixes
+          <ulink url='&lfs-ticket-root;5930'>#5930</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Add systemd openssl4 build patch. Addresses
+          <ulink url='&lfs-ticket-root;5912'>#5912</ulink>.</para>
+        </listitem>
+
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2026-05-01</para>
       <itemizedlist>
         <listitem>

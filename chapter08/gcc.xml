@@ -41,10 +41,6 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
-    <para>First, make a fix required by glibc-2.43 and later:</para>
-
-    <screen><userinput remap="pre">sed -i 's/char [*]q/const &amp;/' libgomp/affinity-fmt.c</userinput></screen>
-
     <para>If building on x86_64, change the default directory name for 64-bit
     libraries to <quote>lib</quote>:</para>
 
