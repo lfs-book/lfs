@@ -79,7 +79,16 @@
           <para>[bdubbs] - Add systemd openssl4 build patch. Addresses
           <ulink url='&lfs-ticket-root;5912'>#5912</ulink>.</para>
         </listitem>
+      </itemizedlist>
+    </listitem>
 
+    <listitem>
+      <para>2026-05-08</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to gcc-16.1.0.  Fixes
+          <ulink url='&lfs-ticket-root;5927'>#5927</ulink>.</para>
+        </listitem>
       </itemizedlist>
     </listitem>
 
