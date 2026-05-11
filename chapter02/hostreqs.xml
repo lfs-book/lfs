@@ -37,8 +37,32 @@
    <para>Earlier versions of the listed software packages may work, but have
    not been tested.</para>
 
-   <para>Host systems that have the newest set of software may cause issues
-   when building a cross toolchain.</para>
+   <warning>
+     <para>
+       Be aware that GCC newer than &gcc-version;
+       or Binutils newer than &binutils-version; are not tested.
+       A newer GCC is highly likely to break the build of this
+       LFS release.  Do not report such a breakage to the LFS editors.
+       If your host distro has newer versions of these packages, you
+       have several options:
+       <itemizedlist>
+         <listitem>
+           <simpara>Use a newer release of the LFS book if one exists</simpara>
+         </listitem>
+         <listitem>
+           <simpara>Use an older host distro</simpara>
+         </listitem>
+         <listitem>
+           <simpara>Downgrade GCC if that is supported by the host distro</simpara>
+         </listitem>
+         <listitem>
+           <simpara>Use the latest LFS development book. Updates to the
+           latest version of packages in LFS are usually added within two
+           to four weeks after release.</simpara>
+         </listitem>
+       </itemizedlist>
+     </para>
+   </warning>
 
   <itemizedlist spacing="compact">
 
@@ -49,7 +73,7 @@
 
     <listitem>
       <para><emphasis role="strong">Binutils-2.13.1</emphasis> (Versions
-      greater than &binutils-version; are not recommended as they have
+      greater than &binutils-version; may not work as they have
       not been tested)</para>
     </listitem>
 
@@ -79,8 +103,8 @@
     <listitem>
       <!-- See https://gcc.gnu.org/r15-4719.  -->
       <para><emphasis role="strong">GCC-5.4</emphasis> including the C++
-      compiler, <command>g++</command> (Versions greater than &gcc-version; are
-      not recommended as they have not been tested). C and C++ standard
+      compiler, <command>g++</command> (Versions greater than &gcc-version;
+      may not work as they have not been tested). C and C++ standard
       libraries (with headers) must also be present so the C++ compiler can
       build hosted programs</para>
     </listitem>
