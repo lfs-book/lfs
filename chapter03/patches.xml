@@ -126,7 +126,7 @@
     </varlistentry>
 -->
     <varlistentry>
-      <term>Python Security Fix Patch - <token>&python-security-fixes-patch-size;</token>:</term>
+      <term>Python OpenSSL 4 Patch - <token>&python-security-fixes-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="&patches-root;&python-security-fixes-patch;"/></para>
         <para>MD5 sum: <literal>&python-security-fixes-patch-md5;</literal></para>
@@ -142,7 +142,7 @@
     </varlistentry>
 
     <varlistentry revision="systemd">
-      <term>Systemd Linux7 Fixes Patch - <token>&systemd-upstream-patch-size;</token>:</term>
+      <term>Systemd OpenSSL 4 Patch - <token>&systemd-upstream-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="&patches-root;&systemd-upstream-patch;"/></para>
         <para>MD5 sum: <literal>&systemd-upstream-patch-md5;</literal></para>
