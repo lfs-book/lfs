@@ -37,15 +37,32 @@
    <para>Earlier versions of the listed software packages may work, but have
    not been tested.</para>
 
-   <warning><para>Be aware that GCC newer than &gcc-version; or Binutils
-   newer than &binutils-version; are not tested.  Especially, GCC newer than
-   &gcc-version; is expected to be highly likely to break the build of this
-   LFS release.  Do not report such a breakage to the LFS editors.  Try
-   reading a newer release of the LFS book (if one exists), or using an
-   older host distro, or downgrading GCC (if the host distro supports to do
-   so), or reading the latest LFS development book (if it still does not
-   support GCC &gcc-version; or newer, wait for the editors to update the
-   book for 2 or 4 weeks).</para></warning>
+   <warning>
+     <para>
+       Be aware that GCC newer than &gcc-version;
+       or Binutils newer than &binutils-version; are not tested.
+       A newer GCC is highly likely to break the build of this
+       LFS release.  Do not report such a breakage to the LFS editors.
+       If your host distro has newer versions of these packages, you
+       have several options:
+       <itemizedlist>
+         <listitem>
+           <simpara>Use a newer release of the LFS book if one exists</simpara>
+         </listitem>
+         <listitem>
+           <simpara>Use an older host distro</simpara>
+         </listitem>
+         <listitem>
+           <simpara>Downgrade GCC if that is supported by the host distro</simpara>
+         </listitem>
+         <listitem>
+           <simpara>Use the latest LFS development book. Updates to the
+           latest version of packages in LFS are usually added within two
+           to four weeks after release.</simpara>
+         </listitem>
+       </itemizedlist>
+     </para>
+   </warning>
 
   <itemizedlist spacing="compact">
 
