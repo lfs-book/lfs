@@ -126,6 +126,7 @@
          --libdir=lib32        \
          shared                \
          zlib-dynamic          \
+         no-docs               \
          linux-x86</userinput></screen>
 
     <para>Compile the package:</para>
