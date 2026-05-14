@@ -121,7 +121,7 @@ function get_packages( $package, $dirpath )
 
 if ( $package == "bc"         ) $dirpath = github("gavinhoward/bc");
 if ( $package == "e2fsprogs"  ) $dirpath = "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs";
-if ( $package == "expat"      ) $dirpath = "https://sourceforge.net/projects/expat/files";
+if ( $package == "expat"      ) $dirpath = github("libexpat/libexpat");
 if ( $package == "elfutils"   ) $dirpath = "https://sourceware.org/ftp/elfutils";
 if ( $package == "expect"     ) $dirpath = "https://sourceforge.net/projects/expect/files";
 if ( $package == "file"       ) $dirpath = "https://github.com/file/file/tags";
@@ -225,6 +225,9 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
 
   if ( $package == "expect" )
      return find_max( $lines, "/expect/", "/^.*expect(\d[\d\.]+\d).tar.*$/" );
+
+  if ( $package == "expat" )
+     return find_max( $lines, "/name.:/", "/^.*(\d\.\d\.\d).*$/" );
 
   if ( $package == "elfutils" )
      return find_max( $lines, "/^\d/", "/^(\d[\d\.]+\d)\/.*$/" );
