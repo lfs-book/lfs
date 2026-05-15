@@ -148,11 +148,11 @@
 <!ENTITY elfutils-fin-du "41 MB">
 <!ENTITY elfutils-fin-sbu "0.1 SBU">
 
-<!ENTITY expat-version "2.8.0">
-<!ENTITY expat-dl-version "2_8_0">
-<!ENTITY expat-size "500 KB">
+<!ENTITY expat-version "2.8.1">
+<!ENTITY expat-dl-version "2_8_1">
+<!ENTITY expat-size "504 KB">
 <!ENTITY expat-url "&github;/libexpat/libexpat/releases/download/R_&expat-dl-version;/expat-&expat-version;.tar.xz">
-<!ENTITY expat-md5 "db797f9ddef94ddb1af5ae7db05710ce">
+<!ENTITY expat-md5 "ee5ce823fae282d5d9dadc3b4831a883">
 <!ENTITY expat-home "https://libexpat.github.io/">
 <!ENTITY expat-fin-du "14 MB">
 <!ENTITY expat-fin-sbu "0.1 SBU">
@@ -425,12 +425,12 @@
 <!ENTITY linux-major-version "7">
 <!ENTITY linux-minor-version "0">
 <!ENTITY linux-majmin-version "&linux-major-version;.&linux-minor-version;">
-<!ENTITY linux-patch-version "5">
+<!ENTITY linux-patch-version "7">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "153,485 KB">
+<!ENTITY linux-size "153,520 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "ab6eea718e74b5578d46f8343f5fa490">
+<!ENTITY linux-md5 "8e5240dd6146fc607087f18859c78c6e">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -722,15 +722,15 @@
 <!ENTITY tar-fin-du "43 MB">
 <!ENTITY tar-fin-sbu "0.6 SBU">
 
-<!ENTITY tcl-version "8.6.17">
+<!ENTITY tcl-version "8.6.18">
 <!ENTITY tcl-major-version "8.6">
-<!ENTITY tcl-size "11,450 KB">
+<!ENTITY tcl-size "11,540 KB">
 <!ENTITY tcl-url "https://downloads.sourceforge.net/tcl/tcl&tcl-version;-src.tar.gz">
-<!ENTITY tcl-md5 "1ec3444533f54d0f86cd120058e15e48">
+<!ENTITY tcl-md5 "acfe0c9f7d0c626ecf026e834a888da6">
 <!ENTITY tcl-home "https://tcl.sourceforge.net/">
 <!ENTITY tcl-docs-url "https://downloads.sourceforge.net/tcl/tcl&tcl-version;-html.tar.gz">
-<!ENTITY tcl-docs-md5 "60c71044e723b0db5f21be82929f3534">
-<!ENTITY tcl-docs-size "1,170 KB">
+<!ENTITY tcl-docs-md5 "54d1ff0f5eee4e81e5cdaa4baa343397">
+<!ENTITY tcl-docs-size "1,172 KB">
 <!ENTITY tcl-tmp-du "91 MB">
 <!ENTITY tcl-tmp-sbu "2.9 SBU">
 
@@ -769,7 +769,7 @@
 <!ENTITY util-linux-fin-du "346 MB">
 <!ENTITY util-linux-fin-sbu "0.5 SBU">
 
-<!ENTITY vim-version "9.2.0461">
+<!ENTITY vim-version "9.2.0481">
 <!ENTITY vim-docdir "vim/vim92">
 <!ENTITY vim-size "19,502 KB">
 <!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">
@@ -784,7 +784,7 @@
      release.  The "Next" button just sets "after=" in the URL.  For
      example, https://github.com/vim/vim/tags?after=v8.1.1847 will show
      us v8.1.1846. -->
-<!ENTITY vim-md5 "86ed20b5a53f2cf14823de2957cee4a8">
+<!ENTITY vim-md5 "59a2473c92078bd23e51f1f0ea5f59f4">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "217 MB">
 <!ENTITY vim-fin-sbu "3.2 SBU">

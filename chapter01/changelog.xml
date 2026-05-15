@@ -41,6 +41,33 @@
     -->
 
     <listitem>
+      <para>2026-05-14</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Update to expat-2.8.1 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5933">#5933</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to tcl-8.6.18. Fixes
+          <ulink url="&lfs-ticket-root;5935">#5935</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to vim-9.2.0480 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5928">#5928</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to linux-7.0.7 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5932">#5932</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Fix CVE-2026-7210 and CVE-2026-8328 in Python
+          (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5934">#5934</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2026-05-11</para>
       <itemizedlist>
         <listitem>
