@@ -201,6 +201,31 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     url="&test-results;"/> and
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
+    <!-- bb-slp-35.c: ???
+         bstrpick_alsl_paired.c: test-suite-only issue, I have a patch
+         predcom-8.c: https://gcc.gnu.org/PR118407
+         pr113026-2.c: https://gcc.gnu.org/PR113524
+         update-threading.c: https://gcc.gnu.org/PR110628
+         vect-117.c: https://gcc.gnu.org/PR113685
+         vect-121.c and vect-epilogues.c: https://gcc.gnu.org/PR119293
+         vect-early-break_52.c and vect-uncounted_2.c: ???
+         lasx-vcond-2.c, vect-concat-128-256.c, vect-mode-tieable.c look
+         like default-ssp/pie issue.  -->
+    <para>On LoongArch, the tests named
+    <filename>bb-slp-35.c</filename>,
+    <filename>bstrpick_alsl_paired.c</filename>,
+    <filename>lasx-vcond-2.c</filename>,
+    <filename>predcom-8.c</filename>,
+    <filename>pr113026-2.c</filename>,
+    <filename>update-threading.c</filename>,
+    <filename>vect-117.c</filename>,
+    <filename>vect-121.c</filename>,
+    <filename>vect-concat-128-256.c</filename>,
+    <filename>vect-early-break_52.c</filename>,
+    <filename>vect-epilogues.c</filename>,
+    <filename>vect-mode-tieable.c</filename>, and
+    <filename>vect-uncounted_2.c</filename> are known to fail.</para>
+
     <para>Additionally, the tests
     <filename>gcc.dg/ipa/pr122458.c</filename>,
     <filename>gcc.dg/lto/toplevel-*-asm-*</filename>, and
@@ -209,30 +234,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     to fail sometimes.</para>
 
     <para>The LFS editors have investigated those failures and confirmed
-    none indicates a critical issue.  Most of them are because the test case
-    author did not anticipate <parameter>--enable-default-ssp</parameter> or
-    <parameter>--enable-default-pie</parameter>.</para>
-
-    <!-- gen-vect-*: At least https://gcc.gnu.org/PR113418
-         predcom-8.c: https://gcc.gnu.org/PR118407
-         pr113026.c: https://gcc.gnu.org/PR113524
-         update-threading.c: https://gcc.gnu.org/PR110628
-         vect-117.c: https://gcc.gnu.org/PR113685
-         vect-121.c and vect-epilogues.c: https://gcc.gnu.org/PR119293
-         vect-reduc-chain-*.c: ???
-         vect-early-break_52.c: ??? -->
-    <para>The tests named
-    <filename>gen-vect-11*.c</filename>,
-    <filename>gen-vect-26.c</filename>,
-    <filename>gen-vect-28.c</filename>,
-    <filename>predcom-8.c</filename>,
-    <filename>pr113026-2.c</filename>,
-    <filename>update-threading.c</filename>,
-    <filename>vect-117.c</filename>,
-    <filename>vect-121.c</filename>,
-    <filename>vect-early-break_52.c</filename>,
-    <filename>vect-epilogues.c</filename>,
-    <filename>vect-reduc-chain-*.c</filename> are known to fail.</para>
+    none indicates a critical issue.</para>
 
     <para>A few unexpected failures cannot always be avoided. In some cases
     test failures depend on the specific hardware of the system.<!--The GCC developers
