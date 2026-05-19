@@ -41,9 +41,11 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
+    <!-- not needed anymore with gcc-16:
     <para>First, make a fix required by glibc-2.43 and later:</para>
 
     <screen><userinput remap="pre">sed -i 's/char [*]q/const &amp;/' libgomp/affinity-fmt.c</userinput></screen>
+    -->
 
     <para>On ARM64 hosts, set the default directory name for
     64-bit libraries to <quote>lib</quote>:</para>
@@ -176,10 +178,6 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="test">ulimit -s -H unlimited</userinput></screen>
 
-    <para>Now remove several known test failures:</para>
-
-<screen><userinput remap="test">sed -e '/cpython/d' -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp</userinput></screen>
-
     <para>Test the results as a non-privileged user, but do not stop at errors:</para>
 
 <screen><userinput remap="test">chown -R tester .
@@ -206,19 +204,17 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <filename>pr113618.c</filename>, and
     <filename>pr114991.c</filename> are also known to fail.</para>
 
-    <!-- https://gcc.gnu.org/PR124682 -->
-    <para>Eight tests related to <filename>builtin-math-6.c</filename> are
-    known to fail.</para>
+    <para>Additionally, the tests
+    <filename>gcc.dg/ipa/pr122458.c</filename>,
+    <filename>gcc.dg/lto/toplevel-*-asm-*</filename>, and
+    <filename>gcc.dg/plugin/crash-test-nested-*.c</filename> are known to
+    fail.  The test <filename>g++.dg/gomp/deprecate-1.C</filename> is known
+    to fail sometimes.</para>
 
-    <para>Five tests related to <filename>analyzer/strchr-1.c</filename> are known
-    to fail.</para>
-
-    <!-- https://gcc.gnu.org/pipermail/gcc-patches/2026-February/708384.html -->
-    <para>Four tests in libstdc++, <filename>17_intro/badnames.cc</filename>,
-    <filename>17_intro/names.cc</filename>,
-    <filename>17_intro/names_fortify.cc</filename>, and
-    <filename>experimental/names.cc</filename>, are known to fail due to changes
-    with glibc-2.43.</para>
+    <para>The LFS editors have investigated those failures and confirmed
+    none indicates a critical issue.  Most of them are because the test case
+    author did not anticipate <parameter>--enable-default-ssp</parameter> or
+    <parameter>--enable-default-pie</parameter>.</para>
 
     <para>A few unexpected failures cannot always be avoided. In some cases
     test failures depend on the specific hardware of the system.<!--The GCC developers
@@ -235,8 +231,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     directory (and its content) is incorrect.  Change the ownership to the
     <systemitem class="username">root</systemitem> user and group:</para>
 
-<screen><userinput remap="install">chown -v -R root:root \
-    /usr/lib/gcc/$(gcc -dumpmachine)/&gcc-version;/include{,-fixed}</userinput></screen>
+<screen><userinput remap="install">chown -v -R root:root $(gcc -print-file-name=include){,-fixed}</userinput></screen>
 
     <para>Create a symlink required by the <ulink
     url="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s09.html">FHS</ulink>
@@ -254,8 +249,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <para>Add a compatibility symlink to enable building programs with
     Link Time Optimization (LTO):</para>
 
-<screen><userinput remap="install">ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so \
-        /usr/lib/bfd-plugins/</userinput></screen>
+<screen><userinput remap="install">ln -sfvr $(gcc -print-prog-name=liblto_plugin.so) /usr/lib/bfd-plugins/</userinput></screen>
 
     <para>Now that our final toolchain is in place, it is important to again ensure
     that compiling and linking will work as expected. We do this by performing

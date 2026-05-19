@@ -49,8 +49,8 @@
     resulting directories so the GCC build procedures will automatically
     use them:</para>
 
-    <note><para>There are frequent misunderstandings about this chapter.  The
-    procedures are the same as every other chapter, as explained earlier (<xref
+    <note><para>There are frequent misunderstandings about the instructions here.  The
+    procedures are the same as every other package, as explained earlier (<xref
     linkend='buildinstr'/>).  First, extract the gcc-&gcc-version; tarball from the sources
     directory, and then change to the directory created.  Only then should you
     proceed with the instructions below.</para></note>
@@ -220,17 +220,8 @@ cd       build</userinput></screen>
     header using a command that is identical to what the GCC build system does
     in normal circumstances:</para>
 
-    <note>
-      <para>The command below shows an example of nested command substitution
-      using two methods: backquotes and a <literal>$()</literal> construct. 
-      It could be rewritten using the same method for both substitutions,
-      but is shown this way to demonstrate how they can be mixed.  Generally
-      the <literal>$()</literal> method is preferred.</para>
-    </note>
-
-<screen><userinput remap="install">cd ..
-cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
-  `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include/limits.h</userinput></screen>
+<screen><userinput remap="install">cat ../gcc/{limitx,glimits,limity}.h  > \
+  $($LFS_TGT-gcc -print-file-name=include)/limits.h</userinput></screen>
   </sect2>
 
   <sect2 role="content">

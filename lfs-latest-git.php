@@ -121,7 +121,7 @@ function get_packages( $package, $dirpath )
 
 if ( $package == "bc"         ) $dirpath = github("gavinhoward/bc");
 if ( $package == "e2fsprogs"  ) $dirpath = "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs";
-if ( $package == "expat"      ) $dirpath = "https://sourceforge.net/projects/expat/files";
+if ( $package == "expat"      ) $dirpath = github("libexpat/libexpat");
 if ( $package == "elfutils"   ) $dirpath = "https://sourceware.org/ftp/elfutils";
 if ( $package == "expect"     ) $dirpath = "https://sourceforge.net/projects/expect/files";
 if ( $package == "file"       ) $dirpath = "https://github.com/file/file/tags";
@@ -133,6 +133,7 @@ if ( $package == "intltool"   ) $dirpath = "https://launchpad.net/intltool/trunk
 if ( $package == "jinja"      ) $dirpath = "https://pypi.org/rss/project/jinja2/releases.xml";
 if ( $package == "libffi"     ) $dirpath = github("libffi/libffi");
 if ( $package == "libxcrypt"  ) $dirpath = github("besser82/libxcrypt");
+if ( $package == "linux"      ) $dirpath = "https://www.kernel.org/pub/linux/kernel/v7.x";
 if ( $package == "lz4"        ) $dirpath = github("lz4/lz4");
 if ( $package == "markupsafe" ) $dirpath = "https://pypi.org/rss/project/markupsafe/releases.xml";
 if ( $package == "meson"      ) $dirpath = github("mesonbuild/meson");
@@ -225,6 +226,9 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
   if ( $package == "expect" )
      return find_max( $lines, "/expect/", "/^.*expect(\d[\d\.]+\d).tar.*$/" );
 
+  if ( $package == "expat" )
+     return find_max( $lines, "/name.:/", "/^.*(\d\.\d\.\d).*$/" );
+
   if ( $package == "elfutils" )
      return find_max( $lines, "/^\d/", "/^(\d[\d\.]+\d)\/.*$/" );
 
@@ -250,6 +254,9 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
      $max = find_max( $lines, "/FILE5/", "/^.*FILE(5_\d+)*$/" );
      return str_replace( "_", ".", $max );
   }
+
+  if ( $package == "linux" )
+     return find_max( $lines, "/linux/", "/^.*linux-([\d\.]+).tar.*$/" );
 
   # Python modules
   if ( $package == "flit_core" )
