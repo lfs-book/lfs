@@ -197,26 +197,6 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     url="&test-results;"/> and
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
-    <para>In the <filename class='directory'>gcc.target/i386</filename>
-    tests, the tests named
-    <filename>auto-init-padding-9.c</filename>,
-    <filename>builtin-memmove-*.c</filename>,
-    <filename>mem{cpy,set}-pr120683-*.c</filename>,
-    <filename>pr111657-1.c</filename>,
-    <filename>pr115102.c</filename>,
-    <filename>pr116896.c</filename>,
-    <filename>pr120881-2a.c</filename>, and
-    <filename>pr122343-4a.c</filename> are known to fail.
-    The test named <filename>shift-gf2p8affine-2.c</filename> is known
-    to fail if the processor does not support AVX512.</para>
-
-    <para>In the <filename class='directory'>g++.target/i386</filename>
-    tests, the tests named
-    <filename>memset-pr108585-1{a,b}.C</filename>,
-    <filename>mv{,c}-symbols*.C</filename>,
-    <filename>pr112824-2.C</filename>, and
-    <filename>pr116896-1.C</filename> are known to fail.</para>
-
     <para>Additionally, the tests
     <filename>gcc.dg/ipa/pr122458.c</filename>,
     <filename>gcc.dg/lto/toplevel-*-asm-*</filename>, and
