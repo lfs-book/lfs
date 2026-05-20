@@ -425,12 +425,12 @@
 <!ENTITY linux-major-version "7">
 <!ENTITY linux-minor-version "0">
 <!ENTITY linux-majmin-version "&linux-major-version;.&linux-minor-version;">
-<!ENTITY linux-patch-version "7">
+<!ENTITY linux-patch-version "9">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "153,520 KB">
+<!ENTITY linux-size "153,486 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "8e5240dd6146fc607087f18859c78c6e">
+<!ENTITY linux-md5 "afe7af08323c71e9424aad06a9a5a201">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
