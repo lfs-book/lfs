@@ -194,15 +194,26 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     url="&test-results;"/> and
     <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
 
-    <!-- TODO: why?? -->
+    <!-- predcom-8.c: PR118407
+         atomic_store_with_stshh.{c,C}: need -fno-stack-protector
+         mv-*: PR125126
+         TODO: others why?? -->
     <para>On ARM64, many tests in
-    the <filename class='directory'>c-c++-common/hwasan</filename>
-    directory are known to fail.
-    The tests named <filename>locally_streaming_1.c</filename>,
+    the <filename class='directory'>c-c++-common/hwasan</filename>,
+    the <filename class='directory'>gcc.target/aarch64/pch</filename>,
+    and the <filename class='directory'>gcc.target/aarch64/memtag</filename>
+    directories are known to fail.
+    The tests named <filename>atomic_store_with_stshh.{c,C}</filename>,
+    <filename>locally_streaming_1{,_nosve}.c</filename>,
     <filename>memset-strict-align-1.c</filename>,
-    <filename>nonlocal_goto_*.c</filename>,
-    <filename>pr113618.c</filename>, and
-    <filename>pr114991.c</filename> are also known to fail.</para>
+    <filename>mv-and-mvc3.{c,C}</filename>,
+    <filename>mv-symbols*.{c,C}</filename>,
+    <filename>nonlocal_goto_{1,3}.c</filename>,
+    <filename>pr113618.c</filename>,
+    <filename>pr114991.c</filename>, and
+    <filename>predcom-8.c</filename> are also known to fail.
+    The tests named <filename>pr122475.c</filename> are known to fail
+    if the CPU does not support SVE.</para>
 
     <para>Additionally, the tests
     <filename>gcc.dg/ipa/pr122458.c</filename>,
@@ -210,12 +221,12 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <filename>gcc.dg/plugin/crash-test-nested-*.c</filename> are known to
     fail.  The test <filename>g++.dg/gomp/deprecate-1.C</filename> is known
     to fail sometimes.</para>
-
+<!-- I've not really tried hard analyzing gcc failures on aarch64
     <para>The LFS editors have investigated those failures and confirmed
     none indicates a critical issue.  Most of them are because the test case
-    author did not anticipate <parameter>--enable-default-ssp</parameter> or
-    <parameter>--enable-default-pie</parameter>.</para>
-
+    author did not anticipate <parameter>- -enable-default-ssp</parameter> or
+    <parameter>- -enable-default-pie</parameter>.</para>
+-->
     <para>A few unexpected failures cannot always be avoided. In some cases
     test failures depend on the specific hardware of the system.<!--The GCC developers
     are usually aware of these issues, but have not resolved them yet.-->
