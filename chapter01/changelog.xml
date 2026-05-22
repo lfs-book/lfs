@@ -43,6 +43,54 @@
     -->
 
     <listitem>
+      <para>2026-05-20</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to linux-7.0.9 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5928">#5928</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2026-05-18</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Fix CVE-2026-4046, CVE-2026-5450, and
+          CVE-2026-5928 in glibc (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5930">#5930</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2026-05-14</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Update to expat-2.8.1 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5933">#5933</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to tcl-8.6.18. Fixes
+          <ulink url="&lfs-ticket-root;5935">#5935</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to vim-9.2.0480 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5928">#5928</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to linux-7.0.7 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5932">#5932</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Fix CVE-2026-7210 and CVE-2026-8328 in Python
+          (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5934">#5934</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2026-05-11</para>
       <itemizedlist>
         <listitem>
@@ -74,8 +122,7 @@
           <ulink url='&lfs-ticket-root;5931'>#5931</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Add glibc linux7 fixes patch (Security Fix). Fixes
-          <ulink url='&lfs-ticket-root;5930'>#5930</ulink>.</para>
+          <para>[bdubbs] - Add glibc linux7 fixes patch.</para>
         </listitem>
         <listitem>
           <para>[bdubbs] - Add systemd openssl4 build patch. Addresses
