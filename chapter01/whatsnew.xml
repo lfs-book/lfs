@@ -257,9 +257,9 @@
     <!--<listitem>
       <para>Tar-&tar-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Tcl-&tcl-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Texinfo-&texinfo-version;</para>
     </listitem>
@@ -303,8 +303,11 @@
 
   <itemizedlist>
     <title>Added:</title>
-    <listitem><para></para></listitem>  <!-- satisfy build -->
-    <listitem><para>Python-3.14.4-security_fixes-1.patch</para></listitem>
+    <!--    <listitem><para></para></listitem> -->  <!-- satisfy build -->
+    <listitem><para>glibc-2.43-linux7_fixes-1.patch</para></listitem>
+    <listitem><para>Python-3.14.5-openssl_4-1.patch</para></listitem>
+    <listitem><para>Python-3.14.5-security_fixes-1.patch</para></listitem>
+    <listitem><para>systemd-260.1-buildfix-1.patch</para></listitem>
   </itemizedlist>
 
   <itemizedlist>
