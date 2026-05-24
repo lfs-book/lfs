@@ -261,12 +261,10 @@ ver_kernel()
 }
 
 # Coreutils first because --version-sort needs Coreutils >= 7.0
-sort --version 2>&amp;1 | grep -E -q 'uutils'
-if [ $? -eq 0 ]
-then
-    ver_check Coreutils      sort     0.8 || bail "Uutils Coreutils too old, stop"
+if sort --version |&amp; grep -q uutils; then
+    ver_check Coreutils  sort     0.8 || bail "Uutils Coreutils too old, stop"
 else
-    ver_check Coreutils      sort     8.1 || bail "Coreutils too old, stop"
+    ver_check Coreutils  sort     8.1 || bail "GNU Coreutils too old, stop"
 fi
 ver_check Bash           bash     3.2
 ver_check Binutils       ld       2.13.1
