@@ -82,9 +82,12 @@
       should be a link to bison or a small script that executes bison)</para>
     </listitem>
 
-    <!-- In Coreutils-8.1 the nproc program is added.  -->
+    <!-- In Coreutils-8.1 the nproc program is added. uutils coreutils-0.8
+         is the first supported version, since it is the one introduced
+         in ubuntu-26.04-->
     <listitem>
-      <para><emphasis role="strong">Coreutils-8.1</emphasis></para>
+      <para><emphasis role="strong">GNU Coreutils-8.1</emphasis> or
+            <emphasis role="strong">Uutils Coreutils-0.8</emphasis></para>
     </listitem>
 
     <listitem>
@@ -258,7 +261,11 @@ ver_kernel()
 }
 
 # Coreutils first because --version-sort needs Coreutils >= 7.0
-ver_check Coreutils      sort     8.1 || bail "Coreutils too old, stop"
+if sort --version |&amp; grep -q uutils; then
+    ver_check Coreutils  sort     0.8 || bail "Uutils Coreutils too old, stop"
+else
+    ver_check Coreutils  sort     8.1 || bail "GNU Coreutils too old, stop"
+fi
 ver_check Bash           bash     3.2
 ver_check Binutils       ld       2.13.1
 ver_check Bison          bison    2.7
