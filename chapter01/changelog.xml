@@ -41,6 +41,26 @@
     -->
 
     <listitem>
+      <para>2026-05-24</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to linux-7.0.10 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5942">#5942</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2026-05-20</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to linux-7.0.9 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5928">#5928</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2026-05-18</para>
       <itemizedlist>
         <listitem>
