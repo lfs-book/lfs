@@ -199,7 +199,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
 
     <para>To extract a summary of the test suite results, run:</para>
 
-<screen><userinput remap="test">../contrib/test_summary</userinput></screen>
+<screen><userinput remap="test">../contrib/test_summary -t</userinput></screen>
 
     <para>To filter out only the summaries, pipe the output through
     <userinput>grep -A7 Summ</userinput>.</para>
