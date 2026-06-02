@@ -61,6 +61,8 @@
 <!ENTITY sysvinit-consolidated-patch-size "2.5 KB">
 -->
 
+<!--
 <!ENTITY systemd-upstream-patch "systemd-&systemd-version;-buildfix-1.patch">
 <!ENTITY systemd-upstream-patch-md5 "f08b5f6d1337ac9b0ed06ff9fa4226af">
 <!ENTITY systemd-upstream-patch-size "4.2 KB">
+-->
