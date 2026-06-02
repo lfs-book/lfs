@@ -83,18 +83,20 @@ cd       build</userinput></screen>
 
     <para>We only enable C and C++ here to save the build time as no
     packages in LFS and BLFS require GCC to compile other languages. Append
-    <literal>cobol</literal> for Cobol (note that it will cause GCC fail
-    to build on a 32-bit LFS system),
+    <literal>algol68</literal> for Algol 68,
     <literal>fortran</literal> for Fortran,
     <literal>go</literal> for Go,
     <literal>objc</literal> for Objective C,
     <literal>obj-c++</literal> for Objective C++, and/or
     <literal>m2</literal> for Modula 2 into the value of
     <parameter>--enable-languages</parameter> option if you want to compile
-    programs in one or more of those languages with GCC.  GCC also supports
-    Ada and D, but the code to support Ada or D is written in Ada or D
-    itself, so the support can only be built with an existing Ada or D
-    compiler installation and we cannot enable the support here.</para>
+    programs in one or more of those languages with GCC.</para>
+
+    <para>GCC also supports the Ada, COBOL, and D languages.  But that would
+    require some dependencies which are not available in the base LFS system
+    and would exceed the scope of this book.  Read
+    <ulink url='https://gcc.gnu.org/install/prerequisites.html'>the upstream
+    documentation</ulink> for details.</para>
 
     <variablelist>
       <title>The meaning of the new configure parameters:</title>
@@ -196,7 +198,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
 
     <para>To extract a summary of the test suite results, run:</para>
 
-<screen><userinput remap="test">../contrib/test_summary</userinput></screen>
+<screen><userinput remap="test">../contrib/test_summary -t</userinput></screen>
 
     <para>To filter out only the summaries, pipe the output through
     <userinput>grep -A7 Summ</userinput>.</para>
