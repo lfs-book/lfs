@@ -58,10 +58,11 @@
 <!ENTITY sysvinit-consolidated-patch "sysvinit-&sysvinit-version;-consolidated-1.patch">
 <!ENTITY sysvinit-consolidated-patch-md5 "3af8fd8e13cad481eeeaa48be4247445">
 <!ENTITY sysvinit-consolidated-patch-size "2.5 KB">
-
+<!--
 <!ENTITY systemd-upstream-patch "systemd-&systemd-version;-buildfix-1.patch">
 <!ENTITY systemd-upstream-patch-md5 "f08b5f6d1337ac9b0ed06ff9fa4226af">
 <!ENTITY systemd-upstream-patch-size "4.2 KB">
+-->
 
 <!-- Put LoongArch patches last to reduce the chance of a conflict during
      merge.  -->
