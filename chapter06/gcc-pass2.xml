@@ -76,7 +76,6 @@ cd       build</userinput></screen>
 
     <para>Now prepare GCC for compilation:</para>
 
-<<<<<<< HEAD
 <screen><userinput remap="configure">../configure                     \
     --build=$(../config.guess)   \
     --host=$LFS_TGT              \
