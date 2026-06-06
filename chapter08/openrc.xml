@@ -120,7 +120,7 @@ mv -v /usr/{s,}bin/rc-update</userinput></screen>
     symlinks:</para>
 
 <screen><userinput>for i in {init,shutdown}; do
-  ln -sv openrc-$i /sbin/$i
+  ln -svf openrc-$i /sbin/$i
 done
 
 cat &gt; /sbin/poweroff &lt;&lt; "EOF"
