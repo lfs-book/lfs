@@ -213,7 +213,7 @@ chmod 755 /sbin/poweroff /sbin/reboot</userinput></screen>
         <term><command>openrc</command></term>
         <listitem>
           <para>
-            starts and stops services on a given runlevel
+            Starts and stops services on a given runlevel
           </para>
           <indexterm zone="ch-system-openrc openrc">
             <primary sortas="b-openrc">openrc</primary>
