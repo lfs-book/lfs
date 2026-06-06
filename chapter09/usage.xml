@@ -184,9 +184,10 @@ done</userinput></screen>
       <primary sortas="d-sysklogd">sysklogd</primary>
     <secondary>configuring</secondary></indexterm>
 
-  <para>OpenRC doesn't ship a service for <command>syslogd</command>, leading
-  important messages not being captured. Create and enable the service for the
-  logger:</para>
+  <para>OpenRC doesn't ship a service for <command>syslogd</command>, which can
+  lead to messages from stuff like daemons, authorization calls, and the kernel
+  not being captured and saved for auditing. Create and enable the service for
+  the logger:</para>
 
 <screen><userinput>cat &gt; /etc/init.d/sysklogd &lt;&lt; "EOF"
 <literal>#!/sbin/openrc-run
