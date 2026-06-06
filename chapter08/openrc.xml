@@ -52,10 +52,23 @@ cd    build
 
 meson setup --prefix=/usr       \
             --buildtype=release \
+            -D uucp_group=root  \
             -D pam=false ..</userinput></screen>
 
     <variablelist>
       <title>The meaning of the configure options:</title>
+
+      <varlistentry>
+        <term><parameter>-D uucp_group=root</parameter></term>
+        <listitem>
+          <para>This changes who owns and manages <filename
+          class="directory">/run/lock</filename>, as OpenRC will try to use the
+          <systemitem class="groupname">uucp</systemitem> group to manage it.
+          Many distributions today use the <systemitem
+          class="groupname">lock</systemitem> group, but LFS uses <systemitem
+          class="groupname">root</systemitem> instead.</para>
+        </listitem>
+      </varlistentry>
 
       <varlistentry>
         <term><parameter>-D pam=false</parameter></term>
