@@ -35,6 +35,10 @@
 <!ENTITY kbd-backspace-patch-md5 "f75cca16a38da6caa7d52151f7136895">
 <!ENTITY kbd-backspace-patch-size "12 KB">
 
+<!ENTITY openrc-lock-patch "openrc-&openrc-version;-lock-1.patch">
+<!ENTITY openrc-lock-patch-md5 "8f469b5cb5136d6cac7482d80278a952">
+<!ENTITY openrc-lock-patch-size "4 KB">
+
 <!--
 <!ENTITY perl-upstream-fix-patch "perl-&perl-version;-upstream_fix-1.patch">
 <!ENTITY perl-upstream-fix-patch-md5 "1983b48fee837a98db47fb5dba934744">
