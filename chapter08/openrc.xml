@@ -95,23 +95,15 @@ meson setup --prefix=/usr       \
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">DESTDIR=$PWD/DESTDIR ninja install
-
-mv -v DESTDIR/{s,}bin/rc-update
-mv -v DESTDIR/{s,}bin DESTDIR/usr
-install -vDm755 DESTDIR/usr/bin/*  -t /usr/bin/
-install -vDm755 DESTDIR/usr/sbin/* -t /usr/sbin/
-rm -rf DESTDIR/usr/{s,}bin
-
-for conf in DESTDIR/etc/conf.d/*; do
-  if [ ! -e /etc/conf.d/$(basename $conf) ]; then
-    install -vDm644 $conf -t /etc/conf.d/
-  fi
-  rm -f $conf
-done
-
-cp -vR DESTDIR/* /
-rm -rf DESTDIR</userinput></screen>
+<screen><userinput remap="install">if [ -d /etc/conf.d ]; then
+  mv -v  /etc/conf.d{,.tmp}
+  ninja install
+  cp -vR /etc/conf.d.tmp/* /etc/conf.d
+  rm -rf /etc/conf.d.tmp
+else
+  ninja install
+fi
+mv -v /usr/{s,}bin/rc-update</userinput></screen>
 
     <note><para>
       OpenRC by default reinstalls the configuration files for the base
