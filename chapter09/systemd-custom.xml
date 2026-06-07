@@ -59,7 +59,7 @@ EOF</userinput></screen>
     <para>Alternatively, if a separate partition for
     <filename class="directory">/tmp</filename> is desired, specify that
     partition in a <filename>/etc/fstab</filename> entry.</para>
-
+<!--
     <warning>
       <para>
         Do not create the symbolic link above if a separate partition is used
@@ -68,7 +68,7 @@ EOF</userinput></screen>
         unusable when booted.
       </para>
     </warning>
-
+-->
   </sect2>
 
   <sect2>
