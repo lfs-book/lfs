@@ -41,6 +41,44 @@
     -->
 
     <listitem>
+      <para>2026-06-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to binutils-2.46.1. Fixes
+          <ulink url="&lfs-ticket-root;5950">#5950</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to file-5.48. Fixes
+          <ulink url="&lfs-ticket-root;5949">#5949</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to less-704. Fixes
+          <ulink url="&lfs-ticket-root;5948">#5948</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-7.0.12. Fixes
+          <ulink url="&lfs-ticket-root;5945">#5945</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to openssl-4.0.1. Fixes
+          <ulink url="&lfs-ticket-root;5951">#5951</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to Python3-3.14.6. Fixes
+          <ulink url="&lfs-ticket-root;5952">#5952</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to sqlite-autoconf-3.53.2. Fixes
+          <ulink url="&lfs-ticket-root;5946">#5946</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to vim-9.2.0640 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5947">#5947</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2026-06-01</para>
       <itemizedlist>
         <listitem>
