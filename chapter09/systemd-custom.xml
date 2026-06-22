@@ -54,12 +54,12 @@ EOF</userinput></screen>
     a tmpfs. If this is not desired, it can be overridden by executing the
     following command:</para>
 
-<screen role="nodump"><userinput>ln -sfv /dev/null /etc/systemd/system/tmp.mount</userinput></screen>
+<screen role="nodump"><userinput>systemctl mask tmp.mount</userinput></screen>
 
     <para>Alternatively, if a separate partition for
     <filename class="directory">/tmp</filename> is desired, specify that
     partition in a <filename>/etc/fstab</filename> entry.</para>
-
+<!--
     <warning>
       <para>
         Do not create the symbolic link above if a separate partition is used
@@ -68,7 +68,7 @@ EOF</userinput></screen>
         unusable when booted.
       </para>
     </warning>
-
+-->
   </sect2>
 
   <sect2>
