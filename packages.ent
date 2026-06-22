@@ -65,10 +65,10 @@
 <!ENTITY bc-fin-du "7.8 MB">
 <!ENTITY bc-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY binutils-version "2.46.0">
-<!ENTITY binutils-size "27,880 KB">
+<!ENTITY binutils-version "2.46.1">
+<!ENTITY binutils-size "27,966 KB">
 <!ENTITY binutils-url "https://sourceware.org/pub/binutils/releases/binutils-&binutils-version;.tar.xz">
-<!ENTITY binutils-md5 "81bb6810bcd1119819dc0804956e1c92">
+<!ENTITY binutils-md5 "9b9b73791519bf6fc8d76c7fc9fd32fe">
 <!ENTITY binutils-home "&gnu-software;binutils/">
 <!ENTITY binutils-tmpp1-du "691 MB">
 <!ENTITY binutils-tmpp1-sbu "1 SBU">
@@ -165,10 +165,10 @@
 <!ENTITY expect-tmp-du "3.9 MB">
 <!ENTITY expect-tmp-sbu "0.2 SBU">
 
-<!ENTITY file-version "5.47">
-<!ENTITY file-size "2,615 KB">
+<!ENTITY file-version "5.48">
+<!ENTITY file-size "2,631 KB">
 <!ENTITY file-url "https://astron.com/pub/file/file-&file-version;.tar.gz">
-<!ENTITY file-md5 "1023ef52a2fb64acdf80211e469d6939">
+<!ENTITY file-md5 "423686e97f731d8c24e9cd1a22b03dec">
 <!ENTITY file-home "https://www.darwinsys.com/file/">
 <!ENTITY file-tmp-du "43 MB">
 <!ENTITY file-tmp-sbu "0.1 SBU">
@@ -376,10 +376,10 @@
 <!ENTITY kmod-fin-du "6.7 MB">
 <!ENTITY kmod-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY less-version "702">
+<!ENTITY less-version "704">
 <!ENTITY less-size "974 KB">
 <!ENTITY less-url "https://www.greenwoodsoftware.com/less/less-&less-version;.tar.gz">
-<!ENTITY less-md5 "6357604422b12b71c534d0e34f41d4c5">
+<!ENTITY less-md5 "c4c9eea5b1862783b078c67ca67c9185">
 <!ENTITY less-home "https://www.greenwoodsoftware.com/less/">
 <!ENTITY less-fin-du "17 MB">
 <!ENTITY less-fin-sbu "0.1 SBU">
@@ -435,12 +435,12 @@
 <!ENTITY linux-major-version "7">
 <!ENTITY linux-minor-version "0">
 <!ENTITY linux-majmin-version "&linux-major-version;.&linux-minor-version;">
-<!ENTITY linux-patch-version "10">
+<!ENTITY linux-patch-version "12">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "153,576 KB">
+<!ENTITY linux-size "153,556 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "99f85199a3d605feabb4b525fbebc7f4">
+<!ENTITY linux-md5 "0e510b924210c2f4a8429dce4ee7bb4c">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -558,10 +558,10 @@
 <!ENTITY openrc-fin-du "13 MB">
 <!ENTITY openrc-fin-sbu "0.1 SBU">
 
-<!ENTITY openssl-version "4.0.0">
-<!ENTITY openssl-size "53,757 KB">
+<!ENTITY openssl-version "4.0.1">
+<!ENTITY openssl-size "53,789 KB">
 <!ENTITY openssl-url "&github;/openssl/openssl/releases/download/openssl-&openssl-version;/openssl-&openssl-version;.tar.gz">
-<!ENTITY openssl-md5 "f26714e6398a2d921fc5616daaa75231">
+<!ENTITY openssl-md5 "07e316afe26b61e72206b81706b497bb">
 <!ENTITY openssl-home "https://www.openssl-library.org/">
 <!ENTITY openssl-fin-du "981 MB">
 <!ENTITY openssl-fin-sbu "1.9 SBU">
@@ -633,19 +633,19 @@
 <!-- If python minor version changes, updates in python and
      meson pages will be needed: python3.6 and python3.6m -->
 
-<!ENTITY python-version "3.14.5">
+<!ENTITY python-version "3.14.6">
 <!ENTITY python-minor "3.14">
-<!ENTITY python-size "23,344 KB">
+<!ENTITY python-size "23,361 KB">
 <!ENTITY python-url "https://www.python.org/ftp/python/&python-version;/Python-&python-version;.tar.xz">
-<!ENTITY python-md5 "16beaf44e56ed4b8254f625504b08a7f">
+<!ENTITY python-md5 "d28d7fb81a61d3bff5a6bedceb969366">
 <!ENTITY python-home "https://www.python.org/">
 <!ENTITY python-tmp-du "592 MB">
 <!ENTITY python-tmp-sbu "0.5 SBU">
 <!ENTITY python-fin-du "494 MB">
 <!ENTITY python-fin-sbu "2.6 SBU">
 <!ENTITY python-docs-url "https://www.python.org/ftp/python/doc/&python-version;/python-&python-version;-docs-html.tar.bz2">
-<!ENTITY python-docs-md5 "b5e4e78aecd57de93837810d279598e2">
-<!ENTITY python-docs-size "10,718 KB">
+<!ENTITY python-docs-md5 "95c7483f256f6f0596c9e644756dc556">
+<!ENTITY python-docs-size "10,746 KB">
 
 <!ENTITY readline-version "8.3">
 <!ENTITY readline-soversion "8.3"><!-- used for stripping -->
@@ -682,19 +682,19 @@
 <!ENTITY shadow-fin-du "115 MB">
 <!ENTITY shadow-fin-sbu "0.1 SBU">
 
-<!ENTITY sqlite-version "3530100">
-<!ENTITY sqlite-short-version "3.53.1">
+<!ENTITY sqlite-version "3530200">
+<!ENTITY sqlite-short-version "3.53.2">
 <!ENTITY sqlite-year "2026">
-<!ENTITY sqlite-size "3,199 KB">
+<!ENTITY sqlite-size "3,204 KB">
 <!ENTITY sqlite-url "https://sqlite.org/&sqlite-year;/sqlite-autoconf-&sqlite-version;.tar.gz">
-<!ENTITY sqlite-md5 "af0fd4332e87e0d028aece375dbd2c84">
+<!ENTITY sqlite-md5 "a86a69e9c35dcf886e2ab4ccc6062ac2">
 <!ENTITY sqlite-home "https://sqlite.org">
 <!ENTITY sqlite-fin-du "124 MB">
 <!ENTITY sqlite-fin-sbu "0.4 SBU">
 <!ENTITY sqlite-doc-version "&sqlite-version;">
-<!ENTITY sqlite-doc-size "6,096 KB">
+<!ENTITY sqlite-doc-size "6,175 KB">
 <!ENTITY sqlite-doc-url  "&anduin-sources;/sqlite-doc-&sqlite-doc-version;.tar.xz">
-<!ENTITY sqlite-doc-md5  "61163af56e5d88a181a40be0be850495">
+<!ENTITY sqlite-doc-md5  "44a7cb532169ed7cf3b6e5ffe19c7806">
 
 <!ENTITY sysklogd-version "2.7.2">
 <!ENTITY sysklogd-size "474 KB">
@@ -796,9 +796,9 @@
 <!ENTITY util-linux-fin-du "346 MB">
 <!ENTITY util-linux-fin-sbu "0.5 SBU">
 
-<!ENTITY vim-version "9.2.0567">
+<!ENTITY vim-version "9.2.0640">
 <!ENTITY vim-docdir "vim/vim92">
-<!ENTITY vim-size "19,586 KB">
+<!ENTITY vim-size "19,683 KB">
 <!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">
 <!-- N.B. LFS 9.0 uses
      https://github.com/vim/vim/archive/v8.1.1846/vim-8.1.1846.tar.gz
@@ -811,7 +811,7 @@
      release.  The "Next" button just sets "after=" in the URL.  For
      example, https://github.com/vim/vim/tags?after=v8.1.1847 will show
      us v8.1.1846. -->
-<!ENTITY vim-md5 "21f8aec8ca0422156ac7de1a92a49901">
+<!ENTITY vim-md5 "6a5ddc247f0e17b66a0172f06924b719">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "217 MB">
 <!ENTITY vim-fin-sbu "3.2 SBU">

@@ -84,6 +84,7 @@ cd       build</userinput></screen>
     --with-build-sysroot=$LFS    \
     --enable-default-pie         \
     --enable-default-ssp         \
+    --disable-fixincludes        \
     --disable-nls                \
     --enable-multilib            \
     --with-multilib-list=m64,m32 \
@@ -126,6 +127,17 @@ cd       build</userinput></screen>
           uses additional tools which are not aware of this location. This
           switch is needed so those tools will find the needed files in
           <filename class="directory">$LFS</filename>, and not on the host.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-fixincludes</parameter></term>
+        <listitem>
+          <para>By default, during the installation of GCC some system
+          headers would be <quote>fixed</quote> to be used with GCC.  This
+          is not necessary for a modern Linux system, and potentially
+          harmful if a package is reinstalled after installing GCC.  This
+          switch prevents GCC from <quote>fixing</quote> the headers.</para>
         </listitem>
       </varlistentry>
 
