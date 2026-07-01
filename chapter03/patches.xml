@@ -152,7 +152,7 @@
     <varlistentry>
       <term>Tar Upstream Patch - <token>&tar-aclfix-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&tar-aclfix-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;&tar-aclfix-patch;"/></para>
         <para>MD5 sum: <literal>&tar-aclfix-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
