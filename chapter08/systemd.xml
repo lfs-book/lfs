@@ -236,13 +236,19 @@ unshare -m ninja test</userinput></screen>
 
     <!-- test-namespace needs /run/systemd/inaccessible/sock, which only exists
          after initializing the system with systemd.  -->
-    <para>One test named <literal>systemd:core / test-namespace</literal>
-    is known to fail in the LFS chroot environment.  Some other tests may
-    fail because they depend on various kernel configuration options.
-    The test named <literal>systemd:test / test-copy</literal> may time out
-    due to an I/O congestion with a large parallel job number, but it
-    would pass if running alone with
-    <command>meson test test-copy</command>.</para>
+    <para>
+      Three tests are known to fail in the LFS chroot environment but
+      pass in a full installation: 
+       <literal>core - systemd:test-namespace</literal>,
+       <literal>test - systemd:test-chase</literal>, and
+       <literal>tmpfiles - systemd:test-systemd-tmpfiles</literal>.
+      Some additional tests may fail because they depend on various 
+      kernel configuration options. The test named 
+       <literal>test - systemd:test-copy</literal> 
+      may time out due to I/O congestion with a large parallel job 
+      number, but will pass if running alone with
+        <command>meson test test-copy</command>.
+    </para>
 
     <para>Install the package:</para>
 
