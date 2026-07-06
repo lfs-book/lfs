@@ -26,12 +26,12 @@
     <!--<listitem>
     <para>None</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Acl-&acl-version;</para>
-    </listitem>-->
-    <!--<listitem>
+    </listitem>
+    <listitem>
       <para>Attr-&attr-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Autoconf-&autoconf-version;</para>
     </listitem>
@@ -152,9 +152,9 @@
     <listitem>
       <para>Libelf from Elfutils-&elfutils-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Libffi-&libffi-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Libpipeline-&libpipeline-version;</para>
     </listitem>-->
@@ -305,8 +305,8 @@
     <title>Added:</title>
     <!--    <listitem><para></para></listitem> -->  <!-- satisfy build -->
     <listitem><para>glibc-2.43-linux7_fixes-1.patch</para></listitem>
-    <listitem><para>Python-3.14.6-openssl_4-1.patch</para></listitem>
-    <listitem><para>systemd-260.1-buildfix-1.patch</para></listitem>
+    <listitem><para>tar-1.35-acl_fix-1.patch</para></listitem>
+    <listitem><para>Python-3.14.6-consolidated_fixes-1.patch</para></listitem>
   </itemizedlist>
 
   <itemizedlist>

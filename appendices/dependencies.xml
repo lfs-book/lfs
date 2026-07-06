@@ -44,7 +44,7 @@
       <segmentedlist id="acl-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Attr, Bash, Binutils, Coreutils, GCC, Gettext, Grep, M4, Make,
+          <seg>Bash, Binutils, Coreutils, GCC, Gettext, Grep, M4, Make,
           Perl, Sed, and Texinfo</seg>
         </seglistitem>
       </segmentedlist>
@@ -52,7 +52,7 @@
       <segmentedlist id="acl-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
-          <seg>Attr and Glibc</seg>
+          <seg>Glibc</seg>
         </seglistitem>
       </segmentedlist>
 
