@@ -44,8 +44,7 @@
 
     <para>Prepare mpdecimal for compilation:</para>
 
-<screen><userinput remap="configure">
-./configure --prefix=/usr    \
+<screen><userinput remap="configure">./configure --prefix=/usr    \
             --disable-static \
             --docdir=/usr/share/doc/mpdecimal-&mpdecimal-version;</userinput></screen>
 
