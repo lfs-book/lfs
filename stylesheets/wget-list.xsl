@@ -17,7 +17,7 @@
       name, the next test must be fixed to match it also. Skip possible
       duplicated URLs due that may be split for PDF output -->
     <xsl:if test="( (contains(@url, '.tar.') and not( ancestor::note ) ) or
-                    contains(@url, '.tgz'  )                             or
+                    contains(@url, '.zip'  )                             or
                     contains(@url, '.patch')
                   ) and
                     not(ancestor-or-self::*/@condition = 'pdf')">

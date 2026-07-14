@@ -2583,8 +2583,7 @@
       <segmentedlist id="pkgconf-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, Coreutils, Gawk, GCC, Glibc, Grep, Make,
-          Sed, and Sqlite</seg>
+          <seg>Binutils, GCC, Glibc, Meson, Ninja, and Python</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2712,7 +2711,7 @@
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Expat, GCC, Gdbm, Gettext, Glibc,
           Grep, Libffi, Libxcrypt, Make, Ncurses, OpenSSL, Pkgconf, Sed,
-          Util-linux, and Zstd</seg>
+          Util-linux, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2743,8 +2742,7 @@
         <seglistitem>
           <seg>
             &bdb;,
-            <ulink url="&blfs-book;basicnet/libnsl.html">libnsl</ulink>,
-            <ulink url="&blfs-book;server/sqlite.html">SQLite</ulink>, and
+            <ulink url="&blfs-book;basicnet/libnsl.html">libnsl</ulink>, and
             <ulink url="&blfs-book;general/tk.html">Tk</ulink>
           </seg>
         </seglistitem>
@@ -2910,12 +2908,12 @@
       </segmentedlist>
 
 <!-- Begin Sqlite dependency info -->
-  <bridgehead renderas="sect2" id="Sqlite-dep">Pcre2</bridgehead>
+  <bridgehead renderas="sect2" id="Sqlite-dep">Sqlite</bridgehead>
 
       <segmentedlist id="Sqlite-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, GCC, Glibc, Gzip, Make, Ncurses, and Readline</seg>
+          <seg>Bash, Binutils, GCC, Glibc, Gzip, Make, Ncurses, Readline, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -3529,7 +3527,7 @@
       <segmentedlist id="zlib-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>File, Kmod, Libelf, Perl, and Util-linux</seg>
+          <seg>File, Kmod, Libelf, Perl, Python, and Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
