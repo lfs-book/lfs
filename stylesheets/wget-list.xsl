@@ -9,18 +9,14 @@
   <xsl:output method="text"/>
 
   <xsl:template match="/">
-    <xsl:apply-templates select="//ulink"/>
+    <xsl:apply-templates select="//listitem/para[contains(string(),'Download')]/ulink"/>
   </xsl:template>
 
   <xsl:template match="ulink">
       <!-- If some package don't have the predefined strings in their
       name, the next test must be fixed to match it also. Skip possible
       duplicated URLs due that may be split for PDF output -->
-    <xsl:if test="( (contains(@url, '.tar.') and not( ancestor::note ) ) or
-                    contains(@url, '.zip'  )                             or
-                    contains(@url, '.patch')
-                  ) and
-                    not(ancestor-or-self::*/@condition = 'pdf')">
+    <xsl:if test="not(ancestor-or-self::*/@condition = 'pdf')">
       <xsl:choose>
         <xsl:when test="contains(@url,'?download')">
           <xsl:value-of select="substring-before(@url,'?download')"/>
