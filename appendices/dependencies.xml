@@ -2214,6 +2214,45 @@
         </seglistitem>
       </segmentedlist>
 
+<!-- Begin Mpdecimal dependency info -->
+  <bridgehead renderas="sect2" id="mpdecimal-dep">Mpdecimal</bridgehead>
+
+      <segmentedlist id="mpdecimal-depends">
+        <segtitle>&dependencies;</segtitle>
+        <seglistitem>
+          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep,
+          Make, and Sed</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="mpdecimal-rundeps">
+        <segtitle>&runtime;</segtitle>
+        <seglistitem>
+          <seg>GCC <!-- for libstdc++ --> and Glibc</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="mpdecimal-testdeps">
+        <segtitle>&testsuites;</segtitle>
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="mpdecimal-before">
+        <segtitle>&before;</segtitle>
+        <seglistitem>
+          <seg>Python</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="mpdecimal-optdeps">
+        <segtitle>&external;</segtitle>
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
 <!-- Begin MPC dependency info -->
   <bridgehead renderas="sect2" id="mpc-dep">MPC</bridgehead>
 
@@ -2710,16 +2749,16 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Expat, GCC, Gdbm, Gettext, Glibc,
-          Grep, Libffi, Libxcrypt, Make, Ncurses, OpenSSL, Pkgconf, Sed,
-          Util-linux, and Zlib</seg>
+          Grep, Libffi, Libxcrypt, Make, Mpdecimal, Ncurses, OpenSSL,
+          Pkgconf, Sed, Util-linux, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
       <segmentedlist id="python-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
-          <seg>Bzip2, Expat, Gdbm, Glibc, Libffi, Libxcrypt, Ncurses,
-          OpenSSL, and Zlib</seg>
+          <seg>Bzip2, Expat, Gdbm, Glibc, Libffi, Libxcrypt, Mpdecimal,
+          Ncurses, OpenSSL, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
