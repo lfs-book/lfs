@@ -138,6 +138,7 @@ if ( $package == "lz4"        ) $dirpath = github("lz4/lz4");
 if ( $package == "markupsafe" ) $dirpath = "https://pypi.org/rss/project/markupsafe/releases.xml";
 if ( $package == "meson"      ) $dirpath = github("mesonbuild/meson");
 if ( $package == "mpc"        ) $dirpath = "https://ftp.gnu.org/gnu/mpc";
+if ( $package == "mpdecimal"  ) $dirpath = "https://www.bytereef.org/mpdecimal";
 if ( $package == "mpfr"       ) $dirpath = "https://mpfr.loria.fr/mpfr-current";
 if ( $package == "ncurses"    ) $dirpath = "https://invisible-mirror.net/archives/ncurses";
 if ( $package == "ninja"      ) $dirpath = github("ninja-build/ninja");
@@ -257,6 +258,9 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
 
   if ( $package == "linux" )
      return find_max( $lines, "/linux/", "/^.*linux-([\d\.]+).tar.*$/" );
+
+  if ( $package == "mpdecimal" )
+     return find_max( $lines, "/VERSION/", "/^.*'([\d\.]+)'.*$/" );
 
   # Python modules
   if ( $package == "flit_core" )

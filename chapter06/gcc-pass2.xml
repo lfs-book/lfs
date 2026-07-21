@@ -59,12 +59,6 @@ mv -v mpc-&mpc-version; mpc</userinput></screen>
 <screen><userinput remap="pre">sed -e '/lp64=/s/lib64/lib/' \
     -i.orig gcc/config/aarch64/t-aarch64-linux</userinput></screen>
 
-    <para>Override the build rules of the libgcc and libstdc++ headers to
-    allow building these libraries with POSIX threads support:</para>
-
-<screen><userinput remap="pre">sed '/thread_header =/s/@.*@/gthr-posix.h/' \
-    -i libgcc/Makefile.in libstdc++-v3/include/Makefile.in</userinput></screen>
-
     <para>Create a separate build directory again:</para>
 
 <screen><userinput remap="pre">mkdir -v build
@@ -83,6 +77,7 @@ cd       build</userinput></screen>
     --with-build-sysroot=$LFS  \
     --enable-default-pie       \
     --enable-default-ssp       \
+    --disable-fixincludes      \
     --disable-nls              \
     --disable-multilib         \
     --disable-libatomic        \
@@ -92,23 +87,11 @@ cd       build</userinput></screen>
     --disable-libssp           \
     --disable-libvtv           \
     --enable-languages=c,c++   \
-    LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc</userinput></screen>
+    LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc \
+    target_configargs=gcc_cv_target_thread_file=posix</userinput></screen>
 
     <variablelist>
       <title>The meaning of the new configure options:</title><!-- WIP -->
-
-      <varlistentry>
-        <term><parameter>--with-build-sysroot=$LFS</parameter></term>
-        <listitem>
-          <para>Normally, using <parameter>--host</parameter> ensures that
-          a cross-compiler is used for building GCC, and that compiler knows
-          that it has to look for headers and libraries in <filename
-          class="directory">$LFS</filename>. However, the build system for GCC
-          uses additional tools which are not aware of this location. This
-          switch is needed so those tools will find the needed files in
-          <filename class="directory">$LFS</filename>, and not on the host.</para>
-        </listitem>
-      </varlistentry>
 
       <varlistentry>
         <term><parameter>--target=$LFS_TGT</parameter></term>
@@ -127,6 +110,41 @@ cd       build</userinput></screen>
       </varlistentry>
 
       <varlistentry>
+        <term><parameter>--with-build-sysroot=$LFS</parameter></term>
+        <listitem>
+          <para>Normally, using <parameter>--host</parameter> ensures that
+          a cross-compiler is used for building GCC, and that compiler knows
+          that it has to look for headers and libraries in <filename
+          class="directory">$LFS</filename>. However, the build system for GCC
+          uses additional tools which are not aware of this location. This
+          switch is needed so those tools will find the needed files in
+          <filename class="directory">$LFS</filename>, and not on the host.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-fixincludes</parameter></term>
+        <listitem>
+          <para>By default, during the installation of GCC some system
+          headers would be <quote>fixed</quote> to be used with GCC.  This
+          is not necessary for a modern Linux system, and potentially
+          harmful if a package is reinstalled after installing GCC.  This
+          switch prevents GCC from <quote>fixing</quote> the headers.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--disable-libsanitizer</parameter></term>
+        <listitem>
+          <para>Disable GCC sanitizer runtime libraries.  They are not
+          needed for the temporary installation.  In
+          <xref linkend='ch-tools-gcc-pass1'/> it was implied by
+          <parameter>--disable-libstdcxx</parameter>, and now we can
+          explicitly pass it.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
         <term><parameter>LDFLAGS_FOR_TARGET=...</parameter></term>
         <listitem>
           <para>Allow <filename class="libraryfile">libstdc++</filename> to
@@ -139,13 +157,13 @@ cd       build</userinput></screen>
       </varlistentry>
 
       <varlistentry>
-        <term><parameter>--disable-libsanitizer</parameter></term>
+        <term><parameter>target_configargs=gcc_cv_target_thread_file=posix</parameter></term>
         <listitem>
-          <para>Disable GCC sanitizer runtime libraries.  They are not
-          needed for the temporary installation.  In
-          <xref linkend='ch-tools-gcc-pass1'/> it was implied by
-          <parameter>--disable-libstdcxx</parameter>, and now we can
-          explicitly pass it.</para>
+          <para>Build the target libraries libgcc and libstdc++ with POSIX
+          thread support enabled.  The default is following the
+          configuration of the compiler used for building the target library
+          (in this case, <xref linkend='ch-tools-gcc-pass1'/> which was
+          configured with none thread support).</para>
         </listitem>
       </varlistentry>
 

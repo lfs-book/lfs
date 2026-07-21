@@ -291,6 +291,22 @@ useradd -D --gid 999</userinput></screen>
 
     </variablelist>
 
+    <para>
+      Finally, create the empty <filename>/etc/subuid</filename> and
+      <filename>/etc/subgid</filename> files:
+    </para>
+
+    <screen><userinput>touch /etc/sub{u,g}id</userinput></screen>
+
+    <para>
+      The content of those files will be automatically updated by some
+      utilities provided by Shadow to allocate subordinate user and group
+      IDs.  Read the man pages
+      <ulink role='man' url='&man;subuid.5'>subuid(5)</ulink> and
+      <ulink role='man' url='&man;subgid.5'>subgid(5)</ulink> for the
+      details about the subordinate IDs.
+    </para>
+
   </sect2>
 
   <sect2 role="configuration">

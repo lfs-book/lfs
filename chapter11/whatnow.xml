@@ -31,7 +31,7 @@
       <itemizedlist>
 
         <listitem>
-          <para><ulink url="&lfs-root;lfs/advisories/">LFS Security Advisories</ulink></para>
+          <para><ulink url="&lfs-root;advisories/">LFS Security Advisories</ulink></para>
 
           <para>This is a list of security vulnerabilities discovered in the
           LFS book after it's published.</para>
