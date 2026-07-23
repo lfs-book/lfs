@@ -31,4 +31,8 @@ url="https://www.linuxfromscratch.org/~thomas/multilib/index.html"/>. But
 the multilib edition is for x86_64, and multilib is an advanced topic
 anyway.</para>
 
+<para>Also note that the 32-bit support is optional in ARM64.  I.e. some
+ARM64 processors do not support 32-bit executables at all and building
+multi-lib on them would be pointless.</para>
+
 </sect1>
