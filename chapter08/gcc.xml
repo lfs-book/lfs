@@ -159,6 +159,7 @@ cd       build</userinput></screen>
 
     <para>Compile the package:</para>
 
+<!--  GCC's build scripts (particularly fixincludes) contain strict regex patterns that are incompatible with the strict POSIX compliance rules introduced in recent gawk versions.-->
 <screen><userinput remap="make">make</userinput></screen>
 
     <important>

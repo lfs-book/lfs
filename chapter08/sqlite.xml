@@ -44,7 +44,7 @@
 
     <para>Unpack the documentation:</para>
 
-<screen><userinput remap="pre">tar -xf ../sqlite-doc-&sqlite-doc-version;.tar.xz</userinput></screen>
+<screen><userinput remap="pre">python3 -m zipfile -e ../sqlite-doc-&sqlite-doc-version;.zip .</userinput></screen>
 
     <para>Prepare Sqlite for compilation with:</para>
 

@@ -44,19 +44,25 @@
 
     <title>Installation of Pkgconf</title>
 
+    <para>First, work around a circular dependency on meson:</para>
+
+<screen><userinput remap="pre">tar -xf ../meson-&meson-version;.tar.gz</userinput></screen>
+
     <para>Prepare Pkgconf for compilation:</para>
 
-<screen><userinput remap="configure">./configure --prefix=/usr    \
-            --disable-static \
-            --docdir=/usr/share/doc/pkgconf-&pkgconf-version;</userinput></screen>
+<screen><userinput remap="configure">mkdir build
+cd    build
+
+python3 ../meson-&meson-version;/meson.py setup --prefix=/usr --buildtype=release ..</userinput></screen>
 
     <para>Compile the package:</para>
 
-<screen><userinput remap="make">make</userinput></screen>
+<screen><userinput remap="make">ninja</userinput></screen>
 
     <para>Install the package:</para>
 
-<screen><userinput remap="install">make install</userinput></screen>
+<screen><userinput remap="install">ninja install
+mv /usr/share/doc/pkgconf{,-&pkgconf-version;}</userinput></screen>
 
     <para>To maintain compatibility with the original Pkg-config create two
     symlinks:</para>
@@ -138,7 +144,7 @@ EOF</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libpkgconf">
-        <term><filename class="libraryfile">libpkgconf</filename></term>
+        <term><filename class="libraryfile">libpkgconf.so</filename></term>
         <listitem>
           <para>Contains most of pkgconf's functionality, while allowing
           other tools like IDEs and compilers to use its frameworks</para>

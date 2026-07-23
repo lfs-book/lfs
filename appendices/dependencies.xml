@@ -2253,6 +2253,45 @@
         </seglistitem>
       </segmentedlist>
 
+<!-- Begin Mpdecimal dependency info -->
+  <bridgehead renderas="sect2" id="mpdecimal-dep">Mpdecimal</bridgehead>
+
+      <segmentedlist id="mpdecimal-depends">
+        <segtitle>&dependencies;</segtitle>
+        <seglistitem>
+          <seg>Bash, Binutils, Coreutils, Diffutils, Gawk, GCC, Glibc, Grep,
+          Make, and Sed</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="mpdecimal-rundeps">
+        <segtitle>&runtime;</segtitle>
+        <seglistitem>
+          <seg>GCC <!-- for libstdc++ --> and Glibc</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="mpdecimal-testdeps">
+        <segtitle>&testsuites;</segtitle>
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="mpdecimal-before">
+        <segtitle>&before;</segtitle>
+        <seglistitem>
+          <seg>Python</seg>
+        </seglistitem>
+      </segmentedlist>
+
+      <segmentedlist id="mpdecimal-optdeps">
+        <segtitle>&external;</segtitle>
+        <seglistitem>
+          <seg>None</seg>
+        </seglistitem>
+      </segmentedlist>
+
 <!-- Begin MPC dependency info -->
   <bridgehead renderas="sect2" id="mpc-dep">MPC</bridgehead>
 
@@ -2662,8 +2701,7 @@
       <segmentedlist id="pkgconf-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, Coreutils, Gawk, GCC, Glibc, Grep, Make,
-          Sed, and Sqlite</seg>
+          <seg>Binutils, GCC, Glibc, Meson, Ninja, and Python</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2790,16 +2828,16 @@
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
           <seg>Bash, Binutils, Coreutils, Expat, GCC, Gdbm, Gettext, Glibc,
-          Grep, Libffi, Libxcrypt, Make, Ncurses, OpenSSL, Pkgconf, Sed,
-          Util-linux, and Zstd</seg>
+          Grep, Libffi, Libxcrypt, Make, Mpdecimal, Ncurses, OpenSSL,
+          Pkgconf, Sed, Util-linux, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
       <segmentedlist id="python-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
-          <seg>Bzip2, Expat, Gdbm, Glibc, Libffi, Libxcrypt, Ncurses,
-          OpenSSL, and Zlib</seg>
+          <seg>Bzip2, Expat, Gdbm, Glibc, Libffi, Libxcrypt, Mpdecimal,
+          Ncurses, OpenSSL, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -2822,8 +2860,7 @@
         <seglistitem>
           <seg>
             &bdb;,
-            <ulink url="&blfs-book;basicnet/libnsl.html">libnsl</ulink>,
-            <ulink url="&blfs-book;server/sqlite.html">SQLite</ulink>, and
+            <ulink url="&blfs-book;basicnet/libnsl.html">libnsl</ulink>, and
             <ulink url="&blfs-book;general/tk.html">Tk</ulink>
           </seg>
         </seglistitem>
@@ -2989,12 +3026,12 @@
       </segmentedlist>
 
 <!-- Begin Sqlite dependency info -->
-  <bridgehead renderas="sect2" id="Sqlite-dep">Pcre2</bridgehead>
+  <bridgehead renderas="sect2" id="Sqlite-dep">Sqlite</bridgehead>
 
       <segmentedlist id="Sqlite-depends">
         <segtitle>&dependencies;</segtitle>
         <seglistitem>
-          <seg>Bash, Binutils, GCC, Glibc, Gzip, Make, Ncurses, and Readline</seg>
+          <seg>Bash, Binutils, GCC, Glibc, Gzip, Make, Ncurses, Readline, and Zlib</seg>
         </seglistitem>
       </segmentedlist>
 
@@ -3570,7 +3607,7 @@
       <segmentedlist id="zlib-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
-          <seg>File, Kmod, Libelf, Perl, and Util-linux</seg>
+          <seg>File, Kmod, Libelf, Perl, Python, and Util-linux</seg>
         </seglistitem>
       </segmentedlist>
 
