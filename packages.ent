@@ -175,10 +175,10 @@
 <!ENTITY file-fin-du "19 MB">
 <!ENTITY file-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY findutils-version "4.10.0">
-<!ENTITY findutils-size "2,189 KB">
+<!ENTITY findutils-version "4.11.0">
+<!ENTITY findutils-size "2,394 KB">
 <!ENTITY findutils-url "&gnu;findutils/findutils-&findutils-version;.tar.xz">
-<!ENTITY findutils-md5 "870cfd71c07d37ebe56f9f4aaf4ad872">
+<!ENTITY findutils-md5 "512c6875ed84034dca240c4bc9380b96">
 <!ENTITY findutils-home "&gnu-software;findutils/">
 <!ENTITY findutils-tmp-du "48 MB">
 <!ENTITY findutils-tmp-sbu "0.2 SBU">
@@ -201,10 +201,10 @@
 <!ENTITY flit-core-fin-du "1.3 MB">
 <!ENTITY flit-core-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY gawk-version "5.4.0">
-<!ENTITY gawk-size "3,715 KB">
+<!ENTITY gawk-version "5.4.1">
+<!ENTITY gawk-size "3,749 KB">
 <!ENTITY gawk-url "&gnu;gawk/gawk-&gawk-version;.tar.xz">
-<!ENTITY gawk-md5 "c07cc9beb6c3bf83274741d0c9489357">
+<!ENTITY gawk-md5 "d379c2110e7a3e15347dd5559a41ad64">
 <!ENTITY gawk-home "&gnu-software;gawk/">
 <!ENTITY gawk-tmp-du "49 MB">
 <!ENTITY gawk-tmp-sbu "0.1 SBU">
@@ -223,7 +223,7 @@
 <!ENTITY gcc-fin-du "6.6 GB ">
 <!ENTITY gcc-fin-sbu "45 SBU (with tests)">
 <!ENTITY libquadmath-version "0.0.0">
-<!ENTITY libstdcpp-version   "6.0.34">
+<!ENTITY libstdcpp-version   "6.0.35">
 <!ENTITY libitm-version      "1.0.0">
 <!ENTITY libatomic-version   "1.2.0">
 
@@ -390,10 +390,10 @@
 <!ENTITY libcap-fin-du "3.1 MB">
 <!ENTITY libcap-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY libffi-version "3.6.0">
-<!ENTITY libffi-size "1,441 KB">
+<!ENTITY libffi-version "3.7.1">
+<!ENTITY libffi-size "1,480 KB">
 <!ENTITY libffi-url "https://github.com/libffi/libffi/releases/download/v&libffi-version;/libffi-&libffi-version;.tar.gz">
-<!ENTITY libffi-md5 "380c44141b89b6c82ea0943c026d35c9">
+<!ENTITY libffi-md5 "cdff56bdb1b62fa879e3c27b94f812c1">
 <!ENTITY libffi-home "https://sourceware.org/libffi/">
 <!ENTITY libffi-fin-du "10 MB">
 <!ENTITY libffi-fin-sbu "1.7 SBU">
@@ -425,12 +425,12 @@
 <!ENTITY linux-major-version "7">
 <!ENTITY linux-minor-version "1">
 <!ENTITY linux-majmin-version "&linux-major-version;.&linux-minor-version;">
-<!ENTITY linux-patch-version "2">
+<!ENTITY linux-patch-version "3">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "154,613 KB">
+<!ENTITY linux-size "154,625 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "cb5642ab41dcc2d93d32b3989637b320">
+<!ENTITY linux-md5 "bf2d36739dc948b9c5d923a238e150c1">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -497,10 +497,10 @@
 <!ENTITY markupsafe-fin-du "692 KB">
 <!ENTITY markupsafe-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY meson-version "1.11.1">
-<!ENTITY meson-size "5,069 KB">
+<!ENTITY meson-version "1.11.2">
+<!ENTITY meson-size "2,406 KB">
 <!ENTITY meson-url "&github;/mesonbuild/meson/releases/download/&meson-version;/meson-&meson-version;.tar.gz">
-<!ENTITY meson-md5 "835e1615ae5d88b12caaa8cd0e431556">
+<!ENTITY meson-md5 "7ba0f0dea10d9a1dded2a9e3b3919c59">
 <!ENTITY meson-home "https://mesonbuild.com">
 <!ENTITY meson-fin-du "48 MB">
 <!ENTITY meson-fin-sbu "less than 0.1 SBU">
@@ -512,6 +512,16 @@
 <!ENTITY mpc-home "https://www.multiprecision.org/">
 <!ENTITY mpc-fin-du "22 MB">
 <!ENTITY mpc-fin-sbu "0.1 SBU">
+
+<!ENTITY mpdecimal-version "4.0.1">
+<!ENTITY mpdecimal-size "309 KB">
+<!ENTITY mpdecimal-url "https://www.bytereef.org/software/mpdecimal/releases/mpdecimal-&mpdecimal-version;.tar.gz">
+<!ENTITY mpdecimal-md5 "3d4412579b1edc1047efab151889cca9">
+<!ENTITY mpdecimal-home "https://www.bytereef.org/mpdecimal/">
+<!ENTITY mpdecimal-tmp-du "4.3 MB">
+<!ENTITY mpdecimal-tmp-sbu "0.1 SBU">
+<!ENTITY mpdecimal-fin-du "4.3 MB">
+<!ENTITY mpdecimal-fin-sbu "0.1 SBU">
 
 <!ENTITY mpfr-version "4.2.2">
 <!ENTITY mpfr-size "1,471 KB">
@@ -596,10 +606,10 @@
 <!ENTITY perl-fin-du "257 MB">
 <!ENTITY perl-fin-sbu "1.3 SBU">
 
-<!ENTITY pkgconf-version "2.5.1">
-<!ENTITY pkgconf-size "321 KB">
+<!ENTITY pkgconf-version "3.0.2">
+<!ENTITY pkgconf-size "406 KB">
 <!ENTITY pkgconf-url "https://distfiles.ariadne.space/pkgconf/pkgconf-&pkgconf-version;.tar.xz">
-<!ENTITY pkgconf-md5 "3291128c917fdb8fccd8c9e7784b643b">
+<!ENTITY pkgconf-md5 "1a61eabe6252047387df0379f5109ef8">
 <!ENTITY pkgconf-home "https://github.com/pkgconf/pkgconf">
 <!ENTITY pkgconf-fin-du "5.0 MB">
 <!ENTITY pkgconf-fin-sbu "less than 0.1 SBU">
@@ -656,10 +666,10 @@
 <!ENTITY sed-fin-du "30 MB">
 <!ENTITY sed-fin-sbu "0.3 SBU">
 
-<!ENTITY setuptools-version "82.0.1">
-<!ENTITY setuptools-size "1,126 KB">
+<!ENTITY setuptools-version "83.0.0">
+<!ENTITY setuptools-size "1,128 KB">
 <!ENTITY setuptools-url "&pypi-src;/s/setuptools/setuptools-&setuptools-version;.tar.gz">
-<!ENTITY setuptools-md5 "2d7f1881d7a06abe7fa69412de30cda5">
+<!ENTITY setuptools-md5 "f1d047722f6155a2150ed8546bfb75d8">
 <!ENTITY setuptools-home "&pypi-home;/setuptools/">
 <!ENTITY setuptools-fin-du "22 MB">
 <!ENTITY setuptools-fin-sbu "less than 0.1 SBU">
@@ -682,9 +692,10 @@
 <!ENTITY sqlite-fin-du "124 MB">
 <!ENTITY sqlite-fin-sbu "0.4 SBU">
 <!ENTITY sqlite-doc-version "&sqlite-version;">
-<!ENTITY sqlite-doc-size "6,076 KB">
-<!ENTITY sqlite-doc-url  "&anduin-sources;/sqlite-doc-&sqlite-doc-version;.tar.xz">
-<!ENTITY sqlite-doc-md5  "b24922dba38ab10cbf1c805c00539f27">
+<!ENTITY sqlite-doc-size "11,538 KB">
+<!--<!ENTITY sqlite-doc-url  "&anduin-sources;/sqlite-doc-&sqlite-doc-version;.tar.xz">-->
+<!ENTITY sqlite-doc-url  "https://sqlite.org/&sqlite-year;/sqlite-doc-&sqlite-doc-version;.zip">
+<!ENTITY sqlite-doc-md5  "95375cd647d3bd8bc45b4bb49168198f">
 
 <!ENTITY sysklogd-version "2.7.2">
 <!ENTITY sysklogd-size "474 KB">
@@ -744,10 +755,10 @@
 <!ENTITY texinfo-fin-du "160 MB">
 <!ENTITY texinfo-fin-sbu "0.3 SBU">
 
-<!ENTITY tzdata-version "2026b">
-<!ENTITY tzdata-size "463 KB">
+<!ENTITY tzdata-version "2026c">
+<!ENTITY tzdata-size "465 KB">
 <!ENTITY tzdata-url "https://www.iana.org/time-zones/repository/releases/tzdata&tzdata-version;.tar.gz">
-<!ENTITY tzdata-md5 "25425534443b0bdf501d6fb75442a041">
+<!ENTITY tzdata-md5 "bff7174205cefab793e3b24271ef2f45">
 <!ENTITY tzdata-home "https://www.iana.org/time-zones">
 
 <!ENTITY udev-lfs-version "udev-lfs-20251217">
@@ -824,6 +835,8 @@
 <!ENTITY zlib-url "https://zlib.net/fossils/zlib-&zlib-version;.tar.gz">
 <!ENTITY zlib-md5 "a1e6c958597af3c67d162995a342138a">
 <!ENTITY zlib-home "https://zlib.net/">
+<!ENTITY zlib-tmp-du "6.4 MB">
+<!ENTITY zlib-tmp-sbu "less than 0.1 SBU">
 <!ENTITY zlib-fin-du "6.4 MB">
 <!ENTITY zlib-fin-sbu "less than 0.1 SBU">
 

@@ -438,6 +438,13 @@
       </listitem>
 
       <listitem>
+        <para>Mpdecimal</para>
+
+        <para>This package supplies arithmetic functions for decimal
+        float numbers. It is required by Python.</para>
+      </listitem>
+
+      <listitem>
         <para>MPFR</para>
 
         <para>This package contains functions for multiple precision

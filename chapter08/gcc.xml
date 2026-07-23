@@ -41,11 +41,6 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
-    <!-- not needed anymore with gcc-16:
-    <para>First, make a fix required by glibc-2.43 and later:</para>
-
-    <screen><userinput remap="pre">sed -i 's/char [*]q/const &amp;/' libgomp/affinity-fmt.c</userinput></screen>
-    -->
     <para>If building on x86_64, change the default directory name for 64-bit
     libraries to <quote>lib</quote>:</para>
 
@@ -162,6 +157,7 @@ cd       build</userinput></screen>
 
     <para>Compile the package:</para>
 
+<!--  GCC's build scripts (particularly fixincludes) contain strict regex patterns that are incompatible with the strict POSIX compliance rules introduced in recent gawk versions.-->
 <screen><userinput remap="make">make</userinput></screen>
 
     <important>
