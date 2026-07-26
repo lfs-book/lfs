@@ -41,6 +41,48 @@
     -->
 
     <listitem>
+      <para>2026-07-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Add mpdecimal-4.0.1. Fixes
+          <ulink url="&lfs-ticket-root;5963">#5963</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to tzdata-2026c. Fixes
+          <ulink url="&lfs-ticket-root;5971">#5971</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to setuptools-83.0.0. Fixes
+          <ulink url="&lfs-ticket-root;5969">#5969</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to pkgconf-3.0.2. Fixes
+          <ulink url="&lfs-ticket-root;5962">#5962</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to meson-1.11.2. Fixes
+          <ulink url="&lfs-ticket-root;5975">#5975</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to libffi-3.7.1. Fixes
+          <ulink url="&lfs-ticket-root;5970">#5970</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-7.1.3. Fixes
+          <ulink url="&lfs-ticket-root;5968">#5968</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gawk-5.4.1. Fixes
+          <ulink url="&lfs-ticket-root;5973">#5973</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to findutils-4.11.0. Fixes
+          <ulink url="&lfs-ticket-root;5974">#5974</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2026-07-01</para>
       <itemizedlist>
         <listitem>
