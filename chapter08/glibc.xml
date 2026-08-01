@@ -50,24 +50,26 @@
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
 
+<!--
     <para>Now add some fixes to address building and testing with Linux 7,
     and fix 5 security vulnerabilities found after the glibc-2.43
     release:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-patch;</userinput></screen>
+-->
 
     <para>The Glibc documentation recommends building Glibc
     in a dedicated build directory:</para>
 
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
-
+<!--
     <para>Ensure that the <command>ldconfig</command> and <command>sln</command>
     utilities will be installed into
     <filename class="directory">/usr/sbin</filename>:</para>
 
 <screen><userinput remap="pre">echo "rootsbindir=/usr/sbin" &gt; configparms</userinput></screen>
-
+-->
     <para>Prepare Glibc for compilation:</para>
 
 <screen><userinput remap="configure">../configure --prefix=/usr                   \

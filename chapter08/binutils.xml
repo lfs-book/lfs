@@ -58,6 +58,7 @@ cd       build</userinput></screen>
              --enable-64-bit-bfd \
              --enable-new-dtags  \
              --with-system-zlib  \
+             --with-lib-path=/usr/lib \
              --enable-default-hash-style=gnu</userinput></screen>
 
     <variablelist>
@@ -74,7 +75,7 @@ cd       build</userinput></screen>
       <varlistentry>
         <term><parameter>--enable-plugins</parameter></term>
         <listitem>
-          <para>Enables plugin support for the linker.</para>
+          <para>Enable plugin support for the linker.</para>
         </listitem>
       </varlistentry>
 
@@ -83,6 +84,22 @@ cd       build</userinput></screen>
         <listitem>
           <para>Use the installed zlib library instead of building the
           included version.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>--with-lib-path=/usr/lib</parameter></term>
+        <listitem>
+          <para>Specify the path for the linker (<command>ld</command>)
+          to search.  By default it searches several directories nonexist
+          on LFS besides <filename class='directory'>/usr/lib</filename>,
+          especially the <filename class='directory'>/usr/lib64</filename>
+          directory that we deliberately avoid.  In case
+          <filename class='directory'>/usr/lib64</filename> was mistakenly
+          created and populated with some libraries, making
+          <command>ld</command> not search the path can highlight the issue
+          earlier with a failure finding those libraries when building a
+          package using them (instead of when running that package).</para>
         </listitem>
       </varlistentry>
 
