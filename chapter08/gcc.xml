@@ -200,13 +200,12 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <para>On LoongArch, the tests named
     <filename>bb-slp-35.c</filename>,
     <filename>bstrpick_alsl_paired.c</filename>,
-    <filename>lasx-vcond-2.c</filename>,
+    <filename>l{a,}sx-vcond-2.c</filename>,
     <filename>predcom-8.c</filename>,
-    <filename>pr113026-2.c</filename>,
+    <filename>pr113026-{1,2}.c</filename>,
     <filename>update-threading.c</filename>,
-    <filename>vect-117.c</filename>,
-    <filename>vect-121.c</filename>,
-    <filename>vect-concat-128-256.c</filename>,
+    <filename>vect-{117,121}.c</filename>,
+    <filename>vect-{concat,insert}-128-256.c</filename>,
     <filename>vect-early-break_52.c</filename>,
     <filename>vect-epilogues.c</filename>,
     <filename>vect-mode-tieable.c</filename>, and
