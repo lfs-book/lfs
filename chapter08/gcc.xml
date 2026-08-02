@@ -316,13 +316,8 @@ readelf -l a.out | grep ': /lib'</userinput></screen>
   be ignored, but otherwise the output of the last command should be:</para>
 
 <screen><computeroutput>SEARCH_DIR("/usr/x86_64-pc-linux-gnu/lib64")
-SEARCH_DIR("/usr/local/lib64")
-SEARCH_DIR("/lib64")
-SEARCH_DIR("/usr/lib64")
-SEARCH_DIR("/usr/x86_64-pc-linux-gnu/lib")
-SEARCH_DIR("/usr/local/lib")
-SEARCH_DIR("/lib")
-SEARCH_DIR("/usr/lib");</computeroutput></screen>
+SEARCH_DIR("/usr/lib");
+SEARCH_DIR("/usr/x86_64-pc-linux-gnu/lib")</computeroutput></screen>
 
    <para>A 32-bit system may use a few other directories. For example, here
    is the output from an i686 machine:</para>

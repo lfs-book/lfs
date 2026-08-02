@@ -97,8 +97,7 @@
 
     <para>If desired, install the documentation:</para>
 
-<screen><userinput remap="install">install -v -m755 -d /usr/share/doc/sqlite-&sqlite-short-version;
-cp -v -R sqlite-doc-&sqlite-doc-version;/* /usr/share/doc/sqlite-&sqlite-short-version;</userinput></screen>
+<screen><userinput remap="install">cp -v -R sqlite-doc-&sqlite-doc-version; -T /usr/share/doc/sqlite-&sqlite-short-version;</userinput></screen>
 
   </sect2>
 

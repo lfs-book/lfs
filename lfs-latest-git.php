@@ -14,7 +14,7 @@ $regex = array();
 $regex[ 'intltool' ] = "/^.*Latest version is (\d[\d\.]+\d).*$/";
 $regex[ 'less'     ] = "/^.*current released version is less-(\d+).*$/";
 $regex[ 'mpfr'     ] = "/^mpfr-([\d\.]+)\.tar.*$/";
-$regex[ 'tzdata'   ] = "/^.*tzdata([\d]+[a-z]).*$/";
+$regex[ 'tzdata'   ] = "/^.*(20\d\d[a-z]).*$/";
 $regex[ 'xz'       ] = "/^.*xz-([\d\.]*\d).*$/";
 $regex[ 'zlib'     ] = "/^.*zlib ([\d\.]*\d).*$/";
 
@@ -119,6 +119,8 @@ function get_packages( $package, $dirpath )
 
 //if ( $package != "wheel" ) return 0; // debug
 
+if ( $package == "acl"        ) $dirpath = "https://download-mirror.savannah.gnu.org/releases/acl";
+if ( $package == "attr"       ) $dirpath = "https://download-mirror.savannah.gnu.org/releases/attr";
 if ( $package == "bc"         ) $dirpath = github("gavinhoward/bc");
 if ( $package == "e2fsprogs"  ) $dirpath = "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs";
 if ( $package == "expat"      ) $dirpath = github("libexpat/libexpat");
@@ -132,9 +134,11 @@ if ( $package == "iana-etc"   ) $dirpath = github("Mic92/iana-etc");
 if ( $package == "intltool"   ) $dirpath = "https://launchpad.net/intltool/trunk";
 if ( $package == "jinja"      ) $dirpath = "https://pypi.org/rss/project/jinja2/releases.xml";
 if ( $package == "libffi"     ) $dirpath = github("libffi/libffi");
+if ( $package == "libpipeline") $dirpath = "https://download-mirror.savannah.gnu.org/releases/libpipeline";
 if ( $package == "libxcrypt"  ) $dirpath = github("besser82/libxcrypt");
 if ( $package == "linux"      ) $dirpath = "https://www.kernel.org/pub/linux/kernel/v7.x";
 if ( $package == "lz4"        ) $dirpath = github("lz4/lz4");
+if ( $package == "man-db"     ) $dirpath = "https://download-mirror.savannah.gnu.org/releases/man-db";
 if ( $package == "markupsafe" ) $dirpath = "https://pypi.org/rss/project/markupsafe/releases.xml";
 if ( $package == "meson"      ) $dirpath = github("mesonbuild/meson");
 if ( $package == "mpc"        ) $dirpath = "https://ftp.gnu.org/gnu/mpc";
