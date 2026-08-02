@@ -21,7 +21,7 @@
     <varlistentry>
       <term>Autoconf Consolidated Fixes Patch - <token>&autoconf-fixes-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&autoconf-fixes-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;autoconf/&autoconf-fixes-patch;"/></para>
         <para>MD5 sum: <literal>&autoconf-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -29,7 +29,7 @@
     <varlistentry>
       <term>Bash Cross Compile Fix Patch - <token>&bash-crosscompile-fix-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&bash-crosscompile-fix-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;bash/&bash-crosscompile-fix-patch;"/></para>
         <para>MD5 sum: <literal>&bash-crosscompile-fix-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -38,7 +38,7 @@
     <varlistentry>
       <term>Binutils Upstream Fixes Patch - <token>&binutils-upstream-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&binutils-upstream-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;binutils/&binutils-upstream-patch;"/></para>
         <para>MD5 sum: <literal>&binutils-upstream-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -46,7 +46,7 @@
     <varlistentry>
       <term>Bzip2 Documentation Patch - <token>&bzip2-docs-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&bzip2-docs-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;bzip2/&bzip2-docs-patch;"/></para>
         <para>MD5 sum: <literal>&bzip2-docs-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -54,7 +54,7 @@
     <varlistentry>
       <term>Coreutils Internationalization Fixes Patch - <token>&coreutils-i18n-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&coreutils-i18n-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;coreutils/&coreutils-i18n-patch;"/></para>
         <para>MD5 sum: <literal>&coreutils-i18n-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -62,7 +62,7 @@
     <varlistentry>
       <term>Expect GCC15 Patch - <token>&expect-gcc15-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&expect-gcc15-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;expect/&expect-gcc15-patch;"/></para>
         <para>MD5 sum: <literal>&expect-gcc15-patch-md5;</literal></para>
       </listitem>
    </varlistentry>
@@ -71,7 +71,7 @@
     <varlistentry>
       <term>Gcc glibc-2.36 Fixes Patch - <token>&gcc-upstream-fixes-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&gcc-upstream-fixes-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;gcc/&gcc-upstream-fixes-patch;"/></para>
         <para>MD5 sum: <literal>&gcc-upstream-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -81,7 +81,7 @@
     <varlistentry>
       <term>Glibc Upstream Fixes Patch - <token>&glibc-upstream-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&glibc-upstream-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;glibc/&glibc-upstream-patch;"/></para>
         <para>MD5 sum: <literal>&glibc-upstream-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -89,7 +89,7 @@
     <varlistentry>
       <term>Glibc FHS Patch - <token>&glibc-fhs-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&glibc-fhs-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;glibc/&glibc-fhs-patch;"/></para>
         <para>MD5 sum: <literal>&glibc-fhs-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -97,7 +97,7 @@
     <varlistentry>
       <term>Kbd Backspace/Delete Fix Patch - <token>&kbd-backspace-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&kbd-backspace-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;kbd/&kbd-backspace-patch;"/></para>
         <para>MD5 sum: <literal>&kbd-backspace-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -105,7 +105,7 @@
     <varlistentry>
       <term>Meson Upstream Fix Patch - <token>&meson-fix-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&meson-fix-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;meson/&meson-fix-patch;"/></para>
         <para>MD5 sum: <literal>&meson-fix-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -113,7 +113,7 @@
     <varlistentry>
       <term>Libpipeline Checks Patch - <token>&libpipeline-checks-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&libpipeline-checks-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;libpipeline/&libpipeline-checks-patch;"/></para>
         <para>MD5 sum: <literal>&libpipeline-checks-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -129,7 +129,7 @@
     <varlistentry>
       <term>Perl Upstream Fix Patch - <token>&perl-upstream-fix-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&perl-upstream-fix-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;perl/&perl-upstream-fix-patch;"/></para>
         <para>MD5 sum: <literal>&perl-upstream-fix-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -137,7 +137,7 @@
     <varlistentry>
       <term>Python Consolidated Patch - <token>&python-consolidated-fixes-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&python-consolidated-fixes-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;Python/&python-consolidated-fixes-patch;"/></para>
         <para>MD5 sum: <literal>&python-consolidated-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -154,7 +154,7 @@
     <varlistentry revision="sysv">
       <term>SysVinit Consolidated Patch - <token>&sysvinit-consolidated-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&sysvinit-consolidated-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;sysvinit/&sysvinit-consolidated-patch;"/></para>
         <para>MD5 sum: <literal>&sysvinit-consolidated-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -163,7 +163,7 @@
     <varlistentry revision="systemd">
       <term>Systemd OpenSSL 4 Patch - <token>&systemd-upstream-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&systemd-upstream-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;systemd/&systemd-upstream-patch;"/></para>
         <para>MD5 sum: <literal>&systemd-upstream-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -171,7 +171,7 @@
     <varlistentry>
       <term>Tar Upstream Patch - <token>&tar-aclfix-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&tar-aclfix-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;tar/&tar-aclfix-patch;"/></para>
         <para>MD5 sum: <literal>&tar-aclfix-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -179,7 +179,7 @@
     <varlistentry>
       <term>Xz Upstream Fix Patch - <token>&xz-upstream-fix-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&xz-upstream-fix-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;xz/&xz-upstream-fix-patch;"/></para>
         <para>MD5 sum: <literal>&xz-upstream-fix-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
@@ -188,7 +188,7 @@
     <varlistentry>
       <term>Zstd Upstream Fixes Patch - <token>&zstd-upstream-fixes-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&zstd-upstream-fixes-patch;"/></para>
+        <para>Download: <ulink url="&patches-root;zstd/&zstd-upstream-fixes-patch;"/></para>
         <para>MD5 sum: <literal>&zstd-upstream-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
