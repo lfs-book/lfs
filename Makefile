@@ -140,7 +140,7 @@ validate: tmpdir version
 	@echo "Validating the book..."
 	$(Q)xmllint --nonet                            \
                --encode UTF-8                     \
-               --postvalid                        \
+               --postvalid --valid                \
                --output $(RENDERTMP)/lfs-full.xml \
                $(RENDERTMP)/lfs-html2.xml
 

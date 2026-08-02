@@ -58,6 +58,11 @@ chmod 755 $LFS</userinput></screen>
   partition. If <option>nosuid</option> and/or <option>nodev</option> are set,
   the partition must be remounted.</para>
 
+  <para>If you have created and mounted more partitions for the LFS system
+  than the one mounted at <filename class='directory'>$LFS</filename>,
+  now you should fix up their ownership and permission mode and check the
+  mount options for them as well.</para>
+
   <warning><para>The above instructions assume that you will not restart
   your computer throughout the LFS process.  If you shut down your system,
   you will either need to remount the LFS partition each time you restart

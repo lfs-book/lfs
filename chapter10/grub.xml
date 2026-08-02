@@ -288,34 +288,21 @@ insmod part_gpt
 insmod ext2
 
 set root=(hd0,2)
-
-# For UEFI
-insmod efi_gop
-insmod efi_uga
-
 set gfxpayload=1024x768x32
 
 menuentry "GNU/Linux, Linux &linux-version;" {
         linux   /boot/vmlinuz-&linux-version; root=/dev/sda2 ro
 }</literal>
 EOF</userinput></screen>
-<!-- GOP is probably not needed anyhow, since we're not using terminal_output
-     gfxterm. -->
 
     <para>
       The <command>insmod</command> commands load the
       <application>GRUB</application> modules named
-      <filename>part_gpt</filename>, <filename>ext2</filename>,
-      <filename>efi_gop</filename>, and
-      <filename>efi_uga</filename>.
+      <filename>part_gpt</filename> and <filename>ext2</filename>.
       Despite the naming, <filename>ext2</filename> actually supports
       <systemitem class='filesystem'>ext2</systemitem>,
       <systemitem class='filesystem'>ext3</systemitem>, and
       <systemitem class='filesystem'>ext4</systemitem> filesystems.
-      On UEFI systems, <filename>efi_gop</filename> and
-      <filename>efi_uga</filename> are for video support. GOP, or Graphics
-      Output Protocol, is the modern approach. UGA, or Universal Graphics
-      Adaptor, is a legacy way of handling it.
       In a typical configuration, the <filename>part_gpt</filename> and
       <filename>ext2</filename> modules are already embedded in
       the main GRUB image by <command>grub-install</command>, and the

@@ -95,6 +95,7 @@ cd       build</userinput></screen>
     --disable-libssp             \
     --disable-libvtv             \
     --enable-languages=c,c++     \
+    CXX_FOR_TARGET="$LFS_TGT-gcc -nostdinc++" \
     LDFLAGS_FOR_TARGET=-L$PWD/$LFS_TGT/libgcc \
     target_configargs=gcc_cv_target_thread_file=posix</userinput></screen>
 
@@ -149,6 +150,21 @@ cd       build</userinput></screen>
           <xref linkend='ch-tools-gcc-pass1'/> it was implied by
           <parameter>--disable-libstdcxx</parameter>, and now we can
           explicitly pass it.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><parameter>CXX="$LFS_TGT-gcc -nostdinc++"</parameter></term>
+        <listitem>
+          <para>Specifies to use <command>$LFS_TGT-gcc</command> to compile
+          the C++ code like <xref linkend='ch-tools-libstdcpp'/> and prevent
+          the compiler from using the headers from the previous libstdc++
+          installation.  Mixing those headers and the C++ headers from the
+          current libstdc++ build can cause the
+          <literal>#include_next</literal> directives fail to find the C
+          headers.  In a normal build, this override is automatically passed
+          to the <command>configure</command> script from the top level
+          directory.  Here we explicitly pass it.</para>
         </listitem>
       </varlistentry>
 
