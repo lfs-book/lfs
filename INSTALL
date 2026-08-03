@@ -1,7 +1,7 @@
 LFS Book Conversion Tools Installation Instructions
 
-After downloading the SVN source, there are some things that need to be set up
-on your computer if you want to convert the XML source into something easier to
+After downloading the XML source, there are some things that need to be set up
+on your computer if you want to convert the source into something easier to
 read (e.g. HTML, TXT, or PDF).  If you are interested in this, then keep
 reading.  If you are only interested in editing the XML source for re-
 submission to the lfs-book or lfs-dev mailing lists, then you do not need this

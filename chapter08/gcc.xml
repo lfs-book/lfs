@@ -41,11 +41,6 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
-    <!-- not needed anymore with gcc-16:
-    <para>First, make a fix required by glibc-2.43 and later:</para>
-
-    <screen><userinput remap="pre">sed -i 's/char [*]q/const &amp;/' libgomp/affinity-fmt.c</userinput></screen>
-    -->
     <para>If building on x86_64, change the default directory name for 64-bit
     libraries to <quote>lib</quote>:</para>
 
@@ -76,18 +71,20 @@ cd       build</userinput></screen>
 
     <para>We only enable C and C++ here to save the build time as no
     packages in LFS and BLFS require GCC to compile other languages. Append
-    <literal>cobol</literal> for Cobol (note that it will cause GCC fail
-    to build on a 32-bit LFS system),
+    <literal>algol68</literal> for Algol 68,
     <literal>fortran</literal> for Fortran,
     <literal>go</literal> for Go,
     <literal>objc</literal> for Objective C,
     <literal>obj-c++</literal> for Objective C++, and/or
     <literal>m2</literal> for Modula 2 into the value of
     <parameter>--enable-languages</parameter> option if you want to compile
-    programs in one or more of those languages with GCC.  GCC also supports
-    Ada and D, but the code to support Ada or D is written in Ada or D
-    itself, so the support can only be built with an existing Ada or D
-    compiler installation and we cannot enable the support here.</para>
+    programs in one or more of those languages with GCC.</para>
+
+    <para>GCC also supports the Ada, COBOL, and D languages.  But that would
+    require some dependencies which are not available in the base LFS system
+    and would exceed the scope of this book.  Read
+    <ulink url='https://gcc.gnu.org/install/prerequisites.html'>the upstream
+    documentation</ulink> for details.</para>
 
     <variablelist>
       <title>The meaning of the new configure parameters:</title>
@@ -114,17 +111,6 @@ cd       build</userinput></screen>
           disable it to significantly reduce the build time.  Remove this
           option when you upgrade GCC on a complete LFS system (instead of
           building LFS).</para>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry>
-        <term><parameter>--disable-fixincludes</parameter></term>
-        <listitem>
-          <para>By default, during the installation of GCC some system
-          headers would be <quote>fixed</quote> to be used with GCC.  This
-          is not necessary for a modern Linux system, and potentially 
-          harmful if a package is reinstalled after installing GCC.  This
-          switch prevents GCC from <quote>fixing</quote> the headers.</para>
         </listitem>
       </varlistentry>
 
@@ -160,6 +146,7 @@ cd       build</userinput></screen>
 
     <para>Compile the package:</para>
 
+<!--  GCC's build scripts (particularly fixincludes) contain strict regex patterns that are incompatible with the strict POSIX compliance rules introduced in recent gawk versions.-->
 <screen><userinput remap="make">make</userinput></screen>
 
     <important>
@@ -188,7 +175,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
 
     <para>To extract a summary of the test suite results, run:</para>
 
-<screen><userinput remap="test">../contrib/test_summary</userinput></screen>
+<screen><userinput remap="test">../contrib/test_summary -t</userinput></screen>
 
     <para>To filter out only the summaries, pipe the output through
     <userinput>grep -A7 Summ</userinput>.</para>
@@ -298,13 +285,8 @@ readelf -l a.out | grep ': /lib'</userinput></screen>
   be ignored, but otherwise the output of the last command should be:</para>
 
 <screen><computeroutput>SEARCH_DIR("/usr/x86_64-pc-linux-gnu/lib64")
-SEARCH_DIR("/usr/local/lib64")
-SEARCH_DIR("/lib64")
-SEARCH_DIR("/usr/lib64")
-SEARCH_DIR("/usr/x86_64-pc-linux-gnu/lib")
-SEARCH_DIR("/usr/local/lib")
-SEARCH_DIR("/lib")
-SEARCH_DIR("/usr/lib");</computeroutput></screen>
+SEARCH_DIR("/usr/lib");
+SEARCH_DIR("/usr/x86_64-pc-linux-gnu/lib")</computeroutput></screen>
 
    <para>A 32-bit system may use a few other directories. For example, here
    is the output from an i686 machine:</para>

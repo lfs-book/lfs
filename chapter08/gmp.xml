@@ -105,7 +105,7 @@ make html</userinput></screen>
 
     <para>Test the results:</para>
 
-<screen><userinput remap="test">make check 2>&amp;1 | tee gmp-check-log</userinput></screen>
+<screen><userinput remap="test">make check</userinput></screen>
 
     <caution><para>The code in gmp is highly optimized for the processor where
     it is built. Occasionally, the code that detects the processor misidentifies
@@ -120,7 +120,7 @@ make html</userinput></screen>
     <para>Ensure that at least 199 tests in the test suite passed.
     Check the results by issuing the following command:</para>
 
-<screen><userinput remap="test">awk '/# PASS:/{total+=$3} ; END{print total}' gmp-check-log</userinput></screen>
+<screen><userinput remap="test">cat $(find -name '*.log') | grep -c ^PASS</userinput></screen>
 
     <para>Install the package and its documentation:</para>
 

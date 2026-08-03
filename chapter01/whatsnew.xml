@@ -26,12 +26,12 @@
     <!--<listitem>
     <para>None</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Acl-&acl-version;</para>
-    </listitem>-->
-    <!--<listitem>
+    </listitem>
+    <listitem>
       <para>Attr-&attr-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Autoconf-&autoconf-version;</para>
     </listitem>
@@ -44,9 +44,9 @@
     <!--<listitem>
       <para>Bc-&bc-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Binutils-&binutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Bison-&bison-version;</para>
     </listitem>-->
@@ -77,9 +77,9 @@
     <listitem>
        <para>File-&file-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Findutils-&findutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Flex-&flex-version;</para>
     </listitem>-->
@@ -98,9 +98,9 @@
     <!--<listitem>
       <para>Gettext-&gettext-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Glibc-&glibc-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>GMP-&gmp-version;</para>
     </listitem>-->
@@ -134,15 +134,15 @@
     <!--<listitem>
       <para>Jinja2-&jinja2-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Kbd-&kbd-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Kmod-&kmod-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Less-&less-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>LFS-Bootscripts-&lfs-bootscripts-version;</para>
     </listitem>-->
@@ -152,15 +152,15 @@
     <listitem>
       <para>Libelf from Elfutils-&elfutils-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Libffi-&libffi-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Libpipeline-&libpipeline-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Libtool-&libtool-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Libxcrypt-&libxcrypt-version;</para>
     </listitem>-->
@@ -215,9 +215,9 @@
     <listitem>
       <para>Perl-&perl-version;</para>
     </listitem>
-    <!--<listitem>
+    <listitem>
       <para>Pkgconf-&pkgconf-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Procps-ng-&procps-ng-version;</para>
     </listitem>-->
@@ -301,10 +301,9 @@
   <itemizedlist>
     <title>Added:</title>
     <!--    <listitem><para></para></listitem> -->  <!-- satisfy build -->
-    <listitem><para>glibc-2.43-linux7_fixes-1.patch</para></listitem>
-    <listitem><para>Python-3.14.5-openssl_4-1.patch</para></listitem>
-    <listitem><para>Python-3.14.5-security_fixes-1.patch</para></listitem>
-    <listitem><para>systemd-260.1-buildfix-1.patch</para></listitem>
+    <listitem><para>mpdecimal-4.0.1</para></listitem>
+    <listitem><para>tar-1.35-acl_fix-1.patch</para></listitem>
+    <listitem><para>Python-3.14.6-consolidated_fixes-1.patch</para></listitem>
   </itemizedlist>
 
   <itemizedlist>

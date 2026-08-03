@@ -57,7 +57,7 @@
 
 <screen><userinput remap="test">make check</userinput></screen>
 
-    <para>One test named <filename>test/cp.test</filename> is known to
+    <para>One test named <filename>test/cp.run</filename> is known to
     fail because <application>Coreutils</application> is not built with
     the <application>Acl</application> support yet.</para>
 

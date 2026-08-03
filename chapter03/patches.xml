@@ -77,14 +77,15 @@
     </varlistentry>
 -->
 
+<!--
     <varlistentry>
-      <term>Glibc Linux7 Fix Patch - <token>&glibc-upstream-patch-size;</token>:</term>
+      <term>Glibc Upstream Fixes Patch - <token>&glibc-upstream-patch-size;</token>:</term>
       <listitem>
         <para>Download: <ulink url="&patches-root;&glibc-upstream-patch;"/></para>
         <para>MD5 sum: <literal>&glibc-upstream-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+-->
     <varlistentry>
       <term>Glibc FHS Patch - <token>&glibc-fhs-patch-size;</token>:</term>
       <listitem>
@@ -126,18 +127,10 @@
     </varlistentry>
 -->
     <varlistentry>
-      <term>Python OpenSSL 4 Patch - <token>&python-openssl4-fixes-patch-size;</token>:</term>
+      <term>Python Consolidated Patch - <token>&python-consolidated-fixes-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&python-openssl4-fixes-patch;"/></para>
-        <para>MD5 sum: <literal>&python-openssl4-fixes-patch-md5;</literal></para>
-      </listitem>
-    </varlistentry>
-
-    <varlistentry>
-      <term>Python Security Fixes Patch - <token>&python-security-fixes-patch-size;</token>:</term>
-      <listitem>
-        <para>Download: <ulink url="&patches-root;&python-security-fixes-patch;"/></para>
-        <para>MD5 sum: <literal>&python-security-fixes-patch-md5;</literal></para>
+        <para>Download: <ulink url="&patches-root;&python-consolidated-fixes-patch;"/></para>
+        <para>MD5 sum: <literal>&python-consolidated-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
 
@@ -148,7 +141,7 @@
         <para>MD5 sum: <literal>&sysvinit-consolidated-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+<!--
     <varlistentry revision="systemd">
       <term>Systemd OpenSSL 4 Patch - <token>&systemd-upstream-patch-size;</token>:</term>
       <listitem>
@@ -156,7 +149,14 @@
         <para>MD5 sum: <literal>&systemd-upstream-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+-->
+    <varlistentry>
+      <term>Tar Upstream Patch - <token>&tar-aclfix-patch-size;</token>:</term>
+      <listitem>
+        <para>Download: <ulink url="&patches-root;&tar-aclfix-patch;"/></para>
+        <para>MD5 sum: <literal>&tar-aclfix-patch-md5;</literal></para>
+      </listitem>
+    </varlistentry>
 <!--
     <varlistentry>
       <term>Xz Upstream Fix Patch - <token>&xz-upstream-fix-patch-size;</token>:</term>

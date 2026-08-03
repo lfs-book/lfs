@@ -43,6 +43,16 @@
   <sect2 role="installation">
     <title>Installation of M4</title>
 
+     <para>
+       Ensure packages that use gnulib detect some newer functions 
+       found in glibc-2.44.
+</para>
+
+<screen><userinput remap="pre">cat &gt; $LFS/usr/share/config.site &lt;&lt; EOF
+ac_cv_func_posix_spawn_file_actions_addchdir=yes
+ac_cv_func_posix_spawn_file_actions_addfchdir=yes
+EOF</userinput></screen>
+
     <para>Prepare M4 for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr   \

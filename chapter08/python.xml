@@ -45,11 +45,7 @@
 
     <para>First, apply a patch for compatibility with OpenSSL 4:</para>
 
-<screen><userinput remap="pre">patch -Np1 -i ../&python-openssl4-fixes-patch;</userinput></screen>
-
-    <para>Next, fix two security vulnerabilities:</para>
-
-<screen><userinput remap="pre">patch -Np1 -i ../&python-security-fixes-patch;</userinput></screen>
+<screen><userinput remap="pre">patch -Np1 -i ../&python-consolidated-fixes-patch;</userinput></screen>
 
     <para>Prepare Python for compilation:</para>
 
