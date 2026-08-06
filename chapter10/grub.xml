@@ -198,7 +198,6 @@ insmod part_gpt
 insmod ext2
 
 set root=(hd0,2)
-set gfxpayload=1024x768x32
 
 menuentry "GNU/Linux, Linux &linux-version;-lfs-&version;" {
         linux   /boot/vmlinuz-&linux-version;-lfs-&version; root=/dev/sda2 ro

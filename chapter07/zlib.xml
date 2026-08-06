@@ -54,6 +54,10 @@
 
 <screen><userinput remap="install">make install</userinput></screen>
 
+    <para>Remove a useless static library:</para>
+
+<screen><userinput remap="install">rm -fv /usr/lib/libz.a</userinput></screen>
+
   </sect2>
 
   <sect2 role="content">
