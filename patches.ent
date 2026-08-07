@@ -28,7 +28,7 @@
 <!ENTITY glibc-fhs-patch-size "2.8 KB">
 
 <!ENTITY glibc-upstream-patch "glibc-&glibc-version;-upstream_fix-1.patch">
-<!ENTITY glibc-upstream-patch-md5 "1a9afeffc6bcf8dde6beb29aebb4a847">
+<!ENTITY glibc-upstream-patch-md5 "5d589fb5bf76f3efaa19dcd12d4484a4">
 <!ENTITY glibc-upstream-patch-size "3.3 KB">
 
 <!ENTITY kbd-backspace-patch "kbd-&kbd-version;-backspace-1.patch">
