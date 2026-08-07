@@ -183,6 +183,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <!-- predcom-8.c: PR118407
          atomic_store_with_stshh.{c,C}: need -fno-stack-protector
          mv-*: PR125126
+         pr117048: fixed "by the way" at r17-2018
          TODO: others why?? -->
     <para>On ARM64, many tests in
     the <filename class='directory'>c-c++-common/hwasan</filename>,
@@ -196,7 +197,8 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <filename>mv-symbols*.{c,C}</filename>,
     <filename>nonlocal_goto_{1,3}.c</filename>,
     <filename>pr113618.c</filename>,
-    <filename>pr114991.c</filename>, and
+    <filename>pr114991.c</filename>,
+    <filename>pr117048.C</filename>, and
     <filename>predcom-8.c</filename> are also known to fail.
     The tests named <filename>pr122475.c</filename> are known to fail
     if the CPU does not support SVE.</para>
