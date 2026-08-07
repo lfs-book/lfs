@@ -126,10 +126,10 @@
     </varlistentry>
 -->
     <varlistentry>
-      <term>Python Consolidated Patch - <token>&python-consolidated-fixes-patch-size;</token>:</term>
+      <term>Python Openssl4 Patch - <token>&python-openssl4-fixes-patch-size;</token>:</term>
       <listitem>
-        <para>Download: <ulink url="&patches-root;&python-consolidated-fixes-patch;"/></para>
-        <para>MD5 sum: <literal>&python-consolidated-fixes-patch-md5;</literal></para>
+        <para>Download: <ulink url="&patches-root;&python-openssl4-fixes-patch;"/></para>
+        <para>MD5 sum: <literal>&python-openssl4-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
 

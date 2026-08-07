@@ -41,9 +41,9 @@
 <!ENTITY perl-upstream-fix-patch-size "13 KB">
 -->
 
-<!ENTITY python-consolidated-fixes-patch "Python-&python-version;-consolidated_fixes-1.patch">
-<!ENTITY python-consolidated-fixes-patch-md5 "263746d5e08aa2c9f2d9d7060435dec4">
-<!ENTITY python-consolidated-fixes-patch-size "37 KB">
+<!ENTITY python-openssl4-fixes-patch "Python-&python-version;-openssl_4-1.patch">
+<!ENTITY python-openssl4-fixes-patch-md5 "597d7737df1b4ea4e184c193da523050">
+<!ENTITY python-openssl4-fixes-patch-size "38 KB">
 
 <!--
 <!ENTITY readline-fixes-patch "readline-&readline-version;-upstream_fixes-3.patch">
