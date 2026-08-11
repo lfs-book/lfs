@@ -77,6 +77,7 @@
 <!ENTITY binutils-fin-du "835 MB">
 <!ENTITY binutils-fin-sbu "1.7 SBU">
 <!ENTITY libsframe-version "3.0.0">
+<!ENTITY libbfd-version "2.47.20260726">
 
 <!ENTITY bison-version "3.8.2">
 <!ENTITY bison-size "2,752 KB">
@@ -193,10 +194,10 @@
 <!ENTITY flex-fin-du "33 MB">
 <!ENTITY flex-fin-sbu "0.1 SBU">
 
-<!ENTITY flit-core-version "3.12.0">
-<!ENTITY flit-core-size "53 KB">
+<!ENTITY flit-core-version "4.0.2">
+<!ENTITY flit-core-size "52 KB">
 <!ENTITY flit-core-url "&pypi-src;/f/flit-core/flit_core-&flit-core-version;.tar.gz">
-<!ENTITY flit-core-md5 "c538415c1f27bd69cbbbf3cdd5135d39">
+<!ENTITY flit-core-md5 "89ebb783230fc8db6c1d2a39644b7085">
 <!ENTITY flit-core-home "&pypi-home;/flit-core/">
 <!ENTITY flit-core-fin-du "1.3 MB">
 <!ENTITY flit-core-fin-sbu "less than 0.1 SBU">
@@ -211,10 +212,10 @@
 <!ENTITY gawk-fin-du "45 MB">
 <!ENTITY gawk-fin-sbu "0.2 SBU">
 
-<!ENTITY gcc-version "16.1.0">
-<!ENTITY gcc-size "100,056 KB">
+<!ENTITY gcc-version "16.2.0">
+<!ENTITY gcc-size "104,689 KB">
 <!ENTITY gcc-url "&gnu;gcc/gcc-&gcc-version;/gcc-&gcc-version;.tar.xz">
-<!ENTITY gcc-md5 "9b016416f8e2dce4a0ef8759d1936446">
+<!ENTITY gcc-md5 "19b777fb19ea4982731392481306f0d3">
 <!ENTITY gcc-home "https://gcc.gnu.org/">
 <!ENTITY gcc-tmpp1-du "5.4 GB">
 <!ENTITY gcc-tmpp1-sbu "3.8 SBU">
@@ -223,7 +224,7 @@
 <!ENTITY gcc-fin-du "6.6 GB ">
 <!ENTITY gcc-fin-sbu "45 SBU (with tests)">
 <!ENTITY libquadmath-version "0.0.0">
-<!ENTITY libstdcpp-version   "6.0.35">
+<!ENTITY libstdcpp-version   "6.0.36">
 <!ENTITY libitm-version      "1.0.0">
 <!ENTITY libatomic-version   "1.2.0">
 
@@ -425,12 +426,12 @@
 <!ENTITY linux-major-version "7">
 <!ENTITY linux-minor-version "1">
 <!ENTITY linux-majmin-version "&linux-major-version;.&linux-minor-version;">
-<!ENTITY linux-patch-version "5">
+<!ENTITY linux-patch-version "7">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "154,690 KB">
+<!ENTITY linux-size "154,694 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "75f719d50ea10e0bb623a95f468600cb">
+<!ENTITY linux-md5 "c28c8e23d4f51f8a444f26b6b9badcfc">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -566,10 +567,10 @@
 <!ENTITY openssl-fin-du "981 MB">
 <!ENTITY openssl-fin-sbu "1.9 SBU">
 
-<!ENTITY packaging-version "26.2">
-<!ENTITY packaging-size "223 KB">
+<!ENTITY packaging-version "26.3">
+<!ENTITY packaging-size "307 KB">
 <!ENTITY packaging-url "https://files.pythonhosted.org/packages/source/p/packaging/packaging-&packaging-version;.tar.gz">
-<!ENTITY packaging-md5 "edae3d061c39a2ff713a97e133dbc50c">
+<!ENTITY packaging-md5 "c6809ec56986682ceffe573b8778a1ce">
 <!ENTITY packaging-home "&pypi-home;/packaging/">
 <!ENTITY packaging-fin-du "1.6 MB">
 <!ENTITY packaging-fin-sbu "less than 0.1 SBU">
@@ -606,10 +607,10 @@
 <!ENTITY perl-fin-du "257 MB">
 <!ENTITY perl-fin-sbu "1.3 SBU">
 
-<!ENTITY pkgconf-version "3.0.4">
-<!ENTITY pkgconf-size "409 KB">
+<!ENTITY pkgconf-version "3.0.5">
+<!ENTITY pkgconf-size "417 KB">
 <!ENTITY pkgconf-url "https://distfiles.ariadne.space/pkgconf/pkgconf-&pkgconf-version;.tar.xz">
-<!ENTITY pkgconf-md5 "278da81c44a99aa21facf5b7f43c9adc">
+<!ENTITY pkgconf-md5 "18c528161e6b04ae36dc981af8c4d97e">
 <!ENTITY pkgconf-home "https://github.com/pkgconf/pkgconf">
 <!ENTITY pkgconf-fin-du "5.0 MB">
 <!ENTITY pkgconf-fin-sbu "less than 0.1 SBU">
@@ -633,19 +634,19 @@
 <!-- If python minor version changes, updates in python and
      meson pages will be needed: python3.6 and python3.6m -->
 
-<!ENTITY python-version "3.14.6">
+<!ENTITY python-version "3.14.7">
 <!ENTITY python-minor "3.14">
-<!ENTITY python-size "23,361 KB">
+<!ENTITY python-size "23,911 KB">
 <!ENTITY python-url "https://www.python.org/ftp/python/&python-version;/Python-&python-version;.tar.xz">
-<!ENTITY python-md5 "d28d7fb81a61d3bff5a6bedceb969366">
+<!ENTITY python-md5 "a4c4c2991b4126e227073c2d9445f432">
 <!ENTITY python-home "https://www.python.org/">
 <!ENTITY python-tmp-du "592 MB">
 <!ENTITY python-tmp-sbu "0.5 SBU">
 <!ENTITY python-fin-du "494 MB">
 <!ENTITY python-fin-sbu "2.6 SBU">
 <!ENTITY python-docs-url "https://www.python.org/ftp/python/doc/&python-version;/python-&python-version;-docs-html.tar.bz2">
-<!ENTITY python-docs-md5 "95c7483f256f6f0596c9e644756dc556">
-<!ENTITY python-docs-size "10,746 KB">
+<!ENTITY python-docs-md5 "bdf55dddc02a76961d61730f06d18849">
+<!ENTITY python-docs-size "10,916 KB">
 
 <!ENTITY readline-version "8.3">
 <!ENTITY readline-soversion "8.3"><!-- used for stripping -->
