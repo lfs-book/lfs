@@ -43,6 +43,36 @@
     -->
 
     <listitem>
+      <para>2026-08-07</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to flit_core-4.0.2 (Python module). Fixes
+          <ulink url="&lfs-ticket-root;5989">#5989</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gcc-16.2.0. Fixes
+          <ulink url="&lfs-ticket-root;5992">#5992</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-7.1.7. Fixes
+          <ulink url="&lfs-ticket-root;5988">#5988</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to packaging-26.3 (Python module). Fixes
+          <ulink url="&lfs-ticket-root;5990">#5990</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to pkgconf-3.0.5. Fixes
+          <ulink url="&lfs-ticket-root;5987">#5987</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to Python-3.14.7 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5991">#5991</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2026-08-01</para>
       <itemizedlist>
         <listitem>
@@ -78,7 +108,7 @@
           <ulink url="&lfs-ticket-root;5978">#5978</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[bdubbs] - Update to iana-etc-20260723. Addresss
+          <para>[bdubbs] - Update to iana-etc-20260723. Addresses
           <ulink url="&lfs-ticket-root;5006">#5006</ulink>.</para>
         </listitem>
         <listitem>
