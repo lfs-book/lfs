@@ -68,9 +68,6 @@
 
 <screen><userinput remap="test">make check</userinput></screen>
 
-    <para>One test, <filename>isl_test_python.py</filename>, is known to
-    fail.</para>
-
     <para>Install the package and its documentation:</para>
 
 <screen><userinput remap="install">make install

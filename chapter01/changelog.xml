@@ -43,6 +43,15 @@
     -->
 
     <listitem>
+      <para>2026-08-11</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Update to isl-0.28.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2026-08-07</para>
       <itemizedlist>
         <listitem>
