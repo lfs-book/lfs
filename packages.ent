@@ -18,7 +18,7 @@
 <!ENTITY acl-url "&savannah;/releases/acl/acl-&acl-version;.tar.xz">
 <!ENTITY acl-md5 "e289f370161698a96f50b2a3fdadf411">
 <!ENTITY acl-home "&savannah-nongnu;/projects/acl">
-<!ENTITY acl-fin-du "6.5 MB">
+<!ENTITY acl-fin-du "6.9 MB">
 <!ENTITY acl-fin-sbu "less than 0.1 SBU">
 
 <!ENTITY attr-version "2.6.0">
@@ -26,7 +26,7 @@
 <!ENTITY attr-url "&savannah;/releases/attr/attr-&attr-version;.tar.gz">
 <!ENTITY attr-md5 "910a09c3ae0a211569d180586371cf7e">
 <!ENTITY attr-home "&savannah-nongnu;/projects/attr">
-<!ENTITY attr-fin-du "4.1 MB">
+<!ENTITY attr-fin-du "4.5 MB">
 <!ENTITY attr-fin-sbu "less than 0.1 SBU">
 
 <!ENTITY autoconf-version "2.73">
