@@ -70,7 +70,7 @@
       <xsl:text># This block must be edited to suit your needs.</xsl:text>
       <xsl:value-of select="$newline"/>
     </xsl:if>
-    <xsl:apply-templates/>
+    <xsl:apply-templates mode="userinput"/>
     <xsl:value-of select="$newline"/>
     <xsl:if test=".//replaceable">
       <xsl:text># End of editable block.</xsl:text>
@@ -78,7 +78,7 @@
     </xsl:if>
   </xsl:template>
 
-  <xsl:template match="replaceable">
+  <xsl:template match="replaceable" mode="userinput">
     <xsl:text>**EDITME</xsl:text>
     <xsl:apply-templates/>
     <xsl:text>EDITME**</xsl:text>
