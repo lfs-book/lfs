@@ -328,18 +328,19 @@ useradd -D --gid 999</userinput></screen>
 
     <segmentedlist>
       <segtitle>Installed programs</segtitle>
-      <segtitle>Installed directories</segtitle>
       <segtitle>Installed libraries</segtitle>
+      <segtitle>Installed directories</segtitle>
 
       <seglistitem>
-        <seg>chage, chfn, chgpasswd, chpasswd, chsh, expiry, faillog,
-        getsubids, gpasswd, groupadd, groupdel, groupmems, groupmod, grpck,
-        grpconv, grpunconv, login, logoutd, newgidmap, newgrp,
-        newuidmap, newusers, nologin, passwd, pwck, pwconv, pwunconv,
-        sg (link to newgrp), su, useradd, userdel, usermod,
-        vigr (link to vipw), and vipw</seg>
-      <seg>/etc/default and /usr/include/shadow</seg>
+        <seg>
+          chage, chfn, chgpasswd, chpasswd, chsh, faillog, getsubids, gpasswd, 
+          groupadd, groupdel, groupmod, grpck, grpconv, grpunconv, login, 
+          newgidmap, newgrp, newuidmap, newusers, nologin, passwd, pwck, 
+          pwconv, pwunconv, sg (link to newgrp), su, useradd, userdel, 
+          usermod, vigr (link to vipw), and vipw
+        </seg>
         <seg>libsubid.so</seg>
+        <seg>/etc/default and /usr/include/shadow</seg>
       </seglistitem>
     </segmentedlist>
 
@@ -398,7 +399,7 @@ useradd -D --gid 999</userinput></screen>
           </indexterm>
         </listitem>
       </varlistentry>
-
+<!--
       <varlistentry id="expiry">
         <term><command>expiry</command></term>
         <listitem>
@@ -408,7 +409,7 @@ useradd -D --gid 999</userinput></screen>
           </indexterm>
         </listitem>
       </varlistentry>
-
+-->
       <varlistentry id="faillog">
         <term><command>faillog</command></term>
         <listitem>
@@ -461,7 +462,7 @@ useradd -D --gid 999</userinput></screen>
           </indexterm>
         </listitem>
       </varlistentry>
-
+<!--
       <varlistentry id="groupmems">
         <term><command>groupmems</command></term>
         <listitem>
@@ -472,7 +473,7 @@ useradd -D --gid 999</userinput></screen>
           </indexterm>
         </listitem>
       </varlistentry>
-
+-->
       <varlistentry id="groupmod">
         <term><command>groupmod</command></term>
         <listitem>
@@ -526,7 +527,7 @@ useradd -D --gid 999</userinput></screen>
           </indexterm>
         </listitem>
       </varlistentry>
-
+<!--
       <varlistentry id="logoutd">
         <term><command>logoutd</command></term>
         <listitem>
@@ -537,7 +538,7 @@ useradd -D --gid 999</userinput></screen>
           </indexterm>
         </listitem>
       </varlistentry>
-
+-->
       <varlistentry id="newgidmap">
         <term><command>newgidmap</command></term>
         <listitem>
