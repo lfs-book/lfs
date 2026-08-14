@@ -46,9 +46,6 @@
       <para>2026-08-15</para>
       <itemizedlist>
         <listitem>
-          <para>[zeckma] - Release MLFS-13.1-rc1.</para>
-        </listitem>
-        <listitem>
           <para>[bdubbs] - Update to expat-2.8.3 (Security Update). Fixes
           <ulink url="&lfs-ticket-root;5996">#5996</ulink>.</para>
         </listitem>
