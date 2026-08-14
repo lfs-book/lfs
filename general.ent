@@ -42,16 +42,14 @@
 ]]><!-- End %development -->
 
 <![ %release; [
-<![ %sysv; [
 <!ENTITY version         "%relnum;">
+<![ %sysv; [
 <!ENTITY short-version   "%relnum;">  <!-- Used below in &blfs-book; -->
 ]]>
 <![ %openrc; [
-<!ENTITY version         "%relnum;">
 <!ENTITY short-version   "%relnum;">  <!-- Used below in &blfs-book; -->
 ]]>
 <![ %systemd; [
-<!ENTITY version         "%relnum;">
 <!ENTITY short-version   "%relnum;-systemd"> <!-- Used below in &blfs-book; -->
 ]]>
 <!ENTITY errata          "&lfs-root;lfs/errata/&version;/">
@@ -65,12 +63,14 @@
 ]]>
 
 <![ %rc; [
-<![ %sysv; [
 <!ENTITY version         "%relnum;-rc%rcnum;">
+<![ %sysv; [
+<!ENTITY short-version   "svn">  <!-- Used below in &blfs-book; -->
+]]>
+<![ %openrc; [
 <!ENTITY short-version   "svn">  <!-- Used below in &blfs-book; -->
 ]]>
 <![ %systemd; [
-<!ENTITY version         "%relnum;-systemd-rc%rcnum;">
 <!ENTITY short-version   "systemd">  <!-- Used below in &blfs-book; -->
 ]]>
 <!ENTITY errata          "&lfs-root;lfs/errata/&version;/">
