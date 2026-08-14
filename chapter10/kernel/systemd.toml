@@ -29,6 +29,7 @@ INOTIFY_USER='*'
 TMPFS='*'
 TMPFS_POSIX_ACL='*'
 CGROUP_SCHED='* '
+LEGACY_TIOCSTI=' '
 
 revision='systemd'
 
