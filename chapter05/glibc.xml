@@ -66,6 +66,13 @@ ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64/ld-lsb-x86-64.so.3</userinput></s
     runtime data in the FHS-compliant locations:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
+
+    <para>Fix an issue causing the <ulink role='man'
+    url='&man;tanh.3'>tanh(3)</ulink> function to crash
+    on some old x86_64 processors, and to fix installing with multiple
+    <command>make</command> jobs:</para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-patch;</userinput></screen>
 <!--
     <para>Now fix glibc to build against Linux 7:</para>
 
