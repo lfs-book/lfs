@@ -42,7 +42,7 @@
     [*] <emphasis role='blue'>E</emphasis>xport DMI identification via sysfs to userspace                 [DMIID]
     [*] M<emphasis role='blue'>a</emphasis>rk VGA/VBE/EFI FB as generic system framebuffer       [SYSFB_SIMPLEFB]
   <emphasis role='blue'>C</emphasis>haracter devices ---&gt;
-    [*] <emphasis role='blue'>E</emphasis>nable TTY                                                         [TTY]
+    -*- <emphasis role='blue'>E</emphasis>nable TTY                                                         [TTY]
     [ ]   <emphasis role='blue'>A</emphasis>llow legacy TIOCSTI usage                            [LEGACY_TIOCSTI]
   <emphasis role='blue'>G</emphasis>raphics support ---&gt;
     &lt;*&gt;    <emphasis role='blue'>D</emphasis>irect Rendering Manager (XFree86 4.1.0 and higher DRI support) ---&gt;

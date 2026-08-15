@@ -64,7 +64,8 @@ function find_even_max( $lines, $regex_match, $regex_replace )
 
 function http_get_file( $url )
 {
-  $url = preg_replace( "/ftpmirror.gnu.org/", "mirrors.ibiblio.org/gnu", $url );
+  //$url = preg_replace( "/ftpmirror.gnu.org/", "mirrors.ibiblio.org/gnu", $url );
+  $url = preg_replace( "/ftpmirror.gnu.org/", "mirrors.dotsrc.org/gnu", $url );
 
   if ( preg_match( "/mpfr/", $url ) )
   {
