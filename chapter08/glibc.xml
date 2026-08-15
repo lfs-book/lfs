@@ -673,7 +673,7 @@ install -vm644 DESTDIR/usr/include/gnu/{lib-names,stubs}-32.h \
 
     <para>Add the library name to the dynamic loader config:</para>
 
-<screen role="install"><userinput>echo "/usr/lib32" &gt;&gt; /etc/ld.so.conf</userinput></screen>
+<screen role="install"><userinput>echo "/usr/lib32" &gt; /etc/ld.so.conf.d/lib32.conf</userinput></screen>
 
     <caution>
       <para>At this point, it is imperative to stop and ensure that the basic
