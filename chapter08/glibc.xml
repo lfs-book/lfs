@@ -622,7 +622,7 @@ EOF</userinput></screen>
   this include directory are one line specifying the desired library path.
   To add this capability run the following commands:</para>
 
-<screen role="nodump"><userinput>cat &gt;&gt; /etc/ld.so.conf &lt;&lt; "EOF"
+<screen><userinput>cat &gt;&gt; /etc/ld.so.conf &lt;&lt; "EOF"
 <literal># Add an include directory
 include /etc/ld.so.conf.d/*.conf
 </literal>
