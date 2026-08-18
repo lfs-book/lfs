@@ -271,14 +271,14 @@
         <para>This package supplies programs for basic network
         administration.</para>
       </listitem>
-
+<!--
       <listitem>
         <para>Intltool</para>
 
         <para>This package contributes tools for extracting translatable
         strings from source files.</para>
       </listitem>
-
+-->
       <listitem>
         <para>IProute2</para>
 
@@ -649,13 +649,13 @@
         reference implementation of the Python wheel packaging standard.
         </para>
       </listitem>
-
+<!--
       <listitem>
         <para>XML::Parser</para>
 
         <para>This package is a Perl module that interfaces with Expat.</para>
       </listitem>
-
+-->
       <listitem>
         <para>XZ Utils</para>
 

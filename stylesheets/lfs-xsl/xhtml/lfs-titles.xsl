@@ -97,7 +97,7 @@
       </xsl:if>
       <xsl:if test="$section.autolabel != 0">
         <xsl:apply-templates select="." mode="label.markup"/>
-        <xsl:text>. </xsl:text>
+        <xsl:text> </xsl:text>
       </xsl:if>
       <xsl:value-of select="title"/>
     </h1>
@@ -118,7 +118,7 @@
           </xsl:if>
           <xsl:if test="not(ancestor::preface) and $section.autolabel != 0">
             <xsl:apply-templates select="." mode="label.markup"/>
-            <xsl:text>. </xsl:text>
+            <xsl:text> </xsl:text>
           </xsl:if>
           <xsl:value-of select="title"/>
         </h2>
@@ -136,7 +136,7 @@
       </xsl:if>
       <xsl:if test="$section.autolabel != 0">
         <xsl:apply-templates select="." mode="label.markup"/>
-        <xsl:text>. </xsl:text>
+        <xsl:text> </xsl:text>
       </xsl:if>
       <xsl:value-of select="title"/>
     </h3>
