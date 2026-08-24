@@ -64,7 +64,8 @@ function find_even_max( $lines, $regex_match, $regex_replace )
 
 function http_get_file( $url )
 {
-  $url = preg_replace( "/ftpmirror.gnu.org/", "mirrors.ibiblio.org/gnu", $url );
+  //$url = preg_replace( "/ftpmirror.gnu.org/", "mirrors.ibiblio.org/gnu", $url );
+  $url = preg_replace( "/ftpmirror.gnu.org/", "mirrors.dotsrc.org/gnu", $url );
 
   if ( preg_match( "/mpfr/", $url ) )
   {
@@ -119,6 +120,8 @@ function get_packages( $package, $dirpath )
 
 //if ( $package != "wheel" ) return 0; // debug
 
+if ( $package == "acl"        ) $dirpath = "https://download-mirror.savannah.gnu.org/releases/acl";
+if ( $package == "attr"       ) $dirpath = "https://download-mirror.savannah.gnu.org/releases/attr";
 if ( $package == "bc"         ) $dirpath = github("gavinhoward/bc");
 if ( $package == "e2fsprogs"  ) $dirpath = "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs";
 if ( $package == "expat"      ) $dirpath = github("libexpat/libexpat");
@@ -132,9 +135,11 @@ if ( $package == "iana-etc"   ) $dirpath = github("Mic92/iana-etc");
 if ( $package == "intltool"   ) $dirpath = "https://launchpad.net/intltool/trunk";
 if ( $package == "jinja"      ) $dirpath = "https://pypi.org/rss/project/jinja2/releases.xml";
 if ( $package == "libffi"     ) $dirpath = github("libffi/libffi");
+if ( $package == "libpipeline") $dirpath = "https://download-mirror.savannah.gnu.org/releases/libpipeline";
 if ( $package == "libxcrypt"  ) $dirpath = github("besser82/libxcrypt");
 if ( $package == "linux"      ) $dirpath = "https://www.kernel.org/pub/linux/kernel/v7.x";
 if ( $package == "lz4"        ) $dirpath = github("lz4/lz4");
+if ( $package == "man-db"     ) $dirpath = "https://download-mirror.savannah.gnu.org/releases/man-db";
 if ( $package == "markupsafe" ) $dirpath = "https://pypi.org/rss/project/markupsafe/releases.xml";
 if ( $package == "meson"      ) $dirpath = github("mesonbuild/meson");
 if ( $package == "mpc"        ) $dirpath = "https://ftp.gnu.org/gnu/mpc";
@@ -155,7 +160,8 @@ if ( $package == "sqlite-doc" ) $dirpath = "https://sqlite.org/download.html";
 if ( $package == "sysvinit"   ) $dirpath = github("slicer69/sysvinit");
 if ( $package == "sysklogd"   ) $dirpath = github("troglobit/sysklogd");
 if ( $package == "systemd"    ) $dirpath = github("systemd/systemd");
-if ( $package == "tcl"        ) $dirpath = "https://www.tcl.tk/software/tcltk/download.html";
+#if ( $package == "tcl"        ) $dirpath = "https://www.tcl.tk/software/tcltk/download.html";
+if ( $package == "tcl"        ) $dirpath = "https://sourceforge.net/projects/tcl/files/Tcl/";
 if ( $package == "util-linux" ) $dirpath = max_parent( $dirpath, "v." );
 if ( $package == "vim"        ) $dirpath = "https://github.com/vim/vim/tags";
 if ( $package == "wheel"      ) $dirpath = "https://pypi.org/rss/project/wheel/releases.xml";
@@ -242,7 +248,7 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
   }
 
   if ( $package == "tcl" )
-     return find_max( $lines, "/tcl8/", "/^.*tcl(\d\.[\d\.]*\d)-src.*$/" );
+     return find_max( $lines, "/Tcl.8/", "/^.*Tcl.(\d\.[\d\.]*\d)\/.*$/" );
 
   if ( $package == "gmp" )
      return find_max( $lines, "/$package/", "/^.*$package-([\d\._]*\d[a-z]?).tar.*$/" );

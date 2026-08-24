@@ -50,9 +50,10 @@
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
 
-    <para>Now add some fixes to address building and testing with Linux 7,
-    and fix 5 security vulnerabilities found after the glibc-2.43
-    release:</para>
+    <para>Fix an issue causing the <ulink role='man'
+    url='&man;tanh.3'>tanh(3)</ulink> function to crash
+    on some old x86_64 processors, and to fix installing with multiple
+    <command>make</command> jobs:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-patch;</userinput></screen>
 
@@ -61,13 +62,13 @@
 
 <screen><userinput remap="pre">mkdir -v build
 cd       build</userinput></screen>
-
+<!--
     <para>Ensure that the <command>ldconfig</command> and <command>sln</command>
     utilities will be installed into
     <filename class="directory">/usr/sbin</filename>:</para>
 
 <screen><userinput remap="pre">echo "rootsbindir=/usr/sbin" &gt; configparms</userinput></screen>
-
+-->
     <para>Prepare Glibc for compilation:</para>
 
 <screen><userinput remap="configure">../configure --prefix=/usr                   \
@@ -150,7 +151,16 @@ esac</userinput></screen>
     stage of building in the chroot environment.  It will be overwritten
     in the install phase below.</para></note>
 -->
-<screen><userinput remap="test">make check</userinput></screen>
+<screen><userinput remap="test">make check -k -i</userinput></screen>
+
+    <!-- https://sourceware.org/pipermail/libc-alpha/2026-July/179181.html
+         https://sourceware.org/pipermail/libc-alpha/2026-July/179209.html
+
+         The issue is expected to be fixed with the next
+         release (2.45).  -->
+    <para>The <parameter>-k -i</parameter> switch combination is a
+    workaround for an issue potentially causing the entire test suite to
+    bail out early on a failed test.</para>
 
     <para>You may see some test failures. The Glibc test suite is
     somewhat dependent on the host system. A few failures out of

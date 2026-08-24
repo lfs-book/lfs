@@ -20,7 +20,4 @@ DRM_FBDEV_EMULATION='*'
 DRM_SIMPLEDRM='*'
 FRAMEBUFFER_CONSOLE='*'
 
-EFI='*'
-EFI_ZBOOT='*'
-
 revision='sysv'
