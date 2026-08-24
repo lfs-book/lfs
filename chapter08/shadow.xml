@@ -102,10 +102,6 @@ find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;</userinput></s
     -e '/PATH=/{s@/sbin:@@;s@/bin:@@}'                  \
     -i etc/login.defs</userinput></screen>
 
-    <para>Now fix a problem with included headers:</para>
-
-<screen><userinput remap="pre">sed -i '/stdio.h/i #include &lt;stdint.h&gt;' lib/find_new_sub_*ids.c</userinput></screen>
-
     <para>Prepare Shadow for compilation:</para>
 
 <screen><userinput remap="configure">touch /usr/bin/passwd
@@ -221,16 +217,13 @@ make -C man install-man</userinput></screen>
     groups; set and change their passwords; and perform other administrative
     tasks. For a full explanation of what <emphasis>password shadowing</emphasis>
     means, see the <filename>doc/HOWTO</filename> file within the unpacked
-    source tree. If you use Shadow support, keep in mind that programs which need
-    to verify passwords (display managers, FTP programs, pop3 daemons, etc.)
-    must be Shadow-compliant. That is, they must be able to work with
-    shadowed passwords.</para>
+    source tree.</para>
 
-    <para>To enable shadowed passwords, run the following command:</para>
+    <para>Enable shadowed passwords:</para>
 
 <screen><userinput>pwconv</userinput></screen>
 
-    <para>To enable shadowed group passwords, run:</para>
+    <para>Enable shadowed group passwords as well:</para>
 
 <screen><userinput>grpconv</userinput></screen>
 
