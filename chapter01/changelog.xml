@@ -42,6 +42,15 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
 
+    <listitem revision="openrc">
+      <para>2026-08-25</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Update to openrc-0.63.3.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem>
       <para>2026-08-15</para>
       <itemizedlist>
