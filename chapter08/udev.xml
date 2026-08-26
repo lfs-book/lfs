@@ -167,7 +167,10 @@ install -vm644 ../network/99-default.link          /usr/lib/udev/network</userin
     environment:</para>
 
 <screen><userinput remap="install">tar -xvf ../../&udev-lfs-version;.tar.xz
-make -f &udev-lfs-version;/Makefile.lfs install</userinput></screen>
+cp -v &udev-lfs-version;/init-net-rules.sh        \
+      &udev-lfs-version;/write_net_rules          \
+      &udev-lfs-version;/rule_generator.functions \
+      /usr/lib/udev</userinput></screen>
 
     <para>Install the man pages:</para>
 
