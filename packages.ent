@@ -780,15 +780,6 @@
 <!ENTITY tzdata-md5 "bff7174205cefab793e3b24271ef2f45">
 <!ENTITY tzdata-home "https://www.iana.org/time-zones">
 
-<![ %openrc; [
-<!ENTITY udev-lfs-version "udev-lfs-20251217">
-<!ENTITY udev-lfs-size    "12 KB">
-<!ENTITY udev-lfs-url     "&lfs-root;~zeckma/&udev-lfs-version;.tar.xz">
-<!ENTITY udev-lfs-md5     "0f800adc86b5c96897575d7ce440dab6">
-<!ENTITY udev-lfs-home    " ">
-<!ENTITY udev-fin-du      "162 MB">
-<!ENTITY udev-fin-sbu     "0.1 SBU">
-]]>
 <!ENTITY udev-lfs-version "udev-lfs-20230818">
 <!ENTITY udev-lfs-size    "10 KB">
 <!ENTITY udev-lfs-url     "&anduin-sources;/&udev-lfs-version;.tar.xz">
