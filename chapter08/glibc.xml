@@ -151,16 +151,7 @@ esac</userinput></screen>
     stage of building in the chroot environment.  It will be overwritten
     in the install phase below.</para></note>
 -->
-<screen><userinput remap="test">make check -k -i</userinput></screen>
-
-    <!-- https://sourceware.org/pipermail/libc-alpha/2026-July/179181.html
-         https://sourceware.org/pipermail/libc-alpha/2026-July/179209.html
-
-         The issue is expected to be fixed with the next
-         release (2.45).  -->
-    <para>The <parameter>-k -i</parameter> switch combination is a
-    workaround for an issue potentially causing the entire test suite to
-    bail out early on a failed test.</para>
+<screen><userinput remap="test">make check</userinput></screen>
 
     <para>You may see some test failures. The Glibc test suite is
     somewhat dependent on the host system. A few failures out of
