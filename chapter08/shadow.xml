@@ -77,7 +77,7 @@ find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;</userinput></s
 find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;</userinput></screen>
 
     <para id="shadow-login_defs">Instead of using the default
-    <emphasis>crypt</emphasis> method, use the much more secure
+    <emphasis>SHA512</emphasis> method, use the more secure
     <emphasis>YESCRYPT</emphasis> method of password encryption, which also
     allows passwords longer than 8 characters.
     It is also necessary to change
@@ -97,7 +97,7 @@ find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;</userinput></s
       in the <filename>.bashrc</filename> file or anywhere else.</para>
     </warning>
 
-<screen><userinput remap="pre">sed -e 's:#ENCRYPT_METHOD DES:ENCRYPT_METHOD YESCRYPT:' \
+<screen><userinput remap="pre">sed -e 's:#ENCRYPT_METHOD SHA512:ENCRYPT_METHOD YESCRYPT:' \
     -e 's:/var/spool/mail:/var/mail:'                   \
     -e '/PATH=/{s@/sbin:@@;s@/bin:@@}'                  \
     -i etc/login.defs</userinput></screen>
