@@ -41,6 +41,82 @@
     -->
 
     <listitem>
+      <para>2026-08-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to expat-2.8.3 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5996">#5996</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20260805. Addresses
+          <ulink url="&lfs-ticket-root;5006">#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to libffi-3.8.0. Fixes
+          <ulink url="&lfs-ticket-root;5993">#5993</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-7.1.8. Fixes
+          <ulink url="&lfs-ticket-root;5997">#5997</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to meson-1.12.0. Fixes
+          <ulink url="&lfs-ticket-root;5998">#5998</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to procps-ng-4.0.7. Fixes
+          <ulink url="&lfs-ticket-root;6000">#6000</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to setuptools-84.0.0 (Python module). Fixes
+          <ulink url="&lfs-ticket-root;5994">#5994</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to shadow-4.20.2. Fixes
+          <ulink url="&lfs-ticket-root;5995">#5995</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to vim-9.2.0954. Addresses
+          <ulink url="&lfs-ticket-root;4500">#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to wheel-0.48.0 (Python module). Fixes
+          <ulink url="&lfs-ticket-root;5999">#5999</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2026-08-07</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to flit_core-4.0.2 (Python module). Fixes
+          <ulink url="&lfs-ticket-root;5989">#5989</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gcc-16.2.0. Fixes
+          <ulink url="&lfs-ticket-root;5992">#5992</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-7.1.7. Fixes
+          <ulink url="&lfs-ticket-root;5988">#5988</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to packaging-26.3 (Python module). Fixes
+          <ulink url="&lfs-ticket-root;5990">#5990</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to pkgconf-3.0.5. Fixes
+          <ulink url="&lfs-ticket-root;5987">#5987</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to Python-3.14.7 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;5991">#5991</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2026-08-01</para>
       <itemizedlist>
         <listitem>

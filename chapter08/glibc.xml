@@ -50,13 +50,12 @@
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-fhs-patch;</userinput></screen>
 
-<!--
-    <para>Now add some fixes to address building and testing with Linux 7,
-    and fix 5 security vulnerabilities found after the glibc-2.43
-    release:</para>
+    <para>Fix an issue causing the <ulink role='man'
+    url='&man;tanh.3'>tanh(3)</ulink> function to crash
+    on some old x86_64 processors, and to fix installing with multiple
+    <command>make</command> jobs:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-patch;</userinput></screen>
--->
 
     <para>The Glibc documentation recommends building Glibc
     in a dedicated build directory:</para>

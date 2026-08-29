@@ -64,7 +64,8 @@ function find_even_max( $lines, $regex_match, $regex_replace )
 
 function http_get_file( $url )
 {
-  $url = preg_replace( "/ftpmirror.gnu.org/", "mirrors.ibiblio.org/gnu", $url );
+  //$url = preg_replace( "/ftpmirror.gnu.org/", "mirrors.ibiblio.org/gnu", $url );
+  $url = preg_replace( "/ftpmirror.gnu.org/", "mirrors.dotsrc.org/gnu", $url );
 
   if ( preg_match( "/mpfr/", $url ) )
   {
@@ -159,7 +160,8 @@ if ( $package == "sqlite-doc" ) $dirpath = "https://sqlite.org/download.html";
 if ( $package == "sysvinit"   ) $dirpath = github("slicer69/sysvinit");
 if ( $package == "sysklogd"   ) $dirpath = github("troglobit/sysklogd");
 if ( $package == "systemd"    ) $dirpath = github("systemd/systemd");
-if ( $package == "tcl"        ) $dirpath = "https://www.tcl.tk/software/tcltk/download.html";
+#if ( $package == "tcl"        ) $dirpath = "https://www.tcl.tk/software/tcltk/download.html";
+if ( $package == "tcl"        ) $dirpath = "https://sourceforge.net/projects/tcl/files/Tcl/";
 if ( $package == "util-linux" ) $dirpath = max_parent( $dirpath, "v." );
 if ( $package == "vim"        ) $dirpath = "https://github.com/vim/vim/tags";
 if ( $package == "wheel"      ) $dirpath = "https://pypi.org/rss/project/wheel/releases.xml";
@@ -246,7 +248,7 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
   }
 
   if ( $package == "tcl" )
-     return find_max( $lines, "/tcl8/", "/^.*tcl(\d\.[\d\.]*\d)-src.*$/" );
+     return find_max( $lines, "/Tcl.8/", "/^.*Tcl.(\d\.[\d\.]*\d)\/.*$/" );
 
   if ( $package == "gmp" )
      return find_max( $lines, "/$package/", "/^.*$package-([\d\._]*\d[a-z]?).tar.*$/" );

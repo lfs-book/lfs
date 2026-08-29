@@ -6,9 +6,7 @@
 
 <!-- XSLT stylesheet to extract commands from [B,H]LFS books. -->
 
-  <xsl:variable name="newline">
-    <xsl:text>&#xA;</xsl:text>
-  </xsl:variable>
+  <xsl:variable name="newline" select="'&#xA;'"/>
 
   <xsl:template match="/">
     <xsl:apply-templates select="//sect1"/>
@@ -52,33 +50,33 @@
       <xsl:choose>
         <xsl:when test="@role = 'root'">
           <xsl:text># Run this as root</xsl:text>
-          <xsl:value-of select="$newline"/>
+          <xsl:copy-of select="$newline"/>
           <xsl:apply-templates select="userinput"/>
           <xsl:text># End root commands</xsl:text>
-          <xsl:value-of select="$newline"/>
+          <xsl:copy-of select="$newline"/>
         </xsl:when>
         <xsl:otherwise>
           <xsl:apply-templates select="userinput"/>
         </xsl:otherwise>
       </xsl:choose>
-      <xsl:value-of select="$newline"/>
+      <xsl:copy-of select="$newline"/>
     </xsl:if>
   </xsl:template>
 
   <xsl:template match="userinput">
     <xsl:if test=".//replaceable">
       <xsl:text># This block must be edited to suit your needs.</xsl:text>
-      <xsl:value-of select="$newline"/>
+      <xsl:copy-of select="$newline"/>
     </xsl:if>
-    <xsl:apply-templates/>
-    <xsl:value-of select="$newline"/>
+    <xsl:apply-templates mode="userinput"/>
+    <xsl:copy-of select="$newline"/>
     <xsl:if test=".//replaceable">
       <xsl:text># End of editable block.</xsl:text>
-      <xsl:value-of select="$newline"/>
+      <xsl:copy-of select="$newline"/>
     </xsl:if>
   </xsl:template>
 
-  <xsl:template match="replaceable">
+  <xsl:template match="replaceable" mode="userinput">
     <xsl:text>**EDITME</xsl:text>
     <xsl:apply-templates/>
     <xsl:text>EDITME**</xsl:text>
