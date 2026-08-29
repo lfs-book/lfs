@@ -33,10 +33,6 @@ LEGACY_TIOCSTI=' '
 
 revision='systemd'
 
-EFI= { value='*', forced = true } # selected by LOONGARCH
-EFI_STUB='*'
-EFI_ZBOOT='*'
-
 [RT_GROUP_SCHED]
 value = ' '
 comment = 'This may cause some systemd features malfunction'

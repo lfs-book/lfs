@@ -1,7 +1,8 @@
 # forced by !EXPERT
 BLOCK = { value = '*', forced = true }
-EFI='*'
+EFI = { value='*', forced = true } # selected by LOONGARCH
 EFI_STUB='*'
+EFI_ZBOOT='*'
 PARTITION_ADVANCED='* '
 EFI_PARTITION="*"
 VFAT_FS="*M"
