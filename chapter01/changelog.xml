@@ -43,8 +43,11 @@
     -->
 
     <listitem>
-      <para>2026-09-01</para>
+      <para>2026-08-31</para>
       <itemizedlist>
+        <listitem>
+          <para>[zeckma] - MLFS-13.1 released.</para>
+        </listitem>
         <listitem>
           <para>[bdubbs] - Update to expat-2.8.3 (Security Update). Fixes
           <ulink url="&lfs-ticket-root;5996">#5996</ulink>.</para>
@@ -750,15 +753,6 @@
         <listitem>
           <para>[bdubbs] - Update to e2fsprogs-1.47.4. Fixes
           <ulink url='&lfs-ticket-root;5884'>#5884</ulink>.</para>
-        </listitem>
-      </itemizedlist>
-    </listitem>
-
-    <listitem>
-      <para>2026-03-05</para>
-      <itemizedlist>
-        <listitem>
-          <para>[zeckma] - MLFS-13.0 released.</para>
         </listitem>
       </itemizedlist>
     </listitem>
