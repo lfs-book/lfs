@@ -42,17 +42,8 @@
     appropriate for the entry or if needed the entire day's listitem.
     -->
 
-    <listitem revision="openrc">
-      <para>2026-08-25</para>
-      <itemizedlist>
-        <listitem>
-          <para>[zeckma] - Update to openrc-0.63.3.</para>
-        </listitem>
-      </itemizedlist>
-    </listitem>
-
     <listitem>
-      <para>2026-08-15</para>
+      <para>2026-09-01</para>
       <itemizedlist>
         <listitem>
           <para>[bdubbs] - Update to expat-2.8.3 (Security Update). Fixes
@@ -93,6 +84,15 @@
         <listitem>
           <para>[bdubbs] - Update to wheel-0.48.0 (Python module). Fixes
           <ulink url="&lfs-ticket-root;5999">#5999</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="openrc">
+      <para>2026-08-25</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Update to openrc-0.63.3.</para>
         </listitem>
       </itemizedlist>
     </listitem>
