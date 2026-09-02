@@ -43,13 +43,6 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
-    <para>Fix a LoongArch code generation flaw which may allow
-    the malicious attacker to bypass the Stack Smashing Protection (SSP)
-    and a bug causing the BLFS package libarchive miscompiled on
-    LoongArch:</para>
-
-    <screen><userinput remap="pre">patch -Np1 -i ../&gcc-loongarch-fixes-patch;</userinput></screen>
-
     <para>As in the first build of GCC, the GMP, MPFR, and MPC packages are
     required. Unpack the tarballs and move them into the required directories:</para>
 

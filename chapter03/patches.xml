@@ -74,7 +74,7 @@
         <para>MD5 sum: <literal>&expect-gcc15-patch-md5;</literal></para>
       </listitem>
    </varlistentry>
-
+<!--
     <varlistentry>
       <term>GCC LoongArch Fixes Patch - <token>&gcc-loongarch-fixes-patch-size;</token>:</term>
       <listitem>
@@ -82,6 +82,7 @@
         <para>MD5 sum: <literal>&gcc-loongarch-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
+-->
 <!--
     <varlistentry>
       <term>Gcc glibc-2.36 Fixes Patch - <token>&gcc-upstream-fixes-patch-size;</token>:</term>
