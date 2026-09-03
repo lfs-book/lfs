@@ -250,6 +250,16 @@ unshare -m ninja test</userinput></screen>
         <command>meson test test-copy</command>.
     </para>
 
+    <!-- If CONFIG_ACPI_FPDT is not enabled, systemd will extract FPDT
+         via /dev/mem and parse FPDT on its own.  This fallback somehow does
+         not work on LoongArch, and it is considered deprecated (see TODO.md
+         in the source tarball) anyway. -->
+    <para>
+      One test named <literal>test - systemd:test-boot-timestamps</literal>
+      is known to fail on LoongArch if <literal>CONFIG_ACPI_FPDT</literal>
+      is not enabled in the host kernel configuration.
+    </para>
+
     <para>Install the package:</para>
 
 <screen><userinput remap="install">ninja install</userinput></screen>
