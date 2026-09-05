@@ -162,7 +162,7 @@
 <!ENTITY expect-size "618 KB">
 <!ENTITY expect-url "&sourceforge;expect/expect&expect-version;.tar.gz">
 <!ENTITY expect-md5 "00fce8de158422f5ccd2666512329bd2">
-<!ENTITY expect-home "https://core.tcl.tk/expect/">
+<!ENTITY expect-home "https://www.nist.gov/services-resources/software/expect">
 <!ENTITY expect-tmp-du "3.9 MB">
 <!ENTITY expect-tmp-sbu "0.2 SBU">
 
