@@ -27,6 +27,7 @@ This is not directly supported in LFS because it would interfere with the
 educational objective of providing the minimal instructions needed for a
 base Linux system. Some LFS/BLFS editors maintain a multilib fork
 of LFS, accessible at <ulink
+url="https://www.linuxfromscratch.org/mlfs/view/dev/"/>. But
 url="https://www.linuxfromscratch.org/~thomas/multilib/index.html"/>. But
 the multilib edition is for x86_64, and multilib is an advanced topic
 anyway.</para>
