@@ -54,7 +54,7 @@
       <para>The default settings of GMP produce libraries optimized for
       the host processor.  If libraries suitable for processors less
       capable than the host's CPU are desired, generic libraries can be
-      created by appending the <option>--disable-assembly</option> option
+      created by appending the <option>--host=none-linux-gnu</option> option
       to the <command>configure</command> command.</para>
 
       <!-- To editors: the configure script says "the none host is obsolete,

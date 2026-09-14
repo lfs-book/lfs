@@ -181,8 +181,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <userinput>grep -A7 Summ</userinput>.</para>
 
     <para>Results can be compared with those located at <ulink
-    url="&test-results;"/> and
-    <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
+    url="&test-results;"/>.</para>
 
     <para>Additionally, the tests
     <filename>gcc.dg/ipa/pr122458.c</filename>,
