@@ -41,6 +41,12 @@
   <sect2 role="installation">
     <title>Installation of Binutils</title>
 
+    <para>Fix an error causing statically-linked executables to get wrong
+    result when taking the address of a GNU indirect function
+    (ifunc):</para>
+
+    <screen><userinput remap="pre">patch -Np1 -i ../&binutils-loongarch-patch;</userinput></screen>
+
     <para>The Binutils documentation recommends building Binutils
     in a dedicated build directory:</para>
 
