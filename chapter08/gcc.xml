@@ -41,6 +41,11 @@
   <sect2 role="installation">
     <title>Installation of GCC</title>
 
+    <para>Fix an incorrect code generation for some logical and operations
+    (<literal>&amp;&amp;</literal> in C) on LoongArch:</para>
+
+    <screen><userinput remap="pre">patch -Np1 -i ../&gcc-loongarch-fixes-patch;</userinput></screen>
+
     <para>Set the default directory name for
     64-bit libraries to <quote>lib</quote>:</para>
 

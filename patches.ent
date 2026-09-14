@@ -67,6 +67,6 @@
 
 <!-- Put LoongArch patches last to reduce the chance of a conflict during
      merge.  -->
-<!ENTITY gcc-loongarch-fixes-patch "gcc-&gcc-version;-loongarch_fixes-1.patch">
-<!ENTITY gcc-loongarch-fixes-patch-md5 "ed890265d7cd49d99af55748d915a577">
-<!ENTITY gcc-loongarch-fixes-patch-size "15 KB">
+<!ENTITY gcc-loongarch-fixes-patch "gcc-&gcc-version;-loongarch_fix-1.patch">
+<!ENTITY gcc-loongarch-fixes-patch-md5 "2a7fb94ad80a1a30f029fbfef66e9065">
+<!ENTITY gcc-loongarch-fixes-patch-size "3.3 KB">
