@@ -171,7 +171,7 @@ done</userinput></screen>
       against them at runtime. However, the only known binary-only
       applications that link against non-wide-character Ncurses libraries
       require version 5.  If you must have such libraries because of some binary-only
-      application or to be compliant with LSB, build the package again with the
+      application, build the package again with the
       following commands:</para>
 
 <screen role="nodump"><userinput>make distclean
