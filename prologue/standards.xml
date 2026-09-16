@@ -42,9 +42,9 @@
       container image like AppImage or Flatpak, instead of relying on LSB
       if it's intended to be distro agnostic.  LFS editors had used LSB as a
       reference in the past, but now in the entire LSB only the requirement
-      of the dynamic linker path is seriously considered (in
-      <xref linkend='ch-tools-glibc'/> some symlinks will be created for the
-      requirement).
+      of the dynamic linker path is seriously considered (and even this
+      requirement is meaningless for this LFS edition as LSB predates
+      LoongArch and the dynamic linker path is architecture-dependant).
     </para>
 </sect1>
 
