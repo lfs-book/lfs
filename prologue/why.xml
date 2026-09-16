@@ -57,8 +57,8 @@
       <listitem>
         <para>Bash</para>
 
-        <para>This package satisfies an LSB core requirement to provide
-        a Bourne Shell interface to the system.  It was chosen over
+        <para>This package provides a shell that can run in a mode
+        strictly conforming to the POSIX specification.  It was chosen over
         other shell packages because of its common usage and extensive
         capabilities.</para>
       </listitem>

@@ -41,6 +41,68 @@
     -->
 
     <listitem>
+      <para>2026-09-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to automake-1.19. Fixes
+          <ulink url="&lfs-ticket-root;6017">#6017</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to elfutils-0.196. Fixes
+          <ulink url="&lfs-ticket-root;6091">#6001</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to expat-2.8.4 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;6012">#6012</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20260911. Addresses
+          <ulink url="&lfs-ticket-root;5006">#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iproute2-7.2.0. Fixes
+          <ulink url="&lfs-ticket-root;6015">#6015</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-7.2.6. Fixes
+          <ulink url="&lfs-ticket-root;6002">#6002</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-6.19. Fixes
+          <ulink url="&lfs-ticket-root;6004">#6004</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to openssl-4.0.2 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;6005">#6005</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to pcre2-10.48 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;6013">#6013</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to pkgconf-3.0.7. Fixes
+          <ulink url="&lfs-ticket-root;6003">#6003</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to systemd-261.3. Fixes
+          <ulink url="&lfs-ticket-root;6018">#6018</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to tzdata2026d. Fixes
+          <ulink url="&lfs-ticket-root;6019">#6019</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to vim-9.2.1099. Addresses
+          <ulink url="&lfs-ticket-root;4500">#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to xz-5.8.4 (Securiry Update). Fixes
+          <ulink url="&lfs-ticket-root;6016">#6015</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2026-09-01</para>
       <itemizedlist>
         <listitem>

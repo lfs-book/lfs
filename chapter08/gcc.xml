@@ -182,8 +182,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <userinput>grep -A7 Summ</userinput>.</para>
 
     <para>Results can be compared with those located at <ulink
-    url="&test-results;"/> and
-    <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
+    url="&test-results;"/>.</para>
 
     <!-- bb-slp-35.c: ???
          bstrpick_alsl_paired.c: test-suite-only issue, I have a patch

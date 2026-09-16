@@ -38,11 +38,11 @@
 <!ENTITY autoconf-fin-sbu-tests "0.4">
 <!ENTITY autoconf-fin-sbu "less than 0.1 SBU (about &autoconf-fin-sbu-tests; SBU with tests)">
 
-<!ENTITY automake-version "1.18.1">
-<!ENTITY am-minor-version "1.18">
-<!ENTITY automake-size "1,614 KB">
+<!ENTITY automake-version "1.19">
+<!ENTITY am-minor-version "1.19">
+<!ENTITY automake-size "1,644 KB">
 <!ENTITY automake-url "&gnu;automake/automake-&automake-version;.tar.xz">
-<!ENTITY automake-md5 "cea31dbf1120f890cbf2a3032cfb9a68">
+<!ENTITY automake-md5 "da9b5c852b94089c7b7b16071ce8803c">
 <!ENTITY automake-home "&gnu-software;automake/">
 <!ENTITY automake-fin-du "124 MB">
 <!ENTITY automake-fin-sbu "less than 0.1 SBU (about 1.1 SBU with tests)">
@@ -141,19 +141,19 @@
 <!ENTITY e2fsprogs-fin-du "101 MB">
 <!ENTITY e2fsprogs-fin-sbu "2.4 SBU on a spinning disk, 0.4 SBU on an SSD">
 
-<!ENTITY elfutils-version "0.195"> <!-- libelf -->
-<!ENTITY elfutils-size "11,751 KB">
+<!ENTITY elfutils-version "0.196"> <!-- libelf -->
+<!ENTITY elfutils-size "11,881 KB">
 <!ENTITY elfutils-url "https://sourceware.org/ftp/elfutils/&elfutils-version;/elfutils-&elfutils-version;.tar.bz2">
-<!ENTITY elfutils-md5 "3e8ef51c43beceddbbb74879549cf72c">
+<!ENTITY elfutils-md5 "8d3f6cf81a8d27d6fa917ac1b566d8ff">
 <!ENTITY elfutils-home "https://sourceware.org/elfutils/">
 <!ENTITY elfutils-fin-du "159 MB">
 <!ENTITY elfutils-fin-sbu "0.3 SBU">
 
-<!ENTITY expat-version "2.8.3">
-<!ENTITY expat-dl-version "2_8_3">
-<!ENTITY expat-size "506 KB">
+<!ENTITY expat-version "2.8.4">
+<!ENTITY expat-dl-version "2_8_4">
+<!ENTITY expat-size "508 KB">
 <!ENTITY expat-url "&github;/libexpat/libexpat/releases/download/R_&expat-dl-version;/expat-&expat-version;.tar.xz">
-<!ENTITY expat-md5 "1747f5a57b191f0373baeb5adc8078ca">
+<!ENTITY expat-md5 "5191131c5e0f68ff2c0dba654d31ee7a">
 <!ENTITY expat-home "https://libexpat.github.io/">
 <!ENTITY expat-fin-du "12 MB">
 <!ENTITY expat-fin-sbu "0.1 SBU">
@@ -162,7 +162,7 @@
 <!ENTITY expect-size "618 KB">
 <!ENTITY expect-url "&sourceforge;expect/expect&expect-version;.tar.gz">
 <!ENTITY expect-md5 "00fce8de158422f5ccd2666512329bd2">
-<!ENTITY expect-home "https://core.tcl.tk/expect/">
+<!ENTITY expect-home "https://www.nist.gov/services-resources/software/expect">
 <!ENTITY expect-tmp-du "3.9 MB">
 <!ENTITY expect-tmp-sbu "0.2 SBU">
 
@@ -311,10 +311,10 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.1 SBU">
 
-<!ENTITY iana-etc-version "20260805">
-<!ENTITY iana-etc-size "596 KB">
+<!ENTITY iana-etc-version "20260911">
+<!ENTITY iana-etc-size "597 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "f6d2619cfac3a68f91392e28fe4067c3">
+<!ENTITY iana-etc-md5 "eb4409ab36f1b54fdc1ee9d94dafbbab">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -335,10 +335,10 @@
 <!ENTITY intltool-fin-du "1.5 MB">
 <!ENTITY intltool-fin-sbu "less than 0.1 SBU">
 -->
-<!ENTITY iproute2-version "7.1.0">
-<!ENTITY iproute2-size "943 KB">
+<!ENTITY iproute2-version "7.2.0">
+<!ENTITY iproute2-size "949 KB">
 <!ENTITY iproute2-url "&kernel;linux/utils/net/iproute2/iproute2-&iproute2-version;.tar.xz">
-<!ENTITY iproute2-md5 "4f322144fb9a0877c5f9ef71b2f11180">
+<!ENTITY iproute2-md5 "39ac272829043f933aaf863f4aa6b212">
 <!ENTITY iproute2-home "&kernel;linux/utils/net/iproute2/">
 <!ENTITY iproute2-fin-du "18 MB">
 <!ENTITY iproute2-fin-sbu "0.1 SBU">
@@ -424,14 +424,14 @@
 <!ENTITY libxcrypt-fin-sbu "0.1 SBU">
 
 <!ENTITY linux-major-version "7">
-<!ENTITY linux-minor-version "1">
+<!ENTITY linux-minor-version "2">
 <!ENTITY linux-majmin-version "&linux-major-version;.&linux-minor-version;">
-<!ENTITY linux-patch-version "8">
+<!ENTITY linux-patch-version "6">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "154,722 KB">
+<!ENTITY linux-size "156,512 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "807584f564568b40162e9e4a72bf191f">
+<!ENTITY linux-md5 "85b505dad4a0e201ace613503def0308">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -482,10 +482,10 @@
 <!ENTITY man-db-fin-du "44 MB">
 <!ENTITY man-db-fin-sbu "0.3 SBU">
 
-<!ENTITY man-pages-version "6.18">
-<!ENTITY man-pages-size "1,859 KB">
+<!ENTITY man-pages-version "6.19">
+<!ENTITY man-pages-size "1,864 KB">
 <!ENTITY man-pages-url "&kernel;linux/docs/man-pages/man-pages-&man-pages-version;.tar.xz">
-<!ENTITY man-pages-md5 "44915a91e4a28161dc421636a193fb3a">
+<!ENTITY man-pages-md5 "c15f688fe8b6b4b22ac62a845d3b5d07">
 <!ENTITY man-pages-home "https://www.kernel.org/doc/man-pages/">
 <!ENTITY man-pages-fin-du "54 MB">
 <!ENTITY man-pages-fin-sbu "0.1 SBU">
@@ -551,10 +551,10 @@
 <!ENTITY ninja-fin-du "43 MB">
 <!ENTITY ninja-fin-sbu "0.2 SBU">
 
-<!ENTITY openssl-version "4.0.1">
-<!ENTITY openssl-size "53,789 KB">
+<!ENTITY openssl-version "4.0.2">
+<!ENTITY openssl-size "53,862 KB">
 <!ENTITY openssl-url "&github;/openssl/openssl/releases/download/openssl-&openssl-version;/openssl-&openssl-version;.tar.gz">
-<!ENTITY openssl-md5 "07e316afe26b61e72206b81706b497bb">
+<!ENTITY openssl-md5 "9d256ddfa581e1982c005ab03890754d">
 <!ENTITY openssl-home "https://www.openssl-library.org/">
 <!ENTITY openssl-fin-du "1.0 GB">
 <!ENTITY openssl-fin-sbu "1.9 SBU">
@@ -577,10 +577,10 @@
 <!ENTITY patch-fin-du "14 MB">
 <!ENTITY patch-fin-sbu "0.2 SBU">
 
-<!ENTITY pcre2-version "10.47">
-<!ENTITY pcre2-size "2,096 KB">
+<!ENTITY pcre2-version "10.48">
+<!ENTITY pcre2-size "2,162 KB">
 <!ENTITY pcre2-url "&github;/PCRE2Project/pcre2/releases/download/pcre2-&pcre2-version;/pcre2-&pcre2-version;.tar.bz2">
-<!ENTITY pcre2-md5 "aded5840ab5a7d772dd4e16fc294b665">
+<!ENTITY pcre2-md5 "98013efc5ebfe0a7b82ae53a43b8fd72">
 <!ENTITY pcre2-home "&github;/PCRE2Project/pcre2/">
 <!ENTITY pcre2-fin-du "28 MB">
 <!ENTITY pcre2-fin-sbu "0.2 SBU">
@@ -599,10 +599,10 @@
 <!ENTITY perl-fin-du "261 MB">
 <!ENTITY perl-fin-sbu "1.3 SBU">
 
-<!ENTITY pkgconf-version "3.0.5">
-<!ENTITY pkgconf-size "417 KB">
+<!ENTITY pkgconf-version "3.0.7">
+<!ENTITY pkgconf-size "418 KB">
 <!ENTITY pkgconf-url "https://distfiles.ariadne.space/pkgconf/pkgconf-&pkgconf-version;.tar.xz">
-<!ENTITY pkgconf-md5 "18c528161e6b04ae36dc981af8c4d97e">
+<!ENTITY pkgconf-md5 "dd1ba6724bc1792b55600d54346ce5ba">
 <!ENTITY pkgconf-home "https://github.com/pkgconf/pkgconf">
 <!ENTITY pkgconf-fin-du "47 MB">
 <!ENTITY pkgconf-fin-sbu "less than 0.1 SBU">
@@ -698,21 +698,21 @@
 <!ENTITY sysklogd-fin-du "3.9 MB">
 <!ENTITY sysklogd-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY systemd-version  "261.2">
+<!ENTITY systemd-version  "261.3">
 <!--<!ENTITY systemd-stable   "6b4878d">-->
 <!-- The above entity is used whenever we move to a stable backport branch. 
      In the event of a critical problem or kernel change that is incompatible, 
      we will switch to the backport branch until the next stable release. -->
-<!ENTITY systemd-size     "18,024 KB">
+<!ENTITY systemd-size     "18,126 KB">
 <!ENTITY systemd-url      "&github;/systemd/systemd/archive/v&systemd-version;/systemd-&systemd-version;.tar.gz">
 <!--<!ENTITY systemd-url      "&anduin-sources;/systemd-&systemd-version;-&systemd-stable;.tar.xz">-->
-<!ENTITY systemd-md5      "e3f04ccc83a28ec5e80c5432bb8329f5">
+<!ENTITY systemd-md5      "21d1d4ea580c2f111f067ee8184e7952">
 <!ENTITY systemd-home     "https://systemd.io">
-<!ENTITY systemd-man-version "261.2">
-<!ENTITY systemd-man-size "803 KB">
+<!ENTITY systemd-man-version "261.3">
+<!ENTITY systemd-man-size "804 KB">
 <!--<!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-version;-&systemd-stable;.tar.xz">-->
 <!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-man-version;.tar.xz">
-<!ENTITY systemd-man-md5  "4c5533c1a2d0921dd4c5b5e6b8902570">
+<!ENTITY systemd-man-md5  "4c39115fc2bac4097596009c10ff595e">
 <!ENTITY systemd-fin-du   "396 MB">
 <!ENTITY systemd-fin-sbu  "1.2 SBU">
 
@@ -756,10 +756,10 @@
 <!ENTITY texinfo-fin-du "151 MB">
 <!ENTITY texinfo-fin-sbu "0.4 SBU">
 
-<!ENTITY tzdata-version "2026c">
-<!ENTITY tzdata-size "465 KB">
+<!ENTITY tzdata-version "2026d">
+<!ENTITY tzdata-size "469 KB">
 <!ENTITY tzdata-url "https://www.iana.org/time-zones/repository/releases/tzdata&tzdata-version;.tar.gz">
-<!ENTITY tzdata-md5 "bff7174205cefab793e3b24271ef2f45">
+<!ENTITY tzdata-md5 "147436ca315b4a6be671ac551d99dd53">
 <!ENTITY tzdata-home "https://www.iana.org/time-zones">
 
 <!ENTITY udev-lfs-version "udev-lfs-20230818">
@@ -781,9 +781,9 @@
 <!ENTITY util-linux-fin-du "362 MB">
 <!ENTITY util-linux-fin-sbu "0.5 SBU">
 
-<!ENTITY vim-version "9.2.1025">
+<!ENTITY vim-version "9.2.1099">
 <!ENTITY vim-docdir "vim/vim92">
-<!ENTITY vim-size "19,662 KB">
+<!ENTITY vim-size "19,704 KB">
 <!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">
 <!-- N.B. LFS 9.0 uses
      https://github.com/vim/vim/archive/v8.1.1846/vim-8.1.1846.tar.gz
@@ -796,7 +796,7 @@
      release.  The "Next" button just sets "after=" in the URL.  For
      example, https://github.com/vim/vim/tags?after=v8.1.1847 will show
      us v8.1.1846. -->
-<!ENTITY vim-md5 "060c9c0d7e2bdb5e5d80daad596cae02">
+<!ENTITY vim-md5 "09719a43a902b678d40e2b90857c80e9">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "234 MB">
 <!ENTITY vim-fin-sbu "3.3 SBU">
@@ -817,10 +817,10 @@
 <!ENTITY xml-parser-fin-du "2.3 MB">
 <!ENTITY xml-parser-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY xz-version "5.8.3">
-<!ENTITY xz-size "1,512 KB">
+<!ENTITY xz-version "5.8.4">
+<!ENTITY xz-size "1,531 KB">
 <!ENTITY xz-url "https://github.com//tukaani-project/xz/releases/download/v&xz-version;/xz-&xz-version;.tar.xz">
-<!ENTITY xz-md5 "a02753f34e5546d20213b87f876a0933">
+<!ENTITY xz-md5 "8b2f092ad33e560bc04ffdbe3101daa7">
 <!ENTITY xz-home "https://tukaani.org/xz">
 <!ENTITY xz-tmp-du "24 MB">
 <!ENTITY xz-tmp-sbu "0.1 SBU">

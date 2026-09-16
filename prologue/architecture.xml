@@ -11,11 +11,12 @@
   <title>LFS Target Architectures</title>
 
 <para>The primary target architectures of this LFS edition are LoongArch
-CPUs.
-<!--On the other hand, the instructions in this book are
-also known to work, with some modifications, with the Power PC and ARM
-CPUs. -->
-To build a system that utilizes one of these CPUs, the main prerequisite, in
+64-bit (LA64) CPUs.  <!--The instructions in this book are also known to
+work on 32-bit x86 CPUs with SSE2 support (for example Pentium 4) but not
+tested with earlier, less-capable 32-bit x86 processors.
+On the other hand, the instructions in this book are
+also known to work, with some modifications, with the Power PC and ARM CPUs.--> To
+build a system that utilizes a LoongArch CPU, the main prerequisite, in
 addition to those on the next page, is an existing Linux system such as an
 earlier LFS installation, Loong Arch Linux, CLFS for LoongArch, Gentoo,
 Slackware, or other distribution that targets LoongArch.</para>
@@ -29,7 +30,7 @@ This is not directly supported in LFS because it would interfere with the
 educational objective of providing the minimal instructions needed for a
 basic Linux system. Some of the LFS/BLFS editors maintain a multilib fork
 of LFS, accessible at <ulink
-url="https://www.linuxfromscratch.org/~thomas/multilib/index.html"/>. But
+url="https://www.linuxfromscratch.org/mlfs/view/dev/"/>. But
 the multilib edition is for x86_64, and multilib is an advanced topic
 anyway.</para>
 
