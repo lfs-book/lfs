@@ -18,7 +18,7 @@ On the other hand, the instructions in this book are
 also known to work, with some modifications, with the Power PC and ARM CPUs.--> To
 build a system that utilizes a LoongArch CPU, the main prerequisite, in
 addition to those on the next page, is an existing Linux system such as an
-earlier LFS installation, Loong Arch Linux, CLFS for LoongArch, Gentoo,
+earlier LFS installation, Arch Linux for Loong64, CLFS for LoongArch, Gentoo,
 Slackware, or other distribution that targets LoongArch.</para>
 
 <para>The build that results from this LFS edition is a
