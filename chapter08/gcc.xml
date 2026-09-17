@@ -177,8 +177,7 @@ su tester -c "PATH=$PATH make -k check"</userinput></screen>
     <userinput>grep -A7 Summ</userinput>.</para>
 
     <para>Results can be compared with those located at <ulink
-    url="&test-results;"/> and
-    <ulink url="https://gcc.gnu.org/ml/gcc-testresults/"/>.</para>
+    url="&test-results;"/>.</para>
 
     <!-- predcom-8.c: PR118407
          atomic_store_with_stshh.{c,C}: need -fno-stack-protector
