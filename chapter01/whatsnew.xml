@@ -35,9 +35,9 @@
     <!--<listitem>
       <para>Autoconf-&autoconf-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Automake-&automake-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Bash-&bash-version;</para>
     </listitem>-->
@@ -68,9 +68,9 @@
     <!--<listitem>
        <para>E2fsprogs-&e2fsprogs-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
        <para>Expat-&expat-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
        <para>Expect-&expect-version;</para>
     </listitem>-->
@@ -119,18 +119,18 @@
     <!--<listitem>
       <para>Gzip-&gzip-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Iana-Etc-&iana-etc-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Inetutils-&inetutils-version;</para>
     </listitem>-->
     <!--<listitem>
       <para>Intltool-&intltool-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>IPRoute2-&iproute2-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Jinja2-&jinja2-version;</para>
     </listitem>-->
@@ -149,9 +149,9 @@
     <!--<listitem>
       <para>Libcap-&libcap-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Libelf from Elfutils-&elfutils-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Libffi-&libffi-version;</para>
     </listitem>-->
@@ -164,9 +164,9 @@
     <!--<listitem>
       <para>Libxcrypt-&libxcrypt-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Linux-&linux-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Lz4-&lz4-version;</para>
     </listitem>-->
@@ -179,9 +179,9 @@
     <!--<listitem>
       <para>Man-DB-&man-db-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Man-pages-&man-pages-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>MarkupSafe-&markupsafe-version;</para>
     </listitem>-->
@@ -200,24 +200,24 @@
     <!--<listitem>
       <para>Ninja-&ninja-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>OpenSSL-&openssl-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Packaging-&packaging-version;</para>
     </listitem>-->
     <!--<listitem>
       <para>Patch-&patch-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Pcre2-&pcre2-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Perl-&perl-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Pkgconf-&pkgconf-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Procps-ng-&procps-ng-version;</para>
     </listitem>-->
@@ -245,9 +245,9 @@
     <!--<listitem revision="sysv">
       <para>Sysklogd-&sysklogd-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Systemd-&systemd-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem revision="sysv">
       <para>SysVinit-&sysvinit-version;</para>
     </listitem>-->
@@ -260,27 +260,27 @@
     <!--<listitem>
       <para>Texinfo-&texinfo-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Tzdata-&tzdata-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem revision="sysv">
       <para>Udev from Systemd-&systemd-version;</para>
     </listitem>-->
     <!--<listitem>
       <para>Util-linux-&util-linux-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Vim-&vim-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Wheel-&wheel-version;</para>
     </listitem>-->
     <!--<listitem>
       <para>XML::Parser-&xml-parser-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Xz-&xz-version;</para>
-    </listitem>-->
+    </listitem>
     <!--<listitem>
       <para>Zlib-&zlib-version;</para>
     </listitem>-->
