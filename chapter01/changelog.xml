@@ -41,6 +41,17 @@
     -->
 
     <listitem>
+      <para>2026-09-18</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Update glibc upstream fixes patch
+          (security update).  Fixes
+          <ulink url="&lfs-ticket-root;6023">#6023</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2026-09-15</para>
       <itemizedlist>
         <listitem>
