@@ -665,3 +665,8 @@ p.updated {
 .feature-blowfish {
   color: #8E6B23
 }
+
+code.filename {
+  /* despite the naming it also suppresses wrapping at slash ('/') */
+  white-space: nowrap;
+}
