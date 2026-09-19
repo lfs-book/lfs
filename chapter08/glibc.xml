@@ -63,14 +63,16 @@
     <!-- Remove this when we update to 2.45.  There should be no need to
          move this to the upgrading note: in 2.45 those symbols will be
          added again using a better way, so the ad-hoc hack should make
-         no harm with 2.45.  -->
+         no harm with 2.45.  
+         &#8288; is a clue to html not to break between characters.
+    -->
     <important>
       <para>
-        If rebuilding glibc for an exist LFS system with an ad-hoc
+        If rebuilding glibc for an existing LFS system with an ad-hoc
         workaround for the gnulib hanging issue at
-        <filename>/usr/share/config.site</filename> (introduced with <ulink
+        <filename>/&#8288;usr/share/config.site</filename> (introduced with <ulink
         url='&lfs-root;lfs/view/13.1-systemd/chapter06/m4.html'>cross-compiled
-        M4 in LFS 13.1</ulink>) for the gnulib hanging issue, remove it:
+        M4 in LFS 13.1</ulink>), remove it:
       </para>
 
       <screen role='nodump'><userinput>rm -fv /usr/share/config.site</userinput></screen>
