@@ -233,7 +233,7 @@
    2           22528           24575     1024.0 KiB  EF02  BIOS boot partition
    3           24576         1048575      500.0 MiB  8300  /boot
    4         1048576         5242879        2.0 GiB  8200  swap
-   5         5242880        89128959       40.0 GiB  8300  lfs13.0+
+   5         5242880        89128959       40.0 GiB  8300  lfs-new
    6        89128960       173015039       40.0 GiB  8300  /home</screen>
 
   <para>The above example makes a few assumptions:

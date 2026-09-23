@@ -3,7 +3,7 @@
   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../general.ent">
   %general-entities;
-  <!ENTITY kernel-directory "https://www.kernel.org/pub/linux/kernel/v6.x">
+  <!ENTITY kernel-directory "https://www.kernel.org/pub/linux/kernel/v7.x">
 ]>
 
 <sect1 id="ch-materials-packages">
