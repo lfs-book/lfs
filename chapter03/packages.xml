@@ -268,11 +268,14 @@
             <ulink url='https://sourceware.org/git/?p=glibc.git;a=shortlog;h=refs/heads/release/&glibc-version;/master'>Git
             branch</ulink> containing patches considered worthy for
             Glibc-&glibc-version; but unfortunately developed after
-            Glibc-&glibc-version; release.  The LFS editors will issue a
-            security advisory if any security fix is added into the branch,
-            but no actions will be taken for other newly added patches.  You
-            may review the patches yourself and incorporate some patches if
-            you consider them important.
+            Glibc-&glibc-version; release.  The LFS editors will add a glibc
+            upstream fixes patch (or update an existing one) for the LFS
+            development book to follow that branch if an important fix is
+            added (for example, a security fix) and maybe issue an errata
+            (or security advisory) if the fix is required for the recent
+            stable LFS release, but no actions will be taken for patches
+            with less importance.  You may review the patches yourself and
+            incorporate some patches if you consider them important.
           </para>
         </note>
       </listitem>

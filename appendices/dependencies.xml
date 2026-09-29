@@ -1378,7 +1378,7 @@
           <seg>Bash, Gawk, Glibc, Make, Perl, Sed, and XML::Parser</seg>
         </seglistitem>
       </segmentedlist>
--->
+
       <segmentedlist id="intltool-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
@@ -1407,7 +1407,7 @@
           <seg>None</seg>
         </seglistitem>
       </segmentedlist>
-
+-->
 <!-- Begin IProute2 dependency info -->
   <bridgehead renderas="sect2" id="iproute2-dep">IProute2</bridgehead>
 
@@ -3510,7 +3510,7 @@
           Perl</seg>
         </seglistitem>
       </segmentedlist>
--->
+
       <segmentedlist id="xml-parser-rundeps">
         <segtitle>&runtime;</segtitle>
         <seglistitem>
@@ -3541,7 +3541,7 @@
           </seg>
         </seglistitem>
       </segmentedlist>
-
+-->
 <!-- Begin Xz-utils dependency info -->
   <bridgehead renderas="sect2" id="xz-dep">Xz</bridgehead>
 
