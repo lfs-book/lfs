@@ -44,7 +44,11 @@
 
     <title>Installation of Pkgconf</title>
 
-    <para>First, work around a circular dependency on meson:</para>
+    <para>First, remove a test the causes the build to fail:</para>
+
+<screen><userinput remap="pre">sed '/^test_api_util_exe/,/^test(.*test_api_util_exe)/d' -i meson.build</userinput></screen>
+
+    <para>Now, work around a circular dependency on meson:</para>
 
 <screen><userinput remap="pre">tar -xf ../meson-&meson-version;.tar.gz</userinput></screen>
 
