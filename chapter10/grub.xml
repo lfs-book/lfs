@@ -192,7 +192,8 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
         If it already exists, it's likely that it's the entry of another boot
         loader (for example the GRUB installation from the host distro, or the
         Windows Boot Manager). Backup the file so it can be restored later
-        or loaded as a secondary boot loader by the new GRUB installation
+        or loaded as a secondary boot loader (via a GRUB functionality named
+        <quote>chainloading</quote>) by the new GRUB installation
         from LFS.</para>
       </warning>
 
@@ -221,45 +222,77 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
 
       <note>
         <para>
-          Some UEFI firmware implementations, while rare, skip the standard
-          EFI path. Such
-          systems most of the time are old, like Lenovo ThinkPads or HP
-          desktops/laptops. When the boot entry is missing in the firmware setup, you
-          will need to install the BLFS package <ulink
-          url="&blfs-book;postlfs/efibootmgr.html">efibootmgr</ulink> to create
-          a boot entry for UEFI. If it's easier, the package can be installed
-          via the distribution's package manager, if applicable, and used on
-          the host instead of on the LFS system. This can prevent the need for
-          downloading more tarballs onto the LFS system for now.
+          The use of the standard location may not work on some scenarios:
         </para>
+
+        <itemizedlist>
+          <listitem>
+            <para>
+              Some UEFI firmware implementations disregard the standard
+              EFI path at all
+            </para>
+          </listitem>
+
+          <listitem>
+            <para>
+              If a <quote>well-known</quote> boot loader (notably, the
+              Windows Boot Manager) exists in the same ESP, some UEFI
+              firmware implementations will boot that boot loader instead
+              of the one at the standard path
+            </para>
+          </listitem>
+
+          <listitem>
+            <para>
+              With a multi-boot configuration, the other operating systems
+              may overwrite the file at the standard EFI path (especially,
+              during a system update) and break the LFS grub installation
+            </para>
+          </listitem>
+        </itemizedlist>
+
         <para>
-          First install the package, then mount the EFI variable file system if
-          it isn't already mounted:
+          In those scenarios, you will need to install the BLFS package <ulink
+          url="&blfs-book;postlfs/efibootmgr.html">efibootmgr</ulink> to create
+          a boot entry for UEFI.  First install the package, then mount the
+          EFI variable file system if it isn't already mounted:
         </para>
+
 <screen role="nodump"><userinput>mountpoint /sys/firmware/efi/efivars ||
   mount -v -t efivarfs efivarfs /sys/firmware/efi/efivars</userinput></screen>
+
         <para>
-          Now create a boot entry for the EFI:
+          Now install GRUB into a LFS-specific location and add an
+          entry labeled <quote>LFS</quote> for the EFI:
         </para>
-<screen role="nodump"><userinput>efibootmgr -c -d /dev/sd<replaceable>&lt;x&gt;</replaceable> \
-  -p <replaceable>&lt;y&gt;</replaceable> -L "LFS" -l '\EFI\BOOT\BOOT<replaceable>&lt;X64&gt;</replaceable>.EFI'</userinput></screen>
+
+<screen role="nodump"><userinput>efibootmgr -B -L <replaceable>LFS</replaceable>
+grub-install --target=x86_64-efi --bootloader-id=<replaceable>LFS</replaceable></userinput></screen>
+
         <para>
-          The <literal>/dev/sd<replaceable>&lt;x&gt;</replaceable></literal>
-          drive should be the device node for the disk where the ESP exists. The
-          <replaceable>&lt;y&gt;</replaceable> partition number should match
-          the number of the ESP. If the ESP is on
-          <literal>/dev/sda2</literal>, then the partition number would be
-          <literal>2</literal>. If you are using 32-bit UEFI, replace
-          <replaceable>&lt;X64&gt;</replaceable> with <literal>IA32</literal>.
+          The <command>efibootmgr -B</command> command removes the boot
+          entry from a previous LFS installation (if one exists).
+          You may replace <replaceable>LFS</replaceable> with another
+          identifier if you are installing multiple LFS systems on the
+          machine and you want to keep their boot loaders independent.
         </para>
 
         <para>
-          Some (broken) firmware may require additional parameters
-          for <command>efibootmgr</command>, like
+          Some (broken) firmware may require invoking the
+          <command>efibootmgr -c</command> command directly because those
+          firmware implementations need additional parameters those
+          <command>grub-install</command> does not pass, like
           <parameter>--full-dev-path</parameter> or
           <parameter>-e 1 -E</parameter>.  Read the man page
           <ulink role='man' url='&man;efibootmgr.8'>efibootmgr(8)</ulink>
-          for details.
+          for how to use the <command>efibootmgr -c</command> command.
+          It may be easier to append
+          <literal>--debug |&amp; efibootmgr</literal> to show the
+          <command>efibootmgr -c</command> command invoked by
+          <command>grub-install</command> and then edit it.  Remember to
+          run the <command>efibootmgr -B</command> command again to remove
+          the entry created by grub before running the edited
+          <command>efibootmgr -c</command> command.
         </para>
 
         <para>

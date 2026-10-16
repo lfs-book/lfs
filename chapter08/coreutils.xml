@@ -154,6 +154,8 @@ FORCE_UNSAFE_CONFIGURE=1 ./configure \
 <screen><userinput remap="test">su tester -c "PATH=$PATH make -k RUN_EXPENSIVE_TESTS=yes check" \
    &lt; /dev/null</userinput></screen>
 
+    <para>One test, test-regex-el, is known to fail.</para>
+
     <para>Remove the temporary group:</para>
 
 <screen><userinput remap="test">groupdel dummy</userinput></screen>
