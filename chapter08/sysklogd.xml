@@ -101,9 +101,12 @@ EOF</userinput></screen>
 
     <segmentedlist>
       <segtitle>Installed program</segtitle>
-
+      <segtitle>Installed library</segtitle>
+      <segtitle>Installed directory</segtitle>
       <seglistitem>
         <seg>syslogd</seg>
+        <seg>libsyslog.so</seg>
+        <seg>/usr/include/syslog</seg>
       </seglistitem>
     </segmentedlist>
 

@@ -39,6 +39,17 @@
     <listitem revision="openrc"> or <listitem revision="systemd"> as
     appropriate for the entry or if needed the entire day's listitem.
     -->
+
+    <listitem revision='openrc'>
+      <para>2026-10-16</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Update to sysklogd-2.8.0. Fixes
+          <ulink url="&lfs-ticket-root;6052">#6052</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem>
       <para>2026-10-15</para>
       <itemizedlist>
@@ -76,7 +87,6 @@
         </listitem>
       </itemizedlist>
     </listitem>
-
 
     <listitem>
       <para>2026-10-02</para>
