@@ -700,12 +700,12 @@
 <!ENTITY sqlite-doc-url  "https://sqlite.org/&sqlite-year;/sqlite-doc-&sqlite-doc-version;.zip">
 <!ENTITY sqlite-doc-md5  "90b0eece9636a66464f3fd5dce279a09">
 
-<!ENTITY sysklogd-version "2.7.2">
-<!ENTITY sysklogd-size "474 KB">
+<!ENTITY sysklogd-version "2.8.0">
+<!ENTITY sysklogd-size "480 KB">
 <!ENTITY sysklogd-url "https://github.com/troglobit/sysklogd/releases/download/v&sysklogd-version;/sysklogd-&sysklogd-version;.tar.gz">
-<!ENTITY sysklogd-md5 "af60786956a2dc84054fbf46652e515e">
+<!ENTITY sysklogd-md5 "cd36ab0c0214a42fc13a0c2c17dec5b6">
 <!ENTITY sysklogd-home "https://www.infodrom.org/projects/sysklogd/">
-<!ENTITY sysklogd-fin-du "3.9 MB">
+<!ENTITY sysklogd-fin-du "4.1 MB">
 <!ENTITY sysklogd-fin-sbu "less than 0.1 SBU">
 
 <!ENTITY systemd-version  "262">

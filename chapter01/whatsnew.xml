@@ -245,9 +245,9 @@
     <listitem>
       <para>Sqlite-&sqlite-version;</para>
     </listitem>
-    <!--<listitem revision="openrc,sysv">
+    <listitem revision="openrc,sysv">
       <para>Sysklogd-&sysklogd-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem revision="systemd">
       <para>Systemd-&systemd-version;</para>
     </listitem>
