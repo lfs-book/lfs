@@ -211,7 +211,7 @@
 <screen>Number  Start (sector)    End (sector)        Size   Code  Name
    1            2048           22527       10.0 MiB  EF00  EFI system partition
    2           22528         4216831        2.0 GiB  8200  swap
-   3         4216832        88102911       40.0 GiB  8300  lfs13.0+
+   3         4216832        88102911       40.0 GiB  8300  lfs-new
    4        88102912       171988991       40.0 GiB  8300  /home</screen>
 
   <para>The above example makes a few assumptions:

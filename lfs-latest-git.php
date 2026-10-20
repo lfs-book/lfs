@@ -131,6 +131,7 @@ if ( $package == "file"       ) $dirpath = "https://github.com/file/file/tags";
 if ( $package == "flex"       ) $dirpath = github("westes/flex");
 if ( $package == "flit_core"  ) $dirpath = "https://pypi.org/rss/project/flit-core/releases.xml";
 if ( $package == "gcc"        ) $dirpath = max_parent( $dirpath, "gcc-" );
+if ( $package == "grub"       ) $dirpath = "https://gitlab.freedesktop.org/api/v4/projects/26558/releases";
 if ( $package == "gzip"       ) $dirpath = "https://ftp.gnu.org/gnu/gzip";
 if ( $package == "iana-etc"   ) $dirpath = github("Mic92/iana-etc");
 if ( $package == "intltool"   ) $dirpath = "https://launchpad.net/intltool/trunk";
@@ -242,6 +243,14 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
 
   if ( $package == "elfutils" )
      return find_max( $lines, "/^\d/", "/^(\d[\d\.]+\d)\/.*$/" );
+
+  if ( $package == "grub" )
+  {
+     $text = preg_replace( '/\\\\n/', "\n", $lines[0] );
+     $json = explode( "\n", $text ); 
+     $max = find_max( $json, "/grub-\d/", "/^.*grub-([\d\.]+\d).*$/" );
+     return $max;
+  }
 
   if ( $package == "gzip" )
      return find_max( $lines, "/gzip-/", "/^.*gzip-([\d\.]+)\.tar.*$/" );
