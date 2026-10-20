@@ -3189,7 +3189,7 @@
         </seglistitem>
       </segmentedlist>
 
-      <segmentedlist id="tar-befors">
+      <segmentedlist id="tar-before">
         <segtitle>&before;</segtitle>
         <seglistitem>
           <seg>None</seg>

@@ -70,14 +70,6 @@
     <parameter>HARNESS_JOBS=<replaceable>&lt;N&gt;</replaceable></parameter>
     with N replaced by the number of logic CPU cores you want to use.</para>
 
-    <para>One test, 30-test_afalg.t, is known to fail if the host kernel
-    does not have <option>CONFIG_CRYPTO_USER_API_SKCIPHER</option> enabled,
-    or does not have any options providing an AES with CBC implementation
-    (for example, the combination of <option>CONFIG_CRYPTO_AES</option>
-    and <option>CONFIG_CRYPTO_CBC</option>, or
-    <option>CONFIG_CRYPTO_AES_NI_INTEL</option> if the CPU supports AES-NI)
-    enabled.  If it fails, it can safely be ignored.</para>
-
     <para>Install the package (setting an empty
     <envar>INSTALL_LIBS</envar> prevents the installation of static
     libraries):</para>
@@ -127,7 +119,7 @@
 
       <seglistitem>
         <seg>
-          c_rehash and openssl
+          openssl
         </seg>
         <seg>
           libcrypto.so and libssl.so
@@ -145,7 +137,7 @@
       <bridgehead renderas="sect3">Short Descriptions</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
-
+<!--
       <varlistentry id="c_rehash">
         <term><command>c_rehash</command></term>
         <listitem>
@@ -161,7 +153,7 @@
           </indexterm>
         </listitem>
       </varlistentry>
-
+-->
       <varlistentry id="openssl-prog">
         <term><command>openssl</command></term>
         <listitem>
