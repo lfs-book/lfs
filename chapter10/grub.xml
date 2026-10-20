@@ -146,8 +146,8 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
 
           <listitem>
             <para>
-              If a <quote>well-known</quote> boot loader (notably, the
-              Windows Boot Manager) exists in the same ESP, some UEFI
+              If a <quote>well-known</quote> boot loader<!-- (notably, the
+              Windows Boot Manager)--> exists in the same ESP, some UEFI
               firmware implementations will boot that boot loader instead
               of the one at the standard path
             </para>
@@ -178,7 +178,7 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
         </para>
 
 <screen role="nodump"><userinput>efibootmgr -B -L <replaceable>LFS</replaceable>
-grub-install --target=x86_64-efi --bootloader-id=<replaceable>LFS</replaceable></userinput></screen>
+grub-install --target=loongarch64-efi --bootloader-id=<replaceable>LFS</replaceable></userinput></screen>
 
         <para>
           The <command>efibootmgr -B</command> command removes the boot
