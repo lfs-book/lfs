@@ -209,9 +209,9 @@
     <!--<listitem>
       <para>Packaging-&packaging-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Patch-&patch-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Pcre2-&pcre2-version;</para>
     </listitem>
@@ -236,9 +236,9 @@
     <!--<listitem>
       <para>Sed-&sed-version;</para>
     </listitem>-->
-    <!--<listitem>
+    <listitem>
       <para>Setuptools-&setuptools-version;</para>
-    </listitem>-->
+    </listitem>
     <listitem>
       <para>Shadow-&shadow-version;</para>
     </listitem>
