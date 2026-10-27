@@ -44,11 +44,11 @@
 <!ENTITY perl-upstream-fix-patch-md5 "1983b48fee837a98db47fb5dba934744">
 <!ENTITY perl-upstream-fix-patch-size "13 KB">
 -->
-
+<!--
 <!ENTITY python-openssl4-fixes-patch "Python-&python-version;-openssl_4-1.patch">
 <!ENTITY python-openssl4-fixes-patch-md5 "597d7737df1b4ea4e184c193da523050">
 <!ENTITY python-openssl4-fixes-patch-size "38 KB">
-
+-->
 <!--
 <!ENTITY readline-fixes-patch "readline-&readline-version;-upstream_fixes-3.patch">
 <!ENTITY readline-fixes-patch-md5 "9ed497b6cb8adcb8dbda9dee9ebce791">
