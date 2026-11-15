@@ -41,6 +41,48 @@
     -->
 
     <listitem>
+      <para>2026-11-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to automake-1.20. Fixes
+          <ulink url="&lfs-ticket-root;6064">#6074</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to dbus-1.16.4. Fixes
+          <ulink url="&lfs-ticket-root;6079">#6079</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to flex-2.6.13. Fixes
+          <ulink url="&lfs-ticket-root;6077">#6077</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to groff-1.25.0. Fixes
+          <ulink url="&lfs-ticket-root;6075">#6075</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20261106. Addresses
+          <ulink url="&lfs-ticket-root;5006">#5006</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-7.3.4. Fixes
+          <ulink url="&lfs-ticket-root;6073">#6073</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to lz4-1.11.1. Fixes
+          <ulink url="&lfs-ticket-root;6068">#6068</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to systemd-262.2. Fixes
+          <ulink url="&lfs-ticket-root;6071">#6071</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to vim-9.2.1351 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;6076">#6076</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2026-11-06</para>
       <itemizedlist>
         <listitem>

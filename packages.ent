@@ -38,11 +38,11 @@
 <!ENTITY autoconf-fin-sbu-tests "0.4">
 <!ENTITY autoconf-fin-sbu "less than 0.1 SBU (about &autoconf-fin-sbu-tests; SBU with tests)">
 
-<!ENTITY automake-version "1.19">
-<!ENTITY am-minor-version "1.19">
-<!ENTITY automake-size "1,644 KB">
+<!ENTITY automake-version "1.20">
+<!ENTITY am-minor-version "1.2-">
+<!ENTITY automake-size "1,655 KB">
 <!ENTITY automake-url "&gnu;automake/automake-&automake-version;.tar.xz">
-<!ENTITY automake-md5 "da9b5c852b94089c7b7b16071ce8803c">
+<!ENTITY automake-md5 "7252eb0ea603064a64134ba7602c0089">
 <!ENTITY automake-home "&gnu-software;automake/">
 <!ENTITY automake-fin-du "124 MB">
 <!ENTITY automake-fin-sbu "less than 0.1 SBU (about 1.1 SBU with tests)">
@@ -107,10 +107,10 @@
 <!ENTITY coreutils-fin-du "194 MB">
 <!ENTITY coreutils-fin-sbu "1.2 SBU">
 
-<!ENTITY dbus-version "1.16.2">
-<!ENTITY dbus-size "1,090 KB">
+<!ENTITY dbus-version "1.16.4">
+<!ENTITY dbus-size "1,099 KB">
 <!ENTITY dbus-url "https://dbus.freedesktop.org/releases/dbus/dbus-&dbus-version;.tar.xz">
-<!ENTITY dbus-md5 "97832e6f0a260936d28536e5349c22e5">
+<!ENTITY dbus-md5 "b7ed0057777e1aa1bca3348e1aaeedb2">
 <!ENTITY dbus-home "https://www.freedesktop.org/wiki/Software/dbus">
 <!ENTITY dbus-fin-du "17 MB">
 <!ENTITY dbus-fin-sbu "0.1 SBU">
@@ -186,10 +186,10 @@
 <!ENTITY findutils-fin-du "71 MB">
 <!ENTITY findutils-fin-sbu "0.9 SBU">
 
-<!ENTITY flex-version "2.6.4">
-<!ENTITY flex-size "1,386 KB">
+<!ENTITY flex-version "2.6.13">
+<!ENTITY flex-size "1,791 KB">
 <!ENTITY flex-url "&github;/westes/flex/releases/download/v&flex-version;/flex-&flex-version;.tar.gz">
-<!ENTITY flex-md5 "2882e3179748cc9f9c23ec593d6adc8d">
+<!ENTITY flex-md5 "e302a814cf45e4eb1afafc4e226aef5b">
 <!ENTITY flex-home "&github;/westes/flex">
 <!ENTITY flex-fin-du "33 MB">
 <!ENTITY flex-fin-sbu "0.1 SBU">
@@ -285,10 +285,10 @@
 <!ENTITY grep-fin-du "48 MB">
 <!ENTITY grep-fin-sbu "0.5 SBU">
 
-<!ENTITY groff-version "1.24.2">
-<!ENTITY groff-size "8,805 KB">
+<!ENTITY groff-version "1.25.0">
+<!ENTITY groff-size "9,236 KB">
 <!ENTITY groff-url "&gnu;groff/groff-&groff-version;.tar.gz">
-<!ENTITY groff-md5 "4568a9c35000784246cfebff8e93121a">
+<!ENTITY groff-md5 "d75ab76a307f35ed24fb4845a8f0595a">
 <!ENTITY groff-home "&gnu-software;groff/">
 <!ENTITY groff-fin-du "128 MB">
 <!ENTITY groff-fin-sbu "0.6 SBU">
@@ -311,10 +311,10 @@
 <!ENTITY gzip-fin-du "21 MB">
 <!ENTITY gzip-fin-sbu "0.1 SBU">
 
-<!ENTITY iana-etc-version "20261015">
-<!ENTITY iana-etc-size "597 KB">
+<!ENTITY iana-etc-version "20261106">
+<!ENTITY iana-etc-size "598 KB">
 <!ENTITY iana-etc-url "https://github.com/Mic92/iana-etc/releases/download/&iana-etc-version;/iana-etc-&iana-etc-version;.tar.gz">
-<!ENTITY iana-etc-md5 "ce2bd3902a91499ab38d4dda06be5be7">
+<!ENTITY iana-etc-md5 "c96bc2660cc13411baa73d55a6f27a2a">
 <!ENTITY iana-etc-home "https://www.iana.org/protocols">
 <!ENTITY iana-etc-fin-du "4.8 MB">
 <!ENTITY iana-etc-fin-sbu "less than 0.1 SBU">
@@ -418,12 +418,12 @@
 <!ENTITY linux-major-version "7">
 <!ENTITY linux-minor-version "3">
 <!ENTITY linux-majmin-version "&linux-major-version;.&linux-minor-version;">
-<!ENTITY linux-patch-version "1">
+<!ENTITY linux-patch-version "4">
 <!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
 <!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
-<!ENTITY linux-size "158,601 KB">
+<!ENTITY linux-size "158,633 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "c168038a5263053ff7b3fe4f6807225f">
+<!ENTITY linux-md5 "793753003d61c5f9b9cbfd9582d90fc6">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -438,10 +438,10 @@
 <!ENTITY linux-headers-tmp-du "1.8 GB">
 <!ENTITY linux-headers-tmp-sbu "less than 0.1 SBU">
 
-<!ENTITY lz4-version "1.10.0">
-<!ENTITY lz4-size "379 KB">
+<!ENTITY lz4-version "1.11.1">
+<!ENTITY lz4-size "541 KB">
 <!ENTITY lz4-url "&github;/lz4/lz4/releases/download/v&lz4-version;/lz4-&lz4-version;.tar.gz">
-<!ENTITY lz4-md5 "dead9f5f1966d9ae56e1e32761e4e675">
+<!ENTITY lz4-md5 "c7e92491e736fcf5916315103cc188c8">
 <!ENTITY lz4-home "https://lz4.org/">
 <!ENTITY lz4-fin-du "4.2 MB">
 <!ENTITY lz4-fin-sbu "0.1 SBU">
@@ -690,19 +690,19 @@
 <!ENTITY sysklogd-fin-du "4.1 MB">
 <!ENTITY sysklogd-fin-sbu "less than 0.1 SBU">
 
-<!ENTITY systemd-version  "262.1">
+<!ENTITY systemd-version  "262.2">
 <!--<!ENTITY systemd-stable   "6b4878d">-->
 <!-- The above entity is used whenever we move to a stable backport branch. 
      In the event of a critical problem or kernel change that is incompatible, 
      we will switch to the backport branch until the next stable release. -->
-<!ENTITY systemd-size     "18,641 KB">
+<!ENTITY systemd-size     "18,702 KB">
 <!ENTITY systemd-url      "&github;/systemd/systemd/archive/v&systemd-version;/systemd-&systemd-version;.tar.gz">
-<!ENTITY systemd-md5      "5aff3c8c8a663d4cd99d1cc89530fd09">
+<!ENTITY systemd-md5      "e54cedd1998fa4e297c675c6f8ca9fe7">
 <!ENTITY systemd-home     "https://systemd.io">
-<!ENTITY systemd-man-version "262.1">
-<!ENTITY systemd-man-size "825 KB">
+<!ENTITY systemd-man-version "262.2">
+<!ENTITY systemd-man-size "826 KB">
 <!ENTITY systemd-man-url  "&anduin-sources;/systemd-man-pages-&systemd-man-version;.tar.xz">
-<!ENTITY systemd-man-md5  "20c428161a5783fdc9f79a1bbb95563c">
+<!ENTITY systemd-man-md5  "a5c187c3a4b02e77da5280789c285f86">
 <!ENTITY systemd-fin-du   "396 MB">
 <!ENTITY systemd-fin-sbu  "1.2 SBU">
 
@@ -771,9 +771,9 @@
 <!ENTITY util-linux-fin-du "362 MB">
 <!ENTITY util-linux-fin-sbu "0.5 SBU">
 
-<!ENTITY vim-version "9.2.1225">
+<!ENTITY vim-version "9.2.1351">
 <!ENTITY vim-docdir "vim/vim92">
-<!ENTITY vim-size "19,812 KB">
+<!ENTITY vim-size "19,961 KB">
 <!ENTITY vim-url "https://github.com/vim/vim/archive/v&vim-version;/vim-&vim-version;.tar.gz">
 <!-- N.B. LFS 9.0 uses
      https://github.com/vim/vim/archive/v8.1.1846/vim-8.1.1846.tar.gz
@@ -786,7 +786,7 @@
      release.  The "Next" button just sets "after=" in the URL.  For
      example, https://github.com/vim/vim/tags?after=v8.1.1847 will show
      us v8.1.1846. -->
-<!ENTITY vim-md5 "a3594aae508c628c50bf3c71af37813b">
+<!ENTITY vim-md5 "4112cc60ba7aebb5e73da643ccdea7fd">
 <!ENTITY vim-home "https://www.vim.org">
 <!ENTITY vim-fin-du "234 MB">
 <!ENTITY vim-fin-sbu "3.3 SBU">
