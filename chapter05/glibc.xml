@@ -77,7 +77,7 @@ esac</userinput></screen>
     url='&man;tanh.3'>tanh(3)</ulink> function to crash
     on some old x86_64 processors, one causing some packages using gnulib
     to hang indefinitely at runtime, some causing building or testing
-    failures with parallel <command>make</command> jobs, and six security
+    failures with parallel <command>make</command> jobs, and seven security
     vulnerabilities (some of them may not really affect the temporary build
     but the fixes make no harm anyway):</para>
 
@@ -174,6 +174,11 @@ cd       build</userinput></screen>
 
 <screen><userinput remap="make">make</userinput></screen>
 
+    <para>Fix a hard coded path to the executable loader in the
+    <command>ldd</command> script:</para>
+
+<screen><userinput remap="install">sed '/RTLDLIST=/s@/usr@@g' -i elf/ldd</userinput></screen>
+
     <para>Install the package:</para>
 
     <warning><para>If <envar>LFS</envar> is not properly set, and despite the
@@ -202,11 +207,6 @@ cd       build</userinput></screen>
       </varlistentry>
 
     </variablelist>
-
-    <para>Fix a hard coded path to the executable loader in the
-    <command>ldd</command> script:</para>
-
-<screen><userinput remap="install">sed '/RTLDLIST=/s@/usr@@g' -i $LFS/usr/bin/ldd</userinput></screen>
 
     <para>Now that our cross toolchain is in place, it is important to ensure
     that compiling and linking will work as expected. We do this by performing

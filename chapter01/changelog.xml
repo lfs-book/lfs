@@ -41,6 +41,53 @@
     -->
 
     <listitem>
+      <para>2026-11-06</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jlocash] - Update to zlib-1.4 (Security Update). Fixes <ulink
+          url="&lfs-ticket-root;6069">#6069</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[xry111] - Update glibc upstream fixes patch (Security
+          Update). Fixes <ulink
+          url="&lfs-ticket-root;6070">#6070</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2026-11-02</para>
+      <itemizedlist>
+        <listitem>
+          <para>[jlocash] - Update to expat-2.10.0 (Security Update). Fixes
+          <ulink url="&lfs-ticket-root;6067">#6067</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2026-11-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to flit_core-4.2.0 (Python module). Fixes
+          <ulink url="&lfs-ticket-root;6063">#6063</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to kmod-34.3. Fixes
+          <ulink url="&lfs-ticket-root;6065">#6065</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-7.3.1. Fixes
+          <ulink url="&lfs-ticket-root;6066">#6066</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to tzdata2026f. Fixes
+          <ulink url="&lfs-ticket-root;6064">#6064</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2026-10-26</para>
       <itemizedlist>
         <listitem>

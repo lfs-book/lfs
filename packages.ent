@@ -149,11 +149,11 @@
 <!ENTITY elfutils-fin-du "159 MB">
 <!ENTITY elfutils-fin-sbu "0.3 SBU">
 
-<!ENTITY expat-version "2.9.0">
-<!ENTITY expat-dl-version "2_9_0">
-<!ENTITY expat-size "516 KB">
+<!ENTITY expat-version "2.10.0">
+<!ENTITY expat-dl-version "2_10_0">
+<!ENTITY expat-size "532 KB">
 <!ENTITY expat-url "&github;/libexpat/libexpat/releases/download/R_&expat-dl-version;/expat-&expat-version;.tar.xz">
-<!ENTITY expat-md5 "fa5ea2bb996c624133368a87206d72af">
+<!ENTITY expat-md5 "8acc7a0749ef59fd17e6b19494cf0bc8">
 <!ENTITY expat-home "https://libexpat.github.io/">
 <!ENTITY expat-fin-du "12 MB">
 <!ENTITY expat-fin-sbu "0.1 SBU">
@@ -194,10 +194,10 @@
 <!ENTITY flex-fin-du "33 MB">
 <!ENTITY flex-fin-sbu "0.1 SBU">
 
-<!ENTITY flit-core-version "4.1.0">
-<!ENTITY flit-core-size "54 KB">
+<!ENTITY flit-core-version "4.2.0">
+<!ENTITY flit-core-size "59 KB">
 <!ENTITY flit-core-url "&pypi-src;/f/flit-core/flit_core-&flit-core-version;.tar.gz">
-<!ENTITY flit-core-md5 "6aed048324976ab2178d4d57a7933763">
+<!ENTITY flit-core-md5 "f31d6369b52accb2764e87177985f4fd">
 <!ENTITY flit-core-home "&pypi-home;/flit-core/">
 <!ENTITY flit-core-fin-du "1.3 MB">
 <!ENTITY flit-core-fin-sbu "less than 0.1 SBU">
@@ -351,10 +351,10 @@
 <!ENTITY kbd-fin-du "45 MB">
 <!ENTITY kbd-fin-sbu "0.1 SBU">
 
-<!ENTITY kmod-version "34.2">
-<!ENTITY kmod-size "434 KB">
+<!ENTITY kmod-version "34.3">
+<!ENTITY kmod-size "435 KB">
 <!ENTITY kmod-url "&kernel;linux/utils/kernel/kmod/kmod-&kmod-version;.tar.xz">
-<!ENTITY kmod-md5 "36f2cc483745e81ede3406fa55e1065a">
+<!ENTITY kmod-md5 "142a3e10a40fb14fadedae2e2147c2d6">
 <!ENTITY kmod-home "https://github.com/kmod-project/kmod">
 <!ENTITY kmod-fin-du "6.8 MB">
 <!ENTITY kmod-fin-sbu "less than 0.1 SBU">
@@ -419,11 +419,11 @@
 <!ENTITY linux-minor-version "3">
 <!ENTITY linux-majmin-version "&linux-major-version;.&linux-minor-version;">
 <!ENTITY linux-patch-version "1">
-<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">
-<!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">-->
-<!ENTITY linux-size "158,594 KB">
+<!--<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;">-->
+<!ENTITY linux-version "&linux-major-version;.&linux-minor-version;.&linux-patch-version;">
+<!ENTITY linux-size "158,601 KB">
 <!ENTITY linux-url "&kernel;linux/kernel/v&linux-major-version;.x/linux-&linux-version;.tar.xz">
-<!ENTITY linux-md5 "b38587333374ecce1141b9b5886c4fcf">
+<!ENTITY linux-md5 "c168038a5263053ff7b3fe4f6807225f">
 <!ENTITY linux-home "https://www.kernel.org/">
 <!-- measured for 6.10.1 / gcc-14.1.0 on x86_64 with -j4 : 
  minimum is allnoconfig 
@@ -746,10 +746,10 @@
 <!ENTITY texinfo-fin-du "151 MB">
 <!ENTITY texinfo-fin-sbu "0.4 SBU">
 
-<!ENTITY tzdata-version "2026e">
-<!ENTITY tzdata-size "471 KB">
+<!ENTITY tzdata-version "2026f">
+<!ENTITY tzdata-size "472 KB">
 <!ENTITY tzdata-url "https://www.iana.org/time-zones/repository/releases/tzdata&tzdata-version;.tar.gz">
-<!ENTITY tzdata-md5 "e1bb044ee184daee12f3e83ca16def7f">
+<!ENTITY tzdata-md5 "573f4cf01bdcdbf0eda06876db101397">
 <!ENTITY tzdata-home "https://www.iana.org/time-zones">
 
 <!ENTITY udev-lfs-version "udev-lfs-20230818">
@@ -817,14 +817,14 @@
 <!ENTITY xz-fin-du "25 MB">
 <!ENTITY xz-fin-sbu "0.1 SBU">
 
-<!ENTITY zlib-version "1.3.2">
-<!ENTITY zlib-size "1,468 KB">
+<!ENTITY zlib-version "1.4">
+<!ENTITY zlib-size "1,472 KB">
 <!-- DO NOT remove "fossils"!
      The upstream removes https://zlib.net/zlib-&zlib-version;.tar.xz
      once a newer version is released EVEN IF there is no security fixes.
      Unfortunately there is no .xz files in fossils directory.  -->
 <!ENTITY zlib-url "https://zlib.net/fossils/zlib-&zlib-version;.tar.gz">
-<!ENTITY zlib-md5 "a1e6c958597af3c67d162995a342138a">
+<!ENTITY zlib-md5 "5fdf67d2dbb1a155593ef68a32197df6">
 <!ENTITY zlib-home "https://zlib.net/">
 <!ENTITY zlib-tmp-du "5.7 MB">
 <!ENTITY zlib-tmp-sbu "less than 0.1 SBU">
