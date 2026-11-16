@@ -239,7 +239,7 @@ if ( $package == "zstd"       ) $dirpath = github("facebook/zstd");
      return find_max( $lines, "/expect/", "/^.*expect(\d[\d\.]+\d).tar.*$/" );
 
   if ( $package == "expat" )
-     return find_max( $lines, "/name.:/", "/^.*(\d\.\d\.\d).*$/" );
+     return find_max( $lines, "/name.:/", "/^.*expat-([\d\.]+).tar.*$/" );
 
   if ( $package == "elfutils" )
      return find_max( $lines, "/^\d/", "/^(\d[\d\.]+\d)\/.*$/" );
@@ -541,7 +541,6 @@ table td {
 
 function write_to_stdout()
 {
-
    global $date;
    global $vers;
    global $dirs;

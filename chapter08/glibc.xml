@@ -55,7 +55,7 @@
     url='&man;tanh.3'>tanh(3)</ulink> function to crash
     on some old x86_64 processors, one causing some packages using gnulib
     to hang indefinitely at runtime, some causing building or testing
-    failures with parallel <command>make</command> jobs, and six security
+    failures with parallel <command>make</command> jobs, and seven security
     vulnerabilities:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-patch;</userinput></screen>
@@ -237,6 +237,11 @@ esac</userinput></screen>
 
 <screen><userinput remap="install">sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile</userinput></screen>
 
+    <para>Fix a hardcoded path to the executable loader in the
+    <command>ldd</command> script:</para>
+
+<screen><userinput remap="install">sed '/RTLDLIST=/s@/usr@@g' -i elf/ldd</userinput></screen>
+
     <important>
       <para>
         If upgrading Glibc to a new minor version (for example, from
@@ -345,11 +350,9 @@ install -vm755 dest/usr/lib/*.so.* /usr/lib</userinput></screen>
       </para>
 
       <para>
-        Then continue to run the <command>make install</command> command,
-        the <command>sed</command> command against
-        <filename>/usr/bin/ldd</filename>, and the commands to install
-        the locales.  Once they are finished, reboot the system
-        immediately.
+        Then continue to run the <command>make install</command>
+        command and the commands to install the locales.  Once they are
+        finished, reboot the system immediately.
       </para>
 
       <para>
@@ -371,10 +374,6 @@ unset DIR</userinput></screen>
 
 <screen><userinput remap="install">make install</userinput></screen>
 
-    <para>Fix a hardcoded path to the executable loader in the
-    <command>ldd</command> script:</para>
-
-<screen><userinput remap="install">sed '/RTLDLIST=/s@/usr@@g' -i /usr/bin/ldd</userinput></screen>
 <!--
     <para>Install the configuration file and runtime directory for
     <command>nscd</command>:</para>
