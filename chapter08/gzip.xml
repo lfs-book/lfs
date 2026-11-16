@@ -41,6 +41,12 @@
   <sect2 role="installation">
     <title>Installation of Gzip</title>
 
+    <!-- https://lists.gnu.org/archive/html/bug-gzip/2026-09/msg00032.html -->
+    <para>Move a header include directive to fix a conflict with Linux
+    API headers on ARM64:</para>
+
+<screen><userinput remap="pre">sed -e '/gzip.h/d' -e '/ifndef MAX_PATH_LEN/i#include "gzip.h"' -i gzip.c</userinput></screen>
+
     <para>Prepare Gzip for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr</userinput></screen>
