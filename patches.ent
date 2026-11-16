@@ -27,9 +27,9 @@
 <!ENTITY glibc-fhs-patch-md5 "9a5997c3452909b1769918c759eff8a2">
 <!ENTITY glibc-fhs-patch-size "2.8 KB">
 
-<!ENTITY glibc-upstream-patch "glibc-&glibc-version;-upstream_fixes-3.patch">
-<!ENTITY glibc-upstream-patch-md5 "9edd452f9f99d4f87d8470c7029d237c">
-<!ENTITY glibc-upstream-patch-size "269 KB">
+<!ENTITY glibc-upstream-patch "glibc-&glibc-version;-upstream_fixes-4.patch">
+<!ENTITY glibc-upstream-patch-md5 "9bc4e8bb733262e49c8f2783576d500c">
+<!ENTITY glibc-upstream-patch-size "393 KB">
 
 <!ENTITY kbd-backspace-patch "kbd-&kbd-version;-backspace-1.patch">
 <!ENTITY kbd-backspace-patch-md5 "f75cca16a38da6caa7d52151f7136895">
@@ -40,11 +40,11 @@
 <!ENTITY perl-upstream-fix-patch-md5 "1983b48fee837a98db47fb5dba934744">
 <!ENTITY perl-upstream-fix-patch-size "13 KB">
 -->
-
+<!--
 <!ENTITY python-openssl4-fixes-patch "Python-&python-version;-openssl_4-1.patch">
 <!ENTITY python-openssl4-fixes-patch-md5 "597d7737df1b4ea4e184c193da523050">
 <!ENTITY python-openssl4-fixes-patch-size "38 KB">
-
+-->
 <!--
 <!ENTITY readline-fixes-patch "readline-&readline-version;-upstream_fixes-3.patch">
 <!ENTITY readline-fixes-patch-md5 "9ed497b6cb8adcb8dbda9dee9ebce791">

@@ -42,11 +42,11 @@
 
   <sect2 role="installation">
     <title>Installation of Python 3</title>
-
+<!--
     <para>First, apply a patch for compatibility with OpenSSL 4:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&python-openssl4-fixes-patch;</userinput></screen>
-
+-->
     <para>Prepare Python for compilation:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr          \
@@ -98,9 +98,8 @@
     <!-- DO NOT REMOVE EVEN IF IT'S NOT REPRODUCIBLE IN JHALFS:
          jhalfs creates /etc/resolv.conf, that's different from the
          by-hand build.  -->
-    <para>Two tests, <literal>test_urllib2</literal> and
-    <literal>test_urllibnet</literal>, are known to fail because name
-    resolution is not configured in the incomplete LFS environment.</para>
+    <para>Two tests, <literal>test_os2</literal> and
+    <literal>test_httplib</literal>, are known to fail.</para> 
 
     <para>Install the package:</para>
 

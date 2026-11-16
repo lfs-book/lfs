@@ -139,6 +139,7 @@
       </listitem>
     </varlistentry>
 -->
+<!--
     <varlistentry>
       <term>Python Openssl4 Patch - <token>&python-openssl4-fixes-patch-size;</token>:</term>
       <listitem>
@@ -146,7 +147,7 @@
         <para>MD5 sum: <literal>&python-openssl4-fixes-patch-md5;</literal></para>
       </listitem>
     </varlistentry>
-
+-->
     <varlistentry revision="sysv">
       <term>SysVinit Consolidated Patch - <token>&sysvinit-consolidated-patch-size;</token>:</term>
       <listitem>
