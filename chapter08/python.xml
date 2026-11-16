@@ -101,6 +101,10 @@
     <para>Two tests, <literal>test_os2</literal> and
     <literal>test_httplib</literal>, are known to fail.</para> 
 
+    <!-- https://github.com/python/cpython/issues/152240 -->
+    <para>One test named <literal>test_c_stack_unwind</literal> is known
+    to fail on LoongArch.</para>
+
     <para>Install the package:</para>
 
 <screen><userinput remap="install">make install</userinput></screen>
