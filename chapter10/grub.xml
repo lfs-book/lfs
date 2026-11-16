@@ -109,8 +109,8 @@ xorriso -as cdrecord -v dev=/dev/cdrw blank=as_needed grub-img.iso</userinput></
         <para>The following command will overwrite the
         <filename>/boot/efi/EFI/BOOT/BOOT&efi-BOOT-suffix;.EFI</filename> file.
         If it already exists, it's likely that it's the entry of another boot
-        loader (for example the GRUB installation from the host distro, or the
-        Windows Boot Manager). Backup the file so it can be restored later
+        loader (for example the GRUB installation from the host distro<!--, or the
+        Windows Boot Manager-->). Backup the file so it can be restored later
         or loaded as a secondary boot loader (via a GRUB functionality named
         <quote>chainloading</quote>) by the new GRUB installation
         from LFS.</para>
