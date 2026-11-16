@@ -57,6 +57,12 @@
   <sect2 role="installation">
     <title>Installation of GRUB for UEFI</title>
 
+    <!-- https://gitlab.freedesktop.org/gnu-grub/grub/-/merge_requests/274 -->
+    <para>Fix a bug causing memory allocation failures on some ARM64 UEFI
+    platforms:</para>
+
+<screen><userinput remap="pre">sed 's/0xffffffff$/&amp;ffffULL/' -i include/grub/arm64/efi/memory.h</userinput><screen>
+
     <para>Now configure GRUB for UEFI support:</para>
 
 <screen><userinput remap="configure">./configure --prefix=/usr       \
