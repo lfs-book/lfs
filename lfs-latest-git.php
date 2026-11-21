@@ -138,7 +138,8 @@ if ( $package == "intltool"   ) $dirpath = "https://launchpad.net/intltool/trunk
 if ( $package == "jinja"      ) $dirpath = "https://pypi.org/rss/project/jinja2/releases.xml";
 if ( $package == "libffi"     ) $dirpath = github("libffi/libffi");
 if ( $package == "libpipeline") $dirpath = "https://download-mirror.savannah.gnu.org/releases/libpipeline";
-if ( $package == "libtool"    ) $dirpath = "https://www.gnu.org/software/libtool";
+//if ( $package == "libtool"    ) $dirpath = "https://www.gnu.org/software/libtool";
+if ( $package == "libtool"    ) $dirpath = "https://mirrors.ibiblio.org/gnu/libtool/";
 if ( $package == "libxcrypt"  ) $dirpath = github("besser82/libxcrypt");
 if ( $package == "linux"      ) $dirpath = "https://www.kernel.org/pub/linux/kernel/v7.x";
 if ( $package == "lz4"        ) $dirpath = github("lz4/lz4");
