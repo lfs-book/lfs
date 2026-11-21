@@ -55,7 +55,7 @@
     url='&man;tanh.3'>tanh(3)</ulink> function to crash
     on some old x86_64 processors, one causing some packages using gnulib
     to hang indefinitely at runtime, some causing building or testing
-    failures with parallel <command>make</command> jobs, and seven security
+    failures with parallel <command>make</command> jobs, and nine security
     vulnerabilities:</para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../&glibc-upstream-patch;</userinput></screen>
